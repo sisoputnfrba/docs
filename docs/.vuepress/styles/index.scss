@@ -1,0 +1,22 @@
+:root {
+  // brand colors
+  --c-brand: #3eaf7c;
+  --c-brand-light: #4abf8a;
+}
+
+html.dark {
+  // brand colors
+  --c-brand: #3aa675;
+  --c-brand-light: #349469;
+
+  // custom container colors
+  --c-warning: #e6a700;
+  --c-warning-bg: #4d3800;
+  --c-warning-title: #ffefc6;
+  --c-warning-text: #fff8e6;
+  --c-danger: #e13238;
+  --c-danger-bg: #4b1113;
+  --c-danger-title: #fdd5d7;
+  --c-danger-text: #ffebec;
+  --c-details-bg: #323843;
+}
