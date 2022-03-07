@@ -11,18 +11,15 @@ actions:
   - text: Inscripciones
     link: https://inscripciones.utnso.com.ar/
     type: secondary
-features:
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- title: Lorem ipsum
-  details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 footer: Made by sisoputnfrba with ❤️
 ---
+
+
+<!--TODO:
+## Consultas
+
+- Link al foro
+- Link al server de Discord
+- etc
+
+-->

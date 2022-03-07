@@ -8,7 +8,9 @@ export const navbar: NavbarConfig = [
   {
     text: 'Guías',
     link: '/guias/',
-    children: []
+    children: [
+
+    ]
   },
   {
     text: 'Foro de GitHub',
