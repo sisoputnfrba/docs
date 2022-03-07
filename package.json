@@ -1,5 +1,5 @@
 {
-  "name": "so-guides",
+  "name": "so-docs",
   "version": "1.0.0",
   "description": "Guías de la cátedra de Sistemas Operativos - UTN.FRBA",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "repository": "https://github.com/sisoputnfrba/so-guides",
+  "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
     "name": "Agustín Ranieri"
   },
