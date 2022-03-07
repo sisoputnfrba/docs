@@ -1,5 +1,7 @@
 # so-docs
 
+Guías de la cátedra de Sistemas Operativos - UTN.FRBA.
+
 ## Requisitos
 
 - Node.js v16
