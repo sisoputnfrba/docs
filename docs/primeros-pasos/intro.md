@@ -1,5 +1,5 @@
 # Video de Introducción al TP
 
-[Video](https://www.youtube.com/watch?v=Cfmau03_1SA&ab_channel=UTNSO)
+<YouTube v="Cfmau03_1SA"/>
 
-<!-- TODO: Cambiar por los links en faq.utnso.com.ar -->
+<!-- TODO: Usar en cada sección los links de faq.utnso.com.ar -->
