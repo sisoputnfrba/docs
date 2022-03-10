@@ -1,4 +1,4 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
+import type { NavbarConfig } from '@vuepress/theme-default';
 
 export const navbar: NavbarConfig = [
   {
@@ -11,15 +11,13 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'Guías',
-    link: '/guias/',
     children: [
       {
-        text: 'Manejo de la consola y Git',
-        link: '/guias/consola',
+        text: 'Consola de Linux y Git',
         children: [
           {
             text: 'Comandos básicos de Linux',
-            link: '/guias/consola/comandos-basicos'
+            link: '/guias/consola/linux'
           },
           {
             text: 'Control de versionado con Git',
@@ -28,8 +26,7 @@ export const navbar: NavbarConfig = [
         ]
       },
       {
-        text: 'Guías de Programación en C',
-        link: '/guias/programacion/',
+        text: 'Programación en C',
         children: [
           {
             text: 'Manejo de Punteros y Memoria Dinámica',
@@ -39,27 +36,30 @@ export const navbar: NavbarConfig = [
             text: 'Cómo hacer una consola interactiva',
             link: '/guias/programacion/readline'
           },
+          // {
+          //   text: 'Argumentos para el main',
+          //   link: '/guias/programacion/main'
+          // },
           {
             text: 'Buenas Prácticas de C',
             link: '/guias/programacion/buenas-practicas'
           },
           // {
-          //   text: 'Algo sobre las commons',
+          //   text: 'Tips para usar las Commons',
           //   link: '/guias/programacion/commons'
           // }
           {
             text: 'Unit Testing con CSpec',
-            link: '/guias/herramientas/cspec'
+            link: '/guias/programacion/cspec'
           },
           {
             text: 'Unit Testing con CUnit',
-            link: '/guias/herramientas/cunit'
+            link: '/guias/programacion/cunit'
           },
         ],
       },
       {
-        text: 'API de Linux',
-        link: '/guias/linux/',
+        text: 'TBD',
         children: [
           {
             text: 'Guía de Sockets',
@@ -81,7 +81,6 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Herramientas',
-        link: '/guias/herramientas/',
         children: [
           {
             text: 'Debugging en Eclipse',
@@ -91,10 +90,10 @@ export const navbar: NavbarConfig = [
             text: 'Tutorial de Valgrind y Helgrind',
             link: '/guias/herramientas/valgrind'
           },
-          {
-            text: 'Armando scripts de Bash',
-            link: '/guias/herramientas/bash'
-          },
+          // {
+          //   text: 'Automatizando tareas en Bash',
+          //   link: '/guias/herramientas/bash'
+          // },
         ]
       },
     ]

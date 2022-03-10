@@ -13,14 +13,46 @@ export const sidebar: SidebarConfig = [
       '/primeros-pasos/entorno-desarrollo',
       '/primeros-pasos/consola',
       '/primeros-pasos/tp0',
-    ]
+    ],
   },
   {
-    text: 'Guías',
-    link: '/guias/',
+    text: 'Consola de Linux y Git',
     collapsible: true,
     children: [
-
-    ]
-  }
+      '/guias/consola/linux',
+      '/guias/consola/git',
+    ],
+  },
+  {
+    text: 'Programación en C',
+    collapsible: true,
+    children: [
+      '/guias/programacion/punteros',
+      '/guias/programacion/readline',
+      // '/guias/programacion/main',
+      '/guias/programacion/buenas-practicas',
+      // '/guias/programacion/commons',
+      '/guias/programacion/cspec',
+      '/guias/programacion/cunit',
+    ],
+  },
+  {
+    text: 'TBD',
+    collapsible: true,
+    children: [
+      '/guias/linux/sockets',
+      '/guias/linux/serializacion',
+      '/guias/linux/threads',
+      // '/guias/linux/seniales',
+    ],
+  },
+  {
+    text: 'Herramientas',
+    collapsible: true,
+    children: [
+      '/guias/herramientas/debugger',
+      '/guias/herramientas/valgrind',
+      // '/guias/herramientas/bash',
+    ],
+  },
 ]
