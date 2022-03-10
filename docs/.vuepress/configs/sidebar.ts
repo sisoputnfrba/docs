@@ -29,7 +29,7 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/programacion/punteros',
       '/guias/programacion/readline',
-      // '/guias/programacion/main',
+      '/guias/programacion/main',
       '/guias/programacion/buenas-practicas',
       // '/guias/programacion/commons',
       // '/guias/programacion/libraries',

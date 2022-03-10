@@ -36,10 +36,10 @@ export const navbar: NavbarConfig = [
             text: 'Cómo hacer una consola interactiva',
             link: '/guias/programacion/readline'
           },
-          // {
-          //   text: 'Argumentos para el main',
-          //   link: '/guias/programacion/main'
-          // },
+          {
+            text: 'Argumentos para el main',
+            link: '/guias/programacion/main'
+          },
           {
             text: 'Buenas Prácticas de C',
             link: '/guias/programacion/buenas-practicas'
