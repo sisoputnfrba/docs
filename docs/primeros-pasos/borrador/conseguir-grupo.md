@@ -11,3 +11,14 @@ requieren que esté el grupo completo
 Si no contás con un grupo o les faltan integrantes para llegar a los 5, todos
 los cuatrimestres creamos un issue en el Foro para que puedan hacer la búsqueda
 en un lugar centralizado.
+
+## Familarizarme con Linux
+
+La GUI se maneja "fácil", pero acá vamos un paso adelante: amigate con la terminal.
+
+Te recomendamos empezar con el tutorial de [Mario Bash](https://mariobash.utnso.com.ar/).
+
+<!--
+TODO: Ver qué onda con la guía de Mumuki:
+https://mumuki.io/pdep-utn/chapters/438-control-de-versiones
+-->

@@ -7,13 +7,12 @@ export const sidebar: SidebarConfig = [
     collapsible: true,
     children: [
       '/primeros-pasos/intro',
-      '/primeros-pasos/campus-virtual',
-      '/primeros-pasos/github',
-      '/primeros-pasos/sistema-inscripciones',
-      '/primeros-pasos/discord',
+      '/primeros-pasos/donde-me-anoto',
       '/primeros-pasos/normas-tp',
       '/primeros-pasos/entorno-linux',
-      '/primeros-pasos/conseguir-grupo',
+      '/primeros-pasos/entorno-desarrollo',
+      '/primeros-pasos/consola',
+      '/primeros-pasos/tp0',
     ]
   },
   {

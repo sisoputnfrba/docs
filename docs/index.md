@@ -5,21 +5,9 @@ tagline: En esta guía vas a encontrar todo lo necesario para hacer el TP de Sis
 actions:
   - text: Primeros pasos →
     link: /primeros-pasos/
-  - text: Foro
-    link: https://github.com/sisoputnfrba/foro#readme
+  - text: ¡Tengo una duda!
+    link: /dudas
     type: secondary
-  - text: Inscripciones
-    link: https://inscripciones.utnso.com.ar/
-    type: secondary
+
 footer: Made by sisoputnfrba with ❤️
 ---
-
-
-<!--TODO:
-## Consultas
-
-- Link al foro
-- Link al server de Discord
-- etc
-
--->
