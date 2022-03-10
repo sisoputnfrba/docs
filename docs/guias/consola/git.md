@@ -1,9 +1,5 @@
 # Control de versionado con Git
 
-<!-- TODO: consultar con mumuki -->
-[Mumuki](https://mumuki.io/pdep-utn/chapters/438-control-de-versiones)
-
-
 ## Videos
 
 ### Introducción a GitHub, git add, git commit, git pull y git push
