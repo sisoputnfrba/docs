@@ -47,7 +47,11 @@ export const navbar: NavbarConfig = [
           // {
           //   text: 'Tips para usar las Commons',
           //   link: '/guias/programacion/commons'
-          // }
+          // },
+          // {
+          //   text: 'Cómo compartir código entre proyectos',
+          //   link: '/guias/programacion/libraries'
+          // },
           {
             text: 'Unit Testing con CSpec',
             link: '/guias/programacion/cspec'
