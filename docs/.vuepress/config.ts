@@ -1,7 +1,7 @@
 import path from 'path';
 import { defineUserConfig } from 'vuepress';
 import type { DefaultThemeOptions } from 'vuepress';
-import { name, description } from '../../package.json';
+import { description } from '../../package.json';
 import { navbar } from './configs/navbar';
 import { sidebar } from './configs/sidebar';
 
@@ -9,7 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   /**
    * Ref：https://v2.vuepress.vuejs.org/reference/config.html#title
    */
-  title: 'UTN.SO Guide',
+  title: 'UTN.SO Guides',
   /**
    * Ref：https://v2.vuepress.vuejs.org/reference/config.html#description
    */
@@ -35,7 +35,7 @@ export default defineUserConfig<DefaultThemeOptions>({
    * ref：https://v2.vuepress.vuejs.org/reference/default-theme/config.html
    */
   themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: '/img/logo.gif',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
