@@ -10,8 +10,9 @@ export const sidebar: SidebarConfig = [
       '/primeros-pasos/donde-me-anoto',
       '/primeros-pasos/normas-tp',
       '/primeros-pasos/entorno-linux',
-      '/primeros-pasos/entorno-desarrollo',
       '/primeros-pasos/consola',
+      '/primeros-pasos/programacion',
+      '/primeros-pasos/entorno-desarrollo',
       '/primeros-pasos/tp0',
     ],
   },
@@ -28,8 +29,8 @@ export const sidebar: SidebarConfig = [
     collapsible: true,
     children: [
       '/guias/programacion/punteros',
-      '/guias/programacion/readline',
       '/guias/programacion/main',
+      '/guias/programacion/readline',
       '/guias/programacion/buenas-practicas',
       // '/guias/programacion/commons',
       // '/guias/programacion/libraries',
@@ -54,6 +55,7 @@ export const sidebar: SidebarConfig = [
       '/guias/herramientas/debugger',
       '/guias/herramientas/valgrind',
       // '/guias/herramientas/bash',
+      // '/guias/herramientas/ssh',
     ],
   },
 ]

@@ -33,12 +33,12 @@ export const navbar: NavbarConfig = [
             link: '/guias/programacion/punteros'
           },
           {
-            text: 'Cómo hacer una consola interactiva',
-            link: '/guias/programacion/readline'
-          },
-          {
             text: 'Argumentos para el main',
             link: '/guias/programacion/main'
+          },
+          {
+            text: 'Cómo hacer una consola interactiva',
+            link: '/guias/programacion/readline'
           },
           {
             text: 'Buenas Prácticas de C',
@@ -98,6 +98,10 @@ export const navbar: NavbarConfig = [
           //   text: 'Automatizando tareas en Bash',
           //   link: '/guias/herramientas/bash'
           // },
+          // {
+          //   text: 'Trabajando en Remoto con SSH',
+          //   link: '/guias/herramientas/ssh',
+          // }
         ]
       },
     ]
