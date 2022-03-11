@@ -2,6 +2,8 @@
   // brand colors
   --c-brand: #3eaf7c;
   --c-brand-light: #4abf8a;
+
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -19,19 +21,4 @@ html.dark {
   --c-danger-title: #fdd5d7;
   --c-danger-text: #ffebec;
   --c-details-bg: #323843;
-}
-
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
