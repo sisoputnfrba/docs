@@ -1,17 +1,21 @@
 :root {
-  // brand colors
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
-
   scroll-behavior: smooth;
+
+  // brand colors
+  --c-brand: #d00c34;
+  --c-brand-light: #d52448;
+
+  // custom container colors
+  --c-tip: #d93d5d;
 }
 
 html.dark {
   // brand colors
-  --c-brand: #3aa675;
-  --c-brand-light: #349469;
+  --c-brand: #fca824;
+  --c-brand-light: #e39720;
 
   // custom container colors
+  --c-tip: #ca861d;
   --c-warning: #e6a700;
   --c-warning-bg: #4d3800;
   --c-warning-title: #ffefc6;
