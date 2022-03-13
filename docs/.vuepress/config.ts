@@ -45,7 +45,18 @@ export default defineUserConfig<DefaultThemeOptions>({
   },
 
   /**
-   * Apply plugins，ref：https://v2.vuepress.vuejs.org/reference/plugin/back-to-top.html#install
+   * Markdown enhancement.
+   *
+   * ref: https://v2.vuepress.vuejs.org/reference/plugin-api.html#extendsmarkdown
+   */
+  extendsMarkdown: (md) => {
+    md.use(require('markdown-it-footnote'));
+  },
+
+  /**
+   * Apply plugins.
+   *
+   * ref：https://v2.vuepress.vuejs.org/reference/plugin/back-to-top.html#install
    */
   plugins: [
     '@vuepress/back-to-top',
