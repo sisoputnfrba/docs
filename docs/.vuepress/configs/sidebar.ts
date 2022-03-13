@@ -12,7 +12,7 @@ export const sidebar: SidebarConfig = {
         '/primeros-pasos/normas-tp',
         '/primeros-pasos/entorno-linux',
         '/primeros-pasos/consola',
-        '/primeros-pasos/programacion',
+        '/primeros-pasos/lenguaje-c',
         '/primeros-pasos/entorno-desarrollo',
         '/primeros-pasos/tp0',
       ],
