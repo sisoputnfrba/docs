@@ -296,7 +296,7 @@ unos bytes para nuestra variable.
 > "¿Cuántos bytes reservó?"
 
 Eso depende del tipo de dato que le declaramos a la variable. En el caso de un
-`int`, siempre[^5] va a ocupar 4 bytes.
+`int`, la variable va a ocupar 4 bytes[^5].
 
 Entonces, al hacer algo como `exit_status = 0;` (y sabiendo que `exit_status` es
 una variable entera de 4 bytes), el compilador sabe que tiene que hacer que los
