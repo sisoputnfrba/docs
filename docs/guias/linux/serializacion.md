@@ -5,7 +5,7 @@
 
 ## Objetivo 
 
-El presente documento tiene como fin explicar qué es, para qué sirve y cómo serializar distintos tipos de mensaje desde C. Para esto, se explicarán los distintos tipos de mensajes y se ofrecerán ejemplos de como serializarlos para enviarlos.
+El presente documento tiene como fin explicar qué es, para qué sirve y cómo serializar distintos tipos de mensaje desde C. Para esto, se explicarán los distintos tipos de mensajes y se ofrecerán ejemplos de cómo serializarlos para enviarlos.
 
 ## TADs 
 
@@ -28,8 +28,13 @@ p1.pasaporte=3547899322;
 strcpy(p1.nombre,"John Doe");
 ```
 
-![padding](/img/guias/serializacion/padding-imagen.jpg)
-![padding-exclamacion](/img/guias/serializacion/padding-exclamacion.png)
+![padding](/img/guias/serializacion/padding-imagen.jpg ) 
+<!-- <img src="/img/guias/serializacion/padding-imagen.jpg" alt="padding" width="500px"/> --> 
+
+
+
+<!-- <img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/> --> 
+
 
 
 El tamaño de este padding depende de varios factores como, por ejemplo, el compilador, la arquitectura del CPU, el tipo de dato, entre otros. Por esto, es que no tenemos garantías de cuánto espacio ocupará un struct en memoria.
