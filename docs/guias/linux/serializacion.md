@@ -28,12 +28,12 @@ p1.pasaporte=3547899322;
 strcpy(p1.nombre,"John Doe");
 ```
 
-![padding](/img/guias/serializacion/padding-imagen.jpg ) 
-<!-- <img src="/img/guias/serializacion/padding-imagen.jpg" alt="padding" width="500px"/> --> 
+<!--![padding](/img/guias/serializacion/padding-imagen.jpg ) -->
+<img src="/img/guias/serializacion/padding-imagen.jpg" alt="padding" height="400px"/>  
 
 
 
-<!-- <img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/> --> 
+<img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/> 
 
 
 
