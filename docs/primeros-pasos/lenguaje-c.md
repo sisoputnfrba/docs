@@ -329,9 +329,10 @@ tu código.
 
 ## Créditos
 
-Créditos a Matías García Isaia, el autor de la charla y esta guía, la cual fue
-extraída del blog
-[C para Operativos](https://mgarciaisaia.github.io/tutorial-c/lo-c-tutto/)
+- Autor: Matías García Isaia
+
+> Guía extraída del blog
+> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/lo-c-tutto/)
 
 <br>
 
