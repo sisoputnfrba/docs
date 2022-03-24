@@ -7,16 +7,23 @@ import { sidebar } from './configs/sidebar';
 
 export default defineUserConfig<DefaultThemeOptions>({
   /**
-   * Ref：https://v2.vuepress.vuejs.org/reference/config.html#title
+   * Title for the site.
+   *
+   * ref：https://v2.vuepress.vuejs.org/reference/config.html#title
    */
   title: 'UTN.SO Guides',
+
   /**
-   * Ref：https://v2.vuepress.vuejs.org/reference/config.html#description
+   * Description for the site.
+   *
+   * ref：https://v2.vuepress.vuejs.org/reference/config.html#description
    */
   description: description,
 
   /**
-   * Ref：https://v2.vuepress.vuejs.org/reference/config.html#base
+   * The base URL the site will be deployed at.
+   *
+   * ref：https://v2.vuepress.vuejs.org/reference/config.html#base
    */
   base: '/',
 
@@ -27,6 +34,7 @@ export default defineUserConfig<DefaultThemeOptions>({
    */
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['link', { rel: 'icon', href: '/img/logo.gif' }],
   ],
 
   /**
@@ -35,13 +43,28 @@ export default defineUserConfig<DefaultThemeOptions>({
    * ref：https://v2.vuepress.vuejs.org/reference/default-theme/config.html
    */
   themeConfig: {
-    logo: '/img/logo.gif',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    home: '/',
     navbar: navbar,
+    logo: '/img/logo.gif',
     sidebar: sidebar,
+    editLink: false,
+    docsDir: 'docs',
+    docsBranch: 'main',
+    lastUpdated: true,
+    contributors: false,
+  },
+
+  /**
+   * Configure VuePress built-in Markdown syntax extensions.
+   *
+   * ref: https://v2.vuepress.vuejs.org/reference/config.html#markdown
+   */
+   markdown: {
+    importCode: {
+      handleImportPath: (str) => {
+        return str.replace(/^@snippets/, path.resolve(__dirname, 'snippets'));
+      }
+    }
   },
 
   /**

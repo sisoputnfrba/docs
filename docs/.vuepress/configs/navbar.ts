@@ -63,7 +63,7 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
-        text: 'TBD',
+        text: 'Aplicaciones de la teoría',
         children: [
           {
             text: 'Guía de Sockets',
