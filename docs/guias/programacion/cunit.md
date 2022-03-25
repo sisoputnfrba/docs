@@ -459,27 +459,30 @@ ejecutarían una sola vez al inicio y al final del suite.
 La última versión hasta ahora de CUnit (2.1-2) no soporta funciones de setup o
 teardown, así que no queda otra que hacer eso por cada test case.
 
-## Otras cuestiones
-
-### Otros tipos de assert
+## Otros tipos de assert
 
 Todos empiezan con `CU_ASSERT`, así que lo más fácil es escribir eso,
 `Ctrl`+`Space`, y que el IDE te sugiera el resto. Algunos posibles son:
 
 - `CU_ASSERT_TRUE(value)`: Verifica que una expresión sea verdadera
 - `CU_ASSERT_FALSE(value)`: Verifica que una expresión sea falsa
+<br><br>
 - `CU_ASSERT_EQUAL(actual, expected)`: Verifica que actual == expected
-- `CU_ASSERT_NOT_EQUAL(actual, expected)`
+- `CU_ASSERT_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+<br><br>
 - `CU_ASSERT_STRING_EQUAL(actual, expected)`: Verifica que dos strings sean
   equivalentes [^3]
-- `CU_ASSERT_STRING_NOT_EQUAL(actual, expected)`
+- `CU_ASSERT_STRING_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+- `CU_ASSERT_NSTRING_EQUAL(actual, expected, count)`: Verifica que los primeros
+  `count` caracteres de las cadenas coincidan.
+<br><br>
 - `CU_ASSERT_PTR_EQUAL(actual, expected)`: Verifica que los punteros sean
   equivalentes
-- `CU_ASSERT_PTR_NOT_EQUAL(actual, expected)`
+- `CU_ASSERT_PTR_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+<br><br>
 - `CU_ASSERT_PTR_NULL(value)`: Verifica que un puntero es `NULL`
-- `CU_ASSERT_PTR_NOT_NULL(value)`
-- `CU_ASSERT_NSTRING_EQUAL(actual, expected, count)`: Verifica que los primeros
-  `count` caracteres de las cadenas coinciden
+- `CU_ASSERT_PTR_NOT_NULL(value)`: Lo opuesto al anterior
+
 
 Es importante aclarar que **ninguno de estos assert termina con la ejecución del
 test case si fallan**. Para lograr eso, existen otro grupo de aserciones que se
