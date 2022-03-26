@@ -1,5 +1,9 @@
 # Introducción al Lenguaje C
 
+> Tutorial extraído del blog
+> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/lo-c-tutto/)
+> (autor: Matías García Isaia)
+
 ## Video: C - Una charla minimalista
 
 <YouTube v="caeklleBJDI"/>
@@ -327,14 +331,7 @@ Assembler, siquiera), pero tenés que tener un claro entendimiento de cómo
 funciona la computadora a bajo nivel para entender qué es lo que está haciendo
 tu código.
 
-## Créditos
-
-- Autor: Matías García Isaia
-
-> Guía extraída del blog
-> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/lo-c-tutto/)
-
-<br>
+<br><br>
 
 [^1]: En realidad, imprime en la salida estándar, ya lo veremos más adelante.
 Por ahora, creeme que es la pantalla.
