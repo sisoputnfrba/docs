@@ -218,15 +218,164 @@ con la misma.
 
 Para realizar la inscripción al trabajo práctico el grupo deberá completar el
 proceso de inscripción en el
-[Sistema de Inscripciones](https://inscripciones.utnso.com)[^2]. Transcurrida
+[Sistema de Inscripciones](https://inscripciones.utnso.com.ar)[^2]. Transcurrida
 aproximadamente una semana de la confirmación del grupo se le designará un
 ayudante.
 
 La fecha límite de inscripción de los alumnos y de los grupos será anunciada en
 los medios de comunicación anteriormente mencionados.
 
-Recomendamos el foro del Campus Virtual titulado TP - Conformación de grupos,
-para contactar potenciales integrantes del grupo.
+Recomendamos acceder al issue titulado
+[¿Buscás grupo / integrantes?](https://faq.utnso.com.ar/issue-grupos) para
+contactar potenciales integrantes del grupo.
+
+#### Cambios de Grupo
+
+Podrá existir un período de cambios de grupo durante el desarrollo del trabajo
+práctico, siendo el objetivo del mismo unir grupos que no alcancen la cantidad
+de 5(cinco) integrantes debido a bajas de sus compañeros. Es menester aclarar,
+que cada alumno poseerá **una única chance de cambiarse de grupo**.
+
+La fecha de inicio de dicho período será anunciada debidamente mediante los
+medios de comunicación oficiales. De la misma forma, será anunciada la fecha de
+finalización de los cambios de grupos, siendo la misma cercana a la fecha del
+Checkpoint Presencial, y la hora de finalización a las **18:00hs del mismo
+día**.
+
+Para pedir un cambio de grupo, la cátedra provee una
+[herramienta](https://inscripciones.utnso.com.ar/cambio.php) en el sistema de
+inscripciones mencionado anteriormente. Dicha petición realizará un aviso a
+todas las partes interesadas, las cuales poseerán **72 horas** para objetar el
+mismo a través de su ayudante asignado o
+[inscripciones@utnso.com.ar](mailto:inscripciones@utnso.com.ar). Pasadas las 72
+horas, se hará efectivo el cambio y se avisará a las partes interesadas.
+
+Solamente se aceptarán cambios de grupo mediante dicha herramienta, con
+excepción de casos particulares.
+
+#### Baja de la materia
+
+Ante los casos en el que un alumno decida no continuar la materia, es
+responsabilidad los integrantes del grupo dar de baja a su compañero. La
+modalidad de baja será la misma que para los cambios de grupos anteriormente
+mencionada y deberá ser realizada mediante la misma herramienta o mediante un
+mail a [inscripciones@utnso.com.ar](mailto:inscripciones@utnso.com.ar) con copia
+a todos los integrantes del grupo (activos y a dar de baja).
+
+## 4. Uso del Repositorio de Versionado
+
+Con el objetivo de facilitar el desarrollo del trabajo en equipo y poder
+realizar un seguimiento del trabajo de cada integrante del grupo, se utilizará
+un repositorio alojado en el servidor GitHub.
+
+Cada alumno deberá [crear una cuenta en GitHub](https://github.com/join), e
+incluir su nombre de usuario en el sistema de inscripción.
+
+Luego será la Cátedra quien cree un repositorio para el grupo y les asignará los
+permisos de escritura a sus integrantes, y de lectura a sus ayudantes.
+
+Finalmente, cuando todas las evaluaciones finalicen, se enviará un mail
+indicando que todos los repositorios serán borrados para que el alumno pueda
+bajarse una copia si así lo desea.
+
+Es importante recalcar que **es OBLIGATORIO el uso del repositorio**. Si bien el
+código se podrá traer en un pendrive para la fecha de la entrega por cuestiones
+de practicidad, se verificará que los archivos del pendrive coincidan con los
+del repositorio a la fecha de la evaluación.
+
+Aquel grupo que no cumpla con este requisito no será evaluado.
+
+## 5. Soporte
+
+### Ayudantes
+
+Cada grupo inscripto al trabajo tendrá dos ayudantes asignados, cuyo principal
+objetivo será el de guiar a sus grupos durante el desarrollo del trabajo
+práctico. Para ello, los mismos se encargaran de:
+
+- Satisfacer, de manera oficial, consultas técnicas y teóricas relacionadas con
+  el trabajo en los tiempos razonablemente preestablecidos entre los ayudantes y
+  el grupo.
+- Proporcionar feedback en los diferentes checkpoints.
+- Alentar a los alumnos para que estos logren superar los desafíos planteados
+  por el trabajo práctico.
+- Guiar al grupo hacia una forma de trabajo responsable, respetando los grados
+  de compromiso y participación adecuados, para así cumplir con los requisitos
+  necesarios para la aprobación del TP.
+
+Ante cualquier caso de irregularidad, es responsabilidad del alumno notificar
+dicha situación, enviando un email a
+[Adriano Filgueira](mailto:afilgueira@frba.utn.edu.ar) o
+[Esteban Masoero](mailto:esigma5@gmail.com), en favor de solucionar la situación
+lo más rápido posible.
+
+### Contacto directo con los ayudantes
+
+Las consultas relacionadas con temas puntuales de la implementación que está
+llevando a cabo el grupo, ya sea problemas con el código o decisiones de diseño
+basadas en su desarrollo, deben ser formuladas directamente a los ayudantes
+asignados. Para estas situaciones se le facilitará al grupo sus casillas de
+correo electrónico.
+
+Los emails dirigidos hacia los ayudantes y sus respuestas serán enviados con
+copia a todos los miembros del grupo y respetando el siguiente formato en el
+asunto: **"[nombre del grupo] :: CONSULTA: TemaDeLaConsulta"**. Es importante
+respetar esto ya que la gran mayoría de los ayudantes maneja filtros de mails.
+
+### Soporte a través de los foros
+
+El medio de comunicación oficial de la cátedra será el Campus Virtual, así como
+el [blog de la cátedra](https://www.utnso.com.ar). Las notificaciones masivas se
+realizarán a través de este medio, en el foro
+[Cátedra - Novedades](https://aulasvirtuales.frba.utn.edu.ar/mod/forum/view.php?id=221441).
+
+Además, existe un [foro](http://github.com/sisoputnfrba/foro) destinado a
+consultas relacionadas con el desarrollo del TP. Todas las preguntas
+relacionadas con dudas sobre el enunciado, ya sean técnicas o conceptuales,
+temas relacionados con el lenguaje de programación C y sus bibliotecas, sobre
+las máquinas virtuales o sobre los sistemas operativos instalados en ellas,
+deben realizarse inicialmente a través de este medio.
+
+Es importante recalcar que se recomienda que las consultas sean enviadas primero
+al foro, y luego al ayudante. Esto surge del hecho que una consulta realizada en
+el foro le llega a todos los alumnos que pueden o bien saber la respuesta o
+tener la misma duda que la que fue consultada, así al momento de responder se
+satisface la duda a más de uno, evitando la repetición de preguntas.
+
+Si la pregunta no es respondida en un tiempo considerable se puede enviar al
+ayudante, el cual luego responderá por el foro para dejar asentada la respuesta.
+
+### Clases de consulta
+
+Cuando la disponibilidad horaria lo permita, existirán clases de consulta en los
+laboratorios de Sistemas de la facultad y en aulas de Campus. La fecha y hora de
+las mismas podrán ser comunicadas oportunamente mediante el foro del Campus
+Virtual o el [blog](https://www.utnso.com.ar), anunciando ayudantes presentes y
+horarios de disponibilidad.
+
+## 6. Régimen de Promoción
+
+Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la
+promoción del alumno, además de los requerimientos de la parte teórica de la
+materia, el mismo **deberá aprobar el trabajo práctico con una nota final de 8
+(ocho) o superior en la instancia de coloquio**.
+
+Cualquier alumno cuya nota final no supere el dicho valor no se encontrará en
+condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
+los requerimientos de los parciales. En tal caso, la materia solamente se
+encontrará regularizada.
+
+## 7. Comunicación con la cátedra
+
+La comunicación se hará a través del Campus Virtual, al cual es obligatorio
+suscribirse, para recibir novedades u obtener apuntes útiles para el desarrollo
+del trabajo práctico y de la cursada en general. Además, la cátedra cuenta con
+un blog ya anteriormente mencionado, en el que también se comunicará novedades.
+
+- [**Link al Campus Virtual**](https://www.utnso.com.ar/campusvirtual)
+- [**Blog**](https://www.utnso.com.ar)
+- [**Organización con repositorios**](https://github.com/sisoputnfrba)
+- [**Aplicación para Android**](https://play.google.com/store/apps/details?id=com.utnso.contentmanager)
 
 [^1]:
     Solo está permitido utilizar bibliotecas externas que la Cátedra autorice. A
