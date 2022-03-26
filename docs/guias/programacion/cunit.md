@@ -73,7 +73,7 @@ agregadas, y se muestra un resumen en consola indicando:
 Si en el test del ejemplo anterior cambiaramos el 8 por un 4, el output de
 consola sería:
 
-![img01](/img/guias/programacion/cunit/img01.jpg)
+![img01](/img/guias/programacion/cunit/img01.png)
 
 ## Configurando el proyecto de Eclipse
 
@@ -149,18 +149,18 @@ Los tests podrían ser algo así:
 
 ```c
 void test1() {
-    printf("Soy el test 1!, y pruebo que 2 sea igual a 1+1");
+    printf("Soy el test 1!, y pruebo que 2 sea igual a 1+1\n");
     CU_ASSERT_EQUAL(1+1, 2);
 }
 
 void test2() {
-    printf("Soy el test 2!, y doy segmentation fault");
+    printf("Soy el test 2!, y doy segmentation fault\n");
     char *ptr = NULL;
     *ptr = 9;
 }
 
 void test3() {
-    printf("Soy el test 3!");
+    printf("Soy el test 3!\n");
 }
 ```
 
@@ -214,7 +214,7 @@ int main() {
 
 Ya tenemos un set de pruebas y configuramos todo. -> Run!
 
-![img03](/img/guias/programacion/cunit/img03.jpg)
+![img03](/img/guias/programacion/cunit/img03.png)
 
 Como se puede ver el _test1_ pasó ya que el assert se cumplió, el segundo rompió
 y por tanto _el test3 ni se llegó a ejecutar_.
@@ -255,6 +255,8 @@ Ahora que ya tenemos el código, pasemos a la parte importante. Agreguemos al
 int main() {
     CU_initialize_registry();
 
+    CU_pSuite prueba = CU_add_suite("Suite de prueba", NULL, NULL);
+
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
     CU_cleanup_registry();
@@ -267,7 +269,7 @@ Lo primero que estaría bueno probar es la primer parte, cuando el archivo que
 recibe como parámetro no existe. Armamos el test case para eso, lo agregamos al
 suite en el `main()` y lo corremos:
 
-```c
+```c{4-7,13-17}
 #include "lector.h"
 #include <CUnit/Basic.h>
 
@@ -294,18 +296,21 @@ int main() {
 }
 ```
 
+![img04](/img/guias/programacion/cunit/img04.png)
+
 Veremos que pasa correctamente. Listo.
 
 Ahora hay que probar el caso más común, que dado un archivo que exista, lo lea y
 devuelva la cantidad correcta de ocurrencias:
 
-```c{1-7,18-22}
+```c{1-8,19-23}
 void test_contar_devuelve_el_numero_exacto_de_ocurrencias() {
-    FILE *archivo = fopen("prueba.txt", "w+");
+    char *path = "prueba.txt";
+    FILE *archivo = fopen(path, "w+");
     fprintf(archivo, "aca hay como 4 as");
     fflush(archivo); //para que se guarde en disco ahora
-    int cantidad = archivo_contar(path,'a');
-    CU_ASSERT_EQUAL(cantidad,4);
+    int cantidad = archivo_contar(path, 'a');
+    CU_ASSERT_EQUAL(cantidad, 4);
 }
 
 int main() {
@@ -333,10 +338,7 @@ int main() {
 
 ¿Lo corremos?
 
-```:no-line-numbers
-  Test: archivo_contar devuelve el numero exacto de concurrencias ...FAILED
-    1. src/example.c:15  - CU_ASSERT_EQUAL(cantidad,4)
-```
+![img05](/img/guias/programacion/cunit/img05.png)
 
 Nos dice que falló y en qué assert. A ver qué pasó...
 
@@ -345,6 +347,8 @@ Ah, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 @[code{29-43} c{8}](@snippets/guias/programacion/cspec/lector.c)
 
 Lo cambiamos y vemos que ahora anda.
+
+![img06](/img/guias/programacion/cunit/img06.png)
 
 ### Funciones de inicialización y limpieza
 
@@ -449,6 +453,8 @@ int main() {
 (de paso le cambié el nombre al suite de "Suite de prueba" a "Archivo", que
 refleja más lo que se está probando)
 
+![img07](/img/guias/programacion/cunit/img07.png)
+
 > Che, pero estás llamando a `inicializar()` y `limpiar()` por cada test. ¿Eso
 > no lo hacía la biblioteca al llamar a `CU_add_suite()`?
 
@@ -468,20 +474,20 @@ Todos empiezan con `CU_ASSERT`, así que lo más fácil es escribir eso,
 - `CU_ASSERT_FALSE(value)`: Verifica que una expresión sea falsa
 <br><br>
 - `CU_ASSERT_EQUAL(actual, expected)`: Verifica que actual == expected
-- `CU_ASSERT_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+- `CU_ASSERT_NOT_EQUAL(actual, expected)`: Verifica lo opuesto al anterior
 <br><br>
 - `CU_ASSERT_STRING_EQUAL(actual, expected)`: Verifica que dos strings sean
   equivalentes [^3]
-- `CU_ASSERT_STRING_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+- `CU_ASSERT_STRING_NOT_EQUAL(actual, expected)`: Verifica lo opuesto al anterior
 - `CU_ASSERT_NSTRING_EQUAL(actual, expected, count)`: Verifica que los primeros
   `count` caracteres de las cadenas coincidan.
 <br><br>
 - `CU_ASSERT_PTR_EQUAL(actual, expected)`: Verifica que los punteros sean
   equivalentes
-- `CU_ASSERT_PTR_NOT_EQUAL(actual, expected)`: Lo opuesto al anterior
+- `CU_ASSERT_PTR_NOT_EQUAL(actual, expected)`: Verifica lo opuesto al anterior
 <br><br>
 - `CU_ASSERT_PTR_NULL(value)`: Verifica que un puntero es `NULL`
-- `CU_ASSERT_PTR_NOT_NULL(value)`: Lo opuesto al anterior
+- `CU_ASSERT_PTR_NOT_NULL(value)`: Verifica lo opuesto al anterior
 
 
 Es importante aclarar que **ninguno de estos assert termina con la ejecución del
@@ -501,6 +507,8 @@ void test2() {
 ```
 
 ## Preguntas frecuentes
+
+<!-- TODO: Revisar macro para ordenar las suites
 
 > Quiero organizar mejor los suites ¡no me gusta que estén todos en el main!
 
@@ -524,7 +532,7 @@ más prolija:
     CU_SuiteInfo suites[] = { [ 0 ...(DEFAULT_MAX_SUITES - 1)] = CU_SUITE_INFO_NULL};
 
     #define CUNIT_MAKE_SUITE(name, desc, init_suite_func, clean_suite_func, tests) \
-        static CU_SuiteInfo name##_suite = {desc, init_suite_func, clean_suite, tests }; \
+        static CU_SuiteInfo name##_suite = {desc, init_suite_func, clean_suite_func, tests }; \
         CU_SuiteInfo suites[0]; \
         int suite_index;\
         __attribute__((constructor)) void build_suite_##name(void) { \
@@ -537,7 +545,7 @@ más prolija:
 Luego, en cada .c guardaríamos en un array los tests pertenecientes a ese suite:
 
 ```c
-static CU_TestInfotests[] = {
+static CU_TestInfo tests[] = {
     { "Test 1", test1 },
     { "Test 2", test2 },
     { "Test 3", test3 },
@@ -551,6 +559,8 @@ Y por último en el main, en lugar de crear el suite con CU_add_suite, hacemos:
 ```c
 CU_register_suites(suites);
 ```
+
+-->
 
 > Mi programa a testear tiene una función `main()`, pero el proyecto de CUnit
 > también tiene una función `main()`... mi cerebro tira SEGMENTATION FAULT.
