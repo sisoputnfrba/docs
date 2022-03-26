@@ -233,13 +233,18 @@ queremos testear.
 El código a probar es el siguiente, es una función que cuenta el número de
 ocurrencias de un carácter en un archivo:
 
-- `lector.h`:
+<CodeGroup>
+<CodeGroupItem title="lector.h">
 
-@[code c](@snippets/guias/programacion/cspec/lector.h)
+@[code c{4}](@snippets/guias/programacion/cspec/lector.h)
 
-- `lector.c`:
+</CodeGroupItem>
+<CodeGroupItem title="lector.c">
 
-@[code c](@snippets/guias/programacion/cspec/lector.c)
+@[code c{29}](@snippets/guias/programacion/cspec/lector.c)
+
+</CodeGroupItem>
+</CodeGroup>
 
 Si tuviéramos un archivo `algo.txt` que tiene de contenido "hola mundo",
 entonces `archivo_contar("algo.txt", 'o')` devolvería 2, ya que hay dos letras
@@ -303,7 +308,9 @@ Veremos que pasa correctamente. Listo.
 Ahora hay que probar el caso más común, que dado un archivo que exista, lo lea y
 devuelva la cantidad correcta de ocurrencias:
 
-```c{1-8,19-23}
+```c{3-10,21-25}
+// ...
+
 void test_contar_devuelve_el_numero_exacto_de_ocurrencias() {
     char *path = "prueba.txt";
     FILE *archivo = fopen(path, "w+");
@@ -361,6 +368,8 @@ limpieza que lo borre (asi al terminar de correr el suite no queda el archivo
 suelto en la carpeta).
 
 ```c
+// ...
+
 static char *path = "prueba.txt";
 static FILE *archivo = NULL;
 
@@ -374,6 +383,8 @@ int limpiar() {
     fclose(archivo);
     return unlink(path);
 }
+
+// ...
 ```
 
 Estas funciones devuelven 0 en caso correcto y "distinto de 0" en caso

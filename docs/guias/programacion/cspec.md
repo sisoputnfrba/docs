@@ -181,13 +181,18 @@ Supongamos que hicimos un par de funciones de manejo de archivos y las queremos
 testear. El código a probar está a continuación. Básicamente es una función que
 cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
-- `lector.h`:
+<CodeGroup>
+<CodeGroupItem title="lector.h">
 
-@[code c](@snippets/guias/programacion/cspec/lector.h)
+@[code c{4}](@snippets/guias/programacion/cspec/lector.h)
 
-- `lector.c`:
+</CodeGroupItem>
+<CodeGroupItem title="lector.c">
 
-@[code c](@snippets/guias/programacion/cspec/lector.c)
+@[code c{29}](@snippets/guias/programacion/cspec/lector.c)
+
+</CodeGroupItem>
+</CodeGroup>
 
 Si tuviéramos un archivo **algo.txt** con el contenido: **hola mundo**, entonces
 `archivo_contar("algo.txt" , 'o')` devolvería **2**, ya que hay dos letras `o`
