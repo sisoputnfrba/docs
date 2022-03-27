@@ -32,8 +32,6 @@ export const sidebar: SidebarConfig = [
       '/guias/programacion/main',
       '/guias/programacion/readline',
       '/guias/programacion/buenas-practicas',
-      // '/guias/programacion/commons',
-      // '/guias/programacion/libraries',
       '/guias/programacion/cspec',
       '/guias/programacion/cunit',
     ],
@@ -45,7 +43,10 @@ export const sidebar: SidebarConfig = [
       '/guias/linux/sockets',
       '/guias/linux/serializacion',
       '/guias/linux/threads',
-      // '/guias/linux/seniales',
+      {
+        text: 'Señales (PPT)',
+        link: 'https://faq.utnso.com.ar/seniales',
+      },
     ],
   },
   {
@@ -54,8 +55,6 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/herramientas/debugger',
       '/guias/herramientas/valgrind',
-      // '/guias/herramientas/bash',
-      // '/guias/herramientas/ssh',
     ],
   },
 ]

@@ -77,10 +77,10 @@ export const navbar: NavbarConfig = [
             text: 'Charla de Threads',
             link: '/guias/linux/threads',
           },
-          // {
-          //   text: 'Señales',
-          //   link: '/guias/linux/seniales'
-          // }
+          {
+            text: 'Señales (PPT)',
+            link: 'https://faq.utnso.com.ar/seniales'
+          }
         ],
       },
       {
