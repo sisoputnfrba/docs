@@ -1,1 +1,0 @@
-# Automatizando tareas en Bash
