@@ -145,7 +145,7 @@ contraparte para desarrolladores_. Por las dudas, dejo los nombres de los
 paquetes de ambos:
 
 ```bash:no-line-numbers
-sudo apt-get install libreadline6 libreadline6-dev
+sudo apt-get install libreadline8 libreadline-dev
 ```
 
 Finalmente, solo resta compilar nuestro ejemplo usando el flag para bibliotecas
