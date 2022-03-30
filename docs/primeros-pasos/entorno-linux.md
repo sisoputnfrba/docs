@@ -22,17 +22,18 @@ para procesadores M1), te dejamos acá los paquetes que vienen instalados:
 2. Instalar los siguientes paquetes:
 
 ```bash:no-line-numbers
+# Ubuntu Server
 sudo apt-get install aptitude gcc gdb git vim libncurses5 valgrind tig make \
   autotools-dev strace emacs nano openjdk-8-jdk libcunit1 libevent1-dev ssh \
   libfuse-dev build-essential g++ libcunit1-dev curl htop tree wget \
   libreadline8 libreadline-dev docker docker-compose
-# Ruby
 gpg --keyserver hkp://keys.gnupg.net --recv-keys \
   409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable
 source /home/utnso/.rvm/scripts/rvm
 rvm install --default ruby-head
 
+# Entorno gráfico (Lubuntu)
 sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
   wireshark xclip bless gnome-do chromium-browser
 ```
