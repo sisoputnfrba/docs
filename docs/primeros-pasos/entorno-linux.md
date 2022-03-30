@@ -1,1 +1,1 @@
-# Armar el Entorno Linux
+# Conseguir un entorno Linux
