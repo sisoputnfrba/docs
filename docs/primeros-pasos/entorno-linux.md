@@ -175,8 +175,8 @@ portapapeles compartido de esta forma:
 
 ::: details En caso de que el portapapeles compartido funcione pero la pantalla completa no...
 
-En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico a
-VBoxVGA:
+En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico
+de la pantalla a VBoxVGA:
 
 ![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png)
 
