@@ -6,8 +6,8 @@ export const navbar: NavbarConfig = [
     link: '/primeros-pasos/',
   },
   {
-    text: 'Tengo una duda',
-    link: '/dudas',
+    text: 'Consultas',
+    link: '/consultas',
   },
   {
     text: 'Guías',
