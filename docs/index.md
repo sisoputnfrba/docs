@@ -6,7 +6,7 @@ actions:
   - text: Primeros pasos →
     link: /primeros-pasos/
   - text: ¡Tengo una duda!
-    link: /dudas
+    link: /consultas
     type: secondary
 
 footer: Made by sisoputnfrba with ❤️
