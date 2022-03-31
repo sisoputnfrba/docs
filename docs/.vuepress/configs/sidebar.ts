@@ -44,7 +44,7 @@ export const sidebar: SidebarConfig = [
       '/guias/linux/serializacion',
       '/guias/linux/threads',
       {
-        text: 'Señales (PPT)',
+        text: 'PowerPoint de Señales',
         link: 'https://faq.utnso.com.ar/seniales',
       },
     ],

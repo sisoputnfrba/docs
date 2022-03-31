@@ -74,11 +74,11 @@ export const navbar: NavbarConfig = [
             link: '/guias/linux/serializacion',
           },
           {
-            text: 'Charla de Threads',
+            text: 'Charla de Threads y Sincronización',
             link: '/guias/linux/threads',
           },
           {
-            text: 'Señales (PPT)',
+            text: 'PowerPoint de Señales',
             link: 'https://faq.utnso.com.ar/seniales'
           }
         ],
