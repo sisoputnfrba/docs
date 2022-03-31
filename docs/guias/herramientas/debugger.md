@@ -386,6 +386,39 @@ si efectivamente frena en algún lugar.
 
 ![debugger-19](/img/guias/herramientas/debugger/debugger-19.png)
 
+## Técnicas más avanzadas de debug
+
+Antes de terminar, te dejamos un par de videos que explican técnicas más
+avanzadas para debugear en Eclipse, que te pueden servir para casos muy
+particulares.
+
+### Desde una terminal externa
+
+> Autor del video: Gastón Prieto
+
+Si tu TP requiere usar la
+[biblioteca gráfica de la cátedra](https://github.com/sisoputnfrba/so-nivel-gui-library),
+notarás que no es posible ejecutar y debugear desde Eclipse, ya que la consola
+integrada no es interactiva.
+
+La solución a esto es debugear en forma remota utilizando una terminal externa
+como en el siguiente video:
+
+<YouTube v="KlKLSGaOZok"/>
+
+### Partiendo de un proceso que ya crasheó
+
+> Autor del video: Matías García Isaia
+
+Cuando ejecutamos una aplicación desde la consola y ésta es interrumpida por una
+señal (como, por ejemplo, `SIGSEGV`, que es `segmentation fault`), se _dumpea_
+el estado del proceso en un archivo.
+
+Esto nos permite debugear la aplicación después de que se haya interrumpido, lo
+cual se conoce como **debug postmortem**:
+
+<YouTube v="JkryXLsX2xE"/>
+
 ## The End
 
 Ahora, ¡a debugear!

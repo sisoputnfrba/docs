@@ -52,12 +52,6 @@ en la página:
 - [Eclipse - Refactors](https://docs.google.com/document/d/1UpPjGZmeR66WFjNXSVd5gEGVb0m-6EBejfkxFBO0CEg/edit)
 - [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.ja3m0nnnuhd2)
 
-### Debug Postmortem
-<YouTube v="JkryXLsX2xE"/>
-
-### Debug en una terminal externa
-<YouTube v="KlKLSGaOZok"/>
-
 ## VirtualBox
 
 ### Crear Snapshots
