@@ -63,7 +63,7 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
-        text: 'Aplicaciones de la teoría',
+        text: 'Uso de syscalls de Linux',
         children: [
           {
             text: 'Guía de Sockets',
@@ -84,7 +84,7 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
-        text: 'Herramientas',
+        text: 'Herramientas útiles',
         children: [
           {
             text: 'Debugging en Eclipse',

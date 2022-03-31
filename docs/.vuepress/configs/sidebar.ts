@@ -37,7 +37,7 @@ export const sidebar: SidebarConfig = [
     ],
   },
   {
-    text: 'Aplicaciones de la teoría',
+    text: 'Uso de syscalls de Linux',
     collapsible: true,
     children: [
       '/guias/linux/sockets',
@@ -50,7 +50,7 @@ export const sidebar: SidebarConfig = [
     ],
   },
   {
-    text: 'Herramientas',
+    text: 'Herramientas útiles',
     collapsible: true,
     children: [
       '/guias/herramientas/debugger',
