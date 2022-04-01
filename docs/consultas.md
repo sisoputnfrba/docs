@@ -40,6 +40,33 @@ En este caso sí suele ser más conveniente charlarlo presencialmente, sentite
 libre de plantear tus dudas en los sábados de soporte en
 [Discord](https://faq.utnso.com.ar/discord-invite).
 
+## ...por un problema técnico?
+
+En el caso de que tengas un problema técnico con VirtualBox u otra herramienta
+(y que te aparezca un texto de error del estilo: `VERR_ACCESS_DENIED` o
+`Can't find source file at`), te aconsejamos consultar primero:
+
+- El material que se encuentra en esta página
+- [El buscador de issues del foro](https://github.com/sisoputnfrba/foro/issues)
+  (recordá que podés filtrar por texto o por label)
+- Si se trata de algún mensaje de error que no aparece en el foro (o la solución
+  del foro no funcionó), existe la posibilidad de que alguien más por fuera de
+  la facultad se haya topado con el mismo problema, por lo que una búsqueda
+  rápida en [Google](https://google.com/) suele ser lo más inmediato.
+
+En caso de que lo anterior no haya funcionado, sentite libre de subir un issue
+al [foro](https://github.com/sisoputnfrba/foro/) o consultar el próximo sábado
+de soporte en [Discord](https://faq.utnso.com.ar/discord-invite).
+
+::: tip
+
+Si estás usando Eclipse, este video te puede ayudar a reportar mejor los errores
+que encuentres:
+
+<YouTube v="qKkmU13uKHw"/>
+
+:::
+
 ## ...dudas de implementación o de programación en C?
 
 Recordá que el `man` es tu amigo, podés consultar la documentación oficial de
@@ -56,24 +83,3 @@ También podés hacernos consultas a través de:
 
 - El [foro de issues de GitHub](https://github.com/sisoputnfrba/foro/)
 - Los sábados de soporte en [Discord](https://faq.utnso.com.ar/discord-invite)
-
-## ...por un problema técnico?
-
-En el caso de que tengas un problema técnico con VirtualBox, Eclipse u otra
-herramienta (y que te aparezca un texto de error como por ejemplo
-`VERR_ACCESS_DENIED` o
-`cannot open shared object file: No such file or directory`)
-
-Te aconsejamos consultar primero:
-
-- El material que se encuentra en esta página
-- [El buscador de issues del foro](https://github.com/sisoputnfrba/foro/issues)
-  (recordá que podés filtrar por texto o por label)
-- Si se trata de algún mensaje de error que no aparece en el foro (o la solución
-  del foro no funcionó), es probable que alguien más por fuera de la facultad se
-  haya encontrado con el mismo problema, por lo que una búsqueda rápida en
-  [Google](https://google.com/) suele ser lo más inmediato.
-
-En caso de que lo anterior no haya funcionado, sentite libre de subir un issue
-al Foro o consultar el próximo sábado de soporte en
-[Discord](https://faq.utnso.com.ar/discord-invite).

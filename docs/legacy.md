@@ -41,9 +41,6 @@ en la página:
 
 ## Eclipse
 
-### Cómo reportar errores correctamente
-<YouTube v="qKkmU13uKHw"/>
-
 ### Snippets/Templates
 - [Ayudas de Eclipse](https://docs.google.com/document/d/1S4H6pv6RldiWZlmQe0xaOYY-J5alByvhrYVeVMROWT0/edit)
 - [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.vv9t5d6yowf2)
