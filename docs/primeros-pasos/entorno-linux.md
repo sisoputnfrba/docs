@@ -12,9 +12,9 @@ funcione en el entorno en el que va a ser evaluado**.
 
 De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
 alternativa_ que utilizar un entorno nativo u otro software de virtualización
-(por ejemplo,
-[Parallels](https://www.parallels.com/blogs/parallels-desktop-apple-silicon-mac/)
-para procesadores M1), te dejamos acá los paquetes que vienen instalados:
+(por ejemplo, si contás con un procesador M1 podés probar
+[UTM](https://www.youtube.com/watch?v=hnwK-nkXolc)), te dejamos acá los paquetes
+para que puedan instalarlos:
 
 ::: details Abrir solo si estás seguro de que NO podés usar VirtualBox
 
