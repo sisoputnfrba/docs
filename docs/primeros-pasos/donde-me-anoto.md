@@ -1,20 +1,5 @@
 # ¿Dónde me anoto?
 
-## Unirme al servidor de Discord
-
-En el servidor de [Discord](https://faq.utnso.com.ar/discord-invite) vas a poder
-responder tus dudas técnicas o sobre el enunciado en forma sincrónica durante
-los sábados de soporte.
-
-Además, es una herramienta de chat por voz que te puede a ser útil para
-comunicarte con el resto de tu grupo.
-
-::: warning IMPORTANTE
-
-Recordá leer las normas del servidor en el canal `#rules` antes de comenzar.
-
-:::
-
 ## Matricularme en el Campus Virtual
 
 En el [Campus Virtual](https://faq.utnso.com.ar/cv) se encuentra centralizada la
@@ -69,5 +54,20 @@ mail de invitación a la organización en GitHub.
 
 Sin aceptar ese mail, no vas a poder acceder al repositorio del grupo ni subir
 código del TP allí.
+
+:::
+
+## Unirme al servidor de Discord
+
+En el servidor de [Discord](https://faq.utnso.com.ar/discord-invite) vas a poder
+responder tus dudas técnicas o sobre el enunciado en forma sincrónica durante
+los sábados de soporte.
+
+Además, es una herramienta de chat por voz que te puede a ser útil para
+comunicarte con el resto de tu grupo.
+
+::: warning IMPORTANTE
+
+Recordá leer las normas del servidor en el canal `#rules` antes de comenzar.
 
 :::
