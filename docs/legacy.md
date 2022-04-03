@@ -10,9 +10,6 @@ en la página:
 
 ## Linux
 
-### Rutas absolutas vs rutas relativas
-- [Rutas Argentinas](http://mgarciaisaia.github.io/tutorial-c/blog/2015/04/23/rutas-argentinas/)
-
 ### Sobre los scripts y sus intérpretes
 - [She Bangs, She Bangs...](https://mgarciaisaia.github.io/tutorial-c/blog/2014/03/20/she-bangs-she-bangs/)
 

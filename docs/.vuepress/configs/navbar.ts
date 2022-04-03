@@ -23,6 +23,10 @@ export const navbar: NavbarConfig = [
             text: 'Control de versionado con Git',
             link: '/guias/consola/git'
           },
+          {
+            text: 'Rutas relativas vs absolutas',
+            link: '/guias/consola/rutas'
+          },
         ]
       },
       {
@@ -44,14 +48,6 @@ export const navbar: NavbarConfig = [
             text: 'Buenas Prácticas de C',
             link: '/guias/programacion/buenas-practicas'
           },
-          // {
-          //   text: 'Tips para usar las Commons',
-          //   link: '/guias/programacion/commons'
-          // },
-          // {
-          //   text: 'Cómo compartir código entre proyectos',
-          //   link: '/guias/programacion/libraries'
-          // },
           {
             text: 'Unit Testing con CSpec',
             link: '/guias/programacion/cspec'

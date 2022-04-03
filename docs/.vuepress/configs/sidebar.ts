@@ -22,6 +22,7 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/consola/linux',
       '/guias/consola/git',
+      '/guias/consola/rutas',
     ],
   },
   {
