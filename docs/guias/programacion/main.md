@@ -20,9 +20,9 @@ Pero, ¿y si quisiera mantener muchos archivos de configuración para distintas
 ejecuciones? :thinking:
 
 Podría tener varios archivos y ponerlos en la carpeta en donde mi proceso espera
-encontrarlos, pero eso se vuelve engorroso y difícil de mantener, porque es
-difícil determinar qué contenía ese archivo al arrancar a ejecutar si lo andamos
-pisando y pisando.
+encontrarlos, pero eso se vuelve engorroso y difícil de mantener, porque, si
+levantamos varias instancias con distintas configuraciones, no es posible 
+determinar qué contenía ese archivo al arrancar a ejecutar cada una.
 
 Ahí es donde pueden resultarnos muy útiles los **parámetros del main**, para así
 poder pasarle la ruta al archivo que queramos (y cualquier otra cosa también).
