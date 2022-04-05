@@ -29,11 +29,12 @@ strcpy(p1.nombre,"John Doe");
 ```
 
 <!--![padding](/img/guias/serializacion/padding-imagen.jpg ) -->
-<img src="/img/guias/serializacion/padding-imagen.jpg" alt="padding" height="400px"/>  
+<div>
+<img src="/img/guias/serializacion/padding-imagen.png" />  
+</div>
 
 
-
-<img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/> 
+<!-- <img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/>  --> 
 
 
 
