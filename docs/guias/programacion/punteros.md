@@ -51,7 +51,7 @@ Un **puntero es la dirección de algún dato en memoria**. Un puntero **NO es el
 
 Supongamos que queremos declarar un puntero a un tipo de datos int. En C ésto se escribe de la siguiente manera:
 
-```c
+```c:no-line-numbers
 int *p;
 ``` 
 
@@ -70,7 +70,7 @@ La memoria se puede reservar o liberar **dinámicamente**, es decir, según nece
 
 Una de ellas es la función `malloc`, la cual sirve para solicitar un bloque de memoria del tamaño indicado por parámetro. Devuelve un puntero a la zona de memoria concedida:
 
-```c
+```c:no-line-numbers
 void* malloc (unsigned numero_de_bytes);
 ```
 
@@ -81,7 +81,7 @@ Como dijimos antes, `malloc` devuelve un puntero a la zona de memoria concedida.
 
 Antes de llamar a `malloc` tenemos que saber cuántos bytes queremos reservar en memoria. Como nuestro tipo de datos va a ser un `int`, vamos a reservar 4 bytes. Entonces, la llamada debería quedar así:
 
-```c
+```c:no-line-numbers
 malloc (4);
 ```
 
@@ -90,7 +90,7 @@ El operador `sizeof` recibe por parámetro un tipo de dato y devuelve el tamaño
 
 Entonces, nuestra llamada a `malloc` quedaría así:
 
-```c
+```c:no-line-numbers
 malloc(sizeof(int));
 ```
 
@@ -99,7 +99,7 @@ Tal vez éste ejemplo suene muy trivial, pero si nosotros tenemos que reservar e
 
 Bien, ya pedimos los bytes, ahora sólo queda asignarlo a nuestro puntero:
 
-```c
+```c:no-line-numbers
 int *p = malloc(sizeof(int));
 ```
 
@@ -194,7 +194,7 @@ Ejecutamos el código y veremos en consola lo siguiente:
 
 - Declaramos una variable `i` de tipo `int` con el valor **1**.
 
-```c
+```c:no-line-numbers
 int i = 1;
 ```
 
@@ -206,7 +206,7 @@ int i = 1;
 
 - Declaramos un puntero p a un tipo de dato int.
 
-```c
+```c:no-line-numbers
 int *p;
 ```
 
@@ -217,13 +217,13 @@ int *p;
 
 - Imprimimos por pantalla el valor de `i`, mostrará 1.
 
-```c 
+```c:no-line-numbers
 printf("Antes i vale: %d\n", i);
 ```
 
 - Le asignamos al puntero p la dirección de memoria de i.
 
-```c 
+```c:no-line-numbers 
 p = &i;
 ```
 
@@ -393,31 +393,31 @@ Esta función trivial nos va a ayudar a comprender la utilidad de este concepto.
 
 - Primero aloca un espacio consecutivo del tamaño de la palabra (+1 porque todos los strings terminan con un `\0`)
 
-```c
+```c:no-line-numbers
 malloc(sizeof(char) * strlen(palabra) + 1);
 ```
 
 - y asocia este espacio a una variable “tmp”
 
-```c
+```c:no-line-numbers
 char* tmp = 
 ```
 
 - Luego copia la palabra por argumento al segmento reservado
 
-```c 
+```c:no-line-numbers 
 memcpy(tmp, palabra, strlen(palabra));
 ```
 
 - Inserta el `\0` faltante en la última posición, usando el conjunto de bytes como si fuera un array.
 
-```c
+```c:no-line-numbers
 tmp[strlen(palabra)] = ‘\0’;
 ```
 
 - y retorna el puntero al nuevo sector de memoria con la copia de la palabra
 
-```c
+```c:no-line-numbers
 return tmp;
 ```
 
@@ -563,11 +563,11 @@ Entonces, si quisiéramos acceder al segundo elemento del array de strings (`nom
 ## Otros alloc 
 
 `calloc(n, bytes)`: reserva memoria para un array de n elementos que ocupan un tamaño de x bytes cada uno, además inicializa los bytes con un `\0`. Por ejemplo, supongamos que queremos reservar memoria para un array de 5 enteros, entonces:
-```c 
+```c:no-line-numbers 
 int *arrayEnteros = calloc(5, sizeof(int))
 ```
 El equivalente, con la función `malloc`, sería:
-```c
+```c:no-line-numbers
 int *arrayEnteros = malloc(5*sizeof(int))
 ```
 `realloc(*unPuntero, bytes)`: cambia el tamaño del bloque de memoria apuntado por unPuntero a uno de x bytes. Devuelve un puntero al bloque con el tamaño indicado. Es importante saber que los datos no son alterados y se guardan en el nuevo bloque siempre y cuando le hayamos reasignado un tamaño mayor o igual al del bloque anterior.  Los bytes agregados (es decir, si el tamaño total que le pasamos por parámetro es mayor al tamaño del bloque apuntado por unPuntero) no están inicializados.
@@ -591,7 +591,7 @@ Normalmente vamos a optar por usar el operador `sizeof`, los tipos de dato enter
 
 Un puntero a una función es una variable que almacena la dirección en memoria de una función que luego podrá ser invocada desde dicho puntero. Los punteros a funciones se declaran de una manera similar a los punteros que conocemos hasta ahora, con la diferencia de que hay que aclarar el tipo de valor que retorna y los tipos de datos de los parámetros que acepta. Al fin y al cabo, ¡como una función!. Por ejemplo:
 
-```c
+```c:no-line-numbers
 void (*f)(int,int);
 ```
 
@@ -747,6 +747,6 @@ int main(int argc, char **argv) {
 
 ## Links útiles 
 
-- Punteros en la guía Beej (en inglés): link.
-- Tutorial de Valgrind (para resolver memory leaks): link.
-- Video sobre punteros (en inglés): link. 
+- [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
+- [Tutorial de Valgrind](https://docs.google.com/document/d/1flOJ2P2g9UGVRiruuA4OCF6nucbN_BWVI0WDlYTJNf4/edit) (para resolver memory leaks)
+- [Video sobre punteros](https://www.youtube.com/watch?v=5VnDaHBi8dM&ab_channel=Napalm) (en inglés)
