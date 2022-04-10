@@ -1,12 +1,12 @@
 # Guía de Sockets
-_... o cómo conectar dos procesos sin morir en el intento_ 
+_... o cómo conectar dos procesos sin morir en el intento_
 
 <YouTube v="V0KFn9w62sY"/>
 
-## Objetivo 
+## Objetivo
 
 El presente documento tiene como fin explicar conceptos básicos de redes para luego poder adentrarse en qué son, cómo funcionan y cómo implementar sockets para crear un modelo cliente-servidor funcional para el trabajo práctico cuatrimestral
-## ¿Qué es un cliente-servidor? 
+## ¿Qué es un cliente-servidor?
 
 Antes de poder adentrarnos a hablar de sockets y cómo conectar dos procesos en C, primero hay que definir y tener bien en claro un par de conceptos de redes que se necesitan para poder arrancar.
 
@@ -24,7 +24,7 @@ Algunas preguntas clave para saber dentro de una arquitectura quién es cliente 
 - ¿Qué proceso puede continuar funcionando con normalidad si se cae otro?
 
 
-## IPs y puertos. ¿Dónde atraco el barco? 
+## IPs y puertos. ¿Dónde atraco el barco?
 
 Cuando tenemos dos computadoras o más dentro de una misma red (sea esta doméstica, empresarial o pública) dentro de esa red cada uno de los dispositivos tiene una IP, un ID único para cada dispositivo dentro de la red. Las IPs tienen la particularidad de ser cuatro números, separados por un punto, donde cada uno va de 0 a 255 (por ejemplo, 192.168.0.16). Si ahora mismo abrimos un cmd, powershell o cualquier otra terminal y escriben ipconfig para Windows o ifconfig para Linux y MacOSx , vamos a ver una pantalla que, entre otras cosas, nos dirá algo así como 192.168.algo.algo.  Esa es la IP que la computadora tiene asignada dentro de nuestra red doméstica. Los celulares, otras computadoras u otros dispositivos que se conecten a Internet tienen sus propias IPs asignadas, todas distintas entre sí.
 
@@ -35,7 +35,7 @@ Luego, por otro lado, tenemos los puertos. Estos son unidades lógicas dentro de
 Cada sistema operativo tiene 65535 puertos (2^16), y tiene los primeros 1000 (por lo menos) reservados para sus tareas y otras cosas que no son relevantes para la materia. Lo importante es que cuando desarrollemos la comunicación entre nuestros procesos, debemos tomar puertos que estén libres porque, como ya dijimos, dos procesos no pueden ocupar el mismo puerto al mismo tiempo.
 
 En síntesis, podemos pensar en la red como una calle donde la IP es análoga a la altura donde está el edificio al que queremos llegar, y el puerto es análogo al timbre/departamento que queremos llamar.
-## Protocolo de comunicación 
+## Protocolo de comunicación
 
 Podemos definir un protocolo como una serie de pasos a seguir ante determinado evento. Por lo tanto, un protocolo de comunicación no es más que una definición y estandarización de cómo se van a estar comunicando dos procesos distintos en la red. Podríamos hacer una analogía de decir que para que dos procesos se puedan comunicar, necesitan estar hablando en el mismo idioma (protocolo).
 
@@ -78,9 +78,9 @@ memset(&hints, 0, sizeof(hints));
 hints.ai_family = AF_INET;
 hints.ai_socktype = SOCK_STREAM;
 
-getaddrinfo(“127.0.0.1”, “4444”, &hints, &server_info);
+getaddrinfo("127.0.0.1", "4444", &hints, &server_info);
 
-int socket = socket(server_info->ai_family, 
+int socket = socket(server_info->ai_family,
                     server_info->ai_socktype,
                     server_info->ai_protocol);
 
@@ -99,7 +99,7 @@ Ya dijimos que los clientes para poder comunicarse con sus servidores, deben hac
 
 `bind()` lo que hace es tomar el socket que creamos con anterioridad y pegarlo con pegamento industrial al puerto que le digamos.
 
-Por otro lado, `listen()` toma ese mismo socket y lo marca en el sistema como un socket cuya única responsabilidad es notificar cuando un nuevo cliente esté intentando conectarse. 
+Por otro lado, `listen()` toma ese mismo socket y lo marca en el sistema como un socket cuya única responsabilidad es notificar cuando un nuevo cliente esté intentando conectarse.
 
 Una vez realizados ambos pasos, nuestro servidor está listo para recibir a los clientes.
 
@@ -113,10 +113,10 @@ hints.ai_family = AF_INET;
 hints.ai_socktype = SOCK_STREAM;
 hints.ai_flags = AI_PASSIVE;
 
-getaddrinfo(NULL, ”4444”, &hints, &servinfo);
+getaddrinfo(NULL, "4444", &hints, &servinfo);
 
-socket_servidor = socket(servinfo->ai_family, 
-                         servinfo->ai_socktype, 
+socket_servidor = socket(servinfo->ai_family,
+                         servinfo->ai_socktype,
                          servinfo->ai_protocol);
 
 bind(socket_servidor, servinfo->ai_addr, servinfo->ai_addrlen)
@@ -127,7 +127,7 @@ freeaddrinfo(servinfo);
 
 ```
 
-`bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que obtenga información de red sobre la IP “127.0.0.1”, osea la misma máquina en la que está corriendo en lugar de otra, en el puerto 4444, arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre la computadora local porque es en la computadora local donde estamos tratando de levantar el servidor para que los clientes en otras computadoras se puedan contectar.
+`bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que obtenga información de red sobre la IP "127.0.0.1", osea la misma máquina en la que está corriendo en lugar de otra, en el puerto 4444, arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre la computadora local porque es en la computadora local donde estamos tratando de levantar el servidor para que los clientes en otras computadoras se puedan contectar.
 
 Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas que puede mantener. `SOMAXCONN` como indica el nombre, es la cantidad máxima que admite el sistema operativo.
 
@@ -196,22 +196,22 @@ else
 
 `recv` en este caso es bloqueante debido a que le estamos pasando el flag `MSG_WAITALL`, que se encarga de esperar a que llegue por socket la cantidad de bytes que le decimos en el tercer parámetro. A causa de esto, el cliente espera la respuesta del handshake antes de continuar.
 
-Por otro lado, si el cliente en lugar de enviar un 1, estuviera enviando otro entero, o un `char` con el valor “1”, el servidor le devolvería error, porque éste entiende que está solicitando comunicarse mediante otro protocolo cuyo handshake sea ese.
+Por otro lado, si el cliente en lugar de enviar un 1, estuviera enviando otro entero, o un `char` con el valor "1", el servidor le devolvería error, porque éste entiende que está solicitando comunicarse mediante otro protocolo cuyo handshake sea ese.
 
 Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre para poder enviarle otros mensajes al servidor para que éste le conteste con los resultados de sus solicitudes. Tanto `send` como `recv` se encargan de mover bytes de datos a través de la red, y eso es lo que representa el segundo parámetro de ambas funciones, y ese es el motivo por el que reciben una posición de memoria.
 
-Todo muy lindo para los datos “simples” (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información serializada. Para extender este concepto tenemos disponible la guía de serialización, junto con un modelo de paquete propuesto para el envío mediante sockets.
+Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información serializada. Para extender este concepto tenemos disponible la guía de serialización, junto con un modelo de paquete propuesto para el envío mediante sockets.
 
-Algunos quizá estén pensando “¿por qué no puedo simplemente realizar múltiples sends para una sola operación/mensaje?” Porque al estar trabajando con paquetes de red no puedo garantizar el orden de llegada. Si necesito enviar un único mensaje simple cuyo contenido sea un entero o un string esto no es un problema ya que los datos primitivos están serializados en sí mismos, pero al complejizarse las solicitudes debido a que el servidor necesita más datos para poder procesarlos, serializar no es una recomendación, es una necesidad
+Algunos quizá estén pensando "¿por qué no puedo simplemente realizar múltiples sends para una sola operación/mensaje?" Porque al estar trabajando con paquetes de red no puedo garantizar el orden de llegada. Si necesito enviar un único mensaje simple cuyo contenido sea un entero o un string esto no es un problema ya que los datos primitivos están serializados en sí mismos, pero al complejizarse las solicitudes debido a que el servidor necesita más datos para poder procesarlos, serializar no es una recomendación, es una necesidad
 
-## [close()](https://man7.org/linux/man-pages/man2/close.2.html) 
+## [close()](https://man7.org/linux/man-pages/man2/close.2.html)
 
 Por último, e igual de importante que todo lo demás, los sockets una vez que no los usemos más deben ser cerrados con `close(socket)`. Esto normalmente se realiza del lado del cliente ya que, como dijimos antes, el servidor debe dar disponibilidad constante para todas las solicitudes de todos los clientes que tenga en el tiempo que este viva. Cuando el cliente se desconecta, `recv` nos retorna el valor 0 para que podamos manejar esa desconexión y cerrar el socket que (accept)amos con anterioridad.
 
 ## Multiplexando ando
 
 ::: warning NOTA
-Se recomienda fuertemente esperar a ver el concepto de “hilo” en la teoría de la materia y ver el [video de hilos en C](./threads.md) antes de comenzar este apartado.
+Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](./threads.md) antes de comenzar este apartado.
 :::
 
 Ya charlamos antes sobre que una de las condiciones para que un proceso servidor sea considerado servidor es necesario que sea capaz de atender a múltiples clientes de manera concurrente. El concepto de poder atender dos o más conexiones al mismo tiempo se conoce como multiplexación.
@@ -221,10 +221,10 @@ Pensemos en todo lo que hicimos hasta ahora. Creamos sockets en ambos cliente y 
 Necesitamos de alguna herramienta que sea capaz de paralelizar tareas dentro de un mismo proceso. ¿Será que el sistema operativo nos brinda algo capaz de hacer esto?
 
 <div style="text-align: center">
-<img src="/img/guias/sockets/pensativo-emoji.png" width="250px" />  
+<img src="/img/guias/sockets/pensativo-emoji.png" width="250px" />
 </div>
 
-<!-- ![pensando](/img/guias/sockets/pensativo-emoji.png) --> 
+<!-- ![pensando](/img/guias/sockets/pensativo-emoji.png) -->
 
 ¡Ya sé! ¡Hilos!
 Si bien los hilos no son llamadas al sistema relacionadas a los sockets, sí podemos usarlos para poder paralelizar las tareas que solicitan los muchos clientes que se nos van a conectar, para así poder volver lo más rápido posible al accept con el socket en listen. Lo que se me ocurre que podemos hacer es algo por este estilo:
@@ -234,16 +234,16 @@ while (1) {
    pthread_t thread;
    int *socket_cliente = malloc(sizeof(int));
    *socket_cliente = accept(socket_servidor, NULL, NULL);
-   pthread_create(&thread, 
-                  NULL, 
-                  (void*) atender_cliente, 
+   pthread_create(&thread,
+                  NULL,
+                  (void*) atender_cliente,
                   socket_cliente);
    pthread_detach(thread);
 }
 ```
 
 Entonces, de esta manera estamos creando un hilo por cada conexión nueva entrante, y ese hilo tendrá comunicación únicamente con el cliente cuyo socket le estemos pasando a través de `pthread_create()`.
- 
+
 El malloc lo realizamos debido a que como pthread recibe una posición de memoria, si usaramos siempre el mismo int, al acceder a su posición de memoria su valor se habría pisado, y por lo tanto todos los hilos tendrían siempre el mismo socket (y probablemente generaría condiciones de carrera).
 
 
@@ -251,9 +251,9 @@ El malloc lo realizamos debido a que como pthread recibe una posición de memori
 
 Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en inglés)](https://beej.us/guide/bgnet/), donde obviamos muchos conceptos de redes que no interesan para esta materia. Para los interesados, o aquellos que deseen ahondar más en busca de distintas formas de implementación, les comentamos que además hay una [traducción casera de la cátedra](https://github.com/mgarciaisaia/bgnet-spanish). Si ven alguna oportunidad de mejora en redacción o traducción estamos abiertos a escucharlos.
 
-## Notas finales 
+## Notas finales
 
-¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](../../consultas.md) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página. 
+¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](../../consultas.md) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página.
 
 ![final-imagen](/img/guias/sockets/final-imagen.png)
 ## Historial de versiones
