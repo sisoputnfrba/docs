@@ -253,7 +253,7 @@ Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en i
 
 ## Notas finales 
 
-¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en el foro, y que hagan uso de los links de links útiles, del redireccionario, de las guías y los videos tutoriales. 
+¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](../../consultas.md) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página. 
 
 ![final-imagen](/img/guias/sockets/final-imagen.png)
 ## Historial de versiones
