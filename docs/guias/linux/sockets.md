@@ -18,7 +18,7 @@ Por otro lado, es responsabilidad del servidor aceptar las conexiones entrantes 
 
 A su vez, los servidores pueden ser clientes de otros servidores. Esta jerarquía puede ser indefinida.
 
-Algunas preguntas clave para saber dentro de una arquitectura quien es cliente y quien es servidor:
+Algunas preguntas clave para saber dentro de una arquitectura quién es cliente y quién es servidor:
 - ¿Quién inicia la conexión con quién?
 - ¿Qué proceso necesita atender a N de otro?
 - ¿Qué proceso puede continuar funcionando con normalidad si se cae otro?
@@ -57,10 +57,12 @@ Las llamadas al sistema que el cliente tiene que realizar para conectarse a su s
 
 ![cliente-servidor](/img/guias/sockets/cliente-servidor.png)
 
-> Nota: El diagrama indica la secuencia en la que deberían ser llamada las funciones. Que estas estén al mismo nivel, no significa que deban suceder exactamente al mismo instante
+::: tip NOTA
+El diagrama indica la secuencia en la que deberían ser llamadas las funciones. Que éstas estén al mismo nivel, no significa que deban suceder exactamente al mismo instante.
+:::
 
 
-## socket() 
+## [socket()](https://man7.org/linux/man-pages/man2/socket.2.html)
 
 ![socket](/img/guias/sockets/socket.png)
 
@@ -85,10 +87,11 @@ int socket = socket(server_info->ai_family,
 freeaddrinfo(servinfo);
 ```
 
-Para el caso particular de `socket()` no vamos a entrar en muchos detalles de qué es cada parámetro de la función porque son conceptos que se escapan del alcance de la materia (y se verán en detalles en una correlativa de esta). A fines didácticos, quedemos con que esta configuración nos crea un socket capaz de hacer todo lo que vamos a necesitar durante el cuatrimestre.
+Para el caso particular de `socket()` no vamos a entrar en muchos detalles de qué es cada parámetro de la función porque son conceptos que se escapan del alcance de la materia (y se verán en detalles en una correlativa de ésta). A fines didácticos, quedemos en que esta configuración nos crea un socket capaz de hacer todo lo que vamos a necesitar durante el cuatrimestre.
+
 `getaddrinfo()` es una llamada al sistema que devuelve información de red sobre la IP y puerto que le pasemos, en este caso del servidor. Escapa un poco del objetivo de este documento su funcionamiento, pero lo único que necesitamos saber es que inyecta los datos necesarios para la creación de sockets en la variable `server_info` que le estamos pasando. Liberamos la memoria que ocupó con `freeaddrinfo()`.
 
-## bind() y listen() 
+## [bind()](https://man7.org/linux/man-pages/man2/bind.2.html) y [listen()](https://man7.org/linux/man-pages/man2/listen.2.html)
 
 ![bind-listen](/img/guias/sockets/bind-listen.png)
 
@@ -125,15 +128,18 @@ freeaddrinfo(servinfo);
 ```
 
 `bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que obtenga información de red sobre la IP “127.0.0.1”, osea la misma máquina en la que está corriendo en lugar de otra, en el puerto 4444, arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre la computadora local porque es en la computadora local donde estamos tratando de levantar el servidor para que los clientes en otras computadoras se puedan contectar.
+
 Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas que puede mantener. `SOMAXCONN` como indica el nombre, es la cantidad máxima que admite el sistema operativo.
 
 
-## accept() y connect() 
+## [accept()](https://man7.org/linux/man-pages/man2/accept.2.html) y [connect()](https://man7.org/linux/man-pages/man2/connect.2.html)
 
 ![accept-connect](/img/guias/sockets/accept-connect.png)
 
 Una vez el socket del servidor se marcó en modo de escucha, estamos preparados para empezar a recibir las conexiones de nuestros clientes.
+
 Para hacer esto, el servidor utiliza la llamada al sistema `accept()`, la cual es bloqueante. Esto significa que el proceso servidor se quedará bloqueado en accept hasta que le llegue un cliente.
+
 Cuando el cliente intente conectarse al servidor, lo hará mediante la llamada al sistema connect(). Si el servidor no está en accept, connect fallará y devolverá un error.
 
 Servidor:
@@ -154,7 +160,7 @@ Y así de simple, nuestros procesos ya están conectados.
 
 Una vez que el cliente fue aceptado, accept retorna un nuevo socket (file descriptor) que representa la conexión BIDIRECCIONAL entre el servidor y el cliente. Esto quiere decir que la comunicación entre el cliente y el servidor se hace entre el socket que realizó connect hace el servidor, y el socket que fue devuelto por el accept. El socket que está marcado como listen no participa de esta comunicación. Su única función es escuchar la llegada de nuevos clientes mediante accept.
 
-## send() y recv() 
+## [send()](https://man7.org/linux/man-pages/man2/send.2.html) y [recv()](https://man7.org/linux/man-pages/man2/recv.2.html)
 
 ![send-receive](/img/guias/sockets/send-receive.png)
 
@@ -190,21 +196,23 @@ else
 
 `recv` en este caso es bloqueante debido a que le estamos pasando el flag `MSG_WAITALL`, que se encarga de esperar a que llegue por socket la cantidad de bytes que le decimos en el tercer parámetro. A causa de esto, el cliente espera la respuesta del handshake antes de continuar.
 
-Por otro lado, si el cliente en lugar de enviar un 1, estuviera enviando otro entero, o un `char` con el valor “1”, el servidor le devolvería error, porque este entiende que está solicitando comunicarse mediante otro protocolo cuyo handshake sea ese.
+Por otro lado, si el cliente en lugar de enviar un 1, estuviera enviando otro entero, o un `char` con el valor “1”, el servidor le devolvería error, porque éste entiende que está solicitando comunicarse mediante otro protocolo cuyo handshake sea ese.
 
-Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre para poder enviarle otros mensajes al servidor para que este le conteste con los resultados de sus solicitudes. Tanto `send` como `recv` se encargan de mover bytes de datos a través de la red, y eso es lo que representa el segundo parámetro de ambas funciones, y ese es el motivo por el que reciben una posición de memoria.
+Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre para poder enviarle otros mensajes al servidor para que éste le conteste con los resultados de sus solicitudes. Tanto `send` como `recv` se encargan de mover bytes de datos a través de la red, y eso es lo que representa el segundo parámetro de ambas funciones, y ese es el motivo por el que reciben una posición de memoria.
 
 Todo muy lindo para los datos “simples” (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información serializada. Para extender este concepto tenemos disponible la guía de serialización, junto con un modelo de paquete propuesto para el envío mediante sockets.
 
 Algunos quizá estén pensando “¿por qué no puedo simplemente realizar múltiples sends para una sola operación/mensaje?” Porque al estar trabajando con paquetes de red no puedo garantizar el orden de llegada. Si necesito enviar un único mensaje simple cuyo contenido sea un entero o un string esto no es un problema ya que los datos primitivos están serializados en sí mismos, pero al complejizarse las solicitudes debido a que el servidor necesita más datos para poder procesarlos, serializar no es una recomendación, es una necesidad
 
-## close() 
+## [close()](https://man7.org/linux/man-pages/man2/close.2.html) 
 
 Por último, e igual de importante que todo lo demás, los sockets una vez que no los usemos más deben ser cerrados con `close(socket)`. Esto normalmente se realiza del lado del cliente ya que, como dijimos antes, el servidor debe dar disponibilidad constante para todas las solicitudes de todos los clientes que tenga en el tiempo que este viva. Cuando el cliente se desconecta, `recv` nos retorna el valor 0 para que podamos manejar esa desconexión y cerrar el socket que (accept)amos con anterioridad.
 
 ## Multiplexando ando
 
-(Se recomienda fuertemente esperar a ver el concepto de “hilo” en la teoría de la materia y ver el video de hilos en C antes de comenzar este apartado)
+::: warning NOTA
+Se recomienda fuertemente esperar a ver el concepto de “hilo” en la teoría de la materia y ver el [video de hilos en C](./threads.md) antes de comenzar este apartado.
+:::
 
 Ya charlamos antes sobre que una de las condiciones para que un proceso servidor sea considerado servidor es necesario que sea capaz de atender a múltiples clientes de manera concurrente. El concepto de poder atender dos o más conexiones al mismo tiempo se conoce como multiplexación.
 
