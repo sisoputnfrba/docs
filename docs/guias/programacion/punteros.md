@@ -1,10 +1,10 @@
-# Manejo de Punteros y Memoria Dinámica 
+# Manejo de Punteros y Memoria Dinámica
 
 ![imagen 1](/img/guias/punteros-memoria-dinamica/imagen1.png)
 
 Every computer, at the unreachable memory address 0x-1, stores a secret.  I found it, and it is that all humans ar-- SEGMENTATION FAULT.
 
-## Introducción 
+## Introducción
 
 Antes de meternos a fondo en las cuestiones de la manipulación de la memoria dinámica en C, definiremos algunos conceptos básicos.
 
@@ -22,42 +22,42 @@ La **memoria dinámica** es memoria que se reserva en *tiempo de ejecución* y s
 
 Una diferencia importante es que **el tamaño de la memoria dinámica se puede ir modificando durante la ejecución del programa**. ¿Qué quiere decir ésto? Que, por ejemplo, podrías ir agrandando/achicando una determinada estructura (por ejemplo, un array) a medida que lo necesitás.
 
-<div style="background-color: white"> 
+<div style="background-color: white">
 <img src="/img/guias/punteros-memoria-dinamica/imagen2.png" >
 </div>
 
 <!-- ![imagen 2](/img/guias/punteros-memoria-dinamica/imagen2.png) -->
 
 
-Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: “Todo poder conlleva una gran responsabilidad”.
+Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: "Todo poder conlleva una gran responsabilidad".
 
 Todos los datos tienen un tiempo de vida, nada persiste para siempre. En C, hay tres tipos de duración:
 - **Estática**: son aquellas variables que se crean una única vez junto con la creación del proceso y se destruyen junto con la destrucción del mismo, son únicas y generalmente pueden ser utilizadas desde cualquier parte del programa. Para generar una variable estática se la puede declarar por fuera de la función principal (arriba del main() por ejemplo), o bien usando el calificador **static**.
 - **Automática**: son aquellas variables locales que no son declaradas con el especificador static. Se crean al entrar al bloque en el que fueron declaradas y se destruyen al salir de ese bloque. Por ejemplo, el tiempo de vida de las variables internas de una función es lo que tome ejecutarla.
 - **Asignada**: es la memoria que se reserva de forma dinámica (en el heap) y que se explicó más arriba.
 
-## Punteros 
+## Punteros
 
-### ¿Qué es un puntero? 
+### ¿Qué es un puntero?
 
 Un **puntero es la dirección de algún dato en memoria**. Un puntero **NO es el dato** en sí mismo, sino su **posición en la memoria**. También se lo conoce como *referencia* a memoria.
 
-<div style="background-color: white; width: 150px; text-align: center; "> 
+<div style="background-color: white; width: 150px; text-align: center; ">
 <img src="/img/guias/punteros-memoria-dinamica/imagen3.png" >
 </div>
 <!-- ![imagen 3](/img/guias/punteros-memoria-dinamica/imagen3.png) -->
 
-### ¿Cómo declaramos un puntero? 
+### ¿Cómo declaramos un puntero?
 
 Supongamos que queremos declarar un puntero a un tipo de datos int. En C ésto se escribe de la siguiente manera:
 
 ```c:no-line-numbers
 int *p;
-``` 
+```
 
 Bien, ya declaramos el puntero. Sin embargo, no está inicializado y apunta a basura.
 
-<div style="background-color: white; width: 150px; text-align: center; padding: 2px; "> 
+<div style="background-color: white; width: 150px; text-align: center; padding: 2px; ">
 <img src="/img/guias/punteros-memoria-dinamica/imagen4.png" >
 </div>
 <!-- ![imagen 4](/img/guias/punteros-memoria-dinamica/imagen4.png) -->
@@ -105,7 +105,7 @@ int *p = malloc(sizeof(int));
 
 En resumen, nuestro código inicial quedaría de ésta manera:
 
-```c 
+```c
 #include <stdlib.h>
 
 int main(void){
@@ -126,18 +126,18 @@ int main(void){
    return 0;
 }
 ```
-<div style="background-color: white; width: 150px; text-align: center;"> 
+<div style="background-color: white; width: 150px; text-align: center;">
 <img src="/img/guias/punteros-memoria-dinamica/imagen5.png" >
 </div>
 <!--![imagen 5](/img/guias/punteros-memoria-dinamica/imagen5.png)-->
 
-Al hacer `*p` estamos diciendo *“al contenido de p”* o *”a lo apuntado por p”*. Si hiciéramos `p = 2` estaríamos modificando al puntero p, y no al valor apuntado por el puntero p.
+Al hacer `*p` estamos diciendo *"al contenido de p"* o *"a lo apuntado por p"*. Si hiciéramos `p = 2` estaríamos modificando al puntero p, y no al valor apuntado por el puntero p.
 
 Entonces, para inicializar un puntero, tenemos que realizar dos pasos:
 - Reservar el espacio en memoria.
 - Darle un valor inicial al dato contenido en ése espacio en memoria.
 
-### Operaciones de punteros 
+### Operaciones de punteros
 
 #### Dirección de una variable (&)
 
@@ -158,8 +158,8 @@ int main(void){
 }
 ```
 
-- `%d` y `%p` son especificadores de formato. 
-- `%d` está diciendo que en ésa parte de la línea va a imprimir un valor entero. 
+- `%d` y `%p` son especificadores de formato.
+- `%d` está diciendo que en ésa parte de la línea va a imprimir un valor entero.
 - `%p` está diciendo que en ésa parte de la línea va a imprimir la dirección en memoria del dato, por ejemplo `0x7fff78c088d8`.
 
 >Ojo! El operador `&` se puede usar con todo tipo de variables ya que todo está contenido en la memoria.
@@ -188,7 +188,7 @@ int main(void){
 
 Ejecutamos el código y veremos en consola lo siguiente:
 
-*Antes `i` vale **1**.* 
+*Antes `i` vale **1**.*
 
 *Ahora `i` vale **2** y el **contenido de p** vale **2**.*
 
@@ -198,7 +198,7 @@ Ejecutamos el código y veremos en consola lo siguiente:
 int i = 1;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;"> 
+<div style="background-color: white; width: 150px; text-align: center;">
 <img src="/img/guias/punteros-memoria-dinamica/imagen6.png" >
 </div>
 
@@ -210,7 +210,7 @@ int i = 1;
 int *p;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;"> 
+<div style="background-color: white; width: 150px; text-align: center;">
 <img src="/img/guias/punteros-memoria-dinamica/imagen7.png" >
 </div>
 <!--![imagen 7](/img/guias/punteros-memoria-dinamica/imagen7.png)-->
@@ -223,11 +223,11 @@ printf("Antes i vale: %d\n", i);
 
 - Le asignamos al puntero p la dirección de memoria de i.
 
-```c:no-line-numbers 
+```c:no-line-numbers
 p = &i;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;"> 
+<div style="background-color: white; width: 150px; text-align: center;">
 <img src="/img/guias/punteros-memoria-dinamica/imagen8.png" >
 </div>
 <!-- ![imagen 8](/img/guias/punteros-memoria-dinamica/imagen8.png) -->
@@ -238,7 +238,7 @@ p = &i;
 *p = 2;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;"> 
+<div style="background-color: white; width: 150px; text-align: center;">
 <img src="/img/guias/punteros-memoria-dinamica/imagen9.png" >
 </div>
 <!-- ![imagen 9](/img/guias/punteros-memoria-dinamica/imagen9.png) -->
@@ -341,7 +341,7 @@ typedef struct
 } t_persona;
 ```
 
-Queremos crear un puntero hacia una estructura `t_persona` que contenga como nombre “Esteban”, apellido “Trabajos” y edad 56.
+Queremos crear un puntero hacia una estructura `t_persona` que contenga como nombre "Esteban", apellido "Trabajos" y edad 56.
 
 Si quisiese acceder al nombre de un `t_persona`, tendría primero que acceder a la estructura y luego a sus datos. Vamos a hacer ésto utilizando el operador `*`.
 
@@ -352,7 +352,7 @@ t_persona *p = malloc(sizeof(t_persona));
 (*p).edad = 56;
 ```
 
-Sin embargo, C ofrece una alternativa a la sintaxis `(*p)`. mediante el operador `->(“flechita”)`. En éste caso para que quede más “limpio” el código.
+Sin embargo, C ofrece una alternativa a la sintaxis `(*p)`. mediante el operador `->("flechita")`. En éste caso para que quede más "limpio" el código.
 
 ```c
 t_persona *p = malloc(sizeof(t_persona));
@@ -373,17 +373,17 @@ typedef struct
 } t_persona;
 ```
 
-Si quisiéramos acceder al nombre del hijo, bastaría con tipear: `p->hijo->nombre`. 
+Si quisiéramos acceder al nombre del hijo, bastaría con tipear: `p->hijo->nombre`.
 
-## Funciones que retornan punteros 
+## Funciones que retornan punteros
 
 Como vimos antes, el pasarle un puntero como argumento a una función resulta de mucha utilidad si queremos cambiar el contenido de esa variable dentro de la función, o si no queremos copiar toda la información devuelta, pero... ¿Qué hay de las funciones que devuelven punteros? Tomemos este ejemplo:
 
-```c 
+```c
 char* copiar(char* palabra){
 	char* tmp = malloc(sizeof(char) * strlen(palabra) + 1);
 	memcpy(tmp, palabra, strlen(palabra));
-	tmp[strlen(palabra)] = ‘\0’;
+	tmp[strlen(palabra)] = '\0';
 	return tmp;
 }
 ```
@@ -397,22 +397,22 @@ Esta función trivial nos va a ayudar a comprender la utilidad de este concepto.
 malloc(sizeof(char) * strlen(palabra) + 1);
 ```
 
-- y asocia este espacio a una variable “tmp”
+- y asocia este espacio a una variable "tmp"
 
 ```c:no-line-numbers
-char* tmp = 
+char* tmp =
 ```
 
 - Luego copia la palabra por argumento al segmento reservado
 
-```c:no-line-numbers 
+```c:no-line-numbers
 memcpy(tmp, palabra, strlen(palabra));
 ```
 
 - Inserta el `\0` faltante en la última posición, usando el conjunto de bytes como si fuera un array.
 
 ```c:no-line-numbers
-tmp[strlen(palabra)] = ‘\0’;
+tmp[strlen(palabra)] = '\0';
 ```
 
 - y retorna el puntero al nuevo sector de memoria con la copia de la palabra
@@ -423,13 +423,13 @@ return tmp;
 
 Es notable mencionar que la función es la que crea el segmento en memoria, y que si se llamara **n** veces, crearía **n segmentos de memoria**, cada uno con una copia de la palabra, por lo tanto el que reciba el segmento de memoria tiene la responsabilidad de liberarlo cuando no lo necesite más.
 
-## “Tu programa chorea memoria!” (A.K.A Memory Leaks)
+## "Tu programa chorea memoria!" (A.K.A Memory Leaks)
 
-Al hacer el `malloc`, uno reserva un segmento continuo de memoria de el tamaño que se le indica, y un poquito más. Este extra contiene información sobre el segmento, como el tamaño, y otra metadata que el sistema operativo crea conveniente. 
+Al hacer el `malloc`, uno reserva un segmento continuo de memoria de el tamaño que se le indica, y un poquito más. Este extra contiene información sobre el segmento, como el tamaño, y otra metadata que el sistema operativo crea conveniente.
 
 Cuando **nuestro proceso finaliza, el SO se encarga de liberar toda la memoria asociada a nuestro proceso**. Sin embargo, durante la ejecución de nuestro proceso, **es responsabilidad nuestra liberar la memoria asignada dinámicamente** para poder reutilizarla. De no hacer ésto, nuestros procesos estarían ocupando más memoria de la que requieren realmente.
 
-Seguramente dirás: *“yo tengo 4GB de memoria, ¿qué me importa si consumo un toque más de memoria o no?, de última me compro 4GB más que están 200p man”*. 
+Seguramente dirás: *"yo tengo 4GB de memoria, ¿qué me importa si consumo un toque más de memoria o no?, de última me compro 4GB más que están 200p man"*.
 En parte tenés razón y en parte no, ¿por qué?, porque si nuestro proceso no finaliza nunca (es decir, es un while gigante) y se encarga de hacer mucho procesamiento, creeme que vas a empezar a ocupar memoria a lo loco a tal punto que en un momento se va a ver afectada la performance del proceso y te vas a quedar sin memoria. Y cuando te quedás sin memoria, el SO prioriza su vida y mata el proceso que la está pidiendo.
 
 Generalmente, las fugas de memoria o memory leaks se dan cuando perdemos la referencia de un puntero en algún punto. Retomemos el ejemplo anterior:
@@ -438,7 +438,7 @@ Generalmente, las fugas de memoria o memory leaks se dan cuando perdemos la refe
 char* copiar(char* palabra){
 	char* tmp = malloc(sizeof(char) * strlen(palabra) + 1);
 	memcpy(tmp, palabra, strlen(palabra));
-	tmp[strlen(palabra)] = ‘\0’;
+	tmp[strlen(palabra)] = '\0';
 	return tmp;
 }
 ```
@@ -454,7 +454,7 @@ Y si no me creés, probá esto:
 void copiar(char* palabra){
 	char* tmp = malloc(sizeof(char) * strlen(palabra) + 1);
 	memcpy(tmp, palabra, strlen(palabra));
-	tmp[strlen(palabra)] = ‘\0’;
+	tmp[strlen(palabra)] = '\0';
 }
 
 void main(void){
@@ -481,7 +481,7 @@ char* reservarMemoria(int n){
 
 int main(void){
    char* array;
-   array = reservarMemoria(3); //Reserva 3 char’s consecutivos
+   array = reservarMemoria(3); //Reserva 3 char's consecutivos
    free(array);
 }
 ```
@@ -492,7 +492,7 @@ Si tenemos estructuras con punteros, el orden de liberación es muy importante. 
 char* copiar(char* palabra){
 	char* tmp = malloc(sizeof(char) * strlen(palabra) + 1);
 	memcpy(tmp, palabra, strlen(palabra));
-	tmp[strlen(palabra)] = ‘\0’;
+	tmp[strlen(palabra)] = '\0';
 	return tmp;
 }
 
@@ -511,12 +511,12 @@ nombres[2] = copiar("Santiago");	//8 + 1 chars
 }
 ```
 
-<div style="background-color: white"> 
+<div style="background-color: white">
 <img src="/img/guias/punteros-memoria-dinamica/imagen10.png" >
 </div>
 <!-- ![imagen 10](/img/guias/punteros-memoria-dinamica/imagen10.png) -->
 
-El programa reserva espacio para 4 punteros, y despues carga cada uno de esos punteros con los nombres “Joaquin”, “Matias”, “Santiago” y “Gastón”. Si yo libero la variable nombres, entonces no tengo forma de liberar los restantes 35 chars que reservé para las letras, por lo que perdí (leak’ie) 35 bytes de memoria. La forma correcta de terminar el programa sería:
+El programa reserva espacio para 4 punteros, y despues carga cada uno de esos punteros con los nombres "Joaquin", "Matias", "Santiago" y "Gastón". Si yo libero la variable nombres, entonces no tengo forma de liberar los restantes 35 chars que reservé para las letras, por lo que perdí (leak'ie) 35 bytes de memoria. La forma correcta de terminar el programa sería:
 
 ```c
 int i;
@@ -533,7 +533,7 @@ Aclaración: si bien `free()` no borra los datos y el puntero sigue estando, lo 
 
 La importante de que reservemos memoria es que nos aseguramos de que ningún proceso más acceda a ése espacio (salvo que le demos permiso, pero éso es otra historia).
 
-## Aritmética de Punteros 
+## Aritmética de Punteros
 
 El lenguaje nos permite sumar o restar cantidades enteras al puntero para que apunte a direcciones de memoria distintas, a ésto se lo conoce como aritmética de punteros.
 Sirve mucho a la hora de hacer manejos de memoria y es una sintaxis alternativa a la del acceso de elementos de un array.
@@ -560,10 +560,10 @@ Entonces, si quisiéramos acceder al segundo elemento del array de strings (`nom
 *(nombres+3) = copiar("Gaston");		//6 + 1 chars
 ```
 
-## Otros alloc 
+## Otros alloc
 
 `calloc(n, bytes)`: reserva memoria para un array de n elementos que ocupan un tamaño de x bytes cada uno, además inicializa los bytes con un `\0`. Por ejemplo, supongamos que queremos reservar memoria para un array de 5 enteros, entonces:
-```c:no-line-numbers 
+```c:no-line-numbers
 int *arrayEnteros = calloc(5, sizeof(int))
 ```
 El equivalente, con la función `malloc`, sería:
@@ -575,7 +575,7 @@ Debemos tener cuidado en los parámetros que le pasemos porque:
 Si unPuntero es `NULL`, la función se comporta como un `malloc(bytes)`.
 Si unPuntero no es `NULL` y `bytes = 0`, la función se comporta como un `free(unPuntero)`.
 
-## El problema del tipo de dato "int" 
+## El problema del tipo de dato "int"
 
 Sin embargo, con el tipo de datos `int` hay un tema muy importante a considerar. Dependiendo de la arquitectura, sistema operativo, y del compilador en sí mismo, el tipo de dato `int` va a tener un tamaño u otro. Generalmente `int` tiene un tamaño equivalente al tamaño de la palabra del procesador. Por ende, si estamos en una arquitectura de 32 bits, la palabra tendrá un tamaño de 32 bits, `int` tendrá un tamaño de 32 bits o 4 bytes (8 bits = 1 byte). Si estamos en una arquitectura de 64 bits, la palabra tendrá un tamaño de 64 bits, `int` tendrá un tamaño de 64 bits o 8 bytes.
 
@@ -587,7 +587,7 @@ Utilizar el operador el `sizeof()` para que se acople a la arquitectura en la qu
 
 Normalmente vamos a optar por usar el operador `sizeof`, los tipos de dato entero de tamaño fijo los vamos a dejar para aquellos momentos en que no podemos dejar el tamaño del entero al criterio del sistema operativo. Un uso común para estos tipos de datos es cuando queremos realizar un intercambio de datos entre dos computadoras diferentes, pero eso lo veremos en el proximo capitulo.
 
-## EXTRA: Punteros a Funciones 
+## EXTRA: Punteros a Funciones
 
 Un puntero a una función es una variable que almacena la dirección en memoria de una función que luego podrá ser invocada desde dicho puntero. Los punteros a funciones se declaran de una manera similar a los punteros que conocemos hasta ahora, con la diferencia de que hay que aclarar el tipo de valor que retorna y los tipos de datos de los parámetros que acepta. Al fin y al cabo, ¡como una función!. Por ejemplo:
 
@@ -595,7 +595,7 @@ Un puntero a una función es una variable que almacena la dirección en memoria 
 void (*f)(int,int);
 ```
 
-Con ésto estamos declarando un puntero f a una función que recibirá por parámetro dos enteros `(int,int)` y no retorna ningún valor. 
+Con ésto estamos declarando un puntero f a una función que recibirá por parámetro dos enteros `(int,int)` y no retorna ningún valor.
 
 En el siguiente código veremos cómo un posible uso:
 
@@ -625,7 +625,7 @@ void (*punteroAFuncion)(int);
 ```
 - Le asignamos al puntero la dirección en memoria de la función imprimirValor.
 
-```c:no-line-numbers 
+```c:no-line-numbers
 punteroAFuncion = &imprimirValor;
 ```
 - Llamamos a la función mediante el puntero, nótese que la sintaxis es idéntica a la llamada de una función cualquiera.
@@ -634,7 +634,7 @@ punteroAFuncion(1);
 ```
 Los punteros a funciones nos pueden servir para, por ejemplo, reutilizar código en funciones genéricas. Para ser más claros, supongamos que tengo una lista de alumnos en la que de cada alumno se conoce su nombre, apellido, curso y notas de cada parcial.
 
-```c 
+```c
 typedef struct
 {
    char *nombre;
@@ -647,9 +647,9 @@ typedef struct
 ```
 
 El último campo se utiliza para anidar los distintos alumnos, es decir, para formar una lista.
-Una operación común en las listas es realizar un filtrado, es decir, a partir de una lista obtener otra que cumple con unas determinadas condiciones. Por ejemplo, todos los alumnos del curso 3020, todos los alumnos que aprobaron los dos parciales (es decir, `notaPrimerParcial >= 4 && notaSegundoParcial >=4`) o todos los alumnos cuyo nombre empieza con la letra ‘A’.
+Una operación común en las listas es realizar un filtrado, es decir, a partir de una lista obtener otra que cumple con unas determinadas condiciones. Por ejemplo, todos los alumnos del curso 3020, todos los alumnos que aprobaron los dos parciales (es decir, `notaPrimerParcial >= 4 && notaSegundoParcial >=4`) o todos los alumnos cuyo nombre empieza con la letra 'A'.
 
-Nosotros, como programadores, decimos “ah, quiero obtener todos los alumnos cuyo nombre empiezan con la letra ‘A’, pero capaz mañana quiero saber quiénes son los que empiezan con la letra ‘Z’, entonces me adelanto y hago que le pase la letra con la que empieza el nombre por parámetro”. Lo mismo con el filtrado por curso.
+Nosotros, como programadores, decimos "ah, quiero obtener todos los alumnos cuyo nombre empiezan con la letra 'A', pero capaz mañana quiero saber quiénes son los que empiezan con la letra 'Z', entonces me adelanto y hago que le pase la letra con la que empieza el nombre por parámetro". Lo mismo con el filtrado por curso.
 
 Entonces, programamos unas funciones cuya definición sería:
 
@@ -665,7 +665,7 @@ t_alumno *filtrarPorCurso(t_alumno *listaAlumnos, int curso)
 {
    t_alumno *aux = listaAlumnos;
    t_alumno *listaFiltrada = crearListaAlumnos();
-   
+
    while(aux != NULL)
    {
       if (aux->curso == curso)
@@ -673,8 +673,8 @@ t_alumno *filtrarPorCurso(t_alumno *listaAlumnos, int curso)
          agregarALista(listaFiltrada, aux);
       }
       aux = aux->siguiente;
-   }   
-   
+   }
+
    return listaFiltrada;
 }
 ```
@@ -686,7 +686,7 @@ t_alumno *filtrarPorLetraInicialNombre(t_alumno *listaAlumnos, char c)
 {
    t_alumno *aux = listaAlumnos;
    t_alumno *listaFiltrada = crearListaAlumnos();
-   
+
    while(aux != NULL)
    {
       if (aux->nombre[0] == c)
@@ -694,8 +694,8 @@ t_alumno *filtrarPorLetraInicialNombre(t_alumno *listaAlumnos, char c)
          agregarALista(listaFiltrada, aux);
       }
       aux = aux->siguiente;
-   }   
-   
+   }
+
    return listaFiltrada;
 }
 ```
@@ -713,7 +713,7 @@ t_alumno *filtrarPorCriterio(t_alumno *listaAlumnos, bool (*criterio)(t_alumno*)
 {
    t_alumno *aux = listaAlumnos;
    t_alumno *listaFiltrada = crearListaAlumnos();
-   
+
    while(aux != NULL)
    {
       if (criterio(aux))
@@ -721,13 +721,13 @@ t_alumno *filtrarPorCriterio(t_alumno *listaAlumnos, bool (*criterio)(t_alumno*)
          agregarALista(listaFiltrada, aux);
       }
       aux = aux->siguiente;
-   }   
-   
+   }
+
    return listaFiltrada;
 }
 ```
 
-En negrita está marcado lo que cambió con respecto a la versión anterior. 
+En negrita está marcado lo que cambió con respecto a la versión anterior.
 De ésta manera, sólo tendríamos que definir funciones criterio que respeten la definición dada en filtrarPorCriterio.
 
 Y se usaría de la siguiente manera:
@@ -740,12 +740,12 @@ int main(int argc, char **argv) {
      }
      //... inicializar lista ...
      t_alumno *filtrados = filtrarPorCriterio(alumnos, nombreEmpiezaCon);
-     
+
      return 0;
 }
 ```
 
-## Links útiles 
+## Links útiles
 
 - [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
 - [Tutorial de Valgrind](../herramientas/valgrind.md) (para resolver memory leaks)
