@@ -3,18 +3,18 @@
 <YouTube v="GnuurOt8yqE"/>
 
 
-## Objetivo 
+## Objetivo
 
 El presente documento tiene como fin explicar qué es, para qué sirve y cómo serializar distintos tipos de mensaje desde C. Para esto, se explicarán los distintos tipos de mensajes y se ofrecerán ejemplos de cómo serializarlos para enviarlos.
 
-## TADs 
+## TADs
 
 Decimos que un TAD (tipo abstracto de dato) es un conjunto de datos que tiene operaciones asociadas, que se encuentran escondidos bajo un mismo identificador. Generalmente en C, representamos un TAD mediante el uso de un `struct`.
 
 A la hora de trabajar con structs podemos notar que el tamaño de la misma en memoria no siempre coincide con la suma del tamaño de sus elementos (es más, no suele ser así). Esto ocurre a causa del **padding** que agrega el compilador para intentar optimizar los accesos a memoria.
 
-```c 
-typedef struct { 
+```c
+typedef struct {
     uint32_t dni;
     uint8_t edad;
     uint32_t pasaporte;
@@ -30,11 +30,11 @@ strcpy(p1.nombre,"John Doe");
 
 <!--![padding](/img/guias/serializacion/padding-imagen.jpg ) -->
 <div>
-<img src="/img/guias/serializacion/padding-imagen.png" />  
+<img src="/img/guias/serializacion/padding-imagen.png" />
 </div>
 
 
-<!-- <img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/>  --> 
+<!-- <img src="/img/guias/serializacion/padding-exclamacion.png" alt="padding-exclamacion" width="300px"/>  -->
 
 
 
@@ -45,17 +45,17 @@ El tamaño de este padding depende de varios factores como, por ejemplo, el comp
 Para solucionar estos inconvenientes debemos **serializar**.
 
 
-## ¿Qué es serialización? 
+## ¿Qué es serialización?
 
 El concepto de serializar consiste en _especificar un protocolo en común, para que dos procesos se comuniquen de manera organizada_. La idea es poder enviar un stream de datos siguiendo un orden definido y conocido por ambos procesos.
 
-## Estructuras estáticas 
+## Estructuras estáticas
 
 Supongamos que tenemos el siguiente TAD:
 
 ```c
 
-typedef struct { 
+typedef struct {
     uint32_t dni;
     uint8_t edad;
     uint32_t pasaporte;
@@ -67,15 +67,15 @@ Nuestro objetivo entonces será organizar los elementos para enviarlos de una ma
 
 ![Protocolo](/img/guias/serializacion/protocolo.jpg)
 
-En este caso, un posible protocolo, es agregar un header que normalmente utilizaremos para indicar qué tipo de dato vamos a enviar. La idea es que del otro lado se reciba primero este header, y con eso ya se puede “preparar” para saber qué viene después (generalmente todo lo que viene después del header se conoce como _payload_).
+En este caso, un posible protocolo, es agregar un header que normalmente utilizaremos para indicar qué tipo de dato vamos a enviar. La idea es que del otro lado se reciba primero este header, y con eso ya se puede "preparar" para saber qué viene después (generalmente todo lo que viene después del header se conoce como _payload_).
 
-Es decir, si en el header indicamos que vamos a enviar una “persona”, del otro lado al recibir esto ya sabe que lo próximo a recibir va a ser el DNI, el pasaporte, el nombre y, por último, la edad. 
+Es decir, si en el header indicamos que vamos a enviar una "persona", del otro lado al recibir esto ya sabe que lo próximo a recibir va a ser el DNI, el pasaporte, el nombre y, por último, la edad.
 
 Entonces, ¿cómo hacemos para serializar este struct? Primero empezamos reservando un bloque de HEAP, suficiente para almacenar nuestra estructura. Éste lo denominaremos como nuestro buffer intermedio, donde se irán guardando nuestros datos mediante la utilización de la función [`memcpy()`](https://linux.die.net/man/3/memcpy), es decir, se asignará todo lo que se encuentra en la estructura, en ese buffer.
 
 ![padding-gif](/img/guias/serializacion/padding-gif.gif)
 
-De aquella manera, se ignorará el padding que el compilador crea, y se guardarán solamente los datos que necesitamos de nuestra estructura. 
+De aquella manera, se ignorará el padding que el compilador crea, y se guardarán solamente los datos que necesitamos de nuestra estructura.
 
 Una vez hecho esto, se podrá empaquetar el buffer y se enviará a través de la red, garantizando que los datos que recibirá el destinatario serán los correctos.
 
@@ -96,11 +96,11 @@ typedef struct t_Package {
 } t_package;
 ```
 
-No tenemos un `char[14]`, tenemos un puntero `(char*)` que apunta a  una posición de memoria provocando que haya estructuras que van a tener usernames de 14 bytes, otras de 20 bytes, y así, porque vamos a reservar memoria dinámicamente según la longitud del username que se quiera. 
+No tenemos un `char[14]`, tenemos un puntero `(char*)` que apunta a  una posición de memoria provocando que haya estructuras que van a tener usernames de 14 bytes, otras de 20 bytes, y así, porque vamos a reservar memoria dinámicamente según la longitud del username que se quiera.
 
-Si seguimos los pasos anteriores, el receptor de nuestra estructura no va a saber cuánta memoria deberá reservar para poder leer lo que recibió. Es decir, si nosotros enviamos un username de 14 bytes, lo empaquetamos y lo enviamos, el receptor recibirá el paquete, pero a la hora de desempaquetarlo, que debemos realizar un `memcpy()`, no sabrá cuánta memoria deberá reservar para poder leer lo que le enviamos. 
+Si seguimos los pasos anteriores, el receptor de nuestra estructura no va a saber cuánta memoria deberá reservar para poder leer lo que recibió. Es decir, si nosotros enviamos un username de 14 bytes, lo empaquetamos y lo enviamos, el receptor recibirá el paquete, pero a la hora de desempaquetarlo, que debemos realizar un `memcpy()`, no sabrá cuánta memoria deberá reservar para poder leer lo que le enviamos.
 
-¿Cómo lo solucionamos? Nuestra recomendación es colocarle a nuestro protocolo el tamaño en bytes que necesitará el destinatario para almacenar lo que enviamos, es decir, teniendo la siguiente estructura, establecer el siguiente protocolo: 
+¿Cómo lo solucionamos? Nuestra recomendación es colocarle a nuestro protocolo el tamaño en bytes que necesitará el destinatario para almacenar lo que enviamos, es decir, teniendo la siguiente estructura, establecer el siguiente protocolo:
 
 ![protocolo-recomendado](/img/guias/serializacion/protocolo-recomendado.jpg)
 
@@ -122,7 +122,7 @@ p1.username_long = strlen(p1.username)+1;
 strcpy(p1.message, "Hola, soy John Doe.");
 p1.message_long = strlen(p1.message)+1;
 ```
- 
+
 ![stack-heap](/img/guias/serializacion/stack-heap.png)
 
 De aquella forma, luego se proseguirá con los mismos pasos que con una estructura estática: hacemos `memcpy()` de los datos de nuestra estructura a un buffer intermedio, lo empaquetamos y lo enviamos.
@@ -133,15 +133,15 @@ El receptor cuando desempaqueta el paquete, se fijará cuántos bytes debe reser
 
 ![desempaquetado-dinamico](/img/guias/serializacion/desempaquetado-dinamico.gif)
 
-Hay que tener en cuenta que el principal problema de las estructuras dinámicas no son los punteros, dado que  no se está enviando una posición de memoria, sino que se está enviando un valor en bytes. 
+Hay que tener en cuenta que el principal problema de las estructuras dinámicas no son los punteros, dado que  no se está enviando una posición de memoria, sino que se está enviando un valor en bytes.
 
 Puede suceder que la computadora con la cual estamos enviando nuestros mensajes, tenga un sistema operativo de 32 bits, pero la computadora receptora de nuestros mensajes enviados, tenga un sistema operativo de 64 bits. ¿A qué vamos con esto? A que no nos importa si el tamaño de nuestro puntero coincide con quién va a recibir el mensaje, ni tampoco la posición de memoria a la que apunta inicialmente, sino que nos interesa el valor que contiene esa posición de memoria, y enviarlo de forma tal que, sin importar estas diferencias, se reciba lo enviado de forma correcta.
 
-## En C 
+## En C
 
-### Repaso 
+### Repaso
 
-Antes de ver cómo lo llevamos a código, hagamos un repaso de C. Comencemos con los punteros. Se define a un puntero como a _una variable que, a diferencia de otras, contiene una dirección de memoria_. Usualmente utilizamos los punteros para, no solo apuntar a ciertas variables, sino también para el manejo de memoria dinámica. 
+Antes de ver cómo lo llevamos a código, hagamos un repaso de C. Comencemos con los punteros. Se define a un puntero como a _una variable que, a diferencia de otras, contiene una dirección de memoria_. Usualmente utilizamos los punteros para, no solo apuntar a ciertas variables, sino también para el manejo de memoria dinámica.
 
 Llevándolo un poco más a código, primero veamos cómo se utilizan los punteros para que apunten a ciertas variables:
 
@@ -152,15 +152,15 @@ int *int_ptr; // Puntero a entero
 un_nro = 2;
 ```
 
-¿Cómo hacemos para que el puntero apunte a la variable entera? Utilizando el operador `&` (ampersand). ¿Por qué no podemos simplemente igualarlo a la variable `un_nro`? Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD). 
+¿Cómo hacemos para que el puntero apunte a la variable entera? Utilizando el operador `&` (ampersand). ¿Por qué no podemos simplemente igualarlo a la variable `un_nro`? Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD).
 
 A su vez, también existe el operador `*(asterisco)`, el cual se podrá utilizar solamente en punteros, y nos permite visualizar lo que apunta, es decir, el número en este caso.
 
 ```c
 int_ptr = &un_nro;
-printf(“int_ptr=%p\n”,int_ptr); // Por pantalla se visualizará la posición de memoria de la variable un_nro, dado que eso apunta nuestro puntero.
-printf(“*int_ptr=%d\n”,*int_ptr); // Por pantalla se visualizará "lo que tiene dentro" nuestro puntero, es decir, el valor 2
-printf(“&int_ptr=%p\n”,&int_ptr); // Por pantalla se visualizará la dirección de memoria de nuestro puntero
+printf("int_ptr=%p\n",int_ptr); // Por pantalla se visualizará la posición de memoria de la variable un_nro, dado que eso apunta nuestro puntero.
+printf("*int_ptr=%d\n",*int_ptr); // Por pantalla se visualizará "lo que tiene dentro" nuestro puntero, es decir, el valor 2
+printf("&int_ptr=%p\n",&int_ptr); // Por pantalla se visualizará la dirección de memoria de nuestro puntero
 ```
 
 Hay que tener en cuenta que si nosotros modificamos algo desde nuestro puntero, es decir, en este ejemplo decidimos incrementar la variable desde el puntero, dicho cambio se verá también en nuestra variable `un_nro`.
@@ -176,19 +176,19 @@ Respecto a la memoria dinámica, nosotros mediante la utilización de [`malloc()
 void *malloc(size_t size);
 ```
 
-Por ende, se debe especificar la cantidad de bytes que vamos a reservar utilizando el operador `sizeof`. 
+Por ende, se debe especificar la cantidad de bytes que vamos a reservar utilizando el operador `sizeof`.
 
 Utilizando la estructura que utilizamos anteriormente, vamos a ver cómo se manejan estas estructuras con los punteros.
 
 ```c
-typedef struct { 
+typedef struct {
     uint32_t dni;
     uint8_t edad;
     uint32_t pasaporte;
     char nombre[14];
 } t_persona;
 
-t_persona *ptr_persona = (t_persona*) malloc(sizeof(t_persona)); 
+t_persona *ptr_persona = (t_persona*) malloc(sizeof(t_persona));
 // Se reserva memoria para poder apuntar a una estructura
 ```
 
@@ -199,7 +199,7 @@ Hay dos formas de acceder a la estructura a través del puntero, las cuales son 
 ptr_persona->dni = 41543667;
 ```
 
-Y, para concluir con el repaso, hay que tener en cuenta que cada vez que se reserve memoria, habrá que liberarla. En caso de no liberarse se dice que se produce un _*memory leak*_. 
+Y, para concluir con el repaso, hay que tener en cuenta que cada vez que se reserve memoria, habrá que liberarla. En caso de no liberarse se dice que se produce un _*memory leak*_.
 
 Esto es muy importante dado que se tiene en cuenta a la hora de la evaluación del trabajo práctico la cantidad de memoria perdida.
 
@@ -219,14 +219,14 @@ free((*ptr_paquete).message);
 free(ptr_paquete);
 ```
 
-### Serialicemos 
+### Serialicemos
 
-Finalmente, traslademos la serialización a la práctica, es decir, veamos cómo trabajar con todo esto en el código. 
+Finalmente, traslademos la serialización a la práctica, es decir, veamos cómo trabajar con todo esto en el código.
 
 Para ello utilizaremos la siguiente estructura:
 
 ```c
-typedef struct { 
+typedef struct {
     uint32_t dni;
     uint8_t edad;
     uint32_t pasaporte;
@@ -289,11 +289,11 @@ buffer->stream = stream;
 free(persona.nombre);
 ```
 
-Para ir moviéndonos en el buffer utilizamos una variable de desplazamiento (_offset_). La idea es que si tenemos un puntero, podemos “sumarle/restarle” valores y eso nos da otro puntero. Esto se conoce comúnmente como aritmética de punteros. Sumándole un valor n a un puntero de un tipo de dato que ocupa _m_ bytes se obtiene un puntero a una dirección desplazada _n * m_ bytes respecto de la original.
+Para ir moviéndonos en el buffer utilizamos una variable de desplazamiento (_offset_). La idea es que si tenemos un puntero, podemos "sumarle/restarle" valores y eso nos da otro puntero. Esto se conoce comúnmente como aritmética de punteros. Sumándole un valor n a un puntero de un tipo de dato que ocupa _m_ bytes se obtiene un puntero a una dirección desplazada _n * m_ bytes respecto de la original.
 
 Si por ejemplo tenemos un `int* a` y hacemos `a + 1` nos estamos desplazando _4 + 1 = 5_ bytes respecto de la dirección apuntada por `a`. En este caso utilizamos el tipo `void*` para nuestro buffer, ya que por lo general se interpreta que los elementos a los que apunta ocupan 1 byte. De esta manera haciendo `buffer + offset` nos desplazamos tantos bytes respecto del inicio del buffer como indique nuestra variable `offset`.
 
-Bien, ahora en el buffer ya tenemos nuestro TAD persona cargado, podríamos ya enviar esto. Pero estaría bueno “empaquetarlo” primero, es decir, agregarle un header al principio. De esta manera el receptor viendo el header ya sabe que le están mandando una persona y se puede preparar para recibir el resto de datos. Así podemos enviar otros TAD distintos, y el receptor sabrá como deserializarlo al revisar el header.
+Bien, ahora en el buffer ya tenemos nuestro TAD persona cargado, podríamos ya enviar esto. Pero estaría bueno "empaquetarlo" primero, es decir, agregarle un header al principio. De esta manera el receptor viendo el header ya sabe que le están mandando una persona y se puede preparar para recibir el resto de datos. Así podemos enviar otros TAD distintos, y el receptor sabrá como deserializarlo al revisar el header.
 
 
 
@@ -372,7 +372,7 @@ Ahora nuestra función para deserializar el payload quedaria algo asi:
 ```c
 t_persona* deserializar_persona(t_buffer* buffer) {
     t_persona* persona = malloc(sizeof(t_persona));
-    
+
     void* stream = buffer->stream;
     // Deserializamos los campos que tenemos en el buffer
     memcpy(&(persona->dni), stream, sizeof(uint32_t));
@@ -381,7 +381,7 @@ t_persona* deserializar_persona(t_buffer* buffer) {
     stream += sizeof(uint8_t);
     memcpy(&(persona->pasaporte), stream, sizeof(uint32_t));
     stream += sizeof(uint32_t);
-    
+
     // Por último, para obtener el nombre, primero recibimos el tamaño y luego el texto en sí:
     memcpy(&(persona->nombre_length), stream, sizeof(uint32_t));
     stream += sizeof(uint32_t);
@@ -402,10 +402,10 @@ Notar que el desplazamiento lo fuimos sumando directamente a la variable stream,
 
 ¿Por qué? De aquella forma le decimos a nuestro compilador que no se le agregue padding.
 
-Sin embargo, hay que tener en cuenta que si no tenemos la estructura definida en un lugar único y decidimos invertir el orden de los atributos del struct (es decir, el emisor lo tiene de una forma y el receptor de otra) el compilador respetará el orden, lo cual provocará que los datos que le lleguen sean cualquier cosa, dado que tienen un orden distinto. Entonces, si bien dicha anotación nos facilita el envío de nuestra estructura, debemos tener cuidado con la misma. 
+Sin embargo, hay que tener en cuenta que si no tenemos la estructura definida en un lugar único y decidimos invertir el orden de los atributos del struct (es decir, el emisor lo tiene de una forma y el receptor de otra) el compilador respetará el orden, lo cual provocará que los datos que le lleguen sean cualquier cosa, dado que tienen un orden distinto. Entonces, si bien dicha anotación nos facilita el envío de nuestra estructura, debemos tener cuidado con la misma.
 
 ```c
-typedef struct { 
+typedef struct {
     uint32_t dni;
     uint8_t edad;
     uint32_t pasaporte;
@@ -414,12 +414,8 @@ typedef struct {
 t_persona;
 ```
 
-## Historial de versiones 
+## Historial de versiones
 
 - _v1.0 (27/03/2020) Publicación Inicial_
 - _v1.1 (20/04/2020) Primera Revisión_
   - Correcciones en el código de ejemplo
-
-
-
-
