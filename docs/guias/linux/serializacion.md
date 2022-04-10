@@ -40,7 +40,7 @@ strcpy(p1.nombre,"John Doe");
 
 El tamaño de este padding depende de varios factores como, por ejemplo, el compilador, la arquitectura del CPU, el tipo de dato, entre otros. Por esto, es que no tenemos garantías de cuánto espacio ocupará un struct en memoria.
 
-¿En qué nos afecta esto a nosotros? Cuando queramos mandar mensajes a través de la red, dado nunca sabremos cual es el tamaño real de nuestra estructura porque el padding, como dijimos anteriormente, depende de muchos factores. Si vemos el prototipo de las funciones `send()` y `recv()`, podemos notar que ambas requieren que les digamos cuántos bytes vamos a enviar o recibir y si nosotros, usamos `sizeof(miTAD)` no tenemos garantías de que el tamaño de mi struct coincida entre el emisor y el destinatario. Es decir,  si tomamos el ejemplo del struct que se encuentra arriba, puede que el `sizeof(t_persona)` en nuestra computadora de X numero, pero cuando lo enviemos, y lo reciba otra computadora, le de otro número provocando que exista la posibilidad de que se pierdan datos.
+¿En qué nos afecta esto a nosotros? Cuando querramos mandar mensajes a través de la red, nunca sabremos cuál es el tamaño real de nuestra estructura; porque el padding, como dijimos anteriormente, depende de muchos factores. Si vemos el prototipo de las funciones [`send()`](https://linux.die.net/man/3/send) y [`recv()`](https://linux.die.net/man/3/recv), podemos notar que ambas requieren que les digamos cuántos bytes vamos a enviar o recibir y si nosotros, usamos `sizeof(miTAD)` no tenemos garantías de que el tamaño de mi struct coincida entre el emisor y el destinatario. Es decir,  si tomamos el ejemplo del struct que se encuentra arriba, puede que el `sizeof(t_persona)` en nuestra computadora dé X número pero, cuando lo enviemos y lo reciba otra computadora, le dé otro número provocando que exista la posibilidad de que se pierdan datos.
 
 Para solucionar estos inconvenientes debemos **serializar**.
 
@@ -71,7 +71,7 @@ En este caso, un posible protocolo, es agregar un header que normalmente utiliza
 
 Es decir, si en el header indicamos que vamos a enviar una “persona”, del otro lado al recibir esto ya sabe que lo próximo a recibir va a ser el DNI, el pasaporte, el nombre y, por último, la edad. 
 
-Entonces, ¿cómo hacemos para serializar este struct? Primero empezamos reservando un bloque de HEAP, suficiente para almacenar nuestra estructura. Éste lo denominaremos como nuestro buffer intermedio, donde se irán guardando nuestros datos mediante la utilización de la función `memcpy()`, es decir, se asignará todo lo que se encuentra en la estructura, en ese buffer.
+Entonces, ¿cómo hacemos para serializar este struct? Primero empezamos reservando un bloque de HEAP, suficiente para almacenar nuestra estructura. Éste lo denominaremos como nuestro buffer intermedio, donde se irán guardando nuestros datos mediante la utilización de la función [`memcpy()`](https://linux.die.net/man/3/memcpy), es decir, se asignará todo lo que se encuentra en la estructura, en ese buffer.
 
 ![padding-gif](/img/guias/serializacion/padding-gif.gif)
 
@@ -91,8 +91,8 @@ Hasta ahora logramos serializar una estructura estática, es decir, una estructu
 
 ```c
 typedef struct t_Package {
-char* username;
-char* message;
+    char* username;
+    char* message;
 } t_package;
 ```
 
@@ -106,10 +106,10 @@ Si seguimos los pasos anteriores, el receptor de nuestra estructura no va a sabe
 
 ```c
 typedef struct t_Package {
-char* username;
-uint32_t username_long;
-char* message;
-uint32_t message_long;
+    char* username;
+    uint32_t username_long;
+    char* message;
+    uint32_t message_long;
 } t_package;
 
 t_package p1;
@@ -117,16 +117,13 @@ p1.username = malloc(8+1);
 p1.message = malloc(19+1);
 
 strcpy(p1.username, "John Doe");
-p1.username_long = 
-strlen(p1.username)+1;
+p1.username_long = strlen(p1.username)+1;
 
-strcpy(p1.message,
-"Hola, soy John Doe.");
-p1.message_long = 
-strlen(p1.message)+1;
+strcpy(p1.message, "Hola, soy John Doe.");
+p1.message_long = strlen(p1.message)+1;
 ```
  
-![stack-heap](/img/guias/serializacion/stack-heap.jpg)
+![stack-heap](/img/guias/serializacion/stack-heap.png)
 
 De aquella forma, luego se proseguirá con los mismos pasos que con una estructura estática: hacemos `memcpy()` de los datos de nuestra estructura a un buffer intermedio, lo empaquetamos y lo enviamos.
 
@@ -155,7 +152,7 @@ int *int_ptr; // Puntero a entero
 un_nro = 2;
 ```
 
-¿Cómo hacemos para que el puntero apunte a la variable entera? Utilizando el operador `&(ampersand)`.¿Por qué no podemos simplemente igualarlo a la variable `un_nro`? Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD). 
+¿Cómo hacemos para que el puntero apunte a la variable entera? Utilizando el operador `&` (ampersand). ¿Por qué no podemos simplemente igualarlo a la variable `un_nro`? Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD). 
 
 A su vez, también existe el operador `*(asterisco)`, el cual se podrá utilizar solamente en punteros, y nos permite visualizar lo que apunta, es decir, el número en este caso.
 
@@ -173,23 +170,24 @@ Hay que tener en cuenta que si nosotros modificamos algo desde nuestro puntero, 
 (*p)++; // n = 3
 ```
 
-Respecto a la memoria dinámica, nosotros mediante la utilización de `malloc()` (en C++ se utiliza la función `new(..)`), podemos reservar memoria dinámicamente. La firma de `malloc` es la siguiente:
+Respecto a la memoria dinámica, nosotros mediante la utilización de [`malloc()`](https://linux.die.net/man/3/malloc) (en C++ se utiliza la función `new(..)`), podemos reservar memoria dinámicamente. La firma de `malloc` es la siguiente:
 
 ```c
 void *malloc(size_t size);
 ```
 
-Por ende, se debe especificar la cantidad de bytes que vamos a reservar utilizando el operador `sizeof()`. 
+Por ende, se debe especificar la cantidad de bytes que vamos a reservar utilizando el operador `sizeof`. 
 
 Utilizando la estructura que utilizamos anteriormente, vamos a ver cómo se manejan estas estructuras con los punteros.
 
 ```c
 typedef struct { 
-uint32_t dni;
-uint8_t edad;
-uint32_t pasaporte;
-char nombre[14];
+    uint32_t dni;
+    uint8_t edad;
+    uint32_t pasaporte;
+    char nombre[14];
 } t_persona;
+
 t_persona *ptr_persona = (t_persona*) malloc(sizeof(t_persona)); 
 // Se reserva memoria para poder apuntar a una estructura
 ```
@@ -205,7 +203,7 @@ Y, para concluir con el repaso, hay que tener en cuenta que cada vez que se rese
 
 Esto es muy importante dado que se tiene en cuenta a la hora de la evaluación del trabajo práctico la cantidad de memoria perdida.
 
-¿Cómo se libera memoria en C? Se utiliza la función `free()` cuya firma es:
+¿Cómo se libera memoria en C? Se utiliza la función [`free()`](https://linux.die.net/man/3/free) cuya firma es:
 
 ```c
 void free(void *ptr);
@@ -418,9 +416,9 @@ t_persona;
 
 ## Historial de versiones 
 
-_v1.0 (27/03/2020) Publicación Inicial_
-_v1.1 (20/04/2020) Primera Revisión_
- - Correcciones en el código de ejemplo
+- _v1.0 (27/03/2020) Publicación Inicial_
+- _v1.1 (20/04/2020) Primera Revisión_
+  - Correcciones en el código de ejemplo
 
 
 

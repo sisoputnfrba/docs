@@ -748,5 +748,5 @@ int main(int argc, char **argv) {
 ## Links útiles 
 
 - [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
-- [Tutorial de Valgrind](https://docs.google.com/document/d/1flOJ2P2g9UGVRiruuA4OCF6nucbN_BWVI0WDlYTJNf4/edit) (para resolver memory leaks)
+- [Tutorial de Valgrind](../herramientas/valgrind.md) (para resolver memory leaks)
 - [Video sobre punteros](https://www.youtube.com/watch?v=5VnDaHBi8dM&ab_channel=Napalm) (en inglés)
