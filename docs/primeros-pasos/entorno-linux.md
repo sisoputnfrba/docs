@@ -23,10 +23,10 @@ para que puedas instalarlos:
 
 ```bash:no-line-numbers
 # Ubuntu Server
-sudo apt-get install aptitude gcc gdb git vim libncurses5 valgrind tig make \
-  autotools-dev strace emacs nano openjdk-8-jdk libcunit1 libevent1-dev ssh \
-  libfuse-dev build-essential g++ libcunit1-dev curl htop tree wget \
-  libreadline8 libreadline-dev docker docker-compose
+sudo apt-get install aptitude gcc gdb git vim libncurses5-dev valgrind tig \
+  make autotools-dev strace emacs nano openjdk-8-jdk openjdk-11-jdk libcunit1 \
+  libevent1-dev ssh libfuse-dev build-essential g++ libcunit1-dev curl htop \
+  tree wget libreadline-dev docker docker-compose hexedit
 
 # Entorno gráfico (Lubuntu)
 sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
