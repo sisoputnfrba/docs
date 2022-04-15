@@ -33,7 +33,7 @@ sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
   wireshark xclip bless gnome-do chromium-browser
 ```
 
-3. [Instalar Eclipse for C/C++ Developers](https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-cc-developers)
+3. [Instalar Eclipse for C/C++ Developers](https://www.eclipse.org/downloads/packages/)
 4. [Instalar Visual Studio Code](https://code.visualstudio.com/download)
 
 :::
