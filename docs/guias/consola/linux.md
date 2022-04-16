@@ -180,6 +180,7 @@ Probemos con un ejemplo:
 - Al final del archivo vamos a agregar la siguiente línea: `export MI_VARIABLE='aguante sisop'` y la vamos a guardar (apretando ctrl+x y luego 'y' para confirmar). Para que el cambio se haga efectivo, tenemos que cerrar la consola y volverla a abrir.
 - Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos seteado. También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE` aparece registrada. Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a seguir teniendo nuestra nueva variable.
 
-## Links de referencia
+## Links útiles
 
-[34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+- [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+- [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
