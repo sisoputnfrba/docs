@@ -1,8 +1,10 @@
-# Comandos básicos de Linux
+# Introducción a la Shell de Linux
 
 A continuación, vas a poder aprender para qué sirven una serie de comandos seleccionados que van a serte útiles.
 
 Para poder comprender mejor lo que acá se muestra, podés abrir una terminal e ir siguiendo el uso de los comandos en el orden en que se establecen.
+
+## Comandos básicos
 
 ### `pwd`
 
