@@ -287,6 +287,10 @@ Aquel grupo que no cumpla con este requisito no será evaluado.
 
 ## 5. Soporte
 
+Para conocer los medios de soporte, visitar el
+[post de dudas/consultas de la materia](../consultas.md)
+
+<!--
 ### Ayudantes
 
 Cada grupo inscripto al trabajo tendrá dos ayudantes asignados, cuyo principal
@@ -353,6 +357,21 @@ las mismas podrán ser comunicadas oportunamente mediante el foro del Campus
 Virtual o el [blog](https://www.utnso.com.ar), anunciando ayudantes presentes y
 horarios de disponibilidad.
 
+## 7. Comunicación con la cátedra
+
+La comunicación se hará a través del Campus Virtual, al cual es obligatorio
+suscribirse, para recibir novedades u obtener apuntes útiles para el desarrollo
+del trabajo práctico y de la cursada en general. Además, la cátedra cuenta con
+un blog ya anteriormente mencionado, en el que también se comunicará novedades.
+
+- [**Link al Campus Virtual**](https://www.utnso.com.ar/campusvirtual)
+- [**Blog**](https://www.utnso.com.ar)
+- [**Organización con repositorios**](https://github.com/sisoputnfrba)
+- [**Aplicación para Android**](https://play.google.com/store/apps/details?id=com.utnso.contentmanager)
+
+
+-->
+
 ## 6. Régimen de Promoción
 
 Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la
@@ -365,17 +384,7 @@ condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
 los requerimientos de los parciales. En tal caso, la materia solamente se
 encontrará regularizada.
 
-## 7. Comunicación con la cátedra
-
-La comunicación se hará a través del Campus Virtual, al cual es obligatorio
-suscribirse, para recibir novedades u obtener apuntes útiles para el desarrollo
-del trabajo práctico y de la cursada en general. Además, la cátedra cuenta con
-un blog ya anteriormente mencionado, en el que también se comunicará novedades.
-
-- [**Link al Campus Virtual**](https://www.utnso.com.ar/campusvirtual)
-- [**Blog**](https://www.utnso.com.ar)
-- [**Organización con repositorios**](https://github.com/sisoputnfrba)
-- [**Aplicación para Android**](https://play.google.com/store/apps/details?id=com.utnso.contentmanager)
+<br><br>
 
 [^1]:
     Solo está permitido utilizar bibliotecas externas que la Cátedra autorice. A
