@@ -1,4 +1,4 @@
-# Trabajo Práctico "0"
+# Trabajo Práctico 0
 
 > Versión 2.3.0
 

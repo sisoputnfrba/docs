@@ -10,7 +10,6 @@ export const sidebar: SidebarConfig = [
       '/primeros-pasos/donde-me-anoto',
       '/primeros-pasos/normas-tp',
       '/primeros-pasos/entorno-linux',
-      '/primeros-pasos/consola',
       '/primeros-pasos/lenguaje-c',
       '/primeros-pasos/entorno-desarrollo',
       '/primeros-pasos/tp0',
