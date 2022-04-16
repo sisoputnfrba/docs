@@ -36,6 +36,9 @@ sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
 3. [Instalar Eclipse for C/C++ Developers](https://www.eclipse.org/downloads/packages/)
 4. [Instalar Visual Studio Code](https://code.visualstudio.com/download)
 
+¡Y listo! Ya podés pasar a la
+[última sección de esta guía](#amigandose-con-la-consola).
+
 :::
 
 ## Descargar VirtualBox
@@ -61,6 +64,7 @@ un entorno gráfico liviano Lubuntu instalado encima de la Ubuntu Server de las
 entregas.
 
 Está comprimida en 5 partes (hosteadas en Google Drive):
+
 - [utnso-lubuntu-5.0.1.7z.001](https://faq.utnso.com.ar/vm-gui-1)
 - [utnso-lubuntu-5.0.1.7z.002](https://faq.utnso.com.ar/vm-gui-2)
 - [utnso-lubuntu-5.0.1.7z.003](https://faq.utnso.com.ar/vm-gui-3)
@@ -68,6 +72,7 @@ Está comprimida en 5 partes (hosteadas en Google Drive):
 - [utnso-lubuntu-5.0.1.7z.005](https://faq.utnso.com.ar/vm-gui-5)
 
 Para descomprimirlas, pueden utilizar:
+
 - En Windows: [WinRAR](https://www.win-rar.com/)
 - En Linux: [`7z`](http://manpages.ubuntu.com/manpages/bionic/man1/7z.1.html)
 - En MacOS: [The Unarchiver](https://theunarchiver.com/)
@@ -127,10 +132,12 @@ md5 (utnso-lubuntu-5.0.1.vdi) -descomprimido- bdc2acbf759805ef1c7855af2089d975
 ::: details También se encuentra disponible la descarga de las VMs sin entorno gráfico
 
 Los links de descarga son los siguientes:
+
 - [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
 - [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
 
 Y los hashes MD5:
+
 ```:no-line-numbers
 md5 (ubuntu-server-5.0.1.7z.001): 6d8ed10e4862495975e8450e799c658a
 md5 (ubuntu-server-5.0.1.7z.002): 38df246a4ebf0ed11953dd0861d0028d
@@ -146,19 +153,19 @@ máquina virtual siguiendo este video:
 
 <YouTube v="DmkSXv_Xa-U"/>
 
-
 ::: tip
 
 Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
 **utnso**.
 
 :::
+
 ## Instalar las Guest Additions
 
 Las Guest Additions son un conjunto de herramientas extras que permiten que
-VirtualBox nos provea ciertas funcionalidades al adaptar nuestra máquina
-virtual con el sistema operativo (por ejemplo, hacer **pantalla completa** o
-**compartir el portapapeles**). También tenemos un video para eso :smile:
+VirtualBox nos provea ciertas funcionalidades al adaptar nuestra máquina virtual
+con el sistema operativo (por ejemplo, hacer **pantalla completa** o **compartir
+el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
@@ -169,10 +176,11 @@ portapapeles compartido de esta forma:
 
 <YouTube v="xJ52dDTfCHo"/>
 
-::: details En caso de que el portapapeles compartido funcione pero la pantalla completa no...
+::: details En caso de que el portapapeles compartido funcione pero la pantalla
+completa no...
 
-En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico
-de la pantalla a VBoxVGA:
+En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico de
+la pantalla a VBoxVGA:
 
 ![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png)
 
@@ -181,17 +189,17 @@ fijo accediendo a los ajustes del monitor:
 
 ![virtualbox-02](/img/primeros-pasos/linux/virtualbox-02.png)
 
-
 :::
 
+## Amigándose con la consola
 
-# Amigándose con la consola 
+¡Muy bien! Ya tenés el entorno Linux preparado y como siguiente paso estaría
+bueno que puedas familiarizarte con una herramienta fundamental: la terminal de
+Linux. La misma te va a permitir llevar a cabo distintas acciones como navegar
+entre archivos, ejecutar programas o acceder a otros recursos que podes
+encontrar más adelante como la herramienta de versionado Git o Valgrind.
 
-¡Muy bien! Ya tenés el entorno Linux preparado y como siguiente paso estaría bueno que puedas familiarizarte con una herramienta fundamental: la terminal de Linux. La misma te va a permitir llevar a cabo distintas acciones como navegar entre archivos, ejecutar programas o acceder a otros recursos que podes encontrar más adelante como la herramienta de versionado Git o Valgrind. 
-
-Para eso, te dejamos acá algunos links que te pueden ser útiles: 
+Para eso, te dejamos acá algunos links que te pueden ser útiles:
 
 - [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
-- [Comandos básicos de Linux](/guias/consola/linux.html) 
-
-
+- [Comandos básicos de Linux](../guias/consola/linux.md)
