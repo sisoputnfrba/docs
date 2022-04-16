@@ -184,5 +184,14 @@ fijo accediendo a los ajustes del monitor:
 
 :::
 
-¡Y listo! Ahora, arranquemos a conocer un poco más sobre el entorno Linux y su
-consola en la siguiente guía :smile:
+
+# Amigándose con la consola 
+
+¡Muy bien! Ya tenés el entorno Linux preparado y como siguiente paso estaría bueno que puedas familiarizarte con una herramienta fundamental: la terminal de Linux. La misma te va a permitir llevar a cabo distintas acciones como navegar entre archivos, ejecutar programas o acceder a otros recursos que podes encontrar más adelante como la herramienta de versionado Git o Valgrind. 
+
+Para eso, te dejamos acá algunos links que te pueden ser útiles: 
+
+- [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
+- [Comandos básicos de Linux](/guias/consola/linux.html) 
+
+
