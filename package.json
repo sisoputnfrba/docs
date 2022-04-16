@@ -9,8 +9,12 @@
   },
   "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
-    "name": "Agustín Ranieri y Sofía Azcoaga"
+    "name": "sisoputnfrba"
   },
+  "contributors": [
+    "Agustín Ranieri",
+    "Sofía Azcoaga"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.36",
