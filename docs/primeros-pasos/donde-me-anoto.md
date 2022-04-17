@@ -9,12 +9,10 @@ parte **teórica** de la materia:
 - Espacios de consulta sobre teoría y/o ejercicios
 - Materiales de la cátedra (programa, guías, parciales y finales)
 
-La contraseña para poder matricularte es diferente para cada curso, consultale a
-tu profesor/a luego de la primera clase.
-
 ::: warning IMPORTANTE
 
-Verificá que te encuentres matriculado en el curso correcto.
+La contraseña para poder matricularte es diferente para cada cuatrimestre,
+consultale a tu profesor/a luego de la primera clase.
 
 :::
 
