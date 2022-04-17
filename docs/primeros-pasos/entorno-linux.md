@@ -47,7 +47,7 @@ Primero, debemos instalar VirtualBox, el software de virtualización que
 utilizamos para correr las máquinas virtuales de la cátedra.
 
 Como las VMs ya tienen unos años, recomendamos utilizar la versión
-[6.0.18](https://www.virtualbox.org/wiki/Download_Old_Builds_6_0):
+[5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2):
 
 ![virtualbox-00](/img/primeros-pasos/linux/virtualbox-00.png)
 
