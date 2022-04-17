@@ -15,7 +15,7 @@ El trabajo práctico será evaluado en una instancia práctica y grupal, y
 posteriormente en una instancia individual (coloquio). El mismo se considerará
 aprobado cuando ambas instancias hayan sido aprobadas.
 
-## 1. Estructura del trabajo práctico grupal
+## Estructura del trabajo práctico grupal
 
 La especificación del trabajo práctico estará compuesta por una serie de
 **checkpoints**. Los mismos sirven como guía para el desarrollo de un sistema.
@@ -24,7 +24,7 @@ ser satisfechos para que, de manera evolutiva, se genere el sistema final. Son
 evaluaciones, y como tales pueden ser aprobadas o no. La ausencia implicará la
 desaprobación del checkpoint en cuestión.
 
-### 1.1. Tipos de Checkpoint
+### Tipos de Checkpoint
 
 #### Checkpoint
 
@@ -51,7 +51,7 @@ La fecha se encuentra definida en el enunciado del Trabajo Práctico. Se
 informará con anticipación el lugar a través del Campus Virtual y
 [el blog](https://www.utnso.com.ar/).
 
-### 1.2. Características de la forma entrega
+### Características de la forma entrega
 
 - Para la evaluación, el grupo obtendrá su código fuente descargando la última
   versión disponible de su repositorio.
@@ -63,7 +63,7 @@ informará con anticipación el lugar a través del Campus Virtual y
   sin interfaz gráfica proporcionadas por la Cátedra**, que se encontrarán
   instaladas en el laboratorio de sistemas.
 
-### 1.3. Requisitos para la aceptación de la entrega
+### Requisitos para la aceptación de la entrega
 
 - Contener un archivo makefile que ejecute correctamente.
 - Que no se produzcan errores de compilación.
@@ -71,7 +71,7 @@ informará con anticipación el lugar a través del Campus Virtual y
 - Haber cumplido con los requerimientos técnicos y funcionales indicados en el
   enunciado del trabajo práctico.
 
-### 1.4. Entrega final
+### Entrega final
 
 Utilizada para determinar la aprobación del trabajo práctico. Esta tendrá dos
 instancias de recuperatorio.
@@ -202,14 +202,14 @@ que el código que compone el trabajo práctico utilice bibliotecas de terceros
 que no hayan sido instaladas previamente por la cátedra en las máquinas
 virtuales provistas para el desarrollo y pruebas del mismo.
 
-## 2. Presentación oficial del trabajo práctico
+## Presentación oficial del trabajo práctico
 
 Tanto la fecha como el horario de la presentación serán informados en el Campus
 Virtual y mediante el [blog](https://www.utnso.com.ar/). Es obligatoria la
 asistencia del grupo completo a dicha presentación, y se recomienda asistir a la
 misma habiendo leído y discutido la especificación completa del trabajo.
 
-## 3. Inscripción de grupos
+## Inscripción de grupos
 
 El grupo conformado deberá ser **obligatoriamente** de 5 integrantes, pudiendo
 ser los mismos alumnos de cualquier curso de la materia. En caso de no cumplir
@@ -262,7 +262,7 @@ mencionada y deberá ser realizada mediante la misma herramienta o mediante un
 mail a [inscripciones@utnso.com.ar](mailto:inscripciones@utnso.com.ar) con copia
 a todos los integrantes del grupo (activos y a dar de baja).
 
-## 4. Uso del Repositorio de Versionado
+## Uso del Repositorio de Versionado
 
 Con el objetivo de facilitar el desarrollo del trabajo en equipo y poder
 realizar un seguimiento del trabajo de cada integrante del grupo, se utilizará
@@ -285,7 +285,7 @@ del repositorio a la fecha de la evaluación.
 
 Aquel grupo que no cumpla con este requisito no será evaluado.
 
-## 5. Soporte
+## Soporte
 
 Para conocer los medios de soporte, visitar el
 [post de dudas/consultas de la materia](../consultas.md)
@@ -357,7 +357,7 @@ las mismas podrán ser comunicadas oportunamente mediante el foro del Campus
 Virtual o el [blog](https://www.utnso.com.ar), anunciando ayudantes presentes y
 horarios de disponibilidad.
 
-## 7. Comunicación con la cátedra
+## Comunicación con la cátedra
 
 La comunicación se hará a través del Campus Virtual, al cual es obligatorio
 suscribirse, para recibir novedades u obtener apuntes útiles para el desarrollo
@@ -372,7 +372,7 @@ un blog ya anteriormente mencionado, en el que también se comunicará novedades
 
 -->
 
-## 6. Régimen de Promoción
+## Régimen de Promoción
 
 Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la
 promoción del alumno, además de los requerimientos de la parte teórica de la
