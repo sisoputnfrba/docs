@@ -85,9 +85,9 @@ Una vez que el destinatario los reciba, los deberá desempaquetar de forma inver
 
 ## Estructuras dinámicas
 
-Hasta ahora logramos serializar una estructura estática, es decir, una estructura de la cual conocemos el tamaño de todos los elementos de nuestro TAD. ¿Qué pasa si tenemos una estructura dinámica, donde no sabemos el tamaño del contenido que vamos a enviar? Por ejemplo, una estructura que tenga un dato, o varios, que sea, por ejemplo, un texto cuyo tamaño no conocemos hasta que el programa esté corriendo.
+Hasta ahora logramos serializar una estructura estática, es decir, una estructura de la cual conocemos el tamaño de todos los elementos de nuestro TAD. _¿Qué pasa si tenemos una estructura dinámica, donde no sabemos el tamaño del contenido que vamos a enviar?_ Por ejemplo, una estructura que tenga un dato, o varios, que sea, por ejemplo, un texto cuyo tamaño no conocemos hasta que el programa esté corriendo.
 
-¿Hacemos lo mismo que hicimos con estructuras estáticas? No. ¿Por qué? En principio no se sabe cuántos bytes tiene que recibir del otro lado para formar el paquete, es decir, teniendo en cuenta la siguiente estructura:
+_¿Hacemos lo mismo que hicimos con estructuras estáticas?_ No. _¿Por qué?_ En principio no se sabe cuántos bytes tiene que recibir del otro lado para formar el paquete, es decir, teniendo en cuenta la siguiente estructura:
 
 ```c
 typedef struct t_Package {
@@ -152,7 +152,7 @@ int *int_ptr; // Puntero a entero
 un_nro = 2;
 ```
 
-¿Cómo hacemos para que el puntero apunte a la variable entera? Utilizando el operador `&` (ampersand). ¿Por qué no podemos simplemente igualarlo a la variable `un_nro`? Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD).
+_¿Cómo hacemos para que el puntero apunte a la variable entera?_ Utilizando el operador `&` (ampersand). _¿Por qué no podemos simplemente igualarlo a la variable `un_nro`?_ Porque, como dijimos antes, un puntero apunta a una dirección de memoria, por ende, si nosotros lo igualamos a una variable, no coinciden los tipos. El operador `&` indica la dirección de un objeto, es decir, desde un entero hasta un struct (TAD).
 
 A su vez, también existe el operador `*(asterisco)`, el cual se podrá utilizar solamente en punteros, y nos permite visualizar lo que apunta, es decir, el número en este caso.
 
@@ -414,8 +414,9 @@ typedef struct {
 t_persona;
 ```
 
-## Historial de versiones
+## Notas finales
 
-- _v1.0 (27/03/2020) Publicación Inicial_
-- _v1.1 (20/04/2020) Primera Revisión_
-  - Correcciones en el código de ejemplo
+¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la
+pueden realizar en los [medios de consulta](../../consultas.md)
+correspondientes, y que hagan uso de las guías y los video tutoriales de esta
+página.
