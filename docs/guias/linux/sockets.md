@@ -200,7 +200,13 @@ Por otro lado, si el cliente en lugar de enviar un 1, estuviera enviando otro en
 
 Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre para poder enviarle otros mensajes al servidor para que éste le conteste con los resultados de sus solicitudes. Tanto `send` como `recv` se encargan de mover bytes de datos a través de la red, y eso es lo que representa el segundo parámetro de ambas funciones, y ese es el motivo por el que reciben una posición de memoria.
 
-Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información serializada. Para extender este concepto tenemos disponible la guía de serialización, junto con un modelo de paquete propuesto para el envío mediante sockets.
+Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información **serializada**.
+
+::: warning NOTA
+
+Para extender el concepto de **serialización**, tenemos disponible la [guía](./serializacion.md), que incluye un modelo de paquete propuesto para el envío mediante sockets.
+
+:::
 
 Algunos quizá estén pensando "¿por qué no puedo simplemente realizar múltiples sends para una sola operación/mensaje?" Porque al estar trabajando con paquetes de red no puedo garantizar el orden de llegada. Si necesito enviar un único mensaje simple cuyo contenido sea un entero o un string esto no es un problema ya que los datos primitivos están serializados en sí mismos, pero al complejizarse las solicitudes debido a que el servidor necesita más datos para poder procesarlos, serializar no es una recomendación, es una necesidad
 
