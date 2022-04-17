@@ -8,15 +8,15 @@ Every computer, at the unreachable memory address 0x-1, stores a secret.  I foun
 
 Antes de meternos a fondo en las cuestiones de la manipulación de la memoria dinámica en C, definiremos algunos conceptos básicos.
 
-Un **proceso** es un programa en ejecución. Cuando nosotros abrimos el binario de nuestro programa, se crea la imagen del proceso y comienza a ejecutarse. Podría decirse que un proceso está dividido en cuatro segmentos básicos:
+Un **proceso** es un programa en ejecución. Cuando nosotros abrimos el binario de nuestro programa, se crea la imagen del proceso y comienza a ejecutarse. Podría decirse que un proceso está dividido en cuatro segmentos[^1] básicos:
 - Código
 - Datos (globales)
 - Heap
 - Stack
 
-La **memoria estática** es memoria que se reserva al declarar variables de cualquier tipo de dato: int, float, char, double, estructuras como así también los punteros a tipos de datos (por ejemplo: int*, char*, double*), y se aloja en el **stack** del proceso. En éste caso, el programador no podrá modificar el espacio en memoria que ocupan ni tampoco tendrá que encargarse de liberarla.
+La **memoria estática** es memoria que se reserva al declarar variables de cualquier tipo de dato: int, float, char, double, estructuras como así también los punteros[^2] a tipos de datos (por ejemplo: int*, char*, double*), y se aloja en el **stack** del proceso. En éste caso, el programador no podrá modificar el espacio en memoria que ocupan ni tampoco tendrá que encargarse de liberarla.
 
-Al producirse una llamada a una función, se almacena en el stack del proceso la dirección a la que debe retornar la ejecución tras finalizar la llamada, y otros datos adicionales.
+Al producirse una llamada a una función, se almacena en el stack del proceso la dirección a la que debe retornar la ejecución tras finalizar la llamada, y otros datos adicionales[^3].
 
 La **memoria dinámica** es memoria que se reserva en *tiempo de ejecución* y se aloja en el **heap** del proceso (los datos apuntados por los punteros). En C, el programador deberá reservar dicha memoria para su uso y también tendrá la responsabilidad de liberarla cuando no la utilice más.
 
@@ -29,7 +29,7 @@ Una diferencia importante es que **el tamaño de la memoria dinámica se puede i
 <!-- ![imagen 2](/img/guias/punteros-memoria-dinamica/imagen2.png) -->
 
 
-Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: "Todo poder conlleva una gran responsabilidad".
+Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: "Todo poder conlleva una gran responsabilidad"[^4].
 
 Todos los datos tienen un tiempo de vida, nada persiste para siempre. En C, hay tres tipos de duración:
 - **Estática**: son aquellas variables que se crean una única vez junto con la creación del proceso y se destruyen junto con la destrucción del mismo, son únicas y generalmente pueden ser utilizadas desde cualquier parte del programa. Para generar una variable estática se la puede declarar por fuera de la función principal (arriba del main() por ejemplo), o bien usando el calificador **static**.
@@ -66,9 +66,9 @@ Para que nuestro puntero no esté triste, ¡vamos a darle algo para que apunte!
 
 ### ¿Cómo inicializamos un puntero? (Malloc)
 
-La memoria se puede reservar o liberar **dinámicamente**, es decir, según necesitemos. Para ésto hay varias funciones estándar, que se encuentran en la biblioteca estándar de C, en el encabezado `stdlib.h`.
+La memoria se puede reservar o liberar **dinámicamente**, es decir, según necesitemos. Para ésto hay varias funciones estándar, que se encuentran en la biblioteca[^5] estándar de C, en el encabezado `stdlib.h`.
 
-Una de ellas es la función `malloc`, la cual sirve para solicitar un bloque de memoria del tamaño indicado por parámetro. Devuelve un puntero a la zona de memoria concedida:
+Una de ellas es la función `malloc`[^6], la cual sirve para solicitar un bloque de memoria del tamaño indicado por parámetro. Devuelve un puntero a la zona de memoria concedida:
 
 ```c:no-line-numbers
 void* malloc (unsigned numero_de_bytes);
@@ -77,12 +77,12 @@ void* malloc (unsigned numero_de_bytes);
 El tamaño se especifica en bytes. **`malloc` nos garantiza que la zona de memoria concedida no esté ocupada por ninguna otra variable**. *Groso, ¿no?*
 Eso sí, **si `malloc` no puede otorgarnos dicha zona de memoria, devuelve un puntero a `NULL`**. Por ende, cada vez que hacemos una llamada a `malloc` deberíamos chequear que no devuelve un puntero nulo.
 
-Como dijimos antes, `malloc` devuelve un puntero a la zona de memoria concedida. Sin embargo, éste puntero devuelto no sabe a qué tipo de datos apunta (`void*` significa esto).
+Como dijimos antes, `malloc` devuelve un puntero a la zona de memoria concedida. Sin embargo, éste puntero devuelto no sabe a qué tipo de datos apunta (`void*` significa esto)[^7].
 
 Antes de llamar a `malloc` tenemos que saber cuántos bytes queremos reservar en memoria. Como nuestro tipo de datos va a ser un `int`, vamos a reservar 4 bytes. Entonces, la llamada debería quedar así:
 
 ```c:no-line-numbers
-malloc (4);
+malloc (4);[^8]
 ```
 
 Entonces, ¿por cada tipo de puntero que tenga que declarar me tengo que acordar los bytes que ocupa? No necesariamente, podemos recurrir al operador `sizeof`.
@@ -116,7 +116,7 @@ int main(void){
 
 Sin embargo, ¡falta algo más! Si bien reservamos el espacio en memoria al que va a apuntar nuestro puntero, ¿qué dato contiene ese espacio? Lo que contiene es… ¡basura!
 
-Para asignarle un valor, usamos el operador `*` (asterisco), el operador de *desreferencia* de C:
+Para asignarle un valor, usamos el operador `*` (asterisco), el operador de *desreferencia*[^9] de C:
 
 ```c
 #include <stdlib.h>
@@ -361,7 +361,7 @@ p->apellido = "Trabajos";
 p->edad = 56;
 ```
 
-El operador `->` se puede utilizar si tenemos estructuras anidadas. Supongamos que al campo `t_persona` le agregamos un campo más para que haga referencia a un hijo:
+El operador `->`[^10] se puede utilizar si tenemos estructuras anidadas. Supongamos que al campo `t_persona` le agregamos un campo más para que haga referencia a un hijo:
 
 ```c
 typedef struct
@@ -406,13 +406,13 @@ char* tmp =
 - Luego copia la palabra por argumento al segmento reservado
 
 ```c:no-line-numbers
-memcpy(tmp, palabra, strlen(palabra));
+memcpy(tmp, palabra, strlen(palabra));[^11]
 ```
 
 - Inserta el `\0` faltante en la última posición, usando el conjunto de bytes como si fuera un array.
 
 ```c:no-line-numbers
-tmp[strlen(palabra)] = '\0';
+tmp[strlen(palabra)] = '\0';[^12]
 ```
 
 - y retorna el puntero al nuevo sector de memoria con la copia de la palabra
@@ -425,7 +425,7 @@ Es notable mencionar que la función es la que crea el segmento en memoria, y qu
 
 ## "Tu programa chorea memoria!" (A.K.A Memory Leaks)
 
-Al hacer el `malloc`, uno reserva un segmento continuo de memoria de el tamaño que se le indica, y un poquito más. Este extra contiene información sobre el segmento, como el tamaño, y otra metadata que el sistema operativo crea conveniente.
+Al hacer el `malloc`[^13], uno reserva un segmento continuo de memoria de el tamaño que se le indica, y un poquito más. Este extra contiene información sobre el segmento, como el tamaño, y otra metadata que el sistema operativo crea conveniente.
 
 Cuando **nuestro proceso finaliza, el SO se encarga de liberar toda la memoria asociada a nuestro proceso**. Sin embargo, durante la ejecución de nuestro proceso, **es responsabilidad nuestra liberar la memoria asignada dinámicamente** para poder reutilizarla. De no hacer ésto, nuestros procesos estarían ocupando más memoria de la que requieren realmente.
 
@@ -582,8 +582,8 @@ Sin embargo, con el tipo de datos `int` hay un tema muy importante a considerar.
 Entonces, si nosotros reservamos (malloc) 4 bytes para un tipo int en una máquina con un procesador de 32 bits no vamos a tener ningún problema pero si lo hacemos en una de 64 bits va a volar todo por los aires.
 
 Para solucionar este problema podemos considerar dos opciones:
-Recurrir a un tipo de datos que no dependa de la arquitectura de nuestro procesador, es decir, que tengan un tamaño fijo lo corramos donde lo corramos. Por ejemplo, `int32_t` o `int64_t`.
-Utilizar el operador el `sizeof()` para que se acople a la arquitectura en la que esté corriendo. Ej: malloc(sizeof int);
+- Recurrir a un tipo de datos que no dependa de la arquitectura de nuestro procesador, es decir, que tengan un tamaño fijo lo corramos donde lo corramos. Por ejemplo, `int32_t` o `int64_t`[^14].
+- Utilizar el operador el `sizeof()` para que se acople a la arquitectura en la que esté corriendo. Ej: malloc(sizeof int);
 
 Normalmente vamos a optar por usar el operador `sizeof`, los tipos de dato entero de tamaño fijo los vamos a dejar para aquellos momentos en que no podemos dejar el tamaño del entero al criterio del sistema operativo. Un uso común para estos tipos de datos es cuando queremos realizar un intercambio de datos entre dos computadoras diferentes, pero eso lo veremos en el proximo capitulo.
 
@@ -750,3 +750,38 @@ int main(int argc, char **argv) {
 - [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
 - [Tutorial de Valgrind](../herramientas/valgrind.md) (para resolver memory leaks)
 - [Video sobre punteros](https://www.youtube.com/watch?v=5VnDaHBi8dM&ab_channel=Napalm) (en inglés)
+
+
+<br><br>
+
+
+[^1]: Ojo, no nos estamos refiriendo al esquema de segmentación para el manejo de la memoria.
+
+[^2]: En el próximo capítulo se definirá el concepto de puntero.
+
+[^3]: Por ejemplo, registros de la CPU al momento de la ejecución del proceso.
+
+[^4]: En el comic original, el narrador es quien dice esta frase al final del primer volumen /NERD.
+
+[^5]: La traducción correcta de library es biblioteca y NO “librería”.
+
+[^6]: `malloc()` es una abreviatura de “**m**emory **allo**cate”.
+
+[^7]: En C89 estábamos obligados, cada vez que llamábamos a malloc, a castear el puntero retornado por malloc al tipo de dato que estemos usando. En C99 esto ya no es necesario.
+
+[^8]: Si corremos ésto en una computadora con un sistema operativo y compilador de 32 bits no vamos a tener problemas. Sin embargo, si nuestro sistema operativo/compilador es de otra cantidad (64 bits) vamos a tener problemas. [Acá está explicado](#el-problema-del-tipo-de-dato-"int").
+
+
+[^9]: [Dereference operator](http://en.wikipedia.org/wiki/Dereference_operator)
+
+[^10]: Ojo, son dos caracteres: - y > (menos y mayor). No busques un caracter que sea la flecha :)
+
+
+[^11]: [memcpy(dest, source, length)](https://linux.die.net/man/3/memcpy), donde dest es la variable donde se guardará el dato copiado, source es la variable de donde se copiará los datos y length la cantidad de bytes que deseamos copiar.
+
+
+[^12]: Un **string** se diferencia de un **stream** en que al final del array de caracteres hay un carácter especial ‘\0’ que indica fin de cadena. Como nuestro objetivo es copiar un string, debemos agregar éste caracter a mano. 
+
+[^13]: En realidad, cualquier operación de reserva de memoria dinámica, como calloc(), malloc() o realloc(). 
+
+[^14]: Más info [acá](http://www.nongnu.org/avr-libc/user-manual/group__avr__stdint.html). 
