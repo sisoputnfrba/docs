@@ -1,6 +1,9 @@
 :root {
   scroll-behavior: smooth;
 
+  // custom max width
+  --content-width: 1080px;
+
   // brand colors
   --c-brand: #d00c34;
   --c-brand-light: #d52448;
