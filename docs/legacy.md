@@ -36,16 +36,6 @@ en la página:
 ### Cómo implementar tu propio malloc
 - [Tutorial para implementar tu propio malloc](http://mgarciaisaia.github.io/tutorial-c/blog/2014/12/26/un-tutorial-rapido-para-implementar-y-debuggear-malloc/)
 
-## Eclipse
-
-### Snippets/Templates
-- [Ayudas de Eclipse](https://docs.google.com/document/d/1S4H6pv6RldiWZlmQe0xaOYY-J5alByvhrYVeVMROWT0/edit)
-- [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.vv9t5d6yowf2)
-
-### Refactoring
-- [Eclipse - Refactors](https://docs.google.com/document/d/1UpPjGZmeR66WFjNXSVd5gEGVb0m-6EBejfkxFBO0CEg/edit)
-- [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.ja3m0nnnuhd2)
-
 ## VirtualBox
 
 ### Crear Snapshots
