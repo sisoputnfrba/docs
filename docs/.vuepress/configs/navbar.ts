@@ -70,7 +70,7 @@ export const navbar: NavbarConfig = [
             link: '/guias/linux/threads',
           },
           {
-            text: 'PowerPoint de Señales',
+            text: 'Presentación de Señales',
             link: 'https://faq.utnso.com.ar/seniales'
           }
         ],
