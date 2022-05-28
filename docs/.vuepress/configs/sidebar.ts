@@ -33,7 +33,6 @@ export const sidebar: SidebarConfig = [
       '/guias/programacion/readline',
       '/guias/programacion/buenas-practicas',
       '/guias/programacion/cspec',
-      '/guias/programacion/cunit',
     ],
   },
   {

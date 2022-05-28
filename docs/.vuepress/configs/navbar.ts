@@ -51,11 +51,7 @@ export const navbar: NavbarConfig = [
           {
             text: 'Unit Testing con CSpec',
             link: '/guias/programacion/cspec'
-          },
-          {
-            text: 'Unit Testing con CUnit',
-            link: '/guias/programacion/cunit'
-          },
+          }
         ],
       },
       {
