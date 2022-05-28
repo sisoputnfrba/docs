@@ -72,7 +72,7 @@ El email configurado debe ser uno de los mails verificados en tu
 
 :::
 
-También podemos configurar el _gestor de credenciales_ para que _almacene_
+También podemos configurar el gestor de credenciales para que almacene
 nuestro [token](https://github.com/settings/tokens) la próxima vez que lo
 ingresemos al hacer `git pull` o `git push`:
 
@@ -80,8 +80,8 @@ ingresemos al hacer `git pull` o `git push`:
 git config --global credential.helper store
 ```
 
-De esta forma, será necesario volverlo a ingresar cada vez que querramos
-interactuar con el repo del Trabajo Práctico.
+De esta forma, una vez lo ingresemos por primera vez no será necesario volverlo
+a hacer cada vez que querramos interactuar con el repo del Trabajo Práctico.
 
 ## Próximos pasos
 
