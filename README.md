@@ -1,6 +1,8 @@
 # so-docs
 
-Guías de la cátedra de Sistemas Operativos - UTN.FRBA.
+Este repo contiene todas las guías de la cátedra de Sistemas Operativos - UTN.FRBA.
+
+Todas las ideas, correcciones y tareas para hacer se encuentran en [este tablero](https://github.com/sisoputnfrba/docs/projects/1).
 
 ## Requisitos
 
