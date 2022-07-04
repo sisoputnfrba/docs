@@ -182,7 +182,7 @@ Para borrar una directorio, lo hacemos corriendo `rm -r directorio`.
 
 ::: warning IMPORTANTE
 
-Tener en cuenta que si corremos ese comando para un directorio con contenido, 
+Tener en cuenta que si corremos ese comando para un directorio con contenido,
 el mismo también será eliminado.
 
 :::
@@ -359,10 +359,10 @@ Probemos con un ejemplo:
 - Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
   seteado.
 
-::: tip 
+::: tip
 
 También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE`
-aparece registrada. 
+aparece registrada.
 
 :::
 
@@ -371,7 +371,8 @@ seguir teniendo nuestra nueva variable.
 
 ## Comandos útiles para la entrega
 
-TODO: WIP
+WIP ([link al borrador](https://docs.google.com/document/d/10N5IAMVSCLz5AGibeI8R50RKvMxfeOwU5SPgI0bokUw/edit#heading=h.cqfzn5kd4ima))
+
 
 ## Material recomendado
 

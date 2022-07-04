@@ -123,7 +123,7 @@ pediremos iniciar varias consolas sobre cada VM Server. El método más sencillo
 para lograr ambas cosas sin una interfaz gráfica es conectarse por SSH.
 
 Desde Windows (que es el entorno sobre el que están instalado VirtualBox en el
-laboratorio), la forma más sencilla de hacerlo es utilizando 
+laboratorio), la forma más sencilla de hacerlo es utilizando
 [PuTTY](https://www.putty.org/):
 
 ![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
@@ -144,9 +144,10 @@ A partir de acá, lo que queda es usar la consola para clonar, compilar,
 configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 1. Clonar el repo
-2. Instalar las bibliotecas necesarias (incluyendo las commons). Si cuentan con
-   una shared library propia, deberán copiar los headers (".h") en
-   `/usr/local/include` y la biblioteca compilada (".so") en `/usr/local/lib`
+2. Instalar las bibliotecas necesarias (incluyendo las
+   [commons](https://github.com/sisoputnfrba/so-commons-library#guía-de-instalación)).
+   Si cuentan con una shared library propia, deberán copiar los headers (".h")
+   en `/usr/local/include` y la biblioteca compilada (".so") en `/usr/local/lib`
    [^2].
 3. Compilar los módulos (recuerden que para poder compilar tienen que subir los
    makefiles[^3] ya que no está permitido subir archivos binarios al repo).
@@ -207,7 +208,7 @@ entregas:
 | En local mis módulos se conectan, pero en las VMs de prueba no.                                   | Tener parametrizado estáticamente en el código (también conocido como _hardcodeado_) `"localhost"` a la hora de conectar módulos.                                                               | Sacar el `localhost` y [configurar getaddrinfo en los servidores](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE%20flag%20is%20not,peers%20running%20on%20the%20same%20host.) |
 | Local funciona bien, pero en la entrega tengo comportamientos no determinísticos.                 | Local hay un solo CPU para todas las vms, pero en la entrega hay varios porque son varias máquinas. Ese paralelismo puede hacer que sus condiciones de carrera brillen más que con un solo CPU. |                          Probarlo distribuido con [Helgrind](/guias/herramientas/valgrind.html) (pueden levantar dos VMs server en sus máquinas si no pueden ir a Medrano) y usar semáforos.                          |
 | Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no me andan los sockets. | Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.                                                                                                   |                                                     [Configurar setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables.                                                     |
-| No puedo compilar mis módulos y no sé qué hacer.                                                  | Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                                                                             |                                                                                    Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                    |
+| No puedo compilar mis módulos y no sé qué hacer.                                                  | Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                                                                             |                                                                                  Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                   |
 | No tengo información suficiente para darme cuenta si la prueba anduvo o no.                       | No puse logs suficientes en mi TP porque creí que no era necesario.                                                                                                                             |                            La foto final no garantiza que el trayecto haya sido el correcto. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron.                             |
 | Tardo demasiado en darme cuenta si la prueba anduvo o no.                                         | Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                                                                                |      Aprovechen que las commons proveen varios [niveles de logueo](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/log.h#L50-L52) para ocultar/mostrar solo la información relevante.      |
 
