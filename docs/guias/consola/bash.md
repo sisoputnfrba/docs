@@ -1,4 +1,4 @@
-# Guía de Bash
+# Guía de uso de Bash
 
 A continuación, vas a poder aprender para qué sirven una serie de comandos
 seleccionados que van a serte útiles.
@@ -68,7 +68,6 @@ ocultando los archivos que empiezan con `.`
 
 :::
 
-
 ### `cd`
 
 Este comando nos permite **navegar entre directorios**. Pasándole como argumento
@@ -101,7 +100,6 @@ Para tener en cuenta:
 - `cd -` nos permite movernos al directorio en el que estábamos anteriormente.
 - En caso de que la carpeta se encuentre dentro del directorio home del usuario
   (ej: `/home/utnso`), podemos reemplazar esa parte con un `~`.
-
 
 ### `touch`
 
@@ -154,19 +152,29 @@ como segundo, el destino.
 
 ::: details Ejemplo
 
-Dentro de comandos-basicos:
+Dentro de `comandos-basicos`:
 
-- Corremos `mv unArchivo.txt /un-directorio/unArchivo.txt`.
+- Ejecutamos `mkdir un-directorio` y luego:
+
+```:no-line-numbers
+mv unArchivo.txt /un-directorio/unArchivo.txt
+```
+
 - Haciendo `ls`, vemos que `unArchivo.txt` ya no se encuentra listado en el
   directorio comandos-basicos.
-- Haciendo `cd un-directorio` y luego `ls`, vemos que el archivo se encuentra
-  ahora dentro de esta carpeta.
+
+- Haciendo `cd un-directorio` y luego `ls`, vemos que ahora el archivo se
+  encuentra dentro de esta carpeta.
 
 Ahora bien, decidamos que ya no nos gusta el nombre que le pusimos a nuestro
 archivo y queremos cambiarlo.
 
-- Dentro de comandos-basicos/un-directorio, corremos
-  `mv unArchivo.txt chocolate.txt`.
+- Dentro de `comandos-basicos/un-directorio`, corremos:
+
+```:no-line-numbers
+mv unArchivo.txt chocolate.txt
+```
+
 - Haciendo `ls`, vemos que ya no tenemos ningún "unArchivo.txt" sino mas bien un
   "chocolate.txt".
 - Haciendo `cat chocolate.txt`, vemos que el contenido se mantuvo.
@@ -181,8 +189,9 @@ Para borrar un archivo, simplemente corremos `rm nombreArchivo`.
 
 ::: details Ejemplo
 
-- Dentro de la carpeta un-directorio, correr `rm chocolate.txt`. Veremos que el
-  archivo fue eliminado.
+- Dentro de la carpeta `un-directorio`, correr `rm chocolate.txt`
+
+Veremos que el archivo fue eliminado.
 
 :::
 
@@ -190,40 +199,51 @@ Para borrar un directorio, lo hacemos corriendo `rm -r directorio`.
 
 ::: warning IMPORTANTE
 
-Tener en cuenta que si corremos ese comando para un directorio con contenido,
-el mismo también será eliminado.
+Tener en cuenta que si corremos ese comando para un directorio con contenido, el
+mismo también será eliminado.
 
 :::
 
 ::: details Ejemplo
 
-- Dentro de la carpeta comandos-basicos, correr `rm -r un-directorio`. Veremos
-  que el mismo fue eliminado. (Puede probarse también agregando un nuevo archivo
-  con `touch nuevoArchivo.txt` y comprobando que el comando elimina el
-  directorio con todo lo que hay dentro.)
+- Dentro de la carpeta comandos-basicos, correr `rm -r un-directorio`.
+
+Veremos que el mismo fue eliminado.
+
+::: tip NOTA
+
+Puede probarse también agregando un nuevo archivo con `touch nuevoArchivo.txt` y
+comprobando que el comando elimina el directorio con todo lo que hay dentro.
 
 :::
 
 ### `head` y `tail`
 
 `head` se utiliza para **ver las primeras líneas de un archivo** de texto.
+Podemos explicitar cuántas líneas queremos que nos muestre utilizando el flag
+`-n` junto con el número deseado.
 
 ::: details Ejemplo
 
 - Crear algún archivo usando `touch unArchivo.txt` y completar con
   `nano unArchivo.txt` poniendo los números del 1 al 15 en cada línea (salto de
-  línea de por medio).
+  línea de por medio):
+
+```:no-line-numbers
+1
+2
+3
+...
+```
+
 - Ejecutar `head unArchivo.txt` y luego ejecutar `head -n 5 unArchivo.txt`.
-- Vemos que, sin indicaciones extra, el comando nos trae las primeras 10 líneas
-  de cualquier archivo, pero también podemos explicitar cuántas líneas queremos
-  que nos muestre utilizando el flag `-n` junto con el número deseado.
+- Vemos que el comando nos trae las primeras 5 líneas del archivo.
 
 :::
 
 `tail`, por el otro lado, realiza lo inverso al comando anterior: nos **trae las
-últimas líneas de un archivo** de texto. Por defecto traerá las últimas 10
-líneas, pero utilizando el mismo flag mencionado anteriormente, podemos
-explicitar la cantidad de líneas deseadas.
+últimas líneas de un archivo** de texto. Utilizando el mismo flag mencionado
+anteriormente, podemos explicitar la cantidad de líneas deseadas.
 
 ::: details Ejemplo
 
@@ -235,9 +255,9 @@ Se puede repetir el ejemplo anterior utilizando `tail unArchivo.txt` y
 ::: tip
 
 Una de las grandes utilidades de `tail` es que junto con el flag `-f` nos
-permite visualizar las líneas que se van agregando a un archivo en tiempo
-real. Esto te puede ser útil para monitorear archivos de logs, por ejemplo,
-haciendo `tail -f miArchivo.log`.
+permite visualizar las líneas que se van agregando a un archivo en tiempo real.
+Esto te puede ser útil para monitorear archivos de logs, por ejemplo, haciendo
+`tail -f miArchivo.log`.
 
 :::
 
@@ -257,11 +277,17 @@ archivo (`>`) como utilizar un archivo como entrada para un comando (`<`).
 
 ::: details Ejemplo
 
-- Si corremos `echo "aguante sistemas operativos" > redireccion.txt`, vemos que
-  no nos devuelve ninguna salida (o _output_). El comando `echo` sirve para
-  imprimir lo que pasemos por argumento en pantalla. Si hacemos `ls`, podemos
-  ver que ahora existe un nuevo archivo llamado "redireccion.txt", creado por
-  nosotros recién.
+- El comando `echo` sirve para imprimir lo que pasemos por argumento en
+  pantalla, pero si corremos:
+
+```:no-line-numbers
+echo "aguante sistemas operativos" > redireccion.txt
+```
+
+Veremos que no nos devuelve ninguna salida (o _output_).
+
+- Si hacemos `ls`, podemos ver que ahora existe un nuevo archivo llamado
+  "redireccion.txt", creado por nosotros recién.
 - Si ahora hacemos `cat < redireccion.txt`, estaremos pasando el archivo como
   parámetro del `cat`, por lo que su contenido será impreso en pantalla y
   coincidirá con la salida del comando `echo` utilizado anteriormente.
@@ -270,19 +296,26 @@ archivo (`>`) como utilizar un archivo como entrada para un comando (`<`).
 
 Es importante saber que el llamar a `>`, siempre generará un nuevo archivo con
 el nombre que indiquemos, incluso si eso implica pisar el contenido de alguno
-existente. Si quisiéramos, por el contrario, agregar el nuevo contenido al que
-ya había previamente en un archivo existente, debemos utilizar `>>`.
+existente.
+
+Si quisiéramos, por el contrario, agregar el nuevo contenido al que ya había
+previamente en un archivo existente, debemos utilizar `>>`.
 
 ::: details Ejemplo
 
 - Teniendo en cuenta nuestro archivo creado previamente, si volvemos a llamar el
-  comando `echo "aguante sistemas operativos" > redireccion.txt` y luego
-  imprimimos el contenido del archivo por pantalla, veremos que la frase está
-  sólo una vez y no dos veces aunque hayamos utilizado el comando en dos
-  ocasiones.
-- Si, en vez, corremos `echo "una nueva linea" >> redireccion.txt`, haciendo
-  `cat redireccion.txt`, ahora veremos que el contenido del archivo es el previo
-  concatenado con el nuevo.
+  mismo comando y luego imprimimos el contenido del archivo por pantalla,
+  veremos que la frase está sólo una vez y no dos veces aunque hayamos utilizado
+  el comando en dos ocasiones.
+
+- Si, en lugar de eso, corremos:
+
+```:no-line-numbers
+echo "una nueva linea" >> redireccion.txt
+```
+
+Haciendo `cat redireccion.txt`, ahora veremos que el contenido del archivo es el
+previo concatenado con el nuevo.
 
 :::
 
@@ -305,7 +338,6 @@ cuarta linea
 
 - Supongamos que ahora queremos obtener la tercera línea de dicho archivo,
   podríamos conseguirlo haciendo `head -n 3 pipes.txt | tail -n 1`.
-
 
 Este comando nos permite, en vez de tener que hacerlo en dos pasos, ingresar las
 tres líneas que resultan la salida del primer comando `head` como entrada del
@@ -383,16 +415,15 @@ seguir teniendo nuestra nueva variable.
 
 ::: tip
 
-También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE`
-aparece registrada.
+También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE` aparece
+registrada.
 
 :::
 
-
 ## Comandos útiles para la entrega
 
-WIP ([link al borrador](https://docs.google.com/document/d/10N5IAMVSCLz5AGibeI8R50RKvMxfeOwU5SPgI0bokUw/edit#heading=h.cqfzn5kd4ima))
-
+WIP
+([link al borrador](https://docs.google.com/document/d/10N5IAMVSCLz5AGibeI8R50RKvMxfeOwU5SPgI0bokUw/edit#heading=h.cqfzn5kd4ima))
 
 ## Material recomendado
 

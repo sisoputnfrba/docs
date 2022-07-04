@@ -16,7 +16,7 @@ export const navbar: NavbarConfig = [
         text: 'Consola de Linux y Git',
         children: [
           {
-            text: 'Guía de Bash',
+            text: 'Guía de uso de Bash',
             link: '/guias/consola/bash'
           },
           {
