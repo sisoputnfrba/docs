@@ -369,7 +369,11 @@ aparece registrada.
 Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
 seguir teniendo nuestra nueva variable.
 
-## Links útiles
+## Comandos útiles para la entrega
 
-- [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+TODO: WIP
+
+## Material recomendado
+
 - [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
+- [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
