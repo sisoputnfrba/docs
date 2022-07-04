@@ -22,12 +22,12 @@ para entregar.
 
 ### Generar las credenciales
 
-Para empezar, recomendamos ampliamente haber generado el
+Para empezar, recomendamos ampliamente haber generado un
 [Personal Access Token de GitHub](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-y tenerlo a mano antes de entrar al laboratorio para poder clonar el repositorio
-del TP. Sí, tarda 5 minutos en crearse, pero si multiplicamos ese tiempo por los
-80 grupos por entrega se va a notar de cuánto tiempo ahorrado para todos estamos
-hablando.
+que **expire al día siguiente**[^2] y tenerlo a mano antes de entrar al
+laboratorio para poder clonar el repositorio del TP. Sí, tarda 5 minutos en
+crearse, pero si multiplicamos ese tiempo por los 80 grupos por entrega se va a
+notar de cuánto tiempo ahorrado para todos estamos hablando.
 
 ### Contar con los config de las pruebas
 
@@ -130,9 +130,9 @@ laboratorio), la forma más sencilla de hacerlo es utilizando
 
 ::: tip
 
-Para evitar que se pierda la conexión después de un cierto período de
-inactividad, debemos movernos a `Settings` > `Connection` y setear el valor de
-`Seconds between keepalives` en 30 segundos:
+Para evitar que se pierda la conexión después de un período de inactividad,
+debemos movernos a `Settings` > `Connection` y setear el valor de
+`Seconds between keepalives` en alrededor de 30 segundos:
 
 ![config salvadora](/img/guias/herramientas/deploy/deploy-03.jpg)
 
@@ -146,9 +146,9 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 1. Clonar el repo
 2. Instalar las bibliotecas necesarias (incluyendo las
    [commons](https://github.com/sisoputnfrba/so-commons-library#guía-de-instalación))
-   [^2].
+   [^3].
 3. Compilar los módulos (recuerden que para poder compilar tienen que subir los
-   makefiles[^3] ya que no está permitido subir archivos binarios al repo).
+   makefiles[^4] ya que no está permitido subir archivos binarios al repo).
 4. Llenar archivos de config con la IP y el Puerto de cada módulo.
 
 ::: tip
@@ -228,13 +228,17 @@ del cuatri y qué relaciones encontraron con la teoría.
 
 [^1]: ...hasta el cuatrimestre que viene
 [^2]:
+    Tener una fecha de expiración corta para nuestros tokens siempre es una
+    buena práctica de seguridad.
+
+[^3]:
     Si cuentan con una shared library propia, deberán copiar los headers (".h")
     en `/usr/local/include` y la biblioteca compilada (".so") en
     `/usr/local/lib`. Las commons se instalan
     [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/makefile#L33-L34)
     ;)
 
-[^3]:
+[^4]:
     En Eclipse, los makefiles son varios archivos que se encuentran en la
     subcarpeta `Debug/` y se llaman `makefile` o tienen la extensión ".mk". Para
     poder compilar es necesario subirlos **todos**.
