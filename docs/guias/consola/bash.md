@@ -38,6 +38,8 @@ comando sin ningún argumento, nos mostrará el contenido del directorio sobre e
 que nos encontramos, pero podríamos ver el contenido de cualquier otro pasando
 como argumento la ruta del mismo.
 
+::: details Ejemplo
+
 Por ejemplo, si incluimos los flags `-l` para listar la información del archivo
 y `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
 parecido a esto:
@@ -48,8 +50,6 @@ drwxr-xr-x  3 utnso utnso 4096 Jul  4 11:29 .
 drwxr-xr-x 24 utnso utnso 4096 Jul  4 11:29 ..
 drwxr-xr-x  2 utnso utnso 4096 Jul  4 11:29 comandos-basicos
 ```
-
-::: tip
 
 Cada columna contiene lo siguiente (si no entienden algo, tranqui, lo verán más
 en detalle en la teoría):
@@ -63,15 +63,18 @@ en detalle en la teoría):
 - Fecha y hora de modificación
 - Nombre
 
-:::
-
 Si ejecutamos solo `ls`, veremos que únicamente se muestran los nombres y
 ocultando los archivos que empiezan con `.`
+
+:::
+
 
 ### `cd`
 
 Este comando nos permite **navegar entre directorios**. Pasándole como argumento
-la ruta de un directorio, `cd` nos va a dejar ingresar en él, ejemplo:
+la ruta de un directorio, `cd` nos va a dejar ingresar en él.
+
+::: details Ejemplo
 
 ```:no-line-numbers
 cd comandos-basicos
@@ -82,8 +85,6 @@ cd comandos-basicos
 Es importante saber que pudimos simplemente invocar el nombre de la carpeta
 porque estamos dentro del directorio en el que se encuentra.
 
-:::
-
 Si quisiéramos acceder a un directorio que no se encuentra dentro del actual,
 debemos pasarle la ruta absoluta. Ejemplo:
 
@@ -91,7 +92,7 @@ debemos pasarle la ruta absoluta. Ejemplo:
 cd /usr/bin
 ```
 
-::: tip TIP
+:::
 
 Para tener en cuenta:
 
@@ -101,7 +102,6 @@ Para tener en cuenta:
 - En caso de que la carpeta se encuentre dentro del directorio home del usuario
   (ej: `/home/utnso`), podemos reemplazar esa parte con un `~`.
 
-:::
 
 ### `touch`
 
@@ -121,6 +121,8 @@ directorios y el archivo que acabamos de crear.
 Este comando nos permite **imprimir en pantalla el contenido de un archivo**.
 Probemos escribiendo algo en el archivo `unArchivo.txt` recién creado.
 
+::: details Ejemplo
+
 1. Vamos a utilizar el editor de texto `nano` ejecutando:
 
 ```:no-line-numbers
@@ -132,10 +134,8 @@ permitir agregar contenido a nuestro archivo.
 
 2. Copiemos el siguiente texto: `¡Hola! Soy un archivo` y peguémoslo usando
    `Ctrl`+`Shift`+`v`.
-
 3. Salgamos del editor con `Ctrl`+`X` y luego aceptemos guardar los cambios
    escribiendo `y`.
-
 4. Corramos el comando:
 
 ```:no-line-numbers
@@ -144,13 +144,17 @@ cat unArchivo.txt
 
 Veremos que la salida es la oración que acabamos de escribir.
 
+:::
+
 ### `mv`
 
 Este comando nos permite **mover archivos de un lugar a otro**, aunque también
 se le da uso para **renombrar archivos**. Toma como primer argumento el origen y
 como segundo, el destino.
 
-Ej. dentro de comandos-basicos:
+::: details Ejemplo
+
+Dentro de comandos-basicos:
 
 - Corremos `mv unArchivo.txt /un-directorio/unArchivo.txt`.
 - Haciendo `ls`, vemos que `unArchivo.txt` ya no se encuentra listado en el
@@ -167,18 +171,22 @@ archivo y queremos cambiarlo.
   "chocolate.txt".
 - Haciendo `cat chocolate.txt`, vemos que el contenido se mantuvo.
 
+:::
+
 ### `rm`
 
 Este comando nos permite **borrar directorios o archivos**.
 
-Para borrar un archivo, simplemente corremos `rm nombreArchivo.extension`.
+Para borrar un archivo, simplemente corremos `rm nombreArchivo`.
 
-Ej.
+::: details Ejemplo
 
 - Dentro de la carpeta un-directorio, correr `rm chocolate.txt`. Veremos que el
   archivo fue eliminado.
 
-Para borrar una directorio, lo hacemos corriendo `rm -r directorio`.
+:::
+
+Para borrar un directorio, lo hacemos corriendo `rm -r directorio`.
 
 ::: warning IMPORTANTE
 
@@ -187,18 +195,20 @@ el mismo también será eliminado.
 
 :::
 
-Ej.
+::: details Ejemplo
 
 - Dentro de la carpeta comandos-basicos, correr `rm -r un-directorio`. Veremos
   que el mismo fue eliminado. (Puede probarse también agregando un nuevo archivo
   con `touch nuevoArchivo.txt` y comprobando que el comando elimina el
   directorio con todo lo que hay dentro.)
 
-### `head` & `tail`
+:::
+
+### `head` y `tail`
 
 `head` se utiliza para **ver las primeras líneas de un archivo** de texto.
 
-Ej.
+::: details Ejemplo
 
 - Crear algún archivo usando `touch unArchivo.txt` y completar con
   `nano unArchivo.txt` poniendo los números del 1 al 15 en cada línea (salto de
@@ -208,13 +218,19 @@ Ej.
   de cualquier archivo, pero también podemos explicitar cuántas líneas queremos
   que nos muestre utilizando el flag `-n` junto con el número deseado.
 
+:::
+
 `tail`, por el otro lado, realiza lo inverso al comando anterior: nos **trae las
 últimas líneas de un archivo** de texto. Por defecto traerá las últimas 10
 líneas, pero utilizando el mismo flag mencionado anteriormente, podemos
 explicitar la cantidad de líneas deseadas.
 
+::: details Ejemplo
+
 Se puede repetir el ejemplo anterior utilizando `tail unArchivo.txt` y
 `tail -n 5 unArchivo.txt`, en los lugares correspondientes.
+
+:::
 
 ::: tip
 
@@ -230,14 +246,16 @@ haciendo `tail -f miArchivo.log`.
 Nos permite ver la función de cualquier comando de Linux. Sirve para invocar el
 _manual_ que nos dice qué hace un comando y cómo se utiliza.
 
-Ej. `man tail` nos explicará cómo funciona el comando `tail`.
+Ejemplo: `man fopen` nos explicará cómo funciona la función `fopen()`.
+
+## Encadenando comandos
 
 ### Redirecciones (`>`, `<` y `>>`)
 
 Las redirecciones nos permiten tanto convertir la salida de un comando en un
 archivo (`>`) como utilizar un archivo como entrada para un comando (`<`).
 
-Ej.
+::: details Ejemplo
 
 - Si corremos `echo "aguante sistemas operativos" > redireccion.txt`, vemos que
   no nos devuelve ninguna salida (o _output_). El comando `echo` sirve para
@@ -248,12 +266,14 @@ Ej.
   parámetro del `cat`, por lo que su contenido será impreso en pantalla y
   coincidirá con la salida del comando `echo` utilizado anteriormente.
 
+:::
+
 Es importante saber que el llamar a `>`, siempre generará un nuevo archivo con
 el nombre que indiquemos, incluso si eso implica pisar el contenido de alguno
 existente. Si quisiéramos, por el contrario, agregar el nuevo contenido al que
 ya había previamente en un archivo existente, debemos utilizar `>>`.
 
-Ej.
+::: details Ejemplo
 
 - Teniendo en cuenta nuestro archivo creado previamente, si volvemos a llamar el
   comando `echo "aguante sistemas operativos" > redireccion.txt` y luego
@@ -264,12 +284,14 @@ Ej.
   `cat redireccion.txt`, ahora veremos que el contenido del archivo es el previo
   concatenado con el nuevo.
 
+:::
+
 ### Pipes (`|`)
 
 El símbolo `|` nos permite utilizar la salida (output) de un comando como
 entrada (input) de otro.
 
-Ej.
+::: details Ejemplo
 
 - Creemos un archivo haciendo `nano pipes.txt` y llenándolo con el siguiente
   contenido:
@@ -284,12 +306,15 @@ cuarta linea
 - Supongamos que ahora queremos obtener la tercera línea de dicho archivo,
   podríamos conseguirlo haciendo `head -n 3 pipes.txt | tail -n 1`.
 
+
 Este comando nos permite, en vez de tener que hacerlo en dos pasos, ingresar las
 tres líneas que resultan la salida del primer comando `head` como entrada del
 segundo comando `tail`, que se queda con la última línea.
 
 Otra forma de hacerlo sería `tail -n 2 pipes.txt | head -n 1`: conseguimos
 primero las últimas dos líneas y luego la primera de ellas.
+
+:::
 
 ## Variables de entorno
 
@@ -337,27 +362,24 @@ sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
 
 :::
 
-Probemos con un ejemplo:
+::: details Probemos con un ejemplo...
 
 - Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
-
 - Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
   flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo, no
   veríamos el `.bashrc`.
-
 - Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
-
 - Para agregar nuestra variable, vamos a usar el editor de texto `nano` haciendo
   `nano .profile`. (Si conocés algún otro, como `vim`, podés usarlo también.)
-
 - Al final del archivo vamos a agregar la siguiente línea:
   `export MI_VARIABLE='aguante sisop'` y la vamos a guardar de la misma forma
   que antes.
-
 - Para que el cambio se haga efectivo, cerramos la consola y abrimos otra.
-
 - Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
   seteado.
+
+Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
+seguir teniendo nuestra nueva variable.
 
 ::: tip
 
@@ -366,8 +388,6 @@ aparece registrada.
 
 :::
 
-Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
-seguir teniendo nuestra nueva variable.
 
 ## Comandos útiles para la entrega
 
