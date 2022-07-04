@@ -49,12 +49,8 @@ Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
 proporcionamos a través de los links de descarga, por lo que van a tener que
 aprender un mínimo de uso de la consola.
 
-::: details Les dejamos a mano los links
-
 - [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
 - [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
-
-Y los hashes MD5
 
 ```:no-line-numbers
 md5 (ubuntu-server-5.0.1.7z.001): 6d8ed10e4862495975e8450e799c658a
@@ -64,15 +60,14 @@ md5 (ubuntu-server-5.0.1.vdi) -descomprimido- 8424a22b2e93b73bf5cd3f13568dbbe9
 
 :::
 
-En definitiva, si tuviéramos que resumir en tres cosas, lo que deberían hacer
-para poder llegar tranquilos a una entrega con la seguridad de que van a aprobar
-sería:
+Si tuviéramos que resumir en tres cosas, lo que deberían hacer para poder llegar
+a una entrega con la seguridad de que van a aprobar sería:
 
 1. Probar el TP
 2. Practicar el despliegue
 3. Probar el TP y practicar el despliegue
 
-Para esto pueden ir a los laboratorios de medrano (que están abiertos de lunes a
+Para esto pueden ir a los laboratorios de Medrano (que están abiertos de lunes a
 viernes de 10 a 21hs y sábados de 10 a 18hs) o, de no ser posible, pueden
 utilizar las VMs server desde sus casas. Para ambos casos, más adelante en la
 guía les mostraremos algunas herramientas que pueden serles de utilidad ;)
@@ -128,11 +123,22 @@ pediremos iniciar varias consolas sobre cada VM Server. El método más sencillo
 para lograr ambas cosas sin una interfaz gráfica es conectarse por SSH.
 
 Desde Windows (que es el entorno sobre el que están instalado VirtualBox en el
-laboratorio), la forma más sencilla de hacerlo es utilizando PuTTY:
+laboratorio), la forma más sencilla de hacerlo es utilizando 
+[PuTTY](https://www.putty.org/):
 
 ![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
 
-### ¿Qué hacer?
+::: tip
+
+Para evitar que se pierda la conexión después de un cierto período de
+inactividad, debemos movernos a `Settings` > `Connection` y setear el valor de
+`Seconds between keepalives` en 30 segundos:
+
+![config salvadora](/img/guias/herramientas/deploy/deploy-03.jpg)
+
+:::
+
+### Pasos a seguir
 
 A partir de acá, lo que queda es usar la consola para clonar, compilar,
 configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
@@ -150,8 +156,7 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 Para ayudar un poco, les dejamos:
 
-- [Un machete con algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
-
+- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
 - Un video explicando cómo redirigir puertos por SSH desde una VM, para ir
   familiarizándose con estas herramientas desde la comodidad de la casa.
 
@@ -202,7 +207,7 @@ entregas:
 | En local mis módulos se conectan, pero en las VMs de prueba no.                                   | Tener parametrizado estáticamente en el código (también conocido como _hardcodeado_) `"localhost"` a la hora de conectar módulos.                                                               | Sacar el `localhost` y [configurar getaddrinfo en los servidores](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE%20flag%20is%20not,peers%20running%20on%20the%20same%20host.) |
 | Local funciona bien, pero en la entrega tengo comportamientos no determinísticos.                 | Local hay un solo CPU para todas las vms, pero en la entrega hay varios porque son varias máquinas. Ese paralelismo puede hacer que sus condiciones de carrera brillen más que con un solo CPU. |                          Probarlo distribuido con [Helgrind](/guias/herramientas/valgrind.html) (pueden levantar dos VMs server en sus máquinas si no pueden ir a Medrano) y usar semáforos.                          |
 | Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no me andan los sockets. | Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.                                                                                                   |                                                     [Configurar setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables.                                                     |
-| No puedo compilar mis módulos y no sé qué hacer.                                                  | Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                                                                             |                                                                                    Revisar el [paso 2](#¿que-hacer?) de esta guía.                                                                                    |
+| No puedo compilar mis módulos y no sé qué hacer.                                                  | Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                                                                             |                                                                                    Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                    |
 | No tengo información suficiente para darme cuenta si la prueba anduvo o no.                       | No puse logs suficientes en mi TP porque creí que no era necesario.                                                                                                                             |                            La foto final no garantiza que el trayecto haya sido el correcto. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron.                             |
 | Tardo demasiado en darme cuenta si la prueba anduvo o no.                                         | Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                                                                                |      Aprovechen que las commons proveen varios [niveles de logueo](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/log.h#L50-L52) para ocultar/mostrar solo la información relevante.      |
 
@@ -231,4 +236,4 @@ del cuatri y qué relaciones encontraron con la teoría.
 [^3]:
     En Eclipse, los makefiles son varios archivos que se encuentran en la
     subcarpeta `Debug/` y se llaman `makefile` o tienen la extensión ".mk". Para
-    poder compilar es necesario subirlos **TODOS**.
+    poder compilar es necesario subirlos **todos**.
