@@ -90,14 +90,10 @@ export const navbar: NavbarConfig = [
             text: 'Tutorial de Valgrind y Helgrind',
             link: '/guias/herramientas/valgrind'
           },
-          // {
-          //   text: 'Automatizando tareas en Bash',
-          //   link: '/guias/herramientas/bash'
-          // },
-          // {
-          //   text: 'Trabajando en Remoto con SSH',
-          //   link: '/guias/herramientas/ssh',
-          // }
+          {
+            text: 'Guía de despliegue de TP',
+            link: '/guias/herramientas/deploy'
+          }
         ]
       },
     ]

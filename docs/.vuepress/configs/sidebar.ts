@@ -55,6 +55,7 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/herramientas/debugger',
       '/guias/herramientas/valgrind',
+      '/guias/herramientas/deploy'
     ],
   },
 ]
