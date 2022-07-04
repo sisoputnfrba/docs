@@ -23,10 +23,13 @@ Contamos con una guía que explica en detalle
 ### `mkdir`
 
 Nos permite **crear un nuevo directorio** (carpeta). Toma un parámetro: el
-nombre del directorio nuevo a generar.
+nombre del directorio nuevo a generar. Ejemplo:
 
-Ej. `mkdir comandos-basicos` nos va a crear una carpeta "hija" del directorio en
-el que estemos actualmente.
+```:no-line-numbers
+mkdir comandos-basicos
+```
+
+Nos va a crear una carpeta "hija" del directorio en el que estemos actualmente.
 
 ### `ls`
 
@@ -35,74 +38,111 @@ comando sin ningún argumento, nos mostrará el contenido del directorio sobre e
 que nos encontramos, pero podríamos ver el contenido de cualquier otro pasando
 como argumento la ruta del mismo.
 
-Ej. `ls` nos mostrará el contenido de nuestro directorio actual. Deberíamos
-dentro ver el nombre "comandos-basicos" de la carpeta que recién creamos.
+Por ejemplo, si incluimos los flags `-l` para listar la información del archivo
+y `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
+parecido a esto:
+
+```:no-line-numbers
+$ ls -la
+drwxr-xr-x  3 utnso utnso 4096 Jul  4 11:29 .
+drwxr-xr-x 24 utnso utnso 4096 Jul  4 11:29 ..
+drwxr-xr-x  2 utnso utnso 4096 Jul  4 11:29 comandos-basicos
+```
+
+::: tip
+
+Cada columna contiene lo siguiente (si no entienden algo, tranqui, lo verán más
+en detalle en la teoría):
+
+- Si el archivo es directorio o no y sus permisos para leer, escribir y
+  ejecutar.
+- Contador de hard links.
+- Nombre de usuario dueño del archivo
+- Nombre del grupo dueño del archivo
+- Tamaño del archivo
+- Fecha y hora de modificación
+- Nombre
+
+:::
+
+Si ejecutamos solo `ls`, veremos que únicamente se muestran los nombres y
+ocultando los archivos que empiezan con `.`
 
 ### `cd`
 
 Este comando nos permite **navegar entre directorios**. Pasándole como argumento
-la ruta de un directorio, `cd` nos va a dejar ingresar en él.
+la ruta de un directorio, `cd` nos va a dejar ingresar en él, ejemplo:
 
-Ej. como vimos antes con `ls`, existe nuestro directorio `comandos-basicos`,
-pero aún no estamos dentro de él. Para accederlo, podemos hacer
-`cd comandos-basicos`. Si utilizamos de nuevo `ls`, veremos que nada nos es
-devuelto, poque el directorio todavía está vacío.
+```:no-line-numbers
+cd comandos-basicos
+```
+
+::: tip
 
 Es importante saber que pudimos simplemente invocar el nombre de la carpeta
-(`cd comandos-basicos`) porque estamos dentro del directorio en el que se
-encuentra.
+porque estamos dentro del directorio en el que se encuentra.
+
+:::
 
 Si quisiéramos acceder a un directorio que no se encuentra dentro del actual,
-debemos pasarle la ruta absoluta:
+debemos pasarle la ruta absoluta. Ejemplo:
 
-Ej.
+```:no-line-numbers
+cd /usr/bin
+```
 
-- Creemos dos carpetas dentro de comandos-basicos haciendo `mkdir un-directorio`
-  y luego `mkdir otro-directorio`.
-- Corriendo `ls` veremos que dentro de nuestro directorio comandos-basicos se
-  encuentran los dos recientemente creados.
-- Si corremos `cd un-directorio`, nos moveremos dentro de una de las nuevas
-  carpetas.
-- Ahora bien, si intentamos correr `cd otro-directorio`, veremos que esto nos da
-  un error, debido a que no se reconoce una carpeta dentro de la actual con
-  dicho nombre.
-- Podemos, en cambio, utilizar el comando de la siguiente manera:
-  `cd ~/comandos-basicos/otro-directorio`. Veremos que ahora sí nos reconoce el
-  directorio, debido a que pasamos su ruta absoluta y pudo encontrarlo.
+::: tip TIP
 
-#### Para tener en cuenta
+Para tener en cuenta:
 
 - `cd ..` nos permite movernos un directorio hacia arriba (es decir, al padre de
   donde nos encontramos actualmente).
-- `cd` nos permite ir directamente a la carpeta `home`.
-- `cd -` nos permite movernos al directorio en el que estabamos anteriormente.
+- `cd -` nos permite movernos al directorio en el que estábamos anteriormente.
+- En caso de que la carpeta se encuentre dentro del directorio home del usuario
+  (ej: `/home/utnso`), podemos reemplazar esa parte con un `~`.
+
+:::
 
 ### `touch`
 
 Se utiliza para **crear nuevos archivos en blanco**. Como argumento, debemos
-pasarle el nombre y la extensión del nuevo archivo a crear.
+pasarle el nombre y la extensión del nuevo archivo a crear. Ejemplo:
 
-Ej. dentro de `comandos-basicos` correr `touch unArchivo.txt`. Con `ls`, podemos
-ver que ahora nuestro directorio contiene otros dos directorios y el archivo que
-acabamos de crear.
+```:no-line-numbers
+cd ~/comandos-basicos
+touch unArchivo.txt
+```
+
+Al ejecutar `ls`, podemos ver que ahora nuestro directorio contiene otros dos
+directorios y el archivo que acabamos de crear.
 
 ### `cat`
 
 Este comando nos permite **imprimir en pantalla el contenido de un archivo**.
+Probemos escribiendo algo en el archivo `unArchivo.txt` recién creado.
 
-Ej. si encontrándonos en `comandos-basicos` hacemos `cat unArchivo.txt`, veremos
-que no nos devuelve nada, ya que el archivo que creamos recién no tiene
-contenido.
+1. Vamos a utilizar el editor de texto `nano` ejecutando:
 
-Probemos escribiendo algo en él:
+```:no-line-numbers
+nano unArchivo.txt
+```
 
-- Vamos a utilizar un editor de texto llamado _nano_. Para hacer uso, corramos
-  `nano unArchivo.txt`. Este comando va a abrir un editor de texto dentro de la
-  misma consola y nos va a permitir agregar contenido a nuestro archivo.
-- Copiemos el siguiente texto dentro: "_Hola, soy un archivo :)_" y luego
-  salgamos del editor (primero, ctrl + x ; segundo, y; tercero, enter).
-- Corramos nuevamente el comando `cat unArchivo.txt`. Esta vez, veremos que la
-  salida es la oración que acabamos de escribir.
+Este comando va a abrir un editor de texto dentro de la misma consola y nos va a
+permitir agregar contenido a nuestro archivo.
+
+2. Copiemos el siguiente texto: `¡Hola! Soy un archivo` y peguémoslo usando
+   `Ctrl`+`Shift`+`v`.
+
+3. Salgamos del editor con `Ctrl`+`X` y luego aceptemos guardar los cambios
+   escribiendo `y`.
+
+4. Corramos el comando:
+
+```:no-line-numbers
+cat unArchivo.txt
+```
+
+Veremos que la salida es la oración que acabamos de escribir.
 
 ### `mv`
 
@@ -140,8 +180,12 @@ Ej.
 
 Para borrar una directorio, lo hacemos corriendo `rm -r directorio`.
 
-> Es importante tener en cuenta que si corremos ese comando para un directorio
-> con contenido, el mismo también será eliminado.
+::: warning IMPORTANTE
+
+Tener en cuenta que si corremos ese comando para un directorio con contenido, 
+el mismo también será eliminado.
+
+:::
 
 Ej.
 
@@ -172,10 +216,14 @@ explicitar la cantidad de líneas deseadas.
 Se puede repetir el ejemplo anterior utilizando `tail unArchivo.txt` y
 `tail -n 5 unArchivo.txt`, en los lugares correspondientes.
 
-> Una de las grandes utilidades de `tail` es que junto con el flag `-f` nos
-> permite visualizar las líneas que se van agregando a un archivo en tiempo
-> real. Esto te puede ser útil para monitorear archivos de logs, por ejemplo,
-> haciendo `tail -f miArchivo.log`.
+::: tip
+
+Una de las grandes utilidades de `tail` es que junto con el flag `-f` nos
+permite visualizar las líneas que se van agregando a un archivo en tiempo
+real. Esto te puede ser útil para monitorear archivos de logs, por ejemplo,
+haciendo `tail -f miArchivo.log`.
+
+:::
 
 ### `man`
 
@@ -184,7 +232,7 @@ _manual_ que nos dice qué hace un comando y cómo se utiliza.
 
 Ej. `man tail` nos explicará cómo funciona el comando `tail`.
 
-### Redirecciones (`>`)
+### Redirecciones (`>`, `<` y `>>`)
 
 Las redirecciones nos permiten tanto convertir la salida de un comando en un
 archivo (`>`) como utilizar un archivo como entrada para un comando (`<`).
@@ -252,42 +300,74 @@ terminal.
 
 Corriendo el comando `env`, podemos visualizar todas las variables de Linux que
 tenemos configuradas. Aparecerán mostrando su nombre seguido de su valor, como
-por ejemplo `HOME=/home/sisop`. Para poder ver el valor de una variable de
-entorno en particular, podemos hacerlo usando el comando `echo` y su nombre, por
-ej. `echo $USER`, nos mostrará el nombre de nuestro usuario.
+por ejemplo `HOME=/home/utnso`.
 
-> Utilizamos el símbolo `$` para acceder a las variables.
+Para poder ver el valor de una variable de entorno en particular, podemos
+hacerlo usando el comando `echo` y su nombre, por ej. `echo $USER`, nos mostrará
+el nombre de nuestro usuario.
+
+::: tip
+
+Para acceder a las variables utilizamos el símbolo `$`.
+
+:::
 
 ### ¿Cómo configuro una variable de entorno?
 
-Corriendo `export NOMBRE=valor`, podemos configurar una variable de entorno. Por
-ejemplo, si hacemos `export MI_VARIABLE='aguante sistemas operativos'` y después
-listamos todas las variables disponibles con `env`, veremos que la que creamos
-recién es parte de las mismas. Haciendo `echo $MI_VARIABLE`, vemos que nos
-imprime por pantalla el valor de la misma. El problema que esto tiene es que si
-probamos cerrando la terminal actual y abriendo otra sesión, veremos que al
-correr `echo $MI_VARIABLE` nuevamente, no nos devolverá nada. ¿Qué ocurrió?
-Nuestra variable de entorno había sido definida únicamente para la sesión en la
-que estábamos trabajando y, por eso, no persistió. Ahora, ¿cómo hacemos para
-definir una variable que valga para todas las sesiones? Podemos hacerlo
-agregándola al archivo `.profile`. Probemos con un ejemplo:
+Corriendo `export NOMBRE=valor`, podemos configurar una variable de entorno.
 
-- Dirigite al directorio raíz (root) simplemente poniendo `cd`. Cuando no le
-  pasás ningún argumento, el comando te lleva solo al root.
+Por ejemplo, si hacemos `export MI_VARIABLE='aguante sistemas operativos'` y
+después listamos todas las variables disponibles con `env`, veremos que la que
+creamos recién es parte de las mismas. Haciendo `echo $MI_VARIABLE`, vemos que
+nos imprime por pantalla el valor de la misma.
+
+El problema que esto tiene es que si probamos cerrando la terminal actual y
+abriendo otra sesión, veremos que al correr `echo $MI_VARIABLE` nuevamente, no
+nos devolverá nada.
+
+¿Qué ocurrió? Nuestra variable de entorno había sido definida únicamente para la
+sesión en la que estábamos trabajando y, por eso, no persistió.
+
+Ahora, ¿cómo hacemos para definir una variable que valga para todas las
+sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
+
+::: tip DATO
+
+`~/.bashrc` es un script que se va a ejecutar siempre que iniciemos una consola.
+
+:::
+
+Probemos con un ejemplo:
+
+- Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
+
 - Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
   flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo, no
-  veríamos el `.profile`.
-- Haciendo `cat .profile`, podemos ver el contenido del archivo. Para agregar
-  nuestra variable, vamos a usar el editor de texto _nano_ haciendo
-  `nano .profile`. (Si conocés algún otro, como vim, podés usarlo también.)
+  veríamos el `.bashrc`.
+
+- Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
+
+- Para agregar nuestra variable, vamos a usar el editor de texto `nano` haciendo
+  `nano .profile`. (Si conocés algún otro, como `vim`, podés usarlo también.)
+
 - Al final del archivo vamos a agregar la siguiente línea:
-  `export MI_VARIABLE='aguante sisop'` y la vamos a guardar (apretando ctrl+x y
-  luego 'y' para confirmar). Para que el cambio se haga efectivo, tenemos que
-  cerrar la consola y volverla a abrir.
+  `export MI_VARIABLE='aguante sisop'` y la vamos a guardar de la misma forma
+  que antes.
+
+- Para que el cambio se haga efectivo, cerramos la consola y abrimos otra.
+
 - Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
-  seteado. También podemos verificarlo corriendo `env` y viendo que
-  `MI_VARIABLE` aparece registrada. Ahora podemos abrir diferentes sesiones
-  tantas veces como queramos y vamos a seguir teniendo nuestra nueva variable.
+  seteado.
+
+::: tip 
+
+También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE`
+aparece registrada. 
+
+:::
+
+Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
+seguir teniendo nuestra nueva variable.
 
 ## Links útiles
 
