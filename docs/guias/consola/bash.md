@@ -271,7 +271,7 @@ en donde se encuentre.
 
 ::: tip TIP 2
 
-Les dejamos un machete para convertir los permisos tipo Unix a octal:
+Les dejamos un machete para escribir los permisos tipo Unix en octal:
 
 ![file](/img/guias/consola/bash-linux-file-permissions.jpg)
 
