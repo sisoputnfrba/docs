@@ -220,7 +220,7 @@ Por ejemplo: `Ctrl` + `X` para salir.
 
 :::
 
-**Probemos con un ejemplo...**
+::: details Probemos con un ejemplo...
 
 1. Vamos a abrir un archivo utilizando:
 
@@ -246,6 +246,8 @@ cat un-archivo.txt
 ```
 
 Veremos que la salida es la oración que recién escribimos.
+
+:::
 
 <hr>
 
@@ -288,13 +290,13 @@ Sin embargo, es posible _redirigir_ esos flujos de información (o _streams_)
 para que los comandos "se pasen" el resultado el uno al otro, o lo guarden en un
 archivo. Para esto, utilizamos **operandos de redirección**.
 
-Estos son los más básicos, junto con un ejemplo de caso de uso.
+Estos son los más básicos, junto con un ejemplo de uso.
 
-| Operando |                                            Descripción                                            |                          Ejemplo                          |
-| :------: | :-----------------------------------------------------------------------------------------------: | :-------------------------------------------------------: |
-|   `>`    |       Escribir la salida estándar en un archivo (o sobreescribirlo en caso de ya existir).        | `echo "https://USER:TOKEN@github.com" > .git-credentials` |
-|   `>>`   | Concatenar la salida estándar al final de un archivo existente (o crearlo en caso de no existir). |    `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`     |
-|   `\|`   |                      "Pasarle" la salida estándar como input a otro comando                       |                  `cat *.c \| grep sleep`                  |
+| Operando |                                            Caso de uso                                            |                           Ejemplo                           |
+| :------: | :-----------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
+|   `>`    |       Escribir la salida estándar en un archivo (o sobreescribirlo en caso de ya existir).        | `echo "https://USER:TOKEN@github.com" > ~/.git-credentials` |
+|   `>>`   | Concatenar la salida estándar al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
+|   `\|`   |                      "Pasarle" la salida estándar como input a otro comando                       |                   `cat *.c \| grep sleep`                   |
 
 ## Variables de entorno
 
@@ -341,21 +343,21 @@ sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
 
 :::
 
-### Probemos con un ejemplo...
+::: details Probemos con un ejemplo...
 
 1. Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
 2. Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
-  flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo, no
-  veríamos el `.bashrc`.
+   flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo,
+   no veríamos el `.bashrc`.
 3. Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
-4. Para agregar nuestra variable, vamos a usar el editor de texto `nano` haciendo
-  `nano .bashrc`.
+4. Para agregar nuestra variable, vamos a usar el editor de texto `nano`
+   haciendo `nano .bashrc`.
 5. Al final del archivo vamos a agregar la siguiente línea:
-  `export MI_VARIABLE='aguante sisop'` y la vamos a guardar de la misma forma
-  que antes.
+   `export MI_VARIABLE='aguante sisop'` y la vamos a guardar de la misma forma
+   que antes.
 6. Para que el cambio se haga efectivo, cerramos la consola y abrimos otra.
 7. Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
-  seteado.
+   seteado.
 
 Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
 seguir teniendo nuestra nueva variable.
