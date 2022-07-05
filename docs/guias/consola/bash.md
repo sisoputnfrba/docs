@@ -1,47 +1,102 @@
 # Guía de uso de Bash
 
-A continuación, vas a poder aprender para qué sirven una serie de comandos
-seleccionados que van a serte útiles.
+La intención de esta guía es contar con un "machete" de comandos de la consola
+de Linux que suelen ser útiles a lo largo de la cursada y en las entregas.
 
-Para poder comprender mejor lo que acá se muestra, podés abrir una terminal e ir
-siguiendo el uso de los comandos en el orden en que se establecen.
+Para familiarizarse con el uso de los más básicos de una forma más interactiva,
+los invitamos a jugar a [Mario Bash](https://faq.utnso.com.ar/mariobash)
+:joystick:
 
-## Comandos básicos
+## Comandos Básicos
 
-### `pwd`
+### Ver la documentación oficial
 
-Este comando nos permite **conocer la ruta absoluta del directorio en el que nos
-encontramos** en un momento dado.
+El comando `man` nos permite ver el **man**ual de cualquier comando de Linux, o
+también cualquier función estándar de C.
+
+Por ejemplo, `man fopen` nos explicará cómo funciona la función `fopen()`, y
+`man ls` nos explicará en detalle el comando `ls`.
 
 ::: tip
+
+También pueden encontrar los mismos manuales en línea:
+
+- [fopen(3) — Linux manual page](https://man7.org/linux/man-pages/man3/fopen.3.html)
+- [ls(1) — Linux manual page](https://man7.org/linux/man-pages/man1/ls.1.html)
+
+:::
+
+### Moverse entre carpetas
+
+| Comando | Descripción                                                        | Parámetros                                                            |
+| :-----: | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
+|  `pwd`  | Conocer la ruta absoluta del directorio en el que nos encontramos. | -                                                                     |
+|  `cd`   | Crear un nuevo directorio (o carpeta).                             | La ruta (relativa o absoluta) a un directorio.                        |
+|  `ls`   | Ver el contenido de un directorio.                                 | La ruta a un directorio (si es vacío, retorna el contenido de `pwd`). |
+
+::: tip TIP 1
 
 Contamos con una guía que explica en detalle
 [qué son las rutas absolutas y relativas](rutas.md).
 
 :::
 
-### `mkdir`
+::: tip TIP 2
 
-Nos permite **crear un nuevo directorio** (carpeta). Toma un parámetro: el
-nombre del directorio nuevo a generar. Ejemplo:
+- `..` es el directorio padre (relativo al actual).
+- `~` es el directorio home.
 
-```:no-line-numbers
-mkdir comandos-basicos
+Ejemplos:
+
+- `/home/utnso/../username` es lo mismo que `/home/username`
+- `~/Documents` es lo mismo que `/home/utnso/Documents`
+
+:::
+
+### Crear, mover y borrar archivos
+
+| Comando | Descripción                 | Parámetros                                 |
+| :-----: | --------------------------- | ------------------------------------------ |
+| `mkdir` | Crear un directorio vacío.  | El nombre del directorio.                  |
+| `touch` | Crear un archivo.           | El nombre del archivo.                     |
+|  `cp`   | Copiar un archivo.          | La ruta origen y destino.                  |
+|  `mv`   | Renombrar/Mover un archivo. | El nombre anterior del archivo y el nuevo. |
+|  `rm`   | Eliminar un archivo.        | El nombre del archivo.                     |
+
+::: tip TIP 1
+
+Para eliminar una carpeta con todos sus archivos dentro, se debe agregar el flag
+`-r` (de _"recursive"_). Ejemplo: `rm -r /usr/bin/eclipse`
+
+:::
+
+::: tip TIP 2
+
+Todos estos comandos (excepto `touch`) permiten visualizar que la operación se
+realizó correctamente utilizando el flag `-v`. Ejemplo:
+
+```bash:no-line-numbers
+$ touch README.md
+
+$ mkdir -v docs
+mkdir: created directory 'docs'
+
+$ cp -v README.md HELP.md
+'README.md' -> 'HELP.md'
+
+$ mv -v HELP.md docs/HELP.md
+renamed 'HELP.md' -> 'docs/HELP.md'
+
+$ rm -v docs/HELP.md
+removed 'docs/HELP.md'
 ```
 
-Nos va a crear una carpeta "hija" del directorio en el que estemos actualmente.
+:::
 
-### `ls`
+::: tip TIP 3
 
-Se utiliza para poder **ver el contenido de un directorio**. Utilizando el
-comando sin ningún argumento, nos mostrará el contenido del directorio sobre el
-que nos encontramos, pero podríamos ver el contenido de cualquier otro pasando
-como argumento la ruta del mismo.
-
-::: details Ejemplo
-
-Por ejemplo, si incluimos los flags `-l` para listar la información del archivo
-y `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
+Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
+`-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
 parecido a esto:
 
 ```:no-line-numbers
@@ -51,311 +106,202 @@ drwxr-xr-x 24 utnso utnso 4096 Jul  4 11:29 ..
 drwxr-xr-x  2 utnso utnso 4096 Jul  4 11:29 comandos-basicos
 ```
 
-Cada columna contiene lo siguiente (si no entienden algo, tranqui, lo verán más
-en detalle en la teoría):
-
-- Si el archivo es directorio o no y sus permisos para leer, escribir y
-  ejecutar.
-- Contador de hard links.
-- Nombre de usuario dueño del archivo
-- Nombre del grupo dueño del archivo
-- Tamaño del archivo
-- Fecha y hora de modificación
-- Nombre
-
-Si ejecutamos solo `ls`, veremos que únicamente se muestran los nombres y
-ocultando los archivos que empiezan con `.`
+Esto nos permite ver los permisos, el usuario y grupo _owner_, el tamaño y la
+fecha de última modificación de cada archivo.
 
 :::
 
-### `cd`
+### Visualizar archivos
 
-Este comando nos permite **navegar entre directorios**. Pasándole como argumento
-la ruta de un directorio, `cd` nos va a dejar ingresar en él.
+|  Comando  | Descripción                                             | Parámetros                         |
+| :-------: | ------------------------------------------------------- | ---------------------------------- |
+|  `less`   | Ver el contenido de un único archivo.                   | El nombre del archivo.             |
+|   `cat`   | Imprimir el contenido de uno o varios archivos.         | El nombre de uno o más archivos.   |
+|  `head`   | Imprimir las primeras 10 líneas de un archivo.          | El nombre del archivo.             |
+|  `tail`   | Imprimir las últimas 10 líneas de un archivo.           | El nombre del archivo.             |
+| `hexdump` | Imprimir el contenido de un archivo en **hexadecimal**. | El nombre del archivo.             |
+|  `grep`   | Filtrar e imprimir el contenido de un archivo.          | El filtro y el nombre del archivo. |
 
-::: details Ejemplo
+::: tip TIP 1
 
-```:no-line-numbers
-cd comandos-basicos
-```
+Tanto para `head` como para `tail` se puede especificar el número de líneas a
+leer través del flag `-n`:
 
-::: tip
-
-Es importante saber que pudimos simplemente invocar el nombre de la carpeta
-porque estamos dentro del directorio en el que se encuentra.
-
-Si quisiéramos acceder a un directorio que no se encuentra dentro del actual,
-debemos pasarle la ruta absoluta. Ejemplo:
-
-```:no-line-numbers
-cd /usr/bin
+```bash:no-line-numbers
+# Lee las primeras 5 líneas del archivo ~/.bashrc
+head -n 5 ~/.bashrc
+# Lee las últimas 7 líneas del archivo ~/.bashrc
+tail -n 7 ~/.bashrc
 ```
 
 :::
 
-Para tener en cuenta:
-
-- `cd ..` nos permite movernos un directorio hacia arriba (es decir, al padre de
-  donde nos encontramos actualmente).
-- `cd -` nos permite movernos al directorio en el que estábamos anteriormente.
-- En caso de que la carpeta se encuentre dentro del directorio home del usuario
-  (ej: `/home/utnso`), podemos reemplazar esa parte con un `~`.
-
-### `touch`
-
-Se utiliza para **crear nuevos archivos en blanco**. Como argumento, debemos
-pasarle el nombre y la extensión del nuevo archivo a crear. Ejemplo:
-
-```:no-line-numbers
-cd ~/comandos-basicos
-touch unArchivo.txt
-```
-
-Al ejecutar `ls`, podemos ver que ahora nuestro directorio contiene otros dos
-directorios y el archivo que acabamos de crear.
-
-### `cat`
-
-Este comando nos permite **imprimir en pantalla el contenido de un archivo**.
-Probemos escribiendo algo en el archivo `unArchivo.txt` recién creado.
-
-::: details Ejemplo
-
-1. Vamos a utilizar el editor de texto `nano` ejecutando:
-
-```:no-line-numbers
-nano unArchivo.txt
-```
-
-Este comando va a abrir un editor de texto dentro de la misma consola y nos va a
-permitir agregar contenido a nuestro archivo.
-
-2. Copiemos el siguiente texto: `¡Hola! Soy un archivo` y peguémoslo usando
-   `Ctrl`+`Shift`+`v`.
-3. Salgamos del editor con `Ctrl`+`X` y luego aceptemos guardar los cambios
-   escribiendo `y`.
-4. Corramos el comando:
-
-```:no-line-numbers
-cat unArchivo.txt
-```
-
-Veremos que la salida es la oración que acabamos de escribir.
-
-:::
-
-### `mv`
-
-Este comando nos permite **mover archivos de un lugar a otro**, aunque también
-se le da uso para **renombrar archivos**. Toma como primer argumento el origen y
-como segundo, el destino.
-
-::: details Ejemplo
-
-Dentro de `comandos-basicos`:
-
-- Ejecutamos `mkdir un-directorio` y luego:
-
-```:no-line-numbers
-mv unArchivo.txt /un-directorio/unArchivo.txt
-```
-
-- Haciendo `ls`, vemos que `unArchivo.txt` ya no se encuentra listado en el
-  directorio comandos-basicos.
-
-- Haciendo `cd un-directorio` y luego `ls`, vemos que ahora el archivo se
-  encuentra dentro de esta carpeta.
-
-Ahora bien, decidamos que ya no nos gusta el nombre que le pusimos a nuestro
-archivo y queremos cambiarlo.
-
-- Dentro de `comandos-basicos/un-directorio`, corremos:
-
-```:no-line-numbers
-mv unArchivo.txt chocolate.txt
-```
-
-- Haciendo `ls`, vemos que ya no tenemos ningún "unArchivo.txt" sino mas bien un
-  "chocolate.txt".
-- Haciendo `cat chocolate.txt`, vemos que el contenido se mantuvo.
-
-:::
-
-### `rm`
-
-Este comando nos permite **borrar directorios o archivos**.
-
-Para borrar un archivo, simplemente corremos `rm nombreArchivo`.
-
-::: details Ejemplo
-
-- Dentro de la carpeta `un-directorio`, correr `rm chocolate.txt`
-
-Veremos que el archivo fue eliminado.
-
-:::
-
-Para borrar un directorio, lo hacemos corriendo `rm -r directorio`.
-
-::: warning IMPORTANTE
-
-Tener en cuenta que si corremos ese comando para un directorio con contenido, el
-mismo también será eliminado.
-
-:::
-
-::: details Ejemplo
-
-- Dentro de la carpeta comandos-basicos, correr `rm -r un-directorio`.
-
-Veremos que el mismo fue eliminado.
-
-::: tip NOTA
-
-Puede probarse también agregando un nuevo archivo con `touch nuevoArchivo.txt` y
-comprobando que el comando elimina el directorio con todo lo que hay dentro.
-
-:::
-
-### `head` y `tail`
-
-`head` se utiliza para **ver las primeras líneas de un archivo** de texto.
-Podemos explicitar cuántas líneas queremos que nos muestre utilizando el flag
-`-n` junto con el número deseado.
-
-::: details Ejemplo
-
-- Crear algún archivo usando `touch unArchivo.txt` y completar con
-  `nano unArchivo.txt` poniendo los números del 1 al 15 en cada línea (salto de
-  línea de por medio):
-
-```:no-line-numbers
-1
-2
-3
-...
-```
-
-- Ejecutar `head unArchivo.txt` y luego ejecutar `head -n 5 unArchivo.txt`.
-- Vemos que el comando nos trae las primeras 5 líneas del archivo.
-
-:::
-
-`tail`, por el otro lado, realiza lo inverso al comando anterior: nos **trae las
-últimas líneas de un archivo** de texto. Utilizando el mismo flag mencionado
-anteriormente, podemos explicitar la cantidad de líneas deseadas.
-
-::: details Ejemplo
-
-Se puede repetir el ejemplo anterior utilizando `tail unArchivo.txt` y
-`tail -n 5 unArchivo.txt`, en los lugares correspondientes.
-
-:::
-
-::: tip
+::: tip TIP 2
 
 Una de las grandes utilidades de `tail` es que junto con el flag `-f` nos
 permite visualizar las líneas que se van agregando a un archivo en tiempo real.
-Esto te puede ser útil para monitorear archivos de logs, por ejemplo, haciendo
-`tail -f miArchivo.log`.
 
-:::
-
-### `man`
-
-Nos permite ver la función de cualquier comando de Linux. Sirve para invocar el
-_manual_ que nos dice qué hace un comando y cómo se utiliza.
-
-Ejemplo: `man fopen` nos explicará cómo funciona la función `fopen()`.
-
-## Encadenando comandos
-
-### Redirecciones (`>`, `<` y `>>`)
-
-Las redirecciones nos permiten tanto convertir la salida de un comando en un
-archivo (`>`) como utilizar un archivo como entrada para un comando (`<`).
-
-::: details Ejemplo
-
-- El comando `echo` sirve para imprimir lo que pasemos por argumento en
-  pantalla, pero si corremos:
+Esto viene como anillo al dedo para monitorear archivos de logs durante la
+entrega, por ejemplo, ejecutando:
 
 ```:no-line-numbers
-echo "aguante sistemas operativos" > redireccion.txt
+tail -f kernel.log
 ```
-
-Veremos que no nos devuelve ninguna salida (o _output_).
-
-- Si hacemos `ls`, podemos ver que ahora existe un nuevo archivo llamado
-  "redireccion.txt", creado por nosotros recién.
-- Si ahora hacemos `cat < redireccion.txt`, estaremos pasando el archivo como
-  parámetro del `cat`, por lo que su contenido será impreso en pantalla y
-  coincidirá con la salida del comando `echo` utilizado anteriormente.
 
 :::
 
-Es importante saber que el llamar a `>`, siempre generará un nuevo archivo con
-el nombre que indiquemos, incluso si eso implica pisar el contenido de alguno
-existente.
+::: tip TIP 3
 
-Si quisiéramos, por el contrario, agregar el nuevo contenido al que ya había
-previamente en un archivo existente, debemos utilizar `>>`.
-
-::: details Ejemplo
-
-- Teniendo en cuenta nuestro archivo creado previamente, si volvemos a llamar el
-  mismo comando y luego imprimimos el contenido del archivo por pantalla,
-  veremos que la frase está sólo una vez y no dos veces aunque hayamos utilizado
-  el comando en dos ocasiones.
-
-- Si, en lugar de eso, corremos:
+Una forma más bonita de usar el comando `hexdump` es junto con el flag `-C`, el
+cual agrega una columna a la derecha imprimiendo el contenido del archivo en
+ASCII.
 
 ```:no-line-numbers
-echo "una nueva linea" >> redireccion.txt
+$ hexdump -C main.c
+
+00000000  23 69 6e 63 6c 75 64 65  20 3c 73 74 64 6c 69 62  |#include <stdlib|
+00000010  2e 68 3e 0a 23 69 6e 63  6c 75 64 65 20 3c 73 74  |.h>.#include <st|
+00000020  64 69 6f 2e 68 3e 0a 0a  69 6e 74 20 6d 61 69 6e  |dio.h>..int main|
+00000030  28 29 20 7b 0a 09 70 72  69 6e 74 66 28 22 48 65  |() {..printf("He|
+00000040  6c 6c 6f 20 57 6f 72 6c  64 21 21 21 22 29 3b 0a  |llo World!!!");.|
+00000050  09 72 65 74 75 72 6e 20  30 3b 0a 7d 0a           |.return 0;.}.|
+0000005d
 ```
 
-Haciendo `cat redireccion.txt`, ahora veremos que el contenido del archivo es el
-previo concatenado con el nuevo.
+Las funciones de
+[`memory.h`](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/memory.h)
+de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 
 :::
 
-### Pipes (`|`)
+## Comandos útiles para la entrega
 
-El símbolo `|` nos permite utilizar la salida (output) de un comando como
-entrada (input) de otro.
+### `htop`
 
-::: details Ejemplo
+Un administrador de procesos de Linux. Las features más destacadas son:
 
-- Creemos un archivo haciendo `nano pipes.txt` y llenándolo con el siguiente
-  contenido:
+- Visualizar el uso de CPU y RAM (para detectar esperas activas y memory leaks).
+- Filtrar los procesos (e hilos KLT) por nombre con `F4`.
+- Enviar [señales](https://faq.utnso.com.ar/seniales) a uno o varios procesos de
+  forma intuitiva con `F9`.
 
-```txt:no-line-numbers
-primera linea
-segunda linea
-tercera linea
-cuarta linea
-```
+![htop](/img/guias/consola/bash-htop-espera-activa.png)
 
-- Supongamos que ahora queremos obtener la tercera línea de dicho archivo,
-  podríamos conseguirlo haciendo `head -n 3 pipes.txt | tail -n 1`.
+::: tip
 
-Este comando nos permite, en vez de tener que hacerlo en dos pasos, ingresar las
-tres líneas que resultan la salida del primer comando `head` como entrada del
-segundo comando `tail`, que se queda con la última línea.
-
-Otra forma de hacerlo sería `tail -n 2 pipes.txt | head -n 1`: conseguimos
-primero las últimas dos líneas y luego la primera de ellas.
+En la última línea pueden encontrar las distintas opciones que se pueden usar.
 
 :::
+
+<hr>
+
+### `ifconfig`
+
+Permite consultar la IP de la VM actual para luego agregarla a los archivos de
+configuración (ya sea a mano o a través de un script).
+
+![ifconfig](/img/guias/consola/bash-ifconfig.png)
+
+<hr>
+
+### `nano`
+
+Un editor de texto liviano simple que funciona desde la consola. Es la
+alternativa recomendada si llegan a necesitar editar algún archivo de
+configuración.
+
+![nano](/img/guias/consola/bash-nano.png)
+
+::: tip
+
+En la última línea pueden ver las distintas opciones que se pueden usar.
+
+Por ejemplo: `Ctrl` + `X` para salir.
+
+:::
+
+**Probemos con un ejemplo...**
+
+1. Vamos a abrir un archivo utilizando:
+
+```:no-line-numbers
+nano un-archivo.txt
+```
+
+Se abrirá el editor de texto dentro de la misma consola y nos va a permitir
+agregar contenido al archivo. En caso de que no exista, se crea temporalmente
+uno nuevo vacío.
+
+2. Copiemos el siguiente texto: `¡Hola! Soy un archivo`
+
+3. Peguémoslo usando `Ctrl`+`Shift`+`v`
+
+4. Salgamos del editor con `Ctrl`+`X`, aceptemos guardar los cambios escribiendo
+   `y` y confirmemos con `Enter`.
+
+5. Corramos el comando:
+
+```:no-line-numbers
+cat un-archivo.txt
+```
+
+Veremos que la salida es la oración que recién escribimos.
+
+
+### `chmod`
+
+Permite asignar permisos a un archivo. Ejemplo:
+
+```bash:no-line-numbers
+# Para dar permisos de ejecución
+chmod +x mi-script.sh
+# Para configurar nuevos permisos usando el formato Unix
+chmod 664 kernel.config
+```
+
+::: tip TIP 1
+
+Pueden validar los permisos del archivo ejecutando `ls -l` sobre el directorio
+en donde se encuentre.
+
+:::
+
+::: tip TIP 2
+
+Les dejamos un machete para convertir los permisos tipo Unix a octal:
+
+![file](/img/guias/consola/bash-linux-file-permissions.jpg)
+
+:::
+
+<hr>
+
+## Redirigiendo comandos
+
+Cada comando recibe información via la _entrada_ estándar (o **stdin**) y
+devuelven el resultado por la _salida_ estándar (o **stdout**). La entrada
+estándar de varios comandos como `cat`, `head` y `tail` suele ser un archivo, y
+la salida estándar, la consola.
+
+Sin embargo, es posible _redirigir_ esos flujos de información (o _streams_)
+para que los comandos "se pasen" el resultado el uno al otro, o lo guarden en un
+archivo. Para esto, utilizamos **operandos de redirección**.
+
+Estos son los más básicos, junto con un ejemplo de caso de uso.
+
+| Operando |                                            Descripción                                            |                          Ejemplo                          |
+| :------: | :-----------------------------------------------------------------------------------------------: | :-------------------------------------------------------: |
+|   `>`    |       Escribir la salida estándar en un archivo (o sobreescribirlo en caso de ya existir).        | `echo "https://USER:TOKEN@github.com" > .git-credentials` |
+|   `>>`   | Concatenar la salida estándar al final de un archivo existente (o crearlo en caso de no existir). |    `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`     |
+|   `\|`   |                      "Pasarle" la salida estándar como input a otro comando                       |                  `cat *.c \| grep sleep`                  |
 
 ## Variables de entorno
 
-Las variables de entorno son aquellas variables definidas para la shell
-(intérprete de comandos, consola) que estamos utilizando actualmente, pero que
-podemos almacenar para que sean reconocidas cada vez que abrimos una nueva
-terminal.
+Las variables de entorno son aquellas variables definidas para la consola que
+estamos utilizando actualmente, pero que podemos almacenar para que sean
+reconocidas cada vez que abrimos una nueva terminal.
 
-Corriendo el comando `env`, podemos visualizar todas las variables de Linux que
+Corriendo el comando `env` podemos visualizar todas las variables de Linux que
 tenemos configuradas. Aparecerán mostrando su nombre seguido de su valor, como
 por ejemplo `HOME=/home/utnso`.
 
@@ -394,20 +340,20 @@ sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
 
 :::
 
-::: details Probemos con un ejemplo...
+### Probemos con un ejemplo...
 
-- Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
-- Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
+1. Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
+2. Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
   flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo, no
   veríamos el `.bashrc`.
-- Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
-- Para agregar nuestra variable, vamos a usar el editor de texto `nano` haciendo
-  `nano .profile`. (Si conocés algún otro, como `vim`, podés usarlo también.)
-- Al final del archivo vamos a agregar la siguiente línea:
+3. Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
+4. Para agregar nuestra variable, vamos a usar el editor de texto `nano` haciendo
+  `nano .bashrc`.
+5. Al final del archivo vamos a agregar la siguiente línea:
   `export MI_VARIABLE='aguante sisop'` y la vamos a guardar de la misma forma
   que antes.
-- Para que el cambio se haga efectivo, cerramos la consola y abrimos otra.
-- Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
+6. Para que el cambio se haga efectivo, cerramos la consola y abrimos otra.
+7. Haciendo `echo $MI_VARIABLE`, vemos que nos imprime el valor que habíamos
   seteado.
 
 Ahora podemos abrir diferentes sesiones tantas veces como queramos y vamos a
@@ -416,16 +362,15 @@ seguir teniendo nuestra nueva variable.
 ::: tip
 
 También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE` aparece
-registrada.
+registrada. Podemos filtrar con `grep` para encontrarla más fácilmente:
+
+```bash:no-line-numbers
+env | grep MI_VARIABLE
+```
 
 :::
 
-## Comandos útiles para la entrega
-
-WIP
-([link al borrador](https://docs.google.com/document/d/10N5IAMVSCLz5AGibeI8R50RKvMxfeOwU5SPgI0bokUw/edit#heading=h.cqfzn5kd4ima))
-
 ## Material recomendado
 
-- [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
 - [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+- [Five ways to use redirect operators in Bash](https://www.redhat.com/sysadmin/redirect-operators-bash)
