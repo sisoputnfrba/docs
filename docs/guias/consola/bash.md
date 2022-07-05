@@ -279,24 +279,24 @@ Les dejamos un machete para escribir los permisos tipo Unix en octal:
 
 <hr>
 
-## Redirigiendo comandos
+## Redirecciones y pipes
 
-Cada comando recibe información via la _entrada_ estándar (o **stdin**) y
-devuelven el resultado por la _salida_ estándar (o **stdout**). La entrada
+Todos los procesos reciben información via la _entrada_ estándar (o **stdin**) y
+devuelven un resultado por la _salida_ estándar (o **stdout**). La entrada
 estándar de varios comandos como `cat`, `head` y `tail` suele ser un archivo, y
 la salida estándar, la consola.
 
 Sin embargo, es posible _redirigir_ esos flujos de información (o _streams_)
 para que los comandos "se pasen" el resultado el uno al otro, o lo guarden en un
-archivo. Para esto, utilizamos **operandos de redirección**.
+archivo. Para esto, utilizamos **operadores de redirección**.
 
-Estos son los más básicos, junto con un ejemplo de uso.
+Estos son los más básicos, junto con un ejemplo de uso:
 
-| Operando |                                            Caso de uso                                            |                           Ejemplo                           |
-| :------: | :-----------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
-|   `>`    |       Escribir la salida estándar en un archivo (o sobreescribirlo en caso de ya existir).        | `echo "https://USER:TOKEN@github.com" > ~/.git-credentials` |
-|   `>>`   | Concatenar la salida estándar al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
-|   `\|`   |                      "Pasarle" la salida estándar como input a otro comando                       |                   `cat *.c \| grep sleep`                   |
+| Operadores |                                       Caso de uso                                       |                           Ejemplo                           |
+| :--------: | :-------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
+|    `>`     |       Escribir `stdout` en un archivo, sobreescribiéndolo en caso de ya existir.        | `echo "https://USER:TOKEN@github.com" > ~/.git-credentials` |
+|    `>>`    | Concatenar `stdout` al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
+|    `\|`    |                 "Pasarle" el `stdout` de un comando al `stdin` de otro                  |                   `cat *.c \| grep sleep`                   |
 
 ## Variables de entorno
 
