@@ -247,6 +247,7 @@ cat un-archivo.txt
 
 Veremos que la salida es la oración que recién escribimos.
 
+<hr>
 
 ### `chmod`
 

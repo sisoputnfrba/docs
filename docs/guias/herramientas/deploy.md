@@ -155,7 +155,7 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 Para ayudar un poco, les dejamos:
 
-- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
+- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html).
 - Un video explicando cómo redirigir puertos por SSH desde una VM, para ir
   familiarizándose con estas herramientas desde la comodidad de la casa.
 
