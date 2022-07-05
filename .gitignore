@@ -2,3 +2,6 @@ node_modules
 .temp
 .cache
 src/.vuepress/dist
+.vscode
+.idea
+.obsidian
