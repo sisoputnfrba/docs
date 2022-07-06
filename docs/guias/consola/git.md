@@ -1,32 +1,55 @@
 # Control de versionado con Git
 
-## ¿Qué es y para qué nos sirve Git? 
+## Video: Git para el TP de Operativos
+<YouTube v="dI_tHLEoNBM"/>
 
-Git es un sistema de control de versionado que, trabajando con otras personas sobre el mismo código, nos permite mantener un historial sobre los cambios realizados diciéndonos quién, cuándo y qué se realizó sobre un proyecto en común. 
+> Link a la presentación: [git para el TP de Operativos](https://faq.utnso.com.ar/git)
 
-## Local vs Remoto 
+## ¿Qué es y para qué nos sirve Git?
 
-Un **_repositorio_** podría considerarse un lugar virtual en el que se van a guardar todos los commits asociados a un proyecto. 
+Git es un sistema de control de versionado que, trabajando con otras personas
+sobre el mismo código, nos permite mantener un historial sobre los cambios
+realizados diciéndonos quién, cuándo y qué se realizó sobre un proyecto en
+común.
 
-Un **_commit_** es un conjunto de cambios en tu proyecto. Un commit está asociado a un momento dado del mismo, a una _versión_. Git nos permite controlar los cambios y, de ser necesario, retornar a una versión anterior (o un commit anterior). 
+## Local vs Remoto
 
-Con Git, trabajaremos con un repositorio _local_ y un repositorio _remoto_. Pero, ¿qué significa esto? 
+Un **_repositorio_** podría considerarse un lugar virtual en el que se van a
+guardar todos los commits asociados a un proyecto.
 
-Cuando hablamos de repositorio remoto, nos referimos al proyecto y sus versiones que se encuentran hospedados en internet como, por ejemplo, en [GitHub](https://github.com/). 
+Un **_commit_** es un conjunto de cambios en tu proyecto. Un commit está
+asociado a un momento dado del mismo, a una _versión_. Git nos permite controlar
+los cambios y, de ser necesario, retornar a una versión anterior (o un commit
+anterior).
 
-Cuando hablamos de repositorio a nivel local, nos referimos al proyecto hospedado dentro de nuestra máquina. 
+Con Git, trabajaremos con un repositorio _local_ y un repositorio _remoto_.
+Pero, ¿qué significa esto?
 
-Siempre que hagamos un cambio en nuestro proyecto, el mismo será _local_. Esto significa que, salvo que los subamos al repositorio remoto, nuestros compañeros no podrán verlo ni accederlo. 
+Cuando hablamos de repositorio remoto, nos referimos al proyecto y sus versiones
+que se encuentran hospedados en internet como, por ejemplo, en
+[GitHub](https://github.com/).
 
-Por otro lado, cuando nuestros compañeros hagan sus propios cambios y los suban al repositorio remoto, nuestro proyecto no verá esos cambios localmente de forma automática. Es por eso, que tendremos que encargarnos de mantenerlo actualizado. 
+Cuando hablamos de repositorio a nivel local, nos referimos al proyecto
+hospedado dentro de nuestra máquina.
 
-## ¿Cómo lo uso? 
+Siempre que hagamos un cambio en nuestro proyecto, el mismo será _local_. Esto
+significa que, salvo que los subamos al repositorio remoto, nuestros compañeros
+no podrán verlo ni accederlo.
 
-Obviando algunas otras funcionalidades, para gestionar un proyecto con Git vas a tener que seguir los siguientes pasos: 
-- [Clonar](#git-clone) un repositorio remoto.  
-- Realizar los cambios que necesites localmente y luego [commitearlos](#git-commit). 
-- [Subir](#git-push) los commits al repositorio remoto. 
-- [Descargar](#git-pull) los cambios de tus compañeros a tu repositorio local. 
+Por otro lado, cuando nuestros compañeros hagan sus propios cambios y los suban
+al repositorio remoto, nuestro proyecto no verá esos cambios localmente de forma
+automática. Es por eso, que tendremos que encargarnos de mantenerlo actualizado.
+
+## ¿Cómo lo uso?
+
+Obviando algunas otras funcionalidades, para gestionar un proyecto con Git vas a
+tener que seguir los siguientes pasos:
+
+- [Clonar](#git-clone) un repositorio remoto.
+- Realizar los cambios que necesites localmente y luego
+  [commitearlos](#git-commit).
+- [Subir](#git-push) los commits al repositorio remoto.
+- [Descargar](#git-pull) los cambios de tus compañeros a tu repositorio local.
 
 <!-- ## ¿Qué es una rama?  poner aca o abajo mejor? -->
 
@@ -34,109 +57,156 @@ Obviando algunas otras funcionalidades, para gestionar un proyecto con Git vas a
 
 ## Comandos útiles de Git
 
-A continuación, vas a poder leer para qué sirven algunos de los comandos más utilizados de Git. 
-Recordá que podés ver el resto por tu cuenta corriendo `$ git --help` en tu terminal. Si quisieras entender alguno más en detalle, podés hacerlo corriendo `$ git help <nombre del comando>`.  
+A continuación, vas a poder leer para qué sirven algunos de los comandos más
+utilizados de Git. Recordá que podés ver el resto por tu cuenta corriendo
+`$ git --help` en tu terminal. Si quisieras entender alguno más en detalle,
+podés hacerlo corriendo `$ git help <nombre del comando>`.
 
-### git config 
+### git config
 
-Si es la primera vez que usamos Git, va a ser necesario configurar nuestro nombre y el email con el que estaremos trabajando utilizando: 
+Si es la primera vez que usamos Git, va a ser necesario configurar nuestro
+nombre y el email con el que estaremos trabajando utilizando:
 
-`$ git config --global user.name "NOMBRE" `
-`$ git config --global user.email "EMAIL" `
+```bash:no-line-numbers
+git config --global user.name "NOMBRE"
+git config --global user.email "EMAIL"
+```
 
-Si quisieras que la configuración de nombre y mail haga efecto únicamente sobre el repositorio actual, podés omitir el flag `--global`.
+Si quisieras que la configuración de nombre y mail haga efecto únicamente sobre
+el repositorio actual, podés omitir el flag `--global`.
 
-### git clone 
+### git clone
 
-Nos permite "clonar" un repositorio remoto, lo que significa que nos deja descargar la última versión del mismo y copiarlo dentro de nuestra máquina.
+Nos permite "clonar" un repositorio remoto, lo que significa que nos deja
+descargar la última versión del mismo y copiarlo dentro de nuestra máquina.
+Uso:
+```bash:no-line-numbers
+git clone <url del repositorio>
+```
 
-Uso `$ git clone <url del repositorio>`.
+### git branch
 
-### git branch 
+Este comando nos lista todas las ramas que existen en el repositorio y nos
+señala con un asterisco (\*) aquella sobre la cual estamos parados (sobre la que
+se efectuarán los cambios que hagamos).
 
-Este comando nos lista todas las ramas que existen en el repositorio y nos señala con un asterisco (*) aquella sobre la cual estamos parados (sobre la que se efectuarán los cambios que hagamos). 
+Para utilizarlo simplemente hacemos `git branch`.
 
-Para utilizarlo simplemente hacemos `$ git branch`. 
+Si en vez de llamarlo de esa manera, hacemos `git branch <nombre de la rama>`,
+estaremos creando una nueva rama con el nombre establecido.
 
-Si en vez de llamarlo de esa manera, hacemos `$ git branch <nombre de la rama>`, estaremos creando una nueva rama con el nombre establecido. 
+Si hacemos `git branch -d <nombre de la rama>`, estaremos borrando la rama con
+el nombre señalado.
 
-Si hacemos `$ git branch -d <nombre de la rama>`, estaremos borrando la rama con el nombre señalado. 
+### git checkout
 
-### git checkout 
+Se utiliza para cambiar la rama (branch) sobre la que se está trabajando
+actualmente.
+Uso:
 
-Se utiliza para cambiar la rama (branch) sobre la que se está trabajando actualmente. 
+```bash:no-line-numbers
+git checkout <nombre de la rama>
+```
 
-Uso `$ git checkout <nombre de la rama>`. 
+Si quisiera crear una nueva rama, puedo utilizar el comando con el flag `-b`:
 
-Si quisiera crear una nueva rama, puedo utilizar el comando con el flag `-b`: `$ git checkout -b <nombre de la nueva rama>`. 
- 
-### git status 
+```bash:no-line-numbers
+git checkout -b <nombre de la nueva rama>
+```
 
-Utilizamos este comando cuando queremos ver qué archivos han sido modificados y están listos para ser añadidos (git add) o commiteados (git commit). 
+### git status
 
-Lo corremos simplemente haciendo `$ git status`.  
+Utilizamos este comando cuando queremos ver qué archivos han sido modificados y
+están listos para ser añadidos (git add) o commiteados (git commit).
 
-### git log 
+Lo corremos simplemente haciendo `git status`.
 
-Corriendo `$ git log` podemos ver el historial de commits hechos hasta el momento. 
+### git log
 
-### git add 
+Corriendo `git log` podemos ver el historial de commits hechos hasta el
+momento.
 
-Este comando se utiliza cuando queremos guardar los cambios realizados dentro del repositorio de forma local. 
+### git add
 
-Para agregar un único archivo utilizamos `$ git add <ruta del archivo>`.
+Este comando se utiliza cuando queremos guardar los cambios realizados dentro
+del repositorio de forma local.
 
-Para agregar todos los archivos que incluye el directorio sobre el que estoy parado, utilizamos `$ git add .` . 
+Para agregar un único archivo utilizamos `git add <ruta del archivo>`.
 
-### git commit 
+Para agregar todos los archivos que incluye el directorio sobre el que estoy
+parado, utilizamos:
 
- Una vez que los cambios se hicieron y se añadieron con `git add` localmente, el siguiente paso es *"commitearlos"* (un anglicismo muy popular que se utiliza para denotar esta acción). 
- Un commit guarda el estado actual de la rama del proyecto sobre el que se está haciendo en un momento dado y nos permite regresar a su versión en el futuro si fuera necesario. 
+```bash:no-line-numbers
+git add .
+```
 
- Lo utilizamos llamando: `$ git commit -m "<mensaje explicativo sobre los cambios>"`. 
- 
- ### git push 
+### git commit
 
-Cuando hacemos `$ git push`, Git se encarga de subir al repositorio remoto los cambios que hayamos *commiteado* localmente. 
+Una vez que los cambios se hicieron y se añadieron con `git add` localmente, el
+siguiente paso es _"commitearlos"_ (un anglicismo muy popular que se utiliza
+para denotar esta acción). Un commit guarda el estado actual de la rama del
+proyecto sobre el que se está haciendo en un momento dado y nos permite regresar
+a su versión en el futuro si fuera necesario.
 
-Si existen cambios en el repositorio remoto que aun no tenemos, el comando será rechazado y nos pedirá que realicemos primero un [`git pull`](#git-pull). 
+Lo utilizamos llamando:
 
-Si el *push* es aceptado, Git intentará de *fusionar* (o mejor conocido como ['_mergear_'](#git-merge)) los cambios automáticamente. 
+```bash:no-line-numbers
+git commit -m "<mensaje explicativo sobre los cambios>"
+```
 
-Si reconociera que hubo cambios de dos fuentes diferentes sobre un mismo archivo y línea, esto generaría lo que se conoce como **_MERGE CONFLICT_** y nos pediría que revisemos manualmente la diferencia entre ambos opciones y aceptemos la modificación que corresponda. 
-Luego de arreglar un conflicto de mergeo, el resultado debe ser incluido con `git add` seguido de `git commit`. 
+### git push
 
+Cuando hacemos `$ git push`, Git se encarga de subir al repositorio remoto los
+cambios que hayamos _commiteado_ localmente.
 
-### git pull 
+Si existen cambios en el repositorio remoto que aun no tenemos, el comando será
+rechazado y nos pedirá que realicemos primero un [`git pull`](#git-pull).
 
-Este comando nos permite traer todos los cambios que existen en el repositorio remoto que todavía no tengo de forma local en la rama actual.
+Si el _push_ es aceptado, Git intentará de _fusionar_ (o mejor conocido como
+['_mergear_'](#git-merge)) los cambios automáticamente.
 
-Lo ejecutamos simplemente corriendo `$ git pull`. 
- 
-### git diff 
+Si reconociera que hubo cambios de dos fuentes diferentes sobre un mismo archivo
+y línea, esto generaría lo que se conoce como **_MERGE CONFLICT_** y nos pediría
+que revisemos manualmente la diferencia entre ambos opciones y aceptemos la
+modificación que corresponda. Luego de arreglar un conflicto de mergeo, el
+resultado debe ser incluido con `git add` seguido de `git commit`.
 
-El comando `diff` nos permite comparar dos fuentes de información (commits, ramas, archivos). 
+### git pull
 
-Lo que más nos importa es que corriendo `$ git diff` llanamente, podemos ver los cambios que aun no fueron commiteados contra el último commit realizado. 
+Este comando nos permite traer todos los cambios que existen en el repositorio
+remoto que todavía no tengo de forma local en la rama actual.
 
-También podemos utilizar `$ git diff <un commit> <otro commit>` para ver las diferencias entre dos commits. 
+Lo ejecutamos simplemente corriendo `$ git pull`.
 
-Podés ver todos más específicamente los usos de `git diff` [acá](https://www.atlassian.com/es/git/tutorials/saving-changes/git-diff). 
+### git diff
 
+El comando `diff` nos permite comparar dos fuentes de información (commits,
+ramas, archivos).
+
+Lo que más nos importa es que corriendo `$ git diff` llanamente, podemos ver los
+cambios que aun no fueron commiteados contra el último commit realizado.
+
+También podemos utilizar `$ git diff <un commit> <otro commit>` para ver las
+diferencias entre dos commits.
+
+Podés ver todos más específicamente los usos de `git diff`
+[acá](https://www.atlassian.com/es/git/tutorials/saving-changes/git-diff).
 
 ### git reset
 
-Si todavía no subimos nuestro commit al repositorio remoto, haciendo `$ git reset <archivo>`, podemos quitar las modificaciones que fueron llevadas a cabo en el mismo del commit. 
+Si todavía no subimos nuestro commit al repositorio remoto, haciendo
+`$ git reset <archivo>`, podemos quitar las modificaciones que fueron llevadas a
+cabo en el mismo del commit.
 
+## Algunos videos explicativos
 
-## Algunos videos explicativos 
-
-Por si sos una persona más de videos que de lectura, te dejamos a continuación algunos que te pueden ser útiles para que veas la aplicación de los comandos más usados de git. ¡Esperamos que te sirvan :)! 
+Por si sos una persona más de videos que de lectura, te dejamos a continuación
+algunos que te pueden ser útiles para que veas la aplicación de los comandos más
+usados de git. ¡Esperamos que te sirvan :)!
 
 ### Introducción a GitHub, git add, git commit, git pull y git push
 
 <YouTube v="8eB6eVDfrnA"/>
-
 
 ### Git merge, merge conflict, git revert
 
@@ -148,10 +218,13 @@ Por si sos una persona más de videos que de lectura, te dejamos a continuación
 
 ### Cómo llamar los comandos de git desde GitHub, pull request, merge
 
-<YouTube v="DsEmUnPwHxs"/> 
+<YouTube v="DsEmUnPwHxs"/>
 
-## Otros enlaces útiles 
+## Material recomendado
 
-- [Arrancando con GIT](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#) (Guía realizada para la cátedra Diseño de Sistemas.) 
+- [Arrancando con GIT](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#)
+  (Guía realizada para la cátedra Diseño de Sistemas.)
+- [Learn Git Branching](https://learngitbranching.js.org/) (tutorial
+  interactivo)
 - [Oh Shit, Git!?!](https://ohshitgit.com/es)
-
+- [First Aid Git](https://firstaidgit.io/#/)

@@ -16,9 +16,6 @@ en la página:
 ### Tutorial sobre Hard Links y Soft Links
 - [Between a Rock and a Hard Link](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
 
-## Git para Operativos
-<YouTube v="dI_tHLEoNBM"/>
-
 ## Programación en C
 
 ### Por qué no usar tipos dependientes de la arquitectura
@@ -29,9 +26,6 @@ en la página:
 
 ### Nested Functions
 <YouTube v="1kYyxZXGjp0"/>
-
-### Shared Libraries
-<YouTube v="A6dhc9cCI18"/>
 
 ### Cómo implementar tu propio malloc
 - [Tutorial para implementar tu propio malloc](http://mgarciaisaia.github.io/tutorial-c/blog/2014/12/26/un-tutorial-rapido-para-implementar-y-debuggear-malloc/)

@@ -745,12 +745,12 @@ int main(int argc, char **argv) {
 }
 ```
 
-## Links útiles
+## Material recomendado
 
+- [Binky Pointer C](https://www.youtube.com/watch?v=5VnDaHBi8dM) (en inglés)
+- [You will never ask about pointers again after watching this video](https://www.youtube.com/watch?v=2ybLD6_2gKM) (en inglés)
 - [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
 - [Tutorial de Valgrind](../herramientas/valgrind.md) (para resolver memory leaks)
-- [Video sobre punteros](https://www.youtube.com/watch?v=5VnDaHBi8dM&ab_channel=Napalm) (en inglés)
-
 
 <br><br>
 
@@ -780,8 +780,8 @@ int main(int argc, char **argv) {
 [^11]: [memcpy(dest, source, length)](https://linux.die.net/man/3/memcpy), donde dest es la variable donde se guardará el dato copiado, source es la variable de donde se copiará los datos y length la cantidad de bytes que deseamos copiar.
 
 
-[^12]: Un **string** se diferencia de un **stream** en que al final del array de caracteres hay un carácter especial ‘\0’ que indica fin de cadena. Como nuestro objetivo es copiar un string, debemos agregar éste caracter a mano. 
+[^12]: Un **string** se diferencia de un **stream** en que al final del array de caracteres hay un carácter especial ‘\0’ que indica fin de cadena. Como nuestro objetivo es copiar un string, debemos agregar éste caracter a mano.
 
-[^13]: En realidad, cualquier operación de reserva de memoria dinámica, como calloc(), malloc() o realloc(). 
+[^13]: En realidad, cualquier operación de reserva de memoria dinámica, como calloc(), malloc() o realloc().
 
-[^14]: Más info [acá](http://www.nongnu.org/avr-libc/user-manual/group__avr__stdint.html). 
+[^14]: Más info [acá](http://www.nongnu.org/avr-libc/user-manual/group__avr__stdint.html).

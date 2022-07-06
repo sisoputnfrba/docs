@@ -49,6 +49,10 @@ export const navbar: NavbarConfig = [
             link: '/guias/programacion/buenas-practicas'
           },
           {
+            text: 'Video de Shared Libraries',
+            link: '/guias/programacion/shared-libraries'
+          },
+          {
             text: 'Unit Testing con CSpec',
             link: '/guias/programacion/cspec'
           }
