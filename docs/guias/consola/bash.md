@@ -28,11 +28,11 @@ También pueden encontrar los mismos manuales en línea:
 
 ### Moverse entre carpetas
 
-| Comando | Descripción                                                        | Parámetros                                                            |
-| :-----: | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
-|  `pwd`  | Conocer la ruta absoluta del directorio en el que nos encontramos. | -                                                                     |
-|  `cd`   | Crear un nuevo directorio (o carpeta).                             | La ruta (relativa o absoluta) a un directorio.                        |
-|  `ls`   | Ver el contenido de un directorio.                                 | La ruta a un directorio (si es vacío, retorna el contenido de `pwd`). |
+| Comando | Descripción                                      | Parámetros                                                                       |
+| :-----: | ------------------------------------------------ | -------------------------------------------------------------------------------- |
+|  `pwd`  | Imprimir la ruta absoluta del directorio actual. | -                                                                                |
+|  `cd`   | Cambiar el directorio actual.                    | La ruta (relativa o absoluta) a un directorio.                                   |
+|  `ls`   | Ver el contenido de un directorio.               | La ruta (relativa o absoluta) a un directorio. Si no es especificado, retorna el contenido del directorio actual. |
 
 ::: tip TIP 1
 
@@ -43,11 +43,13 @@ Contamos con una guía que explica en detalle
 
 ::: tip TIP 2
 
+- `.` es el directorio actual.
 - `..` es el directorio padre (relativo al actual).
 - `~` es el directorio home.
 
 Ejemplos:
 
+- `/home/utnso/./Desktop` es lo mismo que `/home/utnso/Desktop`
 - `/home/utnso/../username` es lo mismo que `/home/username`
 - `~/Documents` es lo mismo que `/home/utnso/Documents`
 
