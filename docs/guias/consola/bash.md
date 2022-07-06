@@ -377,3 +377,4 @@ env | grep MI_VARIABLE
 
 - [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
 - [Five ways to use redirect operators in Bash](https://www.redhat.com/sysadmin/redirect-operators-bash)
+- [How To Read and Set Environmental and Shell Variables on Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux)

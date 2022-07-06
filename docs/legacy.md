@@ -61,8 +61,5 @@ en la página:
 
 ## Deploy
 
-### Conectarse a una Ubuntu Server por SSH
-<YouTube v="SDeqYSxFd10"/>
-
 ### Cómo conectar dos procesos TCP en máquinas distintas
 <YouTube v="vFkmdQVn4Ug"/>
