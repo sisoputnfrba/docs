@@ -655,6 +655,11 @@ detectar problemas de sincronización. También te va a resultar muy útil. Si n
 viste la charla del principio, te recomiendo al menos saltarte a la parte en la
 que se menciona esta herramienta.
 
+## Material recomendado
+- [C Dynamic Memory Debugging with Valgrind](https://www.youtube.com/watch?v=bb1bTJtgXrI)
+
+<br><br>
+
 [^1]: Stacktrace: reporte del estado del stack de ejecución del programa
 [^2]: No está loco, está _reservado_
 [^3]:
