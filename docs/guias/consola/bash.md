@@ -28,11 +28,11 @@ También pueden encontrar los mismos manuales en línea:
 
 ### Moverse entre carpetas
 
-| Comando | Descripción                                      | Parámetros                                                                       |
-| :-----: | ------------------------------------------------ | -------------------------------------------------------------------------------- |
-|  `pwd`  | Imprimir la ruta absoluta del directorio actual. | -                                                                                |
-|  `cd`   | Cambiar el directorio actual.                    | La ruta (relativa o absoluta) a un directorio.                                   |
-|  `ls`   | Ver el contenido de un directorio.               | La ruta (relativa o absoluta) a un directorio. Si no es especificado, retorna el contenido del directorio actual. |
+| Comando | Descripción                                                                                          | Parámetros                                                                                                        |
+| :-----: | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+|  `pwd`  | Imprimir la ruta absoluta del directorio actual (del inglés: _**p**rint **w**orking **d**irectory_). | -                                                                                                                 |
+|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta) a un directorio.                                                                    |
+|  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta (relativa o absoluta) a un directorio. Si no es especificado, retorna el contenido del directorio actual. |
 
 ::: tip TIP 1
 
@@ -57,13 +57,13 @@ Ejemplos:
 
 ### Crear, mover y borrar archivos
 
-| Comando | Descripción                 | Parámetros                                 |
-| :-----: | --------------------------- | ------------------------------------------ |
-| `mkdir` | Crear un directorio vacío.  | El nombre del directorio.                  |
-| `touch` | Crear un archivo.           | El nombre del archivo.                     |
-|  `cp`   | Copiar un archivo.          | La ruta origen y destino.                  |
-|  `mv`   | Renombrar/Mover un archivo. | El nombre anterior del archivo y el nuevo. |
-|  `rm`   | Eliminar un archivo.        | El nombre del archivo.                     |
+| Comando | Descripción                                                           | Parámetros                                 |
+| :-----: | --------------------------------------------------------------------- | ------------------------------------------ |
+| `mkdir` | Crear un directorio vacío (del inglés: _**m**a**k**e **dir**ectory_). | El nombre del directorio.                  |
+| `touch` | Crear un archivo.                                                     | El nombre del archivo.                     |
+|  `cp`   | **C**o**p**iar un archivo.                                            | La ruta origen y destino.                  |
+|  `mv`   | **M**o**v**er/renombrar un archivo.                                   | El nombre anterior del archivo y el nuevo. |
+|  `rm`   | **R**e**m**over/eliminar un archivo.                                  | El nombre del archivo.                     |
 
 ::: tip TIP 1
 
@@ -115,14 +115,14 @@ fecha de última modificación de cada archivo.
 
 ### Visualizar archivos
 
-|  Comando  | Descripción                                             | Parámetros                         |
-| :-------: | ------------------------------------------------------- | ---------------------------------- |
-|  `less`   | Ver el contenido de un único archivo.                   | El nombre del archivo.             |
-|   `cat`   | Imprimir el contenido de uno o varios archivos.         | El nombre de uno o más archivos.   |
-|  `head`   | Imprimir las primeras 10 líneas de un archivo.          | El nombre del archivo.             |
-|  `tail`   | Imprimir las últimas 10 líneas de un archivo.           | El nombre del archivo.             |
-| `hexdump` | Imprimir el contenido de un archivo en **hexadecimal**. | El nombre del archivo.             |
-|  `grep`   | Filtrar e imprimir el contenido de un archivo.          | El filtro y el nombre del archivo. |
+|  Comando  | Descripción                                                                     | Parámetros                         |
+| :-------: | ------------------------------------------------------------------------------- | ---------------------------------- |
+|  `less`   | Ver el contenido de un archivo.                                                 | El nombre del archivo.             |
+|   `cat`   | Imprimir el contenido de uno o varios archivos (del inglés: _con**cat**enate_). | El nombre de uno o más archivos.   |
+|  `head`   | Imprimir las primeras 10 líneas de un archivo.                                  | El nombre del archivo.             |
+|  `tail`   | Imprimir las últimas 10 líneas de un archivo.                                   | El nombre del archivo.             |
+| `hexdump` | Imprimir el contenido de un archivo en **hexadecimal**.                         | El nombre del archivo.             |
+|  `grep`   | Filtrar e imprimir el contenido de un archivo.                                  | El filtro y el nombre del archivo. |
 
 ::: tip TIP 1
 
@@ -180,9 +180,11 @@ de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 
 ### `htop`
 
-Un administrador de procesos de Linux. Las features más destacadas son:
+Un administrador de procesos de Linux (del inglés: _**h**uman-readable **t**able
+**o**f **p**rocesses_). Las features más destacadas son:
 
 - Visualizar el uso de CPU y RAM (para detectar esperas activas y memory leaks).
+- Ordenar los procesos por PID, nombre, uso de CPU/RAM, etc. con el mouse.
 - Filtrar los procesos (e hilos KLT) por nombre con `F4`.
 - Enviar [señales](https://faq.utnso.com.ar/seniales) a uno o varios procesos de
   forma intuitiva con `F9`.
@@ -255,7 +257,8 @@ Veremos que la salida es la oración que recién escribimos.
 
 ### `chmod`
 
-Permite asignar permisos a un archivo. Ejemplo:
+Permite cambiar los permisos de un archivo (del inglés: _**ch**ange **mod**e_).
+Ejemplo:
 
 ```bash:no-line-numbers
 # Para dar permisos de ejecución
