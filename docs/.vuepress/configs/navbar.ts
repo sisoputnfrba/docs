@@ -24,7 +24,7 @@ export const navbar: NavbarConfig = [
             link: '/guias/consola/git'
           },
           {
-            text: 'Rutas relativas vs absolutas',
+            text: 'Rutas Relativas y Absolutas',
             link: '/guias/consola/rutas'
           },
         ]

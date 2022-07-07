@@ -7,7 +7,7 @@ Para familiarizarse con el uso de los más básicos de una forma más interactiv
 los invitamos a jugar a [Mario Bash](https://faq.utnso.com.ar/mariobash)
 :joystick:
 
-## Comandos Básicos
+## Comandos Básicos [^1]
 
 ### Ver la documentación oficial
 
@@ -31,18 +31,11 @@ También pueden encontrar los mismos manuales en línea:
 | Comando | Descripción                                                                                          | Parámetros                                                                                                 |
 | :-----: | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 |  `pwd`  | Imprimir la ruta absoluta del directorio actual (del inglés: _**p**rint **w**orking **d**irectory_). | -                                                                                                          |
-|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta) a un directorio.                                                             |
-|  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta (relativa o absoluta) a un directorio. Si no es especificado, toma el valor del directorio actual. |
-| `tree`  | Imprimir el _árbol_ de directorios con sus archivos partiendo desde el directorio indicado.          | La ruta (relativa o absoluta) a un directorio. Si no es especificado, toma el valor del directorio actual. |
+|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta)[^2] a un directorio.                                                             |
+|  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta a un directorio. Si no es especificado, toma el valor del directorio actual. |
+| `tree`  | Imprimir el _árbol_ de directorios con sus archivos partiendo desde el directorio indicado.          | La ruta a un directorio. Si no es especificado, toma el valor del directorio actual. |
 
 ::: tip TIP 1
-
-Contamos con una guía que explica en detalle
-[qué son las rutas absolutas y relativas](rutas.md).
-
-:::
-
-::: tip TIP 2
 
 - `.` es el directorio actual.
 - `..` es el directorio padre (relativo al actual).
@@ -56,7 +49,7 @@ Ejemplos:
 
 :::
 
-::: tip TIP 3
+::: tip TIP 2
 
 Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
 `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
@@ -70,7 +63,7 @@ drwxr-xr-x  3 root  root  4096 feb 19  2018 ..
 ```
 
 De esta forma podemos ver los [permisos](#chmod), el contador de
-[_hard links_](#material-recomendado), el usuario y grupo _owner_, el tamaño y
+_hard links_[^3], el usuario y grupo _owner_, el tamaño y
 la fecha de última modificación de cada archivo.
 
 :::
@@ -286,7 +279,7 @@ Les dejamos un machete para escribir los permisos tipo Unix en octal:
 
 <hr>
 
-## Redirecciones y pipes
+## Redirecciones y pipes[^4]
 
 Todos los procesos reciben información via la _entrada_ estándar (o **stdin**) y
 devuelven un resultado por la _salida_ estándar (o **stdout**). La entrada
@@ -305,7 +298,7 @@ Estos son los más básicos, junto con un ejemplo de uso:
 |    `>>`    | Concatenar `stdout` al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
 |    `\|`    |                 "Pasarle" el `stdout` de un comando al `stdin` de otro                  |                   `cat *.c \| grep sleep`                   |
 
-## Variables de entorno
+## Variables de entorno[^5]
 
 Las variables de entorno son aquellas variables definidas para la consola que
 estamos utilizando actualmente, pero que podemos almacenar para que sean
@@ -384,7 +377,8 @@ env | grep MI_VARIABLE
 
 ## Material recomendado
 
-- [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
-- [Tutorial sobre Hard Links y Soft Links](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
-- [Five ways to use redirect operators in Bash](https://www.redhat.com/sysadmin/redirect-operators-bash)
-- [How To Read and Set Environmental and Shell Variables on Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux)
+[^1]: [34 comandos básicos de Linux que todo usuario debería conocer](https://www.hostinger.com/tutorials/linux-commands) (en inglés)
+[^2]: [Rutas Relativas y Rutas Absolutas](rutas.md)
+[^3]: [Tutorial sobre Hard Links y Soft Links](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
+[^4]: [5 formas de usar operadores de redirección en Bash](https://www.redhat.com/sysadmin/redirect-operators-bash) (en inglés)
+[^5]: [Como leer y configurar variables de entorno en Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux) (en inglés)
