@@ -379,6 +379,6 @@ env | grep MI_VARIABLE
 
 [^1]: [34 comandos básicos de Linux que todo usuario debería conocer](https://www.hostinger.com/tutorials/linux-commands) (en inglés)
 [^2]: [Rutas Relativas y Rutas Absolutas](rutas.md)
-[^3]: [Tutorial sobre Hard Links y Soft Links](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
+[^3]: [Tutorial sobre Hard Links y Soft Links](links.md)
 [^4]: [5 formas de usar operadores de redirección en Bash](https://www.redhat.com/sysadmin/redirect-operators-bash) (en inglés)
 [^5]: [Como leer y configurar variables de entorno en Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux) (en inglés)

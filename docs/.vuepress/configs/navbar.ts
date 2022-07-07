@@ -27,6 +27,10 @@ export const navbar: NavbarConfig = [
             text: 'Rutas Relativas y Absolutas',
             link: '/guias/consola/rutas'
           },
+          {
+            text: 'Hard Links y Soft Links',
+            link: '/guias/consola/links'
+          },
         ]
       },
       {
