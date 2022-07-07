@@ -13,9 +13,6 @@ en la página:
 ### Sobre los scripts y sus intérpretes
 - [She Bangs, She Bangs...](https://mgarciaisaia.github.io/tutorial-c/blog/2014/03/20/she-bangs-she-bangs/)
 
-### Tutorial sobre Hard Links y Soft Links
-- [Between a Rock and a Hard Link](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
-
 ## Programación en C
 
 ### Por qué no usar tipos dependientes de la arquitectura

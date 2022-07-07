@@ -62,27 +62,15 @@ Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
 `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
 parecido a esto:
 
-```bash:no-line-numbers
+```:no-line-numbers
 $ ls -la
-
 drwxr-xr-x 30 utnso utnso 4096 jul  7 00:18 .
 drwxr-xr-x  3 root  root  4096 feb 19  2018 ..
--rw-------  1 utnso utnso 2422 jul  5 14:55 .bash_history
--rw-rw-r--  1 utnso utnso  200 feb 22  2018 .bash_profile
--rw-r--r--  1 utnso utnso 3988 feb 22  2018 .bashrc
-drwx------ 13 utnso utnso 4096 jul  7 00:18 .cache
-drwx------ 21 utnso utnso 4096 jul  5 14:53 .config
-drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Descargas
-drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Documentos
-drwxr-xr-x  2 utnso utnso 4096 feb 28  2018 Escritorio
-drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Imágenes
-drwxr-xr-x  3 utnso utnso 4096 feb 19  2018 .local
-drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Música
--rw-r--r--  1 utnso utnso  891 feb 22  2018 .profile
-drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Vídeos
+-rwxrwxr-x 13 utnso utnso 4096 jul  7 00:18 mi-script.sh
 ```
 
-De esta forma podemos ver los permisos, el usuario y grupo _owner_, el tamaño y
+De esta forma podemos ver los [permisos](#chmod), el contador de
+[_hard links_](#material-recomendado), el usuario y grupo _owner_, el tamaño y
 la fecha de última modificación de cada archivo.
 
 :::
@@ -160,7 +148,7 @@ permite visualizar las líneas que se van agregando a un archivo en tiempo real.
 Esto viene como anillo al dedo para monitorear archivos de logs durante la
 entrega, por ejemplo, ejecutando:
 
-```:no-line-numbers
+```bash:no-line-numbers
 tail -f kernel.log
 ```
 
@@ -397,5 +385,6 @@ env | grep MI_VARIABLE
 ## Material recomendado
 
 - [34 Linux Basic Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+- [Tutorial sobre Hard Links y Soft Links](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
 - [Five ways to use redirect operators in Bash](https://www.redhat.com/sysadmin/redirect-operators-bash)
 - [How To Read and Set Environmental and Shell Variables on Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux)
