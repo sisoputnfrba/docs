@@ -336,13 +336,15 @@ El problema que esto tiene es que si probamos cerrando la terminal actual y
 abriendo otra sesión, veremos que al correr `echo $MI_VARIABLE` nuevamente, no
 nos devolverá nada.
 
-¿Qué ocurrió? Nuestra variable de entorno había sido definida únicamente para la
-sesión en la que estábamos trabajando y, por eso, no persistió.
+¿Qué ocurrió? Nuestra variable de entorno había sido exportada únicamente para
+la sesión en la que estábamos trabajando y sus sesiones hijas, por lo tanto, no
+persistió.
 
 Ahora, ¿cómo hacemos para definir una variable que valga para todas las
-sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
+sesiones? Podemos hacerlo agregando el `export` al final del archivo
+`~/.bashrc`.
 
-::: tip DATO
+::: tip
 
 `~/.bashrc` es un script que se va a ejecutar siempre que iniciemos una consola.
 
@@ -350,11 +352,11 @@ sesiones? Podemos hacerlo agregándola al archivo `~/.bashrc`.
 
 ::: details Probemos con un ejemplo...
 
-1. Dirigite al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
+1. Vayamos al directorio home (`/home/utnso`) simplemente poniendo `cd ~`.
 2. Corriendo `ls -a` podemos ver todos los directorios y archivos que hay. El
    flag `-a` sirve para mostrar también los archivos ocultos y, de no ponerlo,
    no veríamos el `.bashrc`.
-3. Haciendo `cat .bashrc`, podemos ver el contenido del archivo.
+3. Haciendo `less .bashrc`, podemos ver el contenido del archivo.
 4. Para agregar nuestra variable, vamos a usar el editor de texto `nano`
    haciendo `nano .bashrc`.
 5. Al final del archivo vamos a agregar la siguiente línea:
