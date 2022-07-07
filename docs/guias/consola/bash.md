@@ -28,11 +28,12 @@ También pueden encontrar los mismos manuales en línea:
 
 ### Moverse entre carpetas
 
-| Comando | Descripción                                                                                          | Parámetros                                                                                                        |
-| :-----: | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-|  `pwd`  | Imprimir la ruta absoluta del directorio actual (del inglés: _**p**rint **w**orking **d**irectory_). | -                                                                                                                 |
-|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta) a un directorio.                                                                    |
-|  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta (relativa o absoluta) a un directorio. Si no es especificado, retorna el contenido del directorio actual. |
+| Comando | Descripción                                                                                          | Parámetros                                                                                                 |
+| :-----: | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+|  `pwd`  | Imprimir la ruta absoluta del directorio actual (del inglés: _**p**rint **w**orking **d**irectory_). | -                                                                                                          |
+|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta) a un directorio.                                                             |
+|  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta (relativa o absoluta) a un directorio. Si no es especificado, toma el valor del directorio actual. |
+| `tree`  | Imprimir el _árbol_ de directorios con sus archivos partiendo desde el directorio indicado.          | La ruta (relativa o absoluta) a un directorio. Si no es especificado, toma el valor del directorio actual. |
 
 ::: tip TIP 1
 
@@ -52,6 +53,37 @@ Ejemplos:
 - `/home/utnso/./Desktop` es lo mismo que `/home/utnso/Desktop`
 - `/home/utnso/../username` es lo mismo que `/home/username`
 - `~/Documents` es lo mismo que `/home/utnso/Documents`
+
+:::
+
+::: tip TIP 3
+
+Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
+`-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
+parecido a esto:
+
+```bash:no-line-numbers
+$ ls -la
+
+drwxr-xr-x 30 utnso utnso 4096 jul  7 00:18 .
+drwxr-xr-x  3 root  root  4096 feb 19  2018 ..
+-rw-------  1 utnso utnso 2422 jul  5 14:55 .bash_history
+-rw-rw-r--  1 utnso utnso  200 feb 22  2018 .bash_profile
+-rw-r--r--  1 utnso utnso 3988 feb 22  2018 .bashrc
+drwx------ 13 utnso utnso 4096 jul  7 00:18 .cache
+drwx------ 21 utnso utnso 4096 jul  5 14:53 .config
+drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Descargas
+drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Documentos
+drwxr-xr-x  2 utnso utnso 4096 feb 28  2018 Escritorio
+drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Imágenes
+drwxr-xr-x  3 utnso utnso 4096 feb 19  2018 .local
+drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Música
+-rw-r--r--  1 utnso utnso  891 feb 22  2018 .profile
+drwxr-xr-x  2 utnso utnso 4096 feb 19  2018 Vídeos
+```
+
+De esta forma podemos ver los permisos, el usuario y grupo _owner_, el tamaño y
+la fecha de última modificación de cada archivo.
 
 :::
 
@@ -92,24 +124,6 @@ renamed 'HELP.md' -> 'docs/HELP.md'
 $ rm -v docs/HELP.md
 removed 'docs/HELP.md'
 ```
-
-:::
-
-::: tip TIP 3
-
-Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
-`-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
-parecido a esto:
-
-```:no-line-numbers
-$ ls -la
-drwxr-xr-x  3 utnso utnso 4096 Jul  4 11:29 .
-drwxr-xr-x 24 utnso utnso 4096 Jul  4 11:29 ..
-drwxr-xr-x  2 utnso utnso 4096 Jul  4 11:29 comandos-basicos
-```
-
-Esto nos permite ver los permisos, el usuario y grupo _owner_, el tamaño y la
-fecha de última modificación de cada archivo.
 
 :::
 
@@ -220,7 +234,7 @@ configuración.
 
 En la última línea pueden ver las distintas opciones que se pueden usar.
 
-Por ejemplo: `Ctrl` + `X` para salir.
+Por ejemplo: `Ctrl` + `x` para salir.
 
 :::
 
