@@ -20,7 +20,7 @@ export const navbar: NavbarConfig = [
             link: '/guias/consola/bash'
           },
           {
-            text: 'Control de versionado con Git',
+            text: 'Git para el Trabajo Práctico',
             link: '/guias/consola/git'
           },
           {
