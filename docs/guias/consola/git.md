@@ -1,6 +1,5 @@
-# Control de versionado con Git
+# Git para el Trabajo Práctico
 
-## Video: Git para el TP de Operativos
 <YouTube v="dI_tHLEoNBM"/>
 
 > Link a la presentación: [git para el TP de Operativos](https://faq.utnso.com.ar/git)
@@ -222,9 +221,7 @@ usados de git. ¡Esperamos que te sirvan :)!
 
 ## Material recomendado
 
-- [Arrancando con GIT](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#)
-  (Guía realizada para la cátedra Diseño de Sistemas.)
-- [Learn Git Branching](https://learngitbranching.js.org/) (tutorial
-  interactivo)
-- [Oh Shit, Git!?!](https://ohshitgit.com/es)
-- [First Aid Git](https://firstaidgit.io/#/)
+- [Tutorial interactivo de Git Branching](https://learngitbranching.js.org/) (en inglés)
+- [Soluciones a errores comunes al usar Git](https://ohshitgit.com/es)
+- [Preguntas comunes sobre Git](https://firstaidgit.io/#/) (en inglés)
+- [Git para Diseño de Sistemas](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#)

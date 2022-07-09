@@ -19,9 +19,10 @@ export const sidebar: SidebarConfig = [
     text: 'Consola de Linux y Git',
     collapsible: true,
     children: [
-      '/guias/consola/linux',
+      '/guias/consola/bash',
       '/guias/consola/git',
       '/guias/consola/rutas',
+      '/guias/consola/links',
     ],
   },
   {
@@ -55,6 +56,7 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/herramientas/debugger',
       '/guias/herramientas/valgrind',
+      '/guias/herramientas/deploy'
     ],
   },
 ]

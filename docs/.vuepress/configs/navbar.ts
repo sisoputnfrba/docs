@@ -16,16 +16,20 @@ export const navbar: NavbarConfig = [
         text: 'Consola de Linux y Git',
         children: [
           {
-            text: 'Introducción a la Shell de Linux',
-            link: '/guias/consola/linux'
+            text: 'Guía de uso de Bash',
+            link: '/guias/consola/bash'
           },
           {
-            text: 'Control de versionado con Git',
+            text: 'Git para el Trabajo Práctico',
             link: '/guias/consola/git'
           },
           {
-            text: 'Rutas relativas vs absolutas',
+            text: 'Rutas Relativas y Absolutas',
             link: '/guias/consola/rutas'
+          },
+          {
+            text: 'Hard Links y Soft Links',
+            link: '/guias/consola/links'
           },
         ]
       },
@@ -90,14 +94,10 @@ export const navbar: NavbarConfig = [
             text: 'Tutorial de Valgrind y Helgrind',
             link: '/guias/herramientas/valgrind'
           },
-          // {
-          //   text: 'Automatizando tareas en Bash',
-          //   link: '/guias/herramientas/bash'
-          // },
-          // {
-          //   text: 'Trabajando en Remoto con SSH',
-          //   link: '/guias/herramientas/ssh',
-          // }
+          {
+            text: 'Guía de despliegue de TP',
+            link: '/guias/herramientas/deploy'
+          }
         ]
       },
     ]

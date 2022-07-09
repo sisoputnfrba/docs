@@ -1,4 +1,4 @@
-# Rutas relativas y absolutas
+# Rutas Relativas y Absolutas
 
 > Tutorial extraído del blog
 > [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/blog/2015/04/23/rutas-argentinas/)
