@@ -128,16 +128,6 @@ laboratorio), la forma más sencilla de hacerlo es utilizando
 
 ![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
 
-::: tip
-
-Para evitar que se pierda la conexión después de un período de inactividad,
-debemos movernos a `Settings` > `Connection` y setear el valor de
-`Seconds between keepalives` en alrededor de 30 segundos:
-
-![config salvadora](/img/guias/herramientas/deploy/deploy-03.jpg)
-
-:::
-
 ### Pasos a seguir
 
 A partir de acá, lo que queda es usar la consola para clonar, compilar,
