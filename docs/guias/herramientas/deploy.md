@@ -1,8 +1,7 @@
 # Guía de despliegue de TP
 
-> Juramos que es la última guía que van a leer[^1]
-
-![portada](/img/guias/herramientas/deploy/deploy-01.jpg)
+![portada](/img/guias/herramientas/deploy/deploy-01.jpeg)
+> _"Encontré un leak el viernes antes de la entrega"_ - Pintura al óleo.
 
 ## Objetivo
 
@@ -216,7 +215,6 @@ del cuatri y qué relaciones encontraron con la teoría.
 
 <br><br>
 
-[^1]: ...hasta el cuatrimestre que viene
 [^2]:
     Tener una fecha de expiración corta para nuestros tokens siempre es una
     buena práctica de seguridad.
