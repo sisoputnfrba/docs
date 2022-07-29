@@ -34,7 +34,6 @@ export const sidebar: SidebarConfig = [
       '/guias/programacion/readline',
       '/guias/programacion/buenas-practicas',
       '/guias/programacion/shared-libraries',
-      '/guias/programacion/cspec',
     ],
   },
   {
@@ -56,7 +55,8 @@ export const sidebar: SidebarConfig = [
     children: [
       '/guias/herramientas/debugger',
       '/guias/herramientas/valgrind',
-      '/guias/herramientas/deploy'
+      '/guias/herramientas/cspec',
+      '/guias/herramientas/deploy',
     ],
   },
 ]

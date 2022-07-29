@@ -2,12 +2,12 @@ import type { NavbarConfig } from '@vuepress/theme-default';
 
 export const navbar: NavbarConfig = [
   {
-    text: 'Primeros pasos',
-    link: '/primeros-pasos/',
-  },
-  {
     text: 'Consultas',
     link: '/consultas',
+  },
+  {
+    text: 'Primeros pasos',
+    link: '/primeros-pasos/',
   },
   {
     text: 'Guías',
@@ -56,10 +56,6 @@ export const navbar: NavbarConfig = [
             text: 'Video de Shared Libraries',
             link: '/guias/programacion/shared-libraries'
           },
-          {
-            text: 'Unit Testing con CSpec',
-            link: '/guias/programacion/cspec'
-          }
         ],
       },
       {
@@ -80,7 +76,7 @@ export const navbar: NavbarConfig = [
           {
             text: 'Presentación de Señales',
             link: 'https://faq.utnso.com.ar/seniales'
-          }
+          },
         ],
       },
       {
@@ -95,15 +91,37 @@ export const navbar: NavbarConfig = [
             link: '/guias/herramientas/valgrind'
           },
           {
+            text: 'Unit Testing con CSpec',
+            link: '/guias/herramientas/cspec'
+          },
+          {
             text: 'Guía de despliegue de TP',
             link: '/guias/herramientas/deploy'
-          }
+          },
         ]
       },
     ]
   },
   {
-    text: 'Inscripciones',
-    link: 'https://inscripciones.utnso.com.ar/'
+    text: 'Links',
+    children: [
+      {
+        text: 'Links',
+        children: [
+          {
+            text: 'Blog de la cátedra',
+            link: 'https://utnso.com.ar/'
+          },
+          {
+            text: 'Foro de consultas',
+            link: 'https://faq.utnso.com.ar/foro'
+          },
+          {
+            text: 'Sistema de Inscripciones',
+            link: 'https://faq.utnso.com.ar/inscripciones'
+          },
+        ]
+      }
+    ],
   }
 ]
