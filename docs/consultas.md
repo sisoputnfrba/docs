@@ -64,7 +64,7 @@ O buscando los manuales en línea:
 
 Si es una función de las Commons, podés encontrar la descripción de cada una en
 los
-headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
+[headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
 y ejemplos de uso en los
 [unit tests](https://github.com/sisoputnfrba/so-commons-library/tree/master/tests/unit-tests).
 
@@ -107,7 +107,7 @@ que encuentres:
 
 :::
 
-## ¿Ayudantes asignados?
+## ¿Y los ayudantes asignados?
 
 Algo que hicimos durante mucho tiempo fue el asignar ayudantes a cada grupo,
 pero la virtualidad y el feedback de los alumnos de los cuatrimestres anteriores
