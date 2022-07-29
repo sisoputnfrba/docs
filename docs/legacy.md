@@ -15,6 +15,9 @@ en la página:
 
 ## Programación en C
 
+### Debugging C con GDB
+- [Aprendiendo C Con GDB](https://faq.utnso.com.ar/guia-c-gdb)
+
 ### Por qué no usar tipos dependientes de la arquitectura
 - [int vs int32_t](https://faq.utnso.com.ar/guia-tipos-arquitectura)
 
