@@ -127,11 +127,12 @@ Algo que hicimos durante mucho tiempo fue el asignar ayudantes a cada grupo,
 pero la virtualidad y el feedback de los alumnos de los cuatrimestres anteriores
 donde todo fue virtual, nos llevo a pensar seriamente si era algo que fuera
 efectivo ya que la mayoría de las dudas se resolvieron vía foro o vía discord y
-no dependían tanto de la disponibilidad de un ayudante en particular, entonces
-durante este 1c2021, vamos a estar dejando de lado esta idea y vamos a hacer mas
-foco en el foro y en Discord buscando mejorar la experiencia de cursada.
+no dependían tanto de la disponibilidad de un ayudante en particular.
+
+Entonces, a partir del 1c2021, decidimos ir dejando de lado esta idea y hacer
+mas foco en el foro y en Discord buscando mejorar la experiencia de cursada.
 
 Sin mucho mas para contarles, y en alusión al título de la página, les dejamos
-el tema de Los Beatles Help!
+el tema de Los Beatles **Help!**
 
 <YouTube v="2Q_ZzBGPdqE"/>
