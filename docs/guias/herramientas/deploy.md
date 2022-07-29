@@ -48,6 +48,8 @@ Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
 proporcionamos a través de los links de descarga, por lo que van a tener que
 aprender un mínimo de uso de la consola.
 
+<!-- TODO: Links y MD5 Ubuntu Server -->
+
 - [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
 - [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
 

@@ -41,6 +41,8 @@ Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
 un entorno gráfico liviano Lubuntu instalado encima de la Ubuntu Server de las
 entregas.
 
+<!-- TODO: Links Xubuntu -->
+
 Está comprimida en ?? partes (hosteadas en Google Drive):
 
 - [WIP](https://faq.utnso.com.ar/vm-gui-1)
@@ -100,6 +102,7 @@ md5 [archivo]
 
 Y los hashes son los siguientes:
 
+<!-- TODO: MD5 Xubuntu -->
 ```:no-line-numbers
 WIP
 ```
@@ -108,10 +111,12 @@ WIP
 
 Los links de descarga son los siguientes:
 
+<!-- TODO: Links Ubuntu Server -->
 - [WIP](https://faq.utnso.com.ar/vm-server-1)
 
 Y los hashes MD5:
 
+<!-- TODO: MD5 Ubuntu Server -->
 ```:no-line-numbers
 WIP
 ```
