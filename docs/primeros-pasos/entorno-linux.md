@@ -8,51 +8,29 @@ Si bien no es _estrictamente necesario_ utilizarlas, sí es **altamente
 recomendado**, ya que **el grupo debe asegurarse que el trabajo práctico
 funcione en el entorno en el que va a ser evaluado**.
 
-::: danger
+::: danger Solo bajo tu propio riesgo...
 
 De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
-alternativa_ que utilizar un entorno nativo u otro software de virtualización
-(por ejemplo, si contás con un procesador M1 podés probar
-[UTM](https://www.youtube.com/watch?v=hnwK-nkXolc)), te dejamos acá los paquetes
-para que puedas instalarlos:
+alternativa_ que utilizar un entorno nativo u otro software de virtualización,
+te dejamos un par de scripts para poder instalar todos los paquetes en
+[este repositorio](https://github.com/sisoputnfrba/entorno-vms).
 
-::: details Abrir solo si estás seguro de que NO podés usar VirtualBox
+Por ejemplo, si contás con un procesador M1 y necesitás una alternativa a
+VirtualBox podés probar [UTM](https://www.youtube.com/watch?v=hnwK-nkXolc).
 
-1. [Descargar Ubuntu Server for ARM](https://ubuntu.com/download/server/arm)
-2. Instalar los siguientes paquetes:
-
-```bash:no-line-numbers
-# Ubuntu Server
-sudo apt-get install aptitude gcc gdb git vim libncurses5-dev valgrind tig \
-  make autotools-dev strace emacs nano openjdk-8-jdk openjdk-11-jdk libcunit1 \
-  libevent1-dev ssh libfuse-dev build-essential g++ libcunit1-dev curl htop \
-  tree wget libreadline-dev docker docker-compose hexedit
-
-# Entorno gráfico (Lubuntu)
-sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
-  wireshark xclip bless gnome-do chromium-browser
-```
-
-3. [Instalar Eclipse for C/C++ Developers](https://www.eclipse.org/downloads/packages/)
-4. [Instalar Visual Studio Code](https://code.visualstudio.com/download)
-
-¡Y listo! Ya podés pasar a la
+Luego de seguir con el manual de instalación, ya podés pasar a la
 [última sección de esta guía](#amigandose-con-la-consola).
 
 :::
 
 ## Descargar VirtualBox
 
-Primero, debemos instalar VirtualBox, el software de virtualización que
-utilizamos para correr las máquinas virtuales de la cátedra.
-
-Como las VMs ya tienen unos años, recomendamos utilizar la versión
-[5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2):
-
-![virtualbox-00](/img/primeros-pasos/linux/virtualbox-00.png)
+Primero, debemos instalar
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads), el software de
+virtualización que utilizamos para correr las máquinas virtuales de la cátedra.
 
 También se recomienda descargar e instalar el **Extension Pack**, el cual lo
-pueden encontrar accediendo al mismo link.
+pueden encontrar más abajo en el mismo link.
 
 ## Descargar la máquina virtual
 
@@ -63,19 +41,21 @@ Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
 un entorno gráfico liviano Lubuntu instalado encima de la Ubuntu Server de las
 entregas.
 
-Está comprimida en 5 partes (hosteadas en Google Drive):
+Está comprimida en ?? partes (hosteadas en Google Drive):
 
-- [utnso-lubuntu-5.0.1.7z.001](https://faq.utnso.com.ar/vm-gui-1)
-- [utnso-lubuntu-5.0.1.7z.002](https://faq.utnso.com.ar/vm-gui-2)
-- [utnso-lubuntu-5.0.1.7z.003](https://faq.utnso.com.ar/vm-gui-3)
-- [utnso-lubuntu-5.0.1.7z.004](https://faq.utnso.com.ar/vm-gui-4)
-- [utnso-lubuntu-5.0.1.7z.005](https://faq.utnso.com.ar/vm-gui-5)
+- [WIP](https://faq.utnso.com.ar/vm-gui-1)
+
+::: tip
 
 Para descomprimirlas, pueden utilizar:
 
-- En Windows: [WinRAR](https://www.win-rar.com/)
-- En Linux: [`7z`](http://manpages.ubuntu.com/manpages/bionic/man1/7z.1.html)
-- En MacOS: [The Unarchiver](https://theunarchiver.com/)
+| SO      | Software                                                                                     |
+|---------|----------------------------------------------------------------------------------------------|
+| Windows | [WinRAR](https://www.win-rar.com/)                                                           |
+| Linux   | [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html) `sudo apt install p7zip-full` |
+| MacOS   | [The Unarchiver](https://theunarchiver.com/)                                                 |
+
+:::
 
 ::: warning
 
@@ -98,21 +78,21 @@ Pueden copiar el comando de acá:
 <CodeGroupItem title="Windows">
 
 ```:no-line-numbers
-certutil -hashfile ./nombrearchivo.extension md5
+certutil -hashfile [archivo] md5
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Linux">
 
 ```:no-line-numbers
-md5sum ./nombrearchivo.extension
+md5sum [archivo]
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="MacOS">
 
 ```:no-line-numbers
-md5 ./nombrearchivo.extension
+md5 [archivo]
 ```
 
 </CodeGroupItem>
@@ -121,27 +101,19 @@ md5 ./nombrearchivo.extension
 Y los hashes son los siguientes:
 
 ```:no-line-numbers
-md5 (utnso-lubuntu-5.0.1.7z.001): 3b04c3261f8d301419b53158d8770499
-md5 (utnso-lubuntu-5.0.1.7z.002): ffd6f99a42cc18f45632001088ae2a1f
-md5 (utnso-lubuntu-5.0.1.7z.003): cdeeb5b7db34695bcb6b5bf04f398472
-md5 (utnso-lubuntu-5.0.1.7z.004): c034783583b0f64c64ebfda84031c2b7
-md5 (utnso-lubuntu-5.0.1.7z.005): afcc25d1f8ed0f722553af708811966e
-md5 (utnso-lubuntu-5.0.1.vdi) -descomprimido- bdc2acbf759805ef1c7855af2089d975
+WIP
 ```
 
 ::: details También se encuentra disponible la descarga de las VMs sin entorno gráfico
 
 Los links de descarga son los siguientes:
 
-- [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
-- [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
+- [WIP](https://faq.utnso.com.ar/vm-server-1)
 
 Y los hashes MD5:
 
 ```:no-line-numbers
-md5 (ubuntu-server-5.0.1.7z.001): 6d8ed10e4862495975e8450e799c658a
-md5 (ubuntu-server-5.0.1.7z.002): 38df246a4ebf0ed11953dd0861d0028d
-md5 (ubuntu-server-5.0.1.vdi) -descomprimido- 8424a22b2e93b73bf5cd3f13568dbbe9
+WIP
 ```
 
 :::
@@ -169,6 +141,18 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
+::: warning IMPORTANTE
+
+En las versiones más recientes, el mensaje que aparece luego de ejecutar el
+script de instalación es el siguiente:
+```:no-line-numbers
+VirtualBox Guest Additions: Running kernel modules will not be replaced until
+the system is restarted
+```
+Esto significa que es necesario reiniciar la VM para aplicar los cambios.
+
+:::
+
 ### Habilitar el portapapeles compartido
 
 Ahora sí, podremos redimensionar la pantalla dinámicamente o habilitar el
@@ -176,8 +160,7 @@ portapapeles compartido de esta forma:
 
 <YouTube v="xJ52dDTfCHo"/>
 
-::: details En caso de que el portapapeles compartido funcione pero la pantalla
-completa no...
+::: details En caso de que el portapapeles compartido funcione pero la pantalla completa no...
 
 En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico de
 la pantalla a VBoxVGA:
@@ -202,6 +185,6 @@ encontrar más adelante como la herramienta de versionado Git o Valgrind.
 Para eso, te dejamos acá algunos links que te pueden ser útiles:
 
 - [Micro-repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
-- [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
+- [Mario Bash](https://faq.utnso.com.ar/mariobash) :joystick:
 - [Guía de uso de Bash](../guias/consola/bash.md)
 - [Control de versionado con Git](../guias/consola/git.md)
