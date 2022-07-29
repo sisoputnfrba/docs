@@ -21,9 +21,6 @@ en la página:
 ### Guía de ejercicios
 - [Ejercicios Operativos](https://faq.utnso.com.ar/ejercicios)
 
-### Nested Functions
-<YouTube v="1kYyxZXGjp0"/>
-
 ### Cómo implementar tu propio malloc
 - [Tutorial para implementar tu propio malloc](http://mgarciaisaia.github.io/tutorial-c/blog/2014/12/26/un-tutorial-rapido-para-implementar-y-debuggear-malloc/)
 

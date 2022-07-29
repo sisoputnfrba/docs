@@ -50,27 +50,6 @@ Sino, si te sentís con más comodidad planteando la duda en forma sincrónica,
 otro medio de consulta son los sábados de soporte a través del servidor de
 [Discord](https://faq.utnso.com.ar/discord-invite).
 
-## Dudas sobre cómo utilizar una función de C
-
-Recordá que el `man` es tu amigo, podés consultar la documentación oficial de
-cualquier función en C consultando por la consola:
-
-```bash:no-line-numbers
-man fopen
-```
-
-O buscando los manuales en línea:
-[fopen(3) - Linux manual page](https://man7.org/linux/man-pages/man3/fopen.3.html)
-
-Si es una función de las Commons, podés encontrar la descripción de cada una en
-los
-[headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
-y ejemplos de uso en los
-[unit tests](https://github.com/sisoputnfrba/so-commons-library/tree/master/tests/unit-tests).
-
-También podés hacernos consultas a través del
-[foro](https://github.com/sisoputnfrba/foro/).
-
 ## Dudas conceptuales para encarar el TP o código del equipo
 
 Este es el caso mas complicado, ya que acá muy posiblemente tengan que mostrar
@@ -79,6 +58,41 @@ es que se pasen por [Discord](https://faq.utnso.com.ar/discord-invite), ya que
 ahi no solo vamos a poder ver el código, si no que además la comunicación va a
 ser muchisimo mas efectiva porque evitamos los errores de interpretación por
 alguna coma o algún punto mal puesto.
+
+## Dudas sobre cómo utilizar una función
+
+Recordá que el `man` es tu amigo, podés consultar la documentación oficial de
+cualquier función en C consultando por la consola, por ejemplo:
+
+```bash:no-line-numbers
+man fopen
+```
+
+::: tip
+
+También podés encontrar los mismos manuales en línea:
+[fopen(3) - Linux manual page](https://man7.org/linux/man-pages/man3/fopen.3.html)
+
+:::
+
+Si es una función de las Commons, podés encontrar la descripción de cada una en
+los
+[headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
+y ejemplos de uso en los
+[unit tests](https://github.com/sisoputnfrba/so-commons-library/tree/master/tests/unit-tests).
+
+::: tip
+
+Si estás buscando cómo pasarle parámetros extra a las funciones de orden
+superior de las Commons, este es tu video:
+
+<YouTube v="1kYyxZXGjp0"/>
+
+:::
+
+También podés hacernos consultas a través del
+[foro](https://github.com/sisoputnfrba/foro/), o buscar si alguien más tuvo la
+misma duda.
 
 ## Problemas con las VMs o errores de compilación
 
