@@ -1,7 +1,7 @@
 # Introducción al Lenguaje C
 
 > Tutorial extraído del blog
-> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/lo-c-tutto/)
+> [C para Operativos](https://faq.utnso.com.ar/guia-intro-c)
 > (autor: Matías García Isaia)
 
 ## Video: C - Una charla minimalista

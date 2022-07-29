@@ -1,7 +1,7 @@
 # Rutas Relativas y Absolutas
 
 > Tutorial extraído del blog
-> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/blog/2015/04/23/rutas-argentinas/)
+> [C para Operativos](https://faq.utnso.com.ar/guia-rutas)
 > (autor: Matías García Isaia)
 
 Más de una vez hemos puesto rutas absolutas en nuestro código, porque es común

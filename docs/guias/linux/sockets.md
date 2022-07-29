@@ -255,7 +255,7 @@ El malloc lo realizamos debido a que como pthread recibe una posición de memori
 
 ## Contenido complementario
 
-Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en inglés)](https://beej.us/guide/bgnet/), donde obviamos muchos conceptos de redes que no interesan para esta materia. Para los interesados, o aquellos que deseen ahondar más en busca de distintas formas de implementación, les comentamos que además hay una [traducción casera de la cátedra](https://github.com/mgarciaisaia/bgnet-spanish). Si ven alguna oportunidad de mejora en redacción o traducción estamos abiertos a escucharlos.
+Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en inglés)](https://faq.utnso.com.ar/beej), donde obviamos muchos conceptos de redes que no interesan para esta materia. Para los interesados, o aquellos que deseen ahondar más en busca de distintas formas de implementación, les comentamos que además hay una [traducción casera de la cátedra](https://github.com/mgarciaisaia/bgnet-spanish). Si ven alguna oportunidad de mejora en redacción o traducción estamos abiertos a escucharlos.
 
 ## Notas finales
 

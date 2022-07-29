@@ -1,7 +1,7 @@
 # Hard Links y Soft Links
 
 > Tutorial extraído del blog
-> [C para Operativos](https://mgarciaisaia.github.io/tutorial-c/blog/2015/02/07/between-a-rock-and-a-hard-link/)
+> [C para Operativos](https://faq.utnso.com.ar/guia-links)
 > (autor: Matías García Isaia)
 
 ::: tip ¿Qué es un hard link? ¿Qué es un soft link? ¿Qué diferencia hay entre ellos?

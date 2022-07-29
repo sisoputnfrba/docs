@@ -1,7 +1,7 @@
 # Cómo hacer una consola interactiva
 
 > Post extraído de
-> [Readline: La biblioteca de GNU que hace devs felices](https://medium.com/@tferraro/readline-la-biblioteca-de-gnu-que-hace-devs-felices-349539501cad)
+> [Readline: La biblioteca de GNU que hace devs felices](https://faq.utnso.com.ar/guia-consola-interactiva)
 > (autor: Tomás Ferraro)
 
 Nunca se preguntaron ¿cómo hacen programas como `bash` para generar una consola

@@ -36,7 +36,7 @@ otro concepto en los [medios de consulta de la práctica](../consultas.md).
 
 - [Contar con un entorno Linux](./entorno-linux.md)
 - [Tener configuradas las commons y git](./entorno-desarrollo.md)
-- Tener a mano el [repo del TP0](https://github.com/sisoputnfrba/tp0)
+- Tener a mano el [repo del TP0](https://faq.utnso.com.ar/tp0)
 
 ## Etapa 1: Setup inicial
 
@@ -91,7 +91,7 @@ acciones que el programa vaya realizando, tanto las correctas, como los errores.
 Para ello, utilizaremos las funciones de logging que proveen las commons.
 
 Parados en el archivo `cliente.c`, si revisamos el
-[header de log de las commons](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/log.h#L40-L56)
+[header de log de las commons](https://github.com/sisoputnfrba/so-commons-library/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L40-L56)
 vamos a encontrar la función `log_create()`, que nos devuelve un logger listo
 para usar.
 

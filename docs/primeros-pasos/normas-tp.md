@@ -49,7 +49,7 @@ final.
 
 La fecha se encuentra definida en el enunciado del Trabajo Práctico. Se
 informará con anticipación el lugar a través del Campus Virtual y
-[el blog](https://www.utnso.com.ar/).
+[el blog](https://faq.utnso.com.ar/blog).
 
 ### Características de la forma entrega
 
@@ -110,7 +110,7 @@ instancias de recuperatorio.
 #### Procedimiento de inscripción
 
 - El alumno representante del grupo deberá ingresar al
-  [Sistema de Inscripciones](https://inscripciones.utnso.com.ar) y deberá
+  [Sistema de Inscripciones](https://faq.utnso.com.ar/inscripciones) y deberá
   indicar la franja horaria en que el grupo pueda presentarse.
 
 - El grupo luego recibirá la fecha y horario estimado de evaluación. Los mismos
@@ -205,7 +205,7 @@ virtuales provistas para el desarrollo y pruebas del mismo.
 ## Presentación oficial del trabajo práctico
 
 Tanto la fecha como el horario de la presentación serán informados en el Campus
-Virtual y mediante el [blog](https://www.utnso.com.ar/). Es obligatoria la
+Virtual y mediante el [blog](https://faq.utnso.com.ar/blog). Es obligatoria la
 asistencia del grupo completo a dicha presentación, y se recomienda asistir a la
 misma habiendo leído y discutido la especificación completa del trabajo.
 
@@ -218,7 +218,7 @@ con la misma.
 
 Para realizar la inscripción al trabajo práctico el grupo deberá completar el
 proceso de inscripción en el
-[Sistema de Inscripciones](https://inscripciones.utnso.com.ar)[^2]. Transcurrida
+[Sistema de Inscripciones](https://faq.utnso.com.ar/inscripciones)[^2]. Transcurrida
 aproximadamente una semana de la confirmación del grupo se le designará un
 ayudante.
 
@@ -243,7 +243,7 @@ Checkpoint Presencial, y la hora de finalización a las **18:00hs del mismo
 día**.
 
 Para pedir un cambio de grupo, la cátedra provee una
-[herramienta](https://inscripciones.utnso.com.ar/cambio.php) en el sistema de
+[herramienta](https://faq.utnso.com.ar/inscripciones/cambio.php) en el sistema de
 inscripciones mencionado anteriormente. Dicha petición realizará un aviso a
 todas las partes interesadas, las cuales poseerán **72 horas** para objetar el
 mismo a través de su ayudante asignado o

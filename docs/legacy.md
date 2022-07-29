@@ -11,28 +11,28 @@ en la página:
 ## Linux
 
 ### Sobre los scripts y sus intérpretes
-- [She Bangs, She Bangs...](https://mgarciaisaia.github.io/tutorial-c/blog/2014/03/20/she-bangs-she-bangs/)
+- [She Bangs, She Bangs...](https://faq.utnso.com.ar/guia-scripts-interpretes)
 
 ## Programación en C
 
 ### Por qué no usar tipos dependientes de la arquitectura
-- [int vs int32_t](http://mgarciaisaia.github.io/tutorial-c/blog/2014/12/26/int-vs-int32-t/)
+- [int vs int32_t](https://faq.utnso.com.ar/guia-tipos-arquitectura)
 
 ### Guía de ejercicios
 - [Ejercicios Operativos](https://faq.utnso.com.ar/ejercicios)
 
 ### Cómo implementar tu propio malloc
-- [Tutorial para implementar tu propio malloc](http://mgarciaisaia.github.io/tutorial-c/blog/2014/12/26/un-tutorial-rapido-para-implementar-y-debuggear-malloc/)
+- [Tutorial para implementar tu propio malloc](https://faq.utnso.com.ar/guia-custom-malloc)
 
 ## Eclipse
 
 ### Snippets/Templates
 - [Ayudas de Eclipse](https://docs.google.com/document/d/1S4H6pv6RldiWZlmQe0xaOYY-J5alByvhrYVeVMROWT0/edit)
-- [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.vv9t5d6yowf2)
+- [Guía gráfica de Eclipse](https://faq.utnso.com.ar/eclipse-guia-grafica)
 
 ### Refactoring
 - [Eclipse - Refactors](https://docs.google.com/document/d/1UpPjGZmeR66WFjNXSVd5gEGVb0m-6EBejfkxFBO0CEg/edit)
-- [Guía gráfica de Eclipse](https://docs.google.com/document/d/16vNTvgYpmojT9vNOLf9MOSEG-EcmozHIGyNx8h5JmoI/pub#h.ja3m0nnnuhd2)
+- [Guía gráfica de Eclipse](https://faq.utnso.com.ar/eclipse-guia-grafica)
 
 ## VirtualBox
 
@@ -46,12 +46,12 @@ en la página:
 <YouTube v="0016HnJQVSE"/>
 
 ### Crear una shared folder entre VM y Host
-- [Crear carpeta compartida entre VM y Host](https://docs.google.com/document/d/11hvWR_GDrDCL1JUaTXfBfh07eOwuB1M8inOiBjKxCiI/edit)
-- [Crear carpeta compartida entre VM y Host (v2)](https://docs.google.com/document/d/1_lDnILoIhZnRN6BtFsxGZZLstAJWlE2YPYGto7ThhZk/edit)
+- [Crear carpeta compartida entre VM y Host](https://faq.utnso.com.ar/guia-carpeta-compartida-vm)
+- [Crear carpeta compartida entre VM y Host (v2)](https://faq.utnso.com.ar/vms-shared)
 
 ### Troubleshooting
-- [Posible Solucion - Mal funcionamiento de la VM en Windows 8](https://github.com/sisoputnfrba/foro/issues/1007)
-- [Habilitar virtualización para evitar Kernel panic - not syncing al prender la VM](https://github.com/sisoputnfrba/foro/issues/1010)
+- [Posible Solucion - Mal funcionamiento de la VM en Windows 8](https://faq.utnso.com.ar/vm-lenta)
+- [Habilitar virtualización para evitar Kernel panic - not syncing al prender la VM](https://faq.utnso.com.ar/foro/1010)
 
 ## Deploy
 

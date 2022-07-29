@@ -110,7 +110,7 @@ export const navbar: NavbarConfig = [
         children: [
           {
             text: 'Blog de la cátedra',
-            link: 'https://utnso.com.ar/'
+            link: 'https://faq.utnso.com.ar/blog'
           },
           {
             text: 'Foro de consultas',
@@ -119,6 +119,14 @@ export const navbar: NavbarConfig = [
           {
             text: 'Sistema de Inscripciones',
             link: 'https://faq.utnso.com.ar/inscripciones'
+          },
+          {
+            text: 'Enunciado',
+            link: 'https://faq.utnso.com.ar/enunciado'
+          },
+          {
+            text: 'Commons Library',
+            link: 'https://faq.utnso.com.ar/commons'
           },
         ]
       }

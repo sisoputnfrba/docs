@@ -91,7 +91,7 @@ superior de las Commons, este es tu video:
 :::
 
 También podés hacernos consultas a través del
-[foro](https://github.com/sisoputnfrba/foro/), o buscar si alguien más tuvo la
+[foro](https://faq.utnso.com.ar/foro), o buscar si alguien más tuvo la
 misma duda.
 
 ## Problemas con las VMs o errores de compilación
@@ -101,7 +101,7 @@ En el caso de que tengas un problema técnico con VirtualBox u otra herramienta
 `Can't find source file at`), te aconsejamos consultar primero:
 
 - El material que se encuentra en esta página
-- [El buscador de issues del foro](https://github.com/sisoputnfrba/foro/issues)
+- [El buscador de issues del foro](https://faq.utnso.com.ar/foro)
   (recordá que podés filtrar por texto o por label)
 - Si se trata de algún mensaje de error que no aparece en el foro (o la solución
   del foro no funcionó), existe la posibilidad de que alguien más por fuera de
@@ -109,7 +109,7 @@ En el caso de que tengas un problema técnico con VirtualBox u otra herramienta
   rápida en [Google](https://google.com/) suele ser lo más inmediato.
 
 En caso de que lo anterior no haya funcionado, sentite libre de subir un issue
-al [foro](https://github.com/sisoputnfrba/foro/) o consultar el próximo sábado
+al [foro](https://faq.utnso.com.ar/foro) o consultar el próximo sábado
 de soporte en [Discord](https://faq.utnso.com.ar/discord-invite).
 
 ::: tip

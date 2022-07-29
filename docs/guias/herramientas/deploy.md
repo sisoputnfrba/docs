@@ -33,7 +33,7 @@ notar de cuánto tiempo ahorrado para todos estamos hablando.
 En segundo lugar, los archivos de configuración: cada prueba especifica los
 parámetros con los que debe contar cada módulo, entonces podrían guardar en el
 repositorio un archivo distinto por cada prueba y
-[pasar el que corresponde por línea de comandos](https://docs.google.com/document/d/1lgJkujN9kBlsFcYyp9aEkNvmoWVFKCajceh84R8s2KQ/edit).
+[pasar el que corresponde por línea de comandos](../programacion/main.md).
 De esta forma, para pasar a la siguiente simplemente bajamos y le pasamos un
 archivo de configuración distinto al mismo ejecutable.
 
@@ -197,7 +197,7 @@ entregas:
 | Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no me andan los sockets. |                                                  Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.                                                  |                                                                            Configurar [setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables.                                                                            |
 |                         No puedo compilar mis módulos y no sé qué hacer.                          |                                                       Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                       |                                                                                                         Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                                          |
 |            No tengo información suficiente para darme cuenta si la prueba anduvo o no.            |                                                               No puse logs suficientes en mi TP porque creí que no era necesario.                                                               |                                           **Agregarlos**. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron. La foto final no garantiza que el trayecto haya sido el correcto.                                            |
-|                     Tardo demasiado en darme cuenta si la prueba anduvo o no.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de prueba" **sin comentarlos en el código**. |
+|                     Tardo demasiado en darme cuenta si la prueba anduvo o no.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de prueba" **sin comentarlos en el código**. |
 
 ## Paso 4: Des-pliegue - Recomendado
 
@@ -223,7 +223,7 @@ del cuatri y qué relaciones encontraron con la teoría.
     Si cuentan con una shared library propia, deberán copiar los headers (".h")
     en `/usr/local/include` y la biblioteca compilada (".so") en
     `/usr/local/lib`. Las commons se instalan
-    [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/makefile#L33-L34)
+    [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/makefile#L33-L34)
     ;)
 
 [^4]:

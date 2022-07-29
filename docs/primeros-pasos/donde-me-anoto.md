@@ -23,7 +23,7 @@ parte **práctica** de la materia, ya que ahí van a encontrar:
 
 - Un repositorio en la nube para subir el código de su TP
 - Consultas técnicas o del enunciado del TP en el
-  [Foro](https://github.com/sisoputnfrba/foro)
+  [Foro](https://faq.utnso.com.ar/foro)
 
 ::: tip
 
@@ -37,7 +37,7 @@ crearte otra cuenta personal.
 
 ## Anotarme en el Sistema de Inscripciones
 
-El [Sistema de Inscripciones](https://inscripciones.utnso.com.ar/) es el lugar
+El [Sistema de Inscripciones](https://faq.utnso.com.ar/inscripciones) es el lugar
 donde se registran los grupos, y que usamos para generar las actas de aprobación
 de la materia.
 
