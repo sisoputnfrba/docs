@@ -6,7 +6,7 @@ en la página:
 [[toc]]
 
 ## Repaso de Arquitectura
-- [Micro-repaso de arquitectura](http://mgarciaisaia.github.io/simplecpu/Binary.html)
+- [Micro-repaso de arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
 
 ## Linux
 
@@ -27,11 +27,9 @@ en la página:
 ## Eclipse
 
 ### Snippets/Templates
-- [Ayudas de Eclipse](https://docs.google.com/document/d/1S4H6pv6RldiWZlmQe0xaOYY-J5alByvhrYVeVMROWT0/edit)
 - [Guía gráfica de Eclipse](https://faq.utnso.com.ar/eclipse-guia-grafica)
 
 ### Refactoring
-- [Eclipse - Refactors](https://docs.google.com/document/d/1UpPjGZmeR66WFjNXSVd5gEGVb0m-6EBejfkxFBO0CEg/edit)
 - [Guía gráfica de Eclipse](https://faq.utnso.com.ar/eclipse-guia-grafica)
 
 ## VirtualBox
