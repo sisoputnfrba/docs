@@ -171,6 +171,48 @@ de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 
 :::
 
+### Cambiar permisos y ownership
+
+#### `chmod`
+
+Permite cambiar los permisos de un archivo (del inglés: _**ch**ange **mod**e_).
+Ejemplo:
+
+```bash:no-line-numbers
+# Para dar permisos de ejecución
+chmod +x mi-script.sh
+# Para configurar nuevos permisos usando el formato Unix
+chmod 664 kernel.config
+```
+
+#### `chown`
+
+Permite cambiar el usuario dueño de un archivo (del inglés: _**ch**ange
+**own**er_). Ejemplo:
+
+```bash:no-line-numbers
+# Para cambiar el ownership de un archivo a mi usuario
+chown $USER ejemplo.txt
+# Para cambiar el ownership de una carpeta y todo su contenido
+chown -R $USER /home/utnso/swap
+```
+
+::: tip TIP 1
+
+Recuerden que pueden validar los permisos del archivo ejecutando `ls -l` sobre
+el directorio en donde se encuentre como les mostramos
+[acá](#moverse-entre-carpetas).
+
+:::
+
+::: tip TIP 2
+
+Les dejamos un machete para escribir los permisos tipo Unix en octal:
+
+![file](/img/guias/consola/bash-linux-file-permissions.jpg)
+
+:::
+
 ## Comandos útiles para la entrega
 
 ### `htop`
@@ -192,7 +234,7 @@ En la última línea pueden encontrar las distintas opciones que se pueden usar.
 
 :::
 
-<hr>
+<br>
 
 ### `ifconfig`
 
@@ -201,7 +243,7 @@ configuración (ya sea a mano o a través de un script).
 
 ![ifconfig](/img/guias/consola/bash-ifconfig.png)
 
-<hr>
+<br>
 
 ### `nano`
 
@@ -248,36 +290,22 @@ Veremos que la salida es la oración que recién escribimos.
 
 :::
 
-<hr>
+<br>
 
-### `chmod`
+### `lsof`
 
-Permite cambiar los permisos de un archivo (del inglés: _**ch**ange **mod**e_).
-Ejemplo:
+Permite listar todos los archivos abiertos. En las entregas, puede ser muy útil
+junto con el flag `-i` para corroborar que no haya ningún proceso escuchando en
+un puerto en particular. Ejemplo:
 
 ```bash:no-line-numbers
-# Para dar permisos de ejecución
-chmod +x mi-script.sh
-# Para configurar nuevos permisos usando el formato Unix
-chmod 664 kernel.config
+lsof -i :8080
 ```
 
-::: tip TIP 1
+![lsof](/img/guias/consola/lsof.png)
 
-Pueden validar los permisos del archivo ejecutando `ls -l` sobre el directorio
-en donde se encuentre.
 
-:::
-
-::: tip TIP 2
-
-Les dejamos un machete para escribir los permisos tipo Unix en octal:
-
-![file](/img/guias/consola/bash-linux-file-permissions.jpg)
-
-:::
-
-<hr>
+<br>
 
 ## Redirecciones y pipes[^4]
 
