@@ -95,7 +95,7 @@ donde vamos a poner nuestros argumentos separados por espacios:
 En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
 partir desde el `Working directory` que está configurado ahí más abajo.
 
-Por ejemplo, la variable `workspace_loc:{nombreDelProyecto}` apunta hacia la
+Por ejemplo, la variable `${workspace_loc:NOMBRE_DEL_PROYECTO}` apunta hacia la
 carpeta en donde se encuentra el proyecto Eclipse.
 
 ## Pasar argumentos desde Visual Studio Code
@@ -119,7 +119,7 @@ poner nuestra lista de argumentos en formato de array de strings.
 
 En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
 asegurarnos que la variable `cwd` apunte al valor correcto. En este ejemplo,
-`workspaceFolder` es otra variable que apunta hacia la carpeta que tiene abierta
-VSCode[^1].
+`${workspaceFolder}` es otra variable que apunta hacia la carpeta que tiene
+abierta Visual Studio Code[^1].
 
 [^1]: [Visual Studio Code Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
