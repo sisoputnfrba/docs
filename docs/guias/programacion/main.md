@@ -2,6 +2,8 @@
 
 ![meme](/img/guias/programacion/main/meme.jpg)
 
+## Introducción
+
 Cuando uno normalmente ejecuta un proceso C, lo realiza a través de la línea de
 comandos de una terminal.
 
@@ -21,7 +23,7 @@ ejecuciones? :thinking:
 
 Podría tener varios archivos y ponerlos en la carpeta en donde mi proceso espera
 encontrarlos, pero eso se vuelve engorroso y difícil de mantener, porque, si
-levantamos varias instancias con distintas configuraciones, no es posible 
+levantamos varias instancias con distintas configuraciones, no es posible
 determinar qué contenía ese archivo al arrancar a ejecutar cada una.
 
 Ahí es donde pueden resultarnos muy útiles los **parámetros del main**, para así
@@ -41,7 +43,6 @@ int main(int argc, char** argv) {
 
     //resto del TP0 de después
 }
-
 ```
 
 Y lo ejecutamos como:
@@ -75,7 +76,50 @@ int main(int argc, char** argv) {
 
     //resto del TP0 de después
 }
-
 ```
 
-¡Eso es todo!
+¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el IDE?
+:thinking:
+
+## Pasar argumentos desde Eclipse
+
+Vamos a entrar a las `Run Configurations...`:
+
+![eclipse-01](/img/guias/programacion/main/eclipse-01.png)
+
+Y en la configuración del proyecto nos moveremos a la pestaña `Arguments`, en
+donde vamos a poner nuestros argumentos separados por espacios:
+
+![eclipse-02](/img/guias/programacion/main/eclipse-02.png)
+
+En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
+partir desde el `Working directory` que está configurado ahí más abajo.
+
+Por ejemplo, la variable `workspace_loc:{nombreDelProyecto}` apunta hacia la
+carpeta en donde se encuentra el proyecto Eclipse.
+
+## Pasar argumentos desde Visual Studio Code
+
+En el caso de que ya tengamos configurado el debugger, podremos encontrar en
+nuestro archivo `launch.json` una variable `args`, en donde vamos a
+poner nuestra lista de argumentos en formato de array de strings.
+
+```json:no-line-numbers{5}
+{
+    "configurations": [
+        {
+            // ...
+            "args": [ "./una/ruta/a/mi/archivo.cfg" ],
+            "cwd": "${workspaceFolder}",
+            // ...
+        }
+    ]
+}
+```
+
+En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
+asegurarnos que la variable `cwd` apunte al valor correcto. En este ejemplo,
+`workspaceFolder` es otra variable que apunta hacia la carpeta que tiene abierta
+VSCode[^1].
+
+[^1]: [Visual Studio Code Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
