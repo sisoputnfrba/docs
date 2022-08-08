@@ -124,6 +124,10 @@ export const navbar: NavbarConfig = [
             text: 'Commons Library',
             link: 'https://faq.utnso.com.ar/commons'
           },
+          {
+            text: 'Mario Bash',
+            link: 'https://faq.utnso.com.ar/mariobash'
+          },
         ]
       }
     ],
