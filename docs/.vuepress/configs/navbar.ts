@@ -125,6 +125,10 @@ export const navbar: NavbarConfig = [
             link: 'https://faq.utnso.com.ar/commons'
           },
           {
+            text: 'Canal de YouTube',
+            link: 'https://faq.utnso.com.ar/youtube'
+          },
+          {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'
           },
