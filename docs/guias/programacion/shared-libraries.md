@@ -17,5 +17,6 @@ Es importante que la variable es solo para el programa que estamos ejecutando,
 pero hay formas de que quede seteada en la consola mientras está encendida, o
 incluso, aunque la VM se apague!
 
-Si querés saber más sobre las variables de entorno, pegale una leída a
-[How To Read and Set Environmental and Shell Variables on Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux)
+Si querés saber más sobre las variables de entorno, pegale una leída a la última
+sección de nuestra
+[guía de uso de Bash](../consola/bash.md#variables-de-entorno).
