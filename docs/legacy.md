@@ -5,9 +5,6 @@ en la página:
 
 [[toc]]
 
-## Repaso de Arquitectura
-- [Micro-repaso de arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
-
 ## Linux
 
 ### Sobre los scripts y sus intérpretes

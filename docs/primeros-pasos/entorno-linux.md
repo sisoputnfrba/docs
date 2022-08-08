@@ -201,6 +201,7 @@ encontrar más adelante como la herramienta de versionado Git o Valgrind.
 
 Para eso, te dejamos acá algunos links que te pueden ser útiles:
 
+- [Micro-repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
 - [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
 - [Guía de uso de Bash](../guias/consola/bash.md)
 - [Control de versionado con Git](../guias/consola/git.md)
