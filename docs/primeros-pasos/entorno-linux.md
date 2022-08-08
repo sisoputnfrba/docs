@@ -12,13 +12,18 @@ funcione en el entorno en el que va a ser evaluado**.
 
 De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
 alternativa_ que utilizar un entorno nativo u otro software de virtualización,
-te dejamos un par de scripts para poder instalar todos los paquetes en
-[este repositorio](https://github.com/sisoputnfrba/entorno-vms).
+te dejamos un par de recursos que pueden ser de utilidad.
 
-Por ejemplo, si contás con un procesador M1 y necesitás una alternativa a
-VirtualBox podés probar [UTM](https://www.youtube.com/watch?v=hnwK-nkXolc).
+::: details Spoiler
 
-Luego de seguir con el manual de instalación, ya podés pasar a la
+Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
+probar [UTM](https://mac.getutm.app/) siguiendo
+[este tutorial](https://www.youtube.com/watch?v=hnwK-nkXolc).
+
+En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
+todos los scripts que usamos para descargar los paquetes instalados en las VMs.
+
+Una vez instalado todo, no olvides pasar por la
 [última sección de esta guía](#amigandose-con-la-consola).
 
 :::
@@ -38,16 +43,15 @@ La máquina virtual que se utiliza para evaluar el TP es una Ubuntu Server, una
 distribución que no cuenta con entorno gráfico.
 
 Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
-un entorno gráfico liviano Lubuntu instalado encima de la Ubuntu Server de las
-entregas.
-
-<!-- TODO: Links Xubuntu -->
-
-Está comprimida en ?? partes (hosteadas en Google Drive):
-
-- [WIP](https://faq.utnso.com.ar/vm-gui-1)
+un entorno gráfico liviano instalado encima de la Ubuntu Server de las entregas.
+[Acá pueden encontrar los links de descarga](../guias/herramientas/vms.md#xubuntu).
 
 ::: tip
+
+También se encuentra disponible la descarga de las VMs sin entorno gráfico para
+las pruebas.
+
+:::
 
 Para descomprimirlas, pueden utilizar:
 
@@ -57,9 +61,8 @@ Para descomprimirlas, pueden utilizar:
 | Linux   | [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html) `sudo apt install p7zip-full` |
 | MacOS   | [The Unarchiver](https://theunarchiver.com/)                                                 |
 
-:::
 
-::: warning
+::: warning ADVERTENCIA
 
 Es importante que las 5 partes se encuentren en la misma carpeta al momento de
 descomprimir.
@@ -68,9 +71,9 @@ descomprimir.
 
 ### Verificar la descarga
 
-Luego, para verificar que la descarga fue correcta, vamos a calcular el
-[MD5](https://es.wikipedia.org/wiki/MD5) de los seis archivos siguiendo este
-video:
+Luego, para verificar que la descarga fue correcta, vamos a comparar el
+[hash MD5](https://es.wikipedia.org/wiki/MD5) de los archivos descargados con el
+que aparece en la misma página, siguiendo este video:
 
 <YouTube v="0CL9Os8IUcY"/>
 
@@ -100,29 +103,6 @@ md5 [archivo]
 </CodeGroupItem>
 </CodeGroup>
 
-Y los hashes son los siguientes:
-
-<!-- TODO: MD5 Xubuntu -->
-```:no-line-numbers
-WIP
-```
-
-::: details También se encuentra disponible la descarga de las VMs sin entorno gráfico
-
-Los links de descarga son los siguientes:
-
-<!-- TODO: Links Ubuntu Server -->
-- [WIP](https://faq.utnso.com.ar/vm-server-1)
-
-Y los hashes MD5:
-
-<!-- TODO: MD5 Ubuntu Server -->
-```:no-line-numbers
-WIP
-```
-
-:::
-
 ## Crear la máquina virtual
 
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
@@ -130,10 +110,14 @@ máquina virtual siguiendo este video:
 
 <YouTube v="DmkSXv_Xa-U"/>
 
-::: tip
+::: warning ADVERTENCIA
 
-Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
-**utnso**.
+En caso de no poder iniciar la VM en Windows (o que ande muy lento), es probable
+que tengan habilitado Hyper-V, un software de virtualización que no es
+compatible con VirtualBox.
+
+De ser así, les recomendamos primero leer
+[cómo deshabilitar Hyper-V](https://docs.microsoft.com/es-es/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v).
 
 :::
 
@@ -165,17 +149,16 @@ portapapeles compartido de esta forma:
 
 <YouTube v="xJ52dDTfCHo"/>
 
-::: details En caso de que el portapapeles compartido funcione pero la pantalla completa no...
+::: warning ADVERTENCIA
 
-En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico de
-la pantalla a VBoxVGA:
+En caso de que la pantalla completa no funcione pero el portapapeles compartido
+sí, en la mayoría de los casos esto se resuelve cambiando el controlador gráfico
+a "VBoxVGA":
 
 ![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png)
 
 Si este método no funciona, una alternativa es aumentar la pantalla a un tamaño
-fijo accediendo a los ajustes del monitor:
-
-![virtualbox-02](/img/primeros-pasos/linux/virtualbox-02.png)
+fijo accediendo a los ajustes del monitor.
 
 :::
 

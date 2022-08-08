@@ -45,19 +45,8 @@ a querer en su TP.
 ::: warning IMPORTANTE
 
 Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
-proporcionamos a través de los links de descarga, por lo que van a tener que
-aprender un mínimo de uso de la consola.
-
-<!-- TODO: Links y MD5 Ubuntu Server -->
-
-- [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
-- [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
-
-```:no-line-numbers
-md5 (ubuntu-server-5.0.1.7z.001): 6d8ed10e4862495975e8450e799c658a
-md5 (ubuntu-server-5.0.1.7z.002): 38df246a4ebf0ed11953dd0861d0028d
-md5 (ubuntu-server-5.0.1.vdi) -descomprimido- 8424a22b2e93b73bf5cd3f13568dbbe9
-```
+proporcionamos a través de los [links de descarga](vms.md#ubuntu-server), por lo
+que van a tener que aprender un mínimo de uso de la consola.
 
 :::
 
