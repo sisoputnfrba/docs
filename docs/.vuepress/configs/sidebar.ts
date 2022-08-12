@@ -3,7 +3,6 @@ import { SidebarConfig } from "@vuepress/theme-default";
 export const sidebar: SidebarConfig = [
   {
     text: 'Primeros pasos',
-    link: '/primeros-pasos/intro',
     collapsible: true,
     children: [
       '/primeros-pasos/intro',
@@ -42,10 +41,6 @@ export const sidebar: SidebarConfig = [
       '/guias/linux/sockets',
       '/guias/linux/serializacion',
       '/guias/linux/threads',
-      {
-        text: 'Presentación de Señales',
-        link: 'https://faq.utnso.com.ar/seniales',
-      },
     ],
   },
   {
@@ -58,4 +53,11 @@ export const sidebar: SidebarConfig = [
       '/guias/herramientas/deploy',
     ],
   },
+  {
+    text: 'Recursos',
+    collapsible: true,
+    children: [
+      '/guias/herramientas/vms',
+    ]
+  }
 ]

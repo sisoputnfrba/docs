@@ -79,10 +79,6 @@ export const navbar: NavbarConfig = [
         text: 'Herramientas útiles',
         children: [
           {
-            text: 'Máquinas virtuales',
-            link: '/guias/herramientas/vms',
-          },
-          {
             text: 'Debugging en Eclipse',
             link: '/guias/herramientas/debugger'
           },
@@ -121,21 +117,38 @@ export const navbar: NavbarConfig = [
             link: 'https://faq.utnso.com.ar/inscripciones'
           },
           {
-            text: 'Enunciado',
-            link: 'https://faq.utnso.com.ar/enunciado'
+            text: 'Campus Virtual',
+            link: 'https://faq.utnso.com.ar/cv'
           },
           {
-            text: 'Commons Library',
-            link: 'https://faq.utnso.com.ar/commons'
+            text: 'Enunciado del TP',
+            link: 'https://faq.utnso.com.ar/enunciado'
+          },
+        ]
+      },
+      {
+        text: 'Recursos',
+        children: [
+          {
+            text: 'Máquinas virtuales',
+            link: '/guias/herramientas/vms',
           },
           {
             text: 'Canal de YouTube',
             link: 'https://faq.utnso.com.ar/youtube'
           },
           {
+            text: 'Commons Library',
+            link: 'https://faq.utnso.com.ar/commons'
+          },
+          {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'
           },
+          {
+            text: 'Tutorial interactivo de C',
+            link: 'https://www.learn-c.org/'
+          }
         ]
       }
     ],
