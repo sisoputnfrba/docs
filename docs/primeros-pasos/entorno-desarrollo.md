@@ -86,8 +86,9 @@ a hacer cada vez que querramos interactuar con el repo del Trabajo Práctico.
 ## Próximos pasos
 
 - Para ir entrando más de lleno en el Lenguaje C, recomendamos arrancar a
-  chusmear nuestra sección de guías. Principalmente, la de
-  [punteros y memoria dinámica](../guias/programacion/punteros.md).
+  chusmear nuestra sección de guías de programación en C.
+- También este [tutorial interactivo de C](https://www.learn-c.org/) (en inglés)
+  puede ser de utilidad.
 - Si te sentís con confianza, arranquemos con el [TP0](./tp0.md).
 
 <br><br>

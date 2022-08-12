@@ -2,7 +2,8 @@
 
 <YouTube v="dI_tHLEoNBM"/>
 
-> Link a la presentación: [git para el TP de Operativos](https://faq.utnso.com.ar/git)
+> Presentación del video:
+> [git para el TP de Operativos](https://faq.utnso.com.ar/git)
 
 ## ¿Qué es y para qué nos sirve Git?
 

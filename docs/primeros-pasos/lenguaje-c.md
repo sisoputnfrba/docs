@@ -8,6 +8,9 @@
 
 <YouTube v="caeklleBJDI"/>
 
+> Presentación del video:
+>[C - Una charla minimalista](https://faq.utnso.com.ar/c-wannabe)
+
 ## Arrancando
 
 Vamos a hacer un programa en C, por lo que empezamos con una función:
