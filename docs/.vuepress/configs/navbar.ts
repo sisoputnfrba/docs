@@ -79,6 +79,10 @@ export const navbar: NavbarConfig = [
         text: 'Herramientas útiles',
         children: [
           {
+            text: 'Máquinas virtuales',
+            link: '/guias/herramientas/vms',
+          },
+          {
             text: 'Debugging en Eclipse',
             link: '/guias/herramientas/debugger'
           },

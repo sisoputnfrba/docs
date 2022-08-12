@@ -8,51 +8,34 @@ Si bien no es _estrictamente necesario_ utilizarlas, sí es **altamente
 recomendado**, ya que **el grupo debe asegurarse que el trabajo práctico
 funcione en el entorno en el que va a ser evaluado**.
 
-::: danger
+::: danger Solo bajo tu propio riesgo...
 
 De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
-alternativa_ que utilizar un entorno nativo u otro software de virtualización
-(por ejemplo, si contás con un procesador M1 podés probar
-[UTM](https://www.youtube.com/watch?v=hnwK-nkXolc)), te dejamos acá los paquetes
-para que puedas instalarlos:
+alternativa_ que utilizar un entorno nativo u otro software de virtualización,
+te dejamos un par de recursos que pueden ser de utilidad.
 
-::: details Abrir solo si estás seguro de que NO podés usar VirtualBox
+::: details Spoiler
 
-1. [Descargar Ubuntu Server for ARM](https://ubuntu.com/download/server/arm)
-2. Instalar los siguientes paquetes:
+Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
+probar [UTM](https://mac.getutm.app/) siguiendo
+[este tutorial](https://www.youtube.com/watch?v=hnwK-nkXolc).
 
-```bash:no-line-numbers
-# Ubuntu Server
-sudo apt-get install aptitude gcc gdb git vim libncurses5-dev valgrind tig \
-  make autotools-dev strace emacs nano openjdk-8-jdk openjdk-11-jdk libcunit1 \
-  libevent1-dev ssh libfuse-dev build-essential g++ libcunit1-dev curl htop \
-  tree wget libreadline-dev docker docker-compose hexedit
+En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
+todos los scripts que usamos para descargar los paquetes instalados en las VMs.
 
-# Entorno gráfico (Lubuntu)
-sudo apt-get install lubuntu-desktop terminator gitg meld geany pidgin \
-  wireshark xclip bless gnome-do chromium-browser
-```
-
-3. [Instalar Eclipse for C/C++ Developers](https://www.eclipse.org/downloads/packages/)
-4. [Instalar Visual Studio Code](https://code.visualstudio.com/download)
-
-¡Y listo! Ya podés pasar a la
+Una vez instalado todo, no olvides pasar por la
 [última sección de esta guía](#amigandose-con-la-consola).
 
 :::
 
 ## Descargar VirtualBox
 
-Primero, debemos instalar VirtualBox, el software de virtualización que
-utilizamos para correr las máquinas virtuales de la cátedra.
-
-Como las VMs ya tienen unos años, recomendamos utilizar la versión
-[5.2](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2):
-
-![virtualbox-00](/img/primeros-pasos/linux/virtualbox-00.png)
+Primero, debemos instalar
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads), el software de
+virtualización que utilizamos para correr las máquinas virtuales de la cátedra.
 
 También se recomienda descargar e instalar el **Extension Pack**, el cual lo
-pueden encontrar accediendo al mismo link.
+pueden encontrar más abajo en el mismo link.
 
 ## Descargar la máquina virtual
 
@@ -60,24 +43,26 @@ La máquina virtual que se utiliza para evaluar el TP es una Ubuntu Server, una
 distribución que no cuenta con entorno gráfico.
 
 Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
-un entorno gráfico liviano Lubuntu instalado encima de la Ubuntu Server de las
-entregas.
+un entorno gráfico liviano instalado encima de la Ubuntu Server de las entregas.
+[Acá pueden encontrar los links de descarga](../guias/herramientas/vms.md#xubuntu).
 
-Está comprimida en 5 partes (hosteadas en Google Drive):
+::: tip
 
-- [utnso-lubuntu-5.0.1.7z.001](https://faq.utnso.com.ar/vm-gui-1)
-- [utnso-lubuntu-5.0.1.7z.002](https://faq.utnso.com.ar/vm-gui-2)
-- [utnso-lubuntu-5.0.1.7z.003](https://faq.utnso.com.ar/vm-gui-3)
-- [utnso-lubuntu-5.0.1.7z.004](https://faq.utnso.com.ar/vm-gui-4)
-- [utnso-lubuntu-5.0.1.7z.005](https://faq.utnso.com.ar/vm-gui-5)
+También se encuentra disponible la descarga de las VMs sin entorno gráfico para
+las pruebas.
+
+:::
 
 Para descomprimirlas, pueden utilizar:
 
-- En Windows: [WinRAR](https://www.win-rar.com/)
-- En Linux: [`7z`](http://manpages.ubuntu.com/manpages/bionic/man1/7z.1.html)
-- En MacOS: [The Unarchiver](https://theunarchiver.com/)
+| SO      | Software                                                                                     |
+|---------|----------------------------------------------------------------------------------------------|
+| Windows | [WinRAR](https://www.win-rar.com/)                                                           |
+| Linux   | [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html) `sudo apt install p7zip-full` |
+| MacOS   | [The Unarchiver](https://theunarchiver.com/)                                                 |
 
-::: warning
+
+::: warning ADVERTENCIA
 
 Es importante que las 5 partes se encuentren en la misma carpeta al momento de
 descomprimir.
@@ -86,9 +71,9 @@ descomprimir.
 
 ### Verificar la descarga
 
-Luego, para verificar que la descarga fue correcta, vamos a calcular el
-[MD5](https://es.wikipedia.org/wiki/MD5) de los seis archivos siguiendo este
-video:
+Luego, para verificar que la descarga fue correcta, vamos a comparar el
+[hash MD5](https://es.wikipedia.org/wiki/MD5) de los archivos descargados con el
+que aparece en la misma página, siguiendo este video:
 
 <YouTube v="0CL9Os8IUcY"/>
 
@@ -98,53 +83,25 @@ Pueden copiar el comando de acá:
 <CodeGroupItem title="Windows">
 
 ```:no-line-numbers
-certutil -hashfile ./nombrearchivo.extension md5
+certutil -hashfile [archivo] md5
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Linux">
 
 ```:no-line-numbers
-md5sum ./nombrearchivo.extension
+md5sum [archivo]
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="MacOS">
 
 ```:no-line-numbers
-md5 ./nombrearchivo.extension
+md5 [archivo]
 ```
 
 </CodeGroupItem>
 </CodeGroup>
-
-Y los hashes son los siguientes:
-
-```:no-line-numbers
-md5 (utnso-lubuntu-5.0.1.7z.001): 3b04c3261f8d301419b53158d8770499
-md5 (utnso-lubuntu-5.0.1.7z.002): ffd6f99a42cc18f45632001088ae2a1f
-md5 (utnso-lubuntu-5.0.1.7z.003): cdeeb5b7db34695bcb6b5bf04f398472
-md5 (utnso-lubuntu-5.0.1.7z.004): c034783583b0f64c64ebfda84031c2b7
-md5 (utnso-lubuntu-5.0.1.7z.005): afcc25d1f8ed0f722553af708811966e
-md5 (utnso-lubuntu-5.0.1.vdi) -descomprimido- bdc2acbf759805ef1c7855af2089d975
-```
-
-::: details También se encuentra disponible la descarga de las VMs sin entorno gráfico
-
-Los links de descarga son los siguientes:
-
-- [ubuntu-server-5.0.1.7z.001](https://faq.utnso.com.ar/vm-server-1)
-- [ubuntu-server-5.0.1.7z.002](https://faq.utnso.com.ar/vm-server-2)
-
-Y los hashes MD5:
-
-```:no-line-numbers
-md5 (ubuntu-server-5.0.1.7z.001): 6d8ed10e4862495975e8450e799c658a
-md5 (ubuntu-server-5.0.1.7z.002): 38df246a4ebf0ed11953dd0861d0028d
-md5 (ubuntu-server-5.0.1.vdi) -descomprimido- 8424a22b2e93b73bf5cd3f13568dbbe9
-```
-
-:::
 
 ## Crear la máquina virtual
 
@@ -153,10 +110,14 @@ máquina virtual siguiendo este video:
 
 <YouTube v="DmkSXv_Xa-U"/>
 
-::: tip
+::: warning ADVERTENCIA
 
-Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
-**utnso**.
+En caso de no poder iniciar la VM en Windows (o que ande muy lento), es probable
+que tengan habilitado Hyper-V, un software de virtualización que no es
+compatible con VirtualBox.
+
+De ser así, les recomendamos primero leer
+[cómo deshabilitar Hyper-V](https://docs.microsoft.com/es-es/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v).
 
 :::
 
@@ -169,6 +130,18 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
+::: warning IMPORTANTE
+
+En las versiones más recientes, el mensaje que aparece luego de ejecutar el
+script de instalación es el siguiente:
+```:no-line-numbers
+VirtualBox Guest Additions: Running kernel modules will not be replaced until
+the system is restarted
+```
+Esto significa que es necesario reiniciar la VM para aplicar los cambios.
+
+:::
+
 ### Habilitar el portapapeles compartido
 
 Ahora sí, podremos redimensionar la pantalla dinámicamente o habilitar el
@@ -176,18 +149,16 @@ portapapeles compartido de esta forma:
 
 <YouTube v="xJ52dDTfCHo"/>
 
-::: details En caso de que el portapapeles compartido funcione pero la pantalla
-completa no...
+::: warning ADVERTENCIA
 
-En la mayoría de los casos, esto se resuelve cambiando el controlador gráfico de
-la pantalla a VBoxVGA:
+En caso de que la pantalla completa no funcione pero el portapapeles compartido
+sí, en la mayoría de los casos esto se resuelve cambiando el controlador gráfico
+a "VBoxVGA":
 
 ![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png)
 
 Si este método no funciona, una alternativa es aumentar la pantalla a un tamaño
-fijo accediendo a los ajustes del monitor:
-
-![virtualbox-02](/img/primeros-pasos/linux/virtualbox-02.png)
+fijo accediendo a los ajustes del monitor.
 
 :::
 
@@ -202,6 +173,6 @@ encontrar más adelante como la herramienta de versionado Git o Valgrind.
 Para eso, te dejamos acá algunos links que te pueden ser útiles:
 
 - [Micro-repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
-- [Mario Bash](https://faq.utnso.com.ar/mariobash) (Juego)
+- [Mario Bash](https://faq.utnso.com.ar/mariobash) :joystick:
 - [Guía de uso de Bash](../guias/consola/bash.md)
 - [Control de versionado con Git](../guias/consola/git.md)
