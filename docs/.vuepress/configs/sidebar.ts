@@ -57,7 +57,8 @@ export const sidebar: SidebarConfig = [
     text: 'Recursos',
     collapsible: true,
     children: [
-      '/guias/herramientas/vms',
+      '/recursos/vms',
+      '/recursos/tps-anteriores',
     ]
   }
 ]

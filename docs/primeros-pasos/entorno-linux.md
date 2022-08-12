@@ -44,7 +44,7 @@ distribución que no cuenta con entorno gráfico.
 
 Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
 un entorno gráfico liviano instalado encima de la Ubuntu Server de las entregas.
-[Acá pueden encontrar los links de descarga](../guias/herramientas/vms.md#xubuntu).
+[Acá pueden encontrar los links de descarga](../recursos/vms.md#xubuntu).
 
 ::: tip
 

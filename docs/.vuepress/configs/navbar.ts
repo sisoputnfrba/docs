@@ -131,7 +131,11 @@ export const navbar: NavbarConfig = [
         children: [
           {
             text: 'Máquinas virtuales',
-            link: '/guias/herramientas/vms',
+            link: '/recursos/vms',
+          },
+          {
+            text: 'TPs Anteriores',
+            link: '/recursos/tps-anteriores',
           },
           {
             text: 'Canal de YouTube',
