@@ -57,7 +57,7 @@ Las llamadas al sistema que el cliente tiene que realizar para conectarse a su s
 
 ![cliente-servidor](/img/guias/sockets/cliente-servidor.png)
 
-::: tip NOTA
+::: warning
 El diagrama indica la secuencia en la que deberían ser llamadas las funciones. Que éstas estén al mismo nivel, no significa que deban suceder exactamente al mismo instante.
 :::
 
@@ -202,7 +202,7 @@ Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre
 
 Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información **serializada**.
 
-::: warning NOTA
+::: warning
 
 Para extender el concepto de **serialización**, tenemos disponible la [guía](./serializacion.md), que incluye un modelo de paquete propuesto para el envío mediante sockets.
 
@@ -216,7 +216,7 @@ Por último, e igual de importante que todo lo demás, los sockets una vez que n
 
 ## Multiplexando ando
 
-::: warning NOTA
+::: warning
 Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](./threads.md) antes de comenzar este apartado.
 :::
 

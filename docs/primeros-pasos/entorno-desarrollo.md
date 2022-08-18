@@ -65,7 +65,7 @@ git config --global user.email "tumail@tucasilla.com"
 git config --global user.name "Tu Nombre"
 ```
 
-::: warning IMPORTANTE
+::: warning
 
 El email configurado debe ser uno de los mails verificados en tu
 [cuenta de GitHub](https://github.com/settings/emails).

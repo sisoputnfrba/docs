@@ -630,7 +630,7 @@ Esto funciona a la perfección, compila y ejecuta, pero no es lo que queríamos;
 debuggearlo nos va a llevar más que esos nanosegundos de poner esa una línea de
 `typedef`.
 
-::: warning
+::: warning WARNING
 
 Los warnings del compilador de C son importantes ~~(más este que estás
 viendo)~~. Hay que prestarles atención, ya que _suelen_ indicar un mal manejo de

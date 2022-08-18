@@ -211,7 +211,7 @@ Volvemos a correr Memcheck, ¡desapareció el error! Sin embargo...
   memory leaks y nos aconseja volverlo a correr con el parámetro
   `--leak-check=full` para obtener más detalles.
 
-::: tip DATO
+::: tip
 
 Si estás pensando _"¿Cómo? ¿En la columna de la izquierda no decía
 `==4412==`?"_, recordá que el ID es del proceso (o sea, "programa en

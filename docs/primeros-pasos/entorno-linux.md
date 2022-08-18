@@ -8,7 +8,7 @@ Si bien no es _estrictamente necesario_ utilizarlas, sí es **altamente
 recomendado**, ya que **el grupo debe asegurarse que el trabajo práctico
 funcione en el entorno en el que va a ser evaluado**.
 
-::: danger Solo bajo tu propio riesgo...
+::: danger NO SEGURO
 
 De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
 alternativa_ que utilizar un entorno nativo u otro software de virtualización,
@@ -16,12 +16,13 @@ te dejamos un par de recursos que pueden ser de utilidad.
 
 ::: details Spoiler
 
+En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
+todos los scripts que usamos para descargar los paquetes instalados en las VMs,
+junto con una guía paso a paso.
+
 Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
 probar [UTM](https://mac.getutm.app/) siguiendo
-[este tutorial](https://www.youtube.com/watch?v=hnwK-nkXolc).
-
-En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
-todos los scripts que usamos para descargar los paquetes instalados en las VMs.
+[este tutorial](https://www.youtube.com/watch?v=hnwK-nkXolc) (en inglés).
 
 Una vez instalado todo, no olvides pasar por la
 [última sección de esta guía](#amigandose-con-la-consola).
@@ -108,7 +109,7 @@ md5 [archivo]
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
 máquina virtual siguiendo este video:
 
-::: danger ACLARACIÓN
+::: danger
 
 El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
 seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
@@ -137,7 +138,7 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
-::: danger ACLARACIÓN
+::: danger
 
 En las versiones más recientes, el mensaje que aparece luego de ejecutar el
 script de instalación es el siguiente:

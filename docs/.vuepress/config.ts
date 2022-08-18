@@ -47,11 +47,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: navbar,
     logo: '/img/logo.gif',
     sidebar: sidebar,
-    editLink: false,
+    editLink: true,
+    editLinkText: 'Editar desde GitHub',
     docsDir: 'docs',
+    docsRepo: 'https://github.com/sisoputnfrba/docs',
     docsBranch: 'main',
     lastUpdated: true,
+    lastUpdatedText: 'Última actualización',
     contributors: false,
+    warning: 'IMPORTANTE',
+    danger: 'ATENCIÓN',
   },
 
   /**

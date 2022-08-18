@@ -9,7 +9,7 @@ parte **teórica** de la materia:
 - Espacios de consulta sobre teoría y/o ejercicios
 - Materiales de la cátedra (programa, guías, parciales y finales)
 
-::: warning IMPORTANTE
+::: warning
 
 La contraseña para poder matricularte es diferente para cada cuatrimestre,
 consultale a tu profesor/a luego de la primera clase.
@@ -45,7 +45,7 @@ Ahí mismo podés ir creando tu grupo. Para anotarte vas a necesitar tu cuenta d
 GitHub y tu código de curso, así que **no hagas esto hasta que tengas confirmada
 la inscripción a la materia**.
 
-::: warning IMPORTANTE
+::: warning
 
 Estate atento a tu casilla de mail porque cuando te inscribas vas a recibir un
 mail de invitación a la organización en GitHub.
@@ -64,7 +64,7 @@ los sábados de soporte.
 Además, es una herramienta de chat por voz que te puede a ser útil para
 comunicarte con el resto de tu grupo.
 
-::: warning IMPORTANTE
+::: warning
 
 Recordá leer las normas del servidor en el canal `#rules` antes de comenzar.
 
