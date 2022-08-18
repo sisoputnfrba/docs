@@ -64,8 +64,8 @@ Para descomprimirlas, pueden utilizar:
 
 ::: warning ADVERTENCIA
 
-Es importante que las 5 partes se encuentren en la misma carpeta al momento de
-descomprimir.
+Es importante que todas las partes se encuentren en la misma carpeta al momento
+de descomprimir.
 
 :::
 
