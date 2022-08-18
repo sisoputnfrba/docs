@@ -117,7 +117,7 @@ seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
 
 <YouTube v="DmkSXv_Xa-U"/>
 
-::: warning NOTA
+::: warning ADVERTENCIA
 
 En caso de no poder iniciar la VM en Windows (o que ande muy lento), es probable
 que tengan habilitado Hyper-V, un software de virtualización que no es
@@ -137,7 +137,7 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
-::: warning IMPORTANTE
+::: danger ACLARACIÓN
 
 En las versiones más recientes, el mensaje que aparece luego de ejecutar el
 script de instalación es el siguiente:
