@@ -108,9 +108,16 @@ md5 [archivo]
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
 máquina virtual siguiendo este video:
 
+::: danger ACLARACIÓN
+
+El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
+seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
+
+:::
+
 <YouTube v="DmkSXv_Xa-U"/>
 
-::: warning ADVERTENCIA
+::: warning NOTA
 
 En caso de no poder iniciar la VM en Windows (o que ande muy lento), es probable
 que tengan habilitado Hyper-V, un software de virtualización que no es
