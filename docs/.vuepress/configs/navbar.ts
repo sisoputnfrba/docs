@@ -161,7 +161,11 @@ export const navbar: NavbarConfig = [
           {
             text: 'Tutorial interactivo de C',
             link: 'https://www.learn-c.org/'
-          }
+          },
+          {
+            text: 'Learn Git Branching',
+            link: 'https://learngitbranching.js.org/'
+          },
         ]
       },
     ],
