@@ -99,7 +99,7 @@ export const navbar: NavbarConfig = [
     ]
   },
   {
-    text: 'Links',
+    text: 'Recursos',
     children: [
       {
         text: 'Links',
@@ -121,8 +121,8 @@ export const navbar: NavbarConfig = [
             link: 'https://faq.utnso.com.ar/cv'
           },
           {
-            text: 'Enunciado del TP',
-            link: 'https://faq.utnso.com.ar/enunciado'
+            text: 'Canal de YouTube',
+            link: 'https://faq.utnso.com.ar/youtube'
           },
         ]
       },
@@ -134,17 +134,26 @@ export const navbar: NavbarConfig = [
             link: '/recursos/vms',
           },
           {
-            text: 'TPs Anteriores',
-            link: '/recursos/tps-anteriores',
-          },
-          {
-            text: 'Canal de YouTube',
-            link: 'https://faq.utnso.com.ar/youtube'
+            text: 'Enunciado del TP',
+            link: 'https://faq.utnso.com.ar/enunciado'
           },
           {
             text: 'Commons Library',
             link: 'https://faq.utnso.com.ar/commons'
           },
+          {
+            text: 'Linux man pages',
+            link: 'https://man7.org/linux/man-pages/'
+          },
+          {
+            text: 'TPs Anteriores',
+            link: '/recursos/tps-anteriores',
+          },
+        ],
+      },
+      {
+        text: 'Tutoriales',
+        children: [
           {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'
@@ -154,7 +163,7 @@ export const navbar: NavbarConfig = [
             link: 'https://www.learn-c.org/'
           }
         ]
-      }
+      },
     ],
   }
 ]
