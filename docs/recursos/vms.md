@@ -13,14 +13,14 @@ Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
 
 ::: danger
 
-Si estás configurando el entorno de desarrollo por primera vez o estás evaluando
-no usar las máquinas virtuales para desarrollar el trabajo práctico, antes
-[leé esto](../../primeros-pasos/entorno-linux.md).
+Si estás configurando el entorno de desarrollo o estás evaluando no usar las máquinas 
+virtuales para desarrollar el trabajo práctico, antes leé la
+[guía de primeros pasos](../../primeros-pasos/entorno-linux.md).
 
 :::
 
 
-## Xubuntu
+## Xubuntu (64-bit)
 
 Versión para desarrollo con entorno gráfico liviano (XFCE). **Entorno recomendado para
 desarrollo.**
@@ -42,10 +42,14 @@ xfce.7z.006 - b8e838628017540e6148b75c5bf9d6a4
 xfce.vdi - 4b59dc884bac893c1c4f1c019d0ba9ba
 ```
 
+::: tip
+
 Con esto ya tenemos todo lo necesario para continuar con la
 [guía de primeros pasos](../../primeros-pasos/entorno-linux.md#descargar-la-mquina-virtual).
 
-## Ubuntu Server
+:::
+
+## Ubuntu Server (64-bit)
 
 Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 
@@ -64,15 +68,20 @@ Server.7z.004 - d0aeb26926d413ddfaadc8101690f506
 md5 Server.vdi - 640de079460d1994b22c31fa709f1856
 ```
 
-Con esto ya tenemos todo lo necesario para continuar con la
-[guía de despliegue](deploy.md#practicar).
-
-::: tip
+::: tip TIP 1
 
 Dejamos un tutorial sobre cómo verificar que la descarga ha sido exitosa en la
 [guía de primeros pasos](../../primeros-pasos/entorno-linux.md#verificar-la-descarga).
 
 :::
+
+::: tip TIP 2
+
+Con esto ya tenemos todo lo necesario para continuar con la
+[guía de despliegue](deploy.md#practicar).
+
+:::
+
 
 ## Tutoriales
 
