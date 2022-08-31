@@ -14,6 +14,9 @@ De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
 alternativa_ que utilizar un entorno nativo u otro software de virtualización,
 te dejamos un par de recursos que pueden ser de utilidad.
 
+Una vez instalado todo, no te olvides de pasar por la
+[última sección de esta guía](#amigandose-con-la-consola).
+
 ::: details Spoiler
 
 En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
@@ -22,10 +25,18 @@ junto con una guía paso a paso.
 
 Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
 probar [UTM](https://mac.getutm.app/) siguiendo
-[este tutorial](https://www.youtube.com/watch?v=hnwK-nkXolc) (en inglés).
+[este tutorial](https://www.youtube.com/watch?v=) (en inglés):
 
-Una vez instalado todo, no olvides pasar por la
-[última sección de esta guía](#amigandose-con-la-consola).
+<YouTube v="hnwK-nkXolc"/>
+
+::: warning
+
+Omitir la sección del minuto 7:17, ya que en su lugar vamos a
+ejecutar los scripts antes mencionados siguiendo las instrucciones para instalar
+un entorno gráfico más liviano. Luego, podrás continuar con la siguiente sección
+del video a partir del minuto 8:47.
+
+<br>
 
 :::
 
