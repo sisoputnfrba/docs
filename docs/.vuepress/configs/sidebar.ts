@@ -3,9 +3,9 @@ import { SidebarConfig } from "@vuepress/theme-default";
 export const sidebar: SidebarConfig = [
   {
     text: 'Primeros pasos',
-    collapsible: true,
+    collapsible: false,
     children: [
-      '/primeros-pasos/intro',
+      '/primeros-pasos/',
       '/primeros-pasos/donde-me-anoto',
       '/primeros-pasos/normas-tp',
       '/primeros-pasos/entorno-linux',

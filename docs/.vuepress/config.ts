@@ -1,11 +1,18 @@
-import path from 'path';
-import { defineUserConfig } from 'vuepress';
-import type { DefaultThemeOptions } from 'vuepress';
+import MarkdownItFootnotePlugin from 'markdown-it-footnote';
+import { defaultTheme, defineUserConfig } from 'vuepress';
+import { getDirname, path } from '@vuepress/utils';
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { palettePlugin } from '@vuepress/plugin-palette';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { searchPlugin } from '@vuepress/plugin-search';
 import { description } from '../../package.json';
 import { navbar } from './configs/navbar';
 import { sidebar } from './configs/sidebar';
 
-export default defineUserConfig<DefaultThemeOptions>({
+const __dirname = getDirname(import.meta.url);
+
+export default defineUserConfig({
   /**
    * Title for the site.
    *
@@ -42,7 +49,7 @@ export default defineUserConfig<DefaultThemeOptions>({
    *
    * ref：https://v2.vuepress.vuejs.org/reference/default-theme/config.html
    */
-  themeConfig: {
+  theme: defaultTheme({
     home: '/',
     navbar: navbar,
     logo: '/img/logo.gif',
@@ -57,7 +64,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     contributors: false,
     warning: 'IMPORTANTE',
     danger: 'ATENCIÓN',
-  },
+  }),
 
   /**
    * Configure VuePress built-in Markdown syntax extensions.
@@ -78,7 +85,7 @@ export default defineUserConfig<DefaultThemeOptions>({
    * ref: https://v2.vuepress.vuejs.org/reference/plugin-api.html#extendsmarkdown
    */
   extendsMarkdown: (md) => {
-    md.use(require('markdown-it-footnote'));
+    md.use(MarkdownItFootnotePlugin);
   },
 
   /**
@@ -87,20 +94,14 @@ export default defineUserConfig<DefaultThemeOptions>({
    * ref：https://v2.vuepress.vuejs.org/reference/plugin/back-to-top.html#install
    */
   plugins: [
-    '@vuepress/back-to-top',
-    '@vuepress/medium-zoom',
-    '@vuepress/search',
-    [
-      '@vuepress/plugin-palette',
-      { preset: 'sass' }
-    ],
-    [
-      '@vuepress/register-components',
-      {
-        components: {
-          YouTube: path.resolve(__dirname, './components/YouTube.vue'),
-        },
+    backToTopPlugin(),
+    mediumZoomPlugin(),
+    searchPlugin(),
+    palettePlugin({ preset: 'sass' }),
+    registerComponentsPlugin({
+      components: {
+        YouTube: path.resolve(__dirname, './components/YouTube.vue'),
       },
-    ],
+    }),
   ]
 });
