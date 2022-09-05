@@ -15,7 +15,7 @@ Para descargarla, vamos a abrir una consola y nos vamos a clonar
 [el repo](https://faq.utnso.com.ar/commons) para instalarlas
 en modo debug[^1]:
 
-```bash:no-line-numbers
+```bash
 git clone https://github.com/sisoputnfrba/so-commons-library
 cd so-commons-library
 make debug
@@ -60,12 +60,12 @@ Por último, antes de empezar a subir nuestro código en GitHub, vamos a
 configurar nuestro usuario de Git para que al hacer `git commit` quede
 registrado nuestro nombre y email:
 
-```bash:no-line-numbers
+```bash
 git config --global user.email "tumail@tucasilla.com"
 git config --global user.name "Tu Nombre"
 ```
 
-::: warning
+::: warning IMPORTANTE
 
 El email configurado debe ser uno de los mails verificados en tu
 [cuenta de GitHub](https://github.com/settings/emails).
@@ -76,7 +76,7 @@ También podemos configurar el gestor de credenciales para que almacene
 nuestro [token](https://github.com/settings/tokens) la próxima vez que lo
 ingresemos al hacer `git pull` o `git push`:
 
-```bash:no-line-numbers
+```bash
 git config --global credential.helper store
 ```
 

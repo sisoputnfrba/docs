@@ -152,7 +152,7 @@ int sumarTres(int numero) {
 
 De intentar compilar en forma automática esto, van a ver un error parecido a:
 
-```log:no-line-numbers
+```
 /sumar.c:3: multiple definition of `sumarTres'
 ./corredor.o: /sumar.c:3: first defined here
 ```
@@ -160,7 +160,7 @@ De intentar compilar en forma automática esto, van a ver un error parecido a:
 Lamentablemente tiene mucho sentido esto, si miramos a como intentamos compilar,
 podemos ver algo como:
 
-```bash:no-line-numbers
+```bash
 gcc corredor.c sumar.c -o corredor
 ```
 
@@ -195,7 +195,7 @@ está dos veces.
 
 Ciertamente podríamos compilar solamente el `corredor.c`:
 
-```bash:no-line-numbers
+```bash
 gcc corredor.c -o corredor
 ```
 
@@ -253,7 +253,7 @@ querer, incluimos más de una vez `sumar.h`, la definición de nuestra funcion
 
 Este sería el error:
 
-```log:no-line-numbers
+```
 sumar.c: error: redefinition of 'sumarTres'
 ```
 
@@ -319,7 +319,7 @@ Supongamos que ahora también queremos un tipo de dato, como que los números
 tengan también un `numeroAnterior` que guarde el numero pre-suma. Tendriamos una
 estructura parecida a:
 
-```c:no-line-numbers
+```c
 typedef struct {
    int numero;
    int numeroAnterior;
@@ -492,7 +492,7 @@ un nuevo discriminador e inventa su número, y otra persona agrega otro
 discriminador, con el mismo numero: problemas. Más importante aún, si uno
 intenta ver en GDB (debugger) el valor de `discriminador`:
 
-```log:no-line-numbers
+```
 (gdb) print discriminador
 $1 = DATO
 ```
@@ -600,7 +600,7 @@ Lo que quiero hacerlos reflexionar es que tal vez no sea estrictamente un
 `char*`, y no tenga el mismo tratamiento que un `char*`, es más bien un:
 `t_memoria`:
 
-```c:no-line-numbers
+```c
 typedef struct {
     char *dato;
 } t_memoria;
@@ -619,7 +619,7 @@ Supongamos que armamos todo un
 `crearMemoria`, `destruirMemoria`, `asignarMemoria`, `moverMemoria`, lo que
 fuera. Por alguna razón loca, nos equivocamos y tratamos de hacer algo como:
 
-```c:no-line-numbers
+```c
 int tamanioMemoria = crearMemoria();
 ```
 
@@ -630,7 +630,7 @@ Esto funciona a la perfección, compila y ejecuta, pero no es lo que queríamos;
 debuggearlo nos va a llevar más que esos nanosegundos de poner esa una línea de
 `typedef`.
 
-::: warning WARNING
+::: warning warning IMPORTANTE
 
 Los warnings del compilador de C son importantes ~~(más este que estás
 viendo)~~. Hay que prestarles atención, ya que _suelen_ indicar un mal manejo de
@@ -647,7 +647,7 @@ semáforo global. Pero, ¿y si tenemos varios segmentos de memoria que manejamos
 Teniendo el `typedef` es tan trivial como ir a la especificación del `t_memoria`
 y cambiarlo por algo como:
 
-```c:no-line-numbers
+```c
 typedef struct {
     char* dato;
     sem_t* semaforo;

@@ -20,7 +20,7 @@ Principalmente por lo anterior.
 
 La función **readline** es nuestro plato principal. La misma esta firma:
 
-```c:no-line-numbers
+```c
 char *readline(const char *prompt)
 ```
 
@@ -144,13 +144,13 @@ la mayoría de las veces, **debería estar**. Normalmente, _lo que falta es la
 contraparte para desarrolladores_. Por las dudas, dejo los nombres de los
 paquetes de ambos:
 
-```bash:no-line-numbers
+```bash
 sudo apt-get install libreadline8 libreadline-dev
 ```
 
 Finalmente, solo resta compilar nuestro ejemplo usando el flag para bibliotecas
 de gcc, como **`-lreadline`**.
 
-```bash:no-line-numbers
+```bash
 gcc example.c -o example -lreadline
 ```

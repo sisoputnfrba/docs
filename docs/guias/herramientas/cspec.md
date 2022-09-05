@@ -32,7 +32,7 @@ Primero tenés que instalarlo. **Esto tenés que hacerlo una sola vez por
 máquina**. Si ya lo tenés instalado, no hace falta :) Ejecutá en una terminal
 los siguientes comandos:
 
-```bash:no-line-numbers
+```bash
 git clone https://github.com/mumuki/cspec.git
 cd cspec
 make
@@ -80,13 +80,13 @@ solo un ejemplo para que te familiarices con la sintaxis.
 
 Para correr este ejemplo, copiá el código en un `prueba.c` y compilalo con:
 
-```bash:no-line-numbers
+```bash
 gcc prueba.c -o prueba -lcspecs
 ```
 
 Luego, ejecutalo con:
 
-```bash:no-line-numbers
+```bash
 ./prueba
 ```
 
@@ -184,12 +184,12 @@ cuenta el número de ocurrencias de un determinado carácter en un archivo.
 <CodeGroup>
 <CodeGroupItem title="lector.h">
 
-@[code c{4}](@snippets/guias/programacion/cspec/lector.h)
+<<< @/snippets/guias/programacion/cspec/lector.h.c{4}
 
 </CodeGroupItem>
 <CodeGroupItem title="lector.c">
 
-@[code c{29}](@snippets/guias/programacion/cspec/lector.c)
+<<< @/snippets/guias/programacion/cspec/lector.c{29}
 
 </CodeGroupItem>
 </CodeGroup>
@@ -264,7 +264,7 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-@[code{29-43} c{8}](@snippets/guias/programacion/cspec/lector.c)
+<<< @/snippets/guias/programacion/cspec/lector.c#snippet{36}
 
 ¡Genial! Encontramos un bug gracias al test. Luego de arreglarlo, vemos que está
 todo bien.

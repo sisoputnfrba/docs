@@ -42,7 +42,7 @@ archivo de configuración distinto al mismo ejecutable.
 Otro aspecto importante es interiorizarse sobre el método de despliegue que van
 a querer en su TP.
 
-::: warning
+::: warning IMPORTANTE
 
 Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
 proporcionamos a través de los [links de descarga](/recursos/vms#ubuntu-server), por lo

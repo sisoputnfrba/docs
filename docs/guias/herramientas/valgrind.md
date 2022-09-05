@@ -24,7 +24,7 @@ programa y puede detectar los siguientes problemas:
 
 En la terminal de Ubuntu, escribir:
 
-```bash:no-line-numbers
+```bash
 sudo apt-get install valgrind
 ```
 
@@ -39,7 +39,7 @@ terminal.
 
 En la terminal, para empezar a depurar basta con escribir:
 
-```bash:no-line-numbers
+```bash
 valgrind <parametros> ./<miPrograma> <argumentos>
 ```
 
@@ -66,7 +66,7 @@ depuración. Por ejemplo, si no habilitamos la opción `--leak-check` y existen
 memory leaks en nuestro programa, Valgrind nos dejará un mensaje mágico de este
 tipo:
 
-```:no-line-numbers
+```
 Rerun with --leak-check=full to see details of leaked memory.
 ```
 
@@ -103,7 +103,7 @@ consola... no tira segmentation fault, ¡todo bien entonces!.
 Ok, ponele. Usemos a nuestro amigo Valgrind que es gratis.Tipeamos en consola
 `valgrind ./ej1` y veamos qué nos tira. Deberían ver algo similar a esto:
 
-```log
+```
 ==4412== Invalid write of size 1
 ==4412==    at 0x40053A: main (ej1.c:5)
 ==4412==  Address 0x51f1045 is 0 bytes after a block of size 5 alloc'd
@@ -193,7 +193,7 @@ int main(void) {
 
 Volvemos a correr Memcheck, ¡desapareció el error! Sin embargo...
 
-```log:no-line-numbers{3,11}
+```bash{3,11}
 ==6789== HEAP SUMMARY:
 ==6789==     in use at exit: 5 bytes in 1 blocks
 ==6789==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -241,13 +241,13 @@ int main(void) {
 
 Tipeamos en consola para detectar los memory leaks:
 
-```bash:no-line-numbers
+```bash
 valgrind --leak-check=yes ./ej1
 ```
 
 Deberían ver algo similar a esto:
 
-```log{1,3,6,12}
+```bash{1,3,6,12}
 ==5263== HEAP SUMMARY:
 ==5263==     in use at exit: 5 bytes in 1 blocks
 ==5263==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -305,7 +305,7 @@ int main(void){
 
 Si volvemos a correr valgrind, veremos que nos dirá:
 
-```log:no-line-numbers
+```
 All heap blocks were freed -- no leaks are possible
 ```
 
@@ -333,13 +333,13 @@ int main(void) {
 
 Tipeamos en consola `./ej3` y nos muestra en pantalla lo siguiente:
 
-```:no-line-numbers
+```
 a = 0
 ```
 
 Ahora tipeamos en consola `valgrind ./ej3` y nos muestra el siguiente mensaje:
 
-```log{1,6}
+```bash{1,6}
 ==7079== Conditional jump or move depends on uninitialised value(s)
 ==7079==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==7079==    by 0x4E858D8: printf (printf.c:35)
@@ -457,7 +457,7 @@ primer operador: (`*a`).
 Si hacemos un `valgrind ./ej4` en consola vamos a ver que los mensajes de error
 son similares a los del código anterior.
 
-```log:no-line-numbers
+```
 ==13230== Conditional jump or move depends on uninitialised value(s)
 ==13230==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==13230==    by 0x4E858D8: printf (printf.c:35)
@@ -531,7 +531,7 @@ dirección de memoria `a` y se guarda en `b`.
 
 Sin embargo, la realidad supera a la ficción...
 
-```log{8-9}:no-line-numbers
+```bash{8-9}
 ==24112== Memcheck, a memory error detector
 ==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
@@ -562,7 +562,7 @@ descriptivo_.
 Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
 opción por parámetro para solucionar esto:
 
-```log{3}:no-line-numbers
+```bash{3}
 ==24517== All heap blocks were freed -- no leaks are possible
 ==24517==
 ==24517== Use --track-origins=yes to see where uninitialised values come from
@@ -573,14 +573,14 @@ opción por parámetro para solucionar esto:
 Efectivamente, la opción `--track-origins=yes` habilita el seguimiento de toda
 la memoria no inicializada. Volvamos a ejecutar el programa con:
 
-```bash:no-line-numbers
+```bash
 valgrind --track-origins=yes ./ej5
 ```
 
 Ahora sí, al final del stack trace nos aparecerá el _verdadero_ origen del
 warning:
 
-```log{10-12,19-21}:no-line-numbers
+```bash{10-12,19-21}
 ==30024== Memcheck, a memory error detector
 ==30024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==30024== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
@@ -624,7 +624,7 @@ int main(void) {
 Si bien cae de maduro cuál es el error, tipeamos en consola `valgrind ./ej6` y
 deberíamos ver algo como esto:
 
-```log
+```
 ==5758== Syscall param exit_group(status) contains uninitialised byte(s)
 ==5758==    at 0x4EF1C18: _Exit (_exit.c:33)
 ==5758==    by 0x4E6D95F: __run_exit_handlers (exit.c:93)

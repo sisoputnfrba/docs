@@ -257,11 +257,11 @@ Podríamos tener un vector dentro de otro. De ser así, repetimos este proceso d
 Supongamos que queremos refactorizar nuestra solución y generar un TAD de
 patentes; algo que se vea así:
 
-@[code c](@snippets/guias/herramientas/debugger/main.c)
+<<< @/snippets/guias/herramientas/debugger/main.c
 
 Y queremos un resultado en la consola como:
 
-```log:no-line-numbers
+```
 Patente 0: ABC 123
 Patente 1: SQL 035
 Patente 2: UTN 999
@@ -307,7 +307,7 @@ Ahora si, a programar una posible solución.
 Supongamos que generamos esta función que inicializa nuestro TAD, e intentamos
 ejecutar esta instrucción:
 
-@[code c{6}](@snippets/guias/herramientas/debugger/main.c)
+<<< @/snippets/guias/herramientas/debugger/main.c{6}
 
 Tenemos una función cuyo argumento es otra función.
 
@@ -324,7 +324,7 @@ de los paréntesis).
 
 Supongamos un código de crearPatente de este estilo:
 
-@[code{3-8} c:no-line-numbers](@snippets/guias/herramientas/debugger/patentes.c)
+<<< @/snippets/guias/herramientas/debugger/patentes.c{3-8}
 
 Al hacer Step Into podemos ver que (dentro de la vista de Debug) en el stack
 aparece que estamos dentro de la función `crearPatente()`, llamada por `main()`.

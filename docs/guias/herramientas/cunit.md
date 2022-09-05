@@ -31,7 +31,7 @@ En las VMs de la cátedra ya viene instalado.
 
 Si estás bajo tu propio linux, en Ubuntu es:
 
-```bash:no-line-numbers
+```bash
 sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
 ```
 
@@ -236,12 +236,12 @@ ocurrencias de un carácter en un archivo:
 <CodeGroup>
 <CodeGroupItem title="lector.h">
 
-@[code c{4}](@snippets/guias/programacion/cspec/lector.h)
+<<< @/snippets/guias/programacion/cspec/lector.h.c{4}
 
 </CodeGroupItem>
 <CodeGroupItem title="lector.c">
 
-@[code c{29}](@snippets/guias/programacion/cspec/lector.c)
+<<< @/snippets/guias/programacion/cspec/lector.c{29}
 
 </CodeGroupItem>
 </CodeGroup>

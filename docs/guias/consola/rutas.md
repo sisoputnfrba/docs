@@ -36,7 +36,7 @@ int main(void) {
 Guardemos el código en nuestro directorio home (`/home/utnso`), compilemos y
 ejecutemos:
 
-```bash:no-line-numbers
+```bash
 utnso@utnso40:~$ pwd
 /home/utnso
 utnso@utnso40:~$ gcc -Wall cwd.c -o cwd
@@ -106,7 +106,7 @@ la consola". Digamos, eclipse va a hacer una especie de `cd` al directorio que
 marca como "Working directory", y desde ahí va a ejecutar lo que diga en el
 campo `C/C++ Application`:
 
-```bash:no-line-numbers
+```bash
 cd coercion
 ./Debug/coercion
 ```

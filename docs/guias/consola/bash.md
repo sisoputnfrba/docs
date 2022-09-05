@@ -55,7 +55,7 @@ Si a `ls` le incluimos los flags `-l` para listar la información del archivo y
 `-a` para incluir los archivos ocultos (que empiezan con .), veremos algo
 parecido a esto:
 
-```:no-line-numbers
+```
 $ ls -la
 drwxr-xr-x 30 utnso utnso 4096 jul  7 00:18 .
 drwxr-xr-x  3 root  root  4096 feb 19  2018 ..
@@ -90,7 +90,7 @@ Para eliminar una carpeta con todos sus archivos dentro, se debe agregar el flag
 Todos estos comandos (excepto `touch`) permiten visualizar que la operación se
 realizó correctamente utilizando el flag `-v`. Ejemplo:
 
-```bash:no-line-numbers
+```bash
 $ touch README.md
 
 $ mkdir -v docs
@@ -124,7 +124,7 @@ removed 'docs/HELP.md'
 Tanto para `head` como para `tail` se puede especificar el número de líneas a
 leer través del flag `-n`:
 
-```bash:no-line-numbers
+```bash
 # Lee las primeras 5 líneas del archivo ~/.bashrc
 head -n 5 ~/.bashrc
 # Lee las últimas 7 líneas del archivo ~/.bashrc
@@ -141,7 +141,7 @@ permite visualizar las líneas que se van agregando a un archivo en tiempo real.
 Esto viene como anillo al dedo para monitorear archivos de logs durante la
 entrega, por ejemplo, ejecutando:
 
-```bash:no-line-numbers
+```bash
 tail -f kernel.log
 ```
 
@@ -170,7 +170,7 @@ Una forma más bonita de usar el comando `hexdump` es junto con el flag `-C`, el
 cual agrega una columna a la derecha imprimiendo el contenido del archivo en
 ASCII.
 
-```:no-line-numbers
+```
 $ hexdump -C main.c
 
 00000000  23 69 6e 63 6c 75 64 65  20 3c 73 74 64 6c 69 62  |#include <stdlib|
@@ -195,7 +195,7 @@ de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 Permite cambiar los permisos de un archivo (del inglés: _**ch**ange **mod**e_).
 Ejemplo:
 
-```bash:no-line-numbers
+```bash
 # Para dar permisos de ejecución
 chmod +x mi-script.sh
 # Para configurar nuevos permisos usando el formato Unix
@@ -207,7 +207,7 @@ chmod 664 kernel.config
 Permite cambiar el usuario dueño de un archivo (del inglés: _**ch**ange
 **own**er_). Ejemplo:
 
-```bash:no-line-numbers
+```bash
 # Para cambiar el ownership de un archivo a mi usuario
 chown $USER ejemplo.txt
 # Para cambiar el ownership de una carpeta y todo su contenido
@@ -282,7 +282,7 @@ Por ejemplo: `Ctrl` + `x` para salir.
 
 1. Vamos a abrir un archivo utilizando:
 
-```:no-line-numbers
+```
 nano un-archivo.txt
 ```
 
@@ -299,7 +299,7 @@ uno nuevo vacío.
 
 5. Corramos el comando:
 
-```:no-line-numbers
+```
 cat un-archivo.txt
 ```
 
@@ -315,7 +315,7 @@ Permite listar todos los archivos abiertos. En las entregas, puede ser muy útil
 junto con el flag `-i` para corroborar que no haya ningún proceso escuchando en
 un puerto en particular. Ejemplo:
 
-```bash:no-line-numbers
+```bash
 lsof -i :8080
 ```
 
@@ -427,7 +427,7 @@ seguir teniendo nuestra nueva variable.
 También podemos verificarlo corriendo `env` y viendo que `MI_VARIABLE` aparece
 registrada. Podemos filtrar con `grep` para encontrarla más fácilmente:
 
-```bash:no-line-numbers
+```bash
 env | grep MI_VARIABLE
 ```
 

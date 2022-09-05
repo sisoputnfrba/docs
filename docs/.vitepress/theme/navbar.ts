@@ -1,6 +1,8 @@
-import type { NavbarConfig } from '@vuepress/theme-default';
+export type NavItem =
+  { text: string; link: string; } |
+  { text: string; items: NavItem[]; };
 
-export const navbar: NavbarConfig = [
+export const navbar: NavItem[] = [
   {
     text: 'Consultas',
     link: '/consultas',
@@ -11,10 +13,10 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'Guías',
-    children: [
+    items: [
       {
         text: 'Consola de Linux y Git',
-        children: [
+        items: [
           {
             text: 'Guía de uso de Bash',
             link: '/guias/consola/bash'
@@ -31,7 +33,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Programación en C',
-        children: [
+        items: [
           {
             text: 'Manejo de Punteros y Memoria Dinámica',
             link: '/guias/programacion/punteros'
@@ -56,7 +58,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Uso de syscalls de Linux',
-        children: [
+        items: [
           {
             text: 'Guía de Sockets',
             link: '/guias/linux/sockets',
@@ -77,7 +79,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Herramientas útiles',
-        children: [
+        items: [
           {
             text: 'Debugging en Eclipse',
             link: '/guias/herramientas/debugger'
@@ -100,17 +102,13 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'Recursos',
-    children: [
+    items: [
       {
-        text: 'Links',
-        children: [
+        text: 'Links importantes',
+        items: [
           {
             text: 'Blog de la cátedra',
             link: 'https://faq.utnso.com.ar/blog'
-          },
-          {
-            text: 'Foro de consultas',
-            link: 'https://faq.utnso.com.ar/foro'
           },
           {
             text: 'Sistema de Inscripciones',
@@ -120,15 +118,11 @@ export const navbar: NavbarConfig = [
             text: 'Campus Virtual',
             link: 'https://faq.utnso.com.ar/cv'
           },
-          {
-            text: 'Canal de YouTube',
-            link: 'https://faq.utnso.com.ar/youtube'
-          },
         ]
       },
       {
         text: 'Recursos',
-        children: [
+        items: [
           {
             text: 'Máquinas virtuales',
             link: '/recursos/vms',
@@ -153,7 +147,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Tutoriales',
-        children: [
+        items: [
           {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'

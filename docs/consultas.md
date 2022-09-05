@@ -75,7 +75,7 @@ alguna coma o algún punto mal puesto.
 Recuerden que **el `man` es su amigo**. Pueden consultar la documentación
 oficial de cualquier función en C consultando por la consola, por ejemplo:
 
-```bash:no-line-numbers
+```bash
 man fopen
 ```
 

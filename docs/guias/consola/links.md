@@ -42,7 +42,7 @@ lee que le corresponde el inodo 402, abre el inodo 402, mira que mide 5 bytes,
 busca cuál es el primer bloque de datos, lee los primeros 5 bytes de ese bloque
 de datos y se los devuelve a `cat`, que se encarga de imprimirlos por pantalla.
 
-```bash:no-line-numbers
+```bash
 $ cat miarchivo.txt
 hola
 $
@@ -64,7 +64,7 @@ entrada para el nombre `passwords.txt`, que también apunta al inodo 402.
 > es el primer bloque de datos, lee los primeros 5 bytes de ese bloque de datos
 > y se los devuelve a `cat`, que se encarga de imprimirlos por pantalla.
 
-```bash:no-line-numbers
+```bash
 $ cat passwords.txt
 hola
 $
@@ -85,7 +85,7 @@ y todos felices. Si ahora hacemos `cat miarchivo.txt`, encuentra la entrada de
 directorio[^4], abre el inodo 402, abre el bloque de datos, lee los 14 bytes, se
 los devuelve a `cat`, y `cat` los imprime por pantalla.
 
-```bash:no-line-numbers
+```bash
 $ cat miarchivo.txt
 hola
 clave123
@@ -97,7 +97,7 @@ directorio de `passwords.txt`, veo que es el inodo 402, abro el inodo, veo que
 mide 14 bytes, abro el primer bloque de datos, leo los 14 bytes, y se los
 devuelvo a `cat` para que los imprima en pantalla_.
 
-```bash:no-line-numbers
+```bash
 $ cat passwords.txt
 hola
 clave123
@@ -112,7 +112,7 @@ Ahora bien, podemos mirar por la consola que esos dos archivos referencian al
 mismo inodo. La clave está en el switch `-i` del comando `ls`, que acá vamos a
 usar junto con el `-1` para ver un archivo por línea:
 
-```bash:no-line-numbers
+```bash
 $ ls -i1
 402 miarchivo.txt
 402 passwords.txt
@@ -160,7 +160,7 @@ libera ese inodo y el bloque de datos asociado.
 Podemos ver la cantidad de hard links usando `ls -l` (o combinarlo con `-i` para
 ver también el número de inodo):
 
-```bash:no-line-numbers
+```bash
 $ ls -li
 total 2
 402 -rw-r--r--+ 2 mgarcia staff 14 Feb 7 11:53 miarchivo.txt
@@ -171,7 +171,7 @@ $
 Esos `2` que vemos entre los permisos y el owner del archivo es el contador de
 hard links. Creemos un archivo cualquiera para ver que tiene un único link:
 
-```bash:no-line-numbers
+```bash
 $ touch vacio
 $ ls -li
 total 3
@@ -183,7 +183,7 @@ $
 
 Borremos tanto a `vacio` como a `miarchivo.txt` para ver que no les mentí[^6]:
 
-```bash:no-line-numbers
+```bash
 $ rm miarchivo.txt vacio
 $ ls -li
 total 1
@@ -203,7 +203,7 @@ Por ese motivo, los hard links son intra-FS.
 
 Y, algo que nos faltaba: ¿con qué creamos el hard link? Con el comando `ln`:
 
-```bash:no-line-numbers
+```bash
 $ ls -li
 total 1
 402 -rw-r--r--+ 1 mgarcia staff 14 Feb 7 11:53 miarchivo.txt
@@ -225,7 +225,7 @@ soft links :)
 
 Un softlink[^8] es un **archivo nuevo** que referencia a otra ruta. Creemos uno:
 
-```bash:no-line-numbers
+```bash
 $ ls -li
 total 2
 402 -rw-r--r--+ 2 mgarcia staff 14 Feb 7 11:53 miarchivo.txt
@@ -283,7 +283,7 @@ enlace apunta a _lo que sea que haya_ en la ruta `miarchivo.txt`.
 Existe un comando (más _low level_[^10] que `ls -l`) para leer el _destino_ de
 un softlink: `readlink`.
 
-```bash:no-line-numbers
+```bash
 $ readlink blandito
 miarchivo.txt
 $
@@ -291,7 +291,7 @@ $
 
 Rompamos el enlace:
 
-```bash:no-line-numbers
+```bash
 $ mv miarchivo.txt archivo.txt
 $ ls -li
 total 3

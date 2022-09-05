@@ -29,7 +29,7 @@ probar [UTM](https://mac.getutm.app/) siguiendo
 
 <YouTube v="hnwK-nkXolc"/>
 
-::: warning
+::: warning IMPORTANTE
 
 Omitir la sección del minuto 7:17, ya que en su lugar vamos a
 ejecutar los scripts antes mencionados siguiendo las instrucciones para instalar
@@ -99,21 +99,21 @@ Pueden copiar el comando de acá:
 <CodeGroup>
 <CodeGroupItem title="Windows">
 
-```:no-line-numbers
+```
 certutil -hashfile [archivo] md5
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Linux">
 
-```:no-line-numbers
+```
 md5sum [archivo]
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="MacOS">
 
-```:no-line-numbers
+```
 md5 [archivo]
 ```
 
@@ -125,7 +125,7 @@ md5 [archivo]
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
 máquina virtual siguiendo este video:
 
-::: danger
+::: danger ATENCIÓN
 
 El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
 seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
@@ -154,11 +154,11 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
-::: danger
+::: danger ATENCIÓN
 
 En las versiones más recientes, el mensaje que aparece luego de ejecutar el
 script de instalación es el siguiente:
-```:no-line-numbers
+```
 VirtualBox Guest Additions: Running kernel modules will not be replaced until
 the system is restarted
 ```

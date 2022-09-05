@@ -9,7 +9,7 @@ para entender un poco más los mensajes de error.
 
 **¿Qué comando usamos para ejecutar el proyecto en la consola?**
 
-```bash:no-line-numbers
+```bash
 LD_LIBRARY_PATH=/home/utnso/eclipse-workspace/pepes-threads/Debug ./pepes-main/pepes-main
 ```
 

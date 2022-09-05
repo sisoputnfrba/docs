@@ -11,7 +11,7 @@ Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
 
 :::
 
-::: danger
+::: danger ATENCIÓN
 
 Si estás configurando el entorno de desarrollo o estás evaluando no usar las máquinas
 virtuales para desarrollar el trabajo práctico, antes leé la
