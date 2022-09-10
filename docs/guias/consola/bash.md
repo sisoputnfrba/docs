@@ -166,7 +166,7 @@ $ hexdump -C main.c
 ```
 
 Las funciones de
-[`memory.h`](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/memory.h)
+[`memory.h`](https://faq.utnso.com.ar/commons-src/memory.h)
 de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 
 :::

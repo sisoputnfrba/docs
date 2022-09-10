@@ -52,7 +52,7 @@ respondida usando el buscador de issues para filtrar según su _label_:
 ::: tip
 
 Antes de subir un issue, recordá leer primero el
-[readme](https://github.com/sisoputnfrba/foro/blob/master/README.md), tiene
+[readme](https://faq.utnso.com.ar/github/foro/blob/master/README.md), tiene
 algunos tips sobre su funcionamiento ;)
 
 :::
@@ -88,9 +88,9 @@ También pueden encontrar los mismos manuales en línea:
 
 Si es una función de las Commons, pueden consultar la descripción de cada una en
 los
-[headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
+[headers](https://faq.utnso.com.ar/commons-src)
 y ejemplos de uso en los
-[unit tests](https://github.com/sisoputnfrba/so-commons-library/tree/master/tests/unit-tests).
+[unit tests](https://faq.utnso.com.ar/commons-unit-tests).
 
 ::: tip
 

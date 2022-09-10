@@ -12,7 +12,7 @@ y queues), funciones para simplificar el manejo de strings y fechas, entre
 otras: las Commons.
 
 Para descargarla, vamos a abrir una consola y nos vamos a clonar
-[el repo](https://github.com/sisoputnfrba/so-commons-library) para instalarlas
+[el repo](https://faq.utnso.com.ar/commons) para instalarlas
 en modo debug[^1]:
 
 ```bash:no-line-numbers
@@ -25,7 +25,7 @@ make install
 ::: tip
 
 En los
-[archivos `*.h` del repo](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons)
+[archivos `*.h` del repo](https://faq.utnso.com.ar/commons-src)
 van a encontrar todas las funciones que pueden usar junto con una breve
 descripción.
 

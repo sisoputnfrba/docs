@@ -125,7 +125,7 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 1. Clonar el repo
 2. Instalar las bibliotecas necesarias (incluyendo las
-   [commons](https://github.com/sisoputnfrba/so-commons-library#guía-de-instalación))
+   [commons](https://faq.utnso.com.ar/commons#guía-de-instalación))
    [^3].
 3. Compilar los módulos (recuerden que para poder compilar tienen que subir los
    makefiles[^4] ya que no está permitido subir archivos binarios al repo).
@@ -188,7 +188,7 @@ entregas:
 | Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no me andan los sockets. |                                                  Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.                                                  |                                                                            Configurar [setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables.                                                                            |
 |                         No puedo compilar mis módulos y no sé qué hacer.                          |                                                       Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                       |                                                                                                         Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                                          |
 |            No tengo información suficiente para darme cuenta si la prueba anduvo o no.            |                                                               No puse logs suficientes en mi TP porque creí que no era necesario.                                                               |                                           **Agregarlos**. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron. La foto final no garantiza que el trayecto haya sido el correcto.                                            |
-|                     Tardo demasiado en darme cuenta si la prueba anduvo o no.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de prueba" **sin comentarlos en el código**. |
+|                     Tardo demasiado en darme cuenta si la prueba anduvo o no.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://faq.utnso.com.ar/commons/blob/1136796838552318f475352a5983d926d16cc967/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de prueba" **sin comentarlos en el código**. |
 
 ## Paso 4: Des-pliegue - Recomendado
 

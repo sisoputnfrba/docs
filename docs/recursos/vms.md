@@ -13,7 +13,7 @@ Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
 
 ::: danger
 
-Si estás configurando el entorno de desarrollo o estás evaluando no usar las máquinas 
+Si estás configurando el entorno de desarrollo o estás evaluando no usar las máquinas
 virtuales para desarrollar el trabajo práctico, antes leé la
 [guía de primeros pasos](../../primeros-pasos/entorno-linux.md).
 
@@ -27,7 +27,7 @@ desarrollo.**
 
 **Links hosteados en Google Drive**
 
-- [Carpeta Google Drive](https://drive.google.com/drive/folders/1RItb6HRRNtht0m4VruPMiJQAlLJdy3kB?usp=sharing)
+- [Carpeta Google Drive](https://faq.utnso.com.ar/vm-gui)
 
 **Hashes MD5**
 
@@ -45,7 +45,7 @@ xfce.vdi - 4b59dc884bac893c1c4f1c019d0ba9ba
 ::: tip
 
 Con esto ya tenemos todo lo necesario para continuar con la
-[guía de primeros pasos](../../primeros-pasos/entorno-linux.md#descargar-la-mquina-virtual).
+[guía de primeros pasos](/primeros-pasos/entorno-linux.md#descargar-la-mquina-virtual).
 
 :::
 
@@ -55,7 +55,7 @@ Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 
 **Links hosteados en Google Drive**
 
-- [Carpeta Google Drive](https://drive.google.com/drive/folders/1DWu7qZCgwuFoKnWXmSO0S0B_wcbjdQi5?usp=sharing)
+- [Carpeta Google Drive](https://faq.utnso.com.ar/vm-server)
 
 **Hashes MD5**
 
@@ -71,7 +71,7 @@ md5 Server.vdi - 640de079460d1994b22c31fa709f1856
 ::: tip TIP 1
 
 Dejamos un tutorial sobre cómo verificar que la descarga ha sido exitosa en la
-[guía de primeros pasos](../../primeros-pasos/entorno-linux.md#verificar-la-descarga).
+[guía de primeros pasos](/primeros-pasos/entorno-linux.md#verificar-la-descarga).
 
 :::
 

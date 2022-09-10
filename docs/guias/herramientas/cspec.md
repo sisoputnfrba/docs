@@ -328,10 +328,10 @@ quedó mucho más prolijo :)
   pero podés ver el resto en
   [la documentación de CSpec](https://github.com/mumuki/cspec/blob/master/README_ES.md#should).
 
-- La [so-commons-library](https://github.com/sisoputnfrba/so-commons-library)
+- La [so-commons-library](https://faq.utnso.com.ar/commons)
   usa CSpec para probar sus funcionalidades. Podés ver más ejemplos de cómo
   testear en
-  [la carpeta unit-tests del repositorio](https://github.com/sisoputnfrba/so-commons-library/tree/master/tests/unit-tests).
+  [la carpeta unit-tests del repositorio](https://faq.utnso.com.ar/commons-unit-tests).
 
 - A diferencia de frameworks de test de otras tecnologías, acá ninguna de las
   aserciones termina con la ejecución del test case si fallan.

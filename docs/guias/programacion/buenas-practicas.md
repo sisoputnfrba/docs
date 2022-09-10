@@ -573,9 +573,9 @@ Es un buen argumento; tan bueno que me lo he dado muchas veces a mí mismo. Pero
 nada más lejano de la realidad.
 
 Un hermoso ejemplo de esto son las
-[commons](https://github.com/sisoputnfrba/so-commons-library) que les damos.
+[commons](https://faq.utnso.com.ar/commons) que les damos.
 Tomemos como ejemplo el
-[encabezado de los bitarrays](https://github.com/sisoputnfrba/so-commons-library/blob/508f4e6262bfe5344f584d3523ef088e7b446472/src/commons/bitarray.h#L43-L47).
+[encabezado de los bitarrays](https://faq.utnso.com.ar/commons/blob/508f4e6262bfe5344f584d3523ef088e7b446472/src/commons/bitarray.h#L43-L47).
 Todas las funciones manejan de una u otra forma un `t_bitarray`, que básicamente
 es un puntero a `char` y un tamaño. ¿Por qué no usar esos dos valores y mandar
 punteros a `char` y tamaños?
@@ -673,7 +673,7 @@ Ciertamente no tenemos objetos en C, pero podemos acercarnos a algo parecido.
 La idea es, como vimos en el ejemplo de `t_memoria`, armar todo un TAD alrededor
 de un tipo de dato, entonces hacer cualquier cambio de la forma de manejarlo es
 sumamente fácil y afecta a la menor cantidad de componentes. De vuelta, las
-[commons](https://github.com/sisoputnfrba/so-commons-library) son un muy buen
+[commons](https://faq.utnso.com.ar/commons) son un muy buen
 ejemplo de esto.
 
 ## Abort! Abort! ABORT!

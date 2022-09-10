@@ -91,7 +91,7 @@ acciones que el programa vaya realizando, tanto las correctas, como los errores.
 Para ello, utilizaremos las funciones de logging que proveen las commons.
 
 Parados en el archivo `cliente.c`, si revisamos el
-[header de log de las commons](https://github.com/sisoputnfrba/so-commons-library/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L40-L56)
+[header de log de las commons](https://faq.utnso.com.ar/commons/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L40-L56)
 vamos a encontrar la función `log_create()`, que nos devuelve un logger listo
 para usar.
 
@@ -118,7 +118,7 @@ proyecto, por lo que vamos a leerlo a partir de un archivo de configuración y l
 vamos a loguear usando nuestro logger.
 
 Para ello vamos a usar
-[las config de las commons](https://github.com/sisoputnfrba/so-commons-library/blob/master/src/commons/config.h).
+[las config de las commons](https://faq.utnso.com.ar/commons/blob/master/src/commons/config.h).
 Siguiendo su header, creemos una config que levante el archivo `"tp0.config"` y
 obtengamos el valor de la key `CLAVE` en formato string.
 
@@ -223,7 +223,7 @@ intentar ejecutarlo línea por línea siguiendo el
 
 Las commons también proveen funciones para simplificar el manejo de strings.
 Pueden consultar su documentación leyendo los
-[headers](https://github.com/sisoputnfrba/so-commons-library/tree/master/src/commons).
+[headers](https://faq.utnso.com.ar/commons-src).
 
 :::
 
