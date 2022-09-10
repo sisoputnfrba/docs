@@ -92,7 +92,7 @@ donde vamos a poner nuestros argumentos separados por espacios:
 
 ![eclipse-02](/img/guias/programacion/main/eclipse-02.png)
 
-En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
+En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
 partir desde el `Working directory` que está configurado ahí más abajo.
 
 Por ejemplo, la variable `${workspace_loc:NOMBRE_DEL_PROYECTO}` apunta hacia la
@@ -117,7 +117,7 @@ poner nuestra lista de argumentos en formato de array de strings.
 }
 ```
 
-En caso de usar una [ruta relativa](../consola/rutas.md), es muy importante
+En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
 asegurarnos que la variable `cwd` apunte al valor correcto. En este ejemplo,
 `${workspaceFolder}` es otra variable que apunta hacia la carpeta que tiene
 abierta Visual Studio Code[^1].

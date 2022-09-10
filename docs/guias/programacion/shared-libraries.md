@@ -19,4 +19,4 @@ incluso, aunque la VM se apague!
 
 Si querés saber más sobre las variables de entorno, pegale una leída a la última
 sección de nuestra
-[guía de uso de Bash](../consola/bash.md#variables-de-entorno).
+[guía de uso de Bash](/guias/consola/bash#variables-de-entorno).

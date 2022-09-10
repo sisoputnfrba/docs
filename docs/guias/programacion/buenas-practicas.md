@@ -707,7 +707,7 @@ comentarios útiles!**
 
 [^3]:
     El por qué del casteo esta explicado muy bonito en
-    [otra guia](./punteros.md).
+    [otra guia](/guias/programacion/punteros).
 
 [^4]:
     El término correcto es

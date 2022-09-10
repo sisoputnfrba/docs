@@ -265,7 +265,7 @@ Deberían ver algo similar a esto:
 ```
 
 - Como vimos en la
-  [guía de punteros y memoria dinámica](../programacion/punteros.md), el HEAP es
+  [guía de punteros y memoria dinámica](/guias/programacion/punteros), el HEAP es
   un área grande de memoria a donde recurrimos al momento de reservar memoria
   dinámicamente con `malloc()`.
 
@@ -644,7 +644,7 @@ que la syscall está recibiendo un valor no inicializado[^6].
 
 Para recurrir a información más detallada referente a los mensajes de error y al
 funcionamiento de Memcheck pueden recurrir al
-[manual de usuario de valgrind](http://valgrind.org/docs/manual/mc-manual.html).
+[manual de usuario de valgrind](https://valgrind.org/docs/manual/mc-manual.html).
 
 Yo no quiero venderte Valgrind ni nada por el estilo, pero la verdad es que es
 una herramienta muy poderosa que cualquier programador en C/C++ debería conocer.
@@ -653,7 +653,7 @@ ser más eficientes en el manejo de la memoria y te va a ahorrar mucho tiempo
 cuando surjan segmentation faults[^7] (¡incluso te ayuda a prevenirlos!).
 
 Otra herramienta muy útil que provee Valgrind, es
-[Helgrind](http://valgrind.org/docs/manual/hg-manual.html), para solucionar y
+[Helgrind](https://valgrind.org/docs/manual/hg-manual.html), para solucionar y
 detectar problemas de sincronización. También te va a resultar muy útil. Si no
 viste la charla del principio, te recomiendo al menos saltarte a la parte en la
 que se menciona esta herramienta.

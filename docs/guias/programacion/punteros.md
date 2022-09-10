@@ -750,7 +750,7 @@ int main(int argc, char **argv) {
 - [Binky Pointer C](https://www.youtube.com/watch?v=5VnDaHBi8dM) (en inglés)
 - [You will never ask about pointers again after watching this video](https://www.youtube.com/watch?v=2ybLD6_2gKM) (en inglés)
 - [Punteros en la guía Beej](https://beej.us/guide/bgc/html/#pointers) (en inglés)
-- [Tutorial de Valgrind](/guias/herramientas/valgrind.md) (para resolver memory leaks)
+- [Tutorial de Valgrind](/guias/herramientas/valgrind) (para resolver memory leaks)
 
 <br><br>
 

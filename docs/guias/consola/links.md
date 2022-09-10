@@ -142,7 +142,7 @@ comando: `rm`. Y no tengo que especificarle yo si es el último hard link o no, 
 si liberar o no el inodo: es el FS el que decide eso.
 
 Para eso, el FS usa una técnica llamada
-[reference counting](http://en.wikipedia.org/wiki/Reference_counting)[^5]
+[reference counting](https://en.wikipedia.org/wiki/Reference_counting)[^5]
 (conteo de referencias). El inodo tiene un campo en el que se cuenta la cantidad
 de referencias que hay hacia él en el file system. Al crear un archivo, ese
 contador arranca en 1 (porque hay una única entrada de directorio que lo
@@ -346,7 +346,7 @@ abrir un softlink, por lo que siempre vemos el contenido del destino[^14].
 
 ## Links útiles
 
-- [Hard links and Unix file system nodes (inodes)](http://teaching.idallen.com/dat2330/04f/notes/links_and_inodes.html)
+- [Hard links and Unix file system nodes (inodes)](https://teaching.idallen.com/dat2330/04f/notes/links_and_inodes.html)
 
 <br><br>
 
@@ -393,12 +393,12 @@ abrir un softlink, por lo que siempre vemos el contenido del destino[^14].
     En general, trato de usar los comandos de UNIX más _cercanos_ a las llamadas
     al sistema. `ls` hace _muchas_ cosas, no existe una llamada al sistema `ls`,
     pero sí existe una llamada al sistema
-    [readlink](http://linux.die.net/man/2/readlink) (o quizá no se llame así,
+    [readlink](https://linux.die.net/man/2/readlink) (o quizá no se llame así,
     pero cumple esa tarea específica).
 
 [^11]:
     Llamar "nuevas" a las que tienen menos de 15 años de antigüedad denota mi
-    pasión por [gritarle a las nubes](http://i.imgur.com/91sn32Q.jpg?fb)
+    pasión por [gritarle a las nubes](https://i.imgur.com/91sn32Q.jpg?fb)
 
 [^12]:
     Y, obviamente, si usamos el programa `edit` desde la consola/CMD/DOS, peor
@@ -420,7 +420,7 @@ abrir un softlink, por lo que siempre vemos el contenido del destino[^14].
     almacenando la ruta destino _en el inodo_ en lugar de en un bloque de datos
     aparte (escribiéndola en la zona reservada para los punteros a bloques de
     datos). De hecho,
-    [la especificación de ext2 dice que ese es el modo de hacerlo](http://www.nongnu.org/ext2-doc/ext2.html#DEF-SYMBOLIC-LINKS)
+    [la especificación de ext2 dice que ese es el modo de hacerlo](https://www.nongnu.org/ext2-doc/ext2.html#DEF-SYMBOLIC-LINKS)
     (digamos, no lo nombra como un opcional). De todos modos, esto es una
     optimización de espacio, y no hace diferencias importantes a la hora de
     entender el concepto del symlink.

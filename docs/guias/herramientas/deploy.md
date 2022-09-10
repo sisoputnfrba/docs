@@ -33,7 +33,7 @@ notar de cuánto tiempo ahorrado para todos estamos hablando.
 En segundo lugar, los archivos de configuración: cada prueba especifica los
 parámetros con los que debe contar cada módulo, entonces podrían guardar en el
 repositorio un archivo distinto por cada prueba y
-[pasar el que corresponde por línea de comandos](../programacion/main.md).
+[pasar el que corresponde por línea de comandos](/guias/programacion/main).
 De esta forma, para pasar a la siguiente simplemente bajamos y le pasamos un
 archivo de configuración distinto al mismo ejecutable.
 
@@ -45,7 +45,7 @@ a querer en su TP.
 ::: warning
 
 Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
-proporcionamos a través de los [links de descarga](vms.md#ubuntu-server), por lo
+proporcionamos a través de los [links de descarga](vms#ubuntu-server), por lo
 que van a tener que aprender un mínimo de uso de la consola.
 
 :::
@@ -135,7 +135,7 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 Para ayudar un poco, les dejamos:
 
-- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html).
+- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash).
 - Un video explicando cómo redirigir puertos por SSH desde una VM, para ir
   familiarizándose con estas herramientas desde la comodidad de la casa.
 
@@ -184,7 +184,7 @@ entregas:
 |                                               Error                                               |                                                                                          Posible causa                                                                                          |                                                                                                                          Posible solución                                                                                                                           |
 | :-----------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |                  En local mis módulos se conectan, pero en las VMs de prueba no.                  |                                Tener parametrizado estáticamente en el código (también conocido como _hardcodeado_) `"localhost"` a la hora de conectar módulos.                                |                                          Sacar el `"localhost"` y configurar [getaddrinfo](<https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,sendmsg(2).>) con los flags correctos.                                           |
-|         Local funciona bien, pero en la entrega tengo comportamientos no determinísticos.         | Local hay un solo CPU para todas las vms, pero en la entrega hay varios porque son varias máquinas. Ese paralelismo puede hacer que sus condiciones de carrera brillen más que con un solo CPU. |                                                 Probarlo distribuido con [Helgrind](/guias/herramientas/valgrind.html) (pueden levantar dos VMs server en sus máquinas si no pueden ir a Medrano) y usar semáforos.                                                 |
+|         Local funciona bien, pero en la entrega tengo comportamientos no determinísticos.         | Local hay un solo CPU para todas las vms, pero en la entrega hay varios porque son varias máquinas. Ese paralelismo puede hacer que sus condiciones de carrera brillen más que con un solo CPU. |                                                 Probarlo distribuido con [Helgrind](/guias/herramientas/valgrind) (pueden levantar dos VMs server en sus máquinas si no pueden ir a Medrano) y usar semáforos.                                                 |
 | Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no me andan los sockets. |                                                  Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.                                                  |                                                                            Configurar [setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables.                                                                            |
 |                         No puedo compilar mis módulos y no sé qué hacer.                          |                                                       Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                       |                                                                                                         Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                                          |
 |            No tengo información suficiente para darme cuenta si la prueba anduvo o no.            |                                                               No puse logs suficientes en mi TP porque creí que no era necesario.                                                               |                                           **Agregarlos**. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron. La foto final no garantiza que el trayecto haya sido el correcto.                                            |

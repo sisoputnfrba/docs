@@ -204,7 +204,7 @@ Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), p
 
 ::: warning
 
-Para extender el concepto de **serialización**, tenemos disponible la [guía](./serializacion.md), que incluye un modelo de paquete propuesto para el envío mediante sockets.
+Para extender el concepto de **serialización**, tenemos disponible la [guía](/guias/linux/serializacion), que incluye un modelo de paquete propuesto para el envío mediante sockets.
 
 :::
 
@@ -217,7 +217,7 @@ Por último, e igual de importante que todo lo demás, los sockets una vez que n
 ## Multiplexando ando
 
 ::: warning
-Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](./threads.md) antes de comenzar este apartado.
+Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](/guias/linux/threads) antes de comenzar este apartado.
 :::
 
 Ya charlamos antes sobre que una de las condiciones para que un proceso servidor sea considerado servidor es necesario que sea capaz de atender a múltiples clientes de manera concurrente. El concepto de poder atender dos o más conexiones al mismo tiempo se conoce como multiplexación.
@@ -259,7 +259,7 @@ Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en i
 
 ## Notas finales
 
-¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](../../consultas.md) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página.
+¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](/consultas) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página.
 
 ![final-imagen](/img/guias/sockets/final-imagen.png)
 ## Historial de versiones

@@ -288,7 +288,7 @@ Aquel grupo que no cumpla con este requisito no será evaluado.
 ## Soporte
 
 Para conocer los medios de soporte, visitar el
-[post de dudas/consultas de la materia](../consultas.md)
+[post de dudas/consultas de la materia](/consultas)
 
 <!--
 ### Ayudantes

@@ -56,7 +56,7 @@ distribución que no cuenta con entorno gráfico.
 
 Por lo tanto, para facilitar el desarrollo utilizaremos otra imagen que incluye
 un entorno gráfico liviano instalado encima de la Ubuntu Server de las entregas.
-[Acá pueden encontrar los links de descarga](../recursos/vms.md#xubuntu).
+[Acá pueden encontrar los links de descarga](/recursos/vms#xubuntu).
 
 ::: tip
 
@@ -192,5 +192,5 @@ encontrar más adelante como la herramienta de versionado Git o Valgrind.
 Para eso, te dejamos acá algunos links que te pueden ser útiles:
 
 - [Micro-repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
-- [Guía de uso de Bash](../guias/consola/bash.md)
-- [Git para el trabajo práctico](../guias/consola/git.md)
+- [Guía de uso de Bash](/guias/consola/bash)
+- [Git para el trabajo práctico](/guias/consola/git)

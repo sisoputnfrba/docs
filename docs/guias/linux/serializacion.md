@@ -417,6 +417,6 @@ t_persona;
 ## Notas finales
 
 ¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la
-pueden realizar en los [medios de consulta](../../consultas.md)
+pueden realizar en los [medios de consulta](/consultas)
 correspondientes, y que hagan uso de las guías y los video tutoriales de esta
 página.

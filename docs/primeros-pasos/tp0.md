@@ -28,14 +28,14 @@ las funciones vacías y comentarios que les dejamos en el código.
 ::: tip
 
 Pueden hacernos cualquier pregunta que tengan sobre el enunciado, C, o cualquier
-otro concepto en los [medios de consulta de la práctica](../consultas.md).
+otro concepto en los [medios de consulta de la práctica](/consultas).
 
 :::
 
 ## Requisitos
 
-- [Contar con un entorno Linux](./entorno-linux.md)
-- [Tener configuradas las commons y git](./entorno-desarrollo.md)
+- [Contar con un entorno Linux](/primeros-pasos/entorno-linux)
+- [Tener configuradas las commons y git](/primeros-pasos/entorno-desarrollo)
 - Tener a mano el [repo del TP0](https://faq.utnso.com.ar/tp0)
 
 ## Etapa 1: Setup inicial
@@ -125,7 +125,7 @@ obtengamos el valor de la key `CLAVE` en formato string.
 ::: tip
 
 Para saber dónde guardar el archivo config y cómo hace Eclipse para leerlo,
-podés consultar la [guía de paths](./../guias/consola/rutas.md).
+podés consultar la [guía de paths](/guias/consola/rutas).
 
 :::
 
@@ -179,7 +179,7 @@ necesario liberarla usando
 ::: tip
 
 Para más info sobre algunas features más avanzadas de `readline()`, pueden
-consultar la [guía de readline](../guias/programacion/readline.md).
+consultar la [guía de readline](/guias/programacion/readline).
 
 :::
 
@@ -215,7 +215,7 @@ salir del bucle o no.
 
 Si en alguna etapa del TP el programa no se comporta como esperaban, pueden
 intentar ejecutarlo línea por línea siguiendo el
-[tutorial de debugging en Eclipse](../guias/herramientas/debugger.md).
+[tutorial de debugging en Eclipse](/guias/herramientas/debugger).
 
 :::
 
@@ -232,7 +232,7 @@ Pueden consultar su documentación leyendo los
 ::: warning
 
 Para poder ayudar con los conceptos y aspectos técnicos de esta estapa tienen
-disponible la [guía de sockets](../guias/linux/sockets.md).
+disponible la [guía de sockets](/guias/linux/sockets).
 
 :::
 
@@ -306,7 +306,7 @@ el entregable.
 
 En el TP van a necesitar enviar estructuras más complejas que un string. Para
 hacerlo, pueden consultar nuestra
-[guía de serialización](../guias/linux/serializacion.md).
+[guía de serialización](/guias/linux/serializacion).
 
 :::
 

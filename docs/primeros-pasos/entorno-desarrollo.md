@@ -1,6 +1,6 @@
 # Preparar el entorno para codear
 
-Una vez [instaladas las VMs](./entorno-linux.md) (o el entorno Linux que hayas
+Una vez [instaladas las VMs](/primeros-pasos/entorno-linux) (o el entorno Linux que hayas
 elegido), debemos continuar con un par de configuraciones antes de arrancar a
 desarrollar.
 
@@ -41,11 +41,11 @@ proyecto en **Eclipse**.
 ¿Por qué Eclipse? Con una configuración mínima, incluye por defecto una gran
 cantidad de features para ayudarnos a desarrollar el TP como, por ejemplo,
 Makefiles para compilar el código sin tener que usar `gcc` directamente desde la
-consola, un [debugger integrado](../guias/herramientas/debugger.md),
-[ejecución con Valgrind](../guias/herramientas/valgrind.md)...
+consola, un [debugger integrado](/guias/herramientas/debugger),
+[ejecución con Valgrind](/guias/herramientas/valgrind)...
 
 Además, los ayudantes ya estamos familiarizados con su uso, por lo que ante
-cualquier [duda o consulta](../dudas.md) vamos a saber por dónde orientarlos.
+cualquier [duda o consulta](/consultas) vamos a saber por dónde orientarlos.
 
 ::: tip
 
@@ -89,10 +89,10 @@ a hacer cada vez que querramos interactuar con el repo del Trabajo Práctico.
   chusmear nuestra sección de guías de programación en C.
 - También este [tutorial interactivo de C](https://www.learn-c.org/) (en inglés)
   puede ser de utilidad.
-- Si te sentís con confianza, arranquemos con el [TP0](./tp0.md).
+- Si te sentís con confianza, arranquemos con el [TP0](/primeros-pasos/tp0).
 
 <br><br>
 
 [^1]:
     ¿Por qué en modo debug? Es una herramienta que nos ayudará
-    [más adelante](../guias/herramientas/debugger.md) (?)
+    [más adelante](/guias/herramientas/debugger) (?)
