@@ -5,6 +5,18 @@ en la página:
 
 [[toc]]
 
+## Sistema de Inscripciones
+
+### Registro en Sistema de Inscripciones y Github
+
+<YouTube v="iwJRsZxX7Kk"/>
+
+## Git
+
+### Stash, conflictos, merge
+
+<YouTube v="mawMGxE4048"/>
+
 ## Linux
 
 ### Sobre los scripts y sus intérpretes
@@ -34,22 +46,13 @@ en la página:
 
 ## VirtualBox
 
-### Crear Snapshots
-<YouTube v="u1L23ziKgz4"/>
-
-### Guardar el estado de una VM
-<YouTube v="YqFybzQmqOc"/>
-
-### Cambiar el idioma del teclado
-<YouTube v="0016HnJQVSE"/>
-
 ### Crear una shared folder entre VM y Host
 - [Crear carpeta compartida entre VM y Host](https://faq.utnso.com.ar/guia-carpeta-compartida-vm)
 - [Crear carpeta compartida entre VM y Host (v2)](https://faq.utnso.com.ar/vms-shared)
 
 ### Troubleshooting
 - [Posible Solucion - Mal funcionamiento de la VM en Windows 8](https://faq.utnso.com.ar/vm-lenta)
-- [Habilitar virtualización para evitar Kernel panic - not syncing al prender la VM](https://faq.utnso.com.ar/foro/1010)
+- [Habilitar virtualización para evitar Kernel panic - not syncing al prender la VM](https://faq.utnso.com.ar/issues/1010)
 
 ## Deploy
 

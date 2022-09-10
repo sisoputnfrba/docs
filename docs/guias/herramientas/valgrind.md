@@ -2,6 +2,9 @@
 
 <YouTube v="knRei6OBU4Q"/>
 
+> Presentación de la charla:
+> [Valgrind - Salvando los TPs de Operativos desde el año 2000](https://faq.utnso.com.ar/valgrind-ppt)
+
 ## Introducción
 
 Valgrind es un conjunto de herramientas libres que ayudan en la depuración de

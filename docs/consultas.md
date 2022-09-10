@@ -112,7 +112,7 @@ En el caso de que tengan un problema técnico con VirtualBox u otra herramienta
 `Can't find source file at`), les aconsejamos consultar primero:
 
 - El material que se encuentra en esta página
-- [El buscador de issues del foro](https://faq.utnso.com.ar/foro)
+- [El buscador de issues del foro](https://faq.utnso.com.ar/issues)
   (recuerden que pueden filtrar por texto o por label)
 - Si se trata de algún mensaje de error que no aparece en el foro (o la solución
   del foro no funcionó), existe la posibilidad de que alguien más por fuera de
