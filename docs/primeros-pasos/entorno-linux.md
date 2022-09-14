@@ -65,13 +65,18 @@ las pruebas.
 
 :::
 
-Para descomprimirlas, pueden utilizar:
+Para descomprimir las partes y obtener el **.vdi**, pueden utilizar:
 
-| SO      | Software                                                                                     |
-|---------|----------------------------------------------------------------------------------------------|
-| Windows | [WinRAR](https://www.win-rar.com/)                                                           |
-| Linux   | [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html) `sudo apt install p7zip-full` |
-| MacOS   | [The Unarchiver](https://theunarchiver.com/)                                                 |
+- En **Windows**: [7-Zip](https://www.7-zip.org/)
+
+- En **MacOS**: [The Unarchiver](https://theunarchiver.com/)
+
+- En **Linux**: [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
+
+```bash:no-line-numbers
+sudo apt install p7zip-full
+```
+
 
 
 ::: warning ADVERTENCIA
