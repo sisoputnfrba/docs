@@ -11,7 +11,6 @@
   .pdf-link {
     display: grid;
     width: 100%;
-    justify-content: end;
     text-decoration: none;
     margin-top: 1rem;
   }
