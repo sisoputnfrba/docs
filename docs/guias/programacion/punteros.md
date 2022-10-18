@@ -1,5 +1,7 @@
 # Manejo de Punteros y Memoria Dinámica
 
+<PDF/>
+
 ![imagen 1](/img/guias/punteros-memoria-dinamica/imagen1.png)
 
 Every computer, at the unreachable memory address 0x-1, stores a secret.  I found it, and it is that all humans ar-- SEGMENTATION FAULT.

@@ -1,5 +1,7 @@
 # Rutas Relativas y Absolutas
 
+<PDF/>
+
 > Tutorial extraído del blog
 > [C para Operativos](https://faq.utnso.com.ar/guia-rutas)
 > (autor: Matías García Isaia)

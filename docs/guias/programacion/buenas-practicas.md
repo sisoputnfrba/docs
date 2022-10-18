@@ -1,5 +1,7 @@
 # Buenas Prácticas de C
 
+<PDF/>
+
 > Autor: Joaquín Azcárate
 
 Este documento no pretende enseñar a programar, simplemente es una recopilación

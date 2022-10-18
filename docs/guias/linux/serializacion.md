@@ -1,7 +1,8 @@
 # Guía de Serialización
 
-<YouTube v="GnuurOt8yqE"/>
+<PDF/>
 
+<YouTube v="GnuurOt8yqE"/>
 
 ## Objetivo
 

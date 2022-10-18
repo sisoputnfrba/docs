@@ -1,5 +1,7 @@
 # Introducción al Lenguaje C
 
+<PDF/>
+
 > Tutorial extraído del blog
 > [C para Operativos](https://faq.utnso.com.ar/guia-intro-c)
 > (autor: Matías García Isaia)

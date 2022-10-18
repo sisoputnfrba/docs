@@ -101,6 +101,7 @@ export default defineUserConfig({
     registerComponentsPlugin({
       components: {
         YouTube: path.resolve(__dirname, './components/YouTube.vue'),
+        PDF: path.resolve(__dirname, './components/PDF.vue'),
       },
     }),
   ]

@@ -1,5 +1,7 @@
 # Cómo hacer una consola interactiva
 
+<PDF/>
+
 > Post extraído de
 > [Readline: La biblioteca de GNU que hace devs felices](https://faq.utnso.com.ar/guia-consola-interactiva)
 > (autor: Tomás Ferraro)

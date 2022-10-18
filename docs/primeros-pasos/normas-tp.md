@@ -1,5 +1,7 @@
 # Normas del Trabajo Práctico
 
+<PDF/>
+
 ## Introducción
 
 La parte práctica de la materia estará compuesta por un trabajo práctico grupal

@@ -26,3 +26,15 @@ html.dark {
   --c-danger-text: #ffebec;
   --c-details-bg: #323843;
 }
+
+@media print {
+  .navbar,
+  .sidebar,
+  .sidebar-mask,
+  .page-edit,
+  .page-nav,
+  .page-meta,
+  .pdf-link {
+    display: none;
+  }
+}

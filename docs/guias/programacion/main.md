@@ -1,5 +1,7 @@
 # Argumentos para el main
 
+<PDF/>
+
 ![meme](/img/guias/programacion/main/meme.jpg)
 
 ## Introducción

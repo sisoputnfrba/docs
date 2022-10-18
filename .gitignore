@@ -5,3 +5,4 @@ src/.vuepress/dist
 .vscode
 .idea
 .obsidian
+dist

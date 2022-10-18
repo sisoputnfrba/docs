@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "export-pdf": "press-export-pdf export docs"
   },
   "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
@@ -17,6 +18,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@condorhero/vuepress-plugin-export-pdf-v2": "^2.0.1",
     "@vuepress/plugin-back-to-top": "^2.0.0-beta.51",
     "@vuepress/plugin-medium-zoom": "^2.0.0-beta.51",
     "@vuepress/plugin-palette": "^2.0.0-beta.51",
