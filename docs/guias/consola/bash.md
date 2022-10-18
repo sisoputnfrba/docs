@@ -1,6 +1,6 @@
-# Guía de uso de Bash
-
 <PDF/>
+
+# Guía de uso de Bash
 
 La intención de esta guía es contar con un "machete" de comandos de la consola
 de Linux que suelen ser útiles a lo largo de la cursada y en las entregas.

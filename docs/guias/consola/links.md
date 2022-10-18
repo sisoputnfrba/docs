@@ -1,6 +1,6 @@
-# Hard Links y Soft Links
-
 <PDF/>
+
+# Hard Links y Soft Links
 
 > Tutorial extraído del blog
 > [C para Operativos](https://faq.utnso.com.ar/guia-links)

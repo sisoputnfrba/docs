@@ -1,7 +1,7 @@
+<PDF/>
+
 # Guía de Sockets
 _... o cómo conectar dos procesos sin morir en el intento_
-
-<PDF/>
 
 <YouTube v="V0KFn9w62sY"/>
 

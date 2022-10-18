@@ -1,6 +1,6 @@
-# Manejo de Punteros y Memoria Dinámica
-
 <PDF/>
+
+# Manejo de Punteros y Memoria Dinámica
 
 ![imagen 1](/img/guias/punteros-memoria-dinamica/imagen1.png)
 

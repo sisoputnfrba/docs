@@ -1,7 +1,6 @@
-# Debugging en Eclipse
-
-
 <PDF/>
+
+# Debugging en Eclipse
 
 > Autor del video: Marco Gatti
 
