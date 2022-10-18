@@ -3,7 +3,7 @@ import { defineUserConfig } from '@condorhero/vuepress-plugin-export-pdf-v2';
 export default defineUserConfig({
   routePatterns: [
     "!/**",
-    "/{{}}.html"
+    "docs/consultas.html"
   ],
   pdfOptions: {
     format: 'A4',
@@ -15,5 +15,5 @@ export default defineUserConfig({
       left: '1cm',
     }
   },
-  outFile: 'docs/.vuepress/public/pdf/{{}}.pdf',
+  outFile: 'docs/consultas.pdf',
 });
