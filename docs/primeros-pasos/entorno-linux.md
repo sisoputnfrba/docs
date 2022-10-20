@@ -67,16 +67,27 @@ las pruebas.
 
 Para descomprimir las partes y obtener el **.vdi**, pueden utilizar:
 
-- En **Windows**: [7-Zip](https://www.7-zip.org/)
+<CodeGroup>
+<CodeGroupItem title="Windows">
 
-- En **MacOS**: [The Unarchiver](https://theunarchiver.com/)
+7-Zip: [7-zip.org](https://www.7-zip.org/)
 
-- En **Linux**: [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
+</CodeGroupItem>
+<CodeGroupItem title="Linux">
 
-```bash:no-line-numbers
+7z: [Ubuntu Manpage - 7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
+
+```bash
 sudo apt install p7zip-full
 ```
 
+</CodeGroupItem>
+<CodeGroupItem title="MacOS">
+
+The Unarchiver: [theunarchiver.com](https://theunarchiver.com/)
+
+</CodeGroupItem>
+</CodeGroup>
 
 
 ::: warning ADVERTENCIA
