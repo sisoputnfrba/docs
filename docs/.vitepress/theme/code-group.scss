@@ -1,0 +1,48 @@
+.code-group {
+  border: 1px solid var(--vp-c-indigo);
+  border-radius: 10px;
+  background-color: var(--vp-c-indigo-dimm-3);
+}
+
+.code-group .tabs-header {
+  border-radius: 8px 8px 0 0;
+  padding: 0 12px 0 12px;
+  background-color: var(--vp-c-indigo);
+  transition: background-color 0.5s;
+}
+
+.code-group .tabs-header button {
+  padding: 6px 8px 6px 8px;
+  margin: 8px 0 8px 0;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.code-group .tabs-header button:hover {
+  color: var(--vp-c-gray-light-4);
+}
+
+.code-group .tabs-header button.active {
+  background-color: var(--vp-c-gray-dark-2);
+}
+
+.code-group .code-block {
+  display: none;
+}
+
+.code-group .code-block.active {
+  display: block;
+}
+
+.code-group .code-block.active p {
+  margin: 8px 0;
+  padding: 8px 16px 8px 16px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.vp-doc .code-group div[class*='language-'] {
+  border-radius: 0 0 8px 8px;
+  margin: 0;
+}
