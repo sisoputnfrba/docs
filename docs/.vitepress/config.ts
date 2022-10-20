@@ -29,5 +29,4 @@ export default defineConfig({
       md.use(MarkdownItFootnotePlugin);
     },
   },
-  ignoreDeadLinks: true, // TODO: Quitar
 });
