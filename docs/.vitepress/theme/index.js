@@ -1,11 +1,11 @@
 import DefaultTheme from 'vitepress/theme';
-import CodeGroup from '../components/CodeGroup.ts';
-import CodeGroupItem from '../components/CodeGroupItem.vue';
-import YouTube from '../components/YouTube.vue';
+import CodeGroup from './components/CodeGroup.ts';
+import CodeGroupItem from './components/CodeGroupItem.vue';
+import YouTube from './components/YouTube.vue';
 
-import './custom.scss';
-import './code-group.scss';
-import './print.scss';
+import './styles/custom.scss';
+import './styles/code-group.scss';
+import './styles/print.scss';
 
 export default {
   ...DefaultTheme,

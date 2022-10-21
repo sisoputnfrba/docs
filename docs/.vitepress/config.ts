@@ -1,7 +1,7 @@
 import MarkdownItFootnotePlugin from 'markdown-it-footnote';
 import { defineConfig } from 'vitepress';
-import { navbar } from './theme/navbar';
-import { sidebar } from './theme/sidebar';
+import { navbar } from './configs/navbar';
+import { sidebar } from './configs/sidebar';
 
 export default defineConfig({
   lang: 'es-AR',
