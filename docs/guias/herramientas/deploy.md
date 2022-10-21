@@ -45,7 +45,7 @@ a querer en su TP.
 ::: warning
 
 Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
-proporcionamos a través de los [links de descarga](vms#ubuntu-server), por lo
+proporcionamos a través de los [links de descarga](/recursos/vms#ubuntu-server), por lo
 que van a tener que aprender un mínimo de uso de la consola.
 
 :::
