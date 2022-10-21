@@ -35,6 +35,10 @@ html.dark {
   .page-nav,
   .page-meta,
   .pdf-link {
-    display: none;
+    display: none !important;
+  }
+
+  div {
+    page-break-inside: avoid;
   }
 }

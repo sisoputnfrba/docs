@@ -8,16 +8,9 @@
 
 set -e
 
-teardown() {
-  sed -i 's|'$1'|{{}}|g' ./docs/.vuepress/vuepress-pdf.config.ts
-  exit 1
-}
-
-pdf() {
+pdfexport() {
   echo "Exporting $1"
-  sed -i 's|{{}}|'$1'|g' ./docs/.vuepress/vuepress-pdf.config.ts
-  npm run export-pdf || teardown $1
-  sed -i 's|'$1'|{{}}|g' ./docs/.vuepress/vuepress-pdf.config.ts
+  node scripts/pdf-export.js $1 || exit 1
   echo "Exported $1"
 }
 
@@ -34,9 +27,8 @@ then
     | grep -v "consultas" \
     | grep -v "legacy" \
     | while read f ; do
-    pdf $f
+    pdfexport $f
   done
 else
-  pdf $1
+  pdfexport $1
 fi
-
