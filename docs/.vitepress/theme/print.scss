@@ -1,0 +1,12 @@
+@media print {
+  .VPNav,
+  .VPLocalNav,
+  .VPSidebar,
+  .VPDocFooter {
+    display: none !important;
+  }
+
+  div {
+    page-break-inside: avoid;
+  }
+}

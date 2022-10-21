@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "build:pdf": "./scripts/pdf-export.sh"
   },
   "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
@@ -19,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "markdown-it-footnote": "^3.0.3",
+    "puppeteer": "^19.0.0",
     "sass": "^1.55.0",
     "vitepress": "^1.0.0-alpha.13",
     "vue": "^3.2.38"

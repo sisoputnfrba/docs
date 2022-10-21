@@ -5,6 +5,7 @@ import YouTube from '../components/YouTube.vue';
 
 import './custom.scss';
 import './code-group.scss';
+import './print.scss';
 
 export default {
   ...DefaultTheme,
