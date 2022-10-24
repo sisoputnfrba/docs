@@ -32,14 +32,10 @@ desarrollo.**
 **Hashes MD5**
 
 ```:no-line-numbers
-xfce.7z.001 - 90e609647d597eff53c0c8be94cc216d
-xfce.7z.002 - e466ebdd4b217d983c85a5663617378d
-xfce.7z.003 - 11173889e9e31d6222b397acbd6bece4
-xfce.7z.004 - b1ed1a8951682a851a55db0d7e069a3f
-xfce.7z.005 - fef454a76b3085f956d334e9873f3218
-xfce.7z.006 - b8e838628017540e6148b75c5bf9d6a4
+Grafica.zip.001 - 5ee3c35d23d922943977b54e24d218b4
+Grafica.zip.002 - 60691da5303b1e1763ef20b2701208b8
 
-xfce.vdi - 4b59dc884bac893c1c4f1c019d0ba9ba
+Grafica.vdi - b417a5eda3d50de7a03a0c4c6114006e
 ```
 
 ::: tip
@@ -60,13 +56,11 @@ Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 **Hashes MD5**
 
 ```:no-line-numbers
-Server.7z.001 - 69f8669c216f55e53cecded6cb7418d7
-Server.7z.002 - d3de0e964323a6a13fa60544e2feb493
-Server.7z.003 - d7d2b7927e87ae87b9d64e977eb0df71
-Server.7z.004 - d0aeb26926d413ddfaadc8101690f506
+Server.zip.001 - b1253de2525afe071f14ce9fea6b9db2
 
-md5 Server.vdi - 640de079460d1994b22c31fa709f1856
+Server.vdi - 503624dc5c96c76310ed7ea1fcfe5a06
 ```
+
 
 ::: tip TIP 1
 
