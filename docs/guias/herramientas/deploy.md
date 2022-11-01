@@ -131,19 +131,33 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
    makefiles[^4] ya que no está permitido subir archivos binarios al repo).
 4. Llenar archivos de config con la IP y el Puerto de cada módulo.
 
-::: tip
+Una vez tengan todo listo, avísennos y comenzamos.
 
-Para ayudar un poco, les dejamos:
+::: tip TIP
 
-- [Algunos comandos que muy probablemente les van a servir](/guias/consola/bash).
-- Un video explicando cómo redirigir puertos por SSH desde una VM, para ir
-  familiarizándose con estas herramientas desde la comodidad de la casa.
-
-<YouTube v="SDeqYSxFd10"/>
+Para ayudar un poco, les dejamos
+[algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
 
 :::
 
-Una vez tengan todo listo, avísennos y comenzamos.
+### Cómo practicar el despliegue en local
+
+Desde sus computadoras, pueden armar una red local de VMs siguiendo estos pasos:
+
+1. Ir a la configuración de la Ubuntu Server y en el apartado de "Network"
+elegir el "Bridged Adapter" (en español, "Adaptador Puente"):
+
+![bridged adapter](/img/guias/herramientas/deploy/deploy-04.png)
+
+2. Hacer click derecho en la VM > "Clone..." y seguir los pasos para clonar la
+VM. Recomendamos usar la opción "Linked clone" ya que el proceso de clonado es
+más rápido y ocupa menos espacio:
+
+![linked clone](/img/guias/herramientas/deploy/deploy-05.png)
+
+Una vez hecho esto, pueden usar el comando
+[`ifconfig`](/guias/consola/bash.html#ifconfig) para consultar la IP de ambas VMs y
+configurar los módulos.
 
 ## Paso 3: Día E (de entrega) - Obligatorio
 
