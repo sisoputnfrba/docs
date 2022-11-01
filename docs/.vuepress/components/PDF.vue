@@ -12,12 +12,18 @@
     display: grid;
     width: 100%;
     text-decoration: none;
-    margin-top: 1rem;
+    justify-content: start;
   }
   .pdf-icon {
     display: inline-block;
     width: 16.3px;
     height: 13.45px;
     overflow: hidden;
+  }
+
+  @media (min-width: 960px) {
+    .pdf-link {
+      margin-top: 2rem;
+    }
   }
 </style>
