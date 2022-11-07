@@ -2,7 +2,7 @@
   <div class="pdf-link">
     <a :href="`/pdf${$page.path.replace('.html', '.pdf')}`">
       <img class="pdf-icon" src="/img/PDF.svg" alt="PDF" />
-      Descargar PDF
+      Ver en PDF (beta)
     </a>
   </div>
 </template>
