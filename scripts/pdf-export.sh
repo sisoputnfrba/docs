@@ -3,14 +3,14 @@
 # Usage:
 #   Export all: export-pdf.sh
 #   Export single: export-pdf.sh <relative_url>
-# Example: 
+# Example:
 #   export-pdf.sh primeros-pasos/tp0
 
 set -e
 
 pdfexport() {
   echo "Exporting $1"
-  node scripts/pdf-export.js $1 || exit 1
+  node scripts/pdfExport.js $1 || exit 1
   echo "Exported $1"
 }
 

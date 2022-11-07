@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "build:pdf": "./scripts/pdf-export.sh"
+    "build:pdf": "bash scripts/pdf-export.sh"
   },
   "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
