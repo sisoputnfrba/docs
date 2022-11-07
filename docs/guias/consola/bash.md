@@ -307,6 +307,19 @@ lsof -i :8080
 
 <br>
 
+### `loadkeys`
+
+Permite cambiar el layout del teclado. Por ejemplo, para cambiarlo al Inglés de
+Estados Unidos vamos a ejecutar:
+
+```bash:no-line-numbers
+sudo loadkeys us
+```
+
+El cambio de layout solo va a afectar la sesión actual, por lo que no hace falta
+hacer nada para revertirlo, solamente alcanza con cerrar la terminal actual y
+abrir otra.
+
 ## Redirecciones y pipes[^4]
 
 Todos los procesos reciben información via la _entrada_ estándar (o **stdin**) y
