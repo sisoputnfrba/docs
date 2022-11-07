@@ -38,6 +38,10 @@ html.dark {
     display: none !important;
   }
 
+  .code-group-item {
+    display: block;
+  }
+
   div {
     page-break-inside: avoid;
   }
