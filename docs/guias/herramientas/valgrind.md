@@ -651,7 +651,7 @@ interrumpir un proceso.
 Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still 
 reachable", para los amigos):
 
-```
+```log:no-line-numbers
 ==111884== 
 ==111884== HEAP SUMMARY:
 ==111884==     in use at exit: 22,730 bytes in 17 blocks
@@ -705,7 +705,7 @@ podría terminar el proceso abruptamente.
 Estos errores son muy puntuales y solamente hemos visto que ocurren en la línea
 donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 
-```log
+```log:no-line-numbers
 136 bytes in 1 blocks are possibly lost in loss record 15 of 41
 ==5672== at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
 ==5672== by 0x4011726: allocate_dtv (dl-tls.c:322)
