@@ -672,18 +672,18 @@ reachable", para los amigos):
 
 Cuando un proceso finaliza, es importante tener en cuenta que el sistema
 operativo se encarga de liberar todos los recursos que ese proceso tenía 
-asignados. Esto significa que esa memoria que nos quedaba como "Still
-Reacheable" no _se pierde_, sino que el sistema operativo la libera. 
+asignados. Esto significa que esa memoria que nos quedaba como "still
+reachable" no _se pierde_, sino que el sistema operativo la libera. 
 
 `valgrind` nos avisa para que sepamos que está ahí, pero no es un error 
-_per se_.
+_per sé_.
 
 ::: tip
 
 De hecho, los invitamos a ejecutar los comandos más comunes de consola (`echo`, 
-`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que todos dejan mucha
-memoria ahí. ¿Por qué? ¡Porque no necesitan hacer `free()` si el proceso va a 
-finalizar y el Sistema Operativo va a liberarlo de todas formas! 
+`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que casi todos dejan 
+mucha memoria ahí. ¿Por qué? ¡Porque no necesitan hacer `free()`, si el proceso
+va a finalizar y el sistema operativo va a liberar esa memoria de todas formas! 
 
 De hecho, omitir esos `free()` termina siendo una optimización para que el
 comando finalice más rápido.
@@ -718,11 +718,11 @@ donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 Probablemente la biblioteca `pthread` incluya algún manejo de
 [señales](https://faq.utnso.com.ar/seniales) para finalizar todos los hilos
 satisfactoriamente, y en el medio se habrán omitido algún que otro `free()` para
-que el procedimiento sea más eficiente. 
+que el procedimiento sea más performante. 
 
 Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el 
-algoritmo que finaliza el proceso, no es un memory leak real por lo que no es
-necesario tenerlo en cuenta.
+algoritmo que finaliza el proceso, no es un memory leak real, por lo que no es
+necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 
 ## Cierre
 
