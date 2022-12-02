@@ -250,8 +250,11 @@ while (1) {
 
 Entonces, de esta manera estamos creando un hilo por cada conexión nueva entrante, y ese hilo tendrá comunicación únicamente con el cliente cuyo socket le estemos pasando a través de `pthread_create()`.
 
-El malloc lo realizamos debido a que como pthread recibe una posición de memoria, si usaramos siempre el mismo int, al acceder a su posición de memoria su valor se habría pisado, y por lo tanto todos los hilos tendrían siempre el mismo socket (y probablemente generaría condiciones de carrera).
+::: warning IMPORTANTE
 
+El `malloc()` lo realizamos debido a que, como `pthread_create()` recibe una posición de memoria, si le pasáramos un puntero a un `int` en el stack usando `&`, en el momento en el que el hilo quiera acceder al valor éste se habrá pisado luego del siguiente `accept()`. Entonces todos los hilos que creemos estarían usando siempre el mismo socket (y eso probablemente genere condiciones de carrera).
+
+:::
 
 ## Contenido complementario
 
