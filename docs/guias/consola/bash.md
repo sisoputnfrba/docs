@@ -149,6 +149,23 @@ tail -f kernel.log
 
 ::: tip TIP 3
 
+También podemos lograr lo mismo que en el tip anterior usando `less` con el flag
+`+F`:
+
+```bash:no-line-numbers
+less +F kernel.log
+```
+
+La ventaja respecto a `tail -f` es que con `Ctrl`+`C` podemos pausar el
+monitoreo para scrollear por el archivo usando las flechas, lo cual es útil si
+estamos en una consola que no permite scroll con el mouse.
+
+Con `Shift`+`F` podemos continuar con el seguimiento que habíamos pausado.
+
+:::
+
+::: tip TIP 4
+
 Una forma más bonita de usar el comando `hexdump` es junto con el flag `-C`, el
 cual agrega una columna a la derecha imprimiendo el contenido del archivo en
 ASCII.
