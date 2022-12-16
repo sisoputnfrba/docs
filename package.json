@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs",
-    "build:pdf": "./scripts/pdf-export.sh"
+    "serve": "vitepress serve docs"
   },
   "repository": "https://github.com/sisoputnfrba/so-docs",
   "authors": {
