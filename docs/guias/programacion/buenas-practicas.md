@@ -129,26 +129,24 @@ esta la directiva, y después compilar eso en un archivo masivo.
 Ahora bien, esto trae un par de problemas _interesantes_, como tener estos dos
 archivos:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c
+```c [corredor.c]
 #include "sumar.c"
 
 void main() {
     sumarTres(5);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 De intentar compilar en forma automática esto, van a ver un error parecido a:
 
@@ -167,10 +165,9 @@ gcc corredor.c sumar.c -o corredor
 Entonces, básicamente estamos tratando de compilar dos archivos de esta forma
 (una vez pasado el preprocesador):
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1-3}
+```c{1-3} [corredor.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -179,16 +176,15 @@ void main() {
     sumarTres(5);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 Tiene mucho sentido que nos diga que esto no puede ser así, porque `sumarTres`
 está dos veces.
@@ -211,10 +207,9 @@ de un archivo como encabezado (aka: _header_), por lo que tendríamos estos
 **tres** archivos:
 
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1}
+```c{1} [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -222,24 +217,22 @@ void main() {
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
 
-```c
+
+```c [sumar.h]
 int sumarTres(int numero);
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 Ahora sí podemos compilar por separado cada .c, que genera dos objetos
 diferentes, y al final los "pega" todos juntos y nos da un ejecutable. Si
@@ -263,10 +256,9 @@ imagina. Para esto C nos trae otras directivas del preprocesador: `#define`,
 
 Esto nos permite tener este código en nuestro archivo:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1}
+```c{1} [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -274,19 +266,17 @@ void main() {
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
 
-```c{1-2,6}
+
+```c{1-2,6} [sumar.h]
 #ifndef SUMAR_H_
 #define SUMAR_H_
 
@@ -295,8 +285,8 @@ int sumarTres(int numero);
 #endif
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 Analizemos un poco el codigo agregado de `sumar.h`:
 
@@ -341,10 +331,9 @@ El drama es donde ponerlo. las alternativas son:
 Las tres formas tienen problemas, pero hay una más facil de arreglar que las
 otras:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c
+```c [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -354,10 +343,9 @@ void main() {
     sumarTres(cinco);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c{1}
+
+```c{1} [sumar.c]
 #include "sumar.h"
 
 t_numero sumarTres(t_numero numero) {
@@ -366,10 +354,9 @@ t_numero sumarTres(t_numero numero) {
     return numero;
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
 
-```c{4-7}
+
+```c{4-7} [sumar.h]
 #ifndef SUMAR_H_
 #define SUMAR_H_
 
@@ -383,8 +370,8 @@ t_numero sumarTres(t_numero numero);
 #endif
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 Con algo de suerte ahora es un poco más evidente por qué ponemos las guardas, y
 cómo es que varios archivos pueden incluir a uno.

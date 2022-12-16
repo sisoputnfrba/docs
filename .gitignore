@@ -2,6 +2,7 @@ node_modules
 .temp
 .cache
 docs/.vitepress/dist
+docs/.vitepress/cache
 .vscode
 .idea
 .obsidian

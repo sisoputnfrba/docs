@@ -67,27 +67,15 @@ las pruebas.
 
 Para descomprimir las partes y obtener el **.vdi**, pueden utilizar:
 
-<CodeGroup>
-<CodeGroupItem title="Windows">
+- Windows: [7-zip.org](https://www.7-zip.org/)
 
-7-Zip: [7-zip.org](https://www.7-zip.org/)
-
-</CodeGroupItem>
-<CodeGroupItem title="Linux">
-
-7z: [Ubuntu Manpage - 7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
+- Linux: [Ubuntu Manpage - 7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
 
 ```bash
 sudo apt install p7zip-full
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="MacOS">
-
-The Unarchiver: [theunarchiver.com](https://theunarchiver.com/)
-
-</CodeGroupItem>
-</CodeGroup>
+- MacOS: [theunarchiver.com](https://theunarchiver.com/)
 
 
 ::: warning ADVERTENCIA
@@ -107,29 +95,21 @@ que aparece en la misma página, siguiendo este video:
 
 Pueden copiar el comando de acá:
 
-<CodeGroup>
-<CodeGroupItem title="Windows">
+::: code-group
 
-```
+```cmd [Windows]
 certutil -hashfile [archivo] md5
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="Linux">
-
-```
+```bash [Linux]
 md5sum [archivo]
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="MacOS">
-
-```
+```bash [MacOS]
 md5 [archivo]
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 ## Crear la máquina virtual
 

@@ -152,7 +152,7 @@ tail -f kernel.log
 También podemos lograr lo mismo que en el tip anterior usando `less` con el flag
 `+F`:
 
-```bash:no-line-numbers
+```bash
 less +F kernel.log
 ```
 
@@ -329,7 +329,7 @@ lsof -i :8080
 Permite cambiar el layout del teclado. Por ejemplo, para cambiarlo al Inglés de
 Estados Unidos vamos a ejecutar:
 
-```bash:no-line-numbers
+```bash
 sudo loadkeys us
 ```
 

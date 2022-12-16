@@ -14,10 +14,9 @@ asociado (el current working directory, que le llaman). La idea es marcar un
 directorio como el "actual" en que se encuentra ese proceso. Desde el programa
 podemos acceder a ese valor usando la función `getcwd()`:
 
-<CodeGroup>
-<CodeGroupItem title="cwd.c">
+::: code-group
 
-```c
+```c [cwd.c]
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -30,8 +29,7 @@ int main(void) {
 }
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 Guardemos el código en nuestro directorio home (`/home/utnso`), compilemos y
 ejecutemos:

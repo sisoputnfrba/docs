@@ -642,21 +642,21 @@ que la syscall está recibiendo un valor no inicializado[^6].
 
 ## Los leaks que no son
 
-Antes de cerrar esta guía, nos gustaría mencionar un par de errores muy comunes 
+Antes de cerrar esta guía, nos gustaría mencionar un par de errores muy comunes
 a la hora de interpretar el output de Valgrind, que suelen ocurrir al momento de
-interrumpir un proceso. 
+interrumpir un proceso.
 
 ### Still reachable
 
-Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still 
+Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still
 reachable", para los amigos):
 
-```log:no-line-numbers
-==111884== 
+```
+==111884==
 ==111884== HEAP SUMMARY:
 ==111884==     in use at exit: 22,730 bytes in 17 blocks
 ==111884==   total heap usage: 54 allocs, 37 frees, 62,285 bytes allocated
-==111884== 
+==111884==
 ==111884== LEAK SUMMARY:
 ==111884==    definitely lost: 0 bytes in 0 blocks
 ==111884==    indirectly lost: 0 bytes in 0 blocks
@@ -665,25 +665,25 @@ reachable", para los amigos):
 ==111884==         suppressed: 0 bytes in 0 blocks
 ==111884== Reachable blocks (those to which a pointer was found) are not shown.
 ==111884== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==111884== 
+==111884==
 ==111884== For lists of detected and suppressed errors, rerun with: -s
 ==111884== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 Cuando un proceso finaliza, es importante tener en cuenta que el sistema
-operativo se encarga de liberar todos los recursos que ese proceso tenía 
+operativo se encarga de liberar todos los recursos que ese proceso tenía
 asignados. Esto significa que esa memoria que nos quedaba como "still
-reachable" no _se pierde_, sino que el sistema operativo la libera. 
+reachable" no _se pierde_, sino que el sistema operativo la libera.
 
-`valgrind` nos avisa para que sepamos que está ahí, pero no es un error 
+`valgrind` nos avisa para que sepamos que está ahí, pero no es un error
 _per sé_.
 
 ::: tip
 
-De hecho, los invitamos a ejecutar los comandos más comunes de consola (`echo`, 
-`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que casi todos dejan 
+De hecho, los invitamos a ejecutar los comandos más comunes de consola (`echo`,
+`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que casi todos dejan
 mucha memoria ahí. ¿Por qué? ¡Porque no necesitan hacer `free()`, si el proceso
-va a finalizar y el sistema operativo va a liberar esa memoria de todas formas! 
+va a finalizar y el sistema operativo va a liberar esa memoria de todas formas!
 
 De hecho, omitir esos `free()` termina siendo una optimización para que el
 comando finalice más rápido.
@@ -693,11 +693,11 @@ comando finalice más rápido.
 Entonces, ¿cuáles son los leaks **reales**?
 
 Los leaks reales son la memoria a la que uno deja de tener acceso **durante la
-ejecución del proceso**. Eso es problemático porque mientras que el proceso siga 
+ejecución del proceso**. Eso es problemático porque mientras que el proceso siga
 en ejecución, tu proceso va a tener asignada esa memoria sin poder aprovecharla.
 
 Incluso, si la ejecución de tu proceso durara lo suficiente, se podría superar
-el límite de memoria permitido para el proceso, y entonces el sistema operativo 
+el límite de memoria permitido para el proceso, y entonces el sistema operativo
 podría terminar el proceso abruptamente.
 
 ### Possibly lost (el caso de `pthread_create`)
@@ -705,7 +705,7 @@ podría terminar el proceso abruptamente.
 Estos errores son muy puntuales y solamente hemos visto que ocurren en la línea
 donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 
-```log:no-line-numbers
+```
 136 bytes in 1 blocks are possibly lost in loss record 15 of 41
 ==5672== at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
 ==5672== by 0x4011726: allocate_dtv (dl-tls.c:322)
@@ -718,9 +718,9 @@ donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 Probablemente la biblioteca `pthread` incluya algún manejo de
 [señales](https://faq.utnso.com.ar/seniales) para finalizar todos los hilos
 satisfactoriamente, y en el medio se habrán omitido algún que otro `free()` para
-que el procedimiento sea más performante. 
+que el procedimiento sea más performante.
 
-Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el 
+Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el
 algoritmo que finaliza el proceso, no es un memory leak real, por lo que no es
 necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 

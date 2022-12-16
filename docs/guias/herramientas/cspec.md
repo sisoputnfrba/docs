@@ -181,18 +181,64 @@ Supongamos que hicimos un par de funciones de manejo de archivos y las queremos
 testear. El código a probar está a continuación. Básicamente es una función que
 cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
-<CodeGroup>
-<CodeGroupItem title="lector.h">
+::: code-group
 
-<<< @/snippets/guias/programacion/cspec/lector.h.c{4}
+```c{4} [lector.h]
+#ifndef LECTOR_H_
+#define LECTOR_H_
 
-</CodeGroupItem>
-<CodeGroupItem title="lector.c">
+int archivo_contar(char* path, char c);
 
-<<< @/snippets/guias/programacion/cspec/lector.c{29}
+#endif
+```
 
-</CodeGroupItem>
-</CodeGroup>
+```c{29} [lector.c]
+#include "lector.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+
+int obtener_size(char* path) {
+    struct stat stat_file;
+    stat(path, &stat_file);
+    return stat_file.st_size;
+}
+
+char* leer(char* path) {
+    FILE* archivo = fopen(path, "r");
+    if (archivo == NULL) {
+        return NULL;
+    }
+    int size = obtener_size(path);
+
+    char* texto = malloc(size + 1);
+    fread(texto, size, sizeof(char), archivo);
+    fclose(archivo);
+    texto[size] = '\0';
+
+    return texto;
+}
+
+int archivo_contar(char* path, char c) {
+    char* contenido = leer(path);
+    if (contenido == NULL) {
+        return - 1;
+    }
+
+    int cantidad = 0;
+    for (int i = 1; i < strlen(contenido); i++) {
+        if (contenido[i] == c) {
+            cantidad++;
+        }
+    }
+
+    return cantidad;
+}
+```
+
+:::
 
 Si tuviéramos un archivo **algo.txt** con el contenido: **hola mundo**, entonces
 `archivo_contar("algo.txt" , 'o')` devolvería **2**, ya que hay dos letras `o`
