@@ -2,7 +2,6 @@ import DefaultTheme from 'vitepress/theme';
 import YouTube from './components/YouTube.vue';
 
 import './styles/custom.scss';
-import './styles/code-group.scss';
 import './styles/print.scss';
 
 export default {
