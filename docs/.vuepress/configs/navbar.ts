@@ -2,12 +2,21 @@ import type { NavbarConfig } from '@vuepress/theme-default';
 
 export const navbar: NavbarConfig = [
   {
-    text: 'Consultas',
-    link: '/consultas',
-  },
-  {
     text: 'Primeros pasos',
-    link: '/primeros-pasos/',
+    children: [
+      {
+        text: 'Primeros pasos',
+        children: [
+          '/primeros-pasos/intro',
+          '/primeros-pasos/donde-me-anoto',
+          '/primeros-pasos/normas-tp',
+          '/primeros-pasos/entorno-linux',
+          '/primeros-pasos/lenguaje-c',
+          '/primeros-pasos/entorno-desarrollo',
+          '/primeros-pasos/tp0',
+        ],
+      },
+    ],
   },
   {
     text: 'Guías',
@@ -102,31 +111,6 @@ export const navbar: NavbarConfig = [
     text: 'Recursos',
     children: [
       {
-        text: 'Links',
-        children: [
-          {
-            text: 'Blog de la cátedra',
-            link: 'https://faq.utnso.com.ar/blog'
-          },
-          {
-            text: 'Foro de consultas',
-            link: 'https://faq.utnso.com.ar/foro'
-          },
-          {
-            text: 'Sistema de Inscripciones',
-            link: 'https://faq.utnso.com.ar/inscripciones'
-          },
-          {
-            text: 'Campus Virtual',
-            link: 'https://faq.utnso.com.ar/cv'
-          },
-          {
-            text: 'Canal de YouTube',
-            link: 'https://faq.utnso.com.ar/youtube'
-          },
-        ]
-      },
-      {
         text: 'Recursos',
         children: [
           {
@@ -155,6 +139,10 @@ export const navbar: NavbarConfig = [
         text: 'Tutoriales',
         children: [
           {
+            text: 'Micro-repaso de Arquitectura',
+            link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
+          },
+          {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'
           },
@@ -169,5 +157,42 @@ export const navbar: NavbarConfig = [
         ]
       },
     ],
-  }
+  },
+
+  {
+    text: 'Contacto',
+    children: [
+      {
+        text: 'Consultas',
+        children: [
+          '/consultas',
+        ],
+      },
+      {
+        text: 'Links útiles',
+        children: [
+          {
+            text: 'Blog de la cátedra',
+            link: 'https://faq.utnso.com.ar/blog'
+          },
+          {
+            text: 'Foro de consultas',
+            link: 'https://faq.utnso.com.ar/foro'
+          },
+          {
+            text: 'Sistema de Inscripciones',
+            link: 'https://faq.utnso.com.ar/inscripciones'
+          },
+          {
+            text: 'Campus Virtual',
+            link: 'https://faq.utnso.com.ar/cv'
+          },
+          {
+            text: 'Canal de YouTube',
+            link: 'https://faq.utnso.com.ar/youtube'
+          },
+        ]
+      },
+    ]
+  },
 ]
