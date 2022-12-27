@@ -4,12 +4,42 @@ export type NavItem =
 
 export const navbar: NavItem[] = [
   {
-    text: 'Consultas',
-    link: '/consultas',
-  },
-  {
     text: 'Primeros pasos',
-    link: '/primeros-pasos/',
+    items: [
+      {
+        text: 'Primeros pasos',
+        items: [
+          {
+            text: 'Video de Introducción al TP',
+            link: '/primeros-pasos/intro'
+          },
+          {
+            text: '¿Dónde me anoto?',
+            link: '/primeros-pasos/donde-me-anoto'
+          },
+          {
+            text: 'Normas del Trabajo Práctico',
+            link: '/primeros-pasos/normas-tp'
+          },
+          {
+            text: 'Conseguir un entorno Linux',
+            link: '/primeros-pasos/entorno-linux'
+          },
+          {
+            text: 'Introducción al Lenguaje C',
+            link: '/primeros-pasos/lenguaje-c'
+          },
+          {
+            text: 'Preparar el entorno para desarrollar',
+            link: '/primeros-pasos/entorno-desarrollo'
+          },
+          {
+            text: 'Trabajo Práctico 0',
+            link: '/primeros-pasos/tp0'
+          },
+        ],
+      },
+    ],
   },
   {
     text: 'Guías',
@@ -104,23 +134,6 @@ export const navbar: NavItem[] = [
     text: 'Recursos',
     items: [
       {
-        text: 'Links importantes',
-        items: [
-          {
-            text: 'Blog de la cátedra',
-            link: 'https://faq.utnso.com.ar/blog'
-          },
-          {
-            text: 'Sistema de Inscripciones',
-            link: 'https://faq.utnso.com.ar/inscripciones'
-          },
-          {
-            text: 'Campus Virtual',
-            link: 'https://faq.utnso.com.ar/cv'
-          },
-        ]
-      },
-      {
         text: 'Recursos',
         items: [
           {
@@ -149,6 +162,10 @@ export const navbar: NavItem[] = [
         text: 'Tutoriales',
         items: [
           {
+            text: 'Micro-repaso de Arquitectura',
+            link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
+          },
+          {
             text: 'Mario Bash',
             link: 'https://faq.utnso.com.ar/mariobash'
           },
@@ -163,5 +180,44 @@ export const navbar: NavItem[] = [
         ]
       },
     ],
-  }
+  },
+  {
+    text: 'Contacto',
+    items: [
+      {
+        text: 'Consultas',
+        items: [
+          {
+            text: 'Help! I need somebody!',
+            link: '/consultas'
+          },
+        ],
+      },
+      {
+        text: 'Links útiles',
+        items: [
+          {
+            text: 'Blog de la cátedra',
+            link: 'https://faq.utnso.com.ar/blog'
+          },
+          {
+            text: 'Foro de consultas',
+            link: 'https://faq.utnso.com.ar/foro'
+          },
+          {
+            text: 'Sistema de Inscripciones',
+            link: 'https://faq.utnso.com.ar/inscripciones'
+          },
+          {
+            text: 'Campus Virtual',
+            link: 'https://faq.utnso.com.ar/cv'
+          },
+          {
+            text: 'Canal de YouTube',
+            link: 'https://faq.utnso.com.ar/youtube'
+          },
+        ]
+      },
+    ]
+  },
 ]
