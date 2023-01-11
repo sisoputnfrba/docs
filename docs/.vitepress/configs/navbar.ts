@@ -11,7 +11,7 @@ export const navbar: NavItem[] = [
         items: [
           {
             text: 'Video de Introducción al TP',
-            link: '/primeros-pasos/intro'
+            link: '/primeros-pasos/'
           },
           {
             text: '¿Dónde me anoto?',

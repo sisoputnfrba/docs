@@ -16,7 +16,7 @@ podemos acceder a ese valor usando la función `getcwd()`:
 
 ::: code-group
 
-```c [cwd.c]
+```c:line-numbers [cwd.c]
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

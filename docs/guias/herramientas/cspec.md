@@ -55,7 +55,7 @@ Antes que nada, vamos a definir algunos conceptos:
 
 #### Ejemplo en CSpec
 
-```c
+```c:line-numbers
 #include <cspecs/cspec.h>
 #include <string.h>
 
@@ -128,7 +128,7 @@ Botón derecho en el proyecto -> `Properties` -> `C/C++ Build` -> `Settings` ->
 Veamos este otro ejemplo, en donde agregamos una función de **inicialización**,
 otra de **limpieza**, y un test que **rompe**:
 
-```c
+```c:line-numbers
 #include <cspecs/cspec.h>
 #include <stdio.h>
 #include <string.h>
@@ -183,7 +183,7 @@ cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
 ::: code-group
 
-```c{4} [lector.h]
+```c:line-numbers{4} [lector.h]
 #ifndef LECTOR_H_
 #define LECTOR_H_
 
@@ -192,7 +192,7 @@ int archivo_contar(char* path, char c);
 #endif
 ```
 
-```c{29} [lector.c]
+```c:line-numbers{29} [lector.c]
 #include "lector.h"
 
 #include <stdlib.h>
@@ -259,7 +259,7 @@ Para arrancar, podemos probar la primer parte, cuando el archivo que recibe como
 parámetro no existe. Armamos un test case para eso, lo agregamos a un
 **context** y vemos que pasa correctamente:
 
-```c{8-11}
+```c:line-numbers{8-11}
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -278,7 +278,7 @@ context (probando_cosas) {
 Ahora hay que probar el caso más común, que dado un archivo que exista, lo lea y
 devuelva la cantidad correcta de ocurrencias:
 
-```c{13-19}
+```c:line-numbers{13-19}
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -310,7 +310,7 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-<<< @/snippets/guias/programacion/cspec/lector.c#snippet{36}
+<<< @/snippets/guias/programacion/cspec/lector.c#archivo_contar{8}
 
 ¡Genial! Encontramos un bug gracias al test. Luego de arreglarlo, vemos que está
 todo bien.
@@ -321,7 +321,7 @@ nuestro `archivo_contar(...)` de alguna forma mutara el archivo, los demás test
 no harían lo que esperamos. Hagamos un **before** que cree el archivo y un
 **after** que lo borre:
 
-```c{8,13,15,17-18,20-22,24-27,35}
+```c:line-numbers{8,13,15,17-18,20-22,24-27,35}
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>

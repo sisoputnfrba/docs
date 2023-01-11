@@ -5,8 +5,8 @@ import { sidebar } from './configs/sidebar';
 
 export default defineConfig({
   lang: 'es-AR',
-  title: 'VitePress',
-  description: 'Just playing around.',
+  title: 'SisOp Docs',
+  description: 'Todo lo necesario para hacer el TP de Sistemas Operativos.',
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
   themeConfig: {

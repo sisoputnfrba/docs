@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: SisOp Docs
-  tagline: En esta guía vas a encontrar todo lo necesario para hacer el TP de Sistemas Operativos.
+  tagline: En este sitio vas a encontrar todo lo necesario para hacer el TP de Sistemas Operativos.
   image:
     src: /img/logo.gif
     alt: Tux

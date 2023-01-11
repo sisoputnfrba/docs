@@ -193,7 +193,7 @@ int main(void) {
 
 Volvemos a correr Memcheck, ¡desapareció el error! Sin embargo...
 
-```bash{3,11}
+```txt{3,11}
 ==6789== HEAP SUMMARY:
 ==6789==     in use at exit: 5 bytes in 1 blocks
 ==6789==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -247,7 +247,7 @@ valgrind --leak-check=yes ./ej1
 
 Deberían ver algo similar a esto:
 
-```bash{1,3,6,12}
+```txt{1,3,6,12}
 ==5263== HEAP SUMMARY:
 ==5263==     in use at exit: 5 bytes in 1 blocks
 ==5263==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -339,7 +339,7 @@ a = 0
 
 Ahora tipeamos en consola `valgrind ./ej3` y nos muestra el siguiente mensaje:
 
-```bash{1,6}
+```txt{1,6}
 ==7079== Conditional jump or move depends on uninitialised value(s)
 ==7079==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==7079==    by 0x4E858D8: printf (printf.c:35)
@@ -531,7 +531,7 @@ dirección de memoria `a` y se guarda en `b`.
 
 Sin embargo, la realidad supera a la ficción...
 
-```bash{8-9}
+```txt{8-9}
 ==24112== Memcheck, a memory error detector
 ==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
@@ -562,7 +562,7 @@ descriptivo_.
 Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
 opción por parámetro para solucionar esto:
 
-```bash{3}
+```txt{3}
 ==24517== All heap blocks were freed -- no leaks are possible
 ==24517==
 ==24517== Use --track-origins=yes to see where uninitialised values come from
@@ -580,7 +580,7 @@ valgrind --track-origins=yes ./ej5
 Ahora sí, al final del stack trace nos aparecerá el _verdadero_ origen del
 warning:
 
-```bash{10-12,19-21}
+```txt{10-12,19-21}
 ==30024== Memcheck, a memory error detector
 ==30024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==30024== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
