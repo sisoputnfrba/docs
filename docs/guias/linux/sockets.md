@@ -216,7 +216,7 @@ Por último, e igual de importante que todo lo demás, los sockets una vez que n
 
 ## Multiplexando ando
 
-::: warning
+::: warning IMPORTANTE
 Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](/guias/linux/threads) antes de comenzar este apartado.
 :::
 
