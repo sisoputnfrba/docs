@@ -21,7 +21,7 @@
     "markdown-it-footnote": "^3.0.3",
     "puppeteer": "^19.0.0",
     "sass": "^1.55.0",
-    "vitepress": "1.0.0-alpha.33",
+    "vitepress": "1.0.0-alpha.36",
     "vue": "^3.2.38"
   }
 }
