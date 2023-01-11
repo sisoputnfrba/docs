@@ -288,7 +288,7 @@ int sumarTres(int numero);
 
 :::
 
-Analizemos un poco el codigo agregado de `sumar.h`:
+Analicemos un poco el codigo agregado de `sumar.h`:
 
 - Preguntamos si no esta definida `SUMAR_H_`. De no estar definida:
   - Definimos `SUMAR_H_`.
