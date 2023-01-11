@@ -14,6 +14,4 @@ hero:
     - theme: alt
       text: ¡Tengo una duda!
       link: /consultas
-
-footer: Made by sisoputnfrba with ❤️
 ---

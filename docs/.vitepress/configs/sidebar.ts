@@ -2,7 +2,6 @@ export interface SidebarGroup {
   text?: string
   items: SidebarItem[]
   collapsible?: boolean
-
   collapsed?: boolean
 }
 
@@ -12,9 +11,36 @@ export type SidebarItem =
 
 export const sidebar: SidebarGroup[] = [
   {
-    text: 'Primeros pasos',
+    text: 'Recursos',
     collapsible: true,
     collapsed: false,
+    items: [
+      {
+        text: 'Máquinas virtuales',
+        link: '/recursos/vms',
+      },
+      {
+        text: 'Enunciado del TP',
+        link: 'https://faq.utnso.com.ar/enunciado'
+      },
+      {
+        text: 'Commons Library',
+        link: 'https://faq.utnso.com.ar/commons'
+      },
+      {
+        text: 'Linux man pages',
+        link: 'https://man7.org/linux/man-pages/'
+      },
+      {
+        text: 'TPs Anteriores',
+        link: '/recursos/tps-anteriores',
+      },
+    ]
+  },
+  {
+    text: 'Primeros pasos',
+    collapsible: true,
+    collapsed: true,
     items: [
       {
         text: 'Video de Introducción al TP',
@@ -49,7 +75,7 @@ export const sidebar: SidebarGroup[] = [
   {
     text: 'Consola de Linux y Git',
     collapsible: true,
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Guía de uso de Bash',
@@ -68,11 +94,11 @@ export const sidebar: SidebarGroup[] = [
   {
     text: 'Programación en C',
     collapsible: true,
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Manejo de Punteros y Memoria Dinámica',
-        link: '/guias/programacion/punteros'
+        link: '/guias/programacion/punteros',
       },
       {
         text: 'Argumentos para el main',
@@ -93,9 +119,9 @@ export const sidebar: SidebarGroup[] = [
     ],
   },
   {
-    text: 'Uso de syscalls de Linux',
+    text: 'Syscalls de Linux',
     collapsible: true,
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Guía de Sockets',
@@ -118,7 +144,7 @@ export const sidebar: SidebarGroup[] = [
   {
     text: 'Herramientas útiles',
     collapsible: true,
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Debugging en Eclipse',
@@ -139,18 +165,24 @@ export const sidebar: SidebarGroup[] = [
     ],
   },
   {
-    text: 'Recursos',
-    collapsible: true,
-    collapsed: true,
+    text: 'Material externo',
     items: [
       {
-        text: 'Máquinas virtuales',
-        link: '/recursos/vms',
+        text: 'Repaso de Arquitectura',
+        link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
       },
       {
-        text: 'TPs Anteriores',
-        link: '/recursos/tps-anteriores',
+        text: 'Mario Bash',
+        link: 'https://faq.utnso.com.ar/mariobash'
+      },
+      {
+        text: 'Tutorial interactivo de C',
+        link: 'https://www.learn-c.org/'
+      },
+      {
+        text: 'Learn Git Branching',
+        link: 'https://learngitbranching.js.org/'
       },
     ]
-  }
+  },
 ]
