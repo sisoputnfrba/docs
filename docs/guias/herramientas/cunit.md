@@ -235,7 +235,7 @@ ocurrencias de un carácter en un archivo:
 
 ::: code-group
 
-```c{4} [lector.h]
+```c:line-numbers{4} [lector.h]
 #ifndef LECTOR_H_
 #define LECTOR_H_
 
@@ -244,7 +244,7 @@ int archivo_contar(char* path, char c);
 #endif
 ```
 
-```c{29} [lector.c]
+```c:line-numbers{29} [lector.c]
 #include "lector.h"
 
 #include <stdlib.h>
@@ -299,7 +299,7 @@ entonces `archivo_contar("algo.txt", 'o')` devolvería 2, ya que hay dos letras
 Ahora que ya tenemos el código, pasemos a la parte importante. Agreguemos al
 `main.c` nuestro header:
 
-```c{1}
+```c:line-numbers{1}
 #include "lector.h"
 #include <CUnit/Basic.h>
 
@@ -320,7 +320,7 @@ Lo primero que estaría bueno probar es la primer parte, cuando el archivo que
 recibe como parámetro no existe. Armamos el test case para eso, lo agregamos al
 suite en el `main()` y lo corremos:
 
-```c{4-7,13-17}
+```:line-numbers{4-7,13-17}
 #include "lector.h"
 #include <CUnit/Basic.h>
 
@@ -438,7 +438,7 @@ contrario.
 
 Agregando un caso más, quedaría algo como:
 
-```c{4-16,23-39,55-59}
+```c:line-numbers{4-16,23-39,55-59}
 #include "lector.h"
 #include <CUnit/Basic.h>
 

@@ -34,7 +34,7 @@ Con algo de suerte podes poner una mano en tu corazón y jurar que nunca
 incursionamos en prácticas del ocultismo espaguetital, pero C + un TP complejo +
 desconocimiento = la receta para terminar con un monstruo del estilo:
 
-```c
+```c:line-numbers
 int main() {
     while (vivo()) {
         while (edad < 25) {
@@ -131,7 +131,7 @@ archivos:
 
 ::: code-group
 
-```c [corredor.c]
+```c:line-numbers [corredor.c]
 #include "sumar.c"
 
 void main() {
@@ -140,7 +140,7 @@ void main() {
 ```
 
 
-```c [sumar.c]
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -167,7 +167,7 @@ Entonces, básicamente estamos tratando de compilar dos archivos de esta forma
 
 ::: code-group
 
-```c{1-3} [corredor.c]
+```c:line-numbers{1-3} [corredor.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -178,7 +178,7 @@ void main() {
 ```
 
 
-```c [sumar.c]
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -209,7 +209,7 @@ de un archivo como encabezado (aka: _header_), por lo que tendríamos estos
 
 ::: code-group
 
-```c{1} [corredor.c]
+```c:line-numbers{1} [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -219,7 +219,7 @@ void main() {
 
 
 
-```c [sumar.c]
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -227,7 +227,7 @@ int sumarTres(int numero) {
 
 
 
-```c [sumar.h]
+```c:line-numbers [sumar.h]
 int sumarTres(int numero);
 ```
 
@@ -258,7 +258,7 @@ Esto nos permite tener este código en nuestro archivo:
 
 ::: code-group
 
-```c{1} [corredor.c]
+```c:line-numbers{1} [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -268,7 +268,7 @@ void main() {
 
 
 
-```c [sumar.c]
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -276,7 +276,7 @@ int sumarTres(int numero) {
 
 
 
-```c{1-2,6} [sumar.h]
+```c:line-numbers{1-2,6} [sumar.h]
 #ifndef SUMAR_H_
 #define SUMAR_H_
 
@@ -333,7 +333,7 @@ otras:
 
 ::: code-group
 
-```c [corredor.c]
+```c:line-numbers [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -345,7 +345,7 @@ void main() {
 ```
 
 
-```c{1} [sumar.c]
+```c:line-numbers{1} [sumar.c]
 #include "sumar.h"
 
 t_numero sumarTres(t_numero numero) {
@@ -356,7 +356,7 @@ t_numero sumarTres(t_numero numero) {
 ```
 
 
-```c{4-7} [sumar.h]
+```c:line-numbers{4-7} [sumar.h]
 #ifndef SUMAR_H_
 #define SUMAR_H_
 

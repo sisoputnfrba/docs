@@ -165,7 +165,7 @@ De nuevo, los invito a pensar la solución en C.
 
 Posiblemente tengan una solución como esta[^2]:
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 #include <string.h>
 

@@ -78,7 +78,7 @@ problemas con los que nos podamos encontrar.
 
 ## Invalid write of size...
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 
 int main(void) {
@@ -181,7 +181,7 @@ detectando estos errores que nos pueden dar dolores de cabeza por horas.
 
 Entonces, hagamos el cambio:
 
-```c{5}
+```c:line-numbers{5}
 #include <stdlib.h>
 
 int main(void) {
@@ -229,7 +229,7 @@ Habiendo solucionado el error en la asignación, vamos correr nuevamente el
 código del ejemplo anterior, con la diferencia de que le pediremos a Valgrind
 que haga un chequeo de memory leaks.
 
-```c{5}
+```c:line-numbers{5}
 #include <stdlib.h>
 
 int main(void) {
@@ -292,7 +292,7 @@ en la performance (incluso **podemos quedarnos sin memoria disponible**).
 
 Para evitar esto, agregaremos el `free()` correspondiente:
 
-```c{6}
+```c:line-numbers{6}
 #include <stdlib.h>
 
 int main(void){
@@ -315,7 +315,7 @@ En otras palabras, no tenemos más leaks.
 
 ### En el stack
 
-```c
+```c:line-numbers
 #include <stdio.h>
 
 int main(void) {
@@ -401,7 +401,7 @@ cadena que corresponda en ASCII (sí, es acá donde ocurre el salto condicional)
 Entonces, sólo nos queda darle un valor inicial a nuestra variable para que
 Valgrind no se enoje.
 
-```c{4}
+```c:line-numbers{4}
 #include <stdio.h>
 
 int main(void) {
@@ -418,7 +418,7 @@ tanto nosotros como Valgrind somos felices.
 
 ### En memoria dinámica
 
-```c
+```c:line-numbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -482,7 +482,7 @@ Como estamos trabajando con punteros, debemos tener en cuenta que a lo que le
 vamos a asignar un valor va a ser al contenido de la dirección a la que apunta
 el puntero, por ejemplo: `*a = 1;`
 
-```c{6}
+```c:line-numbers{6}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -500,7 +500,7 @@ int main(void) {
 Por último, un caso particular que nos puede ocurrir a la hora de manejar
 variables sin inicializar es el siguiente:
 
-```c{8}
+```c:line-numbers{8}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -611,7 +611,7 @@ De nuevo, veremos que la solución es inicializar el contenido apuntado por `a`.
 
 ## Syscall param contains uninitialised bytes
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 
 int main(void) {
