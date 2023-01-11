@@ -8,16 +8,18 @@
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
   },
-  "repository": "https://github.com/sisoputnfrba/so-docs",
+  "repository": "https://github.com/sisoputnfrba/docs",
   "authors": {
     "name": "sisoputnfrba"
   },
   "contributors": [
     "Agustín Ranieri",
-    "Sofía Azcoaga"
+    "Sofía Azcoaga",
+    "Damian Facchini"
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/markdown-it-footnote": "^3.0.0",
     "markdown-it-footnote": "^3.0.3",
     "puppeteer": "^19.0.0",
     "sass": "^1.55.0",
