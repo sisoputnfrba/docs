@@ -1,8 +1,6 @@
-export type NavItem =
-  { text: string; link: string; activeMatch?: string } |
-  { text: string; items: NavItem[]; };
+import { DefaultTheme } from 'vitepress';
 
-export const navbar: NavItem[] = [
+export const navbar: DefaultTheme.NavItem[] = [
   {
     text: 'Blog',
     link: 'https://faq.utnso.com.ar/blog'

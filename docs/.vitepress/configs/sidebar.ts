@@ -1,15 +1,6 @@
-export interface SidebarGroup {
-  text?: string
-  items: SidebarItem[]
-  collapsible?: boolean
-  collapsed?: boolean
-}
+import { DefaultTheme } from 'vitepress';
 
-export type SidebarItem =
-  | { text: string; link: string }
-  | { text: string; link?: string; items: SidebarItem[] }
-
-export const sidebar: SidebarGroup[] = [
+export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Recursos',
     collapsible: true,
