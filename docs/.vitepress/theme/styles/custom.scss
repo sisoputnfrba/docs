@@ -19,7 +19,11 @@ html.dark {
   --vp-custom-block-danger-border: rgb(243, 119, 158, 0.25);
   --vp-custom-block-danger-text: #f3779e;
 
-  .VPButton.brand[data-v-2dba8ca9] {
-    color: black;
+  .VPButton.brand {
+    color: var(--vp-c-black-soft);
+  }
+
+  .VPButton.brand:hover {
+    color: var(--vp-c-black);
   }
 }
