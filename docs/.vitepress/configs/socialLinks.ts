@@ -1,9 +1,7 @@
 import { DefaultTheme } from 'vitepress';
 
 export const socialLinks: DefaultTheme.SocialLink[] = [
-  { icon: 'github', link: 'https://github.com/sisoputnfrba/foro' },
-  { icon: 'discord', link: 'https://faq.utnso.com.ar/discord' },
-  { icon: 'youtube', link: 'https://faq.utnso.com.ar/youtube' },
+  { icon: 'github', link: 'https://github.com/sisoputnfrba' },
   {
     icon: {
       svg: `
@@ -15,4 +13,6 @@ export const socialLinks: DefaultTheme.SocialLink[] = [
     },
     link: 'https://faq.utnso.com.ar/cv'
   },
+  { icon: 'discord', link: 'https://faq.utnso.com.ar/discord' },
+  { icon: 'youtube', link: 'https://faq.utnso.com.ar/youtube' },
 ]
