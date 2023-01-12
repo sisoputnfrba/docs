@@ -25,7 +25,7 @@ export default defineConfig({
     },
     socialLinks: socialLinks,
     footer: {
-      message: '© 2023 Cátedra de Sistemas Operativos',
+      message: `© ${new Date().getFullYear()} Cátedra de Sistemas Operativos`,
       copyright: 'Universidad Tecnológica Nacional | Facultad Regional Buenos Aires',
     },
     docFooter: {
