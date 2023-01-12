@@ -6,12 +6,13 @@ import { socialLinks } from './configs/socialLinks';
 
 export default defineConfig({
   lang: 'es-AR',
-  title: 'SisOp Docs',
+  title: 'Docs | Sistemas Operativos - UTN FRBA',
   description: 'Todo lo necesario para hacer el TP de Sistemas Operativos.',
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
+  titleTemplate: 'Sistemas Operativos - UTN FRBA',
   themeConfig: {
-    siteTitle: 'SisOp Docs',
+    siteTitle: 'Sistemas Operativos',
     logo: '/logo.gif',
     outline: 'deep',
     outlineTitle: 'En esta página',
@@ -24,8 +25,8 @@ export default defineConfig({
     },
     socialLinks: socialLinks,
     footer: {
-      message: '© 2023 SisOp Docs',
-      copyright: 'Made by sisoputnfrba with ❤️',
+      message: '© 2023 Cátedra de Sistemas Operativos',
+      copyright: 'Universidad Tecnológica Nacional | Facultad Regional Buenos Aires',
     },
     docFooter: {
       prev: 'Página anterior',

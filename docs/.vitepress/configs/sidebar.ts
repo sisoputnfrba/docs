@@ -11,16 +11,20 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/recursos/vms',
       },
       {
-        text: 'Enunciado del TP',
-        link: 'https://faq.utnso.com.ar/enunciado'
-      },
-      {
         text: 'Commons Library',
         link: 'https://faq.utnso.com.ar/commons'
       },
       {
         text: 'Linux man pages',
         link: 'https://man7.org/linux/man-pages/'
+      },
+      {
+        text: 'Enunciado del TP',
+        link: 'https://faq.utnso.com.ar/enunciado'
+      },
+      {
+        text: 'Documento de Pruebas',
+        link: 'https://faq.utnso.com.ar/pruebas',
       },
       {
         text: 'TPs Anteriores',

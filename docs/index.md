@@ -1,8 +1,10 @@
 ---
 layout: home
+title: Docs
 
 hero:
-  name: SisOp Docs
+  name: Docs
+  text: Sistemas Operativos UTN FRBA
   tagline: En este sitio vas a encontrar todo lo necesario para hacer el TP de Sistemas Operativos.
   image:
     src: /img/logo.gif
