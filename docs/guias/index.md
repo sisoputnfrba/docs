@@ -18,7 +18,7 @@ página.
 - [Buenas Prácticas de C](/guias/programacion/buenas-practicas)
 - [Video de Shared Libraries](/guias/programacion/shared-libraries)
 
-### API de Linux
+### Syscalls de Linux
 
 - [Guía de Sockets](/guias/linux/sockets)
 - [Guía de Serialización](/guias/linux/serializacion)

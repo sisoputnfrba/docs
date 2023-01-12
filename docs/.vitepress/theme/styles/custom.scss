@@ -1,22 +1,23 @@
 /* .vitepress/theme/custom.css */
 :root {
   --vp-c-brand: #d00c34;
-  --vp-c-brand-light: #F21D48;
-  --vp-c-brand-lighter: #F21D48;
+  --vp-c-brand-light: #f21d48;
+  --vp-c-brand-lighter: #f21d48;
   --vp-c-brand-dark: #d52448;
   --vp-c-brand-darker: #d52448;
 
-  --vp-c-indigo-dimm-1: rgba(33, 53, 71, 0.5);
-  --vp-c-indigo-dimm-2: rgba(33, 53, 71, 0.25);
-  --vp-c-indigo-dimm-3: rgba(33, 53, 71, 0.05);
+  --vp-c-yellow-darker: #856710;
 }
 
 html.dark {
-  --vp-c-brand: #FA9A00;
-  --vp-c-brand-light: #FA9A00;
-  --vp-c-brand-lighter: #FA9A00;
-  --vp-c-brand-dark: #FFAF2E;
-  --vp-c-brand-darker: #FFAF2E;
+  --vp-c-brand: #fa9a00;
+  --vp-c-brand-light: #fa9a00;
+  --vp-c-brand-lighter: #fa9a00;
+  --vp-c-brand-dark: #ffaf2e;
+  --vp-c-brand-darker: #ffaf2e;
+
+  --vp-custom-block-danger-border: rgb(243, 119, 158, 0.25);
+  --vp-custom-block-danger-text: #f3779e;
 
   .VPButton.brand[data-v-2dba8ca9] {
     color: black;

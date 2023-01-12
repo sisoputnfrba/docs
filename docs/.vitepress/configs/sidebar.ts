@@ -70,7 +70,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Consola de Linux y Git',
     collapsible: true,
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Guía de uso de Bash',
@@ -89,7 +89,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Programación en C',
     collapsible: true,
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Manejo de Punteros y Memoria Dinámica',
@@ -116,7 +116,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Syscalls de Linux',
     collapsible: true,
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Guía de Sockets',
@@ -139,7 +139,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Herramientas útiles',
     collapsible: true,
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Debugging en Eclipse',
@@ -160,7 +160,9 @@ export const sidebar: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: 'Material externo',
+    text: 'Tutoriales interactivos',
+    collapsible: true,
+    collapsed: false,
     items: [
       {
         text: 'Repaso de Arquitectura',
