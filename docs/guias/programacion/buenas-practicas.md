@@ -209,15 +209,9 @@ de un archivo como encabezado (aka: _header_), por lo que tendríamos estos
 
 ::: code-group
 
-```c:line-numbers{1} [corredor.c]
-#include "sumar.h"
-
-void main() {
-    sumarTres(5);
-}
+```c:line-numbers [sumar.h]
+int sumarTres(int numero);
 ```
-
-
 
 ```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
@@ -225,12 +219,13 @@ int sumarTres(int numero) {
 }
 ```
 
+```c:line-numbers [corredor.c]
+#include "sumar.h" // [!code ++]
 
-
-```c:line-numbers [sumar.h]
-int sumarTres(int numero);
+void main() {
+    sumarTres(5);
+}
 ```
-
 
 :::
 
@@ -258,14 +253,14 @@ Esto nos permite tener este código en nuestro archivo:
 
 ::: code-group
 
-```c:line-numbers{1} [corredor.c]
-#include "sumar.h"
+```c:line-numbers [sumar.h]
+#ifndef SUMAR_H_ // [!code ++]
+#define SUMAR_H_ // [!code ++]
 
-void main() {
-    sumarTres(5);
-}
+int sumarTres(int numero);
+
+#endif  // [!code ++]
 ```
-
 
 
 ```c:line-numbers [sumar.c]
@@ -274,15 +269,12 @@ int sumarTres(int numero) {
 }
 ```
 
+```c:line-numbers [corredor.c]
+#include "sumar.h"
 
-
-```c:line-numbers{1-2,6} [sumar.h]
-#ifndef SUMAR_H_
-#define SUMAR_H_
-
-int sumarTres(int numero);
-
-#endif
+void main() {
+    sumarTres(5);
+}
 ```
 
 
@@ -333,6 +325,31 @@ otras:
 
 ::: code-group
 
+
+```c:line-numbers [sumar.h]
+#ifndef SUMAR_H_
+#define SUMAR_H_
+
+typedef struct {        // [!code ++]
+    int numero;         // [!code ++]
+    int numeroAnterior; // [!code ++]
+} t_numero;             // [!code ++]
+
+t_numero sumarTres(t_numero numero);
+
+#endif
+```
+
+```c:line-numbers [sumar.c]
+#include "sumar.h" // [!code ++]
+
+t_numero sumarTres(t_numero numero) {
+    numero.numeroAnterior = numero.numero;
+    numero.numero += 3;
+    return numero;
+}
+```
+
 ```c:line-numbers [corredor.c]
 #include "sumar.h"
 
@@ -342,32 +359,6 @@ void main() {
     cinco.numeroAnterior = 0;
     sumarTres(cinco);
 }
-```
-
-
-```c:line-numbers{1} [sumar.c]
-#include "sumar.h"
-
-t_numero sumarTres(t_numero numero) {
-    numero.numeroAnterior = numero.numero;
-    numero.numero += 3;
-    return numero;
-}
-```
-
-
-```c:line-numbers{4-7} [sumar.h]
-#ifndef SUMAR_H_
-#define SUMAR_H_
-
-typedef struct {
-    int numero;
-    int numeroAnterior;
-} t_numero;
-
-t_numero sumarTres(t_numero numero);
-
-#endif
 ```
 
 

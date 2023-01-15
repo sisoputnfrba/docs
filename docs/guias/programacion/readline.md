@@ -90,28 +90,32 @@ A grandes rasgos, para agregar las líneas ingresadas al historial, tendríamos
 que agregar el `add_history()` a nuestro ejemplo anterior de la siguiente
 manera:
 
-```c{6,12-18}
+```c:line-numbers
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <readline/readline.h>
-#include <readline/history.h>
+#include <readline/history.h>  // [!code ++]
 
-void main() {
+int main() {
     char *linea;
     while (1) {
         linea = readline(">");
-        if (linea) {
-            add_history(linea);
-        }
-        if (!strncmp(linea, "exit", 4)) {
-            free(linea);
-            break;
-        }
+        if (!linea) {                     // [!code --]
+            break;                        // [!code --]
+        }                                 // [!code --]
+        if (linea) {                      // [!code ++]
+            add_history(linea);           // [!code ++]
+        }                                 // [!code ++]
+        if (!strncmp(linea, "exit", 4)) { // [!code ++]
+            free(linea);                  // [!code ++]
+            break;                        // [!code ++]
+        }                                 // [!code ++]
         printf("%s\n", linea);
         free(linea);
     }
+    return 0;
 }
 ```
 

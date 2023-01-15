@@ -247,12 +247,15 @@ en la cadena. Eso es lo que queremos probar.
 Ahora que ya tenemos el código, pasemos a la parte importante. Incluyamos el
 header a nuestro archivo principal (**main.c** del proyecto, supongamos):
 
-```c{1}
-#include "lector.h"
+```c
+#include "lector.h" // [!code ++]
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <cspecs/cspec.h>
+
+context (probando_cosas) {
+}
 ```
 
 Para arrancar, podemos probar la primer parte, cuando el archivo que recibe como
@@ -267,10 +270,10 @@ parámetro no existe. Armamos un test case para eso, lo agregamos a un
 #include <cspecs/cspec.h>
 
 context (probando_cosas) {
-    it("devuelve -1 si el archivo no existe") {
-        int cantidad = archivo_contar("askjd.txt", 'f');
-        should_int(cantidad) be equal to(-1);
-    } end
+    it("devuelve -1 si el archivo no existe") {  // [!code ++]
+        int cantidad = archivo_contar("askjd.txt", 'f');  // [!code ++]
+        should_int(cantidad) be equal to(-1);  // [!code ++]
+    } end  // [!code ++]
 }
 
 ```
@@ -278,7 +281,7 @@ context (probando_cosas) {
 Ahora hay que probar el caso más común, que dado un archivo que exista, lo lea y
 devuelva la cantidad correcta de ocurrencias:
 
-```c:line-numbers{13-19}
+```c:line-numbers
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -291,13 +294,13 @@ context (probando_cosas) {
         should_int(cantidad) be equal to(-1);
     } end
 
-    it("devuelve el número exacto de ocurrencias") {
-        FILE* archivo = fopen("prueba.txt", "w+");
-        fprintf(archivo, "aca hay como 4 as");
-        fflush(archivo); // para que se guarde en disco ya
-        int cantidad = archivo_contar("prueba.txt", 'a');
-        should_int(cantidad) be equal to(4);
-    } end
+    it("devuelve el número exacto de ocurrencias") { // [!code ++]
+        FILE* archivo = fopen("prueba.txt", "w+"); // [!code ++]
+        fprintf(archivo, "aca hay como 4 as"); // [!code ++]
+        fflush(archivo); // para que se guarde en disco ya // [!code ++]
+        int cantidad = archivo_contar("prueba.txt", 'a'); // [!code ++]
+        should_int(cantidad) be equal to(4); // [!code ++]
+    } end // [!code ++]
 }
 
 ```
@@ -310,7 +313,53 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-<<< @/snippets/guias/programacion/cspec/lector.c#archivo_contar{8}
+```c:line-numbers
+#include "lector.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
+
+int obtener_size(char* path) {
+    struct stat stat_file;
+    stat(path, &stat_file);
+    return stat_file.st_size;
+}
+
+char* leer(char* path) {
+    FILE* archivo = fopen(path, "r");
+    if (archivo == NULL) {
+        return NULL;
+    }
+    int size = obtener_size(path);
+
+    char* texto = malloc(size + 1);
+    fread(texto, size, sizeof(char), archivo);
+    fclose(archivo);
+    texto[size] = '\0';
+
+    return texto;
+}
+
+
+int archivo_contar(char* path, char c) {
+    char* contenido = leer(path);
+    if (contenido == NULL) {
+        return - 1;
+    }
+
+    int cantidad = 0;
+    for (int i = 1; i < strlen(contenido); i++) { // [!code focus]
+        if (contenido[i] == c) {
+            cantidad++;
+        }
+    }
+
+    return cantidad;
+}
+
+```
 
 ¡Genial! Encontramos un bug gracias al test. Luego de arreglarlo, vemos que está
 todo bien.
@@ -321,7 +370,7 @@ nuestro `archivo_contar(...)` de alguna forma mutara el archivo, los demás test
 no harían lo que esperamos. Hagamos un **before** que cree el archivo y un
 **after** que lo borre:
 
-```c:line-numbers{8,13,15,17-18,20-22,24-27,35}
+```c:line-numbers
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -329,26 +378,26 @@ no harían lo que esperamos. Hagamos un **before** que cree el archivo y un
 #include <cspecs/cspec.h>
 
 context (probando_cosas) {
-    describe("con archivos inexistentes") {
+    describe("con archivos inexistentes") { // [!code ++]
         it("devuelve -1 si el archivo no existe") {
             int cantidad = archivo_contar("askjd.txt", 'f');
             should_int(cantidad) be equal to(-1);
         } end
-    } end
+    } end // [!code ++]
 
-    describe("con archivos que existen") {
+    describe("con archivos que existen") { // [!code ++]
 
-        const char* path = "prueba.txt";
-        FILE* archivo = NULL;
+        const char* path = "prueba.txt"; // [!code ++]
+        FILE* archivo = NULL; // [!code ++]
 
-        before {
-            archivo = fopen(path, "w+");
-        } end
+        before { // [!code ++]
+            archivo = fopen(path, "w+"); // [!code ++]
+        } end // [!code ++]
 
-        after {
-            fclose(archivo);
-            unlink(path);
-        } end
+        after { // [!code ++]
+            fclose(archivo); // [!code ++]
+            unlink(path); // [!code ++]
+        } end // [!code ++]
 
         it("devuelve el número exacto de ocurrencias") {
             fprintf(archivo, "aca hay como 4 as");
@@ -356,7 +405,7 @@ context (probando_cosas) {
             int cantidad = archivo_contar("prueba.txt", 'a');
             should_int(cantidad) be equal to(4);
         } end
-    } end
+    } end // [!code ++]
 }
 
 ```
