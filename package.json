@@ -19,9 +19,10 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
     "@types/markdown-it-footnote": "^3.0.0",
+    "@types/node": "^18.11.18",
     "markdown-it-footnote": "^3.0.3",
-    "puppeteer": "^19.0.0",
     "sass": "^1.55.0",
     "vitepress": "1.0.0-alpha.36",
     "vue": "^3.2.38"
