@@ -183,60 +183,9 @@ cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
 ::: code-group
 
-```c:line-numbers{4} [lector.h]
-#ifndef LECTOR_H_
-#define LECTOR_H_
+<<< @/snippets/guias/herramientas/cspec/lector.h{4 c:line-numbers} [lector.h]
 
-int archivo_contar(char* path, char c);
-
-#endif
-```
-
-```c:line-numbers{29} [lector.c]
-#include "lector.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/stat.h>
-
-int obtener_size(char* path) {
-    struct stat stat_file;
-    stat(path, &stat_file);
-    return stat_file.st_size;
-}
-
-char* leer(char* path) {
-    FILE* archivo = fopen(path, "r");
-    if (archivo == NULL) {
-        return NULL;
-    }
-    int size = obtener_size(path);
-
-    char* texto = malloc(size + 1);
-    fread(texto, size, sizeof(char), archivo);
-    fclose(archivo);
-    texto[size] = '\0';
-
-    return texto;
-}
-
-int archivo_contar(char* path, char c) {
-    char* contenido = leer(path);
-    if (contenido == NULL) {
-        return - 1;
-    }
-
-    int cantidad = 0;
-    for (int i = 1; i < strlen(contenido); i++) {
-        if (contenido[i] == c) {
-            cantidad++;
-        }
-    }
-
-    return cantidad;
-}
-```
+<<< @/snippets/guias/herramientas/cspec/lector.c{12 c:line-numbers} [lector.c]
 
 :::
 
@@ -313,36 +262,7 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-```c:line-numbers
-#include "lector.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/stat.h>
-
-int obtener_size(char* path) {
-    struct stat stat_file;
-    stat(path, &stat_file);
-    return stat_file.st_size;
-}
-
-char* leer(char* path) {
-    FILE* archivo = fopen(path, "r");
-    if (archivo == NULL) {
-        return NULL;
-    }
-    int size = obtener_size(path);
-
-    char* texto = malloc(size + 1);
-    fread(texto, size, sizeof(char), archivo);
-    fclose(archivo);
-    texto[size] = '\0';
-
-    return texto;
-}
-
-
+```c
 int archivo_contar(char* path, char c) {
     char* contenido = leer(path);
     if (contenido == NULL) {
@@ -358,7 +278,6 @@ int archivo_contar(char* path, char c) {
 
     return cantidad;
 }
-
 ```
 
 ¡Genial! Encontramos un bug gracias al test. Luego de arreglarlo, vemos que está
