@@ -1,4 +1,4 @@
-# Preparar el entorno para codear
+# Crear tu primer proyecto C
 
 Una vez [instaladas las VMs](/primeros-pasos/entorno-linux) (o el entorno Linux que hayas
 elegido), debemos continuar con un par de configuraciones antes de arrancar a
@@ -26,15 +26,15 @@ make install
 
 En los
 [archivos `*.h` del repo](https://faq.utnso.com.ar/commons-src)
-van a encontrar todas las funciones que pueden usar junto con una breve
+vas a encontrar todas las funciones que pueden usar junto con una breve
 descripción.
 
 :::
 
 ## Crear un proyecto en Eclipse
 
-Una vez instaladas las commons, vamos a probar de incluirlas en nuestro primer
-proyecto en **Eclipse**.
+Ahora sí, una vez instaladas las commons, vamos a probar de incluirlas en
+nuestro primer proyecto en **Eclipse**.
 
 <YouTube v="Q8wfpu38PMc"/>
 
@@ -82,6 +82,7 @@ git config --global credential.helper store
 
 De esta forma, una vez lo ingresemos por primera vez no será necesario volverlo
 a hacer cada vez que querramos interactuar con el repo del Trabajo Práctico.
+
 
 ## Próximos pasos
 

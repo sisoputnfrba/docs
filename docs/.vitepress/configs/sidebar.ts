@@ -58,7 +58,7 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/lenguaje-c'
       },
       {
-        text: 'Preparar el entorno para codear',
+        text: 'Crear tu primer proyecto C',
         link: '/primeros-pasos/entorno-desarrollo'
       },
       {
