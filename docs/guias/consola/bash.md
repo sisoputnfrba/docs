@@ -282,7 +282,7 @@ Por ejemplo: `Ctrl` + `x` para salir.
 
 1. Vamos a abrir un archivo utilizando:
 
-```
+```bash
 nano un-archivo.txt
 ```
 
@@ -299,7 +299,7 @@ uno nuevo vacío.
 
 5. Corramos el comando:
 
-```
+```bash
 cat un-archivo.txt
 ```
 

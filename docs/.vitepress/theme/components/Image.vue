@@ -1,0 +1,53 @@
+<script lang="ts">
+export default {
+  props: {
+    src: {
+      type: String,
+      required: true,
+    },
+    w: {
+      type: String,
+      required: false,
+    },
+    imageColor: {
+      type: String,
+      required: false,
+    },
+    containerColor: {
+      type: String,
+      required: false,
+    },
+    containerPadding: {
+      type: String,
+      required: false,
+    }
+  },
+  computed: {
+    containerStyle() {
+      return `
+        ${this.containerColor ? `background-color: ${this.containerColor};` : ''}
+        ${this.containerPadding ? `padding: ${this.containerPadding};` : ''}
+      `;
+    },
+    imageStyle() {
+      return `
+        ${this.imageColor ? `background-color: ${this.imageColor};` : ''}
+        ${this.w ? `width: ${this.w};` : ''}
+      `;
+    },
+  },
+};
+</script>
+
+<template>
+  <div class="custom-image-container" :style="containerStyle">
+    <img :src="src" :style="imageStyle"/>
+  </div>
+</template>
+
+<style>
+.custom-image-container {
+  display: flex;
+  justify-content: center;
+}
+</style>

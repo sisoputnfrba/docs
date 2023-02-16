@@ -22,12 +22,7 @@ La **memoria dinámica** es memoria que se reserva en *tiempo de ejecución* y s
 
 Una diferencia importante es que **el tamaño de la memoria dinámica se puede ir modificando durante la ejecución del programa**. ¿Qué quiere decir ésto? Que, por ejemplo, podrías ir agrandando/achicando una determinada estructura (por ejemplo, un array) a medida que lo necesitás.
 
-<div style="background-color: white">
-<img src="/img/guias/punteros-memoria-dinamica/imagen2.png" >
-</div>
-
-<!-- ![imagen 2](/img/guias/punteros-memoria-dinamica/imagen2.png) -->
-
+<Image src="/img/guias/punteros-memoria-dinamica/imagen2.png" containerColor="white" containerPadding="20px"/>
 
 Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: "Todo poder conlleva una gran responsabilidad"[^4].
 
@@ -42,10 +37,7 @@ Todos los datos tienen un tiempo de vida, nada persiste para siempre. En C, hay 
 
 Un **puntero es la dirección de algún dato en memoria**. Un puntero **NO es el dato** en sí mismo, sino su **posición en la memoria**. También se lo conoce como *referencia* a memoria.
 
-<div style="background-color: white; width: 150px; text-align: center; ">
-<img src="/img/guias/punteros-memoria-dinamica/imagen3.png" >
-</div>
-<!-- ![imagen 3](/img/guias/punteros-memoria-dinamica/imagen3.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen3.png" w="200px" containerColor="white" containerPadding="15px"/>
 
 ### ¿Cómo declaramos un puntero?
 
@@ -57,10 +49,7 @@ int *p;
 
 Bien, ya declaramos el puntero. Sin embargo, no está inicializado y apunta a basura.
 
-<div style="background-color: white; width: 150px; text-align: center; padding: 2px; ">
-<img src="/img/guias/punteros-memoria-dinamica/imagen4.png" >
-</div>
-<!-- ![imagen 4](/img/guias/punteros-memoria-dinamica/imagen4.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen4.png" w="200px" containerColor="white" containerPadding="15px"/>
 
 Para que nuestro puntero no esté triste, ¡vamos a darle algo para que apunte!
 
@@ -126,10 +115,9 @@ int main(void){
    return 0;
 }
 ```
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen5.png" >
-</div>
-<!--![imagen 5](/img/guias/punteros-memoria-dinamica/imagen5.png)-->
+
+<Image src="/img/guias/punteros-memoria-dinamica/imagen5.png" w="300px" containerColor="white" containerPadding="15px"/>
+
 
 Al hacer `*p` estamos diciendo *"al contenido de p"* o *"a lo apuntado por p"*. Si hiciéramos `p = 2` estaríamos modificando al puntero p, y no al valor apuntado por el puntero p.
 
@@ -198,11 +186,7 @@ Ejecutamos el código y veremos en consola lo siguiente:
 int i = 1;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen6.png" >
-</div>
-
-<!--![imagen 6](/img/guias/punteros-memoria-dinamica/imagen6.png)-->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen6.png" w="50px" containerColor="white" containerPadding="15px"/>
 
 - Declaramos un puntero p a un tipo de dato int.
 
@@ -210,10 +194,7 @@ int i = 1;
 int *p;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen7.png" >
-</div>
-<!--![imagen 7](/img/guias/punteros-memoria-dinamica/imagen7.png)-->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen7.png" w="150px" containerColor="white" containerPadding="15px"/>
 
 - Imprimimos por pantalla el valor de `i`, mostrará 1.
 
@@ -227,10 +208,8 @@ printf("Antes i vale: %d\n", i);
 p = &i;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen8.png" >
-</div>
-<!-- ![imagen 8](/img/guias/punteros-memoria-dinamica/imagen8.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen8.png" w="150px" containerColor="white" containerPadding="15px"/>
+
 
 - Le asignamos a la porción de memoria a la que apunta p (con el paso anterior hicimos que apunte a i) el valor 2. A ésto se lo conoce como **_desreferenciar_**.
 
@@ -238,10 +217,8 @@ p = &i;
 *p = 2;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen9.png" >
-</div>
-<!-- ![imagen 9](/img/guias/punteros-memoria-dinamica/imagen9.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen9.png" w="150px" containerColor="white" containerPadding="15px"/>
+
 
 - Imprimimos los valores de ambos. Ambos valen 2.
 
@@ -511,10 +488,7 @@ nombres[2] = copiar("Santiago");	//8 + 1 chars
 }
 ```
 
-<div style="background-color: white">
-<img src="/img/guias/punteros-memoria-dinamica/imagen10.png" >
-</div>
-<!-- ![imagen 10](/img/guias/punteros-memoria-dinamica/imagen10.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen10.png" w="450px" containerColor="white" containerPadding="15px"/>
 
 El programa reserva espacio para 4 punteros, y despues carga cada uno de esos punteros con los nombres "Joaquin", "Matias", "Santiago" y "Gastón". Si yo libero la variable nombres, entonces no tengo forma de liberar los restantes 35 chars que reservé para las letras, por lo que perdí (leak'ie) 35 bytes de memoria. La forma correcta de terminar el programa sería:
 

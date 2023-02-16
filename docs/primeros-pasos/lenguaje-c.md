@@ -290,12 +290,13 @@ referencias a algún bloque de memoria, siendo el tipo de la variable el que
 anuncia qué tamaño tiene esa referencia.
 
 Digamos, esto es una memoria de 30 bytes[^3] (éramos tan pobres):
-![Una RAM de 30 bytes](/img/primeros-pasos/lenguaje-c/memoria-libre.png)
+
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-libre.png" containerColor="white" containerPadding="15px"/>
 
 Esa es toda la memoria de esta computadora hipotética. Si en mi programa declaro
 una variable `int exit_status;`, podríamos pensarlo como que C hará algo así:
 
-![La RAM con una variable](/img/primeros-pasos/lenguaje-c/memoria-reservada.png)
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-reservada.png" containerColor="white" containerPadding="15px"/>
 
 En algún lugar de la memoria (en este caso, a partir del byte 13), C reservó[^4]
 unos bytes para nuestra variable.
