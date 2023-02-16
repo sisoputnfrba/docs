@@ -5,14 +5,6 @@ export default {
       type: String,
       required: true,
     },
-    w: {
-      type: String,
-      required: false,
-    },
-    imageColor: {
-      type: String,
-      required: false,
-    },
     containerColor: {
       type: String,
       required: false,
@@ -20,7 +12,15 @@ export default {
     containerPadding: {
       type: String,
       required: false,
-    }
+    },
+    imageColor: {
+      type: String,
+      required: false,
+    },
+    imageWidth: {
+      type: String,
+      required: false,
+    },
   },
   computed: {
     containerStyle() {
@@ -32,7 +32,7 @@ export default {
     imageStyle() {
       return `
         ${this.imageColor ? `background-color: ${this.imageColor};` : ''}
-        ${this.w ? `width: ${this.w};` : ''}
+        ${this.imageWidth ? `width: ${this.imageWidth};` : ''}
       `;
     },
   },

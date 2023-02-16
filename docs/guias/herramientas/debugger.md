@@ -28,7 +28,7 @@ Esta guía plantea un flujo de trabajo que pretende ser interactivo, por lo que
 les recomiendo seguir, localmente, a la par estos conceptos, detenerse, pensar,
 probar, codificar, o lo que sientas en tu corazón al ver esto:
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Vale hacer uso del índice a modo de consulta.
 
@@ -49,7 +49,7 @@ piensen y programen el problema planteado antes de avanzar, así pueden seguir l
 guía en sus propias computadoras. Suele ser mejor aprender haciendo que solo
 leyendo; pero ¿que voy a saber yo? Soy un documento en internet.
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 ## Primer programa a debuggear
 
@@ -146,7 +146,7 @@ Intentemos recordar cómo podemos ejecutar esta línea.
 
 _\*Pausa dramática y ruido de "pensamiento" (?\*_
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Si optaron por `Step Into` o `Step Over`, están en lo correcto:
 
@@ -165,7 +165,7 @@ almacenar patentes (3 letras y 3 números), y queremos almacenar las siguientes:
 
 De nuevo, los invito a pensar la solución en C.
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 ::: details Spoiler:
 
@@ -308,7 +308,7 @@ en la vista de `Variables`.
 
 Ahora si, a programar una posible solución.
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Supongamos que generamos esta función que inicializa nuestro TAD, e intentamos
 ejecutar esta instrucción:
@@ -355,7 +355,7 @@ nosotros: [`malloc()`](https://man7.org/linux/man-pages/man3/free.3.html).
 
 Si apretamos Step Into, ¿qué tendría que pasar?
 
-<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" w="250px" />
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 ### Can't find source file at: El error que no es
 

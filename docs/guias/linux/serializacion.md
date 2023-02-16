@@ -30,7 +30,7 @@ strcpy(p1.nombre,"John Doe");
 
 <Image src="/img/guias/serializacion/padding-imagen.png" containerColor="white" containerPadding="30px 0px 0px 0px"/>
 
-<Image src="/img/guias/serializacion/padding-exclamacion.png" w="200px" containerColor="white" containerPadding="0px 0px 30px 0px"/>
+<Image src="/img/guias/serializacion/padding-exclamacion.png" imageWidth="200px" containerColor="white" containerPadding="0px 0px 30px 0px"/>
 
 El tamaño de este padding depende de varios factores como, por ejemplo, el compilador, la arquitectura del CPU, el tipo de dato, entre otros. Por esto, es que no tenemos garantías de cuánto espacio ocupará un struct en memoria.
 
