@@ -17,6 +17,7 @@ const members = [
   { name: 'Brian Rosenbolt', github: 'brianross30' },
   { name: 'Dario Kozicki', github: 'dariokozicki' },
   { name: 'Federico Medina', github: 'FredeHG' },
+  { name: 'Matias Rosbaco', github: 'MatiasRosbaco' },
 ].map((member) => ({
   avatar: `https://www.github.com/${member.github}.png`,
   name: member.name,
