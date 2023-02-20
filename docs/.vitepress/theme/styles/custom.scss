@@ -9,6 +9,15 @@
   --vp-c-yellow-darker: #856710;
 }
 
+.VPLink.link {
+  display: flex;
+  flex-grow: unset;
+}
+
+.VPLink.link svg {
+  margin-top: 8px;
+}
+
 html.dark {
   --vp-c-brand: #fa9a00;
   --vp-c-brand-light: #fa9a00;

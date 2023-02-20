@@ -3,7 +3,6 @@ import { DefaultTheme } from 'vitepress';
 export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Recursos',
-    collapsible: true,
     collapsed: false,
     items: [
       {
@@ -34,7 +33,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Primeros pasos',
-    collapsible: true,
     collapsed: true,
     items: [
       {
@@ -69,7 +67,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Consola de Linux y Git',
-    collapsible: true,
     collapsed: true,
     items: [
       {
@@ -88,7 +85,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Programación en C',
-    collapsible: true,
     collapsed: true,
     items: [
       {
@@ -115,7 +111,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Syscalls de Linux',
-    collapsible: true,
     collapsed: true,
     items: [
       {
