@@ -2,7 +2,7 @@ import { DefaultTheme } from 'vitepress';
 
 export const navbar: DefaultTheme.NavItem[] = [
   {
-    text: 'Blog',
+    text: 'Blog ↗️',
     link: 'https://faq.utnso.com.ar/blog'
   },
   {
@@ -20,7 +20,7 @@ export const navbar: DefaultTheme.NavItem[] = [
     activeMatch: '/guias/',
   },
   {
-    text: 'Inscripciones',
+    text: 'Inscripciones ↗️',
     link: 'https://faq.utnso.com.ar/inscripciones'
   },
   {
