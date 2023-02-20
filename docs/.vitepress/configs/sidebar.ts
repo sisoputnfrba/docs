@@ -3,7 +3,7 @@ import { DefaultTheme } from 'vitepress';
 export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Recursos',
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Máquinas virtuales',
@@ -133,7 +133,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Herramientas útiles',
-    collapsible: true,
     collapsed: true,
     items: [
       {
@@ -156,8 +155,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Tutoriales interactivos',
-    collapsible: true,
-    collapsed: false,
+    collapsed: true,
     items: [
       {
         text: 'Repaso de Arquitectura',
