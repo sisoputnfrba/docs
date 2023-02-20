@@ -9,13 +9,15 @@
   --vp-c-yellow-darker: #856710;
 }
 
-.VPLink.link {
-  display: flex;
-  flex-grow: unset;
-}
+.VPSidebarItem {
+  .VPLink.link {
+    display: flex;
+    flex-grow: unset;
+  }
 
-.VPLink.link svg {
-  margin-top: 8px;
+  .VPLink.link svg {
+    margin-top: 8px;
+  }
 }
 
 html.dark {
