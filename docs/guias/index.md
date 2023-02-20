@@ -1,7 +1,11 @@
 # Guías
 
+::: tip
+
 También podés navegar entre las distintas guías a través del menú lateral de la
 página.
+
+:::
 
 ### Consola de Linux y Git
 
