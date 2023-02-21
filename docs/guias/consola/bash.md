@@ -345,12 +345,12 @@ abrir otra.
 
 Todos los procesos reciben información via la _entrada_ estándar (**stdin**) y
 devuelven un resultado por la _salida_ estándar (**stdout**) en caso de éxito, o
-la _salida_ estándar de error (**stderr**) en caso de que algo falle.
+la salida estándar de _error_ (**stderr**) en caso de que algo falle.
 
 La entrada estándar de varios comandos como `cat`, `head` y `tail` suele ser
 un archivo, aunque también para otros como `echo` o `read` suele ser el mismo
 teclado. Por otro lado, la salida estándar (ya sea por éxito o error), suele
-ser el mismo teclado:
+ser la misma consola:
 
 ![pipes](/img/guias/consola/bash-pipes.png)
 
