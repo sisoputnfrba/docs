@@ -3,7 +3,6 @@ import { DefaultTheme } from 'vitepress';
 export const sidebar: DefaultTheme.Sidebar = [
   {
     text: 'Recursos',
-    collapsed: true,
     items: [
       {
         text: 'Máquinas virtuales',
@@ -81,6 +80,14 @@ export const sidebar: DefaultTheme.Sidebar = [
         text: 'Rutas Relativas y Absolutas',
         link: '/guias/consola/rutas'
       },
+      {
+        text: 'Mario Bash',
+        link: 'https://faq.utnso.com.ar/mariobash'
+      },
+      {
+        text: 'Learn Git Branching',
+        link: 'https://learngitbranching.js.org/'
+      },
     ],
   },
   {
@@ -88,8 +95,16 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: true,
     items: [
       {
+        text: 'Repaso de Arquitectura',
+        link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
+      },
+      {
         text: 'Manejo de Punteros y Memoria Dinámica',
         link: '/guias/programacion/punteros',
+      },
+      {
+        text: 'Buenas Prácticas de C',
+        link: '/guias/programacion/buenas-practicas'
       },
       {
         text: 'Argumentos para el main',
@@ -100,12 +115,12 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/readline'
       },
       {
-        text: 'Buenas Prácticas de C',
-        link: '/guias/programacion/buenas-practicas'
-      },
-      {
         text: 'Video de Shared Libraries',
         link: '/guias/programacion/shared-libraries'
+      },
+      {
+        text: 'Learn C',
+        link: 'https://www.learn-c.org/'
       },
     ],
   },
@@ -152,27 +167,5 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/herramientas/deploy'
       },
     ],
-  },
-  {
-    text: 'Tutoriales interactivos',
-    collapsed: true,
-    items: [
-      {
-        text: 'Repaso de Arquitectura',
-        link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
-      },
-      {
-        text: 'Mario Bash',
-        link: 'https://faq.utnso.com.ar/mariobash'
-      },
-      {
-        text: 'Tutorial interactivo de C',
-        link: 'https://www.learn-c.org/'
-      },
-      {
-        text: 'Learn Git Branching',
-        link: 'https://learngitbranching.js.org/'
-      },
-    ]
   },
 ]

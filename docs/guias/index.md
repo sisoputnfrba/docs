@@ -12,15 +12,17 @@ página.
 - [Guía de uso de Bash](/guias/consola/bash)
 - [Git para el Trabajo Práctico](/guias/consola/git)
 - [Rutas Relativas y Absolutas](/guias/consola/rutas)
+- [Mario Bash ↗️](https://faq.utnso.com.ar/mariobash)
+- [Learn Git Branching (en inglés) ↗️](https://learngitbranching.js.org/)
 
 ### Programación en C
 
-- [Repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
 - [Manejo de Punteros y Memoria Dinámica](/guias/programacion/punteros)
+- [Buenas Prácticas de C](/guias/programacion/buenas-practicas)
 - [Argumentos para el main](/guias/programacion/main)
 - [Cómo hacer una consola interactiva](/guias/programacion/readline)
-- [Buenas Prácticas de C](/guias/programacion/buenas-practicas)
 - [Video de Shared Libraries](/guias/programacion/shared-libraries)
+- [Learn C (en inglés) ↗️](https://www.learn-c.org/)
 
 ### Syscalls de Linux
 
