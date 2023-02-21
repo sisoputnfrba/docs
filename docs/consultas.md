@@ -7,8 +7,6 @@ que tratamos de dar todo el soporte posible.
 En esta página queremos centralizar un poco la información acerca de los canales
 de soporte y cómo usarlos correctamente.
 
-[[toc]]
-
 ## Teoría y/o ejercicios
 
 En el [Campus Virtual](https://faq.utnso.com.ar/cv) vas a encontrar un foro de

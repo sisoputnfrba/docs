@@ -1,10 +1,7 @@
 # Legacy
 
 Acá hay guías que hay linkeadas en el blog y _aún_ no les encontramos un lugar
-en la página:
-
-[[toc]]
-
+en la página.
 ## Sistema de Inscripciones
 
 ### Registro en Sistema de Inscripciones y Github
