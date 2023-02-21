@@ -190,6 +190,8 @@ de las commons imprimen un stream de un cierto tamaño utilizando este formato.
 
 ### Cambiar permisos y ownership
 
+<br>
+
 #### `chmod`
 
 Permite cambiar los permisos de un archivo (del inglés: _**ch**ange **mod**e_).
@@ -201,6 +203,8 @@ chmod +x mi-script.sh
 # Para configurar nuevos permisos usando el formato Unix
 chmod 664 kernel.config
 ```
+
+<br>
 
 #### `chown`
 
