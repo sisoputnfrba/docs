@@ -343,22 +343,42 @@ abrir otra.
 
 ## Redirecciones y pipes
 
-Todos los procesos reciben información via la _entrada_ estándar (o **stdin**) y
-devuelven un resultado por la _salida_ estándar (o **stdout**). La entrada
-estándar de varios comandos como `cat`, `head` y `tail` suele ser un archivo, y
-la salida estándar, la consola.
+Todos los procesos reciben información via la _entrada_ estándar (**stdin**) y
+devuelven un resultado por la _salida_ estándar (**stdout**) en caso de éxito, o
+la _salida_ estándar de error (**stderr**) en caso de que algo falle.
+
+La entrada estándar de varios comandos como `cat`, `head` y `tail` suele ser
+un archivo, aunque también para otros como `echo` o `read` suele ser el mismo
+teclado. Por otro lado, la salida estándar (ya sea por éxito o error), suele
+ser el mismo teclado:
+
+![pipes](/img/guias/consola/bash-pipes.png)
 
 Sin embargo, es posible _redirigir_ esos flujos de información (o _streams_)
 para que los comandos "se pasen" el resultado el uno al otro, o lo guarden en un
 archivo. Para esto, utilizamos **operadores de redirección**.
 
-Estos son los más básicos, junto con un ejemplo de uso:
+Estos son los más comunes, junto con un ejemplo de uso:
 
 | Operadores |                                       Caso de uso                                       |                           Ejemplo                           |
 | :--------: | :-------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
 |    `>`     |       Escribir `stdout` en un archivo, sobreescribiéndolo en caso de ya existir.        | `echo "https://USER:TOKEN@github.com" > ~/.git-credentials` |
 |    `>>`    | Concatenar `stdout` al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
 |    `\|`    |                 "Pasarle" el `stdout` de un comando al `stdin` de otro                  |                   `cat *.c \| grep sleep`                   |
+
+::: tip
+
+Notarán que, en caso de error, el texto de `stderr` no se _pasa_ al siguiente
+comando ni se escribe en el archivo, sino que _sigue de largo_ hasta llegar a la
+consola al ser una salida distinta[^3]:
+
+![pipes-stderr](/img/guias/consola/bash-pipes-stderr.png)
+
+Es por esto que, desde C, es una buena práctica imprimir los resultados con
+`printf(...)` y los logs y errores con `fprintf(stderr, ...)`, a pesar de que
+al llegar a la consola se terminen imprimiendo usando el mismo color.
+
+:::
 
 ## Variables de entorno
 
@@ -437,13 +457,13 @@ env | grep MI_VARIABLE
 
 :::
 
-## Fuentes
+## Material recomendado
 
 - [34 comandos básicos de Linux que todo usuario debería conocer](https://www.hostinger.com/tutorials/linux-commands) (en inglés)
-- [5 formas de usar operadores de redirección en Bash](https://www.redhat.com/sysadmin/redirect-operators-bash) (en inglés)
 - [Como leer y configurar variables de entorno en Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux) (en inglés)
 
 <br>
 
 [^1]: Para más info, ver [Rutas Relativas y Rutas Absolutas](/guias/consola/rutas.md)
 [^2]: Para más info, ver [Tutorial sobre Hard Links y Soft Links](https://faq.utnso.com.ar/guia-links)
+[^3]: Para más info, ver [Pensando en Pipelines](https://effective-shell.com/part-2-core-skills/thinking-in-pipelines/) (en inglés)
