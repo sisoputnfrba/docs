@@ -7,7 +7,7 @@ Para familiarizarse con el uso de los más básicos de una forma más interactiv
 los invitamos a jugar a [Mario Bash](https://faq.utnso.com.ar/mariobash)
 :joystick:
 
-## Comandos Básicos [^1]
+## Comandos Básicos
 
 ### Ver la documentación oficial
 
@@ -31,7 +31,7 @@ También pueden encontrar los mismos manuales en línea:
 | Comando | Descripción                                                                                          | Parámetros                                                                                                 |
 | :-----: | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 |  `pwd`  | Imprimir la ruta absoluta del directorio actual (del inglés: _**p**rint **w**orking **d**irectory_). | -                                                                                                          |
-|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta)[^2] a un directorio.                                                             |
+|  `cd`   | **C**ambiar el **d**irectorio actual.                                                                | La ruta (relativa o absoluta)[^1] a un directorio.                                                             |
 |  `ls`   | **L**i**s**tar el contenido de un directorio.                                                        | La ruta a un directorio. Si no es especificado, toma el valor del directorio actual. |
 | `tree`  | Imprimir el _árbol_ de directorios con sus archivos partiendo desde el directorio indicado.          | La ruta a un directorio. Si no es especificado, toma el valor del directorio actual. |
 
@@ -63,7 +63,7 @@ drwxr-xr-x  3 root  root  4096 feb 19  2018 ..
 ```
 
 De esta forma podemos ver los [permisos](#chmod), el contador de
-_hard links_[^3], el usuario y grupo _owner_, el tamaño y
+_hard links_[^2], el usuario y grupo _owner_, el tamaño y
 la fecha de última modificación de cada archivo.
 
 :::
@@ -337,7 +337,7 @@ El cambio de layout solo va a afectar la sesión actual, por lo que no hace falt
 hacer nada para revertirlo, solamente alcanza con cerrar la terminal actual y
 abrir otra.
 
-## Redirecciones y pipes[^4]
+## Redirecciones y pipes
 
 Todos los procesos reciben información via la _entrada_ estándar (o **stdin**) y
 devuelven un resultado por la _salida_ estándar (o **stdout**). La entrada
@@ -356,7 +356,7 @@ Estos son los más básicos, junto con un ejemplo de uso:
 |    `>>`    | Concatenar `stdout` al final de un archivo existente (o crearlo en caso de no existir). |     `echo "IP_CONSOLA=192.168.0.200" >> kernel.config`      |
 |    `\|`    |                 "Pasarle" el `stdout` de un comando al `stdin` de otro                  |                   `cat *.c \| grep sleep`                   |
 
-## Variables de entorno[^5]
+## Variables de entorno
 
 Las variables de entorno son aquellas variables definidas para la consola que
 estamos utilizando actualmente, pero que podemos almacenar para que sean
@@ -433,10 +433,13 @@ env | grep MI_VARIABLE
 
 :::
 
-## Material recomendado
+## Fuentes
 
-[^1]: [34 comandos básicos de Linux que todo usuario debería conocer](https://www.hostinger.com/tutorials/linux-commands) (en inglés)
-[^2]: [Rutas Relativas y Rutas Absolutas](/guias/consola/rutas.md)
-[^3]: [Tutorial sobre Hard Links y Soft Links](https://faq.utnso.com.ar/guia-links)
-[^4]: [5 formas de usar operadores de redirección en Bash](https://www.redhat.com/sysadmin/redirect-operators-bash) (en inglés)
-[^5]: [Como leer y configurar variables de entorno en Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux) (en inglés)
+- [34 comandos básicos de Linux que todo usuario debería conocer](https://www.hostinger.com/tutorials/linux-commands) (en inglés)
+- [5 formas de usar operadores de redirección en Bash](https://www.redhat.com/sysadmin/redirect-operators-bash) (en inglés)
+- [Como leer y configurar variables de entorno en Linux](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux) (en inglés)
+
+<br>
+
+[^1]: Para más info, ver [Rutas Relativas y Rutas Absolutas](/guias/consola/rutas.md)
+[^2]: Para más info, ver [Tutorial sobre Hard Links y Soft Links](https://faq.utnso.com.ar/guia-links)
