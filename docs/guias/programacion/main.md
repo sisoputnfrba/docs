@@ -9,7 +9,7 @@ comandos de una terminal.
 
 Por ejemplo, si tomamos el cliente del TP0:
 
-```bash:no-line-numbers
+```bash
 ./Debug/client
 ```
 
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 
 Y lo ejecutamos como:
 
-```bash:no-line-numbers
+```bash
 ./Debug/cliente ./una/ruta/a/mi/archivo.cfg
 ```
 
@@ -104,7 +104,7 @@ En el caso de que ya tengamos configurado el debugger, podremos encontrar en
 nuestro archivo `launch.json` una variable `args`, en donde vamos a
 poner nuestra lista de argumentos en formato de array de strings.
 
-```json:no-line-numbers{5}
+```json{5}
 {
     "configurations": [
         {

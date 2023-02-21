@@ -22,12 +22,7 @@ La **memoria dinámica** es memoria que se reserva en *tiempo de ejecución* y s
 
 Una diferencia importante es que **el tamaño de la memoria dinámica se puede ir modificando durante la ejecución del programa**. ¿Qué quiere decir ésto? Que, por ejemplo, podrías ir agrandando/achicando una determinada estructura (por ejemplo, un array) a medida que lo necesitás.
 
-<div style="background-color: white">
-<img src="/img/guias/punteros-memoria-dinamica/imagen2.png" >
-</div>
-
-<!-- ![imagen 2](/img/guias/punteros-memoria-dinamica/imagen2.png) -->
-
+<Image src="/img/guias/punteros-memoria-dinamica/imagen2.png" containerColor="white" containerPadding="20px"/>
 
 Algunas ventajas que ofrece la memoria dinámica frente a la memoria estática es que podemos reservar espacio para variables de tamaño no conocido hasta el momento de la ejecución (por ejemplo, para listas o arrays de tamaños variables), o bloques de memoria que, mientras mantengamos alguna referencia a él, pueden sobrevivir al bloque de código que lo creó. Sin embargo, como una vez dijo el tío Ben a Spiderman: "Todo poder conlleva una gran responsabilidad"[^4].
 
@@ -42,25 +37,19 @@ Todos los datos tienen un tiempo de vida, nada persiste para siempre. En C, hay 
 
 Un **puntero es la dirección de algún dato en memoria**. Un puntero **NO es el dato** en sí mismo, sino su **posición en la memoria**. También se lo conoce como *referencia* a memoria.
 
-<div style="background-color: white; width: 150px; text-align: center; ">
-<img src="/img/guias/punteros-memoria-dinamica/imagen3.png" >
-</div>
-<!-- ![imagen 3](/img/guias/punteros-memoria-dinamica/imagen3.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen3.png" imageWidth="200px" containerColor="white" containerPadding="15px"/>
 
 ### ¿Cómo declaramos un puntero?
 
 Supongamos que queremos declarar un puntero a un tipo de datos int. En C ésto se escribe de la siguiente manera:
 
-```c:no-line-numbers
+```c
 int *p;
 ```
 
 Bien, ya declaramos el puntero. Sin embargo, no está inicializado y apunta a basura.
 
-<div style="background-color: white; width: 150px; text-align: center; padding: 2px; ">
-<img src="/img/guias/punteros-memoria-dinamica/imagen4.png" >
-</div>
-<!-- ![imagen 4](/img/guias/punteros-memoria-dinamica/imagen4.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen4.png" imageWidth="200px" containerColor="white" containerPadding="15px"/>
 
 Para que nuestro puntero no esté triste, ¡vamos a darle algo para que apunte!
 
@@ -70,7 +59,7 @@ La memoria se puede reservar o liberar **dinámicamente**, es decir, según nece
 
 Una de ellas es la función `malloc`[^6], la cual sirve para solicitar un bloque de memoria del tamaño indicado por parámetro. Devuelve un puntero a la zona de memoria concedida:
 
-```c:no-line-numbers
+```c
 void* malloc (unsigned numero_de_bytes);
 ```
 
@@ -81,7 +70,7 @@ Como dijimos antes, `malloc` devuelve un puntero a la zona de memoria concedida.
 
 Antes de llamar a `malloc` tenemos que saber cuántos bytes queremos reservar en memoria. Como nuestro tipo de datos va a ser un `int`, vamos a reservar 4 bytes. Entonces, la llamada debería quedar así:
 
-```c:no-line-numbers
+```c
 malloc (4);[^8]
 ```
 
@@ -90,7 +79,7 @@ El operador `sizeof` recibe por parámetro un tipo de dato y devuelve el tamaño
 
 Entonces, nuestra llamada a `malloc` quedaría así:
 
-```c:no-line-numbers
+```c
 malloc(sizeof(int));
 ```
 
@@ -99,7 +88,7 @@ Tal vez éste ejemplo suene muy trivial, pero si nosotros tenemos que reservar e
 
 Bien, ya pedimos los bytes, ahora sólo queda asignarlo a nuestro puntero:
 
-```c:no-line-numbers
+```c
 int *p = malloc(sizeof(int));
 ```
 
@@ -126,10 +115,9 @@ int main(void){
    return 0;
 }
 ```
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen5.png" >
-</div>
-<!--![imagen 5](/img/guias/punteros-memoria-dinamica/imagen5.png)-->
+
+<Image src="/img/guias/punteros-memoria-dinamica/imagen5.png" imageWidth="300px" containerColor="white" containerPadding="15px"/>
+
 
 Al hacer `*p` estamos diciendo *"al contenido de p"* o *"a lo apuntado por p"*. Si hiciéramos `p = 2` estaríamos modificando al puntero p, y no al valor apuntado por el puntero p.
 
@@ -194,43 +182,34 @@ Ejecutamos el código y veremos en consola lo siguiente:
 
 - Declaramos una variable `i` de tipo `int` con el valor **1**.
 
-```c:no-line-numbers
+```c
 int i = 1;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen6.png" >
-</div>
-
-<!--![imagen 6](/img/guias/punteros-memoria-dinamica/imagen6.png)-->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen6.png" imageWidth="50px" containerColor="white" containerPadding="15px"/>
 
 - Declaramos un puntero p a un tipo de dato int.
 
-```c:no-line-numbers
+```c
 int *p;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen7.png" >
-</div>
-<!--![imagen 7](/img/guias/punteros-memoria-dinamica/imagen7.png)-->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen7.png" imageWidth="150px" containerColor="white" containerPadding="15px"/>
 
 - Imprimimos por pantalla el valor de `i`, mostrará 1.
 
-```c:no-line-numbers
+```c
 printf("Antes i vale: %d\n", i);
 ```
 
 - Le asignamos al puntero p la dirección de memoria de i.
 
-```c:no-line-numbers
+```c
 p = &i;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen8.png" >
-</div>
-<!-- ![imagen 8](/img/guias/punteros-memoria-dinamica/imagen8.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen8.png" imageWidth="150px" containerColor="white" containerPadding="15px"/>
+
 
 - Le asignamos a la porción de memoria a la que apunta p (con el paso anterior hicimos que apunte a i) el valor 2. A ésto se lo conoce como **_desreferenciar_**.
 
@@ -238,10 +217,8 @@ p = &i;
 *p = 2;
 ```
 
-<div style="background-color: white; width: 150px; text-align: center;">
-<img src="/img/guias/punteros-memoria-dinamica/imagen9.png" >
-</div>
-<!-- ![imagen 9](/img/guias/punteros-memoria-dinamica/imagen9.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen9.png" imageWidth="150px" containerColor="white" containerPadding="15px"/>
+
 
 - Imprimimos los valores de ambos. Ambos valen 2.
 
@@ -393,31 +370,31 @@ Esta función trivial nos va a ayudar a comprender la utilidad de este concepto.
 
 - Primero aloca un espacio consecutivo del tamaño de la palabra (+1 porque todos los strings terminan con un `\0`)
 
-```c:no-line-numbers
+```c
 malloc(sizeof(char) * strlen(palabra) + 1);
 ```
 
 - y asocia este espacio a una variable "tmp"
 
-```c:no-line-numbers
+```c
 char* tmp =
 ```
 
 - Luego copia la palabra por argumento al segmento reservado
 
-```c:no-line-numbers
+```c
 memcpy(tmp, palabra, strlen(palabra));[^11]
 ```
 
 - Inserta el `\0` faltante en la última posición, usando el conjunto de bytes como si fuera un array.
 
-```c:no-line-numbers
+```c
 tmp[strlen(palabra)] = '\0';[^12]
 ```
 
 - y retorna el puntero al nuevo sector de memoria con la copia de la palabra
 
-```c:no-line-numbers
+```c
 return tmp;
 ```
 
@@ -511,10 +488,7 @@ nombres[2] = copiar("Santiago");	//8 + 1 chars
 }
 ```
 
-<div style="background-color: white">
-<img src="/img/guias/punteros-memoria-dinamica/imagen10.png" >
-</div>
-<!-- ![imagen 10](/img/guias/punteros-memoria-dinamica/imagen10.png) -->
+<Image src="/img/guias/punteros-memoria-dinamica/imagen10.png" imageWidth="450px" containerColor="white" containerPadding="15px"/>
 
 El programa reserva espacio para 4 punteros, y despues carga cada uno de esos punteros con los nombres "Joaquin", "Matias", "Santiago" y "Gastón". Si yo libero la variable nombres, entonces no tengo forma de liberar los restantes 35 chars que reservé para las letras, por lo que perdí (leak'ie) 35 bytes de memoria. La forma correcta de terminar el programa sería:
 
@@ -563,11 +537,11 @@ Entonces, si quisiéramos acceder al segundo elemento del array de strings (`nom
 ## Otros alloc
 
 `calloc(n, bytes)`: reserva memoria para un array de n elementos que ocupan un tamaño de x bytes cada uno, además inicializa los bytes con un `\0`. Por ejemplo, supongamos que queremos reservar memoria para un array de 5 enteros, entonces:
-```c:no-line-numbers
+```c
 int *arrayEnteros = calloc(5, sizeof(int))
 ```
 El equivalente, con la función `malloc`, sería:
-```c:no-line-numbers
+```c
 int *arrayEnteros = malloc(5*sizeof(int))
 ```
 `realloc(*unPuntero, bytes)`: cambia el tamaño del bloque de memoria apuntado por unPuntero a uno de x bytes. Devuelve un puntero al bloque con el tamaño indicado. Es importante saber que los datos no son alterados y se guardan en el nuevo bloque siempre y cuando le hayamos reasignado un tamaño mayor o igual al del bloque anterior.  Los bytes agregados (es decir, si el tamaño total que le pasamos por parámetro es mayor al tamaño del bloque apuntado por unPuntero) no están inicializados.
@@ -591,7 +565,7 @@ Normalmente vamos a optar por usar el operador `sizeof`, los tipos de dato enter
 
 Un puntero a una función es una variable que almacena la dirección en memoria de una función que luego podrá ser invocada desde dicho puntero. Los punteros a funciones se declaran de una manera similar a los punteros que conocemos hasta ahora, con la diferencia de que hay que aclarar el tipo de valor que retorna y los tipos de datos de los parámetros que acepta. Al fin y al cabo, ¡como una función!. Por ejemplo:
 
-```c:no-line-numbers
+```c
 void (*f)(int,int);
 ```
 
@@ -620,16 +594,16 @@ int main()
 ¿Qué sucede en el main?
 
 - Declaramos un puntero a una función que recibe un entero y no retorna ningún valor.
-```c:no-line-numbers
+```c
 void (*punteroAFuncion)(int);
 ```
 - Le asignamos al puntero la dirección en memoria de la función imprimirValor.
 
-```c:no-line-numbers
+```c
 punteroAFuncion = &imprimirValor;
 ```
 - Llamamos a la función mediante el puntero, nótese que la sintaxis es idéntica a la llamada de una función cualquiera.
-```c:no-line-numbers
+```c
 punteroAFuncion(1);
 ```
 Los punteros a funciones nos pueden servir para, por ejemplo, reutilizar código en funciones genéricas. Para ser más claros, supongamos que tengo una lista de alumnos en la que de cada alumno se conoce su nombre, apellido, curso y notas de cada parcial.

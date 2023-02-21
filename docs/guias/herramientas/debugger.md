@@ -26,7 +26,9 @@ funcionalidades son las mismas.
 
 Esta guía plantea un flujo de trabajo que pretende ser interactivo, por lo que
 les recomiendo seguir, localmente, a la par estos conceptos, detenerse, pensar,
-probar, codificar...
+probar, codificar, o lo que sientas en tu corazón al ver esto:
+
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Vale hacer uso del índice a modo de consulta.
 
@@ -46,6 +48,8 @@ esta nueva variable el número 4, y devuelva este valor. Los aliento a que
 piensen y programen el problema planteado antes de avanzar, así pueden seguir la
 guía en sus propias computadoras. Suele ser mejor aprender haciendo que solo
 leyendo; pero ¿que voy a saber yo? Soy un documento en internet.
+
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 ## Primer programa a debuggear
 
@@ -140,7 +144,9 @@ este caso, `argc` y `argv`.
 
 Intentemos recordar cómo podemos ejecutar esta línea.
 
-> Pausa dramática y ruido de "pensamiento"...
+_\*Pausa dramática y ruido de "pensamiento" (?\*_
+
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Si optaron por `Step Into` o `Step Over`, están en lo correcto:
 
@@ -159,13 +165,13 @@ almacenar patentes (3 letras y 3 números), y queremos almacenar las siguientes:
 
 De nuevo, los invito a pensar la solución en C.
 
-> Pausa para pensar...
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
-::: details Spoiler
+::: details Spoiler:
 
 Posiblemente tengan una solución como esta[^2]:
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 #include <string.h>
 
@@ -257,11 +263,11 @@ Podríamos tener un vector dentro de otro. De ser así, repetimos este proceso d
 Supongamos que queremos refactorizar nuestra solución y generar un TAD de
 patentes; algo que se vea así:
 
-@[code c](@snippets/guias/herramientas/debugger/main.c)
+<<< @/snippets/guias/herramientas/debugger/main.c
 
 Y queremos un resultado en la consola como:
 
-```log:no-line-numbers
+```
 Patente 0: ABC 123
 Patente 1: SQL 035
 Patente 2: UTN 999
@@ -302,29 +308,33 @@ en la vista de `Variables`.
 
 Ahora si, a programar una posible solución.
 
-> Pausa para pensar...
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 Supongamos que generamos esta función que inicializa nuestro TAD, e intentamos
 ejecutar esta instrucción:
 
-@[code c{6}](@snippets/guias/herramientas/debugger/main.c)
+<<< @/snippets/guias/herramientas/debugger/main.c{6}
 
 Tenemos una función cuyo argumento es otra función.
 
-- ¿Qué pasaria si apretamos `Step Over`? :thinking:
+::: details ¿Qué pasaria si apretamos `Step Over`? :thinking:
 
 `Step Over` ejecutaría ambas funciones y nos frenaría en la línea que se
 encuentra debajo de ésta (la que intenta crear y agregar una nueva patente).
 
-- ¿Qué pasaria si apretamos Step Into? :thinking:
+:::
+
+::: details ¿Qué pasaria si apretamos Step Into? :thinking:
 
 `Step Into` ejecutará la llamada a la primera función. En este caso,
 `crearPatente()` (tal como en matemática, se procesa primero lo que está dentro
 de los paréntesis).
 
+:::
+
 Supongamos un código de crearPatente de este estilo:
 
-@[code{3-8} c:no-line-numbers](@snippets/guias/herramientas/debugger/patentes.c)
+<<< @/snippets/guias/herramientas/debugger/patentes.c{c:line-numbers}
 
 Al hacer Step Into podemos ver que (dentro de la vista de Debug) en el stack
 aparece que estamos dentro de la función `crearPatente()`, llamada por `main()`.
@@ -343,9 +353,9 @@ punto en adelante, el programa tendrá ese nuevo número. **Usar con cuidado.**
 Ahora estamos en una línea con una llamada a una función que no programamos
 nosotros: [`malloc()`](https://man7.org/linux/man-pages/man3/free.3.html).
 
-Si apretamos Step Into, ¿qué tendría que pasar? :thinking:
+Si apretamos Step Into, ¿qué tendría que pasar?
 
-> Pausa para pensar...
+<Image src="/img/guias/herramientas/debugger/thinking.png" imageColor="white" imageWidth="250px" />
 
 ### Can't find source file at: El error que no es
 

@@ -14,10 +14,9 @@ asociado (el current working directory, que le llaman). La idea es marcar un
 directorio como el "actual" en que se encuentra ese proceso. Desde el programa
 podemos acceder a ese valor usando la función `getcwd()`:
 
-<CodeGroup>
-<CodeGroupItem title="cwd.c">
+::: code-group
 
-```c
+```c:line-numbers [cwd.c]
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -30,13 +29,12 @@ int main(void) {
 }
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 Guardemos el código en nuestro directorio home (`/home/utnso`), compilemos y
 ejecutemos:
 
-```bash:no-line-numbers
+```bash
 utnso@utnso40:~$ pwd
 /home/utnso
 utnso@utnso40:~$ gcc -Wall cwd.c -o cwd
@@ -106,7 +104,7 @@ la consola". Digamos, eclipse va a hacer una especie de `cd` al directorio que
 marca como "Working directory", y desde ahí va a ejecutar lo que diga en el
 campo `C/C++ Application`:
 
-```bash:no-line-numbers
+```bash
 cd coercion
 ./Debug/coercion
 ```

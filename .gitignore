@@ -1,7 +1,8 @@
 node_modules
 .temp
 .cache
-src/.vuepress/dist
+docs/.vitepress/dist
+docs/.vitepress/cache
 .vscode
 .idea
 .obsidian

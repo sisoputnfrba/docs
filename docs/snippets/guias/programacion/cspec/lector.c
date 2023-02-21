@@ -26,6 +26,8 @@ char* leer(char* path) {
     return texto;
 }
 
+
+// #region archivo_contar
 int archivo_contar(char* path, char c) {
     char* contenido = leer(path);
     if (contenido == NULL) {
@@ -41,3 +43,4 @@ int archivo_contar(char* path, char c) {
 
     return cantidad;
 }
+// #endregion archivo_contar

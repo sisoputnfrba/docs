@@ -24,7 +24,7 @@ programa y puede detectar los siguientes problemas:
 
 En la terminal de Ubuntu, escribir:
 
-```bash:no-line-numbers
+```bash
 sudo apt-get install valgrind
 ```
 
@@ -39,7 +39,7 @@ terminal.
 
 En la terminal, para empezar a depurar basta con escribir:
 
-```bash:no-line-numbers
+```bash
 valgrind <parametros> ./<miPrograma> <argumentos>
 ```
 
@@ -66,7 +66,7 @@ depuración. Por ejemplo, si no habilitamos la opción `--leak-check` y existen
 memory leaks en nuestro programa, Valgrind nos dejará un mensaje mágico de este
 tipo:
 
-```:no-line-numbers
+```
 Rerun with --leak-check=full to see details of leaked memory.
 ```
 
@@ -78,7 +78,7 @@ problemas con los que nos podamos encontrar.
 
 ## Invalid write of size...
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 
 int main(void) {
@@ -103,7 +103,7 @@ consola... no tira segmentation fault, ¡todo bien entonces!.
 Ok, ponele. Usemos a nuestro amigo Valgrind que es gratis.Tipeamos en consola
 `valgrind ./ej1` y veamos qué nos tira. Deberían ver algo similar a esto:
 
-```log
+```
 ==4412== Invalid write of size 1
 ==4412==    at 0x40053A: main (ej1.c:5)
 ==4412==  Address 0x51f1045 is 0 bytes after a block of size 5 alloc'd
@@ -181,7 +181,7 @@ detectando estos errores que nos pueden dar dolores de cabeza por horas.
 
 Entonces, hagamos el cambio:
 
-```c{5}
+```c:line-numbers{5}
 #include <stdlib.h>
 
 int main(void) {
@@ -193,7 +193,7 @@ int main(void) {
 
 Volvemos a correr Memcheck, ¡desapareció el error! Sin embargo...
 
-```log:no-line-numbers{3,11}
+```txt{3,11}
 ==6789== HEAP SUMMARY:
 ==6789==     in use at exit: 5 bytes in 1 blocks
 ==6789==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -229,7 +229,7 @@ Habiendo solucionado el error en la asignación, vamos correr nuevamente el
 código del ejemplo anterior, con la diferencia de que le pediremos a Valgrind
 que haga un chequeo de memory leaks.
 
-```c{5}
+```c:line-numbers{5}
 #include <stdlib.h>
 
 int main(void) {
@@ -241,13 +241,13 @@ int main(void) {
 
 Tipeamos en consola para detectar los memory leaks:
 
-```bash:no-line-numbers
+```bash
 valgrind --leak-check=yes ./ej1
 ```
 
 Deberían ver algo similar a esto:
 
-```log{1,3,6,12}
+```txt{1,3,6,12}
 ==5263== HEAP SUMMARY:
 ==5263==     in use at exit: 5 bytes in 1 blocks
 ==5263==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
@@ -292,7 +292,7 @@ en la performance (incluso **podemos quedarnos sin memoria disponible**).
 
 Para evitar esto, agregaremos el `free()` correspondiente:
 
-```c{6}
+```c:line-numbers{6}
 #include <stdlib.h>
 
 int main(void){
@@ -305,7 +305,7 @@ int main(void){
 
 Si volvemos a correr valgrind, veremos que nos dirá:
 
-```log:no-line-numbers
+```
 All heap blocks were freed -- no leaks are possible
 ```
 
@@ -315,7 +315,7 @@ En otras palabras, no tenemos más leaks.
 
 ### En el stack
 
-```c
+```c:line-numbers
 #include <stdio.h>
 
 int main(void) {
@@ -333,13 +333,13 @@ int main(void) {
 
 Tipeamos en consola `./ej3` y nos muestra en pantalla lo siguiente:
 
-```:no-line-numbers
+```
 a = 0
 ```
 
 Ahora tipeamos en consola `valgrind ./ej3` y nos muestra el siguiente mensaje:
 
-```log{1,6}
+```txt{1,6}
 ==7079== Conditional jump or move depends on uninitialised value(s)
 ==7079==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==7079==    by 0x4E858D8: printf (printf.c:35)
@@ -401,7 +401,7 @@ cadena que corresponda en ASCII (sí, es acá donde ocurre el salto condicional)
 Entonces, sólo nos queda darle un valor inicial a nuestra variable para que
 Valgrind no se enoje.
 
-```c{4}
+```c:line-numbers{4}
 #include <stdio.h>
 
 int main(void) {
@@ -418,7 +418,7 @@ tanto nosotros como Valgrind somos felices.
 
 ### En memoria dinámica
 
-```c
+```c:line-numbers
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -457,7 +457,7 @@ primer operador: (`*a`).
 Si hacemos un `valgrind ./ej4` en consola vamos a ver que los mensajes de error
 son similares a los del código anterior.
 
-```log:no-line-numbers
+```
 ==13230== Conditional jump or move depends on uninitialised value(s)
 ==13230==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==13230==    by 0x4E858D8: printf (printf.c:35)
@@ -482,7 +482,7 @@ Como estamos trabajando con punteros, debemos tener en cuenta que a lo que le
 vamos a asignar un valor va a ser al contenido de la dirección a la que apunta
 el puntero, por ejemplo: `*a = 1;`
 
-```c{6}
+```c:line-numbers{6}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -500,7 +500,7 @@ int main(void) {
 Por último, un caso particular que nos puede ocurrir a la hora de manejar
 variables sin inicializar es el siguiente:
 
-```c{8}
+```c:line-numbers{8}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -531,7 +531,7 @@ dirección de memoria `a` y se guarda en `b`.
 
 Sin embargo, la realidad supera a la ficción...
 
-```log{8-9}:no-line-numbers
+```txt{8-9}
 ==24112== Memcheck, a memory error detector
 ==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
@@ -562,7 +562,7 @@ descriptivo_.
 Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
 opción por parámetro para solucionar esto:
 
-```log{3}:no-line-numbers
+```txt{3}
 ==24517== All heap blocks were freed -- no leaks are possible
 ==24517==
 ==24517== Use --track-origins=yes to see where uninitialised values come from
@@ -573,14 +573,14 @@ opción por parámetro para solucionar esto:
 Efectivamente, la opción `--track-origins=yes` habilita el seguimiento de toda
 la memoria no inicializada. Volvamos a ejecutar el programa con:
 
-```bash:no-line-numbers
+```bash
 valgrind --track-origins=yes ./ej5
 ```
 
 Ahora sí, al final del stack trace nos aparecerá el _verdadero_ origen del
 warning:
 
-```log{10-12,19-21}:no-line-numbers
+```txt{10-12,19-21}
 ==30024== Memcheck, a memory error detector
 ==30024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==30024== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
@@ -611,7 +611,7 @@ De nuevo, veremos que la solución es inicializar el contenido apuntado por `a`.
 
 ## Syscall param contains uninitialised bytes
 
-```c
+```c:line-numbers
 #include <stdlib.h>
 
 int main(void) {
@@ -624,7 +624,7 @@ int main(void) {
 Si bien cae de maduro cuál es el error, tipeamos en consola `valgrind ./ej6` y
 deberíamos ver algo como esto:
 
-```log
+```
 ==5758== Syscall param exit_group(status) contains uninitialised byte(s)
 ==5758==    at 0x4EF1C18: _Exit (_exit.c:33)
 ==5758==    by 0x4E6D95F: __run_exit_handlers (exit.c:93)
@@ -642,21 +642,21 @@ que la syscall está recibiendo un valor no inicializado[^6].
 
 ## Los leaks que no son
 
-Antes de cerrar esta guía, nos gustaría mencionar un par de errores muy comunes 
+Antes de cerrar esta guía, nos gustaría mencionar un par de errores muy comunes
 a la hora de interpretar el output de Valgrind, que suelen ocurrir al momento de
-interrumpir un proceso. 
+interrumpir un proceso.
 
 ### Still reachable
 
-Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still 
+Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still
 reachable", para los amigos):
 
-```log:no-line-numbers
-==111884== 
+```
+==111884==
 ==111884== HEAP SUMMARY:
 ==111884==     in use at exit: 22,730 bytes in 17 blocks
 ==111884==   total heap usage: 54 allocs, 37 frees, 62,285 bytes allocated
-==111884== 
+==111884==
 ==111884== LEAK SUMMARY:
 ==111884==    definitely lost: 0 bytes in 0 blocks
 ==111884==    indirectly lost: 0 bytes in 0 blocks
@@ -665,25 +665,25 @@ reachable", para los amigos):
 ==111884==         suppressed: 0 bytes in 0 blocks
 ==111884== Reachable blocks (those to which a pointer was found) are not shown.
 ==111884== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==111884== 
+==111884==
 ==111884== For lists of detected and suppressed errors, rerun with: -s
 ==111884== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 Cuando un proceso finaliza, es importante tener en cuenta que el sistema
-operativo se encarga de liberar todos los recursos que ese proceso tenía 
+operativo se encarga de liberar todos los recursos que ese proceso tenía
 asignados. Esto significa que esa memoria que nos quedaba como "still
-reachable" no _se pierde_, sino que el sistema operativo la libera. 
+reachable" no _se pierde_, sino que el sistema operativo la libera.
 
-`valgrind` nos avisa para que sepamos que está ahí, pero no es un error 
+`valgrind` nos avisa para que sepamos que está ahí, pero no es un error
 _per sé_.
 
 ::: tip
 
-De hecho, los invitamos a ejecutar los comandos más comunes de consola (`echo`, 
-`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que casi todos dejan 
+De hecho, los invitamos a ejecutar los comandos más comunes de consola (`echo`,
+`cd`, `ls` [y muchos más](/guias/consola/bash)) y notarán que casi todos dejan
 mucha memoria ahí. ¿Por qué? ¡Porque no necesitan hacer `free()`, si el proceso
-va a finalizar y el sistema operativo va a liberar esa memoria de todas formas! 
+va a finalizar y el sistema operativo va a liberar esa memoria de todas formas!
 
 De hecho, omitir esos `free()` termina siendo una optimización para que el
 comando finalice más rápido.
@@ -693,11 +693,11 @@ comando finalice más rápido.
 Entonces, ¿cuáles son los leaks **reales**?
 
 Los leaks reales son la memoria a la que uno deja de tener acceso **durante la
-ejecución del proceso**. Eso es problemático porque mientras que el proceso siga 
+ejecución del proceso**. Eso es problemático porque mientras que el proceso siga
 en ejecución, tu proceso va a tener asignada esa memoria sin poder aprovecharla.
 
 Incluso, si la ejecución de tu proceso durara lo suficiente, se podría superar
-el límite de memoria permitido para el proceso, y entonces el sistema operativo 
+el límite de memoria permitido para el proceso, y entonces el sistema operativo
 podría terminar el proceso abruptamente.
 
 ### Possibly lost (el caso de `pthread_create`)
@@ -705,7 +705,7 @@ podría terminar el proceso abruptamente.
 Estos errores son muy puntuales y solamente hemos visto que ocurren en la línea
 donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 
-```log:no-line-numbers
+```
 136 bytes in 1 blocks are possibly lost in loss record 15 of 41
 ==5672== at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
 ==5672== by 0x4011726: allocate_dtv (dl-tls.c:322)
@@ -718,9 +718,9 @@ donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 Probablemente la biblioteca `pthread` incluya algún manejo de
 [señales](https://faq.utnso.com.ar/seniales) para finalizar todos los hilos
 satisfactoriamente, y en el medio se habrán omitido algún que otro `free()` para
-que el procedimiento sea más performante. 
+que el procedimiento sea más performante.
 
-Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el 
+Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el
 algoritmo que finaliza el proceso, no es un memory leak real, por lo que no es
 necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 

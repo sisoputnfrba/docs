@@ -30,7 +30,7 @@ de salida que, por convención, indica que el programa ejecutó correctamente.
 
 Guardémoslo en un archivo `ok.c` y compilemos nuestro programa:
 
-```bash:no-line-numbers
+```bash
 $ gcc ok.c -o ok
 $ ls
 ok.c ok
@@ -48,7 +48,7 @@ resultante (`ok`). De no indicarlo, `gcc` elije uno _hermoso_: `a.out`.
 
 Ejecutemos:
 
-```bash:no-line-numbers
+```bash
 $ ./ok
 $ echo $?
 0
@@ -60,7 +60,7 @@ En UNIX, la forma de ejecutar un programa es escribiendo como orden la ruta
 completa al mismo y, luego, separados por espacios, todos sus parámetros. Por
 ejemplo:
 
-```bash:no-line-numbers
+```bash
 $ /bin/ps --version
 procps-ng version 3.3.3
 ```
@@ -97,7 +97,7 @@ Por ejemplo, `echo Hola mundo` imprime `Hola mundo`. `bash` (el lenguaje que
 interpreta nuestra consola) posee variables, y para dereferenciarlas (leerlas)
 hay que anteponerle un `$` al nombre de la variable. Por ejemplo:
 
-```bash:no-line-numbers
+```bash
 $ nombre = "Mundo" # asigno "Mundo" a la variable nombre, creandola si no existe
 $ echo $nombre # imprimo el contenido de la variable llamada nombre
 Mundo
@@ -168,7 +168,7 @@ pero preferimos reservarnos los nombres horribles para las PPT :)
 
 Buen, a ver qué hace este programa:
 
-```bash:no-line-numbers
+```bash
 $ gcc ok.c -o ok
 $ ./ok
 $ echo $?
@@ -191,7 +191,7 @@ int main(void) {
 
 Y probemos:
 
-```bash:no-line-numbers
+```bash
 $ gcc ok.c -o ok
 $ ./ok
 $ echo $?
@@ -220,7 +220,7 @@ int main(void) {
 }
 ```
 
-```bash:no-line-numbers
+```bash
 $ gcc ok.c -o ok
 $ ./ok
 $ echo $?
@@ -245,7 +245,7 @@ int main(void) {
 	return exit_status;
 }
 ```
-```bash:no-line-numbers
+```bash
 $ gcc ok.c -o ok
 $ ./ok
 $ echo $?
@@ -290,12 +290,13 @@ referencias a algún bloque de memoria, siendo el tipo de la variable el que
 anuncia qué tamaño tiene esa referencia.
 
 Digamos, esto es una memoria de 30 bytes[^3] (éramos tan pobres):
-![Una RAM de 30 bytes](/img/primeros-pasos/lenguaje-c/memoria-libre.png)
+
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-libre.png" containerColor="white" containerPadding="15px"/>
 
 Esa es toda la memoria de esta computadora hipotética. Si en mi programa declaro
 una variable `int exit_status;`, podríamos pensarlo como que C hará algo así:
 
-![La RAM con una variable](/img/primeros-pasos/lenguaje-c/memoria-reservada.png)
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-reservada.png" containerColor="white" containerPadding="15px"/>
 
 En algún lugar de la memoria (en este caso, a partir del byte 13), C reservó[^4]
 unos bytes para nuestra variable.

@@ -45,7 +45,7 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 Primero, abramos una consola y, de la misma forma que bajamos el proyecto de las
 commons, bajemos el del TP0:
 
-```bash:no-line-numbers
+```bash
 git clone https://github.com/sisoputnfrba/tp0
 cd tp0
 ```
@@ -134,7 +134,7 @@ corramos el programa y evaluemos los resultados.
 
 ¡No se olviden de destruir el config al final del programa!
 
-::: warning
+::: warning IMPORTANTE
 
 Para todas las funciones de biblioteca que uses, recuerden chequear los valores
 de retorno de las mismas para poder manejar los casos de error.
@@ -142,7 +142,7 @@ de retorno de las mismas para poder manejar los casos de error.
 En este caso, si llegamos a tener algún error al crear el config vamos a querer
 terminar con la ejecución:
 
-```c:no-line-numbers
+```c
 if (config == NULL) {
     // ¡No se pudo crear el config!
     // Terminemos el programa
@@ -158,7 +158,7 @@ formas de hacerlo, vamos a usar la biblioteca `readline`.
 
 Necesitamos incluirla usando:
 
-```c:no-line-numbers
+```c
 #include <readline/readline.h>
 ```
 
@@ -168,7 +168,7 @@ a que se ingrese una línea y devolverla en un string ya listo para loggear.
 La misma ya se encuentra agregada en el TP0, por lo que no hace falta hacer este
 include.
 
-::: warning
+::: warning IMPORTANTE
 
 Recuerden que `readline()` no te libera la memoria que devuelve, por lo que es
 necesario liberarla usando
@@ -211,7 +211,7 @@ biblioteca estándar de C para comparar strings. En este caso, compararíamos lo
 que nos devuelva `readline()` con un string vacío `""` para saber si debemos
 salir del bucle o no.
 
-::: warning
+::: warning IMPORTANTE
 
 Si en alguna etapa del TP el programa no se comporta como esperaban, pueden
 intentar ejecutarlo línea por línea siguiendo el
@@ -229,7 +229,7 @@ Pueden consultar su documentación leyendo los
 
 ## Etapa 3: Programar el Cliente-Servidor
 
-::: warning
+::: warning IMPORTANTE
 
 Para poder ayudar con los conceptos y aspectos técnicos de esta estapa tienen
 disponible la [guía de sockets](/guias/linux/sockets).

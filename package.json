@@ -4,23 +4,27 @@
   "description": "Guías de la cátedra de Sistemas Operativos - UTN.FRBA",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
   },
-  "repository": "https://github.com/sisoputnfrba/so-docs",
+  "repository": "https://github.com/sisoputnfrba/docs",
   "authors": {
     "name": "sisoputnfrba"
   },
   "contributors": [
     "Agustín Ranieri",
-    "Sofía Azcoaga"
+    "Sofía Azcoaga",
+    "Damian Facchini"
   ],
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-register-components": "^2.0.0-beta.36",
-    "@vuepress/plugin-search": "^2.0.0-beta.36",
-    "@vuepress/theme-default": "^2.0.0-beta.36",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-footnote": "^3.0.0",
+    "@types/node": "^18.11.18",
     "markdown-it-footnote": "^3.0.3",
-    "vuepress": "^2.0.0-beta.36"
+    "sass": "^1.55.0",
+    "vitepress": "1.0.0-alpha.47",
+    "vue": "^3.2.38"
   }
 }

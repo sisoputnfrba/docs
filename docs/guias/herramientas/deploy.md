@@ -42,7 +42,7 @@ archivo de configuración distinto al mismo ejecutable.
 Otro aspecto importante es interiorizarse sobre el método de despliegue que van
 a querer en su TP.
 
-::: warning
+::: warning IMPORTANTE
 
 Las entregas son en las mismas VMs server **SIN INTERFAZ GRÁFICA** que les
 proporcionamos a través de los [links de descarga](/recursos/vms#ubuntu-server), por lo
@@ -133,7 +133,7 @@ configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
 Una vez tengan todo listo, avísennos y comenzamos.
 
-::: tip TIP
+::: tip
 
 Para ayudar un poco, les dejamos
 [algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
@@ -235,12 +235,12 @@ del cuatri y qué relaciones encontraron con la teoría.
     En Eclipse, los makefiles son varios archivos que se encuentran en la
     subcarpeta `Debug/` y se llaman `makefile` o tienen la extensión ".mk". Para
     poder compilar es necesario subirlos **todos**.
-   
+
 [^5]:
     Más info en [este issue](https://github.com/sisoputnfrba/foro/issues/1624#issuecomment-611745367)
 
 [^6]:
     Incluso pueden agregar el nivel de logueo como una variable del config y
-    parsearlo con 
+    parsearlo con
     [log_level_from_string](https://github.com/sisoputnfrba/so-commons-library/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L115-L119)
     para irlo cambiando sin tener que recompilar.

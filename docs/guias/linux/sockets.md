@@ -57,7 +57,7 @@ Las llamadas al sistema que el cliente tiene que realizar para conectarse a su s
 
 ![cliente-servidor](/img/guias/sockets/cliente-servidor.png)
 
-::: warning
+::: warning IMPORTANTE
 El diagrama indica la secuencia en la que deberían ser llamadas las funciones. Que éstas estén al mismo nivel, no significa que deban suceder exactamente al mismo instante.
 :::
 
@@ -202,7 +202,7 @@ Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre
 
 Todo muy lindo para los datos "simples" (int, char, char*/string, float, etc), pero si la operación a solicitarle al  servidor requiere más de un parámetro estamos en un problema con el ejemplo visto. Para poder enviar datos más complejos a través de nuestros sockets, necesitamos enviar la información **serializada**.
 
-::: warning
+::: warning IMPORTANTE
 
 Para extender el concepto de **serialización**, tenemos disponible la [guía](/guias/linux/serializacion), que incluye un modelo de paquete propuesto para el envío mediante sockets.
 
@@ -216,7 +216,7 @@ Por último, e igual de importante que todo lo demás, los sockets una vez que n
 
 ## Multiplexando ando
 
-::: warning
+::: warning IMPORTANTE
 Se recomienda fuertemente esperar a ver el concepto de "hilo" en la teoría de la materia y ver el [video de hilos en C](/guias/linux/threads) antes de comenzar este apartado.
 :::
 
@@ -226,11 +226,7 @@ Pensemos en todo lo que hicimos hasta ahora. Creamos sockets en ambos cliente y 
 
 Necesitamos de alguna herramienta que sea capaz de paralelizar tareas dentro de un mismo proceso. ¿Será que el sistema operativo nos brinda algo capaz de hacer esto?
 
-<div style="text-align: center">
-<img src="/img/guias/sockets/pensativo-emoji.png" width="250px" />
-</div>
-
-<!-- ![pensando](/img/guias/sockets/pensativo-emoji.png) -->
+<Image src="/img/guias/sockets/pensativo-emoji.png" imageWidth="100px" />
 
 ¡Ya sé! ¡Hilos!
 Si bien los hilos no son llamadas al sistema relacionadas a los sockets, sí podemos usarlos para poder paralelizar las tareas que solicitan los muchos clientes que se nos van a conectar, para así poder volver lo más rápido posible al accept con el socket en listen. Lo que se me ocurre que podemos hacer es algo por este estilo:

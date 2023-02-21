@@ -67,7 +67,7 @@ podés hacerlo corriendo `$ git help <nombre del comando>`.
 Si es la primera vez que usamos Git, va a ser necesario configurar nuestro
 nombre y el email con el que estaremos trabajando utilizando:
 
-```bash:no-line-numbers
+```bash
 git config --global user.name "NOMBRE"
 git config --global user.email "EMAIL"
 ```
@@ -80,7 +80,7 @@ el repositorio actual, podés omitir el flag `--global`.
 Nos permite "clonar" un repositorio remoto, lo que significa que nos deja
 descargar la última versión del mismo y copiarlo dentro de nuestra máquina.
 Uso:
-```bash:no-line-numbers
+```bash
 git clone <url del repositorio>
 ```
 
@@ -104,13 +104,13 @@ Se utiliza para cambiar la rama (branch) sobre la que se está trabajando
 actualmente.
 Uso:
 
-```bash:no-line-numbers
+```bash
 git checkout <nombre de la rama>
 ```
 
 Si quisiera crear una nueva rama, puedo utilizar el comando con el flag `-b`:
 
-```bash:no-line-numbers
+```bash
 git checkout -b <nombre de la nueva rama>
 ```
 
@@ -136,7 +136,7 @@ Para agregar un único archivo utilizamos `git add <ruta del archivo>`.
 Para agregar todos los archivos que incluye el directorio sobre el que estoy
 parado, utilizamos:
 
-```bash:no-line-numbers
+```bash
 git add .
 ```
 
@@ -150,7 +150,7 @@ a su versión en el futuro si fuera necesario.
 
 Lo utilizamos llamando:
 
-```bash:no-line-numbers
+```bash
 git commit -m "<mensaje explicativo sobre los cambios>"
 ```
 

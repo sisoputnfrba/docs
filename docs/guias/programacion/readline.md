@@ -20,7 +20,7 @@ Principalmente por lo anterior.
 
 La función **readline** es nuestro plato principal. La misma esta firma:
 
-```c:no-line-numbers
+```c
 char *readline(const char *prompt)
 ```
 
@@ -90,28 +90,32 @@ A grandes rasgos, para agregar las líneas ingresadas al historial, tendríamos
 que agregar el `add_history()` a nuestro ejemplo anterior de la siguiente
 manera:
 
-```c{6,12-18}
+```c:line-numbers
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <readline/readline.h>
-#include <readline/history.h>
+#include <readline/history.h>  // [!code ++]
 
-void main() {
+int main() {
     char *linea;
     while (1) {
         linea = readline(">");
-        if (linea) {
-            add_history(linea);
-        }
-        if (!strncmp(linea, "exit", 4)) {
-            free(linea);
-            break;
-        }
+        if (!linea) {                     // [!code --]
+            break;                        // [!code --]
+        }                                 // [!code --]
+        if (linea) {                      // [!code ++]
+            add_history(linea);           // [!code ++]
+        }                                 // [!code ++]
+        if (!strncmp(linea, "exit", 4)) { // [!code ++]
+            free(linea);                  // [!code ++]
+            break;                        // [!code ++]
+        }                                 // [!code ++]
         printf("%s\n", linea);
         free(linea);
     }
+    return 0;
 }
 ```
 
@@ -144,13 +148,13 @@ la mayoría de las veces, **debería estar**. Normalmente, _lo que falta es la
 contraparte para desarrolladores_. Por las dudas, dejo los nombres de los
 paquetes de ambos:
 
-```bash:no-line-numbers
+```bash
 sudo apt-get install libreadline8 libreadline-dev
 ```
 
 Finalmente, solo resta compilar nuestro ejemplo usando el flag para bibliotecas
 de gcc, como **`-lreadline`**.
 
-```bash:no-line-numbers
+```bash
 gcc example.c -o example -lreadline
 ```

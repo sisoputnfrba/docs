@@ -3,6 +3,14 @@
 > «No hay ninguna razón para usar la palabra "imposible" para describir algo que
 > claramente ha pasado» ― Douglas Adams
 
+## 2022
+- Segundo Cuatrimestre: **G.E.C.K.**
+  - [Enunciado](https://faq.utnso.com.ar/geck)
+  - [Tests](https://faq.utnso.com.ar/geck-pruebas)
+- Primer Cuatrimestre: **KISS**
+  - [Enunciado](https://faq.utnso.com.ar/kiss)
+  - [Tests](https://faq.utnso.com.ar/kiss-pruebas)
+
 ## 2021
 
 - Segundo Cuatrimestre: **CarpinchOS**

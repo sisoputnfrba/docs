@@ -2,7 +2,7 @@
 const props = {
   v: {
     type: String,
-    required: true
+    required: true,
   },
 };
 
@@ -17,14 +17,15 @@ export default { props };
       class="youtube"
       frameborder="0"
       allow="
-        accelerometer;
-        autoplay;
-        clipboard-write;
-        encrypted-media;
-        gyroscope;
-        picture-in-picture
-      "
-      allowfullscreen>
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture
+        "
+      allowfullscreen
+    >
     </iframe>
   </div>
 </template>

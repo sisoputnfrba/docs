@@ -34,7 +34,7 @@ Con algo de suerte podes poner una mano en tu corazón y jurar que nunca
 incursionamos en prácticas del ocultismo espaguetital, pero C + un TP complejo +
 desconocimiento = la receta para terminar con un monstruo del estilo:
 
-```c
+```c:line-numbers
 int main() {
     while (vivo()) {
         while (edad < 25) {
@@ -129,30 +129,28 @@ esta la directiva, y después compilar eso en un archivo masivo.
 Ahora bien, esto trae un par de problemas _interesantes_, como tener estos dos
 archivos:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c
+```c:line-numbers [corredor.c]
 #include "sumar.c"
 
 void main() {
     sumarTres(5);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 De intentar compilar en forma automática esto, van a ver un error parecido a:
 
-```log:no-line-numbers
+```
 /sumar.c:3: multiple definition of `sumarTres'
 ./corredor.o: /sumar.c:3: first defined here
 ```
@@ -160,17 +158,16 @@ De intentar compilar en forma automática esto, van a ver un error parecido a:
 Lamentablemente tiene mucho sentido esto, si miramos a como intentamos compilar,
 podemos ver algo como:
 
-```bash:no-line-numbers
+```bash
 gcc corredor.c sumar.c -o corredor
 ```
 
 Entonces, básicamente estamos tratando de compilar dos archivos de esta forma
 (una vez pasado el preprocesador):
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1-3}
+```c:line-numbers{1-3} [corredor.c]
 int sumarTres(int numero) {
     return numero+3;
 }
@@ -179,23 +176,22 @@ void main() {
     sumarTres(5);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
+
+```c:line-numbers [sumar.c]
 int sumarTres(int numero) {
     return numero+3;
 }
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
 
 Tiene mucho sentido que nos diga que esto no puede ser así, porque `sumarTres`
 está dos veces.
 
 Ciertamente podríamos compilar solamente el `corredor.c`:
 
-```bash:no-line-numbers
+```bash
 gcc corredor.c -o corredor
 ```
 
@@ -211,35 +207,27 @@ de un archivo como encabezado (aka: _header_), por lo que tendríamos estos
 **tres** archivos:
 
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1}
-#include "sumar.h"
+```c:line-numbers [sumar.h]
+int sumarTres(int numero);
+```
+
+```c:line-numbers [sumar.c]
+int sumarTres(int numero) {
+    return numero+3;
+}
+```
+
+```c:line-numbers [corredor.c]
+#include "sumar.h" // [!code ++]
 
 void main() {
     sumarTres(5);
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
-
-```c
-int sumarTres(int numero) {
-    return numero+3;
-}
-```
-
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
-
-```c
-int sumarTres(int numero);
-```
-
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 Ahora sí podemos compilar por separado cada .c, que genera dos objetos
 diferentes, y al final los "pega" todos juntos y nos da un ejecutable. Si
@@ -253,7 +241,7 @@ querer, incluimos más de una vez `sumar.h`, la definición de nuestra funcion
 
 Este sería el error:
 
-```log:no-line-numbers
+```
 sumar.c: error: redefinition of 'sumarTres'
 ```
 
@@ -263,10 +251,25 @@ imagina. Para esto C nos trae otras directivas del preprocesador: `#define`,
 
 Esto nos permite tener este código en nuestro archivo:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c{1}
+```c:line-numbers [sumar.h]
+#ifndef SUMAR_H_ // [!code ++]
+#define SUMAR_H_ // [!code ++]
+
+int sumarTres(int numero);
+
+#endif  // [!code ++]
+```
+
+
+```c:line-numbers [sumar.c]
+int sumarTres(int numero) {
+    return numero+3;
+}
+```
+
+```c:line-numbers [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -274,31 +277,10 @@ void main() {
 }
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c
-int sumarTres(int numero) {
-    return numero+3;
-}
-```
+:::
 
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
-
-```c{1-2,6}
-#ifndef SUMAR_H_
-#define SUMAR_H_
-
-int sumarTres(int numero);
-
-#endif
-```
-
-</CodeGroupItem>
-</CodeGroup>
-
-Analizemos un poco el codigo agregado de `sumar.h`:
+Analicemos un poco el codigo agregado de `sumar.h`:
 
 - Preguntamos si no esta definida `SUMAR_H_`. De no estar definida:
   - Definimos `SUMAR_H_`.
@@ -319,7 +301,7 @@ Supongamos que ahora también queremos un tipo de dato, como que los números
 tengan también un `numeroAnterior` que guarde el numero pre-suma. Tendriamos una
 estructura parecida a:
 
-```c:no-line-numbers
+```c
 typedef struct {
    int numero;
    int numeroAnterior;
@@ -341,10 +323,34 @@ El drama es donde ponerlo. las alternativas son:
 Las tres formas tienen problemas, pero hay una más facil de arreglar que las
 otras:
 
-<CodeGroup>
-<CodeGroupItem title="corredor.c">
+::: code-group
 
-```c
+
+```c:line-numbers [sumar.h]
+#ifndef SUMAR_H_
+#define SUMAR_H_
+
+typedef struct {        // [!code ++]
+    int numero;         // [!code ++]
+    int numeroAnterior; // [!code ++]
+} t_numero;             // [!code ++]
+
+t_numero sumarTres(t_numero numero);
+
+#endif
+```
+
+```c:line-numbers [sumar.c]
+#include "sumar.h" // [!code ++]
+
+t_numero sumarTres(t_numero numero) {
+    numero.numeroAnterior = numero.numero;
+    numero.numero += 3;
+    return numero;
+}
+```
+
+```c:line-numbers [corredor.c]
 #include "sumar.h"
 
 void main() {
@@ -354,37 +360,9 @@ void main() {
     sumarTres(cinco);
 }
 ```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.c">
 
-```c{1}
-#include "sumar.h"
 
-t_numero sumarTres(t_numero numero) {
-    numero.numeroAnterior = numero.numero;
-    numero.numero += 3;
-    return numero;
-}
-```
-</CodeGroupItem>
-<CodeGroupItem title="sumar.h">
-
-```c{4-7}
-#ifndef SUMAR_H_
-#define SUMAR_H_
-
-typedef struct {
-    int numero;
-    int numeroAnterior;
-} t_numero;
-
-t_numero sumarTres(t_numero numero);
-
-#endif
-```
-
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 Con algo de suerte ahora es un poco más evidente por qué ponemos las guardas, y
 cómo es que varios archivos pueden incluir a uno.
@@ -492,7 +470,7 @@ un nuevo discriminador e inventa su número, y otra persona agrega otro
 discriminador, con el mismo numero: problemas. Más importante aún, si uno
 intenta ver en GDB (debugger) el valor de `discriminador`:
 
-```log:no-line-numbers
+```
 (gdb) print discriminador
 $1 = DATO
 ```
@@ -600,7 +578,7 @@ Lo que quiero hacerlos reflexionar es que tal vez no sea estrictamente un
 `char*`, y no tenga el mismo tratamiento que un `char*`, es más bien un:
 `t_memoria`:
 
-```c:no-line-numbers
+```c
 typedef struct {
     char *dato;
 } t_memoria;
@@ -619,7 +597,7 @@ Supongamos que armamos todo un
 `crearMemoria`, `destruirMemoria`, `asignarMemoria`, `moverMemoria`, lo que
 fuera. Por alguna razón loca, nos equivocamos y tratamos de hacer algo como:
 
-```c:no-line-numbers
+```c
 int tamanioMemoria = crearMemoria();
 ```
 
@@ -630,7 +608,7 @@ Esto funciona a la perfección, compila y ejecuta, pero no es lo que queríamos;
 debuggearlo nos va a llevar más que esos nanosegundos de poner esa una línea de
 `typedef`.
 
-::: warning WARNING
+::: warning warning IMPORTANTE
 
 Los warnings del compilador de C son importantes ~~(más este que estás
 viendo)~~. Hay que prestarles atención, ya que _suelen_ indicar un mal manejo de
@@ -647,7 +625,7 @@ semáforo global. Pero, ¿y si tenemos varios segmentos de memoria que manejamos
 Teniendo el `typedef` es tan trivial como ir a la especificación del `t_memoria`
 y cambiarlo por algo como:
 
-```c:no-line-numbers
+```c
 typedef struct {
     char* dato;
     sem_t* semaforo;

@@ -29,7 +29,7 @@ probar [UTM](https://mac.getutm.app/) siguiendo
 
 <YouTube v="hnwK-nkXolc"/>
 
-::: warning
+::: warning IMPORTANTE
 
 Omitir la sección del minuto 7:17, ya que en su lugar vamos a
 ejecutar los scripts antes mencionados siguiendo las instrucciones para instalar
@@ -67,16 +67,15 @@ las pruebas.
 
 Para descomprimir las partes y obtener el **.vdi**, pueden utilizar:
 
-- En **Windows**: [7-Zip](https://www.7-zip.org/)
+- Windows: [7-zip.org](https://www.7-zip.org/)
 
-- En **MacOS**: [The Unarchiver](https://theunarchiver.com/)
+- Linux: [Ubuntu Manpage - 7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
 
-- En **Linux**: [7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
-
-```bash:no-line-numbers
+```bash
 sudo apt install p7zip-full
 ```
 
+- MacOS: [theunarchiver.com](https://theunarchiver.com/)
 
 
 ::: warning ADVERTENCIA
@@ -96,36 +95,28 @@ que aparece en la misma página, siguiendo este video:
 
 Pueden copiar el comando de acá:
 
-<CodeGroup>
-<CodeGroupItem title="Windows">
+::: code-group
 
-```:no-line-numbers
+```cmd [Windows]
 certutil -hashfile [archivo] md5
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="Linux">
-
-```:no-line-numbers
+```bash [Linux]
 md5sum [archivo]
 ```
 
-</CodeGroupItem>
-<CodeGroupItem title="MacOS">
-
-```:no-line-numbers
+```bash [MacOS]
 md5 [archivo]
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
 
 ## Crear la máquina virtual
 
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
 máquina virtual siguiendo este video:
 
-::: danger
+::: danger ATENCIÓN
 
 El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
 seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
@@ -154,11 +145,11 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 <YouTube v="uMoO58tPc5c"/>
 
-::: danger
+::: danger ATENCIÓN
 
 En las versiones más recientes, el mensaje que aparece luego de ejecutar el
 script de instalación es el siguiente:
-```:no-line-numbers
+```
 VirtualBox Guest Additions: Running kernel modules will not be replaced until
 the system is restarted
 ```

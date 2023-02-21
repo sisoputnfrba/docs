@@ -11,7 +11,7 @@ Ambas máquinas virtuales tienen creado un usuario **utnso** con contraseña
 
 :::
 
-::: danger
+::: danger ATENCIÓN
 
 Si estás configurando el entorno de desarrollo o estás evaluando no usar las máquinas
 virtuales para desarrollar el trabajo práctico, antes leé la
@@ -31,7 +31,7 @@ desarrollo.**
 
 **Hashes MD5**
 
-```:no-line-numbers
+```
 Grafica.zip.001 - 5ee3c35d23d922943977b54e24d218b4
 Grafica.zip.002 - 60691da5303b1e1763ef20b2701208b8
 
@@ -55,7 +55,7 @@ Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 
 **Hashes MD5**
 
-```:no-line-numbers
+```
 Server.zip.001 - b1253de2525afe071f14ce9fea6b9db2
 
 Server.vdi - 503624dc5c96c76310ed7ea1fcfe5a06

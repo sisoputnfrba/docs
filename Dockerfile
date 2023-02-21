@@ -2,9 +2,9 @@ FROM node:16.14.0 as builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json yarn.lock ./
 
-RUN npm ci --ignore-scripts
+RUN yarn install --frozen-lockfile
 
 COPY . .
 
@@ -16,7 +16,7 @@ RUN npm install -g http-server
 
 WORKDIR /app
 
-COPY --from=builder /app/docs/.vuepress/dist/ dist/
+COPY --from=builder /app/docs/.vitepress/dist/ dist/
 
 EXPOSE 8080
 

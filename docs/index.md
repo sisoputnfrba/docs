@@ -1,13 +1,19 @@
 ---
-home: true
-heroImage: /img/logo.gif
-tagline: En esta guía vas a encontrar todo lo necesario para hacer el TP de Sistemas Operativos.
-actions:
-  - text: Primeros pasos →
-    link: /primeros-pasos/
-  - text: ¡Tengo una duda!
-    link: /consultas
-    type: secondary
+layout: home
+title: Docs
 
-footer: Made by sisoputnfrba with ❤️
+hero:
+  name: Docs
+  text: Sistemas Operativos UTN FRBA
+  tagline: En este sitio vas a encontrar todo lo necesario para hacer el TP de Sistemas Operativos.
+  image:
+    src: /img/logo.gif
+    alt: Tux
+  actions:
+    - theme: brand
+      text: Primeros pasos →
+      link: /primeros-pasos/
+    - theme: alt
+      text: ¡Tengo una duda!
+      link: /consultas
 ---
