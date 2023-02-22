@@ -6,7 +6,9 @@
   --vp-c-brand-dark: #d52448;
   --vp-c-brand-darker: #d52448;
 
-  --vp-c-yellow-darker: #856710;
+  --vp-custom-block-warning-text: var(--vp-c-yellow-dark);
+  --vp-custom-block-danger-text: var(--vp-c-red-dark);
+  --vp-custom-block-tip-text: var(--vp-c-green-dark);
 }
 
 .VPSidebarItem {
@@ -27,8 +29,9 @@ html.dark {
   --vp-c-brand-dark: #ffaf2e;
   --vp-c-brand-darker: #ffaf2e;
 
-  --vp-custom-block-danger-border: rgb(243, 119, 158, 0.25);
-  --vp-custom-block-danger-text: #f3779e;
+  --vp-custom-block-danger-text: var(--vp-c-red-light);
+  --vp-custom-block-warning-text: var(--vp-c-yellow);
+  --vp-custom-block-tip-text: var(--vp-c-green-light);
 
   .VPButton.brand {
     color: var(--vp-c-black);
