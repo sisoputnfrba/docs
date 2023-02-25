@@ -24,8 +24,7 @@ todos los scripts que usamos para descargar los paquetes instalados en las VMs,
 junto con una guía paso a paso.
 
 Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
-probar [UTM](https://mac.getutm.app/) siguiendo
-[este tutorial](https://www.youtube.com/watch?v=) (en inglés):
+probar [UTM](https://mac.getutm.app/) siguiendo este tutorial (en inglés):
 
 <YouTube v="hnwK-nkXolc"/>
 
