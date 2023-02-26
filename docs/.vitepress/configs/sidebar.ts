@@ -119,7 +119,7 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/shared-libraries'
       },
       {
-        text: 'Learn C',
+        text: 'Tutorial interactivo de C',
         link: 'https://www.learn-c.org/'
       },
     ],

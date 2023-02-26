@@ -22,7 +22,7 @@ página.
 - [Argumentos para el main](/guias/programacion/main)
 - [Cómo hacer una consola interactiva](/guias/programacion/readline)
 - [Video de Shared Libraries](/guias/programacion/shared-libraries)
-- [Learn C (en inglés) ↗️](https://www.learn-c.org/)
+- [Tutorial interactivo de C (en inglés) ↗️](https://www.learn-c.org/)
 
 ### Syscalls de Linux
 
