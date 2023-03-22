@@ -10,14 +10,11 @@ COPY . .
 
 RUN npm run build
 
-FROM node:16.14.0-alpine
 
-RUN npm install -g http-server
+FROM nginx:alpine
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-COPY --from=builder /app/docs/.vitepress/dist/ dist/
+COPY --from=builder /app/docs/.vitepress/dist/ ./
 
-EXPOSE 8080
-
-ENTRYPOINT [ "http-server", "-p8080", "dist"]
+EXPOSE 80

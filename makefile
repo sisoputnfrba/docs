@@ -8,7 +8,7 @@ build:
 
 run: PORT = $(error "Falta pasar el PORT, ej: make run PORT=8080")
 run:
-	docker run --rm -d --init -p$(PORT):8080 $(TAG)
+	docker run --rm -d --init -p$(PORT):80 $(TAG)
 
 stop:
 	echo $(IDS) | tr ' ' '\n' | xargs --no-run-if-empty docker stop
