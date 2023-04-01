@@ -59,6 +59,19 @@ Sino, si se sienten con más comodidad planteando la duda en forma sincrónica,
 otro medio de consulta son los sábados de soporte a través del servidor de
 [Discord](https://faq.utnso.com.ar/discord-invite).
 
+::: warning IMPORTANTE
+
+El Discord va a estar activo para consultas de forma sincrónica solo los días
+de sábado de soporte en los que la fila del canal `#general` se encuentre
+activa:
+
+![image](https://user-images.githubusercontent.com/39303639/229314091-3524500a-a2fd-4d07-8b76-5255d2956ab3.png)
+
+Las fechas de soporte van a ser anunciadas cuatrimestre a cuatrimestre en el
+[blog](https://faq.utnso.com.ar/blog).
+
+:::
+
 ## Dudas conceptuales para encarar el TP o código del equipo
 
 Este es el caso mas complicado, ya que acá muy posiblemente tengan que mostrar
