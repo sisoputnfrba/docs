@@ -63,7 +63,7 @@ otro medio de consulta son los sábados de soporte a través del servidor de
 
 El Discord va a estar activo para consultas de forma sincrónica solo los días
 de sábado de soporte en los que la fila del canal `#general` se encuentre
-activa:
+iniciada:
 
 ![image](https://user-images.githubusercontent.com/39303639/229314091-3524500a-a2fd-4d07-8b76-5255d2956ab3.png)
 
