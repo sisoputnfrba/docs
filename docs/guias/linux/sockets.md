@@ -267,4 +267,4 @@ _v1.0 Publicación Inicial_
 
 <br>
 
-[^1]: El cual, junto con el flag `AI_PASSIVE` que pasamos más arriba, permite aceptar cualquier IP que tenga asignada la máquina que está corriendo el proceso como se explica en el [manual de getaddrinfo(3)](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,flag%20is%20ignored.)
+[^1]: Este parámetro, junto con el flag `AI_PASSIVE` que pasamos más arriba, permite aceptar cualquier IP que tenga asignada la máquina que está corriendo el proceso como se explica en el [manual de getaddrinfo(3)](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,flag%20is%20ignored.)
