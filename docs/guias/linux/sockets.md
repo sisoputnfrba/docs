@@ -127,7 +127,7 @@ freeaddrinfo(servinfo);
 
 ```
 
-`bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que obtenga información de red sobre una IP `NULL` (que junto con el flag `AI_PASSIVE` que pasamos más arriba, permite aceptar cualquier IP que tenga asignada la máquina que está corriendo el proceso[^1]), en el puerto 4444, arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre la computadora local porque es en la computadora local donde estamos tratando de levantar el servidor para que los clientes en otras computadoras se puedan contectar.
+`bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que obtenga información de red sobre una IP `NULL`[^1], en el puerto 4444, arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre la computadora local porque es en la computadora local donde estamos tratando de levantar el servidor para que los clientes en otras computadoras se puedan contectar.
 
 Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas que puede mantener. `SOMAXCONN` como indica el nombre, es la cantidad máxima que admite el sistema operativo.
 
@@ -267,4 +267,4 @@ _v1.0 Publicación Inicial_
 
 <br>
 
-[^1]: Ref: [getaddrinfo(3) - Linux manual page](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,flag%20is%20ignored.)
+[^1]: El cual, junto con el flag `AI_PASSIVE` que pasamos más arriba, permite aceptar cualquier IP que tenga asignada la máquina que está corriendo el proceso como se explica en el [manual de getaddrinfo(3)](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,flag%20is%20ignored.)
