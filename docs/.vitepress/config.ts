@@ -35,27 +35,27 @@ export default defineConfig({
     darkModeSwitchLabel: 'Tema',
     sidebarMenuLabel: 'Menú',
     returnToTopLabel: 'Volver al inicio',
-    search: {
-      provider: 'local',
-      options: {
-        translations: {
-          button: {
-            buttonText: 'Buscar',
-          },
-          modal: {
-            displayDetails: 'Mostrar vista detallada',
-            resetButtonTitle: 'Limpiar búsqueda',
-            backButtonTitle: 'Cerrar buscador',
-            noResultsText: 'No se encontraron resultados para',
-            footer: {
-              selectText: 'para seleccionar',
-              navigateText: 'para navegar',
-              closeText: 'para cerrar',
-            }
-          },
-        },
-      },
-    },
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     translations: {
+    //       button: {
+    //         buttonText: 'Buscar',
+    //       },
+    //       modal: {
+    //         displayDetails: 'Mostrar vista detallada',
+    //         resetButtonTitle: 'Limpiar búsqueda',
+    //         backButtonTitle: 'Cerrar buscador',
+    //         noResultsText: 'No se encontraron resultados para',
+    //         footer: {
+    //           selectText: 'para seleccionar',
+    //           navigateText: 'para navegar',
+    //           closeText: 'para cerrar',
+    //         }
+    //       },
+    //     },
+    //   },
+    // },
   },
   markdown: {
     config: (md) => {

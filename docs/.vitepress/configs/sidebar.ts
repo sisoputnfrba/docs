@@ -2,15 +2,6 @@ import { DefaultTheme } from 'vitepress';
 
 export const sidebar: DefaultTheme.Sidebar = [
   {
-    text: 'Consultas',
-    items: [
-      {
-        text: 'Help! I need somebody!',
-        link: '/consultas',
-      },
-    ],
-  },
-  {
     text: 'Recursos',
     items: [
       {
