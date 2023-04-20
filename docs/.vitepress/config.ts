@@ -9,28 +9,52 @@ export default defineConfig({
   title: 'Docs | Sistemas Operativos - UTN FRBA',
   description: 'Todo lo necesario para hacer el TP de Sistemas Operativos.',
   lastUpdated: true,
-  cleanUrls: 'without-subfolders',
+  cleanUrls: true,
   titleTemplate: 'Sistemas Operativos - UTN FRBA',
   themeConfig: {
-    siteTitle: 'Sistemas Operativos',
     logo: '/logo.gif',
-    outline: 'deep',
-    outlineTitle: 'En esta página',
-    lastUpdatedText: 'Última actualización',
+    siteTitle: 'Sistemas Operativos',
     nav: navbar,
     sidebar: sidebar,
-    editLink: {
-      pattern: 'https://github.com/sisoputnfrba/docs/edit/main/docs/:path',
-      text: 'Editar esta página en GitHub',
-    },
+    outline: 'deep',
+    outlineTitle: 'En esta página',
     socialLinks: socialLinks,
     footer: {
       message: `© ${new Date().getFullYear()} Cátedra de Sistemas Operativos`,
       copyright: 'Universidad Tecnológica Nacional | Facultad Regional Buenos Aires',
     },
+    editLink: {
+      pattern: 'https://github.com/sisoputnfrba/docs/edit/main/docs/:path',
+      text: 'Editar esta página en GitHub',
+    },
+    lastUpdatedText: 'Última actualización',
     docFooter: {
       prev: 'Página anterior',
       next: 'Página siguiente',
+    },
+    darkModeSwitchLabel: 'Tema',
+    sidebarMenuLabel: 'Menú',
+    returnToTopLabel: 'Volver al inicio',
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: 'Buscar',
+          },
+          modal: {
+            displayDetails: 'Mostrar vista detallada',
+            resetButtonTitle: 'Limpiar búsqueda',
+            backButtonTitle: 'Cerrar buscador',
+            noResultsText: 'No se encontraron resultados para',
+            footer: {
+              selectText: 'para seleccionar',
+              navigateText: 'para navegar',
+              closeText: 'para cerrar',
+            }
+          },
+        },
+      },
     },
   },
   markdown: {
