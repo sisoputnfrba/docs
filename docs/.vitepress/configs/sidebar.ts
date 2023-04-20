@@ -2,6 +2,23 @@ import { DefaultTheme } from 'vitepress';
 
 export const sidebar: DefaultTheme.Sidebar = [
   {
+    text: 'Links útiles',
+    items: [
+      {
+        text: 'Blog de la cátedra',
+        link: 'https://faq.utnso.com.ar/blog'
+      },
+      {
+        text: 'Foro de GitHub',
+        link: 'https://github.com/sisoputnfrba/foro'
+      },
+      {
+        text: 'Sistema de Inscripciones',
+        link: 'https://faq.utnso.com.ar/inscripciones'
+      },
+    ],
+  },
+  {
     text: 'Recursos',
     items: [
       {
