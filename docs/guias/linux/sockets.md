@@ -6,6 +6,25 @@ _... o cómo conectar dos procesos sin morir en el intento_
 ## Objetivo
 
 El presente documento tiene como fin explicar conceptos básicos de redes para luego poder adentrarse en qué son, cómo funcionan y cómo implementar sockets para crear un modelo cliente-servidor funcional para el trabajo práctico cuatrimestral
+
+::: warning IMPORTANTE
+
+Todos los fragmentos de código que se encuentran en esta guía son a modo
+demostrativo y contemplan únicamente el "camino feliz" (es decir, sin errores).
+
+Para manejar los códigos de error retornados por las funciones mostradas,
+recomendamos consultar la firma de cada una de ellas en las
+[Linux man pages](https://man7.org/linux/man-pages/).
+
+Otros links de utilidad:
+
+- [errno(3) — Linux manual page](https://man7.org/linux/man-pages/man3/errno.3.html)
+- [strerror(3) — Linux manual page](https://man7.org/linux/man-pages/man3/strerror.3.html)
+- [gai_strerror(3p) — Linux manual page](https://man7.org/linux/man-pages/man3/gai_strerror.3p.html)
+
+
+:::
+
 ## ¿Qué es un cliente-servidor?
 
 Antes de poder adentrarnos a hablar de sockets y cómo conectar dos procesos en C, primero hay que definir y tener bien en claro un par de conceptos de redes que se necesitan para poder arrancar.
@@ -65,6 +84,7 @@ El diagrama indica la secuencia en la que deberían ser llamadas las funciones. 
 ## [socket()](https://man7.org/linux/man-pages/man2/socket.2.html)
 
 ![socket](/img/guias/sockets/socket.png)
+
 
 La primera syscall que hay que utilizar para iniciar una conexión por socket entre dos procesos es socket. Esta lo que hace es generar lo que se llama un file descriptor, que son básicamente los IDs que Linux utiliza para representar cualquier cosa del sistema (archivos, bloques de memoria, teclados, impresoras, monitores, discos rígidos, etc). Estos file descriptors son representados en los programas C por un entero, lo cual no quiere decir que todo entero sea un file descriptor.
 
