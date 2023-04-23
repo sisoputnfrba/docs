@@ -22,6 +22,30 @@
   }
 }
 
+.VPNavBarAppearance {
+  display: flex !important;
+}
+
+.VPNavBarSocialLinks {
+  display: flex !important;
+}
+
+.VPNavBarExtra {
+  display: none !important;
+}
+
+@media (max-width: 1330px) {
+  .VPNavBarAppearance {
+    display: none !important;
+  }
+  .VPNavBarSocialLinks {
+    display: none !important;
+  }
+  .VPNavBarExtra {
+    display: block !important;
+  }
+}
+
 .toggle-layout-button {
   display: none;
 }
