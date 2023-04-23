@@ -23,8 +23,4 @@ export const navbar: DefaultTheme.NavItem[] = [
     text: 'Inscripciones',
     link: 'https://faq.utnso.com.ar/inscripciones'
   },
-  {
-    text: 'Quiénes somos',
-    link: '/quienes-somos',
-  },
 ]
