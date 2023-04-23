@@ -62,4 +62,7 @@ export default defineConfig({
       md.use(MarkdownItFootnotePlugin);
     },
   },
+  vite: {
+    plugins: [],
+  },
 });
