@@ -24,7 +24,7 @@
     "@types/node": "^18.11.18",
     "markdown-it-footnote": "^3.0.3",
     "sass": "^1.55.0",
-    "vitepress": "1.0.0-alpha.73",
+    "vitepress": "1.0.0-alpha.74",
     "vue": "^3.2.38"
   }
 }
