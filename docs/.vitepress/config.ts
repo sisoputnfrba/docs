@@ -38,6 +38,8 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
+        disableDetailedView: true,
+        disableQueryPersistence: false,
         translations: {
           button: {
             buttonText: 'Buscar',
