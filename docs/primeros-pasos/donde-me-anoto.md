@@ -45,13 +45,20 @@ Ahí mismo podés ir creando tu grupo. Para anotarte vas a necesitar tu cuenta d
 GitHub y tu código de curso, así que **no hagas esto hasta que tengas confirmada
 la inscripción a la materia**.
 
+**Si aún no conseguiste grupo, aún así deberás anotarte en el sistema antes de la
+fecha de cierre**. Una vez llegada la fecha, se conformarán grupos entre los
+alumnos rezagados. 
+
+Si justo conseguiste grupo y se te fue asignado a otro, podrás solicitar el
+cambio desde el sistema en la sección "Cambios de Grupos".
+
 ::: warning IMPORTANTE
 
 Estate atento a tu casilla de mail porque cuando te inscribas vas a recibir un
 mail de invitación a la organización en GitHub.
 
-Sin aceptar ese mail, no vas a poder acceder al repositorio del grupo ni subir
-código del TP allí.
+En caso de que la invitación expire, podés ingresar al sistema y reenviarte la
+invitación desde ahí mismo.
 
 :::
 
