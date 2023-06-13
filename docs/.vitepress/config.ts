@@ -38,7 +38,7 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-        disableDetailedView: true,
+        disableDetailedView: false,
         disableQueryPersistence: false,
         translations: {
           button: {
