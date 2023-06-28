@@ -10,32 +10,8 @@ funcione en el entorno en el que va a ser evaluado**.
 
 ::: danger NO SEGURO
 
-De todas formas, si te es imposible instalar VirtualBox y _no te queda otra
-alternativa_ que utilizar un entorno nativo u otro software de virtualización,
-te dejamos un par de recursos que pueden ser de utilidad.
-
-Una vez instalado todo, no te olvides de pasar por la
-[última sección de esta guía](#amigandose-con-la-consola).
-
-::: details Spoiler
-
-En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se encuentran
-todos los scripts que usamos para descargar los paquetes instalados en las VMs,
-junto con una guía paso a paso.
-
-Si contás con un procesador M1 y necesitás una alternativa a VirtualBox podés
-probar [UTM](https://mac.getutm.app/) siguiendo este tutorial (en inglés):
-
-<YouTube v="hnwK-nkXolc"/>
-
-::: warning IMPORTANTE
-
-Omitir la sección del minuto 7:17, ya que en su lugar vamos a
-ejecutar los scripts antes mencionados siguiendo las instrucciones para instalar
-un entorno gráfico más liviano. Luego, podrás continuar con la siguiente sección
-del video a partir del minuto 8:47.
-
-<br>
+Si no podés o no querés usar VirtualBox, leé la sección [Sin usar
+VirtualBox](#sin-usar-virtualbox).
 
 :::
 
@@ -189,3 +165,38 @@ Para eso, te dejamos acá algunos links que te pueden ser útiles:
 - [Micro-repaso de Arquitectura](https://faq.utnso.com.ar/guia-repaso-arquitectura)
 - [Guía de uso de Bash](/guias/consola/bash)
 - [Git para el trabajo práctico](/guias/consola/git)
+
+## Sin usar VirtualBox
+
+::: danger NO ENTRES AHÍ
+
+A fin de cuatrimestre, tu trabajo práctico tiene que funcionar en la VM
+Server, ejecutando en VirtualBox. De ser posible, mantené tu desarrollo
+en el ambiente más similar que puedas, para evitarte problemas a último
+momento.
+
+Además, probablemente nos cueste más darte soporte para configuraciones
+distintas como las que mencionamos acá abajo. Podés elegir usarlas, pero
+te recomendamos que lo pienses _bastante bien_ antes de hacerlo.
+
+:::
+
+Si te es imposible instalar VirtualBox y _no te queda otra alternativa_
+que utilizar un entorno nativo u otro software de virtualización, te
+dejamos un par de recursos que pueden ser de utilidad.
+
+::: tip
+
+Una vez instalado todo, no te olvides de repasar por la [sección
+anterior](#amigandose-con-la-consola) para ver cómo usarlas.
+
+:::
+
+En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se
+encuentran los scripts que usamos para descargar los paquetes instalados
+en las VMs, junto con una guía paso a paso.
+
+Si tenés una Mac con procesador ARM (M1, M2, etc), podés [emular la VM
+usando UTM](/guias/herramientas/macos-arm). Si tenés procesador ARM con
+otro sistema operativo, todavía no tenemos guía armada, pero podés
+basarte en esa para emular la VM con QEMU.
