@@ -90,7 +90,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Learn Git Branching',
-        link: 'https://learngitbranching.js.org/'
+        link: 'https://learngitbranching.js.org/?locale=es_AR'
       },
     ],
   },
