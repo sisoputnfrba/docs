@@ -196,12 +196,14 @@ eh!_).
 
 ::: tip
 
-Si no tenés un editor de textos favorito, ejecutá `sudo nano
-/etc/netplan/00-installer-config.yml`, poné la contraseña de tu usuario
-`utnso`, hacé los cambios al archivo, y después tocá CTRL+X (_Exit_),
-después `Y` ("Yes") cuando te pregunta si querés guardar el "buffer", y
-por último dale `Enter` para que guarde en la misma ruta que habías
-abierto.
+Si no tenés un editor de textos favorito, podés revisar la [guía de
+nano](/guias/consola/bash#nano).
+
+Como TL;DR, ejecutá `sudo nano /etc/netplan/00-installer-config.yml`,
+poné la contraseña de tu usuario `utnso`, hacé los cambios al archivo, y
+después tocá CTRL+X (_Exit_), después `Y` ("Yes") cuando te pregunta si
+querés guardar el "buffer", y por último dale `Enter` para que guarde en
+la misma ruta que habías abierto.
 
 :::
 
