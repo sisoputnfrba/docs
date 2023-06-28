@@ -13,7 +13,7 @@ página.
 - [Git para el Trabajo Práctico](/guias/consola/git)
 - [Rutas Relativas y Absolutas](/guias/consola/rutas)
 - [Mario Bash ↗️](https://faq.utnso.com.ar/mariobash)
-- [Learn Git Branching (en inglés) ↗️](https://learngitbranching.js.org/)
+- [Learn Git Branching ↗️](https://learngitbranching.js.org/?locale=es_AR)
 
 ### Programación en C
 
