@@ -159,6 +159,18 @@ Una vez hecho esto, pueden usar el comando
 [`ifconfig`](/guias/consola/bash.html#ifconfig) para consultar la IP de ambas VMs y
 configurar los módulos.
 
+::: danger AVISO
+
+Si por algún motivo encuentran que su router les asigna la misma IP a todas las
+VMs clonadas, ejecuten el siguiente comando:
+```sh
+curl -fsSL https://faq.utnso.com.ar/fluship.sh | bash
+```
+Lo que hará será descargar y ejecutar un script que instala el fix a este
+problema. Luego de reiniciar, cada VM debería tener su propia dirección IP.
+
+:::
+
 ## Paso 3: Día E (de entrega) - Obligatorio
 
 A partir de este punto ustedes tendrán que seguir el instructivo de pruebas para
@@ -226,8 +238,8 @@ del cuatri y qué relaciones encontraron con la teoría.
 
 [^3]:
     Si cuentan con una shared library propia, deberán copiar los headers (".h")
-    en `/usr/local/include` y la biblioteca compilada (".so") en
-    `/usr/local/lib`. Las commons se instalan
+    en `/usr/include` y la biblioteca compilada (".so") en `/usr/lib`. Las 
+    commons se instalan
     [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/makefile#L33-L34)
     ;)
 
