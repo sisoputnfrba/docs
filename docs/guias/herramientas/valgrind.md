@@ -670,13 +670,15 @@ reachable", para los amigos):
 ==111884== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
-Cuando un proceso finaliza, es importante tener en cuenta que el sistema
-operativo se encarga de liberar todos los recursos que ese proceso tenía
+Es importante tener en cuenta que, cuando un proceso finaliza, el sistema
+operativo se encarga de liberar todos los recursos que éste tenía
 asignados. Esto significa que esa memoria que nos quedaba como "still
-reachable" no _se pierde_, sino que el sistema operativo la libera.
+reachable" no se queda "latente" después de la ejecución, por lo que no hace
+falta intervenir para liberarla a mano si no es necesario.
 
-`valgrind` nos avisa para que sepamos que está ahí, pero no es un error
-_per sé_.
+`valgrind` nos avisa para que sepamos que está ahí, porque puede pasar que
+estemos acumulando mucha memoria sin liberarla manteniendo la referencia pero no
+es garantía de ser un error.
 
 ::: tip
 
@@ -693,12 +695,14 @@ comando finalice más rápido.
 Entonces, ¿cuáles son los leaks **reales**?
 
 Los leaks reales son la memoria a la que uno deja de tener acceso **durante la
-ejecución del proceso**. Eso es problemático porque mientras que el proceso siga
-en ejecución, tu proceso va a tener asignada esa memoria sin poder aprovecharla.
+ejecución del proceso**. Eso es problemático porque mientras que éste siga
+en ejecución, va a tener asignada esa memoria sin poder aprovecharla.
 
 Incluso, si la ejecución de tu proceso durara lo suficiente, se podría superar
-el límite de memoria permitido para el proceso, y entonces el sistema operativo
-podría terminar el proceso abruptamente.
+el límite de memoria permitido, y entonces el sistema operativo
+podría terminar el proceso abruptamente (o un `malloc()` podría fallar retornando
+un puntero a `NULL`, causando un segmentation fault inmediatamente al intentar
+accederlo).
 
 ### Possibly lost (el caso de `pthread_create`)
 
