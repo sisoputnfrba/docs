@@ -676,9 +676,9 @@ asignados. Esto significa que esa memoria que nos quedaba como "still
 reachable" no se queda "latente" después de la ejecución, por lo que no hace
 falta intervenir para liberarla a mano si no es necesario.
 
-`valgrind` nos avisa para que sepamos que está ahí, porque puede pasar que
-estemos acumulando mucha memoria sin liberarla manteniendo la referencia pero no
-es garantía de ser un error.
+`valgrind` nos avisa para que sepamos que está ahí (porque puede pasar que
+estemos acumulando mucha memoria sin liberarla manteniendo la referencia) pero
+no es garantía de ser un error (al contrario, es habitual).
 
 ::: tip
 
