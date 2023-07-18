@@ -118,6 +118,17 @@ laboratorio), la forma más sencilla de hacerlo es utilizando
 
 ![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
 
+::: warning IMPORTANTE
+
+**El puerto 22 es un puerto reservado exclusivamente para conexiones por SSH.**
+Deben usarlo solamente para conectarse por SSH con PuTTY. 
+
+Para conectar los módulos del TP entre sí es recomendable usar números de puerto
+por encima de 1024, ya que es poco probable que estén siendo usados por otro
+proceso (ej: 8000, 8001, etc).
+
+:::
+
 ### Pasos a seguir
 
 A partir de acá, lo que queda es usar la consola para clonar, compilar,
