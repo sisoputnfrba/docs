@@ -25,6 +25,14 @@ parte **práctica** de la materia, ya que ahí van a encontrar:
 - Consultas técnicas o del enunciado del TP en el
   [Foro](https://faq.utnso.com.ar/foro)
 
+::: warning IMPORTANTE
+
+Antes de continuar, es **fundamental** que la cuenta se encuentre asegurada con
+[autenticación de dos factores](https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa)
+para poder acceder al repositorio del grupo más adelante.
+
+:::
+
 ::: tip
 
 Recomendamos que cuentes con al menos un mail verificado al que tengas acceso
