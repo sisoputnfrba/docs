@@ -26,7 +26,6 @@ página.
 
 ### Syscalls de Linux
 
-- [Emular la VM Server en macOS con procesador ARM](/guias/herramientas/macos-arm)
 - [Guía de Sockets](/guias/linux/sockets)
 - [Guía de Serialización](/guias/linux/serializacion)
 - [Charla de Threads y Sincronización](/guias/linux/threads)
@@ -34,6 +33,7 @@ página.
 
 ### Herramientas útiles
 
+- [Emular la VM Server en macOS con procesador ARM](/guias/herramientas/macos-arm)
 - [Debugging en Eclipse](/guias/herramientas/debugger)
 - [Tutorial de Valgrind y Helgrind](/guias/herramientas/valgrind)
 - [Unit Testing con CSpec](/guias/herramientas/cspec)
