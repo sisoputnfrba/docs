@@ -155,6 +155,10 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: true,
     items: [
       {
+        text: 'Guía para crear proyectos C',
+        link: 'https://raniagus.github.io/so-project-template/'
+      },
+      {
         text: 'Debugging en Eclipse',
         link: '/guias/herramientas/debugger'
       },
