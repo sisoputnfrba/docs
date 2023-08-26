@@ -90,7 +90,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Learn Git Branching',
-        link: 'https://learngitbranching.js.org/'
+        link: 'https://learngitbranching.js.org/?locale=es_AR'
       },
     ],
   },
@@ -157,6 +157,10 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Emular en macOS con ARM',
         link: '/guias/herramientas/macos-arm',
+      },
+      {
+        text: 'Guía para crear proyectos C',
+        link: 'https://raniagus.github.io/so-project-template/'
       },
       {
         text: 'Debugging en Eclipse',

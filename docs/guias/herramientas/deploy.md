@@ -118,6 +118,17 @@ laboratorio), la forma más sencilla de hacerlo es utilizando
 
 ![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
 
+::: warning IMPORTANTE
+
+**El puerto 22 es un puerto reservado exclusivamente para conexiones por SSH.**
+Deben usarlo solamente para conectarse por SSH con PuTTY. 
+
+Para conectar los módulos del TP entre sí es recomendable usar números de puerto
+por encima de 1024, ya que es poco probable que estén siendo usados por otro
+proceso (ej: 8000, 8001, etc).
+
+:::
+
 ### Pasos a seguir
 
 A partir de acá, lo que queda es usar la consola para clonar, compilar,
@@ -158,6 +169,18 @@ más rápido y ocupa menos espacio:
 Una vez hecho esto, pueden usar el comando
 [`ifconfig`](/guias/consola/bash.html#ifconfig) para consultar la IP de ambas VMs y
 configurar los módulos.
+
+::: danger AVISO
+
+Si por algún motivo encuentran que su router les asigna la misma IP a todas las
+VMs clonadas, ejecuten el siguiente comando:
+```sh
+curl -fsSL https://faq.utnso.com.ar/fluship.sh | bash
+```
+Lo que hará será descargar y ejecutar un script que instala el fix a este
+problema. Luego de reiniciar, cada VM debería tener su propia dirección IP.
+
+:::
 
 ## Paso 3: Día E (de entrega) - Obligatorio
 
@@ -226,8 +249,8 @@ del cuatri y qué relaciones encontraron con la teoría.
 
 [^3]:
     Si cuentan con una shared library propia, deberán copiar los headers (".h")
-    en `/usr/local/include` y la biblioteca compilada (".so") en
-    `/usr/local/lib`. Las commons se instalan
+    en `/usr/include` y la biblioteca compilada (".so") en `/usr/lib`. Las 
+    commons se instalan
     [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/makefile#L33-L34)
     ;)
 
