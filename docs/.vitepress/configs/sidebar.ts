@@ -55,12 +55,8 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/entorno-linux'
       },
       {
-        text: 'Introducción al Lenguaje C',
-        link: '/primeros-pasos/lenguaje-c'
-      },
-      {
-        text: 'Crear tu primer proyecto C',
-        link: '/primeros-pasos/entorno-desarrollo'
+        text: '¿Qué es Golang?',
+        link: '/primeros-pasos/lenguaje-golang'
       },
       {
         text: 'Trabajo Práctico 0',
@@ -95,59 +91,41 @@ export const sidebar: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: 'Programación en C',
+    text: 'Golang',
     collapsed: true,
     items: [
       {
-        text: 'Repaso de Arquitectura',
-        link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
+        text: 'Introducción',
+        link: '/guias/programacion/introduction',
       },
       {
-        text: 'Manejo de Punteros y Memoria Dinámica',
-        link: '/guias/programacion/punteros',
+        text: 'Variables y Funciones',
+        link: '/guias/programacion/variables-functions'
       },
       {
-        text: 'Buenas Prácticas de C',
-        link: '/guias/programacion/buenas-practicas'
+        text: 'Rutinas o ¿Hilos?',
+        link: '/guias/programacion/threads'
       },
       {
-        text: 'Argumentos para el main',
-        link: '/guias/programacion/main'
+        text: 'Sincronización - sem y mutex',
+        link: '/guias/programacion/synchronization'
       },
       {
-        text: 'Cómo hacer una consola interactiva',
-        link: '/guias/programacion/readline'
+        text: 'Bibliotecas - func compartidas',
+        link: '/guias/programacion/libraries'
       },
       {
-        text: 'Video de Shared Libraries',
-        link: '/guias/programacion/shared-libraries'
+        text: 'Protocolo HTTP - GIN',
+        link: '/guias/programacion/http-protocol'
       },
       {
-        text: 'Tutorial interactivo de C',
-        link: 'https://www.learn-c.org/'
-      },
-    ],
-  },
-  {
-    text: 'Syscalls de Linux',
-    collapsed: true,
-    items: [
-      {
-        text: 'Guía de Sockets',
-        link: '/guias/linux/sockets',
+        text: 'Manejo de archivos',
+        link: '/guias/programacion/file-management'
       },
       {
-        text: 'Guía de Serialización',
-        link: '/guias/linux/serializacion',
-      },
-      {
-        text: 'Charla de Threads y Sincronización',
-        link: '/guias/linux/threads',
-      },
-      {
-        text: 'Presentación de Señales',
-        link: 'https://faq.utnso.com.ar/seniales'
-      },
+        text: 'Logging',
+        link: '/guias/programacion/logging'
+      }
     ],
   },
   {
@@ -155,25 +133,17 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: true,
     items: [
       {
-        text: 'Guía para crear proyectos C',
-        link: 'https://raniagus.github.io/so-project-template/'
+        text: 'Estructura de proyecto',
+        link: '/guias/herramientas/projects'
       },
       {
-        text: 'Debugging en Eclipse',
-        link: '/guias/herramientas/debugger'
+        text: '¿Qué es un Socket?',
+        link: '/guias/herramientas/sockets'
       },
       {
-        text: 'Tutorial de Valgrind y Helgrind',
-        link: '/guias/herramientas/valgrind'
-      },
-      {
-        text: 'Unit Testing con CSpec',
-        link: '/guias/herramientas/cspec'
-      },
-      {
-        text: 'Guía de despliegue de TP',
-        link: '/guias/herramientas/deploy'
-      },
+        text: 'FUSE',
+        link: '/guias/herramientas/fuse'
+      }
     ],
   },
 ]
