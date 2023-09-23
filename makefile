@@ -4,11 +4,10 @@ IDS != docker ps | grep $(TAG) | awk '{ print $$1 }'
 all: build run
 
 build:
-	docker build . --rm -t $(TAG)
+	docker build . --rm -t $(TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g)
 
-run: PORT = $(error "Falta pasar el PORT, ej: make run PORT=8080")
 run:
-	docker run --rm -d --init -p$(PORT):80 $(TAG)
+	docker run --init -p5173:5173 -v ./docs:/home/workspace/docs $(TAG)
 
 stop:
 	echo $(IDS) | tr ' ' '\n' | xargs --no-run-if-empty docker stop

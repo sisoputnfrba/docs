@@ -1,20 +1,23 @@
-FROM node:16.14.0 as builder
+FROM cgr.dev/chainguard/node:latest-dev
 
-WORKDIR /app
+ARG UID
+ARG GID
 
-COPY package.json yarn.lock ./
+USER root
 
-RUN yarn install --frozen-lockfile
+RUN apk update && apk add git
 
-COPY . .
+RUN addgroup -g $GID workspace && \
+    adduser -u $UID -G workspace -s /bin/sh -D workspace
 
-RUN npm run build
+USER workspace
 
+WORKDIR /home/workspace
 
-FROM nginx:alpine
+COPY --chown=workspace:workspace package.json yarn.lock ./
 
-WORKDIR /usr/share/nginx/html
+RUN yarn install
 
-COPY --from=builder /app/docs/.vitepress/dist/ ./
+EXPOSE 5173
 
-EXPOSE 80
+ENTRYPOINT [ "yarn", "dev", "--host" ]
