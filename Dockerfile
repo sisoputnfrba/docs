@@ -1,20 +1,15 @@
-FROM node:16.14.0 as builder
+FROM node:16.14.0-alpine3.14
 
-WORKDIR /app
+RUN apk update && apk add git
+
+USER node
+
+WORKDIR /home/node
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
-COPY . .
+EXPOSE 5173
 
-RUN npm run build
-
-
-FROM nginx:alpine
-
-WORKDIR /usr/share/nginx/html
-
-COPY --from=builder /app/docs/.vitepress/dist/ ./
-
-EXPOSE 80
+ENTRYPOINT [ "yarn", "dev", "--host" ]
