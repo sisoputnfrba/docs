@@ -1,14 +1,20 @@
 FROM cgr.dev/chainguard/node:latest-dev
 
+ARG UID
+ARG GID
+
 USER root
 
 RUN apk update && apk add git
 
-USER node
+RUN addgroup -g $GID workspace && \
+    adduser -u $UID -G workspace -s /bin/sh -D workspace
 
-WORKDIR /home/node
+USER workspace
 
-COPY package.json yarn.lock ./
+WORKDIR /home/workspace
+
+COPY --chown=workspace:workspace package.json yarn.lock ./
 
 RUN yarn install
 
