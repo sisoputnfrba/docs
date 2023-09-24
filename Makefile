@@ -7,10 +7,16 @@ WORKDIR != grep WORKDIR Dockerfile | tail -n1 | cut -d' ' -f2
 all: build run
 
 build:
-	docker build . --rm -t $(TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g)
+	docker build . --rm -t $(TAG) \
+		--build-arg USER=$(shell whoami) \
+		--build-arg UID=$(shell id -u) \
+		--build-arg GID=$(shell id -g)
 
 run:
-	docker run --rm -it -t --init -p$(PORT):$(PORT) -v ./docs:$(WORKDIR)/docs --name $(NAME) $(TAG)
+	docker run --rm -it --init \
+		-p $(PORT):$(PORT) \
+		-v $(CURDIR)/docs:$(WORKDIR)/docs \
+		--name $(NAME) $(TAG)
 
 clean:
 	-docker rmi $(TAG)
