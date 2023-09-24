@@ -1,5 +1,7 @@
 TAG := sisoputnfrba/docs
-IDS != docker ps | grep $(TAG) | awk '{ print $$1 }'
+NAME := sisop-docs
+PORT := 5173
+WORKDIR != grep WORKDIR Dockerfile | tail -n1 | cut -d' ' -f2
 
 all: build run
 
@@ -7,19 +9,12 @@ build:
 	docker build . --rm -t $(TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g)
 
 run:
-	docker run --init -p5173:5173 -v ./docs:/home/workspace/docs $(TAG)
-
-stop:
-	echo $(IDS) | tr ' ' '\n' | xargs --no-run-if-empty docker stop
+	docker run --rm -it -t --init -p$(PORT):$(PORT) -v ./docs:$(WORKDIR)/docs --name $(NAME) $(TAG)
 
 clean:
 	-docker rmi $(TAG)
-	-docker image prune
 
 exec:
-	docker exec -it $(word 1,$(IDS)) /bin/ash
+	docker exec -it $(NAME) /bin/ash
 
-logs:
-	docker logs $(word 1,$(IDS)) -f
-
-.PHONY: all build run stop clean exec logs
+.PHONY: all build run clean exec
