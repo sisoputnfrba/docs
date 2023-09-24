@@ -1,6 +1,7 @@
 TAG := sisoputnfrba/docs
 NAME := sisop-docs
-PORT := 5173
+
+PORT != grep EXPOSE Dockerfile | tail -n1 | cut -d' ' -f2
 WORKDIR != grep WORKDIR Dockerfile | tail -n1 | cut -d' ' -f2
 
 all: build run
