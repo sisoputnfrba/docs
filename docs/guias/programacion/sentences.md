@@ -1,3 +1,3 @@
-# Protocolo HTTP
+# Sentencias
 
 En Construcción

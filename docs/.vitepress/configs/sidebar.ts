@@ -103,12 +103,20 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/variables-functions'
       },
       {
+        text: 'Sentencias',
+        link: '/guias/programacion/sentences'
+      },
+      {
         text: 'Rutinas o ¿Hilos?',
         link: '/guias/programacion/threads'
       },
       {
         text: 'Sincronización - sem y mutex',
         link: '/guias/programacion/synchronization'
+      },
+      {
+        text: 'Imperativo vs Objectos',
+        link: '/guias/programacion/objects'
       },
       {
         text: 'Bibliotecas - func compartidas',
