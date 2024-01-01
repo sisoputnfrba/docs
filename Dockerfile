@@ -1,4 +1,4 @@
-FROM cgr.dev/chainguard/node:latest-dev
+FROM node:18.18.0-alpine
 
 ARG USER
 ARG UID
@@ -8,7 +8,8 @@ USER root
 
 RUN apk update && apk add git
 
-RUN addgroup -g $GID $USER && \
+RUN deluser --remove-home node && \
+    addgroup -g $GID $USER && \
     adduser -u $UID -G $USER -D $USER
 
 USER $USER
