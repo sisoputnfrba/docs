@@ -6,7 +6,7 @@ ARG GID
 
 USER root
 
-RUN apk update && apk add --no-cache git
+RUN apk add --no-cache git
 
 RUN deluser --remove-home node && \
     addgroup -g $GID $USER && \
