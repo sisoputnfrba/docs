@@ -28,10 +28,6 @@ export const sidebar: DefaultTheme.Sidebar = [
         text: 'TPs Anteriores',
         link: '/recursos/tps-anteriores',
       },
-      {
-        text: '¿Quiénes somos?',
-        link: '/quienes-somos',
-      },
     ]
   },
   {

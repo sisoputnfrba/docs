@@ -18,14 +18,19 @@ export const navbar: DefaultTheme.NavItem[] = [
         link: '/guias/',
         activeMatch: '/guias/',
       },
+      {
+        text: 'Consultas',
+        link: '/consultas',
+        activeMatch: '/consultas',
+      },
+      {
+        text: '¿Quiénes somos?',
+        link: '/quienes-somos',
+      },
     ],
   },
   {
     text: 'Inscripciones',
     link: 'https://faq.utnso.com.ar/inscripciones'
-  },
-  {
-    text: 'Consultas',
-    link: '/consultas',
   },
 ]
