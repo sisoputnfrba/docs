@@ -8,7 +8,6 @@
 char* leer(char* path);
 int obtener_size(char* path);
 
-// #region archivo_contar
 int archivo_contar(char* path, char c) {
     char* contenido = leer(path);
     if (contenido == NULL) {
@@ -24,8 +23,6 @@ int archivo_contar(char* path, char c) {
 
     return cantidad;
 }
-
-// #endregion archivo_contar
 
 char* leer(char* path) {
     FILE* archivo = fopen(path, "r");
