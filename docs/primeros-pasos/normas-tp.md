@@ -26,8 +26,7 @@ Para realizar la inscripción al trabajo práctico, el grupo deberá completar e
 proceso de inscripción en el
 [Sistema de Inscripciones](https://faq.utnso.com.ar/inscripciones)[^2].
 
-La fecha límite de inscripción de grupos será anunciada en
-los medios de comunicación anteriormente mencionados.
+La fecha límite de inscripción de grupos será anunciada a través del Campus Virtual, [el blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia.
 
 Recomendamos acceder al issue titulado
 [¿Buscás grupo / integrantes?](https://faq.utnso.com.ar/issue-grupos) para
