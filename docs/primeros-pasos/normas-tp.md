@@ -46,7 +46,7 @@ Checkpoint Presencial, y la hora de finalización a las **18:00hs del mismo
 día**.
 
 Para pedir un cambio de grupo, la cátedra provee una
-[herramienta](https://faq.utnso.com.ar/inscripciones/cambio.php) en el sistema de
+[herramienta](https://faq.utnso.com.ar/cambios) en el sistema de
 inscripciones mencionado anteriormente. Dicha petición realizará un aviso a
 todas las partes interesadas, las cuales poseerán **72 horas** para objetar el
 mismo a través de [inscripciones@utnso.com.ar](mailto:inscripciones@utnso.com.ar). Pasadas las 72
