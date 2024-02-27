@@ -65,6 +65,10 @@ mencionada y deberá ser realizada mediante la misma herramienta o mediante un
 mail a [inscripciones@utnso.com.ar](mailto:inscripciones@utnso.com.ar) con copia
 a todos los integrantes del grupo (activos y a dar de baja). 
 
+**Una vez aplicada la baja de la materia, el alumno no tendrá 
+la posibilidad de volver a darse de alta en otro grupo hasta el
+próximo cuatrimestre**.
+
 ## Uso del Repositorio de Versionado
 
 Con el objetivo de facilitar el desarrollo del trabajo en equipo y poder
@@ -148,7 +152,7 @@ informará con anticipación el lugar a través del Campus Virtual, [el blog](ht
 
 #### Requisitos para la aceptación de la entrega
 
-- Contener un archivo makefile que ejecute correctamente.
+- Contener los archivos necesarios para compilar correctamente (makefiles).
 - Que no se produzcan errores de compilación.
 - Que no existan archivos ejecutables ni objetos[^1].
 - Haber cumplido con los requerimientos técnicos y funcionales indicados en el
