@@ -40,8 +40,6 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 
 ## Etapa 1: Setup inicial
 
-### Crear un workspace
-
 Primero, abramos una consola y, de la misma forma que bajamos el proyecto de las
 commons, bajemos el del TP0:
 
@@ -50,34 +48,25 @@ git clone https://github.com/sisoputnfrba/tp0
 cd tp0
 ```
 
-Luego, en el Eclipse vamos a movernos hacia
-`File > Switch Workspace > Other...`:
+Luego, abramos el proyecto desde Visual Studio Code utilizando el workspace ya
+configurado en el repo:
 
-![workspace-01](/img/primeros-pasos/tp0/workspace-01.png)
+```bash
+code tp0.code-workspace
+```
 
-Y vamos a seleccionar la carpeta donde clonamos el repositorio del TP0:
+::: tip
 
-![workspace-02](/img/primeros-pasos/tp0/workspace-02.png)
+También podemos abrir el proyecto abriendo Visual Studio Code y seleccionando
+`File > Open Workspace from File...` y seleccionando el archivo
+`tp0.code-workspace` que se encuentra en la carpeta del TP0.
 
-### Agregar los proyectos al workspace
+:::
 
-Ahora, para agregar los proyectos al workspace, nos vamos a mover hacia
-`File > Open Projects From File System...`:
+Una vez abierto el workspace, vamos a ver que tenemos dos módulos: `client` y
+`server`, con su propio código fuente y configuraciones:
 
-![workspace-03](/img/primeros-pasos/tp0/workspace-03.png)
-
-Nos aparecerá el siguiente menú, sobre el cual...
-
-![workspace-04](/img/primeros-pasos/tp0/workspace-04.png)
-
-1. Elegiremos de nuevo la carpeta del workspace desde el botón `Directory...`
-2. Dejaremos tildados solamente los proyectos `server` y `client`
-3. Haremos click en `Finish` para continuar
-
-A la izquierda, en la pestaña `Project Explorer`, nos van a aparecer ambos
-proyectos listos para arrancar con el TP0:
-
-![workspace-05](/img/primeros-pasos/tp0/workspace-05.png)
+![vscode-file-explorer](/img/primeros-pasos/tp0/vscode-file-explorer.png)
 
 ## Etapa 2: Comandos básicos
 
@@ -105,10 +94,10 @@ para que:
 Creado nuestro logger, usemos `log_info()` para loggear el string `"Soy un Log"`
 y cerremos el logger al final del programa con `log_destroy()`.
 
-Compilemos usando el :hammer: (o apretando `Ctrl` + `B`) y démosle Run al
-programa con :arrow_forward: (o `Ctrl` + `F11`).
+Compilemos y ejecutemos el programa moviéndonos a la sección "Run and Debug" en
+la barra lateral izquierda, seleccionando "run (client)":
 
-![workspace-06](/img/primeros-pasos/tp0/workspace-06.png)
+![vscode-run-debug](/img/primeros-pasos/tp0/vscode-run-debug.gif)
 
 ### Archivos de configuración
 
@@ -124,8 +113,8 @@ obtengamos el valor de la key `CLAVE` en formato string.
 
 ::: tip
 
-Para saber dónde guardar el archivo config y cómo hace Eclipse para leerlo,
-podés consultar la [guía de paths](/guias/consola/rutas).
+Para saber dónde guardar el archivo config y cómo hace Visual Studio Code para
+leerlo, podés consultar la [guía de paths](/guias/consola/rutas).
 
 :::
 
@@ -216,6 +205,9 @@ salir del bucle o no.
 Si en alguna etapa del TP el programa no se comporta como esperaban, pueden
 intentar ejecutarlo línea por línea siguiendo el
 [tutorial de debugging en Eclipse](/guias/herramientas/debugger).
+
+Si bien estamos usando Visual Studio Code, el tutorial es aplicable a cualquier
+IDE que quieran utilizar.
 
 :::
 
