@@ -33,28 +33,67 @@ descripción.
 
 :::
 
-## Crear un proyecto en Eclipse
+## Descargar el template oficial
 
 Ahora sí, una vez instaladas las commons, vamos a probar de incluirlas en
-nuestro primer proyecto en **Eclipse**.
+nuestro primer proyecto en **Visual Studio Code**.
 
-<YouTube v="Q8wfpu38PMc"/>
+Para eso, abrimos una nueva consola y creamos un nuevo directorio para nuestro
+proyecto:
 
-¿Por qué Eclipse? Con una configuración mínima, incluye por defecto una gran
-cantidad de features para ayudarnos a desarrollar el TP como, por ejemplo,
-Makefiles para compilar el código sin tener que usar `gcc` directamente desde la
-consola, un [debugger integrado](/guias/herramientas/debugger),
-[ejecución con Valgrind](/guias/herramientas/valgrind)...
+```bash
+mkdir ejemplo
+```
 
-Además, los ayudantes ya estamos familiarizados con su uso, por lo que ante
-cualquier [duda o consulta](/consultas) vamos a saber por dónde orientarlos.
+Luego, nos vamos a mover a ese directorio:
 
-::: tip
+```bash
+cd ejemplo
+```
 
-En la sección de "herramientas" de las guías podrás encontrar más contenido para
-conocer las features más útiles de Eclipse.
+Una vez allí, vamos a descargar el template oficial ejecutando el siguiente
+comando:
 
-:::
+```bash
+wget -qO- https://faq.utnso.com.ar/project.tar.gz | tar -xzvf - --strip-components 1
+```
+
+Si ejecutamos el comando `tree -a`, veremos que se nos descargaron los
+siguientes archivos:
+
+```bash
+.
+├── .gitignore
+├── makefile
+├── README.md
+├── settings.mk
+├── src
+│   └── main.c
+└── .vscode
+    ├── c_cpp_properties.json
+    ├── launch.json
+    ├── settings.json
+    └── tasks.json
+```
+
+En el archivo `src/main.c` es donde vamos a empezar escribiendo nuestro código.
+
+## Ejecutar el proyecto en Visual Studio Code
+
+Ahora, vamos a abrir el directorio que creamos en Visual Studio Code con el
+comando:
+
+```bash
+code .
+```
+
+Finalmente, para compilar y ejecutar el proyecto, nos moveremos a la pestaña
+de _Run and Debug_ y haremos a hacer click en el botón de _Run_:
+
+![vscode-run-debug](/img/primeros-pasos/primer-proyecto-c/vscode-run-debug.gif)
+
+Si aparece un mensaje diciendo "Hola, Operativos!!", ¡felicidades! Ya tenés tu
+primer proyecto en C funcionando.
 
 ## Configurar Git
 
