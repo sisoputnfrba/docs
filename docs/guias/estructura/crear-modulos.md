@@ -1,7 +1,5 @@
 # Crear e importar varios módulos
 
-## Introducción
-
 En esta guía vamos a aprender a configurar nuestro propio _workspace_ en Visual
 Studio Code para poder trabajar cómodamente en todos los módulos del Trabajo
 Práctico de forma simultánea.
@@ -10,57 +8,47 @@ Práctico de forma simultánea.
 
 Para empezar, debemos clonarnos el repositorio del Trabajo Práctico provisto en
 la [organización de la cátedra](https://faq.utnso.com.ar/github) utilizando el
-comando `git clone`:
+comando `git clone`.
 
-```bash
-git clone https://github.com/sisoputnfrba/tp-<año>-<cuatrimestre>-<grupo>
-```
-
-Donde `<año>`, `<cuatrimestre>` y `<grupo>` son los valores correspondientes a
-tu grupo y cuatrimestre.
-
-::: tip
-
-También podés descargar el repositorio navegando a la página en GitHub y
-haciendo click en el botón "Code" > "HTTPS" > "Copy".
-
-![github-clone](/img/guias/estructura/crear-modulos/github-clone.png)
-
-:::
-
-Una vez clonado el repositorio, vamos a tener una carpeta con el nombre del
-mismo. Ejecutamos `cd` para movernos a dicha carpeta:
-
-```bash
-cd tp-<año>-<cuatrimestre>-<grupo>
-```
-
-Dentro de la misma, vamos a crear un proyecto C para cada módulo del Trabajo
-Práctico de la misma forma que lo hicimos en la
+Dentro de la carpeta del repositorio, vamos a ir creando un proyecto C para cada
+módulo del Trabajo Práctico de la misma forma que lo hicimos en la
 [guía de primeros pasos](/primeros-pasos/primer-proyecto-c):
 
 ```bash
 mkdir kernel
 cd kernel
 wget -qO- https://faq.utnso.com.ar/project.tar.gz | tar -xzvf - --strip-components 1
+cd ..
+# y así sucesivamente para cada módulo
 ```
+::: tip
 
-Para "volver para atrás" y crear la carpeta del próximo módulo, ejecutamos
-`cd ..` y repetimos el proceso, hasta que tengamos todos los módulos creados.
+`cd ..` nos permite volver a la carpeta del repositorio para poder crear el
+siguiente módulo. Si quieren aprender a familiarizarse más con la consola, les
+recomendamos seguir el tutorial interactivo
+[Mario Bash](https://faq.utnso.com.ar/mariobash).
+
+:::
 
 ## Crear el workspace
 
-El siguiente paso será abrir Visual Studio Code, y **sin abrir la carpeta del
-repositorio** nos iremos a la pestaña de `File` > `Add Folder to Workspace...`:
+El siguiente paso será abrir Visual Studio Code, y **desde una ventana vacía**
+nos iremos a la pestaña de `File` > `Add Folder to Workspace...`:
 
-![vscode-add-folder-to-workspace](/img/guias/estructura/crear-modulos/vscode-add-folder-to-workspace.png)
+![vscode-add-folder-to-workspace](/img/guias/estructura/crear-modulos/vscode-add-folder-to-workspace.gif)
 
-De esta forma, agregaremos todas las carpetas de los módulos que creamos.
+Luego se nos desplegará un menú para seleccionar las carpetas que queremos
+agregar al workspace. Vamos a ir una por una seleccionando cada carpeta de cada
+módulo que creamos.
+
 Una vez hecho esto, deberíamos poder irnos a la pestaña de `Run and Debug` y
 seleccionar cualquier módulo para compilar y ejecutar, de la misma forma que
 hicimos en el [TP0](/primeros-pasos/tp0):
 
 ![vscode-run-debug](/img/guias/estructura/crear-modulos/vscode-run-debug.gif)
+
+> En lugar de `run (client)` y `run (server)`, vamos a tener `run (kernel)`,
+> `run (memoria)`, `run (filesystem)`, etc...
 
 ## Guardar el workspace
 
@@ -87,13 +75,10 @@ siguiente configuración al archivo `tp.code-workspace` que creamos:
 	}, // [!code ++]
 	"folders": [
 		{
-			"name": "client",
-			"path": "client"
+			"name": "kernel",
+			"path": "kernel"
 		},
-		{
-			"name": "server",
-			"path": "server"
-		},
+		// ... y el resto de módulos
 	]
 }
 ```
