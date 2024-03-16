@@ -316,7 +316,7 @@ Esto fue todo, pero recuerden que el TP0 es solo una introducción a todas las
 herramientas que podemos usar.
 
 Por lo tanto, les pedimos que consulten las guías y video tutoriales linkeados
-en la pestaña de "Guías" de la barra de navegación de esta página para mejorar
-constantemente y llegar bien holgados a fin de cuatrimestre.
+en la sección [Guías](/guias/) de esta página para mejorar constantemente y
+llegar bien holgados a fin de cuatrimestre.
 
 **¡Hasta la próxima amigos!**

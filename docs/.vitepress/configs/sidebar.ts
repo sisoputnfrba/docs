@@ -65,6 +65,20 @@ export const sidebar: DefaultTheme.Sidebar = [
     ],
   },
   {
+    text: 'Estructurando el TP',
+    collapsed: true,
+    items: [
+      {
+        text: 'Creación de los módulos',
+        link: '/guias/estructura/crear-modulos'
+      },
+      {
+        text: 'Código compartido',
+        link: '/guias/estructura/codigo-compartido'
+      },
+    ],
+  },
+  {
     text: 'Consola de Linux y Git',
     collapsed: true,
     items: [
@@ -115,10 +129,6 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/readline'
       },
       {
-        text: 'Video de Shared Libraries',
-        link: '/guias/programacion/shared-libraries'
-      },
-      {
         text: 'Tutorial interactivo de C',
         link: 'https://www.learn-c.org/'
       },
@@ -150,10 +160,6 @@ export const sidebar: DefaultTheme.Sidebar = [
     text: 'Herramientas útiles',
     collapsed: true,
     items: [
-      {
-        text: 'Guía para crear proyectos C',
-        link: 'https://raniagus.github.io/so-project-template/'
-      },
       {
         text: 'Debugging en Eclipse',
         link: '/guias/herramientas/debugger'
