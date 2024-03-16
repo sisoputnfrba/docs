@@ -4,12 +4,14 @@ Una vez [instaladas las VMs](/primeros-pasos/entorno-linux) (o el entorno Linux 
 elegido), debemos continuar con un par de configuraciones antes de arrancar a
 desarrollar.
 
-## Descargar las Commons
+## Descargar la so-commons-library
 
 Para facilitar el desarrollo del TP, desde la cátedra proveemos una biblioteca
-con TADs de uso común (por ejemplo, colecciones vistas en Algoritmos como listas
-y queues), funciones para simplificar el manejo de strings y fechas, entre
-otras: las Commons.
+con [TADs] de uso común: la _commons library_. Esta biblioteca nos va a proveer
+colecciones vistas en AyED, como listas y queues, y funciones para simplificar
+el manejo de strings y fechas, entre otras.
+
+[TADs]: https://es.wikipedia.org/wiki/Tipo_de_dato_abstracto
 
 Para descargarla, vamos a abrir una consola y nos vamos a clonar
 [el repo](https://faq.utnso.com.ar/commons) para instalarlas

@@ -56,7 +56,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Crear tu primer proyecto C',
-        link: '/primeros-pasos/entorno-desarrollo'
+        link: '/primeros-pasos/primer-proyecto-c'
       },
       {
         text: 'Trabajo Práctico 0',

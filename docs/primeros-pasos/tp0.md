@@ -35,7 +35,7 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 ## Requisitos
 
 - [Contar con un entorno Linux](/primeros-pasos/entorno-linux)
-- [Tener configuradas las commons y git](/primeros-pasos/entorno-desarrollo)
+- [Tener configuradas las commons y git](/primeros-pasos/primer-proyecto-c)
 - Tener a mano el [repo del TP0](https://faq.utnso.com.ar/tp0)
 
 ## Etapa 1: Setup inicial
