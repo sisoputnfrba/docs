@@ -95,6 +95,24 @@ de _Run and Debug_ y haremos a hacer click en el botón de _Run_:
 Si aparece un mensaje diciendo "Hola, Operativos!!", ¡felicidades! Ya tenés tu
 primer proyecto en C funcionando.
 
+::: tip
+
+Al hacer click en el botón de _Run_, ocurren dos cosas:
+
+1. Se compila el proyecto ejecutando el comando `make`
+2. Se ejecuta el binario generado en la carpeta `bin` con el nombre del
+   proyecto.
+
+Los invitamos a abrir una consola y ejecutar el binario manualmente para
+corroborar que se ejecuta de la misma forma en que lo hace el editor:
+
+```bash
+make
+./bin/ejemplo
+```
+
+:::
+
 ## Configurar Git
 
 Por último, antes de empezar a subir nuestro código en GitHub, vamos a
