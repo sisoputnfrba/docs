@@ -65,20 +65,6 @@ export const sidebar: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: 'Estructurando el TP',
-    collapsed: true,
-    items: [
-      {
-        text: 'Creación de los módulos',
-        link: '/guias/estructura/crear-modulos'
-      },
-      {
-        text: 'Código compartido',
-        link: '/guias/estructura/codigo-compartido'
-      },
-    ],
-  },
-  {
     text: 'Consola de Linux y Git',
     collapsed: true,
     items: [
