@@ -376,7 +376,7 @@ poder clonar el repo.
 [Personal Access Token de GitHub]: https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 
-### 4.4. Clonar la VM
+### Clonar la VM
 
 Para simular que contamos con dos máquinas distintas, lo que haremos será clonar
 la VM que ya tenemos configurada. Para ello, vamos a hacer click derecho en la
