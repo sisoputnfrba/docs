@@ -36,6 +36,8 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 
 - [Contar con un entorno Linux](/primeros-pasos/entorno-linux)
 - [Tener configuradas las commons y git](/primeros-pasos/primer-proyecto-c)
+- Haber leído las guías de [sockets](/guias/linux/sockets) y
+  [serialización](/guias/linux/serializacion)
 - Tener a mano el [repo del TP0](https://faq.utnso.com.ar/tp0)
 
 ## Etapa 1: Setup inicial
