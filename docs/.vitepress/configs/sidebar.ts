@@ -59,6 +59,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/primer-proyecto-c'
       },
       {
+        text: 'Git para el Trabajo Práctico',
+        link: '/primeros-pasos/git'
+      },
+      {
         text: 'Trabajo Práctico 0',
         link: '/primeros-pasos/tp0'
       },
@@ -71,10 +75,6 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Guía de uso de Bash',
         link: '/guias/consola/bash'
-      },
-      {
-        text: 'Git para el Trabajo Práctico',
-        link: '/guias/consola/git'
       },
       {
         text: 'Rutas Relativas y Absolutas',

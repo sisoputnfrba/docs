@@ -192,33 +192,14 @@ make
 
 :::
 
-## Configurar Git
-
-Por último, antes de empezar a subir nuestro código en GitHub, vamos a
-configurar nuestro usuario de Git para que al hacer `git commit` quede
-registrado nuestro nombre y email:
-
-```bash
-git config --global user.email "tumail@tucasilla.com"
-git config --global user.name "Tu Nombre"
-```
-
-::: warning IMPORTANTE
-
-El email configurado debe ser uno de los mails verificados en tu
-[cuenta de GitHub](https://github.com/settings/emails).
-
-:::
-
 
 ## Próximos pasos
 
-- Para ir entrando más de lleno en el Lenguaje C, recomendamos arrancar a
-  chusmear nuestra sección de
+- En la siguiente sección vamos a ver cómo utilizar [Git](/primeros-pasos/git)
+  para el TP de Operativos.
+- Por otro lado, para ir entrando más de lleno en el Lenguaje C, podés empezar
+  con nuestra sección de
   [guías de programación en C](/guias/#programación-en%20c).
-- También este [tutorial interactivo de C](https://www.learn-c.org/) (en inglés)
-  puede ser de utilidad.
-- Si te sentís con confianza, arranquemos con el [TP0](/primeros-pasos/tp0).
 
 <br><br>
 

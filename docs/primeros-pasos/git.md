@@ -68,12 +68,19 @@ Si es la primera vez que usamos Git, va a ser necesario configurar nuestro
 nombre y el email con el que estaremos trabajando utilizando:
 
 ```bash
-git config --global user.name "NOMBRE"
-git config --global user.email "EMAIL"
+git config --global user.email "tumail@tucasilla.com"
+git config --global user.name "Tu Nombre"
 ```
 
 Si quisieras que la configuración de nombre y mail haga efecto únicamente sobre
 el repositorio actual, podés omitir el flag `--global`.
+
+::: warning IMPORTANTE
+
+Para el TP, el email configurado debe ser uno de los mails verificados en tu
+[cuenta de GitHub](https://github.com/settings/emails).
+
+:::
 
 ### git clone
 
