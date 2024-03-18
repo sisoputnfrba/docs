@@ -137,9 +137,17 @@ de soporte en [Discord](https://faq.utnso.com.ar/discord-invite).
 
 ::: tip
 
-Este video les puede ayudar a reportar mejor los errores que encuentren:
+Si necesitan compartirnos un error de compilación desde Visual Studio Code, nos
+servirá de gran ayuda contar con la salida del compilador. Para obtenerla,
+podemos navegar a la pestaña de _Terminal_ y **copiar el texto** que aparece al
+ejecutar la tarea de compilación:
 
-<YouTube v="qKkmU13uKHw"/>
+![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif)
+
+Un texto de error es mucho más útil que una captura de pantalla, ya que nos
+permite copiarlo e investigarlo sin tener que transcribirlo manualmente. Además,
+si alguien más tiene el mismo problema, va a poder encontrar la solución
+utilizando el buscador del foro.
 
 :::
 

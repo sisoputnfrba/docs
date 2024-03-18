@@ -149,14 +149,10 @@ CRELEASE=-O3 -Wall -DNDEBUG -fcommon -Werror // [!code ++]
 
 ::: details Cómo reportar errores
 
-Si encontramos un error que no sabemos cómo solucionar, pueden preguntar a
-través de los [canales de consulta](/consultas) de la materia.
-
-En caso de que sea necesario hacer una consulta en el
-[foro](https://faq.utnso.com.ar/foro), nos servirá de gran ayuda contar con la
-salida del compilador. Para obtenerla, podemos navegar a la pestaña de
-_Terminal_ y **copiar el texto** que aparece al ejecutar la tarea de
-compilación:
+Si necesitan compartirnos un error de compilación desde Visual Studio Code, nos
+servirá de gran ayuda contar con la salida del compilador. Para obtenerla,
+podemos navegar a la pestaña de _Terminal_ y **copiar el texto** que aparece al
+ejecutar la tarea de compilación:
 
 ![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif)
 
