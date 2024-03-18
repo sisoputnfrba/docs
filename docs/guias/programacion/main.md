@@ -10,7 +10,7 @@ comandos de una terminal.
 Por ejemplo, si tomamos el cliente del TP0:
 
 ```bash
-./Debug/client
+./bin/client
 ```
 
 Sin embargo, uno a veces necesita parametrizar algunos valores para que difieran
@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
 Y lo ejecutamos como:
 
 ```bash
-./Debug/cliente ./una/ruta/a/mi/archivo.cfg
+./bin/client ./una/ruta/a/mi/archivo.cfg
 ```
 
 - `argc` es la cantidad de argumentos que se agregan por línea de comando
@@ -59,14 +59,15 @@ Y lo ejecutamos como:
 
 El motivo por el que el segundo elemento del array es la ruta que ingresamos es
 porque el primer elemento es siempre el comando en sí mismo (en este caso,
-`./Debug/cliente`).
+`./bin/cliente`).
 
 Esto incluso lo podemos mejorar controlando que la cantidad de parámetros sea la
 indicada manejando `argc`:
 
-```c{2-4}
+```c{3-5}
 int main(int argc, char** argv) {
     if (argc < 2) {
+        fprintf(stderr, "Uso: %s <ruta_archivo_configuracion>\n", argv[0]);
         return EXIT_FAILURE;
     }
 
@@ -78,27 +79,10 @@ int main(int argc, char** argv) {
 }
 ```
 
-¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el IDE?
+¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el editor?
 :thinking:
 
-## Pasar argumentos desde Eclipse
-
-Vamos a entrar a las `Run Configurations...`:
-
-![eclipse-01](/img/guias/programacion/main/eclipse-01.png)
-
-Y en la configuración del proyecto nos moveremos a la pestaña `Arguments`, en
-donde vamos a poner nuestros argumentos separados por espacios:
-
-![eclipse-02](/img/guias/programacion/main/eclipse-02.png)
-
-En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
-partir desde el `Working directory` que está configurado ahí más abajo.
-
-Por ejemplo, la variable `${workspace_loc:NOMBRE_DEL_PROYECTO}` apunta hacia la
-carpeta en donde se encuentra el proyecto Eclipse.
-
-## Pasar argumentos desde Visual Studio Code
+## Visual Studio Code
 
 En el caso de que ya tengamos configurado el debugger, podremos encontrar en
 nuestro archivo `launch.json` una variable `args`, en donde vamos a
