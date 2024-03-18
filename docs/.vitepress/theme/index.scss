@@ -10,3 +10,11 @@
     page-break-inside: avoid;
   }
 }
+
+.medium-zoom-overlay {
+  z-index: 30;
+}
+
+.medium-zoom-image {
+  z-index: 31;
+}
