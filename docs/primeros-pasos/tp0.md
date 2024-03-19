@@ -82,7 +82,7 @@ acciones que el programa vaya realizando, tanto las correctas, como los errores.
 Para ello, utilizaremos las funciones de logging que proveen las commons.
 
 Parados en el archivo `cliente.c`, si revisamos el
-[header de log de las commons](https://faq.utnso.com.ar/commons/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L40-L56)
+[header de log de las commons](https://faq.utnso.com.ar/commons/blob/72470a6732312c085185ae08d911e9f0d7c7fc1a/src/commons/log.h#L40-L57)
 vamos a encontrar la función `log_create()`, que nos devuelve un logger listo
 para usar.
 
