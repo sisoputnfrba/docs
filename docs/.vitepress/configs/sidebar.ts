@@ -32,7 +32,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Primeros pasos',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: '¿Dónde me anoto?',
@@ -74,6 +74,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Consola de Linux y Git',
+    collapsed: false,
     items: [
       {
         text: 'Guía de uso de Bash',
@@ -99,6 +100,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Programación en C',
+    collapsed: false,
     items: [
       {
         text: 'Repaso de Arquitectura',
@@ -124,6 +126,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Syscalls de Linux',
+    collapsed: false,
     items: [
       {
         text: 'Charla de Threads y Sincronización',
@@ -137,6 +140,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Herramientas útiles',
+    collapsed: false,
     items: [
       {
         text: 'Debugging en Eclipse',
