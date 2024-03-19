@@ -39,6 +39,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/'
       },
       {
+        text: 'Normas del Trabajo Práctico',
+        link: '/primeros-pasos/normas-tp'
+      },
+      {
         text: 'Conseguir un entorno Linux',
         link: '/primeros-pasos/entorno-linux'
       },
