@@ -115,7 +115,7 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/main'
       },
       {
-        text: 'Cómo hacer una consola interactiva',
+        text: 'Hacer una consola interactiva',
         link: '/guias/programacion/readline'
       },
       {
@@ -129,7 +129,7 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: false,
     items: [
       {
-        text: 'Charla de Threads y Sincronización',
+        text: 'Charla de Threads y Sincro',
         link: '/guias/linux/threads',
       },
       {
