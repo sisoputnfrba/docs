@@ -12,7 +12,7 @@ página.
 
 :::
 
-<span v-for="group in sidebar.slice(2)">
+<span v-for="group in sidebar.slice(1)">
 <h3 :id="group.text.toLowerCase().replace(' ', '-')">
   {{ group.text }}
   <a class="header-anchor" :href="'#' + group.text.toLowerCase().replace(' ', '-')"></a>

@@ -55,6 +55,18 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/git'
       },
       {
+        text: 'Manejo de Punteros',
+        link: '/guias/programacion/punteros',
+      },
+      {
+        text: 'Guía de Sockets',
+        link: '/guias/linux/sockets',
+      },
+      {
+        text: 'Guía de Serialización',
+        link: '/guias/linux/serializacion',
+      },
+      {
         text: 'Trabajo Práctico 0',
         link: '/primeros-pasos/tp0'
       },
@@ -62,7 +74,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Consola de Linux y Git',
-    collapsed: true,
     items: [
       {
         text: 'Guía de uso de Bash',
@@ -71,6 +82,10 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Rutas Relativas y Absolutas',
         link: '/guias/consola/rutas'
+      },
+      {
+        text: 'Guía de despliegue de TP',
+        link: '/guias/herramientas/deploy'
       },
       {
         text: 'Mario Bash',
@@ -84,15 +99,10 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Programación en C',
-    collapsed: true,
     items: [
       {
         text: 'Repaso de Arquitectura',
         link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
-      },
-      {
-        text: 'Manejo de Punteros y Memoria Dinámica',
-        link: '/guias/programacion/punteros',
       },
       {
         text: 'Buenas Prácticas de C',
@@ -114,16 +124,7 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Syscalls de Linux',
-    collapsed: true,
     items: [
-      {
-        text: 'Guía de Sockets',
-        link: '/guias/linux/sockets',
-      },
-      {
-        text: 'Guía de Serialización',
-        link: '/guias/linux/serializacion',
-      },
       {
         text: 'Charla de Threads y Sincronización',
         link: '/guias/linux/threads',
@@ -136,7 +137,6 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Herramientas útiles',
-    collapsed: true,
     items: [
       {
         text: 'Debugging en Eclipse',
@@ -149,10 +149,6 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Unit Testing con CSpec',
         link: '/guias/herramientas/cspec'
-      },
-      {
-        text: 'Guía de despliegue de TP',
-        link: '/guias/herramientas/deploy'
       },
     ],
   },
