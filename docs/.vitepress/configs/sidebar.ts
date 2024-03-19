@@ -35,16 +35,8 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: true,
     items: [
       {
-        text: 'Video de Introducción al TP',
-        link: '/primeros-pasos/'
-      },
-      {
         text: '¿Dónde me anoto?',
-        link: '/primeros-pasos/donde-me-anoto'
-      },
-      {
-        text: 'Normas del Trabajo Práctico',
-        link: '/primeros-pasos/normas-tp'
+        link: '/primeros-pasos/'
       },
       {
         text: 'Conseguir un entorno Linux',

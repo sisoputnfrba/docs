@@ -3,6 +3,16 @@
 > «No hay ninguna razón para usar la palabra "imposible" para describir algo que
 > claramente ha pasado» ― Douglas Adams
 
+## 2023
+
+- Segundo Cuatrimestre: **MaPPA**
+  - [Enunciado](https://faq.utnso.com.ar/tp-mappa)
+  - [Tests](https://faq.utnso.com.ar/tp-mappa-pruebas)
+
+- Primer Cuatrimestre: **T.U.K.I.**
+  - [Enunciado](https://faq.utnso.com.ar/tuki)
+  - [Tests](https://faq.utnso.com.ar/tuki-pruebas)
+
 ## 2022
 - Segundo Cuatrimestre: **G.E.C.K.**
   - [Enunciado](https://faq.utnso.com.ar/geck)
