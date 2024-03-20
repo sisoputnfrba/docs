@@ -113,16 +113,36 @@ md5 [archivo]
 ## Crear la máquina virtual
 
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
-máquina virtual siguiendo este video:
+máquina virtual haciendo click en el botón "Nuevo":
 
-::: danger ATENCIÓN
+![virtualbox-new-vm](/img/primeros-pasos/linux/virtualbox-new-vm.png)
 
-El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
-seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
+Luego, en la sección de "Nombre y sistema operativo", vamos a elegir el nombre
+que queramos para la máquina, "Linux" como tipo y "Ubuntu (64-bit)" como
+versión:
+
+![virtualbox-name-os](/img/primeros-pasos/linux/virtualbox-name-os.png)
+
+En la sección de "Hardware", vamos a elegir la cantidad de memoria RAM y
+procesadores que queremos asignarle a la máquina virtual, siempre manteniéndonos
+dentro de la zona verde:
+
+![virtualbox-hardware](/img/primeros-pasos/linux/virtualbox-hardware.png)
+
+::: tip
+
+Cn los 2GB de RAM y 1 CPU por defecto debería funcionar aunque, de ser posible,
+es recomendable subirlo a 4GB y 2 CPUs como muestra la captura.
 
 :::
 
-<YouTube v="DmkSXv_Xa-U"/>
+Por último, en la sección de "Disco duro", vamos a seleccionar "Usar un archivo
+de disco virtual existente" y vamos a buscar el archivo **.vdi** que
+descomprimimos anteriormente:
+
+![virtualbox-disk](/img/primeros-pasos/linux/virtualbox-disk.gif)
+
+Ahora ya tenemos la máquina virtual creada y lista para iniciar.
 
 ::: warning ADVERTENCIA
 
