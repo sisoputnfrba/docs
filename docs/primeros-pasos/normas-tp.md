@@ -47,7 +47,7 @@ que cada alumno poseerá **una única chance de cambiarse de grupo**.
 La fecha de inicio de dicho período será anunciada debidamente mediante los
 medios de comunicación oficiales. De la misma forma, será anunciada la fecha de
 finalización de los cambios de grupos, siendo la misma cercana a la fecha del
-Checkpoint Presencial, y la hora de finalización a las **18:00hs del mismo
+ultimo Checkpoint de Control Obligatorio, y la hora de finalización a las **18:00hs del mismo
 día**.
 
 Para pedir un cambio de grupo, la cátedra provee una
@@ -152,12 +152,19 @@ Determina la aprobación del trabajo práctico, la misma constará de tres insta
 
 ### Características de la entrega
 
-- Posee las características del checkpoint de laboratorio, con la diferencia que
-  la entrega podrá ser aprobada o desaprobada, en el primer caso permitiendo al
-  grupo rendir el coloquio, mientras que en el segundo caso el grupo deberá
-  volver a presentarse en alguna de las instancias de recuperatorio posteriores.
+- Para la evaluación, el grupo obtendrá su código fuente descargando la última
+  versión disponible de su repositorio.
 
-- No es necesario haberse presentado a instancias anteriores de la entrega ni al checkpoint presencial.
+- Será responsabilidad del grupo la obtención y descarga de todas las
+  **dependencias** requeridas para el correcto funcionamiento del práctico.
+
+- La evaluación de los requerimientos se realizará en las **máquinas virtuales
+  sin interfaz gráfica proporcionadas por la Cátedra**, que se encontrarán
+  instaladas en el laboratorio de Sistemas.
+
+- La entrega podrá ser aprobada o desaprobada, en el primer caso permitiendo al
+  grupo rendir el coloquio, mientras que en el segundo caso el grupo deberá
+  volver a presentarse en alguna de las instancias otras instancias de entrega posteriores.
 
 - A partir del momento en que el código fuente haya sido descargado sobre cada
   máquina y el ayudante haya establecido al grupo los parámetros de
@@ -265,9 +272,7 @@ El desarrollo de las funcionalidades del trabajo práctico debe ser codificado
 íntegramente utilizando el lenguaje de programación C y, cada uno de los
 programas que lo componen deben poder ser compilados utilizando el comando GCC.
 Sin embargo, es posible utilizar makefiles para automatizar el proceso de
-compilación y deploy del trabajo práctico. Siguiendo esta línea se sugiere
-utilizar makefiles creados por herramientas de desarrollo, como el IDE Eclipse,
-a fin de simplificar las tareas.
+compilación y deploy del trabajo práctico.
 
 A excepción de la
 [Commons Library](https://github.com/sisoputnfrba/so-commons-library) y otras
