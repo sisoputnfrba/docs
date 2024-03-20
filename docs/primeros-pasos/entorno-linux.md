@@ -142,7 +142,7 @@ descomprimimos anteriormente:
 
 ![virtualbox-disk](/img/primeros-pasos/linux/virtualbox-disk.gif)
 
-Ahora ya tenemos la máquina virtual creada y lista para iniciar.
+Y ya tenemos la máquina virtual creada y lista para iniciar.
 
 ::: warning ADVERTENCIA
 
