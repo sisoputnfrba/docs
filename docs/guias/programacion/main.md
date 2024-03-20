@@ -10,7 +10,7 @@ comandos de una terminal.
 Por ejemplo, si tomamos el cliente del TP0:
 
 ```bash
-./Debug/client
+./bin/client
 ```
 
 Sin embargo, uno a veces necesita parametrizar algunos valores para que difieran
@@ -35,20 +35,20 @@ Entonces, si modificamos al cliente del TP0 para que tome una ruta por `main()`
 podemos hacerlo de la siguiente manera:
 
 ```c
-int main(int argc, char** argv) {
+int main(int argc, char** argv) { // [!code focus]
 
     //resto del TP0 de antes
 
-    t_config* config = crear_config(argv[1]);
+    t_config* config = crear_config(argv[1]); // [!code focus]
 
     //resto del TP0 de después
-}
+} // [!code focus]
 ```
 
 Y lo ejecutamos como:
 
 ```bash
-./Debug/cliente ./una/ruta/a/mi/archivo.cfg
+./bin/client ./una/ruta/a/mi/archivo.cfg
 ```
 
 - `argc` es la cantidad de argumentos que se agregan por línea de comando
@@ -59,67 +59,81 @@ Y lo ejecutamos como:
 
 El motivo por el que el segundo elemento del array es la ruta que ingresamos es
 porque el primer elemento es siempre el comando en sí mismo (en este caso,
-`./Debug/cliente`).
+`./bin/cliente`).
 
 Esto incluso lo podemos mejorar controlando que la cantidad de parámetros sea la
 indicada manejando `argc`:
 
-```c{2-4}
+```c{2-5}
 int main(int argc, char** argv) {
-    if (argc < 2) {
-        return EXIT_FAILURE;
-    }
+    if (argc < 2) { // [!code focus]
+        fprintf(stderr, "Uso: %s <ruta_archivo_configuracion>\n", argv[0]); // [!code focus]
+        return EXIT_FAILURE; // [!code focus]
+    } // [!code focus]
 
     //resto del TP0 de antes
 
-    t_config* config = crear_config(argv[1]);
+    t_config* config = crear_config(argv[1]); // [!code focus]
 
     //resto del TP0 de después
 }
 ```
 
-¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el IDE?
+¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el editor?
 :thinking:
 
-## Pasar argumentos desde Eclipse
-
-Vamos a entrar a las `Run Configurations...`:
-
-![eclipse-01](/img/guias/programacion/main/eclipse-01.png)
-
-Y en la configuración del proyecto nos moveremos a la pestaña `Arguments`, en
-donde vamos a poner nuestros argumentos separados por espacios:
-
-![eclipse-02](/img/guias/programacion/main/eclipse-02.png)
-
-En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
-partir desde el `Working directory` que está configurado ahí más abajo.
-
-Por ejemplo, la variable `${workspace_loc:NOMBRE_DEL_PROYECTO}` apunta hacia la
-carpeta en donde se encuentra el proyecto Eclipse.
-
-## Pasar argumentos desde Visual Studio Code
+## Visual Studio Code
 
 En el caso de que ya tengamos configurado el debugger, podremos encontrar en
 nuestro archivo `launch.json` una variable `args`, en donde vamos a
 poner nuestra lista de argumentos en formato de array de strings.
 
-```json{5}
+```json
 {
-    "configurations": [
+  // See https://go.microsoft.com/fwlink/?linkid=830387
+  // for the documentation about the launch.json format
+  "version": "0.2.0",
+  "configurations": [  // [!code focus]
+    {
+      "name": "run",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/${workspaceFolderBasename}",
+      "args": [ "./una/ruta/a/mi/archivo.cfg" ], // [!code focus]
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}", // [!code focus]
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
         {
-            // ...
-            "args": [ "./una/ruta/a/mi/archivo.cfg" ],
-            "cwd": "${workspaceFolder}",
-            // ...
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ],
+      "preLaunchTask": "build"
+    }
+  ]  // [!code focus]
 }
 ```
 
-En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
+En caso de usar una ruta relativa[^1], es muy importante
 asegurarnos que la variable `cwd` apunte al valor correcto. En este ejemplo,
-`${workspaceFolder}` es otra variable que apunta hacia la carpeta que tiene
-abierta Visual Studio Code[^1].
+`${workspaceFolder}` es otra variable que apunta hacia la ruta absoluta del
+directorio abierto por Visual Studio Code[^2].
 
-[^1]: [Visual Studio Code Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
+::: tip
+
+Si queremos pasar más de un argumento, simplemente agregamos más elementos al
+array separados por comas:
+
+```json
+"args": [ "arg1", "arg2", "arg3" ],
+```
+
+:::
+
+[^1]: [Guía de Rutas relativas y absolutas](/guias/consola/rutas)
+
+[^2]: [Documentación de las variables de Visual Studio Code (en inglés)](https://code.visualstudio.com/docs/editor/variables-reference)

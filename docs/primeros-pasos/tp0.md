@@ -1,6 +1,6 @@
 # Trabajo Práctico 0
 
-> Versión 2.3.0
+> Versión 2.4.0
 
 El TP0 es una práctica inicial para empezar a familiarizarse con algunas de las
 herramientas necesarias para el trabajo práctico cuatrimestral como es la
@@ -35,12 +35,12 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 ## Requisitos
 
 - [Contar con un entorno Linux](/primeros-pasos/entorno-linux)
-- [Tener configuradas las commons y git](/primeros-pasos/entorno-desarrollo)
+- [Tener configuradas las commons y git](/primeros-pasos/primer-proyecto-c)
+- Haber leído las guías de [sockets](/guias/linux/sockets) y
+  [serialización](/guias/linux/serializacion)
 - Tener a mano el [repo del TP0](https://faq.utnso.com.ar/tp0)
 
 ## Etapa 1: Setup inicial
-
-### Crear un workspace
 
 Primero, abramos una consola y, de la misma forma que bajamos el proyecto de las
 commons, bajemos el del TP0:
@@ -50,34 +50,25 @@ git clone https://github.com/sisoputnfrba/tp0
 cd tp0
 ```
 
-Luego, en el Eclipse vamos a movernos hacia
-`File > Switch Workspace > Other...`:
+Luego, abramos el proyecto desde Visual Studio Code utilizando el workspace ya
+configurado en el repo:
 
-![workspace-01](/img/primeros-pasos/tp0/workspace-01.png)
+```bash
+code tp0.code-workspace
+```
 
-Y vamos a seleccionar la carpeta donde clonamos el repositorio del TP0:
+::: tip
 
-![workspace-02](/img/primeros-pasos/tp0/workspace-02.png)
+También podemos abrir el proyecto abriendo Visual Studio Code y seleccionando
+`File > Open Workspace from File...` y seleccionando el archivo
+`tp0.code-workspace` que se encuentra en la carpeta del TP0.
 
-### Agregar los proyectos al workspace
+:::
 
-Ahora, para agregar los proyectos al workspace, nos vamos a mover hacia
-`File > Open Projects From File System...`:
+Una vez abierto el workspace, vamos a ver que tenemos dos módulos: `client` y
+`server`, con su propio código fuente y configuraciones:
 
-![workspace-03](/img/primeros-pasos/tp0/workspace-03.png)
-
-Nos aparecerá el siguiente menú, sobre el cual...
-
-![workspace-04](/img/primeros-pasos/tp0/workspace-04.png)
-
-1. Elegiremos de nuevo la carpeta del workspace desde el botón `Directory...`
-2. Dejaremos tildados solamente los proyectos `server` y `client`
-3. Haremos click en `Finish` para continuar
-
-A la izquierda, en la pestaña `Project Explorer`, nos van a aparecer ambos
-proyectos listos para arrancar con el TP0:
-
-![workspace-05](/img/primeros-pasos/tp0/workspace-05.png)
+![vscode-file-explorer](/img/primeros-pasos/tp0/vscode-file-explorer.png)
 
 ## Etapa 2: Comandos básicos
 
@@ -105,10 +96,10 @@ para que:
 Creado nuestro logger, usemos `log_info()` para loggear el string `"Soy un Log"`
 y cerremos el logger al final del programa con `log_destroy()`.
 
-Compilemos usando el :hammer: (o apretando `Ctrl` + `B`) y démosle Run al
-programa con :arrow_forward: (o `Ctrl` + `F11`).
+Compilemos y ejecutemos el programa moviéndonos a la sección "Run and Debug" en
+la barra lateral izquierda, seleccionando "run (client)":
 
-![workspace-06](/img/primeros-pasos/tp0/workspace-06.png)
+![vscode-run-debug](/img/primeros-pasos/tp0/vscode-run-debug.gif)
 
 ### Archivos de configuración
 
@@ -124,8 +115,8 @@ obtengamos el valor de la key `CLAVE` en formato string.
 
 ::: tip
 
-Para saber dónde guardar el archivo config y cómo hace Eclipse para leerlo,
-podés consultar la [guía de paths](/guias/consola/rutas).
+Para saber dónde guardar el archivo config y cómo hace Visual Studio Code para
+leerlo, podés consultar la [guía de paths](/guias/consola/rutas).
 
 :::
 
@@ -216,6 +207,9 @@ salir del bucle o no.
 Si en alguna etapa del TP el programa no se comporta como esperaban, pueden
 intentar ejecutarlo línea por línea siguiendo el
 [tutorial de debugging en Eclipse](/guias/herramientas/debugger).
+
+Si bien estamos usando Visual Studio Code, el tutorial es aplicable a cualquier
+IDE que quieran utilizar.
 
 :::
 
@@ -310,6 +304,102 @@ hacerlo, pueden consultar nuestra
 
 :::
 
+## Etapa 4: Desplegar en la Ubuntu Server
+
+Por último, vamos a practicar un poco lo que vamos a hacer al momento de la
+entrega del TP cuatrimestral: desplegar cada uno de los módulos en forma
+distribuida, cada una en su propia máquina virtual.
+
+Para ello, vamos a empezar por descargar la imagen de Ubuntu Server provista
+por la cátedra en la sección de
+[Máquinas Virtuales](/recursos/vms#ubuntu-server-64-bit).
+
+Estas VMs son las mismas que están instaladas en los laboratorios de la
+facultad, por lo que podemos estar seguros de que vamos a tener una experiencia
+similar a la entrega del TP.
+
+### Configuación de la red
+
+Una vez que tengamos la VM instalada, vamos a necesitar configurar la red para
+que pueda comunicarse con otras máquinas virtuales en nuestra red local.
+
+Para ello iremos a la configuración de la Ubuntu Server y en el apartado de
+"Network" (o "Red") elegiremos el "Bridged Adapter" (en español, "Adaptador
+Puente"):
+
+![vm-network](/img/primeros-pasos/tp0/vm-network.png)
+
+### Conexión por SSH
+
+Una vez que tengamos la red configurada, podríamos iniciar la VM y utilizar la
+consola que nos provee VirtualBox para trabajar en ella. Sin embargo, esto no es
+muy cómodo ya que no podemos copiar y pegar texto, ni tampoco abrir varias
+ventanas.
+
+Para solucionar esto, nos vamos a conectar a la VM por SSH. Para ello, ni bien
+iniciemos sesión veremos la IP que se le asignó a la VM:
+
+![vm-ip](/img/primeros-pasos/tp0/vm-ip.png)
+
+Vamos a usar esa IP, que siempre empieza con `192.168.0`, para conectarnos a la
+VM desde nuestra consola.
+
+Tanto en Windows como en Linux, podemos abrir una consola powershell o bash y
+usar el comando `ssh`:
+
+```sh
+ssh utnso@192.168.0.XXX
+# Reemplazar XXX por el número que vimos en la VM
+```
+
+Nos va a pedir la contraseña de la VM, que por defecto ya sabemos cuál es :wink:
+
+### Despliegue del repositorio
+
+Para desplegar el TP0 en la VM, vamos a repetir los mismos pasos que hicimos
+en la guía anterior y la etapa 1, pero sin interfaz gráfica. Es decir, vamos a:
+
+1. Instalar la [so-commons-library]
+2. Clonar el repo del TP0 (que en este caso va a ser un repo **privado suyo**).
+3. Movernos a la carpeta `client` y `server` y compilar el código fuente
+   ejecutando el comando `make`.
+
+[so-commons-library]: https://faq.utnso.com.ar/commons
+
+::: warning
+
+En este caso, como el repositorio es privado, vamos a necesitar configurar las
+credenciales de git para poder clonarlo. Recomendamos generar temporalmente un
+[Personal Access Token de GitHub] que podamos copiar y pegar en la consola para
+poder clonar el repo.
+
+:::
+
+[Personal Access Token de GitHub]: https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+
+### Clonar la VM
+
+Para simular que contamos con dos máquinas distintas, lo que haremos será clonar
+la VM que ya tenemos configurada. Para ello, vamos a hacer click derecho en la
+VM > "Clone..." y seguir los pasos para clonar la VM. Recomendamos usar la
+opción "Linked clone" ya que el proceso de clonado es más rápido y ocupa menos
+espacio:
+
+![vm-clone](/img/primeros-pasos/tp0/vm-clone.png)
+
+Una vez hecho esto, vamos a consultar la IP de la VM
+del `server` y agregarla al archivo de configuración del `client` para que se
+puedan comunicar.
+
+::: tip
+
+Las VMs están configuradas para ejecutar el comando
+[`ifconfig`](/guias/consola/bash.html#ifconfig) para que puedan ver la IP de la
+VM ni bien inicien sesión.
+
+:::
+
 ## Notas finales
 
 El transcurso de esta guía de primeros pasos fue un poco largo, ¡pero
@@ -319,12 +409,13 @@ aprendimos un montón! Recapitulemos un poco:
 - Aprendimos a usar funciones de las commons que nos van a ser muy útiles.
 - Aprendimos sobre reservar memoria, liberarla y leer por consola.
 - Pudimos mandar mensajes por red a otro programa.
+- Aprendimos cómo desplegar el TP en una VM sin interfaz gráfica.
 
 Esto fue todo, pero recuerden que el TP0 es solo una introducción a todas las
 herramientas que podemos usar.
 
 Por lo tanto, les pedimos que consulten las guías y video tutoriales linkeados
-en la pestaña de "Guías" de la barra de navegación de esta página para mejorar
-constantemente y llegar bien holgados a fin de cuatrimestre.
+en la sección [Guías](/guias/) de esta página para mejorar constantemente y
+llegar bien holgados a fin de cuatrimestre.
 
 **¡Hasta la próxima amigos!**
