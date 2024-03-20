@@ -35,7 +35,7 @@ Recomendamos acceder al issue titulado
 [¿Buscás grupo / integrantes?](https://faq.utnso.com.ar/issue-grupos) para
 contactar potenciales integrantes del grupo.
 
-Si una persona no se encuentra inscripta y con un grupo dentro de la fecha límite indicada se da por sentado que **no cursara la materia** independientemente que este en el sistema inscripto
+Si una persona no se encuentra con un grupo dentro de la fecha límite indicada, se dará por sentado que **no cursará la materia**, independientemente que se haya inscripto individualmente o no.
 
 ## Cambios de Grupo
 
