@@ -77,6 +77,16 @@ Si ejecutamos `tree -a`, vamos a ver que se nos descargaron varios archivos:
 2 directories, 9 files
 ```
 
+::: tip
+
+También podés crear un nuevo proyecto desde GitHub incluyendo el template
+[c-base-project](https://faq.utnso.com.ar/project) a la hora de crear un
+nuevo repositorio:
+
+![github-create-repo-from-template](/img/primeros-pasos/primer-proyecto-c/github-create-repo-from-template.png)
+
+:::
+
 ## Abrir el proyecto en Visual Studio Code
 
 Ahora, vamos a abrir el directorio que creamos en Visual Studio Code. Podemos
