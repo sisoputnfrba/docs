@@ -51,10 +51,6 @@ tener que seguir los siguientes pasos:
 - [Subir](#git-push) los commits al repositorio remoto.
 - [Descargar](#git-pull) los cambios de tus compañeros a tu repositorio local.
 
-<!-- ## ¿Qué es una rama?  poner aca o abajo mejor? -->
-
-<!-- Ver un ejemplo -->
-
 ## Comandos útiles de Git
 
 A continuación, vas a poder leer para qué sirven algunos de los comandos más
@@ -105,20 +101,27 @@ estaremos creando una nueva rama con el nombre establecido.
 Si hacemos `git branch -d <nombre de la rama>`, estaremos borrando la rama con
 el nombre señalado.
 
-### git checkout
+::: tip
+
+Si querés aprender más sobre cómo utilizar ramas, te recomendamos seguir el
+tutorial interactivo de [Git Branching](https://learngitbranching.js.org/?locale=es_AR).
+
+:::
+
+### git switch
 
 Se utiliza para cambiar la rama (branch) sobre la que se está trabajando
 actualmente.
 Uso:
 
 ```bash
-git checkout <nombre de la rama>
+git switch <nombre de la rama>
 ```
 
 Si quisiera crear una nueva rama, puedo utilizar el comando con el flag `-b`:
 
 ```bash
-git checkout -b <nombre de la nueva rama>
+git switch -b <nombre de la nueva rama>
 ```
 
 ### git status
@@ -229,7 +232,7 @@ usados de git. ¡Esperamos que te sirvan :)!
 
 ## Material recomendado
 
-- [Tutorial interactivo de Git Branching](https://learngitbranching.js.org/) (en inglés)
+- [Tutorial interactivo de Git Branching](https://learngitbranching.js.org/?locale=es_AR)
 - [Soluciones a errores comunes al usar Git](https://ohshitgit.com/es)
 - [Preguntas comunes sobre Git](https://firstaidgit.io/#/) (en inglés)
 - [Git para Diseño de Sistemas](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#)
