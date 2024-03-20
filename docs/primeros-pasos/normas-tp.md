@@ -212,7 +212,7 @@ satisfechos adecuadamente. La misma será realizada por uno o más ayudantes. En
 el grupo podrá inscribirse a la siguiente instancia de recuperación, si la hubiera.
 
 El **tiempo de despliegue y configuración** en el laboratorio para comenzar la prueba es de **15 minutos como máximo**. 
-Pasado ese tiempo, el grupo se dara como desaprobado.
+Pasado ese tiempo, el grupo se dará como desaprobado.
 
 Durante las últimas 2 (dos) semanas antes de la fecha de la evaluación práctica
 se comunicará un documento de pruebas tentativas a realizarse durante la
