@@ -39,24 +39,26 @@ Ahora sí, una vez instaladas las commons, vamos a probar de incluirlas en
 nuestro primer proyecto en **Visual Studio Code**.
 
 Para eso, abrimos una nueva consola y creamos un nuevo directorio para nuestro
-proyecto:
+proyecto. Luego, nos vamos a mover a ese directorio y, una vez allí, vamos a
+descargar el template oficial:
 
 ```bash
 mkdir ejemplo
-```
-
-Luego, nos vamos a mover a ese directorio:
-
-```bash
 cd ejemplo
-```
-
-Una vez allí, vamos a descargar el template oficial ejecutando el siguiente
-comando:
-
-```bash
 wget -qO- https://faq.utnso.com.ar/project.tar.gz | tar -xzvf - --strip-components 1
 ```
+
+::: tip
+
+También podés crear un nuevo proyecto desde GitHub incluyendo el template
+[c-base-project](https://faq.utnso.com.ar/project) a la hora de crear un
+nuevo repositorio:
+
+![github-create-repo-from-template](/img/primeros-pasos/primer-proyecto-c/github-create-repo-from-template.png)
+
+Y luego clonar el repositorio recién creado ejecutando `git clone`.
+
+:::
 
 Si ejecutamos `tree -a`, vamos a ver que se nos descargaron varios archivos:
 
@@ -76,16 +78,6 @@ Si ejecutamos `tree -a`, vamos a ver que se nos descargaron varios archivos:
 
 2 directories, 9 files
 ```
-
-::: tip
-
-También podés crear un nuevo proyecto desde GitHub incluyendo el template
-[c-base-project](https://faq.utnso.com.ar/project) a la hora de crear un
-nuevo repositorio:
-
-![github-create-repo-from-template](/img/primeros-pasos/primer-proyecto-c/github-create-repo-from-template.png)
-
-:::
 
 ## Abrir el proyecto en Visual Studio Code
 
