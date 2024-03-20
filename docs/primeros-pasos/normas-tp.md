@@ -121,7 +121,7 @@ misma habiendo leído y discutido la especificación completa del trabajo.
 ## Estructura del trabajo práctico grupal
 
 La especificación del trabajo práctico estará compuesta por una serie de
-**checkpoints**. Los mismos sirven como metodo de evaluación del progreso del grupo y como guía para el desarrollo de un sistema.
+**checkpoints**. Los mismos sirven como método de evaluación del progreso del grupo y como guía para el desarrollo de un sistema.
 Cada uno de ellos representa un conjunto cohesivo de requerimientos que deberán
 ser satisfechos para que, de manera evolutiva, se genere el sistema final. Esta metodología de desarrollo se conoce como prototipado evolutivo.
 
