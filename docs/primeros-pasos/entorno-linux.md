@@ -166,13 +166,10 @@ el portapapeles**). También tenemos un video para eso :smile:
 
 ::: danger ATENCIÓN
 
-En las versiones más recientes, el mensaje que aparece luego de ejecutar el
-script de instalación es el siguiente:
-```
-VirtualBox Guest Additions: Running kernel modules will not be replaced until
-the system is restarted
-```
-Esto significa que es necesario reiniciar la VM para aplicar los cambios.
+El mensaje que aparece luego de ejecutar el script de instalación puede variar
+según la versión de VirtualBox que utilicen. Esto no debería ser un problema,
+pero en algunos casos puede que sugiera reiniciar la máquina en lugar de solo
+cerrar la sesión.
 
 :::
 
