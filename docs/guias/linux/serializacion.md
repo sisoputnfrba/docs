@@ -22,6 +22,7 @@ suele ser así). Esto ocurre a causa del **padding** que agrega el compilador
 para intentar optimizar los accesos a memoria.
 
 ```c
+// Estructura de datos
 typedef struct {
     uint32_t dni;
     uint8_t edad;
@@ -29,6 +30,7 @@ typedef struct {
     char nombre[14];
 } t_persona;
 
+// Operaciones asociadas
 t_persona persona_crear(uint32_t dni, uint8_t edad, uint32_t pasaporte, char *nombre) {
     t_persona persona;
     persona.dni = dni;
@@ -37,10 +39,6 @@ t_persona persona_crear(uint32_t dni, uint8_t edad, uint32_t pasaporte, char *no
     strncpy(persona.nombre, nombre, 14);
     return persona;
 }
-
-// ...
-
-t_persona john_doe = persona_crear(12345678, 25, 12345678, "John Doe");
 ```
 
 <Image src="/img/guias/serializacion/padding-imagen.png" containerColor="white" containerPadding="30px 0px 0px 0px"/>
