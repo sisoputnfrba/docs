@@ -537,10 +537,12 @@ antes.
 ### Reutilizando lógica
 
 Nuestro código funciona, pero... ¿tenemos que hacer esto para _tooooooodos_ los
-TADs que queramos enviar? No, no necesariamente. Ahí es cuando la magia de los
-TADs entra en juego: podemos crear **operaciones asociadas** a nuestros
-`t_buffer` y `t_paquete` que nos _abstraigan_ de la lógica de serialización y
-permitan reutilizarla más fácilmente:
+TADs que queramos enviar? No, no necesariamente. Estaría mejor si podemos crear
+**operaciones asociadas** a nuestros `t_buffer` y `t_paquete` que nos
+_abstraigan_ de la lógica de serialización y permitan reutilizarla más
+fácilmente. En otras palabras, ¡armar nuestros propios TADs!
+
+Podemos empezar con algo muy primitivo:
 
 ```c
 // Crea un buffer vacío de tamaño size y offset 0
@@ -554,7 +556,11 @@ void buffer_add(t_buffer *buffer, void *data, uint32_t size);
 
 // Guarda size bytes del principio del buffer en la dirección data y avanza el offset
 void buffer_read(t_buffer *buffer, void *data, uint32_t size);
+```
 
+Luego usar esas funciones para luego crear un nuevo _nivel de abstracción_:
+
+```c
 // Agrega un uint32_t al buffer
 void buffer_add_uint32(t_buffer *buffer, uint32_t data);
 
@@ -566,23 +572,29 @@ void buffer_add_uint8(t_buffer *buffer, uint8_t data);
 
 // Lee un uint8_t del buffer y avanza el offset
 uint8_t buffer_read_uint8(t_buffer *buffer);
+
+// Agrega string al buffer con un uint32_t adelante indicando su longitud
+void buffer_add_string(t_buffer *buffer, char *string, uint32_t length);
+
+// Lee un string y su longitud del buffer y avanza el offset
+char *buffer_read_string(t_buffer *buffer, uint32_t *length);
 ```
 
-Y luego usar esas funciones para armar un buffer a partir de una persona:
+Y por último usar esas funciones para armar un buffer a partir de una persona
+y viceversa:
 
 ```c
 t_buffer *persona_serializar(t_persona *persona) {
     t_buffer *buffer = buffer_create(
-      sizeof(uint32_t) * 3 +      // DNI, Pasaporte y longitud del nombre
-      sizeof(uint8_t) +           // Edad
-      strlen(persona->nombre) + 1 // La longitud del string nombre + 1 para el '\0'
+      sizeof(uint32_t) * 2 +                         // DNI y Pasaporte
+      sizeof(uint8_t) +                              // Edad
+      sizeof(uint32_t) + strlen(persona->nombre) + 1 // longitud y nombre + 1 para el '\0'
     );
 
     buffer_add_uint32(buffer, persona->dni);
     buffer_add_uint8(buffer, persona->edad);
     buffer_add_uint32(buffer, persona->pasaporte);
-    buffer_add_uint32(buffer, persona->nombre_length);
-    buffer_add(buffer, persona->nombre, persona->nombre_length);
+    buffer_add_string(buffer, persona->nombre, persona->nombre_length);
 
     return buffer;
 }
@@ -593,9 +605,7 @@ t_persona *persona_deserializar(t_buffer *buffer) {
     persona->dni = buffer_read_uint32(buffer);
     persona->edad = buffer_read_uint8(buffer);
     persona->pasaporte = buffer_read_uint32(buffer);
-    persona->nombre_length = buffer_read_uint32(buffer);
-    persona->nombre = malloc(persona->nombre_length);
-    buffer_read(buffer, persona->nombre, persona->nombre_length);
+    persona->nombre = buffer_read_string(buffer, persona->nombre, &persona->nombre_length);
 
     return persona;
 }
