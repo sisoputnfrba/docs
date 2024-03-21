@@ -137,23 +137,6 @@ typedef struct {
     char* username;
     char* message;
 } t_package;
-
-t_package *package_create(char *username, char *message) {
-    t_package *package = malloc(sizeof(t_package));
-    package->username = string_duplicate(username);
-    package->message = string_duplicate(message);
-    return package;
-}
-
-void package_destroy(t_package *package) {
-    free(package->username);
-    free(package->message);
-    free(package);
-}
-
-// ...
-
-t_package *p1 = package_create("John Doe", "Hola, soy John Doe.");
 ```
 
 No tenemos un `char[14]`, tenemos un puntero `(char*)` que apunta a una posición
@@ -182,12 +165,12 @@ typedef struct {
     uint32_t message_length;
 } t_package;
 
-t_package *package_create(char *username, char *message) {
-    t_package *package = malloc(sizeof(t_package));
-    package->username = string_duplicate(username);
-    package->username_length = strlen(username) + 1; // +1 para el '\0'
-    package->message = string_duplicate(message);
-    package->message_length = strlen(message) + 1; // +1 para el '\0'
+t_package package_create(char *username, char *message) {
+    t_package package;
+    package.username = string_duplicate(username);
+    package.username_length = string_length(username) + 1; // +1 para el '\0'
+    package.message = string_duplicate(message);
+    package.message_length = string_length(message) + 1; // +1 para el '\0'
     return package;
 }
 ```
@@ -288,8 +271,8 @@ typedef struct {
     char nombre[14];
 } t_persona;
 
+// Se reserva memoria para poder apuntar a una estructura de tipo t_persona
 t_persona *ptr_persona = malloc(sizeof(t_persona));
-// Se reserva memoria para poder apuntar a una estructura
 ```
 
 Hay dos formas de acceder a la estructura a través del puntero, las cuales son
@@ -616,7 +599,7 @@ podemos reutilizar estas funciones para cualquier TAD que queramos enviar,
 incluso estructuras anidadas o listas.
 
 Los invitamos a pensar cómo podrían implementar estas funciones, y cómo podría
-estar conformado el TAD de `t_paquete` para que sea más sencillo enviar y 
+estar conformado el TAD de `t_paquete` para que sea más sencillo enviar y
 recibir mensajes por sockets.
 
 ## Notas finales
