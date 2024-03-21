@@ -4,7 +4,7 @@ Este repo contiene todas las guías de la cátedra de Sistemas Operativos - UTN.
 
 ## Dependencias
 
-- Node.js v18
+- Node.js v20
 
 ## Levantar el proyecto
 
