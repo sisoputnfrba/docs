@@ -403,10 +403,10 @@ la original.
 
 Si por ejemplo tenemos un `int* a` y hacemos `a + 1` nos estamos desplazando _4
 + 1 = 5_ bytes respecto de la dirección apuntada por `a`. En este caso
-+ utilizamos el tipo `void*` para nuestro buffer, ya que por lo general se
-+ interpreta que los elementos a los que apunta ocupan 1 byte. De esta manera
-+ haciendo `buffer + offset` nos desplazamos tantos bytes respecto del inicio
-+ del buffer como indique nuestra variable `offset`.
+utilizamos el tipo `void*` para nuestro buffer, ya que por lo general se
+interpreta que los elementos a los que apunta ocupan 1 byte. De esta manera
+haciendo `buffer + offset` nos desplazamos tantos bytes respecto del inicio
+del buffer como indique nuestra variable `offset`.
 
 Bien, ahora en el buffer ya tenemos nuestro TAD persona cargado, podríamos ya
 enviar esto. Pero estaría bueno "empaquetarlo" primero, es decir, agregarle un
