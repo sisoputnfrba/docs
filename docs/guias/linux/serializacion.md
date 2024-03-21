@@ -574,7 +574,7 @@ void buffer_add_uint8(t_buffer *buffer, uint8_t data);
 uint8_t buffer_read_uint8(t_buffer *buffer);
 
 // Agrega string al buffer con un uint32_t adelante indicando su longitud
-void buffer_add_string(t_buffer *buffer, char *string, uint32_t length);
+void buffer_add_string(t_buffer *buffer, uint32_t length, char *string);
 
 // Lee un string y su longitud del buffer y avanza el offset
 char *buffer_read_string(t_buffer *buffer, uint32_t *length);
@@ -594,7 +594,7 @@ t_buffer *persona_serializar(t_persona *persona) {
     buffer_add_uint32(buffer, persona->dni);
     buffer_add_uint8(buffer, persona->edad);
     buffer_add_uint32(buffer, persona->pasaporte);
-    buffer_add_string(buffer, persona->nombre, persona->nombre_length);
+    buffer_add_string(buffer, persona->nombre_length, persona->nombre);
 
     return buffer;
 }
@@ -605,7 +605,7 @@ t_persona *persona_deserializar(t_buffer *buffer) {
     persona->dni = buffer_read_uint32(buffer);
     persona->edad = buffer_read_uint8(buffer);
     persona->pasaporte = buffer_read_uint32(buffer);
-    persona->nombre = buffer_read_string(buffer, persona->nombre, &persona->nombre_length);
+    persona->nombre = buffer_read_string(buffer, &persona->nombre_length);
 
     return persona;
 }
