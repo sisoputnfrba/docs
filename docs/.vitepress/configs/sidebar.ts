@@ -155,10 +155,6 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: true,
     items: [
       {
-        text: 'Emular en macOS con ARM',
-        link: '/guias/herramientas/macos-arm',
-      },
-      {
         text: 'Guía para crear proyectos C',
         link: 'https://raniagus.github.io/so-project-template/'
       },
