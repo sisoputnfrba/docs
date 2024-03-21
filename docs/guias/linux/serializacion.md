@@ -368,22 +368,24 @@ t_buffer* buffer = malloc(sizeof(t_buffer));
 
 buffer->size = sizeof(uint32_t) * 3 // DNI, Pasaporte y longitud del nombre
              + sizeof(uint8_t) // Edad
-             + strlen(persona.nombre) + 1; // La longitud del string nombre. Le sumamos 1 para enviar tambien el caracter centinela '\0'. Esto se podría obviar, pero entonces deberíamos agregar el centinela en el receptor.
+             + persona.nombre_length; // La longitud del string nombre.
+                                      // Le habíamos sumado 1 para enviar tambien el caracter centinela '\0'.
+                                      // Esto se podría obviar, pero entonces deberíamos agregar el centinela en el receptor.
 
 buffer->offset = 0;
 buffer->stream = malloc(buffer->size);
 
 memcpy(stream + offset, &persona.dni, sizeof(uint32_t));
-offset += sizeof(uint32_t);
+buffer->offset += sizeof(uint32_t);
 memcpy(stream + offset, &persona.edad, sizeof(uint8_t));
-offset += sizeof(uint8_t);
+buffer->offset += sizeof(uint8_t);
 memcpy(stream + offset, &persona.pasaporte, sizeof(uint32_t));
-offset += sizeof(uint32_t);
+buffer->offset += sizeof(uint32_t);
 
 // Para el nombre primero mandamos el tamaño y luego el texto en sí:
 memcpy(stream + offset, &persona.nombre_length, sizeof(uint32_t));
-offset += sizeof(uint32_t);
-memcpy(stream + offset, persona.nombre, strlen(persona.nombre) + 1);
+buffer->offset += sizeof(uint32_t);
+memcpy(stream + offset, persona.nombre, persona.nombre_length);
 // No tiene sentido seguir calculando el desplazamiento, ya ocupamos el buffer completo
 
 buffer->stream = stream;
@@ -567,9 +569,9 @@ y viceversa:
 ```c
 t_buffer *persona_serializar(t_persona *persona) {
     t_buffer *buffer = buffer_create(
-      sizeof(uint32_t) * 2 +                         // DNI y Pasaporte
-      sizeof(uint8_t) +                              // Edad
-      sizeof(uint32_t) + strlen(persona->nombre) + 1 // longitud y nombre + 1 para el '\0'
+      sizeof(uint32_t) * 2 +                    // DNI y Pasaporte
+      sizeof(uint8_t) +                         // Edad
+      sizeof(uint32_t) + persona->nombre_length // Longitud del nombre, y el propio nombre
     );
 
     buffer_add_uint32(buffer, persona->dni);
@@ -586,6 +588,7 @@ t_persona *persona_deserializar(t_buffer *buffer) {
     persona->dni = buffer_read_uint32(buffer);
     persona->edad = buffer_read_uint8(buffer);
     persona->pasaporte = buffer_read_uint32(buffer);
+    // Pasamos por referencia la longitud para que la función nos devuelva ahí el tamaño del string
     persona->nombre = buffer_read_string(buffer, &persona->nombre_length);
 
     return persona;
