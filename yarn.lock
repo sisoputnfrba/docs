@@ -725,6 +725,11 @@ markdown-it-footnote@^3.0.3:
   resolved "https://registry.yarnpkg.com/markdown-it-footnote/-/markdown-it-footnote-3.0.3.tgz#e0e4c0d67390a4c5f0c75f73be605c7c190ca4d8"
   integrity sha512-YZMSuCGVZAjzKMn+xqIco9d1cLGxbELHZ9do/TSYVzraooV8ypsppKNmUJ0fVH5ljkCInQAtFpm8Rb3eXSrt5w==
 
+medium-zoom@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/medium-zoom/-/medium-zoom-1.1.0.tgz#6efb6bbda861a02064ee71a2617a8dc4381ecc71"
+  integrity sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==
+
 minisearch@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/minisearch/-/minisearch-6.3.0.tgz#985a2f1ca3c73c2d65af94f0616bfe57164b0b6b"

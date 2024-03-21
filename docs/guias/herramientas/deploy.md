@@ -23,7 +23,7 @@ para entregar.
 
 Para empezar, recomendamos ampliamente haber generado un
 [Personal Access Token de GitHub](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-que **expire al día siguiente**[^2] y tenerlo a mano antes de entrar al
+que **expire al día siguiente**[^1] y tenerlo a mano antes de entrar al
 laboratorio para poder clonar el repositorio del TP. Sí, tarda 5 minutos en
 crearse, pero si multiplicamos ese tiempo por los 80 grupos por entrega se va a
 notar de cuánto tiempo ahorrado para todos estamos hablando.
@@ -121,7 +121,7 @@ laboratorio), la forma más sencilla de hacerlo es utilizando
 ::: warning IMPORTANTE
 
 **El puerto 22 es un puerto reservado exclusivamente para conexiones por SSH.**
-Deben usarlo solamente para conectarse por SSH con PuTTY. 
+Deben usarlo solamente para conectarse por SSH con PuTTY.
 
 Para conectar los módulos del TP entre sí es recomendable usar números de puerto
 por encima de 1024, ya que es poco probable que estén siendo usados por otro
@@ -134,12 +134,9 @@ proceso (ej: 8000, 8001, etc).
 A partir de acá, lo que queda es usar la consola para clonar, compilar,
 configurar y levantar sus módulos. Algunas cosas a recordar en esta parte:
 
-1. Clonar el repo
-2. Instalar las bibliotecas necesarias (incluyendo las
-   [commons](https://faq.utnso.com.ar/commons#guía-de-instalación))
-   [^3].
-3. Compilar los módulos (recuerden que para poder compilar tienen que subir los
-   makefiles[^4] ya que no está permitido subir archivos binarios al repo).
+1. Clonar el [script de despliegue](https://faq.utnso.com.ar/deploy)
+2. Ejecutarlo como se lo indicamos en el README del grupo
+3. Ingresar el Personal Access Token de GitHub cuando se lo pida
 4. Llenar archivos de config con la IP y el Puerto de cada módulo.
 
 Una vez tengan todo listo, avísennos y comenzamos.
@@ -222,10 +219,10 @@ entregas:
 | :-----------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |                  En local mis módulos se conectan, pero en las VMs de prueba no.                  |                                Tener parametrizado estáticamente en el código (también conocido como _hardcodeado_) `"localhost"` a la hora de conectar módulos.                                |                                          Sacar el `"localhost"` y configurar [getaddrinfo](<https://man7.org/linux/man-pages/man3/getaddrinfo.3.html#:~:text=If%20the%20AI_PASSIVE,sendmsg(2).>) con los flags correctos.                                           |
 |         Local funciona bien, pero en la entrega tengo comportamientos no determinísticos.         | Local hay un solo CPU para todas las vms, pero en la entrega hay varios porque son varias máquinas. Ese paralelismo puede hacer que sus condiciones de carrera brillen más que con un solo CPU. |                                                 Probarlo distribuido con [Helgrind](/guias/herramientas/valgrind) (pueden levantar dos VMs server en sus máquinas si no pueden ir a Medrano) y usar semáforos.                                                 |
-| Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no se me conectan los módulos. |                                                  Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.[^5]                                                  |                                                                            Configurar [setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables (ignorando el riesgo de seguridad que puede implicar), **o** ir tanteando con [lsof](/guias/consola/bash.html#lsof) para saber si el puerto ya fue liberado sin tener que volver a levantar el módulo.                                                                            |
+| Cuando bajo mi módulo servidor tengo que esperar 30 segundos porque sino no se me conectan los módulos. |                                                  Es una medida de seguridad de Linux para que no puedan robar paquetes enviados a tu servidor.[^2]                                                  |                                                                            Configurar [setsockopt](https://stackoverflow.com/a/24194999) para marcar a la IP y el puerto como reusables (ignorando el riesgo de seguridad que puede implicar), **o** ir tanteando con [lsof](/guias/consola/bash.html#lsof) para saber si el puerto ya fue liberado sin tener que volver a levantar el módulo.                                                                            |
 |                         No puedo compilar mis módulos y no sé qué hacer.                          |                                                       Falta subir los makefiles del proyecto al repositorio o instalar la shared library.                                                       |                                                                                                         Revisar el [paso 2](#pasos-a-seguir) de esta guía.                                                                                                          |
 |            No tengo información suficiente para darme cuenta si la prueba anduvo o no.            |                                                               No puse logs suficientes en mi TP porque creí que no era necesario.                                                               |                                           **Agregarlos**. Sin logs no tenemos manera de saber que las cosas que tenían que pasar en la prueba pasaron. La foto final no garantiza que el trayecto haya sido el correcto.                                            |
-|                     Tardo demasiado en darme cuenta si la prueba anduvo o no porque está llena de logs irrelevantes. Tengo que comentarlos uno por uno y después acordarme de descomentarlos para seguir debuggeando.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://faq.utnso.com.ar/commons/blob/1136796838552318f475352a5983d926d16cc967/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de debug" al correr la prueba[^6]. |
+|                     Tardo demasiado en darme cuenta si la prueba anduvo o no porque está llena de logs irrelevantes. Tengo que comentarlos uno por uno y después acordarme de descomentarlos para seguir debuggeando.                     |                                                                Demasiado [printf debugging](https://stackoverflow.com/a/189570)                                                                 | Aprovechar que las commons proveen varios [niveles de logueo](https://faq.utnso.com.ar/commons/blob/1136796838552318f475352a5983d926d16cc967/src/commons/log.h#L50-L52) para mostrar solo la información relevante y ocultar los logs "de debug" al correr la prueba[^3]. |
 
 ## Paso 4: Des-pliegue - Recomendado
 
@@ -243,26 +240,14 @@ del cuatri y qué relaciones encontraron con la teoría.
 
 <br><br>
 
-[^2]:
+[^1]:
     Tener una fecha de expiración corta para nuestros tokens siempre es una
     buena práctica de seguridad.
 
-[^3]:
-    Si cuentan con una shared library propia, deberán copiar los headers (".h")
-    en `/usr/include` y la biblioteca compilada (".so") en `/usr/lib`. Las 
-    commons se instalan
-    [de la misma forma](https://github.com/sisoputnfrba/so-commons-library/blob/1136796838552318f475352a5983d926d16cc967/src/makefile#L33-L34)
-    ;)
-
-[^4]:
-    En Eclipse, los makefiles son varios archivos que se encuentran en la
-    subcarpeta `Debug/` y se llaman `makefile` o tienen la extensión ".mk". Para
-    poder compilar es necesario subirlos **todos**.
-
-[^5]:
+[^2]:
     Más info en [este issue](https://github.com/sisoputnfrba/foro/issues/1624#issuecomment-611745367)
 
-[^6]:
+[^3]:
     Incluso pueden agregar el nivel de logueo como una variable del config y
     parsearlo con
     [log_level_from_string](https://github.com/sisoputnfrba/so-commons-library/blob/b7a25d7924a6abba83a8bb48904a539b99f9fa27/src/commons/log.h#L115-L119)

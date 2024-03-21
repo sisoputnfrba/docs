@@ -32,15 +32,11 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Primeros pasos',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
-        text: 'Video de Introducción al TP',
-        link: '/primeros-pasos/'
-      },
-      {
         text: '¿Dónde me anoto?',
-        link: '/primeros-pasos/donde-me-anoto'
+        link: '/primeros-pasos/'
       },
       {
         text: 'Normas del Trabajo Práctico',
@@ -56,7 +52,23 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Crear tu primer proyecto C',
-        link: '/primeros-pasos/entorno-desarrollo'
+        link: '/primeros-pasos/primer-proyecto-c'
+      },
+      {
+        text: 'Git para el Trabajo Práctico',
+        link: '/primeros-pasos/git'
+      },
+      {
+        text: 'Manejo de Punteros',
+        link: '/guias/programacion/punteros',
+      },
+      {
+        text: 'Guía de Sockets',
+        link: '/guias/linux/sockets',
+      },
+      {
+        text: 'Guía de Serialización',
+        link: '/guias/linux/serializacion',
       },
       {
         text: 'Trabajo Práctico 0',
@@ -66,19 +78,19 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Consola de Linux y Git',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Guía de uso de Bash',
         link: '/guias/consola/bash'
       },
       {
-        text: 'Git para el Trabajo Práctico',
-        link: '/guias/consola/git'
-      },
-      {
         text: 'Rutas Relativas y Absolutas',
         link: '/guias/consola/rutas'
+      },
+      {
+        text: 'Guía de despliegue de TP',
+        link: '/guias/herramientas/deploy'
       },
       {
         text: 'Mario Bash',
@@ -92,15 +104,11 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Programación en C',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         text: 'Repaso de Arquitectura',
         link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
-      },
-      {
-        text: 'Manejo de Punteros y Memoria Dinámica',
-        link: '/guias/programacion/punteros',
       },
       {
         text: 'Buenas Prácticas de C',
@@ -111,12 +119,8 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/main'
       },
       {
-        text: 'Cómo hacer una consola interactiva',
+        text: 'Hacer una consola interactiva',
         link: '/guias/programacion/readline'
-      },
-      {
-        text: 'Video de Shared Libraries',
-        link: '/guias/programacion/shared-libraries'
       },
       {
         text: 'Tutorial interactivo de C',
@@ -126,18 +130,10 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Syscalls de Linux',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
-        text: 'Guía de Sockets',
-        link: '/guias/linux/sockets',
-      },
-      {
-        text: 'Guía de Serialización',
-        link: '/guias/linux/serializacion',
-      },
-      {
-        text: 'Charla de Threads y Sincronización',
+        text: 'Charla de Threads y Sincro',
         link: '/guias/linux/threads',
       },
       {
@@ -148,12 +144,8 @@ export const sidebar: DefaultTheme.Sidebar = [
   },
   {
     text: 'Herramientas útiles',
-    collapsed: true,
+    collapsed: false,
     items: [
-      {
-        text: 'Guía para crear proyectos C',
-        link: 'https://raniagus.github.io/so-project-template/'
-      },
       {
         text: 'Debugging en Eclipse',
         link: '/guias/herramientas/debugger'
@@ -165,10 +157,6 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Unit Testing con CSpec',
         link: '/guias/herramientas/cspec'
-      },
-      {
-        text: 'Guía de despliegue de TP',
-        link: '/guias/herramientas/deploy'
       },
     ],
   },

@@ -11,9 +11,12 @@ El mismo consistirá en el desarrollo de una aplicación, cuyos componentes se
 ejecutarán sobre una o diversas plataformas, teniendo como objetivo permitir al
 alumno afianzar distintos conceptos teóricos vistos a lo largo de la cursada.
 
-El trabajo práctico será evaluado en una instancia práctica y grupal, y
-posteriormente en una instancia individual (coloquio). El mismo se considerará
-aprobado cuando ambas instancias hayan sido aprobadas.
+El trabajo práctico será evaluado de 3 maneras:
+- En una instancia virtual en la mitad del cuatrimestre a través de los tres primeros checkpoints (evaluados por Tags en el repositorio de la catedra explicado en Checkpoint de Control Obligatorio).
+- En una instancia práctica y grupal en el laboratorio (normalmente en Medrano)
+- Una instancia individual y oral posteriormente a la aprobación del punto anterior (coloquio).
+
+Para dar por aprobada la materia se deben tener los 3 puntos aprobados. En caso de no cumplir ya el primero no se permite realizar una presentación de los puntos siguientes.
 
 ## Inscripción de grupos
 
@@ -32,6 +35,8 @@ Recomendamos acceder al issue titulado
 [¿Buscás grupo / integrantes?](https://faq.utnso.com.ar/issue-grupos) para
 contactar potenciales integrantes del grupo.
 
+Si una persona no se encuentra con un grupo dentro de la fecha límite indicada, se dará por sentado que **no cursará la materia**, independientemente que se haya inscripto individualmente o no.
+
 ## Cambios de Grupo
 
 Podrá existir un período de cambios de grupo durante el desarrollo del trabajo
@@ -42,7 +47,7 @@ que cada alumno poseerá **una única chance de cambiarse de grupo**.
 La fecha de inicio de dicho período será anunciada debidamente mediante los
 medios de comunicación oficiales. De la misma forma, será anunciada la fecha de
 finalización de los cambios de grupos, siendo la misma cercana a la fecha del
-Checkpoint Presencial, y la hora de finalización a las **18:00hs del mismo
+ultimo Checkpoint de Control Obligatorio, y la hora de finalización a las **18:00hs del mismo
 día**.
 
 Para pedir un cambio de grupo, la cátedra provee una
@@ -85,7 +90,7 @@ Finalmente, cuando todas las evaluaciones finalicen, se realizará la comunicaci
 indicando que todos los repositorios serán borrados para que pueda
 bajarse una copia quien así lo desee.
 
-Es importante recalcar que **es OBLIGATORIO el uso del repositorio** ya que desde allí deberán obtener el código fuente que será compilado y ejecutado en las pruebas de laboratorio.
+Es importante recalcar que **es OBLIGATORIO el uso del repositorio** ya que desde allí se tomarán las referencias para evaluar al grupo en la instancia a mitad de cuatrimestre y donde deberán obtener el código fuente que será compilado y ejecutado en las pruebas de laboratorio.
 
 Aquel grupo que no cumpla con este requisito no será evaluado.
 
@@ -109,14 +114,14 @@ encontrará regularizada.
 ## Presentación oficial del trabajo práctico
 
 Tanto la fecha como el horario de la presentación serán informados en el Campus
-Virtual, mediante el [blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia. Es obligatoria la
-asistencia del grupo completo a dicha presentación, y se recomienda asistir a la
+Virtual, mediante el [blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia. Es obligatoria 
+**la asistencia del grupo completo** a dicha presentación, y se recomienda asistir a la
 misma habiendo leído y discutido la especificación completa del trabajo.
 
 ## Estructura del trabajo práctico grupal
 
 La especificación del trabajo práctico estará compuesta por una serie de
-**checkpoints**. Los mismos sirven como guía para el desarrollo de un sistema.
+**checkpoints**. Los mismos sirven como método de evaluación del progreso del grupo y como guía para el desarrollo de un sistema.
 Cada uno de ellos representa un conjunto cohesivo de requerimientos que deberán
 ser satisfechos para que, de manera evolutiva, se genere el sistema final. Esta metodología de desarrollo se conoce como prototipado evolutivo.
 
@@ -127,18 +132,25 @@ puedan proveer feedback y consejos sobre el estado del grupo y el trabajo
 realizado, pudiendo aprovechar para este fin los horarios de consulta
 dispuestos los sábados.
 
-### Checkpoint de laboratorio
+### Checkpoint de Control Obligatorio
 
-La revisión de este checkpoint permitirá que el grupo exponga sus avances y que los
-ayudantes brinden feedback del desarrollo realizado hasta el momento y
-respondan consultas sobre futuros checkpoints. Se realizará en un laboratorio de Sistemas
-para que el grupo pueda participar de una experiencia similar a una evaluación
-final.
+El trabajo práctico contará con un mínimo de 3 **Checkpoints
+de Control Obligatorio**. Completado el último, la cátedra verificará el avance de los 
+grupos y, en caso de no cumplir con un avance mínimo requerido en dos de ellos **en tiempo y forma**, se les informará que
+**no podrán continuar con la materia**. Todos los grupos deberán informar los avances requeridos de los 3 Checkpoints por medio de la 
+creación de Tags en el repositorio provisto por la cátedra.
 
-La fecha se encuentra definida en el enunciado del Trabajo Práctico. Se
-informará con anticipación el lugar a través del Campus Virtual, [el blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia.
+Esto implica que, al llegar a la fecha de cada uno de los primeros tres Checkpoints, un integrante 
+del grupo deberá crear un Tag en el repositorio indicando que ese Checkpoint fue cumplido. Al llegar 
+a la fecha del tercer Checkpoint, la cátedra verificará en el repositorio tanto la existencia de los 
+Tags como el código que fue incluído en él. **No cumplir con los requisitos de por lo menos
+dos de los tres checkpoints será motivo de desaprobación del Trabajo Práctico**.
 
-#### Características de la entrega
+## Entrega final
+
+Determina la aprobación del trabajo práctico, la misma constará de tres instancias pudiendo presentarse a cualquiera de ellas y/o a todas en caso de que el grupo así lo requiera para su aprobación.
+
+### Características de la entrega
 
 - Para la evaluación, el grupo obtendrá su código fuente descargando la última
   versión disponible de su repositorio.
@@ -150,26 +162,9 @@ informará con anticipación el lugar a través del Campus Virtual, [el blog](ht
   sin interfaz gráfica proporcionadas por la Cátedra**, que se encontrarán
   instaladas en el laboratorio de Sistemas.
 
-#### Requisitos para la aceptación de la entrega
-
-- Contener los archivos necesarios para compilar correctamente (makefiles).
-- Que no se produzcan errores de compilación.
-- Que no existan archivos ejecutables ni objetos[^1].
-- Haber cumplido con los requerimientos técnicos y funcionales indicados en el
-  enunciado del trabajo práctico.
-
-## Entrega final
-
-Determina la aprobación del trabajo práctico, la misma constará de tres instancias pudiendo presentarse a cualquiera de ellas y/o a todas en caso de que el grupo así lo requiera para su aprobación.
-
-### Características de la entrega
-
-- Posee las características del checkpoint de laboratorio, con la diferencia que
-  la entrega podrá ser aprobada o desaprobada, en el primer caso permitiendo al
+- La entrega podrá ser aprobada o desaprobada, en el primer caso permitiendo al
   grupo rendir el coloquio, mientras que en el segundo caso el grupo deberá
-  volver a presentarse en alguna de las instancias de recuperatorio posteriores.
-
-- No es necesario haberse presentado a instancias anteriores de la entrega ni al checkpoint presencial.
+  volver a presentarse en alguna de las instancias otras instancias de entrega posteriores.
 
 - A partir del momento en que el código fuente haya sido descargado sobre cada
   máquina y el ayudante haya establecido al grupo los parámetros de
@@ -184,6 +179,7 @@ Determina la aprobación del trabajo práctico, la misma constará de tres insta
 
 ### Requisitos para la inscripción a la entrega final
 
+- Haber cumplido y pasado el Checkpoint de Control Obligatorio
 - Cumplir con todos los requerimientos **técnicos** y **funcionales**
   especificados en el enunciado.
 - Comprender los conceptos técnicos estrictamente relacionados con la teoría de
@@ -219,6 +215,9 @@ Consiste en la evaluación exhaustiva del sistema desarrollado, validando que
 los requerimientos declarados en la especificación del trabajo práctico sean
 satisfechos adecuadamente. La misma será realizada por uno o más ayudantes. En caso de no ser aprobada,
 el grupo podrá inscribirse a la siguiente instancia de recuperación, si la hubiera.
+
+El **tiempo de despliegue y configuración** en el laboratorio para comenzar la prueba es de **15 minutos como máximo**. 
+Pasado ese tiempo, el grupo se dará como desaprobado.
 
 Durante las últimas 2 (dos) semanas antes de la fecha de la evaluación práctica
 se comunicará un documento de pruebas tentativas a realizarse durante la
@@ -273,9 +272,7 @@ El desarrollo de las funcionalidades del trabajo práctico debe ser codificado
 íntegramente utilizando el lenguaje de programación C y, cada uno de los
 programas que lo componen deben poder ser compilados utilizando el comando GCC.
 Sin embargo, es posible utilizar makefiles para automatizar el proceso de
-compilación y deploy del trabajo práctico. Siguiendo esta línea se sugiere
-utilizar makefiles creados por herramientas de desarrollo, como el IDE Eclipse,
-a fin de simplificar las tareas.
+compilación y deploy del trabajo práctico.
 
 A excepción de la
 [Commons Library](https://github.com/sisoputnfrba/so-commons-library) y otras
