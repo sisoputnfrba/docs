@@ -606,18 +606,8 @@ podemos reutilizar estas funciones para cualquier TAD que queramos enviar,
 incluso estructuras anidadas o listas.
 
 Los invitamos a pensar cómo podrían implementar estas funciones, y cómo podría
-estar conformado el TAD de `t_paquete`, para que éste sea más sencillo de usar.
-
-Como pista, se nos ocurre que estaría bueno poder hacer lo siguiente:
-
-1. Crear un paquete con un código de operación y un buffer asociado.
-2. Liberar un paquete y su buffer asociado.
-3. Enviar un paquete a través de un socket.
-4. Recibir un paquete desde un socket (con código de operación y buffer asociado).
-   a. Si hubo algún error al recibir el paquete, devolver un código de operación
-      especial que indique que hubo un error.
-   b. El paquete retornado debe siempre poder ser liberado con la función 2.
-5. Leer el código de operación de un paquete.
+estar conformado el TAD de `t_paquete` para que sea más sencillo enviar y 
+recibir mensajes por sockets.
 
 ## Notas finales
 
