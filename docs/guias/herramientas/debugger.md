@@ -263,7 +263,15 @@ Podríamos tener un vector dentro de otro. De ser así, repetimos este proceso d
 Supongamos que queremos refactorizar nuestra solución y generar un TAD de
 patentes; algo que se vea así:
 
-<<< @/snippets/guias/herramientas/debugger/main.c
+::: code-group
+
+<<< @/snippets/guias/herramientas/debugger/main.c {c:line-numbers} [main.c]
+
+<<< @/snippets/guias/herramientas/debugger/patentes.h {c:line-numbers} [patentes.h]
+
+<<< @/snippets/guias/herramientas/debugger/patentes.c {c:line-numbers} [patentes.c]
+
+:::
 
 Y queremos un resultado en la consola como:
 
@@ -313,7 +321,11 @@ Ahora si, a programar una posible solución.
 Supongamos que generamos esta función que inicializa nuestro TAD, e intentamos
 ejecutar esta instrucción:
 
-<<< @/snippets/guias/herramientas/debugger/main.c{6}
+::: code-group
+
+<<< @/snippets/guias/herramientas/debugger/main.c {6 c:line-numbers} [main.c]
+
+:::
 
 Tenemos una función cuyo argumento es otra función.
 
@@ -327,17 +339,25 @@ encuentra debajo de ésta (la que intenta crear y agregar una nueva patente).
 ::: details ¿Qué pasaria si apretamos Step Into? :thinking:
 
 `Step Into` ejecutará la llamada a la primera función. En este caso,
-`crearPatente()` (tal como en matemática, se procesa primero lo que está dentro
+`crear_patente()` (tal como en matemática, se procesa primero lo que está dentro
 de los paréntesis).
 
 :::
 
-Supongamos un código de crearPatente de este estilo:
+Supongamos un código de `crear_patente()` de este estilo:
 
-<<< @/snippets/guias/herramientas/debugger/patentes.c{c:line-numbers}
+```c
+t_patente* crear_patente(char* letras, int numeros) {
+    t_patente* ret = malloc(sizeof(t_patente));
+    ret->letras = strdup(letras);
+    ret->numero = numeros;
+    return ret;
+}
+```
 
 Al hacer Step Into podemos ver que (dentro de la vista de Debug) en el stack
-aparece que estamos dentro de la función `crearPatente()`, llamada por `main()`.
+aparece que estamos dentro de la función `crear_patente()`, llamada por
+`main()`.
 
 ### Editar memoria _on the fly_
 
@@ -373,7 +393,7 @@ por lo que entrar en pánico y apretar `Step Into` y `Step Over` nos lleva más
 adentro de la madriguera del conejo.
 
 Lo que nos lleva a la salvación es el `Step Return`, que nos devuelve a la
-función de donde se llamó, en este caso `crearPatente()`.
+función de donde se llamó, en este caso `crear_patente()`.
 
 ### Breakpoints RELOADED
 

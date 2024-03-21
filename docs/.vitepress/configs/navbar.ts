@@ -6,10 +6,6 @@ export const navbar: DefaultTheme.NavItem[] = [
     link: 'https://faq.utnso.com.ar/blog'
   },
   {
-    text: 'Consultas',
-    link: '/consultas',
-  },
-  {
     text: 'Primeros pasos',
     link: '/primeros-pasos/',
     activeMatch: '/primeros-pasos/'
@@ -18,6 +14,15 @@ export const navbar: DefaultTheme.NavItem[] = [
     text: 'Guías',
     link: '/guias/',
     activeMatch: '/guias/',
+  },
+  {
+    text: 'Consultas',
+    link: '/consultas',
+    activeMatch: '/consultas',
+  },
+  {
+    text: '¿Quiénes somos?',
+    link: '/quienes-somos',
   },
   {
     text: 'Inscripciones',

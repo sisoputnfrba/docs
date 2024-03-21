@@ -100,8 +100,13 @@ Ahora, ¿hice yo realmente lo que quería? Veamos.
 Corramos nuestro programa sin usar ninguna herramienta. Tipeamos `./ej1` en
 consola... no tira segmentation fault, ¡todo bien entonces!.
 
-Ok, ponele. Usemos a nuestro amigo Valgrind que es gratis.Tipeamos en consola
-`valgrind ./ej1` y veamos qué nos tira. Deberían ver algo similar a esto:
+Ok, ponele. Usemos a nuestro amigo Valgrind que es gratis. Tipeamos en consola
+lo siguiente y veamos qué nos tira:
+```sh
+valgrind ./ej1
+```
+
+Deberían ver algo similar a esto:
 
 ```
 ==4412== Invalid write of size 1
@@ -186,7 +191,8 @@ Entonces, hagamos el cambio:
 
 int main(void) {
     char *array = malloc(5 * sizeof(char));
-    array[4] = 'q';
+    array[5] = 'q'; // [!code --]
+    array[4] = 'q'; // [!code ++]
     return 0;
 }
 ```
@@ -556,8 +562,8 @@ esa memoria sin inicializar! :angry:
 Para este caso sencillo, ya podemos deducir su origen mirando el código, pero
 supongamos que en el TP estamos probando la serialización de un mensaje complejo
 con varios `memcpy()`: el hecho de que _solo_ nos aparezca el error al enviar el
-mensaje completo (sin advertir de dónde proviene) nos puede resultar _poco
-descriptivo_.
+mensaje completo (sin advertir de dónde proviene) nos puede resultar de poca
+ayuda.
 
 Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
 opción por parámetro para solucionar esto:
@@ -651,7 +657,7 @@ interrumpir un proceso.
 Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still
 reachable", para los amigos):
 
-```
+```txt{10}
 ==111884==
 ==111884== HEAP SUMMARY:
 ==111884==     in use at exit: 22,730 bytes in 17 blocks

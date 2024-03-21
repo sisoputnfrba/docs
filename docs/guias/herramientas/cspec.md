@@ -185,7 +185,7 @@ cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
 <<< @/snippets/guias/herramientas/cspec/lector.h{4 c:line-numbers} [lector.h]
 
-<<< @/snippets/guias/herramientas/cspec/lector.c{12 c:line-numbers} [lector.c]
+<<< @/snippets/guias/herramientas/cspec/lector.c{11 c:line-numbers} [lector.c]
 
 :::
 
@@ -262,7 +262,7 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-```c
+```c:line-numbers=11
 int archivo_contar(char* path, char c) {
     char* contenido = leer(path);
     if (contenido == NULL) {
@@ -305,10 +305,9 @@ context (probando_cosas) {
     } end // [!code ++]
 
     describe("con archivos que existen") { // [!code ++]
-
         const char* path = "prueba.txt"; // [!code ++]
         FILE* archivo = NULL; // [!code ++]
-
+        // [!code ++]
         before { // [!code ++]
             archivo = fopen(path, "w+"); // [!code ++]
         } end // [!code ++]

@@ -1,20 +1,25 @@
-FROM node:16.14.0 as builder
+FROM node:18.18.0-alpine
+
+ARG USER
+ARG UID
+ARG GID
+
+USER root
+
+RUN apk add --no-cache git
+
+RUN deluser --remove-home node && \
+    addgroup -g $GID $USER && \
+    adduser -u $UID -G $USER -D $USER
+
+USER $USER
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY --chown=$USER:$USER package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
-COPY . .
+EXPOSE 5173
 
-RUN npm run build
-
-
-FROM nginx:alpine
-
-WORKDIR /usr/share/nginx/html
-
-COPY --from=builder /app/docs/.vitepress/dist/ ./
-
-EXPOSE 80
+ENTRYPOINT [ "yarn", "dev", "--host" ]

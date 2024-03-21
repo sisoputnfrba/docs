@@ -166,6 +166,10 @@ Para eso, te dejamos acá algunos links que te pueden ser útiles:
 - [Guía de uso de Bash](/guias/consola/bash)
 - [Git para el trabajo práctico](/guias/consola/git)
 
+También, más adelante, usaremos la terminal para interactuar con
+[Git](/primeros-pasos/git), una herramienta de versionado de código que nos va a
+permitir trabajar en equipo de forma más eficiente.
+
 ## Sin usar VirtualBox
 
 ::: danger NO ENTRES AHÍ

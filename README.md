@@ -4,37 +4,34 @@ Este repo contiene todas las guías de la cátedra de Sistemas Operativos - UTN.
 
 ## Dependencias
 
-- Node.js v16
+- Node.js v18
 
-## Levantar el proyecto en local
+## Levantar el proyecto
+
+- En local:
+```bash
+yarn dev
+```
+- Desde container:
 
 ```bash
-npm run dev
+make
 ```
 
-## Probar despliegue en Docker
+En cualquiera de los dos casos se puede ingresar `q` para salir.
 
-- Buildear la imagen e iniciar el container:
+## Otros comandos útiles
 
-```bash
-make PORT=8080
-```
-
-- Solo buildear la imagen:
+- Buildear la imagen de Docker:
 
 ```bash
 make build
 ```
 
-- Solo iniciar el container:
+- Iniciar el container sin buildear:
 
 ```bash
-make run PORT=8080
-```
-- Detener el container:
-
-```bash
-make stop
+make run
 ```
 
 - Borrar la imagen:
@@ -47,10 +44,4 @@ make clean
 
 ```bash
 make exec
-```
-
-- Escuchar los logs del container (se puede salir con `Ctrl` + `c`):
-
-```bash
-make logs
 ```
