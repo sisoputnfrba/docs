@@ -156,6 +156,8 @@ es decir, teniendo la siguiente estructura, establecer el siguiente protocolo:
 ![protocolo-recomendado](/img/guias/serializacion/protocolo-recomendado.jpg)
 
 ```c
+#include <commons/string.h>
+
 typedef struct {
     char* username;
     uint32_t username_length;
