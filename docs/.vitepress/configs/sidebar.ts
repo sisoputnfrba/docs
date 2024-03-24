@@ -154,10 +154,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         text: 'Tutorial de Valgrind y Helgrind',
         link: '/guias/herramientas/valgrind'
       },
-      {
-        text: 'Unit Testing con CSpec',
-        link: '/guias/herramientas/cspec'
-      },
+      // {
+      //   text: 'Unit Testing con CSpec',
+      //   link: '/guias/herramientas/cspec'
+      // },
     ],
   },
 ]
