@@ -64,7 +64,8 @@ cambio desde el sistema en la sección "Cambios de Grupos".
 
 Estate atento a tu casilla de mail porque cuando te inscribas vas a recibir un
 mail de invitación a la organización en GitHub. Es importante aceptarla ya que
-sino no podremos invitarte al repositorio privado del grupo.
+sino **no podremos invitarte al repositorio privado del grupo** al momento de
+generarlo.
 
 En caso de que la invitación expire, podés ingresar al sistema y reenviarte la
 invitación desde ahí mismo.
