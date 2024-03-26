@@ -147,12 +147,20 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: false,
     items: [
       {
-        text: 'Debugging en Eclipse',
+        text: 'Guía de Debugging',
         link: '/guias/herramientas/debugger'
       },
       {
         text: 'Tutorial de Valgrind y Helgrind',
         link: '/guias/herramientas/valgrind'
+      },
+      {
+        text: 'Configs de Visual Studio Code',
+        link: '/guias/herramientas/code'
+      },
+      {
+        text: 'Importar el TP en Eclipse',
+        link: '/guias/herramientas/eclipse'
       },
       // {
       //   text: 'Unit Testing con CSpec',

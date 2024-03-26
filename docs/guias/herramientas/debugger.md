@@ -1,8 +1,21 @@
-# Debugging en Eclipse
+# Guía de Debugging
 
-> Autor del video: Marco Gatti
+::: danger IMPORTANTE
+
+Esta guía está hecha para Eclipse IDE for C/C++ Developers. Si estás utilizando
+Visual Studio Code, no te preocupes, vas a poder seguir la guía sin problemas ya
+que todos los editores de código tienen herramientas de debugging muy similares,
+al menos las más básicas.
+
+Tanto el funcionamiento como los errores que puedan surgir también son muy
+parecidos, ya que ambos editores utilizan por debajo el mismo debugger de C:
+[GDB](https://www.sourceware.org/gdb/).
+
+:::
 
 <YouTube v="0OhCEzVgdRA"/>
+
+> Autor del video: Marco Gatti
 
 ## Introducción
 
