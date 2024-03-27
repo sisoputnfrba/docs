@@ -78,7 +78,9 @@ problemas con los que nos podamos encontrar.
 
 ## Invalid write of size...
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [ej1.c]
 #include <stdlib.h>
 
 int main(void) {
@@ -88,6 +90,8 @@ int main(void) {
 }
 ```
 
+:::
+
 Antes de empezar a hablar sobre cómo usar Valgrind, veamos qué quiero hacer:
 
 - Crear un vector de caracteres que puede contener 5 caracteres (5 bytes en
@@ -95,7 +99,12 @@ Antes de empezar a hablar sobre cómo usar Valgrind, veamos qué quiero hacer:
 - En la última posición del array, asignar el caracter `'q'`.
 - Terminar la ejecución del programa retornando 0.
 
-Ahora, ¿hice yo realmente lo que quería? Veamos.
+Ahora, ¿hice yo realmente lo que quería? Compilemos.
+
+```sh
+gcc -o ej1 ej1.c
+```
+
 
 Corramos nuestro programa sin usar ninguna herramienta. Tipeamos `./ej1` en
 consola... no tira segmentation fault, ¡todo bien entonces!.
@@ -235,7 +244,9 @@ Habiendo solucionado el error en la asignación, vamos correr nuevamente el
 código del ejemplo anterior, con la diferencia de que le pediremos a Valgrind
 que haga un chequeo de memory leaks.
 
-```c:line-numbers{5}
+::: code-group
+
+```c:line-numbers{5} [ej1.c]
 #include <stdlib.h>
 
 int main(void) {
@@ -244,6 +255,13 @@ int main(void) {
     return 0;
 }
 ```
+
+:::
+
+```sh
+gcc -o ej1 ej1.c
+```
+
 
 Tipeamos en consola para detectar los memory leaks:
 
@@ -321,7 +339,9 @@ En otras palabras, no tenemos más leaks.
 
 ### En el stack
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [ej2.c]
 #include <stdio.h>
 
 int main(void) {
@@ -331,31 +351,39 @@ int main(void) {
 }
 ```
 
+:::
+
 ¿Qué hace nuestro programa?
 
 - Declara una variable entera (`int`) de nombre `a`.
 - Imprime en pantalla el valor de la variable.
 - Termina la ejecución del programa retornando 0.
 
-Tipeamos en consola `./ej3` y nos muestra en pantalla lo siguiente:
+Compilamos:
+
+```sh
+gcc -o ej2 ej2.c
+```
+
+Tipeamos en consola `./ej2` y nos muestra en pantalla lo siguiente:
 
 ```
 a = 0
 ```
 
-Ahora tipeamos en consola `valgrind ./ej3` y nos muestra el siguiente mensaje:
+Ahora tipeamos en consola `valgrind ./ej2` y nos muestra el siguiente mensaje:
 
 ```txt{1,6}
 ==7079== Conditional jump or move depends on uninitialised value(s)
 ==7079==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==7079==    by 0x4E858D8: printf (printf.c:35)
-==7079==    by 0x400537: main (ej3.c:5)
+==7079==    by 0x400537: main (ej2.c:5)
 ==7079==
 ==7079== Use of uninitialised value of size 4
 ==7079==    at 0x4E7A7EB: _itoa_word (_itoa.c:195)
 ==7079==    by 0x4E7C837: vfprintf (vfprintf.c:1629)
 ==7079==    by 0x4E858D8: printf (printf.c:35)
-==7079==    by 0x400537: main (ej3.c:5)
+==7079==    by 0x400537: main (ej2.c:5)
 ```
 
 ::: warning Antes de analizar el mensaje...
@@ -379,7 +407,7 @@ práctica.
   evalúa un salto condicional con un valor no inicializado.
 
 - Leemos el stack trace de abajo para arriba. Comenzamos en la función `main()`,
-  en la línea 5 de nuestro código (`main (ej3.c:5)`) donde llamamos a
+  en la línea 5 de nuestro código (`main (ej2.c:5)`) donde llamamos a
   `printf()`. Internamente, `printf()`, en la línea 35 (`printf (printf.c:35)`),
   llama a la función `vfprintf()`. vfprintf, en la línea 1629, hace una llamada
   y... Memcheck putea.
@@ -407,24 +435,31 @@ cadena que corresponda en ASCII (sí, es acá donde ocurre el salto condicional)
 Entonces, sólo nos queda darle un valor inicial a nuestra variable para que
 Valgrind no se enoje.
 
-```c:line-numbers{4}
+::: code-group
+
+```c:line-numbers [ej2.c]
 #include <stdio.h>
 
 int main(void) {
-    int a = 1;
+    int a; // [!code --]
+    int a = 1; // [!code ++]
     printf("a = %d \n", a);
   	return 0;
 }
 ```
 
-Volvemos a correr nuestro programa y... ¡no hay errores!. Ahora imprime a = 1 y
-tanto nosotros como Valgrind somos felices.
+:::
+
+Volvemos a compilar y correr nuestro programa y... ¡no hay errores!.
+Ahora imprime a = 1 y tanto nosotros como Valgrind somos felices.
 
 ¿Cómo se daría este problema en memoria dinámica? :thinking:
 
 ### En memoria dinámica
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [ej3.c]
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -460,8 +495,8 @@ primer operador: (`*a`).
 
 :::
 
-Si hacemos un `valgrind ./ej4` en consola vamos a ver que los mensajes de error
-son similares a los del código anterior.
+Si compilamos y hacemos un `valgrind ./ej3` en consola vamos a ver que los
+mensajes de error son similares a los del código anterior.
 
 ```
 ==13230== Conditional jump or move depends on uninitialised value(s)
@@ -488,13 +523,13 @@ Como estamos trabajando con punteros, debemos tener en cuenta que a lo que le
 vamos a asignar un valor va a ser al contenido de la dirección a la que apunta
 el puntero, por ejemplo: `*a = 1;`
 
-```c:line-numbers{6}
+```c:line-numbers
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
     int *a = malloc(sizeof(int));
-    (*a) = 1;
+    (*a) = 1; // [!code ++]
     printf("a = %d \n", (*a));
     free(a);
   	return 0;
@@ -506,7 +541,9 @@ int main(void) {
 Por último, un caso particular que nos puede ocurrir a la hora de manejar
 variables sin inicializar es el siguiente:
 
-```c:line-numbers{8}
+::: code-group
+
+```c:line-numbers{8} [ej4.c]
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -521,6 +558,8 @@ int main(void) {
 }
 ```
 
+:::
+
 ¿Qué hace nuestro programa?
 
 - Declara dos punteros de nombre `a` y `b`, a los cuales les allocamos en
@@ -531,33 +570,38 @@ int main(void) {
 - Libera la memoria apuntada por `b`.
 - Termina la ejecución del programa retornando 0.
 
-Uno asumiría que al hacer `valgrind ./ej5` nos va a aparecer una advertencia en
+Uno asumiría que al hacer `valgrind ./ej4` nos va a aparecer una advertencia en
 la línea donde se encuentra nuestro `memcpy()`, ya que se lee el contenido en la
 dirección de memoria `a` y se guarda en `b`.
 
 Sin embargo, la realidad supera a la ficción...
 
-```txt{8-9}
+```txt
 ==24112== Memcheck, a memory error detector
 ==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
-==24112== Command: ./ej5
+==24112== Command: ./ej4
 ==24112==
 ==24112== Conditional jump or move depends on uninitialised value(s)
 ==24112==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
 ==24112==    by 0x48C858E: printf (printf.c:33)
-==24112==    by 0x1091F6: main (ej5.c:9)
+==24112==    by 0x1091F6: main (ej4.c:9)
 ==24517==
 ==24517== Use of uninitialised value of size 8
 ==24517==    at 0x48C216B: _itoa_word (_itoa.c:179)
 ==24517==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
-==24517==    by 0x48C858E: printf (printf.c:33)
-==24517==    by 0x1091F6: main (ej5.c:9)
+==24517==    by 0x48C858E: printf (printf.c:33) // [!code focus]
+==24517==    by 0x1091F6: main (ej4.c:9) // [!code focus]
 ==24517==
+==24517== All heap blocks were freed -- no leaks are possible
+==24517==
+==24517== Use --track-origins=yes to see where uninitialised values come from
+==24517== For lists of detected and suppressed errors, rerun with: -s
+==24517== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 ```
 
-Valgrind chilla recién cuando se lee `b`, ¡y no nos muestra de dónde se origina
-esa memoria sin inicializar! :angry:
+Valgrind chilla en la línea 9 recién cuando se lee `b`, ¡y no nos muestra de
+dónde se origina esa memoria sin inicializar! :angry:
 
 Para este caso sencillo, ya podemos deducir su origen mirando el código, pero
 supongamos que en el TP estamos probando la serialización de un mensaje complejo
@@ -568,10 +612,26 @@ ayuda.
 Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
 opción por parámetro para solucionar esto:
 
-```txt{3}
+```txt
+==24112== Memcheck, a memory error detector
+==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+==24112== Command: ./ej4
+==24112==
+==24112== Conditional jump or move depends on uninitialised value(s)
+==24112==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
+==24112==    by 0x48C858E: printf (printf.c:33)
+==24112==    by 0x1091F6: main (ej4.c:9)
+==24517==
+==24517== Use of uninitialised value of size 8
+==24517==    at 0x48C216B: _itoa_word (_itoa.c:179)
+==24517==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
+==24517==    by 0x48C858E: printf (printf.c:33)
+==24517==    by 0x1091F6: main (ej4.c:9)
+==24517==
 ==24517== All heap blocks were freed -- no leaks are possible
 ==24517==
-==24517== Use --track-origins=yes to see where uninitialised values come from
+==24517== Use --track-origins=yes to see where uninitialised values come from  // [!code focus]
 ==24517== For lists of detected and suppressed errors, rerun with: -s
 ==24517== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 ```
@@ -580,7 +640,7 @@ Efectivamente, la opción `--track-origins=yes` habilita el seguimiento de toda
 la memoria no inicializada. Volvamos a ejecutar el programa con:
 
 ```bash
-valgrind --track-origins=yes ./ej5
+valgrind --track-origins=yes ./ej4
 ```
 
 Ahora sí, al final del stack trace nos aparecerá el _verdadero_ origen del
@@ -590,34 +650,36 @@ warning:
 ==30024== Memcheck, a memory error detector
 ==30024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==30024== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
-==30024== Command: ./ej5
+==30024== Command: ./ej4
 ==30024==
 ==30024== Conditional jump or move depends on uninitialised value(s)
 ==30024==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
 ==30024==    by 0x48C858E: printf (printf.c:33)
-==30024==    by 0x1091D8: main (ej5.c:9)
+==30024==    by 0x1091D8: main (ej4.c:9)
 ==30024==  Uninitialised value was created by a heap allocation
 ==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30024==    by 0x10919E: main (ej5.c:6)
+==30024==    by 0x10919E: main (ej4.c:6)
 ==30024==
 ==30024== Use of uninitialised value of size 8
 ==30024==    at 0x48C216B: _itoa_word (_itoa.c:179)
 ==30024==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
 ==30024==    by 0x48C858E: printf (printf.c:33)
-==30024==    by 0x1091D8: main (ej5.c:9)
+==30024==    by 0x1091D8: main (ej4.c:9)
 ==30024==  Uninitialised value was created by a heap allocation
 ==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30024==    by 0x10919E: main (ej5.c:6)
+==30024==    by 0x10919E: main (ej4.c:6)
 ```
 
 En este caso, se trata de una alocación en el heap hecha por un `malloc()` en la
-línea 6 de nuestro archivo `ej5.c`.
+línea 6 de nuestro archivo `ej4.c`.
 
 De nuevo, veremos que la solución es inicializar el contenido apuntado por `a`.
 
 ## Syscall param contains uninitialised bytes
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [ej5.c]
 #include <stdlib.h>
 
 int main(void) {
@@ -627,7 +689,9 @@ int main(void) {
 
 ```
 
-Si bien cae de maduro cuál es el error, tipeamos en consola `valgrind ./ej6` y
+:::
+
+Si bien cae de maduro cuál es el error, tipeamos en consola `valgrind ./ej5` y
 deberíamos ver algo como esto:
 
 ```
@@ -657,7 +721,7 @@ interrumpir un proceso.
 Primeramente se encuentra el caso de la memoria "aún alcanzable" (o "still
 reachable", para los amigos):
 
-```txt{10}
+```txt
 ==111884==
 ==111884== HEAP SUMMARY:
 ==111884==     in use at exit: 22,730 bytes in 17 blocks
@@ -667,7 +731,7 @@ reachable", para los amigos):
 ==111884==    definitely lost: 0 bytes in 0 blocks
 ==111884==    indirectly lost: 0 bytes in 0 blocks
 ==111884==      possibly lost: 0 bytes in 0 blocks
-==111884==    still reachable: 22,730 bytes in 17 blocks
+==111884==    still reachable: 22,730 bytes in 17 blocks // [!code focus]
 ==111884==         suppressed: 0 bytes in 0 blocks
 ==111884== Reachable blocks (those to which a pointer was found) are not shown.
 ==111884== To see them, rerun with: --leak-check=full --show-leak-kinds=all
@@ -734,6 +798,35 @@ Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el
 algoritmo que finaliza el proceso, no es un memory leak real, por lo que no es
 necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 
+## ¿Cómo lo compro?
+
+¡Te convencí! Ya mismo querés salir corriendo a ver cómo correr Valgrind en tu
+TP, pero... ¿tengo que hacerlo siempre a mano?
+
+No necesariamente, la estructura de proyecto que les proveemos ya cuenta en su
+makefile con una regla para correr Valgrind. Si quieren correrlo, simplemente
+tienen que ejecutar:
+
+```bash
+make memcheck
+```
+
+Por defecto, la regla `memcheck` siempre va a correr Valgrind con el flag
+`--leak-check=full`. En caso de necesitar configurarle flags o parámetros
+adicionales, pueden editar el archivo `settings.mk`:
+
+::: code-group
+
+```make [settings.mk]
+# Arguments when executing with start, memcheck or helgrind
+ARGS=
+
+# Valgrind flags
+MEMCHECK_FLAGS=--track-origins=yes
+```
+
+:::
+
 ## Cierre
 
 Para recurrir a información más detallada referente a los mensajes de error y al
@@ -752,12 +845,23 @@ detectar problemas de sincronización. También te va a resultar muy útil. Si n
 viste la charla del principio, te recomiendo al menos saltarte a la parte en la
 que se menciona esta herramienta.
 
+::: tip
+
+En el repositorio del TP, también les creamos una regla `helgrind` para que
+puedan correrlo de la misma forma que `memcheck`, pero con el flag
+`--tool=helgrind` + todos los que se agreguen a la variable `HELGRIND_FLAGS`.
+
+:::
+
 ## Material recomendado
+
 - [C Dynamic Memory Debugging with Valgrind](https://www.youtube.com/watch?v=bb1bTJtgXrI)
+- [Using Valgrind to get stack traces](https://blog.mozilla.org/nnethercote/2011/01/11/using-valgrind-to-get-stack-traces/)
 
 <br><br>
 
-[^1]: Stacktrace: reporte del estado del stack de ejecución del programa
+[^1]: Stacktrace: reporte del estado del stack de ejecución del programa.
+
 [^2]: No está loco, está _reservado_
 [^3]:
     Ni. Recordar que
