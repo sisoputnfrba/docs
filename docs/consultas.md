@@ -69,7 +69,7 @@ El Discord va a estar activo para consultas de forma sincrónica solo los días
 de sábado de soporte en los que la fila del canal `#general` se encuentre
 iniciada:
 
-![image](https://user-^s.githubusercontent.com/39303639/229314091-3524500a-a2fd-4d07-8b76-5255d2956ab3.png){data-zoomable}{data-zoomable}
+![discord-general](/img/consultas/discord-general.png){data-zoomable}
 
 Las fechas de soporte van a ser anunciadas cuatrimestre a cuatrimestre en el
 [blog](https://faq.utnso.com.ar/blog).
