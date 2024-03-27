@@ -339,7 +339,7 @@ archivo destino en notepad[^13], pero si abrimos notepad y hacemos drag&drop del
 acceso directo vamos a ver un montón de chirimbolos horrendos que tienen
 codificada de algún modo extraño la ruta al destino[^12].
 
-![Abriendo accesos directos con notepado en Windows XP](/img/guias/consola/shortcut-windows-xp.gif)
+![Abriendo accesos directos con notepado en Windows XP](/img/guias/consola/shortcut-windows-xp.gif){data-zoomable}
 
 En Unix/ext, el propio sistema de archivos se encarga de resolver el enlace al
 abrir un softlink, por lo que siempre vemos el contenido del destino[^14].

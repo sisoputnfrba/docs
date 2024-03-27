@@ -55,7 +55,7 @@ De la misma forma que hicimos con los módulos, vamos a agregar la carpeta de la
 static library al workspace de Visual Studio Code yendo a la pestaña de
 `File` > `Add Folder to Workspace...`:
 
-![vscode-add-folder-to-workspace](/img/guias/estructura/codigo-compartido/vscode-add-folder-to-workspace.png)
+![vscode-add-folder-to-workspace](/img/guias/estructura/codigo-compartido/vscode-add-folder-to-workspace.png){data-zoomable}
 
 ## Vincular la static library a un módulo
 

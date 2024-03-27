@@ -47,7 +47,7 @@ grupo.
 De hecho, pueden verificar si algún otro alumno ya tuvo la misma duda y fue
 respondida usando el buscador de issues para filtrar según su _label_:
 
-![consultas-01](/img/consultas/consultas-01.png)
+![consultas-01](/img/consultas/consultas-01.png){data-zoomable}
 
 ::: tip
 
@@ -69,7 +69,7 @@ El Discord va a estar activo para consultas de forma sincrónica solo los días
 de sábado de soporte en los que la fila del canal `#general` se encuentre
 iniciada:
 
-![image](https://user-images.githubusercontent.com/39303639/229314091-3524500a-a2fd-4d07-8b76-5255d2956ab3.png)
+![image](https://user-^s.githubusercontent.com/39303639/229314091-3524500a-a2fd-4d07-8b76-5255d2956ab3.png){data-zoomable}{data-zoomable}
 
 Las fechas de soporte van a ser anunciadas cuatrimestre a cuatrimestre en el
 [blog](https://faq.utnso.com.ar/blog).
@@ -142,7 +142,7 @@ servirá de gran ayuda contar con la salida del compilador. Para obtenerla,
 podemos navegar a la pestaña de _Terminal_ y **copiar el texto** que aparece al
 ejecutar la tarea de compilación:
 
-![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif)
+![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif){data-zoomable}
 
 Un texto de error es mucho más útil que una captura de pantalla, ya que nos
 permite copiarlo e investigarlo sin tener que transcribirlo manualmente. Además,

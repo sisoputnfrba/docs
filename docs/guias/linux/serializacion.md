@@ -84,7 +84,7 @@ typedef struct {
 Nuestro objetivo entonces será organizar los elementos para enviarlos de una
 manera ordenada utilizando un protocolo:
 
-![Protocolo](/img/guias/serializacion/protocolo.jpg)
+![Protocolo](/img/guias/serializacion/protocolo.jpg){data-zoomable}
 
 En este caso, un posible protocolo, es agregar un header que normalmente
 utilizaremos para indicar qué tipo de dato vamos a enviar. La idea es que del
@@ -103,7 +103,7 @@ nuestros datos mediante la utilización de la función
 [`memcpy()`](https://linux.die.net/man/3/memcpy), es decir, se asignará todo lo
 que se encuentra en la estructura, en ese buffer.
 
-![padding-gif](/img/guias/serializacion/padding-gif.gif)
+![padding-gif](/img/guias/serializacion/padding-gif.gif){data-zoomable}
 
 De aquella manera, se ignorará el padding que el compilador crea, y se guardarán
 solamente los datos que necesitamos de nuestra estructura.
@@ -112,7 +112,7 @@ Una vez hecho esto, se podrá empaquetar el buffer y se enviará a través de la
 red, garantizando que los datos que recibirá el destinatario serán los
 correctos.
 
-![envio-red](/img/guias/serializacion/envio-red.gif)
+![envio-red](/img/guias/serializacion/envio-red.gif){data-zoomable}
 
 Una vez que el destinatario los reciba, los deberá desempaquetar de forma
 inversa (esto es posible dado que se determinó un protocolo).
@@ -153,7 +153,7 @@ lo que le enviamos.
 tamaño en bytes que necesitará el destinatario para almacenar lo que enviamos,
 es decir, teniendo la siguiente estructura, establecer el siguiente protocolo:
 
-![protocolo-recomendado](/img/guias/serializacion/protocolo-recomendado.jpg)
+![protocolo-recomendado](/img/guias/serializacion/protocolo-recomendado.jpg){data-zoomable}
 
 ```c
 #include <commons/string.h>
@@ -175,18 +175,18 @@ t_package package_create(char *username, char *message) {
 }
 ```
 
-![stack-heap](/img/guias/serializacion/stack-heap.png)
+![stack-heap](/img/guias/serializacion/stack-heap.png){data-zoomable}
 
 De aquella forma, luego se proseguirá con los mismos pasos que con una
 estructura estática: hacemos `memcpy()` de los datos de nuestra estructura a un
 buffer intermedio, lo empaquetamos y lo enviamos.
 
-![empaquetado-dinamico](/img/guias/serializacion/empaquetado-dinamico.gif)
+![empaquetado-dinamico](/img/guias/serializacion/empaquetado-dinamico.gif){data-zoomable}
 
 El receptor cuando desempaqueta el paquete, se fijará cuántos bytes debe
 reservar dinámicamente, y luego proseguirá a realizar el `memcpy()`.
 
-![desempaquetado-dinamico](/img/guias/serializacion/desempaquetado-dinamico.gif)
+![desempaquetado-dinamico](/img/guias/serializacion/desempaquetado-dinamico.gif){data-zoomable}
 
 Hay que tener en cuenta que el principal problema de las estructuras dinámicas
 no son los punteros, dado que no se está enviando una posición de memoria, sino

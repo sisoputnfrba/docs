@@ -1,6 +1,6 @@
 # Guía de despliegue de TP
 
-![portada](/img/guias/herramientas/deploy/deploy-01.jpeg)
+![portada](/img/guias/herramientas/deploy/deploy-01.jpeg){data-zoomable}
 > _"Encontré un leak el viernes antes de la entrega"_ - Pintura al óleo.
 
 ## Objetivo
@@ -116,7 +116,7 @@ Desde Windows (que es el entorno sobre el que están instalado VirtualBox en el
 laboratorio), la forma más sencilla de hacerlo es utilizando
 [PuTTY](https://www.putty.org/):
 
-![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg)
+![stuff that makes your Windows useful](/img/guias/herramientas/deploy/deploy-02.jpg){data-zoomable}
 
 ::: warning IMPORTANTE
 
@@ -155,13 +155,13 @@ Desde sus computadoras, pueden armar una red local de VMs siguiendo estos pasos:
 1. Ir a la configuración de la Ubuntu Server y en el apartado de "Network"
 elegir el "Bridged Adapter" (en español, "Adaptador Puente"):
 
-![bridged adapter](/img/guias/herramientas/deploy/deploy-04.png)
+![bridged adapter](/img/guias/herramientas/deploy/deploy-04.png){data-zoomable}
 
 2. Hacer click derecho en la VM > "Clone..." y seguir los pasos para clonar la
 VM. Recomendamos usar la opción "Linked clone" ya que el proceso de clonado es
 más rápido y ocupa menos espacio:
 
-![linked clone](/img/guias/herramientas/deploy/deploy-05.png)
+![linked clone](/img/guias/herramientas/deploy/deploy-05.png){data-zoomable}
 
 Una vez hecho esto, pueden usar el comando
 [`ifconfig`](/guias/consola/bash.html#ifconfig) para consultar la IP de ambas VMs y

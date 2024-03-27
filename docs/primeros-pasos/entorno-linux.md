@@ -169,7 +169,7 @@ En caso de que la pantalla completa no funcione pero el portapapeles compartido
 sí, en la mayoría de los casos esto se resuelve cambiando el controlador gráfico
 a "VBoxVGA":
 
-![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png)
+![virtualbox-01](/img/primeros-pasos/linux/virtualbox-01.png){data-zoomable}
 
 Si este método no funciona, una alternativa es aumentar la pantalla a un tamaño
 fijo accediendo a los ajustes del monitor.

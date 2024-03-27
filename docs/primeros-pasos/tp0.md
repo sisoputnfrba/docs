@@ -68,7 +68,7 @@ También podemos abrir el proyecto abriendo Visual Studio Code y seleccionando
 Una vez abierto el workspace, vamos a ver que tenemos dos módulos: `client` y
 `server`, con su propio código fuente y configuraciones:
 
-![vscode-file-explorer](/img/primeros-pasos/tp0/vscode-file-explorer.png)
+![vscode-file-explorer](/img/primeros-pasos/tp0/vscode-file-explorer.png){data-zoomable}
 
 ## Etapa 2: Comandos básicos
 
@@ -99,7 +99,7 @@ y cerremos el logger al final del programa con `log_destroy()`.
 Compilemos y ejecutemos el programa moviéndonos a la sección "Run and Debug" en
 la barra lateral izquierda, seleccionando "run (client)":
 
-![vscode-run-debug](/img/primeros-pasos/tp0/vscode-run-debug.gif)
+![vscode-run-debug](/img/primeros-pasos/tp0/vscode-run-debug.gif){data-zoomable}
 
 ### Archivos de configuración
 
@@ -190,7 +190,7 @@ Pero... ¿cómo hacemos para revisar eso?
 Los strings son cadenas de caracteres terminadas con `'\0'` (el caracter nulo de
 la [tabla ASCII](https://www.asciitable.com/)).
 
-![strings](/img/primeros-pasos/tp0/strings.jpg)
+![strings](/img/primeros-pasos/tp0/strings.jpg){data-zoomable}
 
 Eso implica que un string vacío va a tener, en su contenido, ese caracter como
 primer valor, por lo que podemos usar una comparación como **condición de
@@ -327,7 +327,7 @@ Para ello iremos a la configuración de la Ubuntu Server y en el apartado de
 "Network" (o "Red") elegiremos el "Bridged Adapter" (en español, "Adaptador
 Puente"):
 
-![vm-network](/img/primeros-pasos/tp0/vm-network.png)
+![vm-network](/img/primeros-pasos/tp0/vm-network.png){data-zoomable}
 
 ### Conexión por SSH
 
@@ -339,7 +339,7 @@ ventanas.
 Para solucionar esto, nos vamos a conectar a la VM por SSH. Para ello, ni bien
 iniciemos sesión veremos la IP que se le asignó a la VM:
 
-![vm-ip](/img/primeros-pasos/tp0/vm-ip.png)
+![vm-ip](/img/primeros-pasos/tp0/vm-ip.png){data-zoomable}
 
 Vamos a usar esa IP, que siempre empieza con `192.168.0`, para conectarnos a la
 VM desde nuestra consola.
@@ -386,7 +386,7 @@ VM > "Clone..." y seguir los pasos para clonar la VM. Recomendamos usar la
 opción "Linked clone" ya que el proceso de clonado es más rápido y ocupa menos
 espacio:
 
-![vm-clone](/img/primeros-pasos/tp0/vm-clone.png)
+![vm-clone](/img/primeros-pasos/tp0/vm-clone.png){data-zoomable}
 
 Una vez hecho esto, vamos a consultar la IP de la VM
 del `server` y agregarla al archivo de configuración del `client` para que se

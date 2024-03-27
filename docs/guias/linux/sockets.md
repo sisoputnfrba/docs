@@ -47,7 +47,7 @@ Algunas preguntas clave para saber dentro de una arquitectura quién es cliente 
 
 Cuando tenemos dos computadoras o más dentro de una misma red (sea esta doméstica, empresarial o pública) dentro de esa red cada uno de los dispositivos tiene una IP, un ID único para cada dispositivo dentro de la red. Las IPs tienen la particularidad de ser cuatro números, separados por un punto, donde cada uno va de 0 a 255 (por ejemplo, 192.168.0.16). Si ahora mismo abrimos un cmd, powershell o cualquier otra terminal y escriben ipconfig para Windows o ifconfig para Linux y MacOSx , vamos a ver una pantalla que, entre otras cosas, nos dirá algo así como 192.168.algo.algo.  Esa es la IP que la computadora tiene asignada dentro de nuestra red doméstica. Los celulares, otras computadoras u otros dispositivos que se conecten a Internet tienen sus propias IPs asignadas, todas distintas entre sí.
 
-![ips](/img/guias/sockets/ips.png)
+![ips](/img/guias/sockets/ips.png){data-zoomable}
 
 Luego, por otro lado, tenemos los puertos. Estos son unidades lógicas dentro del sistema operativo para que una misma computadora, y por lo tanto la misma IP, pueda tener varios procesos corriendo que necesiten operar dentro de la red. ¿Por qué necesitaríamos que nuestras computadoras sean capaces de tener más de un proceso de red corriendo? Tomen por ejemplo sus PCs en estos momentos, con un navegador abierto, y en el background aplicaciones como Discord, Spotify, Steam, actualizaciones del SO y muchísimas más corriendo en simultáneo. Cada una de estas ocupando un puerto distinto para conectarse a sus respectivos servidores, en sus respectivas IPs y puertos.
 
@@ -60,11 +60,11 @@ Podemos definir un protocolo como una serie de pasos a seguir ante determinado e
 
 Cuando dos procesos van a conectarse, lo primero que se realiza es una operación llamada handshake. No es más que una presentación por parte del cliente para hacerle saber al servidor que cumplen el mismo protocolo, y por lo tanto pueden entablar una comunicación.
 
-![hadnshake](/img/guias/sockets/handshake.png)
+![hadnshake](/img/guias/sockets/handshake.png){data-zoomable}
 
 Por otro lado, también es responsabilidad del servidor detectar cuando se le quiere conectar un cliente de otro protocolo para rechazar esa conexión
 
-![conexion-rechazada](/img/guias/sockets/conexion-rechazada.png)
+![conexion-rechazada](/img/guias/sockets/conexion-rechazada.png){data-zoomable}
 
 ## Sockets y Soquetes
 
@@ -74,7 +74,7 @@ Algunos se estarán preguntando; si interviene el sistema operativo, ¿hay llama
 
 Las llamadas al sistema que el cliente tiene que realizar para conectarse a su servidor son distintas a las que el servidor tiene que hacer para prepararse para recibir conexiones entrantes de los clientes. Por suerte, vamos a explicar el flujo y orden de cada una de ellas.
 
-![cliente-servidor](/img/guias/sockets/cliente-servidor.png)
+![cliente-servidor](/img/guias/sockets/cliente-servidor.png){data-zoomable}
 
 ::: warning IMPORTANTE
 El diagrama indica la secuencia en la que deberían ser llamadas las funciones. Que éstas estén al mismo nivel, no significa que deban suceder exactamente al mismo instante.
@@ -83,7 +83,7 @@ El diagrama indica la secuencia en la que deberían ser llamadas las funciones. 
 
 ## [socket()](https://man7.org/linux/man-pages/man2/socket.2.html)
 
-![socket](/img/guias/sockets/socket.png)
+![socket](/img/guias/sockets/socket.png){data-zoomable}
 
 
 La primera syscall que hay que utilizar para iniciar una conexión por socket entre dos procesos es socket. Esta lo que hace es generar lo que se llama un file descriptor, que son básicamente los IDs que Linux utiliza para representar cualquier cosa del sistema (archivos, bloques de memoria, teclados, impresoras, monitores, discos rígidos, etc). Estos file descriptors son representados en los programas C por un entero, lo cual no quiere decir que todo entero sea un file descriptor.
@@ -113,7 +113,7 @@ Para el caso particular de `socket()` no vamos a entrar en muchos detalles de qu
 
 ## [bind()](https://man7.org/linux/man-pages/man2/bind.2.html) y [listen()](https://man7.org/linux/man-pages/man2/listen.2.html)
 
-![bind-listen](/img/guias/sockets/bind-listen.png)
+![bind-listen](/img/guias/sockets/bind-listen.png){data-zoomable}
 
 Ya dijimos que los clientes para poder comunicarse con sus servidores, deben hacerlo a través de la IP del servidor físico en el que estén corriendo y el puerto que estén ocupando en dicho servidor a la espera de nuevas conexiones por parte de los clientes. Las llamadas al sistema que realizan esa preparación por parte del proceso servidor son `bind()` y `listen()`.
 
@@ -154,7 +154,7 @@ Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas
 
 ## [accept()](https://man7.org/linux/man-pages/man2/accept.2.html) y [connect()](https://man7.org/linux/man-pages/man2/connect.2.html)
 
-![accept-connect](/img/guias/sockets/accept-connect.png)
+![accept-connect](/img/guias/sockets/accept-connect.png){data-zoomable}
 
 Una vez el socket del servidor se marcó en modo de escucha, estamos preparados para empezar a recibir las conexiones de nuestros clientes.
 
@@ -182,7 +182,7 @@ Una vez que el cliente fue aceptado, accept retorna un nuevo socket (file descri
 
 ## [send()](https://man7.org/linux/man-pages/man2/send.2.html) y [recv()](https://man7.org/linux/man-pages/man2/recv.2.html)
 
-![send-receive](/img/guias/sockets/send-receive.png)
+![send-receive](/img/guias/sockets/send-receive.png){data-zoomable}
 
 
 Una vez establecida la conexión entre el cliente y el servidor, ya estamos casi listos para comenzar a enviar mensajes libremente entre ambos. El último paso que debemos cumplir es el proceso de handshake, que como ya dijimos antes, su único propósito es enviar un paquete que le informe al servidor cuál es el protocolo con el que está intentando iniciar una conversación para que el servidor le conteste si es capaz de entender ese protocolo (OK) o le informe que no en caso contrario (ERROR).
@@ -280,7 +280,7 @@ Esta guía es un resumen bastante reducido y minimalista de la [guía Beej (en i
 
 ¡Y eso fue todo! Les recordamos que cualquier duda que se les presente, la pueden realizar en los [medios de consulta](/consultas) correspondientes, y que hagan uso de las guías y los video tutoriales de esta página.
 
-![final-imagen](/img/guias/sockets/final-imagen.png)
+![final-imagen](/img/guias/sockets/final-imagen.png){data-zoomable}
 ## Historial de versiones
 
 _v1.0 Publicación Inicial_

@@ -35,7 +35,7 @@ recomendamos seguir el tutorial interactivo
 El siguiente paso será abrir Visual Studio Code, y **desde una ventana vacía**
 nos iremos a la pestaña de `File` > `Add Folder to Workspace...`:
 
-![vscode-add-folder-to-workspace](/img/guias/estructura/crear-modulos/vscode-add-folder-to-workspace.gif)
+![vscode-add-folder-to-workspace](/img/guias/estructura/crear-modulos/vscode-add-folder-to-workspace.gif){data-zoomable}
 
 Luego se nos desplegará un menú para seleccionar las carpetas que queremos
 agregar al workspace. Vamos a ir una por una seleccionando cada carpeta de cada
@@ -45,7 +45,7 @@ Una vez hecho esto, deberíamos poder irnos a la pestaña de `Run and Debug` y
 seleccionar cualquier módulo para compilar y ejecutar, de la misma forma que
 hicimos en el [TP0](/primeros-pasos/tp0):
 
-![vscode-run-debug](/img/guias/estructura/crear-modulos/vscode-run-debug.gif)
+![vscode-run-debug](/img/guias/estructura/crear-modulos/vscode-run-debug.gif){data-zoomable}
 
 > En lugar de `run (client)` y `run (server)`, vamos a tener `run (kernel)`,
 > `run (memoria)`, `run (filesystem)`, etc...

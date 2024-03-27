@@ -54,7 +54,7 @@ Ahora, con un proyecto vacío, podemos hacerle `Click derecho` a éste y luego
 `New > Source file` (y le dan un nuevo nombre al archivo). En mi caso, mi
 proyecto se llama "Ejemplo" con un único archivo "principal.c":
 
-![debugger-01](/img/guias/herramientas/debugger/debugger-01.png)
+![debugger-01](/img/guias/herramientas/debugger/debugger-01.png){data-zoomable}
 
 Supongamos que quieren un programa que cree una variable entera, le asigne a
 esta nueva variable el número 4, y devuelva este valor. Los aliento a que
@@ -70,7 +70,7 @@ Una vez que tengan programado algo, pueden apretar el boton de `Debug`. Esto
 ejecutará su programa en modo de debug, donde pueden seguir paso a paso el flujo
 y los datos de su programa.
 
-![debugger-02](/img/guias/herramientas/debugger/debugger-02.png)
+![debugger-02](/img/guias/herramientas/debugger/debugger-02.png){data-zoomable}
 
 Si es la primera vez que apretan el botón de `Debug`, les preguntará si quieren
 cambiar de perspectiva[^1]. Te recomiendo decirle que sí y pedirle que recuerde
@@ -84,11 +84,11 @@ De ahora en adelante les aparecerá la perspectiva de Debug a la izquierda, junt
 con la perspectiva de programación, y pueden ir intercambiándolas a medida que
 necesiten programar / debuggear.
 
-![debugger-03](/img/guias/herramientas/debugger/debugger-03.png)
+![debugger-03](/img/guias/herramientas/debugger/debugger-03.png){data-zoomable}
 
 ### Entendiendo la perspectiva de Debug
 
-![debugger-04](/img/guias/herramientas/debugger/debugger-04.png)
+![debugger-04](/img/guias/herramientas/debugger/debugger-04.png){data-zoomable}
 
 En esta perspectiva tienen 5 marcos diferenciables:
 
@@ -118,7 +118,7 @@ En esta perspectiva tienen 5 marcos diferenciables:
 
 ### Cómo correr un programa
 
-![debugger-05](/img/guias/herramientas/debugger/debugger-05.png)
+![debugger-05](/img/guias/herramientas/debugger/debugger-05.png){data-zoomable}
 
 1. Como ya vimos, el botón `Debug` empieza la ejecución en modo Debug. Antes de
    apretarlo, el resto de los botones marcados permanecen en gris.
@@ -143,7 +143,7 @@ En esta perspectiva tienen 5 marcos diferenciables:
 
 ### Vista Variables
 
-![debugger-06](/img/guias/herramientas/debugger/debugger-06.png)
+![debugger-06](/img/guias/herramientas/debugger/debugger-06.png){data-zoomable}
 
 Recordemos por dónde quedamos: estamos con nuestro programa corriendo en modo
 Debug, por lo que frena antes de ejecutar cualquier cosa.
@@ -163,7 +163,7 @@ _\*Pausa dramática y ruido de "pensamiento" (?\*_
 
 Si optaron por `Step Into` o `Step Over`, están en lo correcto:
 
-![debugger-07](/img/guias/herramientas/debugger/debugger-07.png)
+![debugger-07](/img/guias/herramientas/debugger/debugger-07.png){data-zoomable}
 
 Como vemos, ahora está pintada la siguiente línea, el valor de `a` se alteró y
 quedó pintado de amarillo.
@@ -223,7 +223,7 @@ Esto se puede hacer tanto en la perspectiva de programación C/C++ como en la de
 Debug. Incluso se pueden hacer mientras el programa esté en ejecución (o
 frenado) en modo Debug.
 
-![debugger-08](/img/guias/herramientas/debugger/debugger-08.png)
+![debugger-08](/img/guias/herramientas/debugger/debugger-08.png){data-zoomable}
 
 Adicionalmente, en la perspectiva de Debug está la vista de `Breakpoints`, donde
 pueden ver los breakpoints que tengan y desactivarlos temporalmente haciendo
@@ -241,13 +241,13 @@ ver el primero. ¿Cómo podemos arreglar esto? :thinking:
 
 ### Casteos en Variables
 
-![debugger-09](/img/guias/herramientas/debugger/debugger-09.png)
+![debugger-09](/img/guias/herramientas/debugger/debugger-09.png){data-zoomable}
 
 Si uno apreta Click derecho en la variable que queremos, nos va a aparecer la
 opción de ver la memoria tal cual la grabó, castear a un tipo particular o, como
 queremos ahora, mostrar como una array.
 
-![debugger-10](/img/guias/herramientas/debugger/debugger-10.png)
+![debugger-10](/img/guias/herramientas/debugger/debugger-10.png){data-zoomable}
 
 Recordemos que esto ya esta en ejecución, por lo que, si quisiéramos mostrar un
 array de como 100 elementos, las patentes a partir de la 4 estarían fuera del
@@ -264,7 +264,7 @@ se agranda. Volver a hacer doble click vuelve todo a la normalidad.
 
 :::
 
-![debugger-11](/img/guias/herramientas/debugger/debugger-11.png)
+![debugger-11](/img/guias/herramientas/debugger/debugger-11.png){data-zoomable}
 
 Y vemos exactamente el valor de cada variable dentro de un vector.
 
@@ -297,7 +297,7 @@ Patente 2: UTN 999
 Antes de empezar a pensar la solución, esto es lo que pasaría de correr como
 Debug ese código:
 
-![debugger-12](/img/guias/herramientas/debugger/debugger-12.png)
+![debugger-12](/img/guias/herramientas/debugger/debugger-12.png){data-zoomable}
 
 ¿Notás cómo en la vista de `Variables` no está la variable `patentes`?
 
@@ -313,7 +313,7 @@ introducirles la vista de `Expresiones`.
 Muy posiblemente no tengan esta vista por defecto: para accederla uno puede ir a
 `Window > Show View > Expressions`.
 
-![debugger-13](/img/guias/herramientas/debugger/debugger-13.png)
+![debugger-13](/img/guias/herramientas/debugger/debugger-13.png){data-zoomable}
 
 Ahora tenemos, en el mismo marco que `Variables`, una nueva pestaña de
 expresiones con un :heavy_plus_sign:, donde podemos hacer click y escribir la
@@ -325,7 +325,7 @@ ejecute una función, solo podemos ver variables.
 Si escribimos `patentes`, podemos acceder a la variable global tal como haríamos
 en la vista de `Variables`.
 
-![debugger-14](/img/guias/herramientas/debugger/debugger-14.png)
+![debugger-14](/img/guias/herramientas/debugger/debugger-14.png){data-zoomable}
 
 Ahora si, a programar una posible solución.
 
@@ -381,7 +381,7 @@ variable.
 Haciéndole doble click al Value, uno puede ingresar lo que quiera y, de ese
 punto en adelante, el programa tendrá ese nuevo número. **Usar con cuidado.**
 
-![debugger-15](/img/guias/herramientas/debugger/debugger-15.png)
+![debugger-15](/img/guias/herramientas/debugger/debugger-15.png){data-zoomable}
 
 Ahora estamos en una línea con una llamada a una función que no programamos
 nosotros: [`malloc()`](https://man7.org/linux/man-pages/man3/free.3.html).
@@ -394,7 +394,7 @@ Si apretamos Step Into, ¿qué tendría que pasar?
 
 Si, se merece todo un título para esto nomás.
 
-![debugger-16](/img/guias/herramientas/debugger/debugger-16.png)
+![debugger-16](/img/guias/herramientas/debugger/debugger-16.png){data-zoomable}
 
 Al igual que el `Step Into` anterior, el stack crece y se llama a `malloc()`,
 pero como está programado por otras personas y no tenemos acceso al código,
@@ -413,13 +413,13 @@ función de donde se llamó, en este caso `crear_patente()`.
 Una vez que tenemos breakpoints, uno puede hacer click derecho en la pelotita
 :large_blue_circle: e ir a sus propiedades.
 
-![debugger-17](/img/guias/herramientas/debugger/debugger-17.png)
+![debugger-17](/img/guias/herramientas/debugger/debugger-17.png){data-zoomable}
 
 Por ejemplo, podríamos querer un breakpoint que interrumpa la ejecución en el
 código de imprimir las patentes **solo si** las letras del vector a mirar son
 "UTN":
 
-![debugger-18](/img/guias/herramientas/debugger/debugger-18.png)
+![debugger-18](/img/guias/herramientas/debugger/debugger-18.png){data-zoomable}
 
 Notar que en esta condición tenemos una llamada a una función y evaluamos el
 retorno. Sí, esto se puede hacer.
@@ -427,7 +427,7 @@ retorno. Sí, esto se puede hacer.
 Una vez creado este nuevo breakpoint, podríamos _resumir_ nuestra solución y ver
 si efectivamente frena en algún lugar.
 
-![debugger-19](/img/guias/herramientas/debugger/debugger-19.png)
+![debugger-19](/img/guias/herramientas/debugger/debugger-19.png){data-zoomable}
 
 ## Técnicas más avanzadas de debug
 

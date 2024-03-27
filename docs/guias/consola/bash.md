@@ -230,7 +230,7 @@ el directorio en donde se encuentre como les mostramos
 
 Les dejamos un machete para escribir los permisos tipo Unix en octal:
 
-![file](/img/guias/consola/bash-linux-file-permissions.jpg)
+![file](/img/guias/consola/bash-linux-file-permissions.jpg){data-zoomable}
 
 :::
 
@@ -247,7 +247,7 @@ Un administrador de procesos de Linux (del inglés: _**h**uman-readable **t**abl
 - Enviar [señales](https://faq.utnso.com.ar/seniales) a uno o varios procesos de
   forma intuitiva con `F9`.
 
-![htop](/img/guias/consola/bash-htop-espera-activa.png)
+![htop](/img/guias/consola/bash-htop-espera-activa.png){data-zoomable}
 
 ::: tip
 
@@ -262,7 +262,7 @@ En la última línea pueden encontrar las distintas opciones que se pueden usar.
 Permite consultar la IP de la VM actual para luego agregarla a los archivos de
 configuración (ya sea a mano o a través de un script).
 
-![ifconfig](/img/guias/consola/bash-ifconfig.png)
+![ifconfig](/img/guias/consola/bash-ifconfig.png){data-zoomable}
 
 <br>
 
@@ -272,7 +272,7 @@ Un editor de texto liviano simple que funciona desde la consola. Es la
 alternativa recomendada si llegan a necesitar editar algún archivo de
 configuración.
 
-![nano](/img/guias/consola/bash-nano.png)
+![nano](/img/guias/consola/bash-nano.png){data-zoomable}
 
 ::: tip
 
@@ -323,7 +323,7 @@ un puerto en particular. Ejemplo:
 lsof -i :8080
 ```
 
-![lsof](/img/guias/consola/lsof.png)
+![lsof](/img/guias/consola/lsof.png){data-zoomable}
 
 
 <br>
@@ -352,7 +352,7 @@ un archivo, aunque también para otros como `echo` o `read` suele ser el mismo
 teclado. Por otro lado, la salida estándar (ya sea por éxito o error), suele
 ser la misma consola:
 
-![pipes](/img/guias/consola/bash-pipes.png)
+![pipes](/img/guias/consola/bash-pipes.png){data-zoomable}
 
 Sin embargo, es posible _redirigir_ esos flujos de información (o _streams_)
 para que los comandos "se pasen" el resultado el uno al otro, o lo guarden en un
@@ -372,7 +372,7 @@ Notarán que, en caso de error, el texto de `stderr` no se _pasa_ al siguiente
 comando ni se escribe en el archivo, sino que _sigue de largo_ hasta llegar a la
 consola al ser una salida distinta[^3]:
 
-![pipes-stderr](/img/guias/consola/bash-pipes-stderr.png)
+![pipes-stderr](/img/guias/consola/bash-pipes-stderr.png){data-zoomable}
 
 Es por esto que, desde C, es una buena práctica imprimir los resultados con
 `printf(...)` y los logs y errores con `fprintf(stderr, ...)`, a pesar de que

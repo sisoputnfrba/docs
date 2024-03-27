@@ -1,6 +1,6 @@
 # Argumentos para el main
 
-![meme](/img/guias/programacion/main/meme.jpg)
+![meme](/img/guias/programacion/main/meme.jpg){data-zoomable}
 
 ## Introducción
 

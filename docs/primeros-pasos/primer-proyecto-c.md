@@ -54,7 +54,7 @@ También podés crear un nuevo proyecto desde GitHub incluyendo el template
 [c-base-project](https://faq.utnso.com.ar/project) a la hora de crear un
 nuevo repositorio:
 
-![github-create-repo-from-template](/img/primeros-pasos/primer-proyecto-c/github-create-repo-from-template.png)
+![github-create-repo-from-template](/img/primeros-pasos/primer-proyecto-c/github-create-repo-from-template.png){data-zoomable}
 
 Y luego clonar el repositorio recién creado ejecutando `git clone`.
 
@@ -91,7 +91,7 @@ code .
 
 Veremos que se nos abre el editor con el proyecto que acabamos de descargar:
 
-![vscode-open-project](/img/primeros-pasos/primer-proyecto-c/vscode-open-project.gif)
+![vscode-open-project](/img/primeros-pasos/primer-proyecto-c/vscode-open-project.gif){data-zoomable}
 
 ## Cómo compilar
 
@@ -100,14 +100,14 @@ el editor moviéndonos a la pestaña _Terminal_ y haciendo click en _Run Build
 Task_, o utilizando el shortcut `Ctrl+Shift+B`. Vamos a ver que se nos genera
 una carpeta `bin` con el binario del proyecto compilado:
 
-![vscode-run-build-task](/img/primeros-pasos/primer-proyecto-c/vscode-run-build-task.gif)
+![vscode-run-build-task](/img/primeros-pasos/primer-proyecto-c/vscode-run-build-task.gif){data-zoomable}
 
 ### Errores de compilación
 
 En caso de que la compilación falle, vamos a poder ver los errores y navegar
 entre ellos desde la pestaña de _Problems_:
 
-![vscode-problems](/img/primeros-pasos/primer-proyecto-c/vscode-problems.gif)
+![vscode-problems](/img/primeros-pasos/primer-proyecto-c/vscode-problems.gif){data-zoomable}
 
 ::: warning IMPORTANTE
 
@@ -156,7 +156,7 @@ servirá de gran ayuda contar con la salida del compilador. Para obtenerla,
 podemos navegar a la pestaña de _Terminal_ y **copiar el texto** que aparece al
 ejecutar la tarea de compilación:
 
-![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif)
+![vscode-copy-compiler-output](/img/primeros-pasos/primer-proyecto-c/vscode-copy-compiler-output.gif){data-zoomable}
 
 Un texto de error es mucho más útil que una captura de pantalla, ya que nos
 permite copiarlo e investigarlo sin tener que transcribirlo manualmente. Además,
@@ -170,7 +170,7 @@ utilizando el buscador del foro.
 Finalmente, para ejecutar el proyecto, nos moveremos a la pestaña
 de _Run and Debug_ y haremos a hacer click en el botón de _Run_:
 
-![vscode-run-debug](/img/primeros-pasos/primer-proyecto-c/vscode-run-debug.gif)
+![vscode-run-debug](/img/primeros-pasos/primer-proyecto-c/vscode-run-debug.gif){data-zoomable}
 
 Si aparece un mensaje diciendo _Hola, Operativos!!_, ¡felicidades! Ya tenés tu
 primer proyecto en C funcionando.

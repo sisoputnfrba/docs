@@ -92,7 +92,7 @@ Luego, ejecutalo con:
 
 Vas a ver algo como:
 
-![img01](/img/guias/programacion/cspec/img01.png)
+![img01](/img/guias/programacion/cspec/img01.png){data-zoomable}
 
 O sea, que todas tus pruebas pasaron.
 
@@ -106,7 +106,7 @@ O sea, que todas tus pruebas pasaron.
 
 ... el resultado sería:
 
-![img02](/img/guias/programacion/cspec/img02.png)
+![img02](/img/guias/programacion/cspec/img02.png){data-zoomable}
 
 Y claro, el segundo test falló, esperaba que devuelva **123** pero devolvió
 **0**.
@@ -121,7 +121,7 @@ Botón derecho en el proyecto -> `Properties` -> `C/C++ Build` -> `Settings` ->
 
 ...y agregamos la biblioteca cspecs en `Libraries`.
 
-![img04](/img/guias/programacion/cspec/img04.jpg)
+![img04](/img/guias/programacion/cspec/img04.jpg){data-zoomable}
 
 ## Ejemplo 1: Orden, inicialización y limpieza
 
@@ -163,7 +163,7 @@ context (probando_cosas) {
 
 Si lo compilás y ejecutás como ya sabés, vas a ver algo como esto:
 
-![img03](/img/guias/programacion/cspec/img03.png)
+![img03](/img/guias/programacion/cspec/img03.png){data-zoomable}
 
 Con esto descubrimos que:
 
@@ -256,7 +256,7 @@ context (probando_cosas) {
 
 ¿Lo corremos?
 
-![img05](/img/guias/programacion/cspec/img05.png)
+![img05](/img/guias/programacion/cspec/img05.png){data-zoomable}
 
 Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 

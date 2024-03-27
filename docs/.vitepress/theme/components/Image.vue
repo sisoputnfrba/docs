@@ -21,6 +21,11 @@ export default {
       type: String,
       required: false,
     },
+    zoomable: {
+      type: Boolean,
+      required: false,
+      default: null,
+    },
   },
   computed: {
     containerStyle() {
@@ -41,7 +46,7 @@ export default {
 
 <template>
   <div class="custom-image-container" :style="containerStyle">
-    <img :src="src" :style="imageStyle"/>
+    <img :src="src" :style="imageStyle" :data-zoomable="zoomable"/>
   </div>
 </template>
 
