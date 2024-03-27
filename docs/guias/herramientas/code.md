@@ -65,16 +65,17 @@ siguiente:
 - `label`: El nombre de la tarea, para poder identificarla.
 - `command`: Que el comando a ejecutar sea `make all`, partiendo desde la
 carpeta donde se encuentra el proyecto.
-- `shell`: Que la tarea se va a ejecutar en una consola.
-- `group`: Que la tarea sea de tipo "compilación" (`build`) y sea la tarea por
-defecto para compilar ese proyecto.
+- `type`: El tipo de tarea. En este caso, el comando provisto se debe ejecutar
+en una terminal, por lo que es de tipo `shell`.
+- `group`: A qué grupo de tareas pertenece. En este caso, la tarea es de
+compilación (`build`) y es la tarea por defecto para compilar el proyecto.
 - `problemMatcher`: Que los errores que pueden llegar a surgir provienen de
-ejecutar `gcc`.
+ejecutar `gcc`. Esto permite que nos aparezcan en la pestaña `Problems`.
 
 ::: tip
 
 Para saber más sobre cómo configurar el archivo `tasks.json`, podés revisar la
-[documentación oficial](https://code.visualstudio.com/docs/editor/tasks#vscode).
+[documentación oficial](https://code.visualstudio.com/docs/editor/tasks#_custom-tasks).
 
 :::
 
@@ -116,7 +117,10 @@ elegido para la task.
 ::: tip
 
 Para saber más sobre cómo configurar el archivo `launch.json`, podés revisar la
-[documentación oficial](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations).
+documentación oficial del
+[debugger](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)
+y la del
+[debugger de C/C++](https://code.visualstudio.com/docs/cpp/launch-json-reference).
 
 :::
 
@@ -142,7 +146,7 @@ la forma que tenemos de indicarle rutas extra desde las cuales buscar archivos
 `*.h`.
 
 Por defecto, ya se encuentra definido `"${workspaceFolder}/src"`, por lo que
-podemos incluir archivos de dentro del proyecto sin errores.
+podemos incluir archivos de dentro del proyecto partiendo desde ahí sin errores.
 
 Si queremos también incluir bibliotecas externas que no se encuentren instaladas
 en alguna de las rutas por defecto, deberemos agregarlas manualmente.
@@ -156,6 +160,14 @@ de esta forma:
 ```json
 "${workspaceFolder}/../utils/src"
 ```
+
+:::
+
+::: tip TIP 2
+
+La explicación completa sobre cada uno de los atributos de
+`c_cpp_properties.json` se encuentra acá:
+[c_cpp_properties.json reference](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference).
 
 :::
 
