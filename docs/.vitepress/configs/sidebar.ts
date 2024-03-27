@@ -81,6 +81,10 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: false,
     items: [
       {
+        text: 'Mario Bash',
+        link: 'https://faq.utnso.com.ar/mariobash'
+      },
+      {
         text: 'Guía de uso de Bash',
         link: '/guias/consola/bash'
       },
@@ -89,16 +93,12 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/consola/rutas'
       },
       {
-        text: 'Guía de despliegue de TP',
-        link: '/guias/herramientas/deploy'
-      },
-      {
-        text: 'Mario Bash',
-        link: 'https://faq.utnso.com.ar/mariobash'
-      },
-      {
         text: 'Learn Git Branching',
         link: 'https://learngitbranching.js.org/?locale=es_AR'
+      },
+      {
+        text: 'Guía de despliegue de TP',
+        link: '/guias/herramientas/deploy'
       },
     ],
   },
@@ -109,6 +109,10 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Repaso de Arquitectura',
         link: 'https://faq.utnso.com.ar/guia-repaso-arquitectura'
+      },
+      {
+        text: 'Tutorial interactivo de C',
+        link: 'https://www.learn-c.org/'
       },
       {
         text: 'Buenas Prácticas de C',
@@ -122,16 +126,6 @@ export const sidebar: DefaultTheme.Sidebar = [
         text: 'Hacer una consola interactiva',
         link: '/guias/programacion/readline'
       },
-      {
-        text: 'Tutorial interactivo de C',
-        link: 'https://www.learn-c.org/'
-      },
-    ],
-  },
-  {
-    text: 'Syscalls de Linux',
-    collapsed: false,
-    items: [
       {
         text: 'Charla de Threads y Sincro',
         link: '/guias/linux/threads',
