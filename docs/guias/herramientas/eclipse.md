@@ -11,7 +11,7 @@ De hecho, como verás en los archivos `.gitignore` del repositorio, agregamos
 explícitamente los archivos generados por Eclipse para evitar que se suban al
 repositorio y conflictúen con las configuraciones de otros compañeros:
 
-```gitignore:line-numbers
+```txt:line-numbers
 # Generated files
 bin/
 obj/
@@ -114,14 +114,14 @@ cada proyecto.
 
 Para importar una biblioteca (estática o compartida), primero debemos
 asegurarnos que el workspace sea
-[el mismo que usamos para importar el proyecto](./importar-proyecto#eclipse):
+[el mismo que usamos para importar el proyecto](#configurar-el-workspace):
 
 ![workspace-02](/img/guias/herramientas/eclipse/select-workspace-folder.png)
 
 ### Crear otro Makefile Project
 
 Luego, vamos a crear un nuevo Makefile Project de la misma forma que hicimos con
-el [otro proyecto](./importar-proyecto#eclipse). Debe quedar así:
+el [otro proyecto](#crear-un-makefile-project). Debe quedar así:
 
 ![static-01](/img/guias/herramientas/eclipse/project-explorer-with-utils.png)
 
