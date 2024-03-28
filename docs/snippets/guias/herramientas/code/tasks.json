@@ -1,16 +1,16 @@
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "build",
-      "command": "make all",
-      "type": "shell",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": ["$gcc"]
-    },
+{ // [!code focus]
+  "version": "2.0.0", // [!code focus]
+  "tasks": [ // [!code focus]
+    { // [!code focus]
+      "label": "build", // [!code focus] (1)
+      "command": "make all", // [!code focus] (2)
+      "type": "shell", // [!code focus] (3)
+      "group": { // [!code focus] (4)
+        "kind": "build", // [!code focus]
+        "isDefault": true // [!code focus]
+      }, // [!code focus]
+      "problemMatcher": ["$gcc"] // [!code focus] (5)
+    }, // [!code focus]
     {
       "label": "clean",
       "command": "make clean",
@@ -20,5 +20,5 @@
       },
       "problemMatcher": []
     }
-  ]
-}
+  ] // [!code focus]
+} // [!code focus]

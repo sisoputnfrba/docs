@@ -1,16 +1,16 @@
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "run",
+{ // [!code focus]
+  "version": "0.2.0", // [!code focus]
+  "configurations": [ // [!code focus]
+    { // [!code focus]
+      "name": "run", // [!code focus] (1)
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/${workspaceFolderBasename}",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/bin/${workspaceFolderBasename}", // [!code focus] (2)
+      "args": [], // [!code focus] (3)
+      "stopAtEntry": false, // [!code focus] (4)
+      "cwd": "${workspaceFolder}", // [!code focus] (5)
       "environment": [],
-      "externalConsole": false,
+      "externalConsole": false, // [!code focus] (6)
       "MIMode": "gdb",
       "setupCommands": [
         {
@@ -19,7 +19,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build"
-    }
-  ]
-}
+      "preLaunchTask": "build" // [!code focus] (7)
+    } // [!code focus]
+  ] // [!code focus]
+} // [!code focus]

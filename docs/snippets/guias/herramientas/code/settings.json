@@ -1,7 +1,7 @@
-{
-  "debug.onTaskErrors": "abort",
-  "files.associations": {
-    "*.h": "c"
-  },
-  "C_Cpp.errorSquiggles": "disabled"
-}
+{ // [!code focus]
+  "debug.onTaskErrors": "abort", // [!code focus] (1)
+  "files.associations": { // [!code focus] (2)
+    "*.h": "c" // [!code focus]
+  }, // [!code focus]
+  "C_Cpp.errorSquiggles": "disabled" // [!code focus] (3)
+} // [!code focus]
