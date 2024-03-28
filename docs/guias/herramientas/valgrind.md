@@ -208,18 +208,18 @@ int main(void) {
 
 Volvemos a correr Memcheck, ¡desapareció el error! Sin embargo...
 
-```txt{3,11}
+```txt
 ==6789== HEAP SUMMARY:
 ==6789==     in use at exit: 5 bytes in 1 blocks
 ==6789==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
 ==6789==
-==6789== LEAK SUMMARY:
-==6789==    definitely lost: 5 bytes in 1 blocks
+==6789== LEAK SUMMARY:// [!code focus]
+==6789==    definitely lost: 5 bytes in 1 blocks // [!code focus]
 ==6789==    indirectly lost: 0 bytes in 0 blocks
 ==6789==      possibly lost: 0 bytes in 0 blocks
 ==6789==    still reachable: 0 bytes in 0 blocks
 ==6789==         suppressed: 0 bytes in 0 blocks
-==6789== Rerun with --leak-check=full to see details of leaked memory
+==6789== Rerun with --leak-check=full to see details of leaked memory // [!code focus]
 ```
 
 - En la tercera línea nos está diciendo que allocamos memoria una vez, pero
@@ -246,7 +246,7 @@ que haga un chequeo de memory leaks.
 
 ::: code-group
 
-```c:line-numbers{5} [ej1.c]
+```c:line-numbers [ej1.c]
 #include <stdlib.h>
 
 int main(void) {
@@ -271,21 +271,21 @@ valgrind --leak-check=yes ./ej1
 
 Deberían ver algo similar a esto:
 
-```txt{1,3,6,12}
-==5263== HEAP SUMMARY:
-==5263==     in use at exit: 5 bytes in 1 blocks
-==5263==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated
+```txt
+==5263== HEAP SUMMARY: // [!code focus]
+==5263==     in use at exit: 5 bytes in 1 blocks // [!code focus]
+==5263==   total heap usage: 1 allocs, 0 frees, 5 bytes allocated // [!code focus]
 ==5263==
-==5263== LEAK SUMMARY:
-==5263==    definitely lost: 5 bytes in 1 blocks
+==5263== LEAK SUMMARY: // [!code focus]
+==5263==    definitely lost: 5 bytes in 1 blocks // [!code focus]
 ==5263==    indirectly lost: 0 bytes in 0 blocks
 ==5263==      possibly lost: 0 bytes in 0 blocks
 ==5263==    still reachable: 0 bytes in 0 blocks
 ==5263==         suppressed: 0 bytes in 0 blocks
 ==5263==
-==5263== 5 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==5263==    at 0x4C2B3F8: malloc (in usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==5263==    by 0x40052D: main (ej1.c:4)
+==5263== 5 bytes in 1 blocks are definitely lost in loss record 1 of 1 // [!code focus]
+==5263==    at 0x4C2B3F8: malloc (in usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so) // [!code focus]
+==5263==    by 0x40052D: main (ej1.c:4) // [!code focus]
 ```
 
 - Como vimos en la
@@ -316,16 +316,20 @@ en la performance (incluso **podemos quedarnos sin memoria disponible**).
 
 Para evitar esto, agregaremos el `free()` correspondiente:
 
-```c:line-numbers{6}
+::: code-group
+
+```c:line-numbers [ej1.c]
 #include <stdlib.h>
 
 int main(void){
     char *array = malloc(5 * sizeof(char));
     array[4] = 'q';
-    free(array);
+    free(array); // [!code ++]
     return 0;
 }
 ```
+
+:::
 
 Si volvemos a correr valgrind, veremos que nos dirá:
 
@@ -373,17 +377,17 @@ a = 0
 
 Ahora tipeamos en consola `valgrind ./ej2` y nos muestra el siguiente mensaje:
 
-```txt{1,6}
-==7079== Conditional jump or move depends on uninitialised value(s)
+```txt
+==7079== Conditional jump or move depends on uninitialised value(s) // [!code focus]
 ==7079==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
-==7079==    by 0x4E858D8: printf (printf.c:35)
-==7079==    by 0x400537: main (ej2.c:5)
+==7079==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
+==7079==    by 0x400537: main (ej2.c:5) // [!code focus]
 ==7079==
-==7079== Use of uninitialised value of size 4
+==7079== Use of uninitialised value of size 4 // [!code focus]
 ==7079==    at 0x4E7A7EB: _itoa_word (_itoa.c:195)
 ==7079==    by 0x4E7C837: vfprintf (vfprintf.c:1629)
-==7079==    by 0x4E858D8: printf (printf.c:35)
-==7079==    by 0x400537: main (ej2.c:5)
+==7079==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
+==7079==    by 0x400537: main (ej2.c:5) // [!code focus]
 ```
 
 ::: warning Antes de analizar el mensaje...
@@ -499,22 +503,22 @@ Si compilamos y hacemos un `valgrind ./ej3` en consola vamos a ver que los
 mensajes de error son similares a los del código anterior.
 
 ```
-==13230== Conditional jump or move depends on uninitialised value(s)
+==13230== Conditional jump or move depends on uninitialised value(s) // [!code focus]
 ==13230==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
-==13230==    by 0x4E858D8: printf (printf.c:35)
-==13230==    by 0x4005D8: main (ej3.c:6)
+==13230==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
+==13230==    by 0x4005D8: main (ej3.c:6) // [!code focus]
 ==13230==
-==13230== Use of uninitialised value of size 8
+==13230== Use of uninitialised value of size 8 // [!code focus]
 ==13230==    at 0x4E7A7EB: _itoa_word (_itoa.c:195)
 ==13230==    by 0x4E7C837: vfprintf (vfprintf.c:1629)
-==13230==    by 0x4E858D8: printf (printf.c:35)
-==13230==    by 0x4005D8: main (ej3.c:6)
+==13230==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
+==13230==    by 0x4005D8: main (ej3.c:6) // [!code focus]
 ==13230==
-==13230== Conditional jump or move depends on uninitialised value(s)
+==13230== Conditional jump or move depends on uninitialised value(s) // [!code focus]
 ==13230==    at 0x4E7A7F5: _itoa_word (_itoa.c:195)
 ==13230==    by 0x4E7C837: vfprintf (vfprintf.c:1629)
-==13230==    by 0x4E858D8: printf (printf.c:35)
-==13230==    by 0x4005D8: main (ej3.c:6)
+==13230==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
+==13230==    by 0x4005D8: main (ej3.c:6) // [!code focus]
 ```
 
 La solución, nuevamente, es inicializar nuestra variable.
@@ -543,7 +547,7 @@ variables sin inicializar es el siguiente:
 
 ::: code-group
 
-```c:line-numbers{8} [ej4.c]
+```c:line-numbers [ej4.c]
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -554,6 +558,7 @@ int main(void) {
     memcpy(b, a, sizeof(int));
     printf("b = %d \n", (*b));
     free(b);
+    free(a);
   	return 0;
 }
 ```
@@ -567,7 +572,7 @@ int main(void) {
 - Copia la cantidad de bytes equivalente al tamaño de una variable tipo `int`,
   partiendo desde la dirección `a` y guardando todo en la dirección `b`.
 - Imprime en pantalla el valor de `b`.
-- Libera la memoria apuntada por `b`.
+- Libera la memoria apuntada por `b` y `a`.
 - Termina la ejecución del programa retornando 0.
 
 Uno asumiría que al hacer `valgrind ./ej4` nos va a aparecer una advertencia en
@@ -582,12 +587,12 @@ Sin embargo, la realidad supera a la ficción...
 ==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
 ==24112== Command: ./ej4
 ==24112==
-==24112== Conditional jump or move depends on uninitialised value(s)
+==24112== Conditional jump or move depends on uninitialised value(s)  // [!code focus]
 ==24112==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
-==24112==    by 0x48C858E: printf (printf.c:33)
-==24112==    by 0x1091F6: main (ej4.c:9)
+==24112==    by 0x48C858E: printf (printf.c:33)  // [!code focus]
+==24112==    by 0x1091F6: main (ej4.c:9) // [!code focus]
 ==24517==
-==24517== Use of uninitialised value of size 8
+==24517== Use of uninitialised value of size 8  // [!code focus]
 ==24517==    at 0x48C216B: _itoa_word (_itoa.c:179)
 ==24517==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
 ==24517==    by 0x48C858E: printf (printf.c:33) // [!code focus]
@@ -595,7 +600,7 @@ Sin embargo, la realidad supera a la ficción...
 ==24517==
 ==24517== All heap blocks were freed -- no leaks are possible
 ==24517==
-==24517== Use --track-origins=yes to see where uninitialised values come from
+==24517== Use --track-origins=yes to see where uninitialised values come from  // [!code focus]
 ==24517== For lists of detected and suppressed errors, rerun with: -s
 ==24517== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 ```
@@ -609,35 +614,11 @@ con varios `memcpy()`: el hecho de que _solo_ nos aparezca el error al enviar el
 mensaje completo (sin advertir de dónde proviene) nos puede resultar de poca
 ayuda.
 
-Por suerte, Valgrind es sabio, y al final de los logs nos recomienda agregar una
-opción por parámetro para solucionar esto:
+Por suerte, Valgrind es sabio y al final de los logs nos recomienda agregar una
+opción por parámetro para solucionar esto: `--track-origins=yes`. La misma
+habilita el seguimiento de toda la memoria no inicializada.
 
-```txt
-==24112== Memcheck, a memory error detector
-==24112== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==24112== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
-==24112== Command: ./ej4
-==24112==
-==24112== Conditional jump or move depends on uninitialised value(s)
-==24112==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
-==24112==    by 0x48C858E: printf (printf.c:33)
-==24112==    by 0x1091F6: main (ej4.c:9)
-==24517==
-==24517== Use of uninitialised value of size 8
-==24517==    at 0x48C216B: _itoa_word (_itoa.c:179)
-==24517==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
-==24517==    by 0x48C858E: printf (printf.c:33)
-==24517==    by 0x1091F6: main (ej4.c:9)
-==24517==
-==24517== All heap blocks were freed -- no leaks are possible
-==24517==
-==24517== Use --track-origins=yes to see where uninitialised values come from  // [!code focus]
-==24517== For lists of detected and suppressed errors, rerun with: -s
-==24517== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
-```
-
-Efectivamente, la opción `--track-origins=yes` habilita el seguimiento de toda
-la memoria no inicializada. Volvamos a ejecutar el programa con:
+Volvamos a ejecutar el programa con:
 
 ```bash
 valgrind --track-origins=yes ./ej4
@@ -656,18 +637,18 @@ warning:
 ==30024==    at 0x48DDCA6: __vfprintf_internal (vfprintf-internal.c:1646)
 ==30024==    by 0x48C858E: printf (printf.c:33)
 ==30024==    by 0x1091D8: main (ej4.c:9)
-==30024==  Uninitialised value was created by a heap allocation
-==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30024==    by 0x10919E: main (ej4.c:6)
+==30024==  Uninitialised value was created by a heap allocation  // [!code focus]
+==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)  // [!code focus]
+==30024==    by 0x10919E: main (ej4.c:6)  // [!code focus]
 ==30024==
 ==30024== Use of uninitialised value of size 8
 ==30024==    at 0x48C216B: _itoa_word (_itoa.c:179)
 ==30024==    by 0x48DD964: __vfprintf_internal (vfprintf-internal.c:1646)
 ==30024==    by 0x48C858E: printf (printf.c:33)
 ==30024==    by 0x1091D8: main (ej4.c:9)
-==30024==  Uninitialised value was created by a heap allocation
-==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30024==    by 0x10919E: main (ej4.c:6)
+==30024==  Uninitialised value was created by a heap allocation // [!code focus]
+==30024==    at 0x4843839: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)  // [!code focus]
+==30024==    by 0x10919E: main (ej4.c:6)  // [!code focus]
 ```
 
 En este caso, se trata de una alocación en el heap hecha por un `malloc()` en la
@@ -798,14 +779,15 @@ Al tratarse de un "error" de manejo de memoria que ocurre únicamente en el
 algoritmo que finaliza el proceso, no es un memory leak real, por lo que no es
 necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 
-## ¿Cómo lo compro?
+## ¡Buenísimo! ¿Cómo lo compro?
 
-¡Te convencí! Ya mismo querés salir corriendo a ver cómo correr Valgrind en tu
-TP, pero... ¿tengo que hacerlo siempre a mano?
+¡Te convencí! Ya mismo querés salir corriendo a correr Valgrind en tu TP,
+pero... ¿cada vez que lo hagan hay que acordarse de todos los parámetros que nos
+suelen ser de utilidad?
 
-No necesariamente, la estructura de proyecto que les proveemos ya cuenta en su
-makefile con una regla para correr Valgrind. Si quieren correrlo, simplemente
-tienen que ejecutar:
+No necesariamente, podemos aprovechar que la estructura de proyecto que les
+proveemos ya cuenta en su makefile con una regla para correr Valgrind. Si
+quieren correrlo, simplemente tienen que ejecutar:
 
 ```bash
 make memcheck
@@ -813,7 +795,7 @@ make memcheck
 
 Por defecto, la regla `memcheck` siempre va a correr Valgrind con el flag
 `--leak-check=full`. En caso de necesitar configurarle flags o parámetros
-adicionales, pueden editar el archivo `settings.mk`:
+de ejecución, pueden editar el archivo `settings.mk`:
 
 ::: code-group
 
@@ -831,7 +813,7 @@ MEMCHECK_FLAGS=--track-origins=yes
 
 Para recurrir a información más detallada referente a los mensajes de error y al
 funcionamiento de Memcheck pueden recurrir al
-[manual de usuario de valgrind](https://valgrind.org/docs/manual/mc-manual.html).
+[manual de usuario de Valgrind](https://valgrind.org/docs/manual/mc-manual.html).
 
 Yo no quiero venderte Valgrind ni nada por el estilo, pero la verdad es que es
 una herramienta muy poderosa que cualquier programador en C/C++ debería conocer.
@@ -849,7 +831,7 @@ que se menciona esta herramienta.
 
 En el repositorio del TP, también les creamos una regla `helgrind` para que
 puedan correrlo de la misma forma que `memcheck`, pero con el flag
-`--tool=helgrind` + todos los que se agreguen a la variable `HELGRIND_FLAGS`.
+`--tool=helgrind` más todos los que se agreguen a la variable `HELGRIND_FLAGS`.
 
 :::
 
