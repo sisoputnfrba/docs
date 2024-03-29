@@ -150,34 +150,9 @@ Para ayudar un poco, les dejamos
 
 ### Cómo practicar el despliegue en local
 
-Desde sus computadoras, pueden armar una red local de VMs siguiendo estos pasos:
-
-1. Ir a la configuración de la Ubuntu Server y en el apartado de "Network"
-elegir el "Bridged Adapter" (en español, "Adaptador Puente"):
-
-![bridged adapter](/img/guias/herramientas/deploy/deploy-04.png){data-zoomable}
-
-2. Hacer click derecho en la VM > "Clone..." y seguir los pasos para clonar la
-VM. Recomendamos usar la opción "Linked clone" ya que el proceso de clonado es
-más rápido y ocupa menos espacio:
-
-![linked clone](/img/guias/herramientas/deploy/deploy-05.png){data-zoomable}
-
-Una vez hecho esto, pueden usar el comando
-[`ifconfig`](/guias/consola/bash.html#ifconfig) para consultar la IP de ambas VMs y
-configurar los módulos.
-
-::: danger AVISO
-
-Si por algún motivo encuentran que su router les asigna la misma IP a todas las
-VMs clonadas, ejecuten el siguiente comando:
-```sh
-curl -fsSL https://faq.utnso.com.ar/fluship.sh | bash
-```
-Lo que hará será descargar y ejecutar un script que instala el fix a este
-problema. Luego de reiniciar, cada VM debería tener su propia dirección IP.
-
-:::
+Para practicar el despliegue en local, pueden configurar la red y clonar la VM
+Server de la misma forma que lo hicieron en la última etapa del
+[TP0](/primeros-pasos/tp0#etapa-4-desplegar-en-la-ubuntu-server).
 
 ## Paso 3: Día E (de entrega) - Obligatorio
 

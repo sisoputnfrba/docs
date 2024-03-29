@@ -370,7 +370,7 @@ en la guía anterior y la etapa 1, pero sin interfaz gráfica. Es decir, vamos a
 
 [so-commons-library]: https://faq.utnso.com.ar/commons
 
-::: warning
+::: warning IMPORTANTE
 
 En este caso, como el repositorio es privado, vamos a necesitar configurar las
 credenciales de git para poder clonarlo. Recomendamos generar temporalmente un
@@ -394,13 +394,19 @@ espacio:
 
 Una vez hecho esto, vamos a consultar la IP de la VM
 del `server` y agregarla al archivo de configuración del `client` para que se
-puedan comunicar.
+puedan comunicar entre sí con el comando
+[`ifconfig`](/guias/consola/bash.html#ifconfig).
 
-::: tip
+::: danger AVISO
 
-Las VMs están configuradas para ejecutar el comando
-[`ifconfig`](/guias/consola/bash.html#ifconfig) para que puedan ver la IP de la
-VM ni bien inicien sesión.
+Si por algún motivo encuentran que su router les asigna la misma IP a todas las
+VMs clonadas, vayan probando entre las distintas opciones de adaptador de red
+(siempre en modo "Bridged Adapter") hasta encontrar una que les funcione.
+
+![network adapter](/img/guias/herramientas/deploy/virtualbox-switch-adapter.png){data-zoomable}
+
+En Windows ha funcionado usar `Microsoft Wi-Fi Direct Virtual Adapter`, y
+en Linux una que tiene el formato `wlpXsY`, donde `X` y `Y` son números.
 
 :::
 

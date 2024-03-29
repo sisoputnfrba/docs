@@ -55,7 +55,7 @@ Empezaremos creando el proyecto de Eclipse a través de la opción
 
 ![project-01](/img/guias/herramientas/eclipse/file-new-makefile-project.png){data-zoomable}
 
-::: warning
+::: warning IMPORTANTE
 
 Si no aparece ahí, también la pueden encontrar en
 `File > New > Other...` y buscando "makefile":
