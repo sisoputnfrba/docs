@@ -140,6 +140,9 @@ if (config == NULL) {
 }
 ```
 
+Para terminar el programa desde cualquier lugar, pueden utilizar la función
+[`exit()`](https://man7.org/linux/man-pages/man3/exit.3.html).
+
 :::
 
 ### Leer de consola
