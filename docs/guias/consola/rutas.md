@@ -140,9 +140,3 @@ resultado es el mismo.
 
 :::
 
-## Del otro lado del espejo
-
-Si quisieras seguir jugando, podrías ponerte a probar qué pasa si cambiás el
-comando de esa línea. ¿Podés ejecutar, por ejemplo, `ls`? ¿Podés ejecutar `cd`?
-¿Podés pasarle los parámetros ahí? ¿Qué pasa cuando cambiás el working
-directory?
