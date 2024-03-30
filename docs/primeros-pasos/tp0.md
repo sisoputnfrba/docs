@@ -403,10 +403,14 @@ Si por algún motivo encuentran que su router les asigna la misma IP a todas las
 VMs clonadas, ejecuten las siguientes 3 líneas:
 
 ```sh
-sudo rm -rf /var/lib/dbus/machine-id /etc/machine-id
+sudo rm -f /etc/machine-id
 sudo dbus-uuidgen --ensure=/etc/machine-id
-sudo systemctl restart systemd-networkd
+sudo reboot
 ```
+
+Luego de reiniciar, ejecuten `ifconfig` para
+corroborar que efectivamente las IPs hayan
+cambiado.
 
 Pueden ver una explicación más detallada en el siguiente
 [post](https://unix.stackexchange.com/a/419322).
