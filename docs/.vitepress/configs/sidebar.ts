@@ -156,10 +156,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         text: 'Importar el TP en Eclipse',
         link: '/guias/herramientas/eclipse'
       },
-      // {
-      //   text: 'Unit Testing con CSpec',
-      //   link: '/guias/herramientas/cspec'
-      // },
+      {
+        text: 'Unit Testing con CSpec',
+        link: '/guias/herramientas/cspec'
+      },
     ],
   },
 ]

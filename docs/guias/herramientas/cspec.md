@@ -26,7 +26,7 @@ revisando logs de 300 líneas, o llenar el debugger de breakpoints. Si tenés un
 buen conjunto de pruebas, solo tenés que volverlas a correr y ver que pasan
 luego de hacer los cambios.
 
-### OK, compro, ¿cómo lo instalo?
+### OK, compro, ¿cómo lo consigo?
 
 Primero tenés que instalarlo. **Esto tenés que hacerlo una sola vez por
 máquina**. Si ya lo tenés instalado, no hace falta :) Ejecutá en una terminal
@@ -55,7 +55,9 @@ Antes que nada, vamos a definir algunos conceptos:
 
 #### Ejemplo en CSpec
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [prueba.c]
 #include <cspecs/cspec.h>
 #include <string.h>
 
@@ -72,6 +74,8 @@ context (test_de_strings) {
     } end
 }
 ```
+
+:::
 
 Podemos ver que en el **contexto** `test_de_strings`, hay una suite para testear
 strlen que tiene dos test cases. Obviamente uno nunca va a querer testear
@@ -111,17 +115,85 @@ O sea, que todas tus pruebas pasaron.
 Y claro, el segundo test falló, esperaba que devuelva **123** pero devolvió
 **0**.
 
-## Configurando el proyecto de Eclipse
+## Configurando el template de la cátedra
 
-Para dejar de probar con **gcc** y usar nuestros tests en un proyecto de
-Eclipse, tenemos que _linkear_ con la biblioteca **cspecs** => Hagamos eso:
+Para dejar de probar con **gcc** y usar nuestros tests en un proyecto en C,
+vamos a crear una carpeta `tests` en la raíz de nuestro proyecto y luego
+modificar el archivo `settings.mk` para que al compilar se ignore el archivo que
+contiene la función `main`, que por defecto es `src/main.c`:
 
-Botón derecho en el proyecto -> `Properties` -> `C/C++ Build` -> `Settings` ->
-`GCC C Linker` -> `Libraries`
+```make
+# Excluded source files (eg: main() function)
+TEST_EXCLUDE= // [!code --]
+TEST_EXCLUDE=src/main.c // [!code ++]
+```
 
-...y agregamos la biblioteca cspecs en `Libraries`.
+::: tip
 
-![img04](/img/guias/programacion/cspec/img04.jpg){data-zoomable}
+En caso de que tu proyecto sea una biblioteca de código compartido, no vas a
+necesitar excluir ningún archivo en el `settings.mk` ya que no debería haber
+ningún `main` en tu proyecto.
+
+:::
+
+El `makefile` de la cátedra ya incluye todo lo necesario para vincular la
+biblioteca CSpec y una regla para compilar y ejecutar los tests ejecutando
+desde la consola:
+
+```sh
+make test
+```
+
+### Desde Visual Studio Code
+
+Además, si querés poder ejecutar los tests con el
+[debugger](/guias/herramientas/debugger) de Visual Studio Code, vamos a tener
+que editar el archivo `launch.json` para agregar la siguiente configuración en
+la lista de `configurations`[^1]:
+
+::: code-group
+
+```json [launch.json]
+{
+  "version": "0.2.0",
+  "configurations": [
+    { // [!code ++]
+      "name": "test", // [!code ++]
+      "type": "cppdbg", // [!code ++]
+      "request": "launch", // [!code ++]
+      "program": "${workspaceFolder}/bin/${workspaceFolderBasename}_tests", // [!code ++]
+      "args": [], // [!code ++]
+      "stopAtEntry": false, // [!code ++]
+      "cwd": "${workspaceFolder}", // [!code ++]
+      "environment": [], // [!code ++]
+      "externalConsole": false, // [!code ++]
+      "MIMode": "gdb", // [!code ++]
+      "setupCommands": [ // [!code ++]
+        { // [!code ++]
+          "description": "Enable pretty-printing for gdb", // [!code ++]
+          "text": "-enable-pretty-printing", // [!code ++]
+          "ignoreFailures": true // [!code ++]
+        } // [!code ++]
+      ], // [!code ++]
+      "preLaunchTask": "build" // [!code ++]
+    }, // [!code ++]
+    // ... otras configuraciones
+  ]
+}
+```
+
+:::
+
+::: tip
+
+En caso de que tu proyecto sea una biblioteca de código compartido, vas a tener
+que crear un archivo `launch.json`, ya que el template de la cátedra no lo
+incluye por defecto al no tratarse de un proyecto ejecutable.
+
+:::
+
+
+
 
 ## Ejemplo 1: Orden, inicialización y limpieza
 
@@ -387,3 +459,9 @@ Creeme, sentarte a hacer los tests en un par de horas para después correrlos
 cada vez que haya cambios importantes en tu código va a minimizar las
 "sorpresas" que te podés llevar el día de la entrega y vas a solucionar los
 errores mucho más rápido que haciendo debugging a mano.
+
+<br><br>
+
+[^1]:
+    En [esta sección](/guias/herramientas/code#configuracion-del-debugger)
+    explicamos en detalle cómo configuramos el debugger en Visual Studio Code.
