@@ -400,13 +400,20 @@ puedan comunicar entre sí con el comando
 ::: danger AVISO
 
 Si por algún motivo encuentran que su router les asigna la misma IP a todas las
-VMs clonadas, vayan probando entre las distintas opciones de adaptador de red
-(siempre en modo "Bridged Adapter") hasta encontrar una que les funcione.
+VMs clonadas, ejecuten las siguientes 3 líneas:
 
-![network adapter](/img/guias/herramientas/deploy/virtualbox-switch-adapter.png){data-zoomable}
+```sh
+sudo rm -f /etc/machine-id
+sudo dbus-uuidgen --ensure=/etc/machine-id
+sudo reboot
+```
 
-En Windows ha funcionado usar `Microsoft Wi-Fi Direct Virtual Adapter`, y
-en Linux una que tiene el formato `wlpXsY`, donde `X` y `Y` son números.
+Luego de reiniciar, ejecuten `ifconfig` para
+corroborar que efectivamente las IPs hayan
+cambiado.
+
+Pueden ver una explicación más detallada en el siguiente
+[post](https://unix.stackexchange.com/a/419322).
 
 :::
 
