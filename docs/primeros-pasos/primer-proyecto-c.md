@@ -97,10 +97,26 @@ Veremos que se nos abre el editor con el proyecto que acabamos de descargar:
 
 El template ya cuenta con una tarea de compilación que podemos ejecutar desde
 el editor moviéndonos a la pestaña _Terminal_ y haciendo click en _Run Build
-Task_, o utilizando el shortcut `Ctrl+Shift+B`. Vamos a ver que se nos genera
-una carpeta `bin` con el binario del proyecto compilado:
+Task_[^2], o utilizando el shortcut `Ctrl+Shift+B`. Vamos a ver que se nos
+genera una carpeta `bin` con el binario del proyecto compilado:
 
 ![vscode-run-build-task](/img/primeros-pasos/primer-proyecto-c/vscode-run-build-task.gif){data-zoomable}
+
+::: tip
+
+En la pestaña _Terminal_ vamos a ver que se ejecuta el comando `make all` para
+compilar el proyecto. Si quisiéramos compilarlo manualmente, podríamos hacerlo
+abriendo una consola y ejecutando el mismo comando:
+
+```bash
+make all
+```
+
+Probá de modificar el archivo `src/main.c` y volvé a compilar el proyecto
+ejecutando este comando desde una consola. Vas a ver cómo efectivamente el
+output del compilador es el mismo.
+
+:::
 
 ### Errores de compilación
 
@@ -177,18 +193,18 @@ primer proyecto en C funcionando.
 
 ::: tip
 
-Al hacer click en el botón de _Run_, ocurren dos cosas:
+Al hacer click en el botón de _Run_[^3], ocurren dos cosas:
 
 1. Se compila el proyecto ejecutando la build task que vimos en el paso
    anterior.
 2. Se ejecuta el binario generado en la carpeta `bin` con el nombre del
    proyecto.
 
-Los invitamos a abrir una consola y ejecutar el binario manualmente para
-corroborar que se ejecuta de la misma forma en que lo hace el editor:
+Los invitamos a abrir una consola en la carpeta ejemplo y ejecutar el binario
+manualmente para corroborar que se ejecuta de la misma forma[^4] en que lo hace
+el editor:
 
 ```bash
-make
 ./bin/ejemplo
 ```
 
@@ -200,11 +216,28 @@ make
 - En la siguiente sección vamos a ver cómo utilizar [Git](/primeros-pasos/git)
   para el TP de Operativos.
 - Por otro lado, para ir entrando más de lleno en el Lenguaje C, podés empezar
-  con nuestra sección de
-  [guías de programación en C](/guias/#programación-en%20c).
+  con las guías de [punteros y memoria dinámica](/guias/programacion/punteros) y
+  de [buenas prácticas de C](/guias/programacion/buenas-practicas).
+- Por último, para aprender a aprovechar al máximo el debugger de Visual Studio
+  Code, te recomendamos que leas nuestra guía de
+  [debugging](/guias/herramientas/debugger).
 
 <br><br>
 
 [^1]:
     ¿Por qué en modo debug? Es una herramienta que nos ayudará
     [más adelante](/guias/herramientas/debugger) (?)
+
+[^2]:
+    En [esta sección](/guias/herramientas/code#configuracion-de-compilacion)
+    explicamos más en detalle cómo está configurada la tarea de compilación en
+    Visual Studio Code.
+
+[^3]:
+    En [esta otra sección](/guias/herramientas/code#configuracion-del-debugger)
+    explicamos cómo configuramos el debugger en Visual Studio Code.
+
+[^4]:
+    En realidad, no es exactamente de la misma forma, ya que el editor
+    utiliza el debugger de `gdb` para ejecutar el binario, pero para los fines
+    prácticos de este tutorial, podemos considerar que es lo mismo.
