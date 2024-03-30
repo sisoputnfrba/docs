@@ -1,4 +1,4 @@
-![image](https://github.com/sisoputnfrba/docs/assets/39303639/282b3185-e4f9-40a1-a25e-30979d9dd868)# ¿Dónde me anoto?
+# ¿Dónde me anoto?
 
 ## Matricularme en el Campus Virtual
 
