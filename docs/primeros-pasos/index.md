@@ -1,4 +1,4 @@
-# ¿Dónde me anoto?
+![image](https://github.com/sisoputnfrba/docs/assets/39303639/282b3185-e4f9-40a1-a25e-30979d9dd868)# ¿Dónde me anoto?
 
 ## Matricularme en el Campus Virtual
 
@@ -38,8 +38,9 @@ para poder acceder al repositorio del grupo más adelante.
 Recomendamos que cuentes con al menos un mail verificado al que tengas acceso
 (podés consultarlos [acá](https://github.com/settings/emails)).
 
-En caso de que ya tengas una cuenta pero ésta sea del trabajo, te recomendamos
-crearte otra cuenta personal.
+En caso de que ya tengas una cuenta pero ésta sea del **trabajo**, te
+recomendamos crearte otra cuenta con tu mail **personal** o el
+**institucional**.
 
 :::
 
