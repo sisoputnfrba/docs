@@ -14,9 +14,10 @@ que harán el TP cuatrimestral), y en unas semanas tendremos una entrega
 **obligatoria**.
 
 No es necesario tener el ejercicio completo y la entrega no lleva nota, pero
-presentarse con lo que tengan en condición necesaria para la continuidad de la
-materia. Más adelante publicaremos junto al enunciado del TP la fecha de entrega
-de este ejercicio.
+completar el mismo es **altamente recomendable**, ya que el entorno de desarrollo
+es muy similar al que recibirán a la hora de generarse el repositorio del grupo
+para el TP, cuyo enunciado publicaremos más adelante en el
+[blog](https://faq.utnso.com.ar/blog).
 
 ## Objetivo
 
