@@ -119,9 +119,23 @@ Y claro, el segundo test falló, esperaba que devuelva **123** pero devolvió
 
 Para dejar de probar con `gcc` y usar nuestros tests en un proyecto en C,
 vamos a crear una carpeta `tests` en la raíz de nuestro
-[proyecto inicial](/primeros-pasos/primer-proyecto-c) y luego modificar el
-archivo `settings.mk` para que al compilar se ignore el archivo que contiene la
-función `main`, que por defecto es `src/main.c`:
+[proyecto inicial](/primeros-pasos/primer-proyecto-c) y crear un archivo
+`ejemplo_test.c` para luego agregarle el código que vimos antes.
+
+Nos debería quedar estructurado de la siguiente forma:
+
+```
+ejemplo
+├── makefile
+├── settings.mk
+├── src
+│   └── main.c
+└── tests
+    └── ejemplo_test.c
+```
+
+Y luego modificar el archivo `settings.mk` para que al compilar se ignore el
+archivo que contiene la función `main`, que por defecto es `src/main.c`:
 
 ::: code-group
 
@@ -236,7 +250,7 @@ otra de **limpieza**, y un test que **rompe**:
 
 ::: code-group
 
-```c:line-numbers [tests/ejemplo1_spec.c]
+```c:line-numbers [tests/ejemplo_test.c]
 #include <cspecs/cspec.h>
 #include <stdio.h>
 #include <string.h>
@@ -308,7 +322,7 @@ header a nuestro archivo principal (**main.c** del proyecto, supongamos):
 
 ::: code-group
 
-```c:line-numbers [tests/lector_spec.c]
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h" // [!code ++]
 #include <stdio.h>
 #include <stdlib.h>
@@ -327,7 +341,7 @@ parámetro no existe. Armamos un test case para eso, lo agregamos a un
 
 ::: code-group
 
-```c:line-numbers [tests/lector_spec.c]
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -349,7 +363,7 @@ devuelva la cantidad correcta de ocurrencias:
 
 ::: code-group
 
-```c:line-numbers [tests/lector_spec.c]
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -415,7 +429,7 @@ no harían lo que esperamos. Hagamos un **before** que cree el archivo y un
 
 ::: code-group
 
-```c:line-numbers [tests/lector_spec.c]
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
