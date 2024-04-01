@@ -1,6 +1,6 @@
 # Trabajo Práctico 0
 
-> Versión 2.4.1
+> Versión 2.4.2
 
 El TP0 es una práctica inicial para empezar a familiarizarse con algunas de las
 herramientas necesarias para el trabajo práctico cuatrimestral como es la
@@ -43,16 +43,26 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 
 ## Etapa 1: Setup inicial
 
-Primero, abramos una consola y, de la misma forma que bajamos el proyecto de las
-commons, bajemos el del TP0:
+Primero, vamos a _forkear_ el repo del TP0 y clonarlo en nuestra VM. Para ello,
+en la página de GitHub del repo hay un botón "Fork":
 
-```bash
-git clone https://github.com/sisoputnfrba/tp0
-cd tp0
-```
+![fork-repo](/img/primeros-pasos/tp0/github-fork-repo.png){data-zoomable}
 
-Luego, abramos el proyecto desde Visual Studio Code utilizando el workspace ya
-configurado en el repo:
+Que nos llevará a una página para elegir el nombre de nuestro repo forkeado, al
+que también llamaremos `tp0`.
+
+::: warning IMPORTANTE
+
+Cuando les toque hacer el TP cuatrimestral, **no deberán forkear el
+repositorio**, ya que todo el grupo estará obligado a trabajar en el repositorio
+provisto por la cátedra como está establecido en las
+[Normas del Trabajo Práctico](/primeros-pasos/normas-tp).
+
+:::
+
+Una vez que tengamos nuestro repo forkeado, vamos a clonarlo en nuestra VM con
+`git clone`, para luego abrir el proyecto desde Visual Studio Code utilizando el
+archivo `tp0.code-workspace` que se encuentra en el repo:
 
 ```bash
 code tp0.code-workspace
@@ -60,7 +70,7 @@ code tp0.code-workspace
 
 ::: tip
 
-También podemos abrir el proyecto abriendo Visual Studio Code y seleccionando
+También podemos abrir el proyecto abriendo Visual Studio Code haciendo click en
 `File > Open Workspace from File...` y seleccionando el archivo
 `tp0.code-workspace` que se encuentra en la carpeta del TP0.
 
@@ -375,9 +385,9 @@ Nos va a pedir la contraseña de la VM, que por defecto ya sabemos cuál es :win
 Para desplegar el TP0 en la VM, vamos a repetir los mismos pasos que hicimos
 en la guía anterior y la etapa 1, pero sin interfaz gráfica. Es decir, vamos a:
 
-1. Instalar la [so-commons-library]
-2. Clonar el repo del TP0 (que en este caso va a ser un repo **privado suyo**).
-3. Movernos a la carpeta `client` y `server` y compilar el código fuente
+1. Instalar la [so-commons-library].
+2. Clonar su propio fork del TP0.
+3. Moverse a la carpeta `client` y `server` y compilar el código fuente
    ejecutando el comando `make`.
 
 [so-commons-library]: https://faq.utnso.com.ar/commons
