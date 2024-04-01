@@ -111,7 +111,7 @@ vamos a loguear usando nuestro logger.
 
 Para ello vamos a usar
 [las config de las commons](https://faq.utnso.com.ar/commons/blob/master/src/commons/config.h).
-Siguiendo su header, creemos una config que levante el archivo `"tp0.config"` y
+Siguiendo su header, creemos una config que levante el archivo `"cliente.config"` y
 obtengamos el valor de la key `CLAVE` en formato string.
 
 ::: tip
