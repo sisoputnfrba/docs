@@ -61,8 +61,8 @@ provisto por la cátedra como está establecido en las
 :::
 
 Una vez que tengamos nuestro repo forkeado, vamos a clonarlo en nuestra VM con
-`git clone` y, una vez clonado, abramos el proyecto desde Visual Studio Code
-utilizando el archivo `tp0.code-workspace` que se encuentra en el repo:
+`git clone`, para luego abrir el proyecto desde Visual Studio Code utilizando el
+archivo `tp0.code-workspace` que se encuentra en el repo:
 
 ```bash
 code tp0.code-workspace
