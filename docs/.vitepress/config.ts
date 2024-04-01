@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress';
 import { navbar } from './configs/navbar';
 import { sidebar } from './configs/sidebar';
 import { socialLinks } from './configs/socialLinks';
+import { repository } from '../../package.json';
 
 export default defineConfig({
   lang: 'es-AR',
@@ -24,7 +25,7 @@ export default defineConfig({
       copyright: 'Universidad Tecnológica Nacional | Facultad Regional Buenos Aires',
     },
     editLink: {
-      pattern: 'https://github.com/sisoputnfrba/docs/edit/main/docs/:path',
+      pattern: `${repository}/edit/main/docs/:path`,
       text: 'Editar esta página en GitHub',
     },
     lastUpdatedText: 'Última actualización',
@@ -38,8 +39,7 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-        disableDetailedView: false,
-        disableQueryPersistence: false,
+        detailedView: true,
         translations: {
           button: {
             buttonText: 'Buscar',

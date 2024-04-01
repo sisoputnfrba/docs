@@ -65,7 +65,7 @@ Esto incluso lo podemos mejorar controlando que la cantidad de parámetros sea l
 indicada manejando `argc`:
 
 ```c{2-5}
-int main(int argc, char** argv) {
+int main(int argc, char** argv) {  // [!code focus]
     if (argc < 2) { // [!code focus]
         fprintf(stderr, "Uso: %s <ruta_archivo_configuracion>\n", argv[0]); // [!code focus]
         return EXIT_FAILURE; // [!code focus]
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
     t_config* config = crear_config(argv[1]); // [!code focus]
 
     //resto del TP0 de después
-}
+} // [!code focus]
 ```
 
 ¡Eso es todo! Bueno, casi todo... ¿Cómo podemos lograr esto desde el editor?
@@ -134,6 +134,27 @@ array separados por comas:
 
 :::
 
+
+## Pasar argumentos desde Eclipse
+
+Vamos a entrar a las `Run Configurations...`:
+
+![eclipse-01](/img/guias/programacion/main/eclipse-01.png)
+
+Y en la configuración del proyecto nos moveremos a la pestaña `Arguments`, en
+donde vamos a poner nuestros argumentos separados por espacios:
+
+![eclipse-02](/img/guias/programacion/main/eclipse-02.png)
+
+En caso de usar una [ruta relativa](/guias/consola/rutas), es muy importante
+partir desde el `Working directory` que está configurado ahí más abajo.
+
+Por ejemplo, la variable `${workspace_loc:NOMBRE_DEL_PROYECTO}` apunta hacia la
+carpeta en donde se encuentra el proyecto Eclipse.
+
+
+<br><br>
+
 [^1]: [Guía de Rutas relativas y absolutas](/guias/consola/rutas)
 
-[^2]: [Documentación de las variables de Visual Studio Code (en inglés)](https://code.visualstudio.com/docs/editor/variables-reference)
+[^2]: [Guía de configuraciones de Visual Studio Code](/guias/herramientas/code)

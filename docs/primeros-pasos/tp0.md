@@ -71,6 +71,17 @@ Una vez abierto el workspace, vamos a ver que tenemos dos módulos: `client` y
 
 ![vscode-file-explorer](/img/primeros-pasos/tp0/vscode-file-explorer.png){data-zoomable}
 
+
+::: tip
+
+Si venís de algún cuatrimeste anterior y preferís usar Eclipse, podés seguir la
+[guía de Eclipse](/guias/herramientas/eclipse).
+
+Tené en cuenta que esta etapa va a resultar bastante más laboriosa que en Visual
+Studio Code, ya que la configuración debe hacerse manualmente desde cero.
+
+:::
+
 ## Etapa 2: Comandos básicos
 
 El objetivo de esta etapa es aprender un par de funcionalidades que utilizaremos
@@ -128,8 +139,8 @@ corramos el programa y evaluemos los resultados.
 
 ::: warning IMPORTANTE
 
-Para todas las funciones de biblioteca que uses, recuerden chequear los valores
-de retorno de las mismas para poder manejar los casos de error.
+Para todas las funciones de biblioteca que uses, recordá chequear los **valores
+de retorno** de las mismas para poder manejar los casos de error.
 
 En este caso, si llegamos a tener algún error al crear el config vamos a querer
 terminar con la ejecución:
@@ -168,7 +179,7 @@ include.
 
 Recuerden que `readline()` no te libera la memoria que devuelve, por lo que es
 necesario liberarla usando
-[`free(1)`](https://man7.org/linux/man-pages/man1/free.1.html).
+[`free()`](https://man7.org/linux/man-pages/man1/free.1.html).
 
 :::
 
@@ -393,15 +404,10 @@ espacio:
 
 ![vm-clone](/img/primeros-pasos/tp0/vm-clone.png){data-zoomable}
 
-Una vez hecho esto, vamos a consultar la IP de la VM
-del `server` y agregarla al archivo de configuración del `client` para que se
-puedan comunicar entre sí con el comando
-[`ifconfig`](/guias/consola/bash.html#ifconfig).
+### Resolver conflictos de red
 
-::: danger AVISO
-
-Si por algún motivo encuentran que su router les asigna la misma IP a todas las
-VMs clonadas, ejecuten las siguientes 3 líneas:
+Por último, vamos a iniciar sesión en una de las VMs y ejecutar las siguientes 3
+líneas:
 
 ```sh
 sudo rm -f /etc/machine-id
@@ -409,12 +415,29 @@ sudo dbus-uuidgen --ensure=/etc/machine-id
 sudo reboot
 ```
 
-Luego de reiniciar, ejecuten `ifconfig` para
-corroborar que efectivamente las IPs hayan
-cambiado.
+Esto lo que hace es generar un nuevo archivo `/etc/machine-id`, en el cual se
+guarda un identificador que permite al router asignarle la misma IP a una
+máquina cada vez que ésta se conecta a la red.
 
-Pueden ver una explicación más detallada en el siguiente
-[post](https://unix.stackexchange.com/a/419322).
+Al nosotros haber clonado la misma VM, ambas tienen el mismo `machine-id`, por
+lo que el router podría terminar asignándoles la misma IP a ambas VMs, lo cual
+generaría conflictos a la hora de conectarlas en red.
+
+Luego de reiniciar, ejecuten
+[`ifconfig`](/guias/consola/bash#ifconfig) para corroborar que efectivamente las
+IPs de todas las VMs son distintas.
+
+### Configurar los módulos
+
+Ahora sí, vamos a agregar la IP de la VM del `server` al archivo de
+configuración del `client` para que se puedan comunicar entre sí. Para esto
+pueden utilizar el editor de texto `nano`.
+
+::: tip
+
+En la [guía de Bash](/guias/consola/bash) tenemos una sección dedicada a
+[`nano`](/guias/consola/bash#nano) con un mini ejemplo, por si necesitan ayuda
+sobre cómo usarlo.
 
 :::
 
