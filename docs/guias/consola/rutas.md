@@ -122,6 +122,13 @@ carpeta `.vscode` de nuestro proyecto, vamos a encontrar un archivo llamado
 "hacerle `cd`". En este caso, siempre va a ser la carpeta en donde se encuentra
 nuestro proyecto.
 
+::: tip
+
+Para más información sobre las variables de Visual Studio Code, pueden visitar
+nuestra [guía de configuración de Visual Studio Code](/guias/herramientas/code).
+
+:::
+
 Entonces, si nosotros queremos ejecutar nuestro programa desde la consola de la
 misma forma que lo hace Visual Studio Code, vamos a tener que hacerlo de la
 siguiente manera:
@@ -131,12 +138,42 @@ cd mi-proyecto
 ./bin/mi-proyecto
 ```
 
+## Eclipse
+
+Trabajando con Eclipse, si vamos a las Run
+Configurations (`Run` > `Run configurations...`) y seleccionamos la de algún
+proyecto que ya hayamos ejecutado, vamos a encontrar que la pestaña de
+"Arguments" es algo así:
+
+![eclipse-run-config-arguments](/img/guias/consola/eclipse-run-config-arguments.png)
+
+¡Ahí está! Abajo de todo dice que el working directory de nuestro proceso va a
+ser `${workspace_loc:NUESTRO_PROYECTO}`, que es la forma horrenda que tiene
+eclipse para decir "el directorio raíz del proyecto". De hecho, si miramos la
+pestaña "Main" de las `Run Configurations`, podemos observar algo raro arriba de
+todo:
+
+![eclipse-run-config-main](/img/guias/consola/eclipse-run-config-main.png)
+
+Nuestra aplicación no es coercion (el nombre del proyecto al que le saqué la
+captura), si no Debug/coercion. Ese es el comando que eclipse "va a ejecutar en
+la consola". Digamos, eclipse va a hacer una especie de `cd` al directorio que
+marca como "Working directory", y desde ahí va a ejecutar lo que diga en el
+campo `C/C++ Application`:
+
+```bash
+cd coercion
+./Debug/coercion
+```
+
+Entonces, como nosotros desde la consola solemos entrar a Debug en lugar de
+ejecutar desde el directorio raíz del proyecto, ahí es donde aparecen las
+diferencias con las rutas relativas.
+
 ::: tip
 
-En realidad, lo que hace Visual Studio Code es ejecutar el programa utilizando
-`gdb` para poder hacer debugging; y, como pueden ver en el campo `program`,
-utiliza una ruta absoluta para llegar al binario. Pero, a fines prácticos, el
-resultado es el mismo.
+Si importaste el proyecto siguiendo la
+[guía de Eclipse](/guias/herramientas/eclipse), probablemente la carpeta se
+llame `bin` en lugar de `Debug`.
 
 :::
-

@@ -43,6 +43,14 @@ El mismo cuenta con la siguiente configuración:
    permite que el editor nos muestre solamente los errores que arroja el
    compilador y no nos distraiga con otros que no lo son.
 
+::: warning IMPORTANTE
+
+En el caso del TP0 y el TP (o siempre que tengamos abiertas varias carpetas en
+un mismo workspace), esta configuración se encuentra en el archivo con formato
+`.code-workspace` ubicado en la raíz del repositorio bajo la clave `settings`.
+
+:::
+
 ## Configuración de compilación
 
 El segundo archivo del que vamos a hablar es el `tasks.json`. En él vamos a

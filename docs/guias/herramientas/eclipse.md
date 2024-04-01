@@ -30,8 +30,8 @@ obj/
 !.vscode/tasks.json
 ```
 
-La desventaja de esto es que cada alumno deberá configurar su proyecto de forma
-manual siguiendo los pasos que se detallan a continuación, pero una vez
+La desventaja de esto es que **cada alumno** deberá configurar su proyecto de
+forma manual siguiendo los pasos que se detallan a continuación, pero una vez
 configurado no deberían volver a tener que hacerlo.
 
 
