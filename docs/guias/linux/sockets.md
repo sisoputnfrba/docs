@@ -428,7 +428,7 @@ poder procesarlos, serializar no es una recomendación, es una necesidad.
 
 Por último, e igual de importante que todo lo demás, los sockets una vez que no
 los usemos más deben ser cerrados con `close(fd)`. Esto normalmente se realiza
-con los `fd_conexion` ya que, como dijimos antes, los `fd_servidor` deben dar
+con los `fd_conexion` ya que, como dijimos antes, los `fd_escucha` deben dar
 disponibilidad constante para todas las solicitudes de los clientes que tenga en
 el tiempo en el que el proceso esté ejecutando.
 
@@ -481,7 +481,9 @@ muchos clientes que se nos van a conectar, para así poder volver lo más rápid
 posible al `accept()` con el socket de escucha. Lo que se me ocurre que podemos
 hacer es algo por este estilo:
 
-```c
+::: code-group
+
+```c [Servidor]
 while (1) {
      pthread_t thread;
      int *fd_conexion_ptr = malloc(sizeof(int));
@@ -493,6 +495,8 @@ while (1) {
      pthread_detach(thread);
 }
 ```
+
+:::
 
 Entonces, de esta manera estamos creando un hilo por cada conexión nueva
 entrante, y ese hilo tendrá comunicación únicamente con el cliente cuyo socket
