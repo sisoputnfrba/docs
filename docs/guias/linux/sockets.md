@@ -234,7 +234,7 @@ errores. Generalmente, al menos que les pidamos alguna lógica de reintentos, lo
 más común va a ser imprimir por pantalla el error y finalizar el programa con
 [`exit()`](https://man7.org/linux/man-pages/man3/exit.3.html).
 
-Estos links también les pueden ser de gran utilidad:
+Estos links también les pueden ser de gran utilidad para imprimir errores:
 
 - [errno(3) — Linux manual page](https://man7.org/linux/man-pages/man3/errno.3.html)
 - [strerror(3) — Linux manual page](https://man7.org/linux/man-pages/man3/strerror.3.html)
