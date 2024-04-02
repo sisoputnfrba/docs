@@ -145,6 +145,26 @@ máquina, podemos hacerlo de la siguiente manera:
 
 ::: code-group
 
+```c [Cliente]
+int err;
+
+struct addrinfo hints, *server_info;
+
+memset(&hints, 0, sizeof(hints));
+hints.ai_family = AF_INET;
+hints.ai_socktype = SOCK_STREAM;
+
+err = getaddrinfo("127.0.0.1", "4444", &hints, &server_info);
+
+int socket_conexion = socket(server_info->ai_family,
+                             server_info->ai_socktype,
+                             server_info->ai_protocol);
+
+// ...
+
+freeaddrinfo(server_info);
+```
+
 ```c [Servidor]
 int err;
 
@@ -160,26 +180,6 @@ err = getaddrinfo(NULL, "4444", &hints, &server_info);
 int socket_escucha = socket(server_info->ai_family,
                             server_info->ai_socktype,
                             server_info->ai_protocol);
-
-// ...
-
-freeaddrinfo(server_info);
-```
-
-```c [Cliente]
-int err;
-
-struct addrinfo hints, *server_info;
-
-memset(&hints, 0, sizeof(hints));
-hints.ai_family = AF_INET;
-hints.ai_socktype = SOCK_STREAM;
-
-err = getaddrinfo("127.0.0.1", "4444", &hints, &server_info);
-
-int socket_conexion = socket(server_info->ai_family,
-                             server_info->ai_socktype,
-                             server_info->ai_protocol);
 
 // ...
 
@@ -302,12 +302,12 @@ devolverá un error.
 
 ::: code-group
 
-```c [Servidor]
-int socket_conexion = accept(socket_escucha, NULL, NULL);
-```
-
 ```c [Cliente]
 err = connect(socket_conexion, server_info->ai_addr, server_info->ai_addrlen);
+```
+
+```c [Servidor]
+int socket_conexion = accept(socket_escucha, NULL, NULL);
 ```
 
 :::
