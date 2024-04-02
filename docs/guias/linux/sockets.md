@@ -133,14 +133,14 @@ suceder exactamente al mismo instante.
 ![socket](/img/guias/sockets/socket.png){data-zoomable}
 
 La primera syscall que hay que utilizar para iniciar una conexión por socket
-entre dos procesos es socket. Esta lo que hace es generar lo que se llama un
-file descriptor, que son básicamente los IDs que Linux utiliza para representar
-cualquier cosa del sistema (archivos, bloques de memoria, teclados, impresoras,
-monitores, discos rígidos, etc). Estos file descriptors son representados en los
-programas C por un entero, lo cual no quiere decir que todo entero sea un file
-descriptor.
+entre dos procesos es `socket()`. Esta lo que hace es generar lo que se llama un
+file descriptor (`fd`), que son básicamente los IDs que Linux utiliza para
+representar cualquier cosa del sistema (archivos, bloques de memoria, teclados,
+impresoras, monitores, discos rígidos, etc). Estos file descriptors son
+representados en los programas C por un entero, lo cual no quiere decir que todo
+entero sea un file descriptor.
 
-Para poder crear un socket cliente con un servidor corriendo en la misma
+Para poder crear un socket cliente y un servidor corriendo en la misma
 máquina, podemos hacerlo de la siguiente manera:
 
 ::: code-group
@@ -156,9 +156,9 @@ hints.ai_socktype = SOCK_STREAM;
 
 err = getaddrinfo("127.0.0.1", "4444", &hints, &server_info);
 
-int socket_conexion = socket(server_info->ai_family,
-                             server_info->ai_socktype,
-                             server_info->ai_protocol);
+int fd_conexion = socket(server_info->ai_family,
+                         server_info->ai_socktype,
+                         server_info->ai_protocol);
 
 // ...
 
@@ -177,9 +177,9 @@ hints.ai_flags = AI_PASSIVE;
 
 err = getaddrinfo(NULL, "4444", &hints, &server_info);
 
-int socket_escucha = socket(server_info->ai_family,
-                            server_info->ai_socktype,
-                            server_info->ai_protocol);
+int fd_escucha = socket(server_info->ai_family,
+                        server_info->ai_socktype,
+                        server_info->ai_protocol);
 
 // ...
 
@@ -257,7 +257,7 @@ parte del proceso servidor son `bind()` y `listen()`.
 con pegamento industrial al puerto que le digamos.
 
 Por otro lado, `listen()` toma ese mismo socket y lo marca en el sistema como un
-socket cuya única responsabilidad es notificar cuando un nuevo cliente esté
+socket cuya **única responsabilidad** es notificar cuando un nuevo cliente esté
 intentando conectarse.
 
 Una vez realizados ambos pasos, nuestro servidor está listo para recibir a los
@@ -266,18 +266,16 @@ clientes.
 ::: code-group
 
 ```c [Servidor]
-err = bind(socket_escucha,
-           server_info->ai_addr,
-           server_info->ai_addrlen);
+err = bind(fd_escucha, server_info->ai_addr, server_info->ai_addrlen);
 
-err = listen(socket_escucha, SOMAXCONN);
+err = listen(fd_escucha, SOMAXCONN);
 ```
 
 :::
 
 `bind()` está recibiendo el puerto que debe ocupar a partir de los datos que le
 suministramos al getaddrinfo con anterioridad. En este caso estamos diciendo que
-obtenga información de red sobre una IP `NULL`, en el puerto 4444,
+obtenga información de red sobre una IP `NULL`, en el puerto `4444`,
 arbitrario elegido para este ejemplo. Le decimos que obtenga información sobre
 la computadora local porque es en la computadora local donde estamos tratando de
 levantar el servidor para que los clientes en otras computadoras se puedan
@@ -296,7 +294,7 @@ preparados para empezar a recibir las conexiones de nuestros clientes.
 
 Para hacer esto, el servidor utiliza la llamada al sistema `accept()`, la cual
 es bloqueante. Esto significa que el proceso servidor se quedará bloqueado en
-accept hasta que le llegue un cliente.
+`accept()` hasta que se le conecte un cliente.
 
 Cuando el cliente intente conectarse al servidor, lo hará mediante la llamada al
 sistema `connect()`. Si el servidor no está en `accept()`, `connect()` fallará y
@@ -305,13 +303,11 @@ devolverá un error.
 ::: code-group
 
 ```c [Cliente]
-err = connect(socket_conexion,
-              server_info->ai_addr,
-              server_info->ai_addrlen);
+err = connect(fd_conexion, server_info->ai_addr, server_info->ai_addrlen);
 ```
 
 ```c [Servidor]
-int socket_conexion = accept(socket_escucha, NULL, NULL);
+int fd_conexion = accept(fd_escucha, NULL, NULL);
 ```
 
 :::
@@ -322,11 +318,11 @@ Una vez que el cliente fue aceptado, `accept()` retorna un **nuevo** socket
 (file descriptor) que representa la conexión **BIDIRECCIONAL** entre ambos
 procesos.
 
-Esto quiere decir nuestro `socket_escucha` no va a ser el que participe de dicha
+Esto quiere decir nuestro `fd_escucha` no va a ser el que participe de dicha
 comunicación, solamente tiene la responsabilidad de quedarse escuchando nuevas
 conexiones y aceptarlas.
 
-¿Y cómo hacemos para enviar mensajes entre ambos `socket_conexion`... ?
+¿Y cómo hacemos para enviar mensajes entre ambos `fd_conexion`... ?
 
 ## [send()](https://man7.org/linux/man-pages/man2/send.2.html) y [recv()](https://man7.org/linux/man-pages/man2/recv.2.html)
 
@@ -355,8 +351,8 @@ size_t bytes;
 int32_t handshake = 1;
 int32_t result;
 
-bytes = send(socket_conexion, &handshake, sizeof(int32_t), 0);
-bytes = recv(socket_conexion, &result, sizeof(int32_t), MSG_WAITALL);
+bytes = send(fd_conexion, &handshake, sizeof(int32_t), 0);
+bytes = recv(fd_conexion, &result, sizeof(int32_t), MSG_WAITALL);
 
 if (result == 0) {
     // Handshake OK
@@ -373,11 +369,11 @@ int32_t handshake;
 int32_t resultOk = 0;
 int32_t resultError = -1;
 
-bytes = recv(socket_conexion, &handshake, sizeof(int32_t), MSG_WAITALL);
+bytes = recv(fd_conexion, &handshake, sizeof(int32_t), MSG_WAITALL);
 if (handshake == 1) {
-    bytes = send(socket_conexion, &resultOk, sizeof(int32_t), 0);
+    bytes = send(fd_conexion, &resultOk, sizeof(int32_t), 0);
 } else {
-    bytes = send(socket_conexion, &resultError, sizeof(int32_t), 0);
+    bytes = send(fd_conexion, &resultError, sizeof(int32_t), 0);
 }
 ```
 
@@ -401,7 +397,7 @@ adelante).
 
 Una vez pasado el proceso de handshake, ya el cliente se encuentra en vía libre
 para poder enviarle otros mensajes al servidor para que éste le conteste con los
-resultados de sus solicitudes. Tanto `send` como `recv` se encargan de mover
+resultados de sus solicitudes. Tanto `send()` como `recv()` se encargan de mover
 bytes de datos a través de la red, y eso es lo que representa el segundo
 parámetro de ambas funciones, y ese es el motivo por el que reciben una posición
 de memoria.
@@ -421,20 +417,20 @@ para el envío mediante sockets.
 :::
 
 Algunos quizá estén pensando "¿por qué no puedo simplemente realizar múltiples
-sends para una sola operación/mensaje?" Porque al estar trabajando con paquetes
-de red no puedo garantizar el orden de llegada. Si necesito enviar un único
-mensaje simple cuyo contenido sea un entero o un string esto no es un problema
-ya que los datos primitivos están serializados en sí mismos, pero al
+`send()` para una sola operación/mensaje?" Porque al estar trabajando con
+paquetes de red no puedo garantizar el orden de llegada. Si necesito enviar un
+único mensaje simple cuyo contenido sea un entero o un string esto no es un
+problema ya que los datos primitivos están serializados en sí mismos, pero al
 complejizarse las solicitudes debido a que el servidor necesita más datos para
 poder procesarlos, serializar no es una recomendación, es una necesidad.
 
 ## [close()](https://man7.org/linux/man-pages/man2/close.2.html)
 
 Por último, e igual de importante que todo lo demás, los sockets una vez que no
-los usemos más deben ser cerrados con `close()`. Esto normalmente se realiza con
-los `socket_conexion` ya que, como dijimos antes, los `socket_servidor` deben
-dar disponibilidad constante para todas las solicitudes de los clientes que
-tenga en el tiempo en el que el proceso esté ejecutando.
+los usemos más deben ser cerrados con `close(fd)`. Esto normalmente se realiza
+con los `fd_conexion` ya que, como dijimos antes, los `fd_servidor` deben dar
+disponibilidad constante para todas las solicitudes de los clientes que tenga en
+el tiempo en el que el proceso esté ejecutando.
 
 Cuando uno de los dos nodos se desconecta, el otro podría estar esperando un
 mensaje o intentar enviar uno. De ser así, ambas syscalls se maneja de forma
@@ -482,18 +478,18 @@ esto?
 ¡Ya sé! ¡Hilos! Si bien los hilos no son llamadas al sistema relacionadas a los
 sockets, sí podemos usarlos para poder paralelizar las tareas que solicitan los
 muchos clientes que se nos van a conectar, para así poder volver lo más rápido
-posible al accept con el socket de escucha. Lo que se me ocurre que podemos
+posible al `accept()` con el socket de escucha. Lo que se me ocurre que podemos
 hacer es algo por este estilo:
 
 ```c
 while (1) {
      pthread_t thread;
-     int *socket_conexion_ptr = malloc(sizeof(int));
-     *socket_conexion_ptr = accept(socket_escucha, NULL, NULL);
+     int *fd_conexion_ptr = malloc(sizeof(int));
+     *fd_conexion_ptr = accept(fd_escucha, NULL, NULL);
      pthread_create(&thread,
                     NULL,
                     (void*) atender_cliente,
-                    socket_conexion_ptr);
+                    fd_conexion_ptr);
      pthread_detach(thread);
 }
 ```
@@ -504,11 +500,14 @@ le estemos pasando a través de `pthread_create()`.
 
 ::: warning IMPORTANTE
 
-El `malloc()` lo realizamos debido a que, como `pthread_create()` recibe una
-posición de memoria, si le pasáramos un puntero a un `int` en el stack usando
-`&`, en el momento en el que el hilo quiera acceder al valor éste se habrá
-pisado luego del siguiente `accept()`. Entonces todos los hilos que creemos
-estarían usando siempre el mismo socket (y eso probablemente genere condiciones
+El `malloc()` lo realizamos debido a que, como `pthread_create()` solamente
+acepta como parámetro un puntero hacia una posición de memoria, si le pasáramos
+un puntero a un `int` que se encuentra en el stack usando `&`, en el momento en
+el que el hilo quiera acceder al valor éste se habrá pisado luego del siguiente
+`accept()`.
+
+Entonces llegará un punto en el que todos los hilos que creemos van a estar
+usando siempre el mismo file descriptor (y eso probablemente genere condiciones
 de carrera).
 
 :::
