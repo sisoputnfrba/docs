@@ -478,7 +478,7 @@ esto?
 ¡Ya sé! ¡Hilos! Si bien los hilos no son llamadas al sistema relacionadas a los
 sockets, sí podemos usarlos para poder paralelizar las tareas que solicitan los
 muchos clientes que se nos van a conectar, para así poder volver lo más rápido
-posible al `accept()` con el socket de escucha. Lo que se me ocurre que podemos
+posible al `accept()` con el socket de escucha. Lo que podemos
 hacer es algo por este estilo:
 
 ::: code-group
