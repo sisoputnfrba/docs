@@ -266,7 +266,9 @@ clientes.
 ::: code-group
 
 ```c [Servidor]
-err = bind(socket_escucha, server_info->ai_addr, server_info->ai_addrlen);
+err = bind(socket_escucha,
+           server_info->ai_addr,
+           server_info->ai_addrlen);
 
 err = listen(socket_escucha, SOMAXCONN);
 ```
@@ -303,7 +305,9 @@ devolverá un error.
 ::: code-group
 
 ```c [Cliente]
-err = connect(socket_conexion, server_info->ai_addr, server_info->ai_addrlen);
+err = connect(socket_conexion,
+              server_info->ai_addr,
+              server_info->ai_addrlen);
 ```
 
 ```c [Servidor]
