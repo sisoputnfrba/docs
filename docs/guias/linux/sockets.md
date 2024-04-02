@@ -158,8 +158,8 @@ hints.ai_flags = AI_PASSIVE;
 err = getaddrinfo(NULL, "4444", &hints, &server_info);
 
 int socket_escucha = socket(server_info->ai_family,
-                             server_info->ai_socktype,
-                             server_info->ai_protocol);
+                            server_info->ai_socktype,
+                            server_info->ai_protocol);
 
 // ...
 
