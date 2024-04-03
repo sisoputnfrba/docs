@@ -525,7 +525,6 @@ nombres = malloc(sizeof(char*) * 4);
 nombres[0] = copiar("Joaquin");
 ```
 
-¡Ambos tienen el mismo valor!. Y eso es porque el puntero p está apuntando a la misma porción de memoria que i tiene asignada. Por ende, se puede manipular dicho dato desde el puntero p.
 Entonces, si quisiéramos acceder al segundo elemento del array de strings (`nombres[1]`), la sintaxis equivalente sería `*(nombres + 1)`. Teniendo en cuenta ésto, en un array, `*nombres` sería el primer elemento del array, entonces quedaría:
 
 ```c
