@@ -287,8 +287,8 @@ Para simplificar el TP0, tenemos ya pre implementadas un par de funciones para
 comunicarnos con el servidor en el archivo fuente `utils`, que deberán
 consultarlo de manera similar al log y config de la etapa anterior:
 
-- `enviar_mensaje(3)`: Recibe el socket, el tamaño de los datos y los datos a
-  mandar.
+- `enviar_mensaje(2)`: Recibe un mensaje en formato string y el socket a través
+  del cual lo vamos a enviar.
 - `liberar_conexion(1)`: Termina la conexión y libera los recursos que se usaron
   para gestionar la misma.
 
