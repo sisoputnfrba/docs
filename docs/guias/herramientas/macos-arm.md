@@ -166,6 +166,13 @@ otro preparado, dale `Delete Drive` y confirmá la pregunta.
 seleccionada, mostrando el disco virtual
 creado](/img/herramientas/macos-arm/preferencias-ide-disk-image.png)
 
+::: tip Nota
+
+En otras versiones de UTM el boton de delete esta escondido bien abajo sobre el final de la ventana
+![Captura de otra version de UTM donde el boton de delete esta más escondido](/img/herramientas/macos-arm/boton-delete-utm.png)
+
+:::
+
 Por último, tocá el botón de `New...` en la barra lateral para agregar
 el disco que convertimos antes. En la ventanita flotante, tocá
 `Import...` (es decir: no toques Create), y buscá el archivo `qcow2` que
@@ -193,6 +200,28 @@ Si la interfaz de red no está configurada, editá el archivo
 de usar `sudo`!), y reemplazá en la línea que dice `enp0s3:` el nombre
 de dispositivo que te haya listado `ip addr` (_¡dejale el `:` al final,
 eh!_).
+
+El archivo yaml tiene un contenido como el siguiente:
+```yaml
+network:
+    ethernets:
+        enp0s3:
+            dhcp4: true
+    version: 2
+```
+Tenemos que cambiar el enp0s3 al que nos diga nuestro `ip addr`
+
+El nombre de la interfaz que nos interesa es la segunda, es posible que en su caso tambien sea `enp0s1`
+![Output del comando ip addr. remarcando el nombre de la interfaz de red](/img/herramientas/macos-arm/ip-addr-interfaz.png){data-zoomable}
+
+Finalmente el archivo quedaria de la siguiente forma:
+```yaml
+network:
+    ethernets:
+        enp0s1:
+            dhcp4: true
+    version: 2
+```
 
 ::: tip
 
