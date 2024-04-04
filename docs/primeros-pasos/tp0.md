@@ -299,7 +299,7 @@ les proveemos otro conjunto de funciones o "API" para crear, rellenar y enviar
 paquetes:
 
 - `crear_paquete()`: Nos crea el paquete que vamos a mandar.
-- `agregar_a_paquete(2)`: Dado un **stream** y su tamaño, lo agrega al paquete.
+- `agregar_a_paquete(3)`: Dado un **stream** y su tamaño, lo agrega al paquete.
 - `enviar_paquete(2)`: Dada una conexión y un paquete, lo envía a través de
   ella.
 - `eliminar_paquete(1)`: Elimina la memoria usada por el paquete.
