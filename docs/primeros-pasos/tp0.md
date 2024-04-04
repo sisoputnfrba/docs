@@ -287,8 +287,8 @@ Para simplificar el TP0, tenemos ya pre implementadas un par de funciones para
 comunicarnos con el servidor en el archivo fuente `utils`, que deberán
 consultarlo de manera similar al log y config de la etapa anterior:
 
-- `enviar_mensaje(3)`: Recibe el socket, el tamaño de los datos y los datos a
-  mandar.
+- `enviar_mensaje(2)`: Recibe un mensaje en formato string y el socket a través
+  del cual lo vamos a enviar.
 - `liberar_conexion(1)`: Termina la conexión y libera los recursos que se usaron
   para gestionar la misma.
 
@@ -299,7 +299,7 @@ les proveemos otro conjunto de funciones o "API" para crear, rellenar y enviar
 paquetes:
 
 - `crear_paquete()`: Nos crea el paquete que vamos a mandar.
-- `agregar_a_paquete(2)`: Dado un **stream** y su tamaño, lo agrega al paquete.
+- `agregar_a_paquete(3)`: Dado un **stream** y su tamaño, lo agrega al paquete.
 - `enviar_paquete(2)`: Dada una conexión y un paquete, lo envía a través de
   ella.
 - `eliminar_paquete(1)`: Elimina la memoria usada por el paquete.
