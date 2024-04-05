@@ -289,6 +289,26 @@ probar y entender la situación.
 
 Una vez más, si probás, contanos qué onda.
 
+
+## SSH
+
+Si la VM grafica ejecuta insoportablemente lento hay una opción más que podemos usar! Y esto es la magia de SSH con la VM Server
+
+En VS Code vamos a descargar está [extensión](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+
+1. Abrimos el Command Palette (⇧⌘P)
+2. Buscamos la opción `Remote-SSH: Connect to Host...`
+3. Ponemos `utnso@{{la ip enp0s1}}`
+4. Si pregunta que sistema estamos usando ponemos Linux, si pregunta que ssh file seleccionamos el que este en nuestra carpeta de usuario
+5. Nos va a pedir la contraseña es la del sistema (`utnso`)
+6. Y ahora `File > Open Workspace...`
+
+::: tip Nota
+
+Cuando quieras abrir el workspace primero tiene que haber un workspace... si seguis la guia del [tp0](/primeros-pasos/tp0) vas a tener un workspace para usar!
+
+:::
+
 [^1]:
     O no avances. Vos fijate.
 
