@@ -7,13 +7,12 @@ herramientas necesarias para el trabajo práctico cuatrimestral como es la
 configuración del entorno, el lenguaje C, etc. Es un ejercicio que sirve como
 base para empezar el TP luego.
 
-El TP0 va a ser realizado en **etapas**, cada una de ellas con un entregable que
+El TP0 se realiza en **etapas**, cada una de ellas con un entregable que
 servirá de base para la siguiente. La idea de este ejercicio es que lo realicen
 de manera individual o grupal (no más de cinco, idealmente los mismos con los
-que harán el TP cuatrimestral), y en unas semanas tendremos una entrega
-**obligatoria**.
+que harán el TP cuatrimestral) y tenerlo listo para cuando se presenta el Trabajo Práctico.
 
-No es necesario tener el ejercicio completo y la entrega no lleva nota, pero
+No es necesario tener el ejercicio completo y su realización no lleva nota, pero
 completar el mismo es **altamente recomendable**, ya que el entorno de desarrollo
 es muy similar al que recibirán a la hora de generarse el repositorio del grupo
 para el TP, cuyo enunciado publicaremos más adelante en el
