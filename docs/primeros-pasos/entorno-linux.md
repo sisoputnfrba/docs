@@ -192,13 +192,6 @@ Si te es imposible instalar VirtualBox y _no te queda otra alternativa_
 que utilizar un entorno nativo u otro software de virtualización, te
 dejamos un par de recursos que pueden ser de utilidad.
 
-::: tip
-
-Una vez instalado todo, no te olvides de repasar por la [sección
-anterior](#amigandose-con-la-consola) para ver cómo usarlas.
-
-:::
-
 - En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se
 encuentran los scripts que usamos para descargar los paquetes instalados
 en las VMs, junto con una guía paso a paso.
@@ -207,3 +200,10 @@ en las VMs, junto con una guía paso a paso.
 usando UTM](/guias/herramientas/macos-arm). Si tenés procesador ARM con
 otro sistema operativo, todavía no tenemos guía armada, pero podés
 basarte en esa para emular la VM con QEMU.
+
+::: tip
+
+Una vez instalado todo, no te olvides de repasar por la [sección
+anterior](#amigandose-con-la-consola) para ver cómo usarlas.
+
+:::
