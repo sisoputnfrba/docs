@@ -3,11 +3,10 @@
 ::: warning ATENCIÓN
 
 Puede que esta guía aplique también para otros casos similares (por
-ejemplo, para ejecutar en Linux con procesadores ARM), pero todavía no
-lo probamos - así que hay _todavía menos_ garantías.
+ejemplo, para ejecutar desde Linux/Windows con procesadores ARM), pero
+todavía no lo probamos - así que hay _todavía menos_ garantías.
 
 :::
-
 Si tenés una computadora ejecutando macOS con un procesador ARM (M1, M2,
 y demás), por ahora no vas a poder usar VirtualBox para ejecutar las
 VMs, dado que las mismas están hechas para la arquitectura AMD64.
@@ -69,6 +68,13 @@ Cuando descargás y descomprimís el disco de la VM que te proporcionamos,
 el resultado es un archivo con extensión `.vdi`, que es el formato de
 discos virtuales que soporta VirtualBox.
 
+::: tip
+
+No te olvides de [comparar el hash MD5](/primeros-pasos/entorno-linux#verificar-la-descarga)
+para asegurarnos de que la descarga fue exitosa.
+
+:::
+
 UTM es, básicamente, una interfaz del sistema de virtualización y
 emulación QEMU, que usa discos en formato `qcow2`. Así que el primer
 paso será convertir de un disco al otro. Teniendo QEMU instalado (y, por
@@ -118,8 +124,8 @@ la VM sin ISO - pero ya lo vamos a solucionar.
 En la ventana siguiente, elegí la arquitectura `x86_64` (el nombre
 técnico de "AMD64", que, además, probablemente sea el default de esta
 opción), dejá el System que tengas por defecto (podría intentar mentirte
-_un montón_ sobre qué son esas opciones, pero aún no tengo mucha idea y
-prefiero ahorrarnos ese inconveniente), dale 1024 MB de RAM (podés poner
+_un montón_ sobre qué son esas opciones, pero aún no tenemos mucha idea y
+preferimos ahorrarnos ese inconveniente), dale 1024 MB de RAM (podés poner
 más, pero en la entrega final van a probar con 1024 MB), dejale los CPU
 cores en default, y dale siguiente.
 
@@ -168,8 +174,8 @@ creado](/img/herramientas/macos-arm/preferencias-ide-disk-image.png)
 
 ::: tip Nota
 
-En otras versiones de UTM el boton de delete esta escondido bien abajo sobre el final de la ventana
-![Captura de otra version de UTM donde el boton de delete esta más escondido](/img/herramientas/macos-arm/boton-delete-utm.png)
+En otras versiones de UTM el botón de delete está escondido bien abajo, sobre el final de la ventana
+![Captura de otra versión de UTM donde el bóton de delete esta más escondido](/img/herramientas/macos-arm/boton-delete-utm.png)
 
 :::
 
@@ -184,15 +190,20 @@ Import](/img/herramientas/macos-arm/preferencias-new.png)
 
 Ahora sí, dale `Save`, y ejecutá la VM dándole al botón de Play. ¡Listo!
 
-Si la VM no enciende todavia tenemos una posibilidad!
+::: tip Si la VM no enciende, ¡todavia tenemos una posibilidad!
 
-Vamos a editar la configuracion de la VM de nuevo, esta vez vamos a `System` y cambiamos la configuración de System `Standard PC (Q35 + ICH9, 2009) (pc-q35-7.2)` es una opcion muy parecida a la default
+Vamos a editar la configuracion de la VM de nuevo, esta vez vamos a `System` y cambiamos la configuración de System `Standard PC (Q35 + ICH9, 2009) (pc-q35-7.2)` es una opción muy parecida a la default
 ![Captura de la ventana de Preferencias de UTM, con la opcion de system deseada](/img/herramientas/macos-arm/preferencias-qemu-system.png)
 
-Cuando elijan la nueva opcion al cartel de warning le dan aceptar, luego buscamos en la barra lateral la opción QEMU,
-y ahí dentro des-seleccionamos la opción `UEFI Boot`. Esto porque al cambiar de sistema se vuelve a poner el check de UEFI.
+Cuando elijan la nueva opcion al cartel de warning le dan aceptar.
+
+Luego, buscamos de nuevo la opción QEMU y ahí dentro volvemos
+a des-seleccionar la opción `UEFI Boot`. Esto es porque al
+cambiar de sistema se vuelve a poner el check de UEFI.
 
 Ahora le damos a play nuevamente. ¿Listo?
+
+:::
 
 ## Corregir la configuración de red
 
@@ -269,30 +280,12 @@ puede fallar, y tenele mucha paciencia a tus ayudantes con las consultas
 que hagas respecto a la VM, porque vamos a tratar de darte una mano,
 pero estamos improvisando acá también.
 
-## ¿Y para la Desktop?
 
-Deberías poder seguir _más o menos_ los mismos pasos para instalar la VM
-Desktop, pero también probablemente ejecute insoportablemente lento (por
-esto de la emulación).
+## ¿Y cómo codeo desde la VM Server?
 
-Si probás, contanos qué onda.
+En el caso de VirtualBox, nosotros les proveemos una VM con interfaz gráfica para poder desarrollar. Pero si intentamos utilizar esa misma probablemente te resulte **insoportablemente lento** (por esto de la emulación).
 
-## ¿Y si estoy usando Linux/Windows con ARM?
-
-No probamos aún. Deberías tener QEMU disponible en ambos sistemas
-operativos, y deberías poder hacer la misma conversión, y deberías poder
-armar un comando de `qemu` para ejecutar la VM como hicimos acá - pero
-andá a saber cuál es ese comando, y todas las variables que haya en
-juego. Como siempre: podés probar, jugar, y pedirnos una mano, pero va a
-ser difícil que nos podamos hacer el tiempo (¡y el hardware!) para
-probar y entender la situación.
-
-Una vez más, si probás, contanos qué onda.
-
-
-## SSH
-
-Si la VM grafica ejecuta insoportablemente lento hay una opción más que podemos usar! Y esto es la magia de SSH con la VM Server
+Pero no te preocupes, ¡hay una opción más que podemos usar! Y esto es la magia de trabajar remotamente por SSH.
 
 En VS Code vamos a descargar está [extensión](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
@@ -303,13 +296,9 @@ Y a continuación[^3]:
 - Ponemos `utnso@{la ip enp0s1}`
 - Si pregunta que sistema estamos usando ponemos Linux, si pregunta que ssh file seleccionamos el que este en nuestra carpeta de usuario
 - Nos va a pedir la contraseña es la del sistema (`utnso`)
-- Y ahora `File > Open Workspace...`
-
-::: tip Nota
-
-Cuando quieras abrir el workspace primero tiene que haber un workspace... si seguis la guia del [tp0](/primeros-pasos/tp0) vas a tener un workspace para usar!
-
-:::
+- Y ahora ya podemos continuar con:
+  a. Un [simple proyecto C](/primeros-pasos/primer-proyecto-c), abriendo la carpeta con `File > Open Folder...`, o
+  b. El [TP0](/primeros-pasos/tp0), abriendo el workspace que les proveemos con `File > Open Workspace from File...`.
 
 [^1]:
     O no avances. Vos fijate.
