@@ -282,8 +282,12 @@ Y a continuación[^3]:
 - Si pregunta que sistema estamos usando ponemos Linux, si pregunta que ssh file seleccionamos el que este en nuestra carpeta de usuario
 - Nos va a pedir la contraseña es la del sistema (`utnso`)
 - Y ahora ya podemos continuar con:
+
   a. Un [simple proyecto C](/primeros-pasos/primer-proyecto-c), abriendo la carpeta con `File > Open Folder...`, o
+
   b. El [TP0](/primeros-pasos/tp0), abriendo el workspace que les proveemos con `File > Open Workspace from File...`.
+
+<br><br>
 
 [^1]:
     O no avances. Vos fijate.
