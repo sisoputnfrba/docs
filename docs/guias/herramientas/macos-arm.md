@@ -216,7 +216,7 @@ ganaste.
 ![Output del comando ip addr. remarcando el nombre de la interfaz de red](/img/herramientas/macos-arm/ip-addr-interfaz.png){data-zoomable}
 
 Si la interfaz de red no está configurada, editá el archivo
-`/etc/netplan/00-installer-config.yml` con tu editor favorito (¡acordate
+`/etc/netplan/00-installer-config.yaml` con tu editor favorito (¡acordate
 de usar `sudo`!), y reemplazá en la línea que dice `enp0s3:` el nombre
 de dispositivo que te haya listado `ip addr` (_¡dejale el `:` al final,
 eh!_):
@@ -234,7 +234,7 @@ network:
 Si no tenés un editor de textos favorito, podés revisar la [guía de
 nano](/guias/consola/bash#nano).
 
-Como TL;DR, ejecutá `sudo nano /etc/netplan/00-installer-config.yml`,
+Como TL;DR, ejecutá `sudo nano /etc/netplan/00-installer-config.yaml`,
 poné la contraseña de tu usuario `utnso`, hacé los cambios al archivo, y
 después tocá CTRL+X (_Exit_), después `Y` ("Yes") cuando te pregunta si
 querés guardar el "buffer", y por último dale `Enter` para que guarde en
