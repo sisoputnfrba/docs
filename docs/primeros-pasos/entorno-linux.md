@@ -199,11 +199,11 @@ anterior](#amigandose-con-la-consola) para ver cómo usarlas.
 
 :::
 
-En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se
+- En [este repositorio](https://github.com/sisoputnfrba/entorno-vms) se
 encuentran los scripts que usamos para descargar los paquetes instalados
 en las VMs, junto con una guía paso a paso.
 
-Si tenés una Mac con procesador ARM (M1, M2, etc), podés [emular la VM
+- Si tenés una Mac con procesador ARM (M1, M2, etc), podés [emular la VM
 usando UTM](/guias/herramientas/macos-arm). Si tenés procesador ARM con
 otro sistema operativo, todavía no tenemos guía armada, pero podés
 basarte en esa para emular la VM con QEMU.
