@@ -134,7 +134,7 @@ editala.
 botón de Preferencias
 resaltado](/img/herramientas/macos-arm/vm-preferencias.png)
 
-Una vez en las preferencias, buscá en la barra lateral la opciónn QEMU,
+Una vez en las preferencias, buscá en la barra lateral la opción QEMU,
 y ahí dentro des-seleccioná la opción `UEFI Boot`.
 
 ![Captura de la ventana de Preferencias de UTM, con la solapa QEMU
@@ -183,6 +183,16 @@ seleccionada, mostrando el botón de
 Import](/img/herramientas/macos-arm/preferencias-new.png)
 
 Ahora sí, dale `Save`, y ejecutá la VM dándole al botón de Play. ¡Listo!
+
+Si la VM no enciende todavia tenemos una posibilidad!
+
+Vamos a editar la configuracion de la VM de nuevo, esta vez vamos a `System` y cambiamos la configuración de System `Standard PC (Q35 + ICH9, 2009) (pc-q35-7.2)` es una opcion muy parecida a la default
+![Captura de la ventana de Preferencias de UTM, con la opcion de system deseada](/img/herramientas/macos-arm/preferencias-qemu-system.png)
+
+Cuando elijan la nueva opcion al cartel de warning le dan aceptar, luego buscamos en la barra lateral la opción QEMU,
+y ahí dentro des-seleccionamos la opción `UEFI Boot`. Esto porque al cambiar de sistema se vuelve a poner el check de UEFI.
+
+Ahora le damos a play nuevamente. ¿Listo?
 
 ## Corregir la configuración de red
 
