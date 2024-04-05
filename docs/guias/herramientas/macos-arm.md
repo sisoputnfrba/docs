@@ -51,16 +51,13 @@ AMD64.
 
 Vamos a asumir que podés hacer todo esto por tu cuenta:
 
-- **Descargar y descomprimir [el disco de las VMs](/recursos/vms)**. Acá
-vamos a hablar de la server, pero deberías poder hacer más o menos lo
-mismo con la VM Desktop.
+- **Descargar y descomprimir [el disco de las VMs Server](/recursos/vms#ubuntu-server-64-bit)**. No te preocupes por no contar con una interfaz gráfica, ¡eso lo resolveremos más adelante!
 - **Descargar e instalar [UTM](https://mac.getutm.app)**. Es de código
 abierto, es gratuito, y se baja e instala más o menos como siempre.
 - **Descargar e instalar [qemu](https://www.qemu.org/download/#macos)**.
 Necesitamos la herramienta `qemu-img`, que podés instalar via Homebrew
-haciendo `brew install qemu`. Si no tenés Homebrew, podés compilar qemu
-a partir de su [código fuente](https://www.qemu.org/download/#source),
-pero capaz mejor [instalarte Homebrew](https://brew.sh/).
+haciendo `brew install qemu`. Si no tenés Homebrew, primero deberás
+[instalartelo](https://brew.sh/).
 
 ## Convertir la imagen de disco
 
@@ -216,30 +213,18 @@ la entrada con nombre del estilo `enp0s1` (quizá ese mismo) tiene una
 línea que comience con `inet` y una IP. Si está: fiesta, tenés internet,
 ganaste.
 
+![Output del comando ip addr. remarcando el nombre de la interfaz de red](/img/herramientas/macos-arm/ip-addr-interfaz.png){data-zoomable}
+
 Si la interfaz de red no está configurada, editá el archivo
 `/etc/netplan/00-installer-config.yml` con tu editor favorito (¡acordate
 de usar `sudo`!), y reemplazá en la línea que dice `enp0s3:` el nombre
 de dispositivo que te haya listado `ip addr` (_¡dejale el `:` al final,
-eh!_).
-
-El archivo yaml tiene un contenido como el siguiente:
+eh!_):
 ```yaml
 network:
     ethernets:
-        enp0s3:
-            dhcp4: true
-    version: 2
-```
-Tenemos que cambiar el enp0s3 al que nos diga nuestro `ip addr`
-
-El nombre de la interfaz que nos interesa es la segunda, es posible que en su caso tambien sea `enp0s1`
-![Output del comando ip addr. remarcando el nombre de la interfaz de red](/img/herramientas/macos-arm/ip-addr-interfaz.png){data-zoomable}
-
-Finalmente el archivo quedaria de la siguiente forma:
-```yaml
-network:
-    ethernets:
-        enp0s1:
+        enp0s3: // [!code --]
+        enp0s1: // [!code ++]
             dhcp4: true
     version: 2
 ```
