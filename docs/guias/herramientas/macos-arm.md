@@ -300,7 +300,7 @@ Y a continuación[^3]:
 
 - Abrimos el Command Palette (⇧⌘P)
 - Buscamos la opción `Remote-SSH: Connect to Host...`
-- Ponemos `utnso@{{la ip enp0s1}}`
+- Ponemos `utnso@{la ip enp0s1}`
 - Si pregunta que sistema estamos usando ponemos Linux, si pregunta que ssh file seleccionamos el que este en nuestra carpeta de usuario
 - Nos va a pedir la contraseña es la del sistema (`utnso`)
 - Y ahora `File > Open Workspace...`
