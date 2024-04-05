@@ -272,9 +272,7 @@ En el caso de VirtualBox, nosotros les proveemos una VM con interfaz gráfica pa
 
 Pero no te preocupes, ¡hay una opción más que podemos usar! Y esto es la magia de trabajar remotamente por SSH.
 
-En VS Code vamos a descargar está [extensión](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-
-Y a continuación[^3]:
+En Visual Studio Code vamos a descargar la extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), y a continuación[^3]:
 
 - Abrimos el Command Palette (⇧⌘P)
 - Buscamos la opción `Remote-SSH: Connect to Host...`
