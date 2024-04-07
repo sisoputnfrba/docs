@@ -366,7 +366,7 @@ iniciemos sesión veremos la IP que se le asignó a la VM:
 
 ![vm-ip](/img/primeros-pasos/tp0/vm-ip.png){data-zoomable}
 
-Vamos a usar esa IP, que siempre empieza con `192.168.0`, para conectarnos a la
+Vamos a usar esa IP, que siempre empieza con `192.168`, para conectarnos a la
 VM desde nuestra consola.
 
 Tanto en Windows como en Linux, podemos abrir una consola powershell o bash y
@@ -374,9 +374,9 @@ usar el comando `ssh`:
 
 ```sh
 ssh utnso@192.168.XXX.YYY
-# En XXX e YYY van los dos números que vimos antes
-# Éstos van entre 0 y 255
 ```
+> En XXX e YYY van los dos números que vimos antes, los cuales van entre 0 y
+> 255.
 
 Nos va a pedir la contraseña de la VM, que por defecto ya sabemos cuál es :wink:
 
