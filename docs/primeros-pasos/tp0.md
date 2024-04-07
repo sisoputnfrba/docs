@@ -373,8 +373,9 @@ Tanto en Windows como en Linux, podemos abrir una consola powershell o bash y
 usar el comando `ssh`:
 
 ```sh
-ssh utnso@192.168.0.XXX
-# Reemplazar XXX por el número que vimos en la VM
+ssh utnso@192.168.XXX.YYY
+# En XXX e YYY van los dos números que vimos antes
+# Éstos van entre 0 y 255
 ```
 
 Nos va a pedir la contraseña de la VM, que por defecto ya sabemos cuál es :wink:
