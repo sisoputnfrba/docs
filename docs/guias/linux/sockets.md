@@ -443,6 +443,16 @@ diferente:
   que nos interrumpe la ejecución del programa. Si queremos evitar esto, podemos
   pasarle el flag `MSG_NOSIGNAL` como último parámetro al momento de invocarla.
 
+::: tip
+
+Es muy importante tener en cuenta que la syscall `close()` no cierra el socket
+instantáneamente, sino que, a veces, por razones técnicas, el socket se mantiene
+vivo por algunos minutos luego de llamar a `close()`.
+
+Este tiempo de retardo puede variar entre 20 segundos y 4 minutos[^1].
+
+:::
+
 ## Multiplexando ando
 
 ::: warning IMPORTANTE
@@ -534,3 +544,7 @@ pueden realizar en los [medios de consulta](/consultas) correspondientes, y que
 hagan uso de las guías y los video tutoriales de esta página.
 
 ![final-imagen](/img/guias/sockets/final-imagen.png){data-zoomable}
+
+<br><br>
+
+[^1]: [Why don't my sockets close?](http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq-4.html#ss4.2)
