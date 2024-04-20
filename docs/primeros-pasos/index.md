@@ -55,10 +55,10 @@ GitHub y tu código de curso, así que **no hagas esto hasta que tengas confirma
 la inscripción a la materia**.
 
 **Si aún no conseguiste grupo, aún así deberás anotarte en el sistema antes de la
-fecha de cierre**. Una vez llegada la fecha, se conformarán grupos entre los
-alumnos rezagados. 
+fecha de cierre**.
 
-Si justo conseguiste grupo y se te fue asignado a otro, podrás solicitar el
+Si varios compañeros de grupo se dieron de baja de la materia y necesitan sumarse
+a otro que esté en la misma situación para unificar grupos, pueden solicitar el
 cambio desde el sistema en la sección "Cambios de Grupos".
 
 ::: warning IMPORTANTE
@@ -68,8 +68,9 @@ mail de invitación a la organización en GitHub. Es importante aceptarla ya que
 sino **no podremos invitarte al repositorio privado del grupo** al momento de
 generarlo.
 
-En caso de que la invitación expire, podés ingresar al sistema y reenviarte la
-invitación desde ahí mismo.
+En caso de que la invitación expire, no te preocupes, podés ingresar al sistema
+y **reenviarte la invitación desde ahí mismo** sin la necesidad de consultar al
+equipo de ayudantes.
 
 :::
 
