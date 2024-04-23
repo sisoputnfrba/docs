@@ -73,6 +73,7 @@ siguiente comando:
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
 ```
+
 Donde `"your@email.com"` es el email que tienen asociado a su cuenta de GitHub.
 
 Luego, vamos a seguir las instrucciones que nos da el comando para generar las
@@ -113,7 +114,7 @@ y poder autenticarnos.
 Si todo salió bien, deberíamos ver un mensaje de bienvenida de GitHub:
 
 ```
-Hi UsuarioDeGitHub! You've successfully authenticated, but GitHub does not provide shell access.
+Hi TuUsuarioDeGitHub! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 ### Clonar el repositorio
@@ -123,12 +124,8 @@ Una vez que tengamos nuestro repo forkeado, vamos a clonarlo en nuestra VM con
 método que configuramos anteriormente.
 
 ```bash
-git clone git@github:<USERNAME>/tp0.git
+git clone git@github:TuUsuarioDeGitHub/tp0.git
 ```
-
-Como pueden ver, dicho link se ve algo así como `git@github:<USERNAME>/tp0.git`,
-donde `<USERNAME>` es el nombre de usuario de GitHub que tienen asociado a su
-cuenta.
 
 ### Abrir desde Visual Studio Code
 
