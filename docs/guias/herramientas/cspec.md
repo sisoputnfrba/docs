@@ -169,7 +169,7 @@ biblioteca CSpec y una regla para compilar y ejecutar los tests ejecutando
 desde la consola:
 
 ```sh
-make test
+make test-start
 ```
 
 ### Desde Visual Studio Code
