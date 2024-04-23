@@ -42,6 +42,8 @@ otro concepto en los [medios de consulta de la práctica](/consultas).
 
 ## Etapa 1: Setup inicial
 
+### Forkear el repositorio
+
 Primero, vamos a _forkear_ el repo del TP0 y clonarlo en nuestra VM. Para ello,
 en la página de GitHub del repo hay un botón "Fork":
 
@@ -59,11 +61,82 @@ provisto por la cátedra como está establecido en las
 
 :::
 
+### Configurar las credenciales de Git
+
+Para poder clonar el repo, vamos a necesitar autenticarnos en GitHub. Existen
+varias formas de hacerlo, pero la que vamos a utilizar en este caso es
+generando un par de claves SSH y agregándolas a nuestra cuenta de GitHub.
+
+Entonces, para generar dichas claves, vamos a abrir una terminal y ejecutar el
+siguiente comando:
+
+```bash
+ssh-keygen -t ed25519 -C "your@email.com"
+```
+Donde `"your@email.com"` es el email que tienen asociado a su cuenta de GitHub.
+
+Luego, vamos a seguir las instrucciones que nos da el comando para generar las
+claves. Por defecto, se van a guardar en el directorio `~/.ssh/` con los nombres
+`id_ed25519` y `id_ed25519.pub`.
+
+Por último, vamos a agregar la clave pública a nuestra cuenta de GitHub
+moviéndonos a `Settings` > `SSH and GPG keys` > `New SSH key`.
+
+- El tipo de clave es `Authentication Key`
+- La clave es el contenido de la clave pública que generamos, el cual pueden ver
+  con el comando `cat ~/.ssh/id_ed25519.pub`.
+
+Una vez hecho esto, podemos verificar que todo está configurado correctamente
+con el comando:
+
+```bash
+ssh -T git@github.com
+```
+
+::: warning IMPORTANTE
+
+La primera vez nos va a preguntar si queremos agregar la clave a la lista de
+hosts conocidos:
+
+```txt
+The authenticity of host 'github.com' can't be established.
+ED25519 key fingerprint is SHA256:+asdrfadfasfsdf/asdfsdafsdafdsafdf.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+Vamos a responder `yes` para agregar la clave a la lista de hosts conocidos
+y poder autenticarnos.
+
+:::
+
+Si todo salió bien, deberíamos ver un mensaje de bienvenida de GitHub:
+
+```
+Hi UsuarioDeGitHub! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+### Clonar el repositorio
+
 Una vez que tengamos nuestro repo forkeado, vamos a clonarlo en nuestra VM con
-`git clone`, para luego abrir el proyecto desde Visual Studio Code utilizando el
+`git clone` copiando el link que se encuentra en la pestaña `SSH`, ya que es el
+método que configuramos anteriormente.
+
+```bash
+git clone git@github:<USERNAME>/tp0.git
+```
+
+Como pueden ver, dicho link se ve algo así como `git@github:<USERNAME>/tp0.git`,
+donde `<USERNAME>` es el nombre de usuario de GitHub que tienen asociado a su
+cuenta.
+
+### Abrir desde Visual Studio Code
+
+Por último, abriremos el proyecto desde Visual Studio Code utilizando el
 archivo `tp0.code-workspace` que se encuentra en el repo:
 
 ```bash
+cd tp0
 code tp0.code-workspace
 ```
 
