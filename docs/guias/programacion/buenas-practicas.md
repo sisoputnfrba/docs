@@ -200,7 +200,7 @@ corredor (o por cualquier otro que esté incluido en alguno incluído), tiene qu
 volver a compilar todo devuelta. Con el poder computacional que tenemos hoy en
 dia, no parecería mucho problema, pero es una práctica pobre.
 
-#### Cabezazos
+### Cabezazos
 
 A lo largo de los años se adoptó una forma de modularizar esto, con el agregado
 de un archivo como encabezado (aka: _header_), por lo que tendríamos estos
@@ -366,6 +366,50 @@ void main() {
 
 Con algo de suerte ahora es un poco más evidente por qué ponemos las guardas, y
 cómo es que varios archivos pueden incluir a uno.
+
+### ¿Y las variables globales?
+
+Con las variables globales pasa algo parecido a las funciones: si las
+definiéramos en el .h y lo incluyéramos en varios archivos, tendríamos el mismo
+error de `multiple definition of 'variable'`.
+
+Entonces, ¿cómo hacemos para **declarar** una variable global (es decir,
+avisarle al compilador de que dicha variable exista) sin **definirla** (reservar
+un espacio en memoria para ella)?
+
+La respuesta es `extern`:
+
+::: code-group
+
+```c:line-numbers [globals.h]
+#ifndef GLOBALS_H_
+#define GLOBALS_H_
+
+extern int variable_global; // [!code ++]
+
+#endif
+```
+
+```c:line-numbers [globals.c]
+#include "globals.h"
+
+int variable_global = 0; // [!code ++]
+```
+
+```c:line-numbers [main.c]
+#include "globals.h"
+
+int main() {
+    variable_global = 5; // [!code ++]
+    return 0;
+}
+```
+
+:::
+
+En el header declaramos la variable con `extern`, la definimos en el .c
+correspondiente, y ya podemos usarla en cualquier otro archivo que incluya dicho
+header.
 
 ## Tipación Inteligente
 
