@@ -132,7 +132,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Presentación de Señales',
-        link: 'https://faq.utnso.com.ar/seniales'
+        link: '/guias/linux/signals',
       },
     ],
   },
