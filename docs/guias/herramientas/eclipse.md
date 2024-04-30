@@ -34,8 +34,7 @@ La desventaja de esto es que **cada alumno** deberá configurar su proyecto de
 forma manual siguiendo los pasos que se detallan a continuación, pero una vez
 configurado no deberían volver a tener que hacerlo.
 
-
-### Configurar el Workspace
+## Configurar el Workspace
 
 Para importar un proyecto, primero vamos a cambiar la ruta del Workspace para
 que apunte a nuestro repo. Para esto, iremos a
@@ -47,6 +46,8 @@ Y luego, seleccionaremos la ruta ayudándonos con el botón `Browse...`, y harem
 click en `Launch`:
 
 ![workspace-02](/img/guias/herramientas/eclipse/select-workspace-folder.png){data-zoomable}
+
+## Agregar un proyecto C al workspace
 
 ### Crear un Makefile Project
 
@@ -73,10 +74,10 @@ Nos aparecerá la carpeta del proyecto en el `Project Explorer` de Eclipse:
 
 ![project-04](/img/guias/herramientas/eclipse/project-explorer.png){data-zoomable}
 
-### Compilar y ejecutar el proyecto
+### Compilar el proyecto
 
 Ahora, vamos a generar las configuraciones necesarias para poder compilar
-y ejecutar cada proyecto.
+cada proyecto.
 
 Primero, desde el `Project Explorer` haremos click derecho sobre la carpeta de
 nuestro proyecto y luego haremos click en `Build Project`:
@@ -87,8 +88,10 @@ Esto nos generará el ejecutable en la carpeta `bin`:
 
 ![project-explorer-with-bin](/img/guias/herramientas/eclipse/project-explorer-with-bin.png){data-zoomable}
 
-Ahora, haremos click derecho sobre ese ejecutable e iremos a `Run As` >
-`Local C/C++ Application`:
+### Ejecutar el proyecto
+
+Ahora, para ejecutarlo, haremos click derecho sobre ese ejecutable e iremos a
+`Run As` > `Local C/C++ Application`:
 
 ![run-config](/img/guias/herramientas/eclipse/run-as-local-c-cpp-application.png){data-zoomable}
 
@@ -102,13 +105,12 @@ usar el debugger :bug::
 
 ![run-panel](/img/guias/herramientas/eclipse/run-panel.png){data-zoomable}
 
-## Agregar una static library en un proyecto existente
+## Agregar una static library al workspace
 
 Por último, para poder importar nuestra biblioteca con código compartido
 `utils`, debemos seguir un par de pasos extra, ya que Eclipse no va a detectar
 automáticamente las funciones que se encuentran en la biblioteca dentro de
 cada proyecto.
-
 
 ### Verificar el Workspace
 
