@@ -295,7 +295,41 @@ Suele ser una buena práctica ponerle a la variable a definir, el nombre del
 archivo. A este _truco_ se lo llama
 [guardas](https://en.wikipedia.org/wiki/Include_guard).
 
-Última cosa sobre headers, lo prometo!
+::: tip
+
+La estructura de proyecto que les proveemos en los TPs permite incluir archivos
+utilizando una ruta relativa a la carpeta `src`. Por ejemplo, si tenemos:
+
+```
+src/
+├── sumas/
+│   ├── sumar.h
+│   └── sumar.c
+└── restas/
+    ├── restar.h
+    └── restar.c
+```
+
+Podemos incluir cualquier header desde cualquier lugar de la siguiente forma:
+
+```c
+#include <sumas/sumar.h>
+#include <restas/restar.h>
+```
+
+También, los headers instalados en el sistema como `stdio.h` o `stdlib.h` se
+encuentran en la carpeta `/usr/include`, la cual es la carpeta por defecto que
+busca el compilador para incluir archivos. Es por esto que podemos incluir
+los header sin necesidad de especificar la ruta completa, sino simplemente:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+```
+
+:::
+
+### Tipos de Datos
 
 Supongamos que ahora también queremos un tipo de dato, como que los números
 tengan también un `numeroAnterior` que guarde el numero pre-suma. Tendriamos una
