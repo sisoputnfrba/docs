@@ -19,6 +19,7 @@ const data = [
   { name: 'Marcos Infantino', github: 'MarcosInfantino' },
   { name: 'Camila Mariño', github: 'camilamarinio' },
   { name: 'Irina Pérez Gribnicow', github: 'irinaperezg' },
+  { name: 'Federico Andrade', github: 'f-and' },
   { name: 'Tomás Martinez', github: 'tomasmartinez02' },
   { name: 'Florencia Larocca', github: 'LFLarocca' }
 ];
@@ -28,7 +29,7 @@ const members = data.map((member) => ({
   name: member.name,
   title: `${member.github}`,
   links: [{ icon: 'github', link: `https://github.com/${member.github}` }]
-}))
+}));
 
 </script>
 
