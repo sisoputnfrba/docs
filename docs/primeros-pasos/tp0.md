@@ -232,8 +232,7 @@ if (config == NULL) {
 ```
 
 Para terminar el programa desde cualquier lugar, pueden utilizar la función
-[`exit()`](https://man7.org/linux/man-pages/man3/exit.3.html) siguiendo los
-consejos de la documentación linkeada.
+[`abort()`](https://man7.org/linux/man-pages/man3/abort.3.html).
 
 :::
 
