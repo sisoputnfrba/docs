@@ -127,6 +127,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/programacion/readline'
       },
       {
+        text: 'Como usar MMap y MSync',
+        link: '/guias/programacion/mmap',
+      },
+      {
         text: 'Charla de Threads y Sincro',
         link: '/guias/linux/threads',
       },
