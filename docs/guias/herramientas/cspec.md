@@ -164,15 +164,24 @@ ningún `main` en tu proyecto.
 
 :::
 
-El `makefile` de la cátedra ya incluye todo lo necesario para vincular la
-biblioteca CSpec y una regla para compilar y ejecutar los tests ejecutando
-desde la consola:
+### Usando el template de la cátedra
+
+El `makefile` de la cátedra ya incluye todo lo necesario para compilar los
+tests y el código vinculando la biblioteca CSpec. Para esto, simplemente
+nos queda ejecutar:
 
 ```sh
-make test-start
+make test
 ```
 
-### Desde Visual Studio Code
+Esto nos va a generar un binario llamado `{proyecto}_tests`, que podremos
+ejecutar como cualquier otro:
+
+```sh
+./bin/ejemplo_tests
+```
+
+#### Desde Visual Studio Code
 
 Además, si querés poder ejecutar los tests con el
 [debugger](/guias/herramientas/debugger) de Visual Studio Code, vamos a tener
@@ -187,7 +196,7 @@ ejecute el binario de los tests[^1]:
   "tasks": [
     {  // [!code ++]
       "label": "build-test",  // [!code ++]
-      "command": "make test",  // [!code ++]
+      "command": "make clean test",  // [!code ++]
       "type": "shell",  // [!code ++]
       "group": {  // [!code ++]
         "kind": "build",  // [!code ++]
