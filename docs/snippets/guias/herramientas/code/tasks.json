@@ -3,22 +3,13 @@
   "tasks": [ // [!code focus]
     { // [!code focus]
       "label": "build", // [!code focus] (1)
-      "command": "make all", // [!code focus] (2)
+      "command": "make clean all", // [!code focus] (2)
       "type": "shell", // [!code focus] (3)
       "group": { // [!code focus] (4)
         "kind": "build", // [!code focus]
         "isDefault": true // [!code focus]
       }, // [!code focus]
       "problemMatcher": ["$gcc"] // [!code focus] (5)
-    }, // [!code focus]
-    {
-      "label": "clean",
-      "command": "make clean",
-      "type": "shell",
-      "group": {
-        "kind": "none"
-      },
-      "problemMatcher": []
-    }
+    } // [!code focus]
   ] // [!code focus]
 } // [!code focus]
