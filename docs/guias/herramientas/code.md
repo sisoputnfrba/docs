@@ -74,11 +74,11 @@ siguiente:
 2. `command`: Que el comando a ejecutar sea `make clean all`, partiendo desde la
    carpeta donde se encuentra el proyecto. Esto es lo mismo que ejecutar
    `make clean` y luego `make all` por separado.
-4. `type`: El tipo de tarea. En este caso, el comando provisto se debe ejecutar
+3. `type`: El tipo de tarea. En este caso, el comando provisto se debe ejecutar
    en una terminal, por lo que es de tipo `shell`.
-5. `group`: A qué grupo de tareas pertenece. En este caso, la tarea es de
+4. `group`: A qué grupo de tareas pertenece. En este caso, la tarea es de
    compilación (`build`) y es la tarea por defecto para compilar el proyecto.
-6. `problemMatcher`: Que los errores que pueden llegar a surgir provienen de
+5. `problemMatcher`: Que los errores que pueden llegar a surgir provienen de
    ejecutar `gcc`. Esto permite que nos aparezcan en la pestaña `Problems`.
 
 ::: tip
