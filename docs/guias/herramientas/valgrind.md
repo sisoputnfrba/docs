@@ -785,29 +785,12 @@ necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 pero... ¿cada vez que lo hagan hay que acordarse de todos los parámetros que nos
 suelen ser de utilidad?
 
-No necesariamente, podemos aprovechar que la estructura de proyecto que les
-proveemos ya cuenta en su makefile con una regla para correr Valgrind. Si
-quieren correrlo, simplemente tienen que ejecutar:
+No necesariamente, podemos crear un [alias](/guias/consola/bash#aliases) que ya
+contenga todos los flags que vamos a utilizar, por ejemplo:
 
-```bash
-make memcheck
+```sh
+alias vg="valgrind --leak-check=full --track-origins=yes"
 ```
-
-Por defecto, la regla `memcheck` siempre va a correr Valgrind con el flag
-`--leak-check=full`. En caso de necesitar configurarle flags o parámetros
-de ejecución, pueden editar el archivo `settings.mk`:
-
-::: code-group
-
-```make [settings.mk]
-# Arguments when executing with start, memcheck or helgrind
-ARGS=
-
-# Valgrind flags
-MEMCHECK_FLAGS=--track-origins=yes
-```
-
-:::
 
 ## Cierre
 
@@ -829,9 +812,12 @@ que se menciona esta herramienta.
 
 ::: tip
 
-En el repositorio del TP, también les creamos una regla `helgrind` para que
-puedan correrlo de la misma forma que `memcheck`, pero con el flag
-`--tool=helgrind` más todos los que se agreguen a la variable `HELGRIND_FLAGS`.
+De la misma forma que con memcheck, puede resultar conveniente crear un alias
+para helgrind:
+
+```sh
+alias hg='valgrind --tool=helgrind'
+```
 
 :::
 
