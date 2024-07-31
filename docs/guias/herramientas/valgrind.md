@@ -792,6 +792,13 @@ contenga todos los flags que vamos a utilizar, por ejemplo:
 alias vg="valgrind --leak-check=full --track-origins=yes"
 ```
 
+Una vez configurado dicho alias, simplemente reemplazamos todo el choclo con el
+comando y los argumentos por `vg`, de esta forma:
+
+```sh
+vg ./bin/kernel kernel.config
+```
+
 ## Cierre
 
 Para recurrir a información más detallada referente a los mensajes de error y al
