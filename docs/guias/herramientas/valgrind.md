@@ -105,19 +105,19 @@ Ahora, ¿hice yo realmente lo que quería? Compilemos.
 gcc -o ej1 ej1.c
 ```
 
-
 Corramos nuestro programa sin usar ninguna herramienta. Tipeamos `./ej1` en
 consola... no tira segmentation fault, ¡todo bien entonces!.
 
 Ok, ponele. Usemos a nuestro amigo Valgrind que es gratis. Tipeamos en consola
 lo siguiente y veamos qué nos tira:
+
 ```sh
 valgrind ./ej1
 ```
 
 Deberían ver algo similar a esto:
 
-```
+```txt
 ==4412== Invalid write of size 1
 ==4412==    at 0x40053A: main (ej1.c:5)
 ==4412==  Address 0x51f1045 is 0 bytes after a block of size 5 alloc'd
@@ -262,7 +262,6 @@ int main(void) {
 gcc -o ej1 ej1.c
 ```
 
-
 Tipeamos en consola para detectar los memory leaks:
 
 ```bash
@@ -333,7 +332,7 @@ int main(void){
 
 Si volvemos a correr valgrind, veremos que nos dirá:
 
-```
+```txt
 All heap blocks were freed -- no leaks are possible
 ```
 
@@ -351,7 +350,7 @@ En otras palabras, no tenemos más leaks.
 int main(void) {
     int a;
     printf("a = %d \n", a);
-  	return 0;
+    return 0;
 }
 ```
 
@@ -371,7 +370,7 @@ gcc -o ej2 ej2.c
 
 Tipeamos en consola `./ej2` y nos muestra en pantalla lo siguiente:
 
-```
+```txt
 a = 0
 ```
 
@@ -448,7 +447,7 @@ int main(void) {
     int a; // [!code --]
     int a = 1; // [!code ++]
     printf("a = %d \n", a);
-  	return 0;
+    return 0;
 }
 ```
 
@@ -502,7 +501,7 @@ primer operador: (`*a`).
 Si compilamos y hacemos un `valgrind ./ej3` en consola vamos a ver que los
 mensajes de error son similares a los del código anterior.
 
-```
+```txt
 ==13230== Conditional jump or move depends on uninitialised value(s) // [!code focus]
 ==13230==    at 0x4E7C4F1: vfprintf (vfprintf.c:1629)
 ==13230==    by 0x4E858D8: printf (printf.c:35) // [!code focus]
@@ -536,7 +535,7 @@ int main(void) {
     (*a) = 1; // [!code ++]
     printf("a = %d \n", (*a));
     free(a);
-  	return 0;
+    return 0;
 }
 ```
 
@@ -559,7 +558,7 @@ int main(void) {
     printf("b = %d \n", (*b));
     free(b);
     free(a);
-  	return 0;
+    return 0;
 }
 ```
 
@@ -664,8 +663,8 @@ De nuevo, veremos que la solución es inicializar el contenido apuntado por `a`.
 #include <stdlib.h>
 
 int main(void) {
-	int a;
-	exit(a);
+    int a;
+    exit(a);
 }
 
 ```
@@ -675,7 +674,7 @@ int main(void) {
 Si bien cae de maduro cuál es el error, tipeamos en consola `valgrind ./ej5` y
 deberíamos ver algo como esto:
 
-```
+```txt
 ==5758== Syscall param exit_group(status) contains uninitialised byte(s)
 ==5758==    at 0x4EF1C18: _Exit (_exit.c:33)
 ==5758==    by 0x4E6D95F: __run_exit_handlers (exit.c:93)
@@ -760,7 +759,7 @@ accederlo).
 Estos errores son muy puntuales y solamente hemos visto que ocurren en la línea
 donde hay un llamado a `pthread_create`. Se ven parecidos a esto:
 
-```
+```txt
 136 bytes in 1 blocks are possibly lost in loss record 15 of 41
 ==5672== at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
 ==5672== by 0x4011726: allocate_dtv (dl-tls.c:322)
@@ -785,15 +784,19 @@ necesario tenerlo en cuenta a la hora de interpretar el output de `valgrind`.
 pero... ¿cada vez que lo hagan hay que acordarse de todos los parámetros que nos
 suelen ser de utilidad?
 
-No necesariamente, podemos crear un [alias](/guias/consola/bash#aliases) que ya
-contenga todos los flags que vamos a utilizar, por ejemplo:
+No necesariamente, podemos crear un
+[alias](https://www.man7.org/linux/man-pages/man1/alias.1p.html) que ya contenga
+todos los flags que vamos a utilizar, por ejemplo:
 
 ```sh
 alias vg="valgrind --leak-check=full --track-origins=yes"
 ```
 
-Una vez configurado dicho alias, simplemente reemplazamos todo el choclo con el
-comando y los argumentos por `vg`, de esta forma:
+Esta línea la podemos agregar al final del archivo `/home/utnso/.bashrc` para
+que el alias esté disponible cada vez que abramos una terminal.
+
+Una vez configurado dicho alias, simplemente reemplazamos todo el choclo de
+argumentos por `vg`, de esta forma:
 
 ```sh
 vg ./bin/kernel kernel.config
@@ -811,10 +814,10 @@ una herramienta muy poderosa que cualquier programador en C/C++ debería conocer
 ser más eficientes en el manejo de la memoria y te va a ahorrar mucho tiempo
 cuando surjan segmentation faults[^7] (¡incluso te ayuda a prevenirlos!).
 
-Otra herramienta muy útil que provee Valgrind, es
+Otra herramienta muy útil que provee Valgrind es
 [Helgrind](https://valgrind.org/docs/manual/hg-manual.html), para solucionar y
 detectar problemas de sincronización. También te va a resultar muy útil. Si no
-viste la charla del principio, te recomiendo al menos saltarte a la parte en la
+viste la charla del principio, te recomendamos, al menos, ver la parte en la
 que se menciona esta herramienta.
 
 ::: tip
