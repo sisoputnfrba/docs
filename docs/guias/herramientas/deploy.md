@@ -103,7 +103,7 @@ Ahora sí, llegó el momento. Cuando entren al laboratorio los vamos a dirigir a
 la fila que les toca y van a encontrarse con (aproximadamente) tres computadoras
 con una VM Server abierta.
 
-Es importante que sepan que el despliegue **no puede demorar más de 20
+Es importante que sepan que el despliegue **no puede demorar más de 10
 minutos**. Puede haber margen de tolerancia, pero es un tiempo de descuento que
 irá en función de cuantos otros grupos estén esperando para entregar.
 
@@ -146,7 +146,11 @@ Una vez tengan todo listo, avísennos y comenzamos.
 ::: tip
 
 Para ayudar un poco, les dejamos
-[algunos comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
+[un par de comandos que muy probablemente les van a servir](/guias/consola/bash.html#comandos-utiles-para-la-entrega).
+
+También el repo [so-deploy](https://github.com/sisoputnfrba/so-deploy) cuenta
+con un par de scripts útiles para automatizar el despliegue y modificar todas
+las configuraciones a la vez.
 
 :::
 
