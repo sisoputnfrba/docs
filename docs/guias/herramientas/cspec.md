@@ -26,7 +26,7 @@ revisando logs de 300 líneas, o llenar el debugger de breakpoints. Si tenés un
 buen conjunto de pruebas, solo tenés que volverlas a correr y ver que pasan
 luego de hacer los cambios.
 
-### OK, compro, ¿cómo lo instalo?
+### OK, compro, ¿cómo lo consigo?
 
 Primero tenés que instalarlo. **Esto tenés que hacerlo una sola vez por
 máquina**. Si ya lo tenés instalado, no hace falta :) Ejecutá en una terminal
@@ -55,7 +55,9 @@ Antes que nada, vamos a definir algunos conceptos:
 
 #### Ejemplo en CSpec
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [prueba.c]
 #include <cspecs/cspec.h>
 #include <string.h>
 
@@ -72,6 +74,8 @@ context (test_de_strings) {
     } end
 }
 ```
+
+:::
 
 Podemos ver que en el **contexto** `test_de_strings`, hay una suite para testear
 strlen que tiene dos test cases. Obviamente uno nunca va a querer testear
@@ -98,7 +102,7 @@ O sea, que todas tus pruebas pasaron.
 
 ¿Y si hubieras escrito mal el test? Si el segundo test fuera...
 
-```c
+```c:line-numbers=11
         it("devuelve 0 para una cadena vacía") {
             should_int(strlen("")) be equal to(123);
         } end
@@ -111,24 +115,156 @@ O sea, que todas tus pruebas pasaron.
 Y claro, el segundo test falló, esperaba que devuelva **123** pero devolvió
 **0**.
 
-## Configurando el proyecto de Eclipse
+## Configurando el template de la cátedra
 
-Para dejar de probar con **gcc** y usar nuestros tests en un proyecto de
-Eclipse, tenemos que _linkear_ con la biblioteca **cspecs** => Hagamos eso:
+Para dejar de probar con `gcc` y usar nuestros tests en un proyecto en C,
+vamos a crear una carpeta `tests` en la raíz de nuestro
+[proyecto inicial](/primeros-pasos/primer-proyecto-c) y crear un archivo
+`ejemplo_test.c` para luego agregarle el código que vimos antes.
 
-Botón derecho en el proyecto -> `Properties` -> `C/C++ Build` -> `Settings` ->
-`GCC C Linker` -> `Libraries`
+Nos debería quedar estructurado de la siguiente forma:
 
-...y agregamos la biblioteca cspecs en `Libraries`.
+```
+ejemplo
+├── makefile
+├── settings.mk
+├── src
+│   └── main.c
+└── tests
+    └── ejemplo_test.c
+```
 
-![img04](/img/guias/programacion/cspec/img04.jpg){data-zoomable}
+Y luego modificar el archivo `settings.mk` para que al compilar se ignore el
+archivo que contiene la función `main`, que por defecto es `src/main.c`:
+
+::: code-group
+
+```make [settings.mk]
+# Source files (*.c) to be excluded from tests compilation
+TEST_EXCLUDE= // [!code --]
+TEST_EXCLUDE=src/main.c // [!code ++]
+```
+
+:::
+
+::: tip TIP 1
+
+En general, es una buena práctica que nuestro archivo `main.c` no tenga casi
+nada de lógica, sino que simplemente llame a funciones que están en otros
+archivos. De esta forma, podemos testear todas las funcionalidades de nuestro
+programa sin que queden demasiadas funciones excluidas por `TEST_EXCLUDE`.
+
+:::
+
+::: tip TIP 2
+
+En caso de que tu proyecto sea una biblioteca de código compartido, no vas a
+necesitar excluir ningún archivo en el `settings.mk` ya que no debería haber
+ningún `main` en tu proyecto.
+
+:::
+
+### Usando el template de la cátedra
+
+El `makefile` de la cátedra ya incluye todo lo necesario para compilar los
+tests y el código vinculando la biblioteca CSpec. Para esto, simplemente
+nos queda ejecutar:
+
+```sh
+make test
+```
+
+Esto nos va a generar un binario llamado `{proyecto}_tests`, que podremos
+ejecutar como cualquier otro:
+
+```sh
+./bin/ejemplo_tests
+```
+
+#### Desde Visual Studio Code
+
+Además, si querés poder ejecutar los tests con el
+[debugger](/guias/herramientas/debugger) de Visual Studio Code, vamos a tener
+que editar los archivos `tasks.json` y `launch.json` para que se compile y
+ejecute el binario de los tests[^1]:
+
+::: code-group
+
+```json [tasks.json]
+{
+  "version": "2.0.0",
+  "tasks": [
+    {  // [!code ++]
+      "label": "build-test",  // [!code ++]
+      "command": "make clean test",  // [!code ++]
+      "type": "shell",  // [!code ++]
+      "group": {  // [!code ++]
+        "kind": "build",  // [!code ++]
+        "isDefault": true  // [!code ++]
+      },  // [!code ++]
+      "problemMatcher": ["$gcc"]  // [!code ++]
+    },  // [!code ++]
+    // ... otras tareas
+  ]
+}
+```
+
+
+```json [launch.json]
+{
+  "version": "0.2.0",
+  "configurations": [
+    { // [!code ++]
+      "name": "test", // [!code ++]
+      "type": "cppdbg", // [!code ++]
+      "request": "launch", // [!code ++]
+      "program": "${workspaceFolder}/bin/${workspaceFolderBasename}_tests", // [!code ++]
+      "args": [], // [!code ++]
+      "stopAtEntry": false, // [!code ++]
+      "cwd": "${workspaceFolder}", // [!code ++]
+      "environment": [], // [!code ++]
+      "externalConsole": false, // [!code ++]
+      "linux": { // [!code ++]
+        "MIMode": "gdb" // [!code ++]
+      }, // [!code ++]
+      "osx": { // [!code ++]
+        "MIMode": "lldb" // [!code ++]
+      }, // [!code ++]
+      "setupCommands": [ // [!code ++]
+        { // [!code ++]
+          "description": "Enable pretty-printing for gdb", // [!code ++]
+          "text": "-enable-pretty-printing", // [!code ++]
+          "ignoreFailures": true // [!code ++]
+        } // [!code ++]
+      ], // [!code ++]
+      "preLaunchTask": "build-test" // [!code ++]
+    }, // [!code ++]
+    // ... otras configuraciones
+  ]
+}
+```
+
+:::
+
+::: tip
+
+En caso de que tu proyecto sea una biblioteca de código compartido, vas a tener
+que crear el archivo `launch.json`, ya que no se los incluímos por defecto al no
+tratarse de un proyecto que genere un ejecutable.
+
+:::
+
+
+
 
 ## Ejemplo 1: Orden, inicialización y limpieza
 
 Veamos este otro ejemplo, en donde agregamos una función de **inicialización**,
 otra de **limpieza**, y un test que **rompe**:
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [tests/ejemplo_test.c]
 #include <cspecs/cspec.h>
 #include <stdio.h>
 #include <string.h>
@@ -161,6 +297,8 @@ context (probando_cosas) {
 }
 ```
 
+:::
+
 Si lo compilás y ejecutás como ya sabés, vas a ver algo como esto:
 
 ![img03](/img/guias/programacion/cspec/img03.png){data-zoomable}
@@ -183,9 +321,9 @@ cuenta el número de ocurrencias de un determinado carácter en un archivo.
 
 ::: code-group
 
-<<< @/snippets/guias/herramientas/cspec/lector.h{4 c:line-numbers} [lector.h]
+<<< @/snippets/guias/herramientas/cspec/lector.h{c:line-numbers} [src/lector.h]
 
-<<< @/snippets/guias/herramientas/cspec/lector.c{11 c:line-numbers} [lector.c]
+<<< @/snippets/guias/herramientas/cspec/lector.c{c:line-numbers} [src/lector.c]
 
 :::
 
@@ -196,7 +334,9 @@ en la cadena. Eso es lo que queremos probar.
 Ahora que ya tenemos el código, pasemos a la parte importante. Incluyamos el
 header a nuestro archivo principal (**main.c** del proyecto, supongamos):
 
-```c
+::: code-group
+
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h" // [!code ++]
 #include <stdio.h>
 #include <stdlib.h>
@@ -207,11 +347,15 @@ context (probando_cosas) {
 }
 ```
 
+:::
+
 Para arrancar, podemos probar la primer parte, cuando el archivo que recibe como
 parámetro no existe. Armamos un test case para eso, lo agregamos a un
 **context** y vemos que pasa correctamente:
 
-```c:line-numbers{8-11}
+::: code-group
+
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -226,11 +370,14 @@ context (probando_cosas) {
 }
 
 ```
+:::
 
 Ahora hay que probar el caso más común, que dado un archivo que exista, lo lea y
 devuelva la cantidad correcta de ocurrencias:
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -253,6 +400,7 @@ context (probando_cosas) {
 }
 
 ```
+:::
 
 ¿Lo corremos?
 
@@ -262,7 +410,9 @@ Nos dice que falló, en dónde, y con qué error. A ver qué pasó...
 
 ¡Uh!, estábamos recorriendo mal el array, desde 1 en lugar de desde 0:
 
-```c:line-numbers=11
+::: code-group
+
+```c:line-numbers=11 [src/lector.c]
 int archivo_contar(char* path, char c) {
     char* contenido = leer(path);
     if (contenido == NULL) {
@@ -280,6 +430,8 @@ int archivo_contar(char* path, char c) {
 }
 ```
 
+:::
+
 ¡Genial! Encontramos un bug gracias al test. Luego de arreglarlo, vemos que está
 todo bien.
 
@@ -289,7 +441,9 @@ nuestro `archivo_contar(...)` de alguna forma mutara el archivo, los demás test
 no harían lo que esperamos. Hagamos un **before** que cree el archivo y un
 **after** que lo borre:
 
-```c:line-numbers
+::: code-group
+
+```c:line-numbers [tests/lector_test.c]
 #include "lector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -327,6 +481,8 @@ context (probando_cosas) {
 }
 
 ```
+
+:::
 
 Fijate que que dividimos todo en dos suites según si usaban un archivo o no,
 quedó mucho más prolijo :)
@@ -387,3 +543,9 @@ Creeme, sentarte a hacer los tests en un par de horas para después correrlos
 cada vez que haya cambios importantes en tu código va a minimizar las
 "sorpresas" que te podés llevar el día de la entrega y vas a solucionar los
 errores mucho más rápido que haciendo debugging a mano.
+
+<br><br>
+
+[^1]:
+    En [esta guía](/guias/herramientas/code) explicamos en detalle cada
+    configuración de Visual Studio Code.
