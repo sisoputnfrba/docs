@@ -71,8 +71,9 @@ siguiente:
 :::
 
 1. `label`: El nombre de la tarea, para poder identificarla.
-2. `command`: Que el comando a ejecutar sea `make all`, partiendo desde la
-   carpeta donde se encuentra el proyecto.
+2. `command`: Que el comando a ejecutar sea `make clean all`, partiendo desde la
+   carpeta donde se encuentra el proyecto. Esto es lo mismo que ejecutar
+   `make clean` y luego `make all` por separado.
 3. `type`: El tipo de tarea. En este caso, el comando provisto se debe ejecutar
    en una terminal, por lo que es de tipo `shell`.
 4. `group`: A qué grupo de tareas pertenece. En este caso, la tarea es de
@@ -87,10 +88,11 @@ Para saber más sobre cómo configurar el archivo `tasks.json`, podés revisar l
 
 :::
 
-Por otro lado, más abajo en el archivo hay otra task que se encarga de eliminar
-todos los archivos generados en el proyecto ejecutando `make clean`. Podemos
-acceder a la misma accediendo al menú `Terminal` > `Run Task...` y seleccionando
-`clean`.
+¿Por qué recompilamos todos los archivos todo el tiempo? Para que el IDE pueda
+así parsear el output de `gdb` incluyendo archivos que no hayamos modificado.
+Sin esto, todos los **warnings** desaparecerían mágicamente al compilar el
+proyecto dos veces, y no queremos que eso ocurra ya que nos podríamos estar
+perdiendo de información muy valiosa para detectar posibles errores en el código.
 
 ## Configuración del debugger
 
