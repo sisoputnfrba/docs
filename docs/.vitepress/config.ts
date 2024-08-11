@@ -1,13 +1,25 @@
 import MarkdownItFootnotePlugin from 'markdown-it-footnote';
-import { defineConfig } from 'vitepress';
+import { defineConfig, HeadConfig } from 'vitepress';
 import { navbar } from './configs/navbar';
 import { sidebar } from './configs/sidebar';
 import { socialLinks } from './configs/socialLinks';
 import { repository } from '../../package.json';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+function script(src: string): HeadConfig {
+  return [
+    'script', {},
+    readFileSync(resolve(__dirname, src), 'utf-8')
+  ]
+}
 
 export default defineConfig({
   lang: 'es-AR',
   title: 'Docs | Sistemas Operativos - UTN FRBA',
+  head: [
+    script('scripts/print.js'),
+  ],
   description: 'Todo lo necesario para hacer el TP de Sistemas Operativos.',
   lastUpdated: true,
   cleanUrls: true,
