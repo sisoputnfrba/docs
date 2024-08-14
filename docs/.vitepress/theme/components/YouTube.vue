@@ -11,22 +11,7 @@ export default { props };
 
 <template>
   <div class="youtube-container">
-    <iframe
-      :src="`https://www.youtube.com/embed/${v}`"
-      title="YouTube video player"
-      class="youtube"
-      frameborder="0"
-      allow="
-          accelerometer;
-          autoplay;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture
-        "
-      allowfullscreen
-    >
-    </iframe>
+    <lite-youtube :videoid="v"></lite-youtube>
   </div>
 </template>
 

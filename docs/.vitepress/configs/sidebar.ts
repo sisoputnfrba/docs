@@ -35,8 +35,12 @@ export const sidebar: DefaultTheme.Sidebar = [
     collapsed: false,
     items: [
       {
-        text: '¿Dónde me anoto?',
+        text: 'Introducción al Trabajo Práctico',
         link: '/primeros-pasos/'
+      },
+      {
+        text: '¿Dónde me anoto?',
+        link: '/primeros-pasos/donde-me-anoto'
       },
       {
         text: 'Normas del Trabajo Práctico',

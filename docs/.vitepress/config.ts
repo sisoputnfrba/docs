@@ -8,16 +8,23 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
 function script(src: string): HeadConfig {
-  return [
-    'script', {},
-    readFileSync(resolve(__dirname, src), 'utf-8')
-  ]
+  if (src.startsWith('https')) {
+    return [
+      'script', { src, type: 'module' },
+    ];
+  } else {
+    return [
+      'script', {},
+      readFileSync(resolve(__dirname, src), 'utf-8')
+    ]
+  }
 }
 
 export default defineConfig({
   lang: 'es-AR',
   title: 'Docs | Sistemas Operativos - UTN FRBA',
   head: [
+    script('https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js'),
     script('scripts/print.js'),
   ],
   description: 'Todo lo necesario para hacer el TP de Sistemas Operativos.',
