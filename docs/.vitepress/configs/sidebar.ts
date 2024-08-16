@@ -51,6 +51,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/entorno-linux'
       },
       {
+        text: 'Git para el Trabajo Práctico',
+        link: '/primeros-pasos/git'
+      },
+      {
         text: 'Introducción al Lenguaje C',
         link: '/primeros-pasos/lenguaje-c'
       },
@@ -59,8 +63,8 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/primer-proyecto-c'
       },
       {
-        text: 'Git para el Trabajo Práctico',
-        link: '/primeros-pasos/git'
+        text: 'Buenas Prácticas de C',
+        link: '/guias/programacion/buenas-practicas'
       },
       {
         text: 'Manejo de Punteros',
@@ -69,10 +73,6 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Guía de Sockets',
         link: '/guias/linux/sockets',
-      },
-      {
-        text: 'Guía de Serialización',
-        link: '/guias/linux/serializacion',
       },
       {
         text: 'Trabajo Práctico 0',
@@ -119,8 +119,8 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: 'https://www.learn-c.org/'
       },
       {
-        text: 'Buenas Prácticas de C',
-        link: '/guias/programacion/buenas-practicas'
+        text: 'Guía de Serialización',
+        link: '/guias/linux/serializacion',
       },
       {
         text: 'Argumentos para el main',

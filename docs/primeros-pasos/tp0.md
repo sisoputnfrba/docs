@@ -372,6 +372,16 @@ paquetes:
   ella.
 - `eliminar_paquete(1)`: Elimina la memoria usada por el paquete.
 
+::: danger IMPORTANTÍSIMO
+
+Estas funciones fueron pensadas únicamente para facilitar la resolución del TP0,
+por lo que **no es recomendable reutilizarlas para el TP**.
+
+Para cuando necesiten enviar estructuras más complejas en el TP, está disponible
+la [guía de serialización](/guias/linux/serializacion).
+
+:::
+
 ### Strings vs streams
 
 Es importante recalcar que hay que agregar al paquete un string (y no un
