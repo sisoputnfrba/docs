@@ -289,10 +289,10 @@ admite el sistema operativo.
 ::: tip
 
 Probablemente, asumiendo que incluimos el chequeo de `err` correspondiente, la
-función `bind()` falle si uno inicia un servidor inmediatamente después de haber
-finalizado otro en el mismo puerto.
+función `bind()` falle si uno inicia un servidor después de haber finalizado
+otro en el mismo puerto.
 
-Esto se debe a que, por razones de seguridad, el sistema operativo no libera los
+Esto se debe a que, por razones de seguridad, el sistema operativo no libera el
 puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
 inmediatamente luego de llamar a `socket()`:
 
