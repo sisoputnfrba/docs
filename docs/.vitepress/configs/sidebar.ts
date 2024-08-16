@@ -63,6 +63,10 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/git'
       },
       {
+        text: 'Buenas Prácticas de C',
+        link: '/guias/programacion/buenas-practicas'
+      },
+      {
         text: 'Manejo de Punteros',
         link: '/guias/programacion/punteros',
       },
@@ -113,10 +117,6 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Tutorial interactivo de C',
         link: 'https://www.learn-c.org/'
-      },
-      {
-        text: 'Buenas Prácticas de C',
-        link: '/guias/programacion/buenas-practicas'
       },
       {
         text: 'Guía de Serialización',
