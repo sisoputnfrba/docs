@@ -25,8 +25,8 @@ make install
 
 ::: tip
 
-En los [archivos `*.h` del repo](https://faq.utnso.com.ar/commons-src) vas a
-encontrar todas las funciones que pueden usar junto con una breve descripción.
+En el [sitio de documentación](https://faq.utnso.com.ar/commons-docs) vas a
+encontrar todas las funciones que pueden usar junto con ejemplos de uso.
 
 :::
 

@@ -10,7 +10,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       },
       {
         text: 'Commons Library',
-        link: 'https://faq.utnso.com.ar/commons'
+        link: 'https://faq.utnso.com.ar/commons-docs'
       },
       {
         text: 'Linux man pages',
