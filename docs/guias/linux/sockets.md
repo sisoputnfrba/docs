@@ -231,7 +231,7 @@ vamos a necesitar de ella para poder chequear si hubo un error o no.
 En cada título les dejamos el link a la documentación de cada función para que
 puedan revisar al detalle qué valores pueden retornar y cómo manejar sus
 errores. Generalmente, al menos que les pidamos alguna lógica de reintentos, lo
-más común va a ser imprimir por pantalla el error y finalizar el programa
+más común va a ser imprimir por pantalla el error y finalizar el programa con
 [`abort()`](https://man7.org/linux/man-pages/man3/abort.3.html).
 
 Estos links también les pueden ser de gran utilidad para imprimir errores:
