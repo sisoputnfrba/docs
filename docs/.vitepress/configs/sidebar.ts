@@ -51,16 +51,16 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/primeros-pasos/entorno-linux'
       },
       {
+        text: 'Git para el Trabajo Práctico',
+        link: '/primeros-pasos/git'
+      },
+      {
         text: 'Introducción al Lenguaje C',
         link: '/primeros-pasos/lenguaje-c'
       },
       {
         text: 'Crear tu primer proyecto C',
         link: '/primeros-pasos/primer-proyecto-c'
-      },
-      {
-        text: 'Git para el Trabajo Práctico',
-        link: '/primeros-pasos/git'
       },
       {
         text: 'Buenas Prácticas de C',
