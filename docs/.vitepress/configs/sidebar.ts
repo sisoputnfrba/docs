@@ -71,10 +71,6 @@ export const sidebar: DefaultTheme.Sidebar = [
         link: '/guias/linux/sockets',
       },
       {
-        text: 'Guía de Serialización',
-        link: '/guias/linux/serializacion',
-      },
-      {
         text: 'Trabajo Práctico 0',
         link: '/primeros-pasos/tp0'
       },
@@ -121,6 +117,10 @@ export const sidebar: DefaultTheme.Sidebar = [
       {
         text: 'Buenas Prácticas de C',
         link: '/guias/programacion/buenas-practicas'
+      },
+      {
+        text: 'Guía de Serialización',
+        link: '/guias/linux/serializacion',
       },
       {
         text: 'Argumentos para el main',
