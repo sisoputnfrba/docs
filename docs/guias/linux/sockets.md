@@ -292,7 +292,7 @@ Probablemente, asumiendo que incluimos el chequeo de `err` correspondiente, la
 función `bind()` falle si uno inicia un servidor inmediatamente después de haber
 finalizado otro en el mismo puerto.
 
-Esto se debe a que, como veremos más adelante, el Sistema Operativo no libera el
+Esto se debe a que, por razones de seguridad, el sistema operativo no libera los
 puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
 inmediatamente luego de llamar a `socket()`:
 
@@ -306,8 +306,8 @@ if (err == -1) {
 
 [`setsockopt()`](https://man7.org/linux/man-pages/man3/setsockopt.3p.html) es
 una función que sirve para agregar configuraciones extra a los sockets. En este
-caso, `SO_REUSEPORT` permite que otros sockets se puedan `bind()`ear al mismo
-puerto.[^1]
+caso, `SO_REUSEPORT` permite que varios sockets se puedan `bind()`ear a un
+puerto al mismo tiempo.[^1]
 
 :::
 
