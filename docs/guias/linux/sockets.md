@@ -297,7 +297,7 @@ puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
 inmediatamente luego de llamar a `socket()`:
 
 ```c
-err = setsockopt(fd_escucha, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int));
+err = setsockopt(fd_escucha, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int)); // [!code focus]
 if (err == -1) {
     error_show("setsockopt failed");
     abort();
