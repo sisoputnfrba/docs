@@ -288,9 +288,9 @@ admite el sistema operativo.
 
 ::: tip
 
-Probablemente, asumiendo que incluimos el chequeo de `err` correspondiente, la
-función `bind()` falle si uno inicia un servidor después de haber finalizado
-otro en el mismo puerto.
+Probablemente la función `bind()` falle si uno inicia un servidor después de haber
+finalizado otro en el mismo puerto. Asumiendo que hicimos el chequeo del valor de
+`err` correspondiente, veremos que el error es `Address already in use`.
 
 Esto se debe a que, por razones de seguridad, el sistema operativo no libera el
 puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
