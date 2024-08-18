@@ -20,7 +20,7 @@ export default {
       { name: 'Irina Pérez Gribnicow', github: 'irinaperezg' },
       { name: 'Federico Andrade', github: 'f-and' },
       { name: 'Tomás Martinez', github: 'tomasmartinez02' },
-      { name: 'Florencia Larocca', github: 'LFLarocca' }
+      { name: 'Florencia Larocca', github: 'LFLarocca' },
     ]
   }
 }

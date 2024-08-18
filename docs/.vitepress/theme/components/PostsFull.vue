@@ -11,7 +11,7 @@ import { data as members } from '../loaders/members.data.js'
       :date="article.date.text"
       :href="article.url"
       :category="article.category"
-      :author="members.find((member) => member.github === article.author)"
+      :author="members.find((member) => member.github === article.author) ?? { name: article.author, github: article.author }"
     />
   </div>
 </template>
