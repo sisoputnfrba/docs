@@ -21,4 +21,4 @@ hero:
       link: /consultas
 ---
 
-<PostsLatest />
+<Posts :filter="(_, index) => index === 0" />

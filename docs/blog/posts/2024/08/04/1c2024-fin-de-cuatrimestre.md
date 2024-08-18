@@ -5,7 +5,7 @@ author: iago64
 category: 1c2024
 ---
 
-[⬅️ Volver al Blog](/blog/)
+<PostBreadcrumb />
 
 # {{ $frontmatter.category }} - {{ $frontmatter.title }}
 

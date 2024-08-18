@@ -1,5 +1,3 @@
-# Blog
+<PostBreadcrumb />
 
-<br>
-
-<PostsFull />
+<Posts />

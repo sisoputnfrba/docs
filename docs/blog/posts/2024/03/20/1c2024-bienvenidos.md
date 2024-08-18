@@ -5,6 +5,8 @@ author: nahuemazzeo
 category: 1c2024
 ---
 
+<PostBreadcrumb />
+
 # {{ $frontmatter.category }} - {{ $frontmatter.title }}
 
 {{ $frontmatter.description }}
