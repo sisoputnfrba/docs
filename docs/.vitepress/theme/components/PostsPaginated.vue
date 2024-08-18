@@ -3,7 +3,7 @@ import Posts from './Posts.vue';
 import { data as posts } from '../loaders/posts.data.js'
 </script>
 <template>
-<Posts :filter="(_, index) => start <= index && index < end" />
+<Posts :start="start" :count="count" :filter="filter" />
 <div class="w-full pt-4">
   <div class="container flex flex-col items-center px-6 py-5 mx-auto space-y-6 sm:flex-row sm:justify-between sm:space-y-0 ">
       <div class="-mx-2">
@@ -27,16 +27,20 @@ export default {
       type: Number,
       default: 1,
     },
+    filter: {
+      type: Function,
+      default: () => true
+    },
   },
   computed: {
     totalCount() {
-      return posts.length
+      return posts.filter(this.filter).length
     },
-    perPage() {
+    count() {
       return 5
     },
     totalPages() {
-      return Math.ceil(this.totalCount / this.perPage)
+      return Math.ceil(this.totalCount / this.count)
     },
     pagesStart() {
       return Math.max(1, this.page - 2)
@@ -45,11 +49,11 @@ export default {
       return Array.from({ length: Math.min(this.totalPages, 5) }, (_, index) => index + this.pagesStart)
     },
     start() {
-      return (this.page - 1) * this.perPage
+      return (this.page - 1) * this.count
     },
     end() {
-      return Math.min(this.start + this.perPage, this.totalCount)
-    },
+      return Math.min(this.totalCount, this.start + this.count)
+    }
   }
 };
 </script>

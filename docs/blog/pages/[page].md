@@ -1,3 +1,8 @@
+---
+lastUpdated: false
+editLink: false
+---
+
 <script setup>
 import { useData } from 'vitepress'
 

@@ -21,4 +21,4 @@ hero:
       link: /consultas
 ---
 
-<Posts :filter="(_, index) => index === 0" />
+<Posts :count="1" />

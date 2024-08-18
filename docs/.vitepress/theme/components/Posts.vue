@@ -5,8 +5,8 @@ import { data as members } from '../loaders/members.data.js'
 </script>
 <template>
   <div class="container mx-auto flex flex-wrap justify-center gap-x-4 gap-y-4">
-    <template v-for="article in filteredPosts">
-      <PostCard
+    <template v-for="(article, index) in filteredPosts">
+      <PostCard v-if="start <= index && index < (start + count)"
         :title="article.title"
         :excerpt="article.excerpt"
         :date="article.date.text"
@@ -24,6 +24,14 @@ export default {
     filter: {
       type: Function,
       default: () => true
+    },
+    start: {
+      type: Number,
+      default: 0
+    },
+    count: {
+      type: Number,
+      default: 5
     }
   },
   computed: {
