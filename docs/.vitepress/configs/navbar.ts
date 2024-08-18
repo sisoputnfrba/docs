@@ -7,14 +7,9 @@ export const navbar: DefaultTheme.NavItem[] = [
     activeMatch: '/blog/'
   },
   {
-    text: 'Primeros pasos',
-    link: '/primeros-pasos/',
-    activeMatch: '/primeros-pasos/'
-  },
-  {
     text: 'Guías',
     link: '/guias/',
-    activeMatch: '/guias/',
+    activeMatch: '/(primeros-pasos|guias)/',
   },
   {
     text: 'Consultas',
