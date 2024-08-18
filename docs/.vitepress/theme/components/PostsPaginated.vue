@@ -1,6 +1,14 @@
 <script setup>
-import Posts from './Posts.vue';
+import { useRoute } from 'vitepress'
+import Posts from './Posts.vue'
 import { data as posts } from '../loaders/posts.data.js'
+
+const route = useRoute();
+
+const prefix = route.data.params?.category ?
+    `/blog/categories/${route.data.params.category}/`
+  : '/blog/';
+
 </script>
 <template>
 <Posts :start="start" :count="count" :filter="filter" />
@@ -8,7 +16,7 @@ import { data as posts } from '../loaders/posts.data.js'
   <div class="container flex flex-col items-center px-6 py-5 mx-auto space-y-6 sm:flex-row sm:justify-between sm:space-y-0 ">
       <div class="-mx-2">
           <a v-for="i in pages"
-            :href="`/blog/pages/${i}`"
+            :href="`${prefix}${i}`"
             :class="`inline-flex items-center justify-center px-4 py-1 mx-2 !no-underline rounded-lg ${page === i ? 'bg-[--vp-c-gray-soft]' : ''}`"
           >
               {{ i }}

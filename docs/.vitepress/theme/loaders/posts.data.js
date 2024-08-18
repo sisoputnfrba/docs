@@ -17,7 +17,7 @@ export default createContentLoader('blog/posts/**/*.md', {
 })
 
 function extractDate(url = '') {
-  const date = new Date(url.substring(url.lastIndexOf('/') + 1, url.indexOf('_')));
+  const date = new Date(url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('_')));
   return {
     timestamp: date.getTime(),
     text: date.toLocaleDateString('es', {
@@ -29,5 +29,5 @@ function extractDate(url = '') {
 }
 
 function extractCategory(url = '') {
-  return url.substring('/blog/posts/'.length, url.lastIndexOf('/'));
+  return url.match(/\/blog\/posts\/(.*)\//)?.[1];
 }

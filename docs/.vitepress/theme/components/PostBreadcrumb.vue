@@ -5,9 +5,9 @@ const { frontmatter } = useData();
 const route = useRoute();
 
 const category = route.path.startsWith('/blog/posts/') ?
-    route.path.substring('/blog/posts/'.length, route.path.lastIndexOf('/'))
+    route.path.match(/\/blog\/posts\/(.*)\//)[1]
   : route.path.startsWith('/blog/categories/') ?
-    route.path.substring('/blog/categories/'.length)
+    route.path.match(/\/blog\/categories\/([^\/]*)(\/[0-9]+|)$/)[1]
   : null;
 
 </script>
