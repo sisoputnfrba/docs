@@ -60,7 +60,7 @@ a una entrega con la seguridad de que van a aprobar sería:
 Para esto pueden ir a los laboratorios de Medrano (que están abiertos de lunes a
 viernes de 10 a 21hs y sábados de 10 a 18hs) o, de no ser posible, pueden
 utilizar las VMs server desde sus casas
-[de la misma forma que en el TP0](https://docs.utnso.com.ar/primeros-pasos/tp0#etapa-4-desplegar-en-la-ubuntu-server).
+[de la misma forma que en el TP0](/primeros-pasos/tp0#etapa-4-desplegar-en-la-ubuntu-server).
 Para ambos casos, más adelante en la
 guía les mostraremos algunas herramientas que pueden serles de utilidad ;)
 
