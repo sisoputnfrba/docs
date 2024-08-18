@@ -1,22 +1,20 @@
-import DefaultTheme from 'vitepress/theme';
-import { onMounted, watch, nextTick } from 'vue';
-import { useRoute } from 'vitepress';
-import mediumZoom from 'medium-zoom';
-import Image from './components/Image.vue';
-import Link from './components/Link.vue';
-import Sheet from './components/Sheet.vue';
-import YouTube from './components/YouTube.vue';
+import { onMounted, watch, nextTick } from 'vue'
+import { useRoute } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
+import mediumZoom from 'medium-zoom'
 
 import './index.css';
 
+const components = import.meta.glob('./components/*.vue', { eager: true });
+
 export default {
-  ...DefaultTheme,
-  enhanceApp(ctx) {
-    //DefaultTheme.enhanceApp(ctx);
-    ctx.app.component('Image', Image);
-    ctx.app.component('Link', Link);
-    ctx.app.component('Sheet', Sheet);
-    ctx.app.component('YouTube', YouTube);
+  extends: DefaultTheme,
+  enhanceApp({ app }) {
+    for (const path in components) {
+      const name = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+      app.component(name, components[path].default);
+    }
+    app.config.compilerOptions.isCustomElement = (tag) => ['lite-youtube'].includes(tag);
   },
   setup() {
     const route = useRoute();
