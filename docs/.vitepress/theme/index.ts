@@ -1,5 +1,5 @@
 import { onMounted, watch, nextTick } from 'vue'
-import { useRoute } from 'vitepress'
+import { Theme, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
 
@@ -14,7 +14,6 @@ export default {
       const name = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
       app.component(name, components[path].default);
     }
-    app.config.compilerOptions.isCustomElement = (tag) => ['lite-youtube'].includes(tag);
   },
   setup() {
     const route = useRoute();
@@ -29,4 +28,4 @@ export default {
       () => nextTick(() => initZoom()),
     );
   },
-}
+} satisfies Theme
