@@ -111,13 +111,6 @@ condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
 los requerimientos de los parciales. En tal caso, la materia solamente se
 encontrará regularizada.
 
-## Presentación oficial del trabajo práctico
-
-Tanto la fecha como el horario de la presentación serán informados en el Campus
-Virtual, mediante el [blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia. Es obligatoria 
-**la asistencia del grupo completo** a dicha presentación, y se recomienda asistir a la
-misma habiendo leído y discutido la especificación completa del trabajo.
-
 ## Estructura del trabajo práctico grupal
 
 La especificación del trabajo práctico estará compuesta por una serie de
