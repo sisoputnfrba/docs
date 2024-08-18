@@ -25,31 +25,31 @@ export default {
   props: {
     page: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   computed: {
     totalCount() {
-      return posts.length;
+      return posts.length
     },
     perPage() {
-      return 5;
+      return 5
     },
     totalPages() {
-      return Math.ceil(this.totalCount / this.perPage);
+      return Math.ceil(this.totalCount / this.perPage)
     },
     pagesStart() {
-      return Math.max(1, this.page - 2);
+      return Math.max(1, this.page - 2)
     },
     pages() {
-      return Array.from({ length: Math.min(this.totalPages, 5) }, (_, index) => index + this.pagesStart);
+      return Array.from({ length: Math.min(this.totalPages, 5) }, (_, index) => index + this.pagesStart)
     },
     start() {
-      return (this.page - 1) * this.perPage;
+      return (this.page - 1) * this.perPage
     },
     end() {
-      return Math.min(this.start + this.perPage, this.totalCount);
-    }
+      return Math.min(this.start + this.perPage, this.totalCount)
+    },
   }
 };
 </script>

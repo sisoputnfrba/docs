@@ -7,7 +7,7 @@
         {{ date }}
       </span>
       <a
-        href="#"
+        :href="`/blog/categories/${category}`"
         class="px-3 py-1 text-sm font-bold !no-underline transition-colors duration-300 transform !text-[--vp-c-white] bg-[--vp-c-brand-2] rounded cursor-pointer hover:bg-[--vp-c-brand-3]"
         tabindex="0"
         role="button"
