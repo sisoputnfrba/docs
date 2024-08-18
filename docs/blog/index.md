@@ -1,3 +1,2 @@
 <PostBreadcrumb />
-
 <PostsPaginated />

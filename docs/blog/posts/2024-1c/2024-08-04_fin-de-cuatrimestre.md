@@ -1,13 +1,12 @@
 ---
 title: Fin de Cuatrimestre
-description: Buenas! Cómo va? Habiendo cerrado ya el primer cuatrimestre de este 2024, les queremos avisar que vamos a estar eliminando los repositorios de los grupos el día Domingo 11/08/2024.
+description: Buenas! Cómo va? Habiendo cerrado ya el primer cuatrimestre de este 2024, les queremos avisar que vamos a estar eliminando los repositorios de los grupos el día...
 author: iago64
-category: 1c2024
 ---
 
 <PostBreadcrumb />
 
-# {{ $frontmatter.category }} - {{ $frontmatter.title }}
+# {{ $frontmatter.title }}
 
 Buenas! Cómo va?
 

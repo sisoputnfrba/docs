@@ -1,15 +1,16 @@
 ---
 title: Bienvenidos
-description: Bienvenidos futuros ingenieros! A dos horas de comenzar las clases de este año les queremos ir anticipando los temas administrativos de la cursada con respecto al trabajo práctico.
+description: Bienvenidos futuros ingenieros! A dos horas de comenzar las clases de este año les queremos ir anticipando los temas administrativos de la cursada con respecto al trabajo práctico...
 author: nahuemazzeo
-category: 1c2024
 ---
 
 <PostBreadcrumb />
 
-# {{ $frontmatter.category }} - {{ $frontmatter.title }}
+# {{ $frontmatter.title }}
 
-{{ $frontmatter.description }}
+Bienvenidos futuros ingenieros! A dos horas de comenzar las clases de este año
+les queremos ir anticipando los temas administrativos de la cursada con respecto
+al trabajo práctico.
 
 Hemos actualizado las [Normas del Trabajo Práctico](/primeros-pasos/normas-tp)
 (NTP) para la cursada y aprobación del mismo. Les recomendamos que tanto

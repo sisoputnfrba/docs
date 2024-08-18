@@ -7,17 +7,17 @@ export default createContentLoader('blog/posts/**/*.md', {
       return {
         title: frontmatter.title,
         excerpt: frontmatter.description,
-        date: formatDate(url),
+        date: extractDate(url),
         url,
-        category: frontmatter.category ?? "Información General",
+        category: extractCategory(url),
         author: frontmatter.author,
       }
     })
     .sort((a, b) => b.date.timestamp - a.date.timestamp)
 })
 
-function formatDate(url = '') {
-  const date = new Date(url.substring('blog/posts/'.length, url.lastIndexOf('/')))
+function extractDate(url = '') {
+  const date = new Date(url.substring(url.lastIndexOf('/') + 1, url.indexOf('_')));
   return {
     timestamp: date.getTime(),
     text: date.toLocaleDateString('es', {
@@ -26,4 +26,8 @@ function formatDate(url = '') {
       day: 'numeric',
     }),
   }
+}
+
+function extractCategory(url = '') {
+  return url.substring('/blog/posts/'.length, url.lastIndexOf('/'));
 }
