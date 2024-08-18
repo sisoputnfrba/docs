@@ -483,7 +483,7 @@ Necesitamos de alguna herramienta que sea capaz de paralelizar tareas dentro de
 un mismo proceso. ¿Será que el sistema operativo nos brinda algo capaz de hacer
 esto?
 
-<Image src="/img/guias/sockets/pensativo-emoji.png" imageWidth="100px" />
+<Image src="/img/guias/sockets/pensativo-emoji.png" imageClass="w-24" />
 
 ¡Ya sé! ¡Hilos! Si bien los hilos no son llamadas al sistema relacionadas a los
 sockets, sí podemos usarlos para poder paralelizar las tareas que solicitan los

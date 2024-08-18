@@ -32,18 +32,10 @@ export default {
 <template>
   <iframe
     :src="`https://docs.google.com/presentation/d/e/${id}/embed?start=${start}&loop=${loop}&delayms=${delayms}`"
-    class="custom-sheet-container"
+    class="mt-4 w-full border-none"
+    style="aspect-ratio: 3.74 / 3;"
     :allowfullscreen="allowFullScreen"
     :mozallowfullscreen="allowFullScreen"
     :webkitallowfullscreen="allowFullScreen"
   ></iframe>
 </template>
-
-<style>
-.custom-sheet-container {
-  margin-top: 1rem;
-  width: 100%;
-  aspect-ratio: 3.74 / 3;
-  border: none;
-}
-</style>

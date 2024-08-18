@@ -5,19 +5,11 @@ export default {
       type: String,
       required: true,
     },
-    containerColor: {
+    containerClass: {
       type: String,
       required: false,
     },
-    containerPadding: {
-      type: String,
-      required: false,
-    },
-    imageColor: {
-      type: String,
-      required: false,
-    },
-    imageWidth: {
+    imageClass: {
       type: String,
       required: false,
     },
@@ -27,32 +19,11 @@ export default {
       default: null,
     },
   },
-  computed: {
-    containerStyle() {
-      return `
-        ${this.containerColor ? `background-color: ${this.containerColor};` : ''}
-        ${this.containerPadding ? `padding: ${this.containerPadding};` : ''}
-      `;
-    },
-    imageStyle() {
-      return `
-        ${this.imageColor ? `background-color: ${this.imageColor};` : ''}
-        ${this.imageWidth ? `width: ${this.imageWidth};` : ''}
-      `;
-    },
-  },
 };
 </script>
 
 <template>
-  <div class="custom-image-container" :style="containerStyle">
-    <img :src="src" :style="imageStyle" :data-zoomable="zoomable"/>
+  <div :class="`flex justify-center ${containerClass ?? ''}`">
+    <img :src="src" :class="`${imageClass ?? ''}`" :data-zoomable="zoomable"/>
   </div>
 </template>
-
-<style>
-.custom-image-container {
-  display: flex;
-  justify-content: center;
-}
-</style>

@@ -7,7 +7,7 @@ import Link from './components/Link.vue';
 import Sheet from './components/Sheet.vue';
 import YouTube from './components/YouTube.vue';
 
-import './index.scss';
+import './index.css';
 
 export default {
   ...DefaultTheme,

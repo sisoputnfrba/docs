@@ -41,9 +41,9 @@ t_persona persona_crear(uint32_t dni, uint8_t edad, uint32_t pasaporte, char *no
 }
 ```
 
-<Image src="/img/guias/serializacion/padding-imagen.png" containerColor="white" containerPadding="30px 0px 0px 0px"/>
+<Image src="/img/guias/serializacion/padding-imagen.png" imageClass="bg-slate-50 pt-8 pb-0 px-0" />
 
-<Image src="/img/guias/serializacion/padding-exclamacion.png" imageWidth="200px" containerColor="white" containerPadding="0px 0px 30px 0px"/>
+<Image src="/img/guias/serializacion/padding-exclamacion.png" imageClass="w-[200px]" containerClass="bg-slate-50 px-0 pt-0 pb-8" />
 
 El tamaño de este padding depende de varios factores como, por ejemplo, el
 compilador, la arquitectura del CPU, el tipo de dato, entre otros. Por esto, es

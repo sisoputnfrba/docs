@@ -291,12 +291,12 @@ anuncia qué tamaño tiene esa referencia.
 
 Digamos, esto es una memoria de 30 bytes[^3] (éramos tan pobres):
 
-<Image src="/img/primeros-pasos/lenguaje-c/memoria-libre.png" containerColor="white" containerPadding="15px"/>
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-libre.png" containerClass="bg-slate-50 p-4" />
 
 Esa es toda la memoria de esta computadora hipotética. Si en mi programa declaro
 una variable `int exit_status;`, podríamos pensarlo como que C hará algo así:
 
-<Image src="/img/primeros-pasos/lenguaje-c/memoria-reservada.png" containerColor="white" containerPadding="15px"/>
+<Image src="/img/primeros-pasos/lenguaje-c/memoria-reservada.png" containerClass="bg-slate-50 p-4" />
 
 En algún lugar de la memoria (en este caso, a partir del byte 13), C reservó[^4]
 unos bytes para nuestra variable.
