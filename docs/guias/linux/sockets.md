@@ -220,9 +220,9 @@ Cuando esto ocurre, estas funciones **no van a terminar el programa**, sino que
 nos retornarán un valor que nos haga saber que la operación falló, dándonos el
 poder de decidir qué hacer cuando ésto ocurra.
 
-Algunas funciones como `socket()` nos devuelven el valor de error ahí mismo, por
-lo que no necesitaríamos de otra variable. Pero, en la mayoría de los casos, sí
-vamos a necesitar de ella para poder chequear si hubo un error o no.
+Algunas funciones como `socket()` solo devuelven un valor especial en caso de
+error, pero no devuelven el motivo del mismo. En esos casos, vamos a necesitar
+de otra variable llamada `errno` para poder obtener el motivo del error.
 
 :::
 
