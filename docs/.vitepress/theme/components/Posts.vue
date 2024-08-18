@@ -21,10 +21,6 @@ import { data as members } from '../loaders/members.data.js'
 <script>
 export default {
   props: {
-    members: {
-      type: Array,
-      required: true
-    },
     filter: {
       type: Function,
       default: () => true
