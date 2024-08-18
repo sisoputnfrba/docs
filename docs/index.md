@@ -11,9 +11,14 @@ hero:
     alt: Tux
   actions:
     - theme: brand
-      text: Primeros pasos →
+      text: Blog →
+      link: /blog
+    - theme: alt
+      text: Primeros pasos
       link: /primeros-pasos/
     - theme: alt
       text: ¡Tengo una duda!
       link: /consultas
 ---
+
+<PostsLatest />
