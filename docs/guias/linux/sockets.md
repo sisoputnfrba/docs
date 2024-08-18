@@ -209,7 +209,7 @@ alcance de la materia (y se verán en detalles en una correlativa de ésta). A
 fines didácticos, quedemos en que esta configuración nos crea un socket capaz de
 hacer todo lo que vamos a necesitar durante el cuatrimestre.
 
-::: warning IMPORTANTE
+::: danger IMPORTANTÍSIMO
 
 Seguramente te preguntarás: ¿qué hace esa variable `err`? Bueno, se la dejamos a
 modo de _placeholder_ porque, si bien en esta guía solamente te estamos
@@ -232,12 +232,13 @@ En cada título les dejamos el link a la documentación de cada función para qu
 puedan revisar al detalle qué valores pueden retornar y cómo manejar sus
 errores. Generalmente, al menos que les pidamos alguna lógica de reintentos, lo
 más común va a ser imprimir por pantalla el error y finalizar el programa con
-[`exit()`](https://man7.org/linux/man-pages/man3/exit.3.html).
+[`abort()`](https://man7.org/linux/man-pages/man3/abort.3.html).
 
 Estos links también les pueden ser de gran utilidad para imprimir errores:
 
 - [errno(3) — Linux manual page](https://man7.org/linux/man-pages/man3/errno.3.html)
 - [strerror(3) — Linux manual page](https://man7.org/linux/man-pages/man3/strerror.3.html)
+- [error_show() - Commons Library](https://sisoputnfrba.github.io/so-commons-library/error_8h.html)
 - [gai_strerror(3p) — Linux manual page](https://man7.org/linux/man-pages/man3/gai_strerror.3p.html)
 
 :::
@@ -284,6 +285,31 @@ contectar.
 Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas
 que puede mantener. `SOMAXCONN` como indica el nombre, es la cantidad máxima que
 admite el sistema operativo.
+
+::: tip
+
+Probablemente la función `bind()` falle si uno inicia un servidor después de haber
+finalizado otro en el mismo puerto. Asumiendo que hicimos el chequeo del valor de
+`err` correspondiente, veremos que el error es `Address already in use`.
+
+Esto se debe a que, por razones de seguridad, el sistema operativo no libera el
+puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
+inmediatamente luego de llamar a `socket()`:
+
+```c
+err = setsockopt(fd_escucha, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int)); // [!code focus]
+if (err == -1) {
+    error_show("setsockopt failed");
+    abort();
+}
+```
+
+[`setsockopt()`](https://man7.org/linux/man-pages/man3/setsockopt.3p.html) es
+una función que sirve para agregar configuraciones extra a los sockets. En este
+caso, `SO_REUSEPORT` permite que varios sockets se puedan `bind()`ear a un
+puerto al mismo tiempo.[^1]
+
+:::
 
 ## [accept()](https://man7.org/linux/man-pages/man2/accept.2.html) y [connect()](https://man7.org/linux/man-pages/man2/connect.2.html)
 
@@ -449,7 +475,7 @@ Es muy importante tener en cuenta que la syscall `close()` no cierra el socket
 instantáneamente, sino que, a veces, por razones técnicas, el socket se mantiene
 vivo por algunos minutos luego de llamar a `close()`.
 
-Este tiempo de retardo puede variar entre 20 segundos y 4 minutos[^1].
+Este tiempo de retardo puede variar entre 20 segundos y 4 minutos[^2].
 
 :::
 
@@ -547,4 +573,14 @@ hagan uso de las guías y los video tutoriales de esta página.
 
 <br><br>
 
-[^1]: [Why don't my sockets close?](http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq-4.html#ss4.2)
+[^1]:
+      Si bien la segurización de aplicaciones no está dentro del alcance de esta
+      materia, es importante tener en cuenta que el uso de `SO_REUSEPORT` puede
+      ser un riesgo de seguridad si no se toman las medidas necesarias.
+      Cualquier proceso podría _crashear_ nuestro servidor y ocupar el puerto
+      que éste estaba utilizando sin darle tiempo al cliente de enterarse,
+      pudiendo interceptar la comunicación y enviar mensajes maliciosos. A este
+      tipo de ataque se lo conoce como
+      ["port hijacking"](https://www.geeksforgeeks.org/tcp-ip-hijacking/).
+
+[^2]: [Why don't my sockets close?](http://www.softlab.ntua.gr/facilities/documentation/unix/unix-socket-faq/unix-socket-faq-4.html#ss4.2)
