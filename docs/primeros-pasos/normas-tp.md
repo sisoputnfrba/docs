@@ -101,7 +101,7 @@ Para conocer los medios de soporte, visitar el
 
 ## Régimen de Promoción
 
-Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la
+Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la 
 promoción de la materia, además de los requerimientos de la parte teórica de la
 materia, el mismo **deberá aprobar el trabajo práctico con una nota final de 8
 (ocho) o superior en la instancia de coloquio**.
@@ -111,12 +111,11 @@ condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
 los requerimientos de los parciales. En tal caso, la materia solamente se
 encontrará regularizada.
 
-## Presentación oficial del trabajo práctico
+## Guardado del TP
 
-Tanto la fecha como el horario de la presentación serán informados en el Campus
-Virtual, mediante el [blog](https://faq.utnso.com.ar/blog) y el servidor de Discord de la materia. Es obligatoria 
-**la asistencia del grupo completo** a dicha presentación, y se recomienda asistir a la
-misma habiendo leído y discutido la especificación completa del trabajo.
+A partir del **2do cuatrimestre de 2024**, en caso de aprobar el trabajo práctico, se reconocerá la aprobación del mismo **solamente para el cuatrimestre siguiente al haber aprobado**.
+
+Las condiciones para acceder a este régimen serán informadas en detalle por los docentes a cargo de los cursos, teniendo como punto de partida que el alumno deberá demostrar haber intentado aprobar tanto la cursada como el trabajo práctico.
 
 ## Estructura del trabajo práctico grupal
 
