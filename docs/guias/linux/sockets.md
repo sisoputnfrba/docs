@@ -254,10 +254,22 @@ puerto que estén ocupando en dicho servidor a la espera de nuevas conexiones po
 parte de los clientes. Las llamadas al sistema que realizan esa preparación por
 parte del proceso servidor son `bind()` y `listen()`.
 
-`bind()` lo que hace es tomar el socket que creamos con anterioridad y pegarlo
-con pegamento industrial al puerto que le digamos.
+- Primero, `bind()` toma el socket que creamos con anterioridad y le pide al
+sistema operativo que lo asocie al puerto que le digamos.
 
-Por otro lado, `listen()` toma ese mismo socket y lo marca en el sistema como un
+Esta petición probablemente falle si uno inicia un servidor después de haber
+finalizado otro en el mismo puerto. Asumiendo que hicimos
+[el chequeo del valor de `err` correspondiente](https://sisoputnfrba.github.io/so-commons-library/error_8h.html),
+veremos que el error es `Address already in use`.
+
+Esto se debe a que el sistema operativo no libera el puerto inmediatamente por
+razones de seguridad. La forma de aliviarlo es agregar una configuración
+mediante la función
+[`setsockopt()`](https://man7.org/linux/man-pages/man3/setsockopt.3p.html):
+`SO_REUSEPORT`. Esta opción permite que varios sockets se puedan `bind`ear a
+un puerto al mismo tiempo, siempre y cuando pertenezcan al mismo usuario.[^1]
+
+- Luego, `listen()` toma ese mismo socket y lo marca en el sistema como un
 socket cuya **única responsabilidad** es notificar cuando un nuevo cliente esté
 intentando conectarse.
 
@@ -267,6 +279,8 @@ clientes.
 ::: code-group
 
 ```c [Servidor]
+err = setsockopt(fd_escucha, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int));
+
 err = bind(fd_escucha, server_info->ai_addr, server_info->ai_addrlen);
 
 err = listen(fd_escucha, SOMAXCONN);
@@ -285,31 +299,6 @@ contectar.
 Luego, `listen()` recibe como segundo parámetro la cantidad de conexiones vivas
 que puede mantener. `SOMAXCONN` como indica el nombre, es la cantidad máxima que
 admite el sistema operativo.
-
-::: tip
-
-Probablemente la función `bind()` falle si uno inicia un servidor después de haber
-finalizado otro en el mismo puerto. Asumiendo que hicimos el chequeo del valor de
-`err` correspondiente, veremos que el error es `Address already in use`.
-
-Esto se debe a que, por razones de seguridad, el sistema operativo no libera el
-puerto inmediatamente. Una forma de aliviar esto es agregar la siguiente línea
-inmediatamente luego de llamar a `socket()`:
-
-```c
-err = setsockopt(fd_escucha, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int)); // [!code focus]
-if (err == -1) {
-    error_show("setsockopt failed");
-    abort();
-}
-```
-
-[`setsockopt()`](https://man7.org/linux/man-pages/man3/setsockopt.3p.html) es
-una función que sirve para agregar configuraciones extra a los sockets. En este
-caso, `SO_REUSEPORT` permite que varios sockets se puedan `bind()`ear a un
-puerto al mismo tiempo.[^1]
-
-:::
 
 ## [accept()](https://man7.org/linux/man-pages/man2/accept.2.html) y [connect()](https://man7.org/linux/man-pages/man2/connect.2.html)
 
