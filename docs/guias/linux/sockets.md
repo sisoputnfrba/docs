@@ -257,9 +257,10 @@ parte del proceso servidor son `bind()` y `listen()`.
 - Primero, `bind()` toma el socket que creamos con anterioridad y le pide al
 sistema operativo que lo asocie al puerto que le digamos.
 
-Esta petición probablemte falle si uno inicia un servidor después de haber
-finalizado otro en el mismo puerto. Asumiendo que hicimos el chequeo del valor de
-`err` correspondiente, veremos que el error es `Address already in use`.
+Esta petición probablemente falle si uno inicia un servidor después de haber
+finalizado otro en el mismo puerto. Asumiendo que hicimos
+[el chequeo del valor de `err` correspondiente](https://sisoputnfrba.github.io/so-commons-library/error_8h.html),
+veremos que el error es `Address already in use`.
 
 Esto se debe a que el sistema operativo no libera el puerto inmediatamente por
 razones de seguridad. La forma de aliviarlo es agregar una configuración
