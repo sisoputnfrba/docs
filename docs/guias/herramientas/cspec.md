@@ -519,13 +519,6 @@ más simple. Son bastante útiles para evitar escribir código repetitivo.
 Lo conveniente sería tener un `context` por cada archivo a testear, y cada uno
 de ellos en un archivo diferente.
 
-> ¿Pueden convivir los tests con mi función `main`?
-
-Sí, y al ejecutar el programa van a correr las dos cosas (tu main y los tests).
-Lo ideal sería tener todo el código de dominio (y que se pretenda probar) en una
-**static library** y que tanto el proyecto principal como el que contengan tus
-tests usen esa biblioteca.
-
 > Todo muy lindo, pero vos me estás diciendo que haga tests unitarios para
 > probar mi trabajo práctico. El tiempo que toma desarrollar el TP es mucho,
 > apenas llego a la primera instancia de evaluación con horas de diferencia, ¡¿y
