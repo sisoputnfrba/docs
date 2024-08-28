@@ -124,7 +124,7 @@ Una vez que tengamos nuestro repo forkeado, vamos a clonarlo en nuestra VM con
 método que configuramos anteriormente.
 
 ```bash
-git clone git@github:TuUsuarioDeGitHub/tp0.git
+git clone git@github.com:TuUsuarioDeGitHub/tp0.git
 ```
 
 ### Abrir desde Visual Studio Code
