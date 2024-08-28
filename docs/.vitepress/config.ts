@@ -47,12 +47,20 @@ export default defineConfig({
       pattern: `${repository}/edit/main/docs/:path`,
       text: 'Editar esta página en GitHub',
     },
-    lastUpdatedText: 'Última actualización',
+    lastUpdated: {
+      text: 'Última actualización',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      },
+    },
     docFooter: {
       prev: 'Página anterior',
       next: 'Página siguiente',
     },
     darkModeSwitchLabel: 'Tema',
+    lightModeSwitchTitle: 'Usar tema claro',
+    darkModeSwitchTitle: 'Usar tema oscuro',
     sidebarMenuLabel: 'Menú',
     returnToTopLabel: 'Volver al inicio',
     search: {
