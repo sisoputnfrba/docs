@@ -311,7 +311,7 @@ IDE que quieran utilizar.
 
 Las commons también proveen funciones para simplificar el manejo de strings.
 Pueden consultar su documentación en
-[el sitio web](https://faq.utnso.com.ar-docs/string_8h.html).
+[el sitio web](https://faq.utnso.com.ar/commons-docs/string_8h.html).
 
 :::
 
