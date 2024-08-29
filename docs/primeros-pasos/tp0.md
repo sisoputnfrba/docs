@@ -172,8 +172,8 @@ Durante todo el TP iremos logueando en un archivo de texto las diferentes
 acciones que el programa vaya realizando, tanto las correctas, como los errores.
 Para ello, utilizaremos las funciones de logging que proveen las commons.
 
-Parados en el archivo `cliente.c`, si revisamos el
-[header de log de las commons](https://faq.utnso.com.ar/commons/blob/72470a6732312c085185ae08d911e9f0d7c7fc1a/src/commons/log.h#L40-L57)
+Parados en el archivo `cliente.c`, si revisamos la
+[documentación de log de las commons](https://faq.utnso.com.ar/commons-docs/log_8h.html)
 vamos a encontrar la función `log_create()`, que nos devuelve un logger listo
 para usar.
 
@@ -200,7 +200,7 @@ proyecto, por lo que vamos a leerlo a partir de un archivo de configuración y l
 vamos a loguear usando nuestro logger.
 
 Para ello vamos a usar
-[las config de las commons](https://faq.utnso.com.ar/commons/blob/master/src/commons/config.h).
+[las config de las commons](https://faq.utnso.com.ar/commons-docs/config_8h.html).
 Siguiendo su header, creemos una config que levante el archivo `"cliente.config"` y
 obtengamos el valor de la key `CLAVE` en formato string.
 
@@ -310,8 +310,8 @@ IDE que quieran utilizar.
 ::: tip
 
 Las commons también proveen funciones para simplificar el manejo de strings.
-Pueden consultar su documentación leyendo los
-[headers](https://faq.utnso.com.ar/commons-src).
+Pueden consultar su documentación en
+[el sitio web](https://faq.utnso.com.ar-docs/string_8h.html).
 
 :::
 
