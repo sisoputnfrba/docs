@@ -22,7 +22,7 @@ function script(src: string): HeadConfig {
 
 export default defineConfig({
   lang: 'es-AR',
-  title: 'Docs | Sistemas Operativos - UTN FRBA',
+  title: 'Home | Sistemas Operativos - UTN FRBA',
   head: [
     script('https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js'),
     script('scripts/print.js'),
