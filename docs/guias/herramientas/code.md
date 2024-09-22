@@ -55,14 +55,10 @@ un mismo workspace), esta configuración se encuentra en el archivo con formato
 
 El segundo archivo del que vamos a hablar es el `tasks.json`. En él vamos a
 guardar tareas para compilar nuestro proyecto ejemplo de la misma forma que si
-nosotros abrieramos una terminal y ejecutáramos manualmente:
+nosotros abriéramos una terminal y ejecutáramos manualmente el comando `make`
+para compilar. Literalmente eso es todo lo que hace.
 
-```bash
-make all
-```
-
-Literalmente eso es todo lo que hace. Para esto, la task debe especificar lo
-siguiente:
+Para esto, la task debe especificar lo siguiente:
 
 ::: code-group
 
@@ -109,8 +105,8 @@ el cual se indica, entre otras cosas:
    la sección `Run and Debug`, seguido por el nombre del proyecto entre
    paréntesis en caso de que haya más de uno abierto.
 2. `program`: Es la ruta hacia el ejecutable, usando dos variables
-   - `workspaceFolder`: Es la carpeta desde la cual abrimos nuestro proyecto
-   - `workspaceFolderBasename`: Es el nombre de esa misma carpeta
+   - `workspaceFolder`: Es la ruta desde la cual abrimos nuestro proyecto.
+   - `workspaceFolderBasename`: Es el nombre de esa misma carpeta.
 3. `args`: Los argumentos que le pasaremos a la función `main()`[^2].
 4. `stopAtEntry`: Acá podemos especificar que se detenga en la primera línea al
    iniciar el debugger de la misma forma que lo hace Eclipse (por defecto, no se
@@ -192,6 +188,6 @@ La explicación completa sobre cada uno de los atributos de
     [guía de argumentos para `main()`](/guias/programacion/main)
 
 [^3]:
-    _¡¿El qué?!_. El directorio desde el cual se va a ejecutar nuestro código.
+    _¡¿El qué?!_ El directorio desde el cual se va a ejecutar nuestro código.
     Desde el mismo de van a calcular todas nuestras
     [rutas relativas](/guias/consola/rutas.html#current-working-directory).
