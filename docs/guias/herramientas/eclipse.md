@@ -65,10 +65,18 @@ Si no aparece ahí, también la pueden encontrar en
 
 :::
 
-Luego, seleccionaremos la carpeta del proyecto ayudándonos con el botón
+Luego, seleccionaremos la carpeta del **proyecto** ayudándonos con el botón
 `Browse...` y dejaremos todo tildado como en la imagen:
 
 ![project-03](/img/guias/herramientas/eclipse/import-existing-code.png){data-zoomable}
+
+::: tip
+
+En caso de querer importar el TP, recordemos que el mismo tiene un Makefile
+por cada **módulo**, por ende, debemos crear _Makefile projects_ seleccionando
+una a una las carpetas de cada módulo (`kernel`, `memoria`, etc).
+
+:::
 
 Nos aparecerá la carpeta del proyecto en el `Project Explorer` de Eclipse:
 
