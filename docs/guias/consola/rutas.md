@@ -11,8 +11,10 @@ no entender cómo funcionan las rutas absolutas dentro de un programa.
 
 Cuando ejecutamos un proceso, éste se ejecuta con un directorio de trabajo
 asociado (el current working directory, que le llaman). La idea es marcar un
-directorio como el "actual" en que se encuentra ese proceso. Desde el programa
-podemos acceder a ese valor usando la función `getcwd()`:
+directorio como el "actual" en que se encuentra ese proceso. 
+
+Por si les da curiosidad saber el valor del mismo desde el programa,
+podemos acceder a él usando la función `getcwd()`:
 
 ::: code-group
 
@@ -53,7 +55,15 @@ scope de este post su uso.
 
 ## Rutas relativas
 
-Y si el CWD nos interesa, eso es porque los paths relativos se resuelven a
+Sin embargo, si lo que queremos es resolver una ruta en forma _relativa_ al CWD
+actual, sería algo engorroso tener que hacer todo el tiempo:
+
+```c
+char *path = getcwd(NULL, 0);
+string_append(&path, "/archivo.log");
+```
+
+Para esto, existen los **paths relativos**, los cuales se resuelven a
 partir del directorio actual del proceso. De `man path_resolution`:
 
 > If the pathname does not start with the '/' character, the starting lookup
@@ -65,10 +75,19 @@ partir del directorio actual del proceso. De `man path_resolution`:
 > Pathnames not starting with a '/' are called relative pathnames.
 
 Entonces, si, por ejemplo, a una syscall como `open()` le paso el path
-`archivo.log`, `open` va a abrir el archivo llamado `archivo.log` ubicado en el
-directorio actual de nuestro proceso. Este no necesariamente es el mismo
-directorio desde el que ejecutamos el proceso (porque pudo haber hecho un
-`chdir()`), pero por lo general sí lo va a ser.
+`archivo.log`:
+
+```c
+int fd = open("archivo.log", O_RDONLY | O_CREAT);
+```
+
+`open` va a abrir el archivo llamado `archivo.log` ubicado en el directorio
+actual de nuestro proceso, como si le concatenáramos el valor de `getcwd()`
+y una `/` atrás.
+
+Este directorio puede no necesariamente ser el mismo desde el que ejecutamos
+el proceso (ya que éste pudo haber ejecutado un `chdir()`), pero por lo general
+sí lo va a ser.
 
 ## Visual Studio Code
 
@@ -177,3 +196,4 @@ Si importaste el proyecto siguiendo la
 llame `bin` en lugar de `Debug`.
 
 :::
+
