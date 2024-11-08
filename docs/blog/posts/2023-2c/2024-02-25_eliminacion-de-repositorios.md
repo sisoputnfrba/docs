@@ -1,6 +1,5 @@
 ---
 title: Eliminación de Repositorios
-description: Buenas! Cómo va? Habiendo ya cerrado el segundo cuatrimestre de 2023 hace un tiempo, vamos a estar eliminando los repositorios creados, esto lo vamos a estar haciendo el día...
 author: iago64
 ---
 
@@ -12,7 +11,7 @@ Buenas! Cómo va?
 
 Habiendo ya cerrado el segundo cuatrimestre de 2023 hace un tiempo, vamos a
 estar eliminando los repositorios creados, esto lo vamos a estar haciendo el día
-**Sabado 02/03/2024**
+**Sabado 02/03/2024**.
 
 Como sabemos que muchos de uds quieren tener un recuerdo del TP de SisOp, les
 recomendamos que se hagan una copia antes de dicho dia. Les recomendamos usar el
@@ -26,3 +25,5 @@ Para cerrar este post, cualquier cosa que necesiten y/o nos quieran contar saben
 que nos pueden encontrar en Discord / Mail a la casilla de inscripciones, etc.
 
 Un abrazo!
+
+---

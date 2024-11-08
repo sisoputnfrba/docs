@@ -1,6 +1,5 @@
 ---
 title: Fin de Cuatrimestre
-description: Buenas! Cómo va? Habiendo cerrado ya el primer cuatrimestre de este 2024, les queremos avisar que vamos a estar eliminando los repositorios de los grupos el día...
 author: iago64
 ---
 
@@ -32,3 +31,5 @@ Para cerrar este post, cualquier cosa que necesiten y/o nos quieran contar saben
 que nos pueden encontrar en Discord / Mail a la casilla de inscripciones, etc.
 
 Un abrazo!
+
+---

@@ -6,7 +6,7 @@ export default createContentLoader('blog/posts/**/*.md', {
     .map(({ url, frontmatter, excerpt }) => {
       return {
         title: frontmatter.title,
-        excerpt: frontmatter.description,
+        excerpt: extractExcerpt(excerpt),
         date: extractDate(url),
         url,
         category: extractCategory(url),
@@ -15,6 +15,11 @@ export default createContentLoader('blog/posts/**/*.md', {
     })
     .sort((a, b) => b.date.timestamp - a.date.timestamp)
 })
+
+function extractExcerpt(excerpt = '') {
+  return excerpt.slice(excerpt.indexOf('<p>') + 3, excerpt.lastIndexOf('</p>'))
+    .replace(/<[^>]*>/g, '');
+}
 
 function extractDate(url = '') {
   const date = new Date(url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('_')));

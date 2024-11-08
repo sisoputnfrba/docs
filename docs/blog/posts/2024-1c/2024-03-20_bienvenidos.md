@@ -1,6 +1,5 @@
 ---
 title: Bienvenidos
-description: Bienvenidos futuros ingenieros! A dos horas de comenzar las clases de este año les queremos ir anticipando los temas administrativos de la cursada con respecto al trabajo práctico...
 author: nahuemazzeo
 ---
 
@@ -30,3 +29,5 @@ Recuerden que siempre notificamos todas las novedades tanto por este Blog como
 por Twitter.
 
 Sin mas que comentar. Bienvenidos y nos vemos durante la cursada. Saludos.
+
+---

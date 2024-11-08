@@ -7,7 +7,7 @@
 
       <div class="mt-2">
           <a :href="href" class="text-xl font-semibold text-[--vp-c-indigo-1] !no-underline transition-colors duration-200 hover:text-[--vp-c-indigo-2]" tabindex="0" role="link">{{ title }}</a>
-          <p class="mt-2 text-[--vp-c-text-1]">{{ excerpt }}</p>
+          <p class="mt-2 line-clamp-3 text-[--vp-c-text-1]">{{ excerpt }}</p>
       </div>
 
       <div class="flex items-center justify-between mt-4">
