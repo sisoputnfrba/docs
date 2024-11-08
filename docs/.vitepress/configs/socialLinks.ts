@@ -15,4 +15,5 @@ export const socialLinks: DefaultTheme.SocialLink[] = [
   },
   { icon: 'discord', link: 'https://faq.utnso.com.ar/discord' },
   { icon: 'youtube', link: 'https://faq.utnso.com.ar/youtube' },
+  { icon: 'twitter', link: 'https://faq.utnso.com.ar/twitter' },
 ]
