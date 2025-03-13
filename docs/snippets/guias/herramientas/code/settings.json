@@ -3,5 +3,6 @@
   "files.associations": { // [!code focus] (2)
     "*.h": "c" // [!code focus]
   }, // [!code focus]
-  "C_Cpp.errorSquiggles": "disabled" // [!code focus] (3)
+  "C_Cpp.autoAddFileAssociations": false, // [!code focus] (3)
+  "C_Cpp.errorSquiggles": "disabled" // [!code focus] (4)
 } // [!code focus]
