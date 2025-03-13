@@ -33,10 +33,12 @@ El mismo cuenta con la siguiente configuración:
 
 2. `files.associations` nos sirve para que el editor reconozca todos los
    archivos `*.h` como código C (y no código C++, que es el valor por defecto).
-   De no hacer esto, el editor lo va a hacer individualmente por cada archivo
-   `*.h` que abramos, lo cual puede ser bastante molesto.
 
-3. `C_Cpp.errorSquiggles` nos permite deshabilitar algunos mensajes de error que
+3. `C_Cpp.autoAddFileAssociations` evita que el plugin de C/C++ nos agregue items
+   a la lista de `files.associations` por cada archivo `*.h` que abramos,
+   evitando que se modifique el archivo accidentalmente.
+
+4. `C_Cpp.errorSquiggles` nos permite deshabilitar algunos mensajes de error que
    nos pueden llegar a aparecer por utilizar algunas features de `gcc` que son
    válidas pero no forman parte del estándar de C[^1], como por ejemplo las
    [nested functions](https://www.youtube.com/watch?v=1kYyxZXGjp0). Además, esto
