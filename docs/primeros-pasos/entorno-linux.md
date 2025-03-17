@@ -18,7 +18,7 @@ VirtualBox](#sin-usar-virtualbox).
 ## Descargar VirtualBox
 
 Primero, debemos instalar
-[VirtualBox](https://www.virtualbox.org/wiki/Downloads), el software de
+[VirtualBox](https://faq.utnso.com.ar/virtualbox), el software de
 virtualización que utilizamos para correr las máquinas virtuales de la cátedra.
 
 También se recomienda descargar e instalar el **Extension Pack**, el cual lo
