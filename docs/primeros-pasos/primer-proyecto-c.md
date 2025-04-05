@@ -224,12 +224,10 @@ el editor:
 
 ## Próximos pasos
 
-- En la siguiente sección vamos a ver cómo utilizar [Git](/primeros-pasos/git)
-  para el TP de Operativos.
-- Por otro lado, para ir entrando más de lleno en el Lenguaje C, podés empezar
-  con las guías de [punteros y memoria dinámica](/guias/programacion/punteros) y
-  de [buenas prácticas de C](/guias/programacion/buenas-practicas).
-- Por último, para aprender a aprovechar al máximo el debugger de Visual Studio
+- Para ir entrando más de lleno en el Lenguaje C, vamos a continuar con las
+  guías de [punteros y memoria dinámica](/guias/programacion/punteros) y de
+  [buenas prácticas de C](/guias/programacion/buenas-practicas).
+- Además, para aprender a aprovechar al máximo el debugger de Visual Studio
   Code, te recomendamos que leas nuestra guía de
   [debugging](/guias/herramientas/debugger).
 
