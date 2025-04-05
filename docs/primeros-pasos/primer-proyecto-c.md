@@ -2,7 +2,7 @@
 
 Una vez [instaladas las VMs](/primeros-pasos/entorno-linux) (o el entorno Linux
 que hayas elegido), debemos continuar con un par de configuraciones antes de
-arrancar a desarrollar.
+arrancar a desarrollar dentro de dicho entorno.
 
 ## Descargar la so-commons-library
 
@@ -13,7 +13,7 @@ el manejo de strings y fechas, entre otras.
 
 [TADs]: https://es.wikipedia.org/wiki/Tipo_de_dato_abstracto
 
-Para descargarla, vamos a abrir una consola y nos vamos a clonar
+Para descargarla, vamos a abrir una consola en Linux y nos vamos a clonar
 [el repo](https://faq.utnso.com.ar/commons) para instalarlas en modo debug[^1]:
 
 ```bash
@@ -23,9 +23,11 @@ make debug
 make install
 ```
 
+![commons-install](/img/primeros-pasos/primer-proyecto-c/commons-install.gif){data-zoomable}
+
 ::: tip
 
-En el [sitio de documentación](https://faq.utnso.com.ar/commons-docs) vas a
+En el [sitio de documentación](https://faq.utnso.com.ar/commons-docs) podemos
 encontrar todas las funciones que pueden usar junto con ejemplos de uso.
 
 :::
@@ -35,15 +37,24 @@ encontrar todas las funciones que pueden usar junto con ejemplos de uso.
 Ahora sí, una vez instaladas las commons, vamos a probar de incluirlas en
 nuestro primer proyecto en **Visual Studio Code**.
 
-Para eso, abrimos una nueva consola y creamos un nuevo directorio para nuestro
-proyecto. Luego, nos vamos a mover a ese directorio y, una vez allí, vamos a
-descargar el template oficial:
-
+Para eso, abrimos una nueva consola, también en Linux, y creamos un nuevo
+directorio para nuestro proyecto:
 ```bash
 mkdir ejemplo
+```
+
+Luego, nos vamos a mover a ese directorio:
+```bash
 cd ejemplo
+```
+
+Y, una vez allí, vamos a descargar el template oficial:
+
+```bash
 wget -qO- https://faq.utnso.com.ar/project.tar.gz | tar -xzvf - --strip-components 1
 ```
+
+![project-download](/img/primeros-pasos/primer-proyecto-c/project-download.png){data-zoomable}
 
 ::: tip
 
