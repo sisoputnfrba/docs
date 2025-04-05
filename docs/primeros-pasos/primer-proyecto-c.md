@@ -54,6 +54,8 @@ Y, una vez allí, vamos a descargar el template oficial:
 wget -qO- https://faq.utnso.com.ar/project.tar.gz | tar -xzvf - --strip-components 1
 ```
 
+Nos van a aparecer listados todos los archivos descargados:
+
 ![project-download](/img/primeros-pasos/primer-proyecto-c/project-download.png){data-zoomable}
 
 ::: tip
