@@ -228,7 +228,7 @@ el editor:
   guías de [punteros y memoria dinámica](/guias/programacion/punteros) y de
   [buenas prácticas de C](/guias/programacion/buenas-practicas).
 - Además, para aprender a aprovechar al máximo el debugger de Visual Studio
-  Code, te recomendamos que leas nuestra guía de
+  Code, te recomendamos que tengas a mano nuestra guía de
   [debugging](/guias/herramientas/debugger).
 
 <br><br>
