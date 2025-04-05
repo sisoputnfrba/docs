@@ -94,8 +94,8 @@ podés pasarte por nuestra guía de
 ## Abrir el proyecto en Visual Studio Code
 
 Ahora, vamos a abrir el directorio que creamos en Visual Studio Code. Podemos
-hacerlo desde el editor moviéndonos a `File` > `Open Folder` o utilizando el
-comando:
+hacerlo desde el editor moviéndonos a `File` > `Open Folder` o desde la misma
+terminal utilizando el comando:
 
 ```bash
 code .
