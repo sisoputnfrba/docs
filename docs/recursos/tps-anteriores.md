@@ -6,17 +6,17 @@
 ## 2024
 
 - Segundo Cuatrimestre:
-  - C: **The Last Of C**
+  - **The Last Of _C_**
     - [Enunciado](https://faq.utnso.com.ar/tp-last-of-c)
     - [Tests](https://faq.utnso.com.ar/tp-last-of-c-pruebas)
-  - Go: **GOD**
-    - [Enunciado](https://faq.utnso.com.ar/tp-algo)
+  - **GOD (_GO_ Direction)**
+    - [Enunciado](https://faq.utnso.com.ar/tp-god)
    
 - Primer Cuatrimestre:
-  - C: **C Comenta**
+  - **_C_ Comenta**
     - [Enunciado](https://faq.utnso.com.ar/tp-c-comenta)
     - [Tests](https://faq.utnso.com.ar/tp-c-comenta-pruebas)
-  - Go: **A.L.GO**
+  - **A.L._GO_**
     - [Enunciado](https://faq.utnso.com.ar/tp-algo) 
 
 ## 2023
