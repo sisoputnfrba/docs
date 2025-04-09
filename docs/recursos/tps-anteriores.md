@@ -3,6 +3,22 @@
 > «No hay ninguna razón para usar la palabra "imposible" para describir algo que
 > claramente ha pasado» ― Douglas Adams
 
+## 2024
+
+- Segundo Cuatrimestre:
+  - C: **The Last Of C**
+    - [Enunciado](https://faq.utnso.com.ar/tp-last-of-c)
+    - [Tests](https://faq.utnso.com.ar/tp-last-of-c-pruebas)
+  - Go: **GOD**
+    - [Enunciado](https://faq.utnso.com.ar/tp-algo)
+   
+- Primer Cuatrimestre:
+  - C: **C Comenta**
+    - [Enunciado](https://faq.utnso.com.ar/tp-c-comenta)
+    - [Tests](https://faq.utnso.com.ar/tp-c-comenta-pruebas)
+  - Go: **A.L.GO**
+    - [Enunciado](https://faq.utnso.com.ar/tp-algo) 
+
 ## 2023
 
 - Segundo Cuatrimestre: **MaPPA**
