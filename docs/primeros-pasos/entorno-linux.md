@@ -55,8 +55,8 @@ sudo apt install p7zip-full
 
 ::: warning ADVERTENCIA
 
-Es importante que todas las partes se encuentren en la misma carpeta al momento
-de descomprimir.
+Es importante que todas las partes se encuentren en la misma carpeta y se llamen
+**exactamente igual que en Google Drive** al momento de descomprimir.
 
 :::
 
