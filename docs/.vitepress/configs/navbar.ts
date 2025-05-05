@@ -3,7 +3,8 @@ import { DefaultTheme } from 'vitepress';
 export const navbar: DefaultTheme.NavItem[] = [
   {
     text: 'Blog',
-    link: 'https://faq.utnso.com.ar/blog'
+    link: '/blog/',
+    activeMatch: '/blog/'
   },
   {
     text: 'Guías',
