@@ -111,11 +111,24 @@ condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
 los requerimientos de los parciales. En tal caso, la materia solamente se
 encontrará regularizada.
 
-## Guardado del TP
+## Reconocimiento del TP
 
-A partir del **2do cuatrimestre de 2024**, en caso de aprobar el trabajo práctico, se reconocerá la aprobación del mismo **solamente para el cuatrimestre siguiente al haber aprobado**.
+A partir del **2do cuatrimestre de 2024**, aquellos estudiantes que al finalizar el cuatrimestre hayan logrado aprobar el trabajo práctico (tanto grupalmente como el coloquio individual) sin su contraparte teórica, podrán solicitar el reconocimiento de la aprobación de dicho trabajo, de forma tal que el único requisito para la regularización de su próxima cursada sea la aprobación de los exámenes parciales
 
-Las condiciones para acceder a este régimen serán informadas en detalle por los docentes a cargo de los cursos, teniendo como punto de partida que el alumno deberá demostrar haber intentado aprobar tanto la cursada como el trabajo práctico.
+Los requisitos para poder aplicar a este régimen son:
+- Aprobar el trabajo práctico en su totalidad (evaluación grupal y coloquio)
+- Aprobar un examen parcial en su primer instancia o su primer recuperatorio.
+
+El procedimiento para aplicar consiste en anotarse en el registro de reconocimiento del TP que será publicado al finalizar cada cuatrimestre.
+
+Una vez realizada la inscripción se les notificará que se les reconoce el TP y al siguiente cuatrimestre **deberán inscribirse** en el Sistema de Inscripciones y luego los ayudantes los asignarán a un grupo como si cursaran, con el objetivo de dejar constancia de que se les reconoce el TP del cuatrimestre anterior.
+
+### Reglas de reconocimiento del TP
+- El TP solamente será reconocido durante la cursada inmediatamente siguiente al cuatrimestre de aprobación
+- La cursada _con TP Reconocido_ no será promocionable
+- Los parciales aprobados sin tp no son reconocidos (se deberá recursar la asignatura completa)
+
+
 
 ## Estructura del trabajo práctico grupal
 
