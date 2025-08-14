@@ -28,7 +28,7 @@ make install
 ::: tip
 
 En el [sitio de documentación](https://faq.utnso.com.ar/commons-docs) podemos
-encontrar todas las funciones que pueden usar junto con ejemplos de uso.
+encontrar todas las funciones disponibles junto con ejemplos de uso.
 
 :::
 
@@ -37,7 +37,7 @@ encontrar todas las funciones que pueden usar junto con ejemplos de uso.
 Ahora sí, una vez instaladas las commons, vamos a probar de incluirlas en
 nuestro primer proyecto en **Visual Studio Code**.
 
-Para eso, abrimos una nueva consola, también en Linux, y creamos un nuevo
+Para eso, abrimos una nueva consola (también en Linux) y creamos un nuevo
 directorio para nuestro proyecto:
 ```bash
 mkdir ejemplo
@@ -60,7 +60,7 @@ Nos van a aparecer listados todos los archivos descargados:
 
 ::: tip
 
-También podés crear un nuevo proyecto desde GitHub incluyendo el template
+También podemos crear un nuevo proyecto desde GitHub incluyendo el template
 [c-base-project](https://faq.utnso.com.ar/project) a la hora de crear un nuevo
 repositorio:
 
@@ -80,7 +80,7 @@ Si ejecutamos `tree -a`, vamos a ver que se nos descargaron varios archivos:
 | `makefile`    | Archivo make utilizado para compilar el proyecto.[^2]                                                             |
 | `settings.mk` | Archivo con configuraciones extra del proyecto (que iremos conociendo en otras guías de esta página).             |
 
-::: tip
+::: warning ATENCIÓN
 
 Es importante que **todos** los archivos fuente del proyecto se encuentren en la
 carpeta `src`, ya que el Makefile está configurado para buscarlos ahí.
@@ -156,7 +156,7 @@ ejemplo, errores de sintaxis o referencias a variables que no existen.
 :warning: Los que aparecen en **amarillo**. Éstos no impiden que el proyecto se
 compile, pero es **altamente recomendable** corregirlos, ya que muy
 probablemente signifiquen que algo no está funcionando como esperamos, por
-ejemplo, tener una variable no se esté utilizando.
+ejemplo, pasarle un `int *` a una función que esperaba un `int`.
 
 ::: tip
 
@@ -196,7 +196,7 @@ utilizando el buscador del foro.
 ## Cómo ejecutar
 
 Finalmente, para ejecutar el proyecto, nos moveremos a la pestaña de _Run and
-Debug_ y haremos a hacer click en el botón de _Run_:
+Debug_ y haremos click en el botón de _Run_:
 
 ![vscode-run-debug](/img/primeros-pasos/primer-proyecto-c/vscode-run-debug.gif){data-zoomable}
 
@@ -212,7 +212,7 @@ Al hacer click en el botón de _Run_[^4], ocurren dos cosas:
 2. Se ejecuta el binario generado en la carpeta `bin` con el nombre del
    proyecto.
 
-Los invitamos a abrir una consola en la carpeta ejemplo y ejecutar el binario
+Los invitamos a abrir una consola en la carpeta `ejemplo` y ejecutar el binario
 manualmente para corroborar que se ejecuta de la misma forma[^5] en que lo hace
 el editor:
 
