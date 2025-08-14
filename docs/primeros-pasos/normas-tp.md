@@ -121,7 +121,7 @@ Los requisitos para poder aplicar a este régimen son:
 
 El procedimiento para aplicar consiste en anotarse en el registro de reconocimiento del TP que será publicado al finalizar cada cuatrimestre.
 
-Una vez realizada la inscripción se les notificará que se les reconoce el TP y al siguiente cuatrimestre deberán inscribirse en el Sistema de Inscripciones y luego los ayudantes los asignarán a un grupo como si cursarán con el objetivo de dejar constancia de que se les reconoce el TP del cuatrimestre anterior.
+Una vez realizada la inscripción se les notificará que se les reconoce el TP y al siguiente cuatrimestre **deberán inscribirse** en el Sistema de Inscripciones y luego los ayudantes los asignarán a un grupo como si cursaran, con el objetivo de dejar constancia de que se les reconoce el TP del cuatrimestre anterior.
 
 ### Reglas de reconocimiento del TP
 - El TP solamente será reconocido durante la cursada inmediatamente siguiente al cuatrimestre de aprobación
