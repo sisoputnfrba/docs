@@ -24,4 +24,7 @@ clean:
 exec:
 	docker exec -it $(NAME) /bin/ash
 
-.PHONY: all build run clean exec
+update-members:
+	./scripts/members.sh
+
+.PHONY: all build run clean exec update-members
