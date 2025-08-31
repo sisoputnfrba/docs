@@ -167,12 +167,12 @@ errores: `-Werror`
 Podemos agregarlo fácilmente al final de las variables `CDEBUG` y `CRELEASE` del
 archivo `settings.mk`:
 
-```conf
+```makefile
 # Compiler flags
-CDEBUG=-g -Wall -DDEBUG -fdiagnostics-color=always // [!code --]
-CDEBUG=-g -Wall -DDEBUG -fdiagnostics-color=always -Werror // [!code ++]
-CRELEASE=-O3 -Wall -DNDEBUG -fcommon // [!code --]
-CRELEASE=-O3 -Wall -DNDEBUG -fcommon -Werror // [!code ++]
+CDEBUG=-g -Wall -DDEBUG -fdiagnostics-color=always # [!code --]
+CDEBUG=-g -Wall -DDEBUG -fdiagnostics-color=always -Werror # [!code ++]
+CRELEASE=-O3 -Wall -DNDEBUG -fcommon # [!code --]
+CRELEASE=-O3 -Wall -DNDEBUG -fcommon -Werror # [!code ++]
 ```
 
 :::
