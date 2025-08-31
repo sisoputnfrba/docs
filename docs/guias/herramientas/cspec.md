@@ -139,10 +139,10 @@ archivo que contiene la función `main`, que por defecto es `src/main.c`:
 
 ::: code-group
 
-```make [settings.mk]
+```makefile [settings.mk]
 # Source files (*.c) to be excluded from tests compilation
-TEST_EXCLUDE= // [!code --]
-TEST_EXCLUDE=src/main.c // [!code ++]
+TEST_EXCLUDE= # [!code --]
+TEST_EXCLUDE=src/main.c # [!code ++]
 ```
 
 :::
