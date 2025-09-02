@@ -104,7 +104,7 @@ Para conocer los medios de soporte, visitar el
 Existe un régimen de promoción de la materia, según la Ordenanza N°1549. Para la 
 promoción de la materia, además de los requerimientos de la parte teórica de la
 materia, el mismo **deberá aprobar el trabajo práctico con una nota final de 8
-(ocho) o superior en la instancia de coloquio**.
+(ocho) o superior en la instancia de coloquio en la primer o segunda instancia de evaluación**.
 
 Cualquier alumno cuya nota final no supere dicho valor no se encontrará en
 condiciones de aprobar la materia por dicho régimen, incluso si se cumplimentan
