@@ -88,8 +88,8 @@ mv yes ~/.ssh/id_ed25519
 ```
 
 Y el archivo `yes.pub` contiene la clave pública que agregaremos a nuestra cuenta de
-GitHub. Para eso, iremos [Settings](https://github.com/settings) > `SSH and GPG keys`
-> `New SSH key`.
+GitHub. Para eso, iremos [Settings](https://github.com/settings) >
+`SSH and GPG keys` > `New SSH key`.
 
 - El tipo de clave es `Authentication Key`
 - La clave es el contenido de la clave pública que generamos, el cual pueden ver
