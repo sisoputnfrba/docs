@@ -77,15 +77,23 @@ ssh-keygen -t ed25519 -C "your@email.com"
 Donde `"your@email.com"` es el email que tienen asociado a su cuenta de GitHub.
 
 Luego, vamos a seguir las instrucciones que nos da el comando para generar las
-claves. Por defecto, se van a guardar en el directorio `~/.ssh/` con los nombres
-`id_ed25519` y `id_ed25519.pub`.
+claves. Por defecto, se van a guardar en el directorio actual`~/.ssh/` con los nombres
+`yes` y `yes.pub`.
 
-Por último, vamos a agregar la clave pública a nuestra cuenta de GitHub
-moviéndonos a `Settings` > `SSH and GPG keys` > `New SSH key`.
+El archivo `yes` contiene la clave privada, vamos a moverla hacia la carpeta `~/.ssh/`
+con el nombre `id_ed25519`:
+
+```bash
+mv yes ~/.ssh/id_ed25519
+```
+
+Y el archivo `yes.pub` contiene la clave pública que agregaremos a nuestra cuenta de
+GitHub. Para eso, iremos [Settings](https://github.com/settings) > `SSH and GPG keys`
+> `New SSH key`.
 
 - El tipo de clave es `Authentication Key`
 - La clave es el contenido de la clave pública que generamos, el cual pueden ver
-  con el comando `cat ~/.ssh/id_ed25519.pub`.
+  con el comando `cat yes.pub`.
 
 Una vez hecho esto, podemos verificar que todo está configurado correctamente
 con el comando:
