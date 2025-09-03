@@ -265,7 +265,6 @@ puede fallar, y tenele mucha paciencia a tus ayudantes con las consultas
 que hagas respecto a la VM, porque vamos a tratar de darte una mano,
 pero estamos improvisando acá también.
 
-
 ## ¿Y cómo codeo desde la VM Server?
 
 En el caso de VirtualBox, nosotros les proveemos una VM con interfaz gráfica para poder desarrollar. Pero si intentamos utilizar esa misma probablemente te resulte **insoportablemente lento** (por esto de la emulación).
@@ -287,6 +286,15 @@ Podemos abrir una consola remota desde Visual Studio Code haciendo click en `Ter
 
 :::
 
+Antes de continuar, ¡no olvidemos instalar los plugins de VSCode para debuggear C!
+
+- [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+- [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor)
+
+Además, recomendamos instalar:
+
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (para mejorar el soporte para Git desde la interfaz)
+- [Gremlins tracker](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins) (para detectar fácilmente caracteres no-ASCII en el código)
 
 <br><br>
 

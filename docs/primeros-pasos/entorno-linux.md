@@ -10,8 +10,32 @@ funcione en el entorno en el que va a ser evaluado**.
 
 ::: danger NO SEGURO
 
-Si no podés o no querés usar VirtualBox, leé la sección [Sin usar
-VirtualBox](#sin-usar-virtualbox).
+Si te es imposible instalar VirtualBox y _no te queda otra alternativa_
+que utilizar un entorno nativo u otro software de virtualización, te
+dejamos un par de recursos que pueden ser de utilidad.
+
+::: details Sin usar VirtualBox
+
+- En [este repositorio](https://faq.utnso.com.ar/entorno-vms) se
+encuentran los scripts que usamos para descargar los paquetes instalados
+en las VMs, junto con una guía paso a paso.
+
+- Si tenés una Mac con procesador ARM (M1, M2, etc), podés [emular la VM
+usando UTM](/guias/herramientas/macos-arm). Si tenés procesador ARM con
+otro sistema operativo, todavía no tenemos guía armada, pero podés
+basarte en esa para emular la VM con QEMU.
+
+Tené en cuenta que, a fin de cuatrimestre, tu trabajo práctico tiene que
+funcionar en la VM Server, ejecutando en VirtualBox. De ser posible,
+mantené tu desarrollo en el ambiente más similar que puedas, para evitarte
+problemas a último momento.
+
+Además, probablemente nos cueste más darte soporte para configuraciones
+distintas como las que mencionamos arriba. Podés elegir usarlas, pero
+te recomendamos que lo pienses _bastante bien_ antes de hacerlo.
+
+Una vez instalado todo, no te olvides de repasar por la
+[última sección](#amigandose-con-la-consola) para ver cómo usarlas.
 
 :::
 
@@ -173,37 +197,3 @@ Pero primero, veremos una
 [introducción minimalista al lenguaje C](/primeros-pasos/lenguaje-c) en la
 siguiente guía.
 
-## Sin usar VirtualBox
-
-::: danger NO ENTRES AHÍ
-
-A fin de cuatrimestre, tu trabajo práctico tiene que funcionar en la VM
-Server, ejecutando en VirtualBox. De ser posible, mantené tu desarrollo
-en el ambiente más similar que puedas, para evitarte problemas a último
-momento.
-
-Además, probablemente nos cueste más darte soporte para configuraciones
-distintas como las que mencionamos acá abajo. Podés elegir usarlas, pero
-te recomendamos que lo pienses _bastante bien_ antes de hacerlo.
-
-:::
-
-Si te es imposible instalar VirtualBox y _no te queda otra alternativa_
-que utilizar un entorno nativo u otro software de virtualización, te
-dejamos un par de recursos que pueden ser de utilidad.
-
-- En [este repositorio](https://faq.utnso.com.ar/entorno-vms) se
-encuentran los scripts que usamos para descargar los paquetes instalados
-en las VMs, junto con una guía paso a paso.
-
-- Si tenés una Mac con procesador ARM (M1, M2, etc), podés [emular la VM
-usando UTM](/guias/herramientas/macos-arm). Si tenés procesador ARM con
-otro sistema operativo, todavía no tenemos guía armada, pero podés
-basarte en esa para emular la VM con QEMU.
-
-::: tip
-
-Una vez instalado todo, no te olvides de repasar por la [sección
-anterior](#amigandose-con-la-consola) para ver cómo usarlas.
-
-:::
