@@ -14,7 +14,7 @@ Si te es imposible instalar VirtualBox y _no te queda otra alternativa_
 que utilizar un entorno nativo u otro software de virtualización, te
 dejamos un par de recursos que pueden ser de utilidad.
 
-:: details Sin usar VirtualBox
+::: details Sin usar VirtualBox
 
 - En [este repositorio](https://faq.utnso.com.ar/entorno-vms) se
 encuentran los scripts que usamos para descargar los paquetes instalados
