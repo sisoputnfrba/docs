@@ -312,8 +312,8 @@ Supongamos que tenemos un tipo `t_persona` definido de la siguiente manera:
 ```c
 typedef struct
 {
-   char[20] nombre;
-   char[20] apellido;
+   char nombre[20];
+   char apellido[20];
    int edad;
 } t_persona;
 ```
@@ -343,8 +343,8 @@ El operador `->`[^10] se puede utilizar si tenemos estructuras anidadas. Suponga
 ```c
 typedef struct
 {
-   char[20] nombre;
-   char[20] apellido;
+   char nombre[20];
+   char apellido[20];
    int edad;
    t_persona* hijo;
 } t_persona;
