@@ -6,3 +6,10 @@ docs/.vitepress/cache
 .vscode
 .idea
 .obsidian
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
