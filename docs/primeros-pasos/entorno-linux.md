@@ -113,7 +113,12 @@ md5 [archivo]
 ## Crear la máquina virtual
 
 Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
-máquina virtual siguiendo este video:
+máquina virtual activando el **modo Experto** desde el menú que aparece al
+clickear en `Archivo > Preferencias` (o `Ctrl` + `G`):
+
+![expert-mode](/img/primeros-pasos/linux/expert-mode.gif)
+
+Y luego seguiremos los pasos detallados en el siguiente video:
 
 ::: danger ATENCIÓN
 
@@ -126,9 +131,8 @@ seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
 
 ::: warning ADVERTENCIA
 
-En caso de no poder iniciar la VM en Windows (o que ande muy lento), es probable
-que tengan habilitado Hyper-V, un software de virtualización que no es
-compatible con VirtualBox.
+En caso de no poder iniciar la VM en Windows, es probable que tengan habilitado
+Hyper-V, un software de virtualización que no es compatible con VirtualBox.
 
 De ser así, les recomendamos primero leer
 [cómo deshabilitar Hyper-V](https://docs.microsoft.com/es-es/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v).
