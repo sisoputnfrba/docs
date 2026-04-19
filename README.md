@@ -7,13 +7,14 @@ Este repo contiene todas las guías de la cátedra de Sistemas Operativos - UTN.
 ## Dependencias
 
 - Node.js v20
+- `corepack enable` ejecutado 
 
 ## Levantar el proyecto
 
 - En local:
 
 ```bash
-yarn dev
+corepack yarn dev
 ```
 
 - Desde container:
