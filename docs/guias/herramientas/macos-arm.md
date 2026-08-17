@@ -59,11 +59,11 @@ Necesitamos la herramienta `qemu-img`, que podés instalar via Homebrew
 haciendo `brew install qemu`. Si no tenés Homebrew, primero deberás
 [instalartelo](https://brew.sh/).
 
-## Convertir la imagen de disco
+## Extraer y convertir la imagen de disco
 
-Cuando descargás y descomprimís el disco de la VM que te proporcionamos,
-el resultado es un archivo con extensión `.vdi`, que es el formato de
-discos virtuales que soporta VirtualBox.
+Cuando descargás la VM que te proporcionamos,
+el resultado es un archivo con extensión `.ova`, que es el formato de
+exportación (Appliance) que soporta VirtualBox. Un archivo `.ova` es en realidad un archivo comprimido `.tar` que adentro contiene el disco virtual en formato `.vmdk`.
 
 ::: tip
 
@@ -74,33 +74,47 @@ para asegurarnos de que la descarga fue exitosa.
 
 UTM es, básicamente, una interfaz del sistema de virtualización y
 emulación QEMU, que usa discos en formato `qcow2`. Así que el primer
-paso será convertir de un disco al otro. Teniendo QEMU instalado (y, por
-lo tanto, el programa `qemu-img` disponible), la conversión la podés
-hacer abriendo una terminal y ejecutando:
+paso será extraer el disco virtual del archivo `.ova` y luego convertirlo de un formato al otro.
 
+Abrí una terminal en la carpeta donde descargaste el archivo `.ova` y ejecutá el siguiente comando para extraer el contenido:
+
+```bash
+tar -xvf UTN_SO_Server_26.04.ova
 ```
-qemu-img convert -f vdi -O qcow2 /ruta/al/Server.vdi Server.qcow2
+
+Esto extraerá varios archivos, pero el que nos interesa es el que termina en `.vmdk`.
+
+Teniendo QEMU instalado (y, por lo tanto, el programa `qemu-img` disponible), la conversión a `qcow2` la podés hacer ejecutando:
+
+```bash
+qemu-img convert -f vmdk -O qcow2 Server-disk001.vmdk Server.qcow2
 ```
+*(Nota: el nombre del archivo `.vmdk` puede variar, asegurate de usar el que se haya extraído).*
 
 En este comando, `convert` es la operación específica que queremos
-pedirle a `qemu-img`, `-f vdi` especifica el formato de la imagen
+pedirle a `qemu-img`, `-f vmdk` especifica el formato de la imagen
 origen, `-O qcow2` (es una O mayúscula) especifica el formato de imagen
 al que convertir, y después van las rutas del archivo fuente y el de
 destino.
 
-El programa se toma sus 15 segundos en convertir, durante los que no da
+El programa se toma unos segundos en convertir, durante los que no da
 ningún output. Si te devuelve el prompt sin ningún mensaje de error,
 anduvo todo bien.
 
 ```bash
 $ ls -lh
 total 14061568
--rwxr-xr-x@ 1 user  staff   6.7G Sep 27  2022 Server.vdi
-$ qemu-img convert -f vdi -O qcow2 ./Server.vdi Server.qcow2
+-rwxr-xr-x@ 1 user  staff   6.7G Sep 27  2024 UTN_SO_Server_26.04.ova
+$ tar -xvf UTN_SO_Server_26.04.ova
+x Server.ovf
+x Server.mf
+x Server-disk001.vmdk
+$ qemu-img convert -f vmdk -O qcow2 ./Server-disk001.vmdk Server.qcow2
 $ ls -lh
 total 27598976
 -rw-r--r--@ 1 user  staff   6.5G Jun 28 01:09 Server.qcow2
--rwxr-xr-x@ 1 user  staff   6.7G Sep 27  2022 Server.vdi
+-rwxr-xr-x@ 1 user  staff   6.7G Sep 27  2024 Server-disk001.vmdk
+-rwxr-xr-x@ 1 user  staff   6.7G Sep 27  2024 UTN_SO_Server_26.04.ova
 $ 
 ```
 

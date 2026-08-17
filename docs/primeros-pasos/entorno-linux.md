@@ -64,23 +64,9 @@ las pruebas.
 
 :::
 
-Para descomprimir las partes y obtener el **.vdi**, pueden utilizar:
+::: tip
 
-- Windows: [7-zip.org](https://www.7-zip.org/)
-
-- Linux: [Ubuntu Manpage - 7z](http://manpages.ubuntu.com/manpages/jammy/man1/7z.1.html)
-
-```bash
-sudo apt install p7zip-full
-```
-
-- MacOS: [theunarchiver.com](https://theunarchiver.com/)
-
-
-::: warning ADVERTENCIA
-
-Es importante que todas las partes se encuentren en la misma carpeta y se llamen
-**exactamente igual que en Google Drive** al momento de descomprimir.
+El archivo descargado tiene extensión **.ova** (Open Virtual Appliance), el cual ya incluye el disco y toda la configuración necesaria para la máquina virtual.
 
 :::
 
@@ -110,24 +96,14 @@ md5 [archivo]
 
 :::
 
-## Crear la máquina virtual
+## Importar la máquina virtual
 
-Teniendo VirtualBox instalado y la imagen descomprimida, vamos a crear la
-máquina virtual activando el **modo Experto** desde el menú que aparece al
-clickear en `Archivo > Preferencias` (o `Ctrl` + `G`):
+Teniendo VirtualBox instalado y la imagen **.ova** descargada, el proceso es mucho más simple ya que no necesitamos crear la VM desde cero, sino importarla:
 
-![expert-mode](/img/primeros-pasos/linux/expert-mode.gif)
-
-Y luego seguiremos los pasos detallados en el siguiente video:
-
-::: danger ATENCIÓN
-
-El video fue realizado cuando se utilizaban máquinas virtuales de 32 bits. Al
-seleccionar la versión del núcleo debemos elegir **Ubuntu (64-bit)**.
-
-:::
-
-<YouTube v="DmkSXv_Xa-U"/>
+1. Abrir VirtualBox.
+2. Ir a `Archivo > Importar servicio virtualizado...` (o `Ctrl` + `I`).
+3. Seleccionar el archivo `.ova` que descargamos.
+4. Seguir los pasos del asistente dejando las opciones por defecto y hacer clic en **Terminar** (o **Importar**).
 
 ::: warning ADVERTENCIA
 
@@ -139,26 +115,9 @@ De ser así, les recomendamos primero leer
 
 :::
 
-## Instalar las Guest Additions
+## Habilitar las Guest Additions
 
-Las Guest Additions son un conjunto de herramientas extras que permiten que
-VirtualBox nos provea ciertas funcionalidades al adaptar nuestra máquina virtual
-con el sistema operativo (por ejemplo, hacer **pantalla completa** o **compartir
-el portapapeles**). También tenemos un video para eso :smile:
-
-<YouTube v="uMoO58tPc5c"/>
-
-::: danger ATENCIÓN
-
-En las versiones más recientes, el mensaje que aparece luego de ejecutar el
-script de instalación es el siguiente:
-```
-VirtualBox Guest Additions: Running kernel modules will not be replaced until
-the system is restarted
-```
-Esto significa que es necesario reiniciar la VM para aplicar los cambios.
-
-:::
+Las Guest Additions (que permiten **pantalla completa** o **compartir el portapapeles**) ya se encuentran instaladas en las nuevas máquinas virtuales. Sin embargo, para poder utilizarlas, debemos asegurarnos de que estén habilitadas en la configuración de VirtualBox.
 
 ### Habilitar el portapapeles compartido
 
