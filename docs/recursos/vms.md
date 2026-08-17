@@ -20,7 +20,7 @@ virtuales para desarrollar el trabajo práctico, antes leé la
 :::
 
 
-## Xubuntu (64-bit)
+## Xubuntu 26.04 (64-bit)
 
 Versión para desarrollo con entorno gráfico liviano (XFCE). **Entorno recomendado para
 desarrollo.**
@@ -32,10 +32,7 @@ desarrollo.**
 **Hashes MD5**
 
 ```
-Grafica.zip.001 - 5ee3c35d23d922943977b54e24d218b4
-Grafica.zip.002 - 60691da5303b1e1763ef20b2701208b8
-
-Grafica.vdi - b417a5eda3d50de7a03a0c4c6114006e
+UTN_SO_26.04.ova - ddad1c3e202620fdf18f2374b2920bb7
 ```
 
 ::: tip
@@ -45,7 +42,7 @@ Con esto ya tenemos todo lo necesario para continuar con la
 
 :::
 
-## Ubuntu Server (64-bit)
+## Ubuntu Server 26.04 (64-bit)
 
 Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 
@@ -56,9 +53,7 @@ Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 **Hashes MD5**
 
 ```
-Server.zip.001 - b1253de2525afe071f14ce9fea6b9db2
-
-Server.vdi - 503624dc5c96c76310ed7ea1fcfe5a06
+UTN_SO_Server_26.04.ova - 8fc5d8e685b304503ceca2e3e43d76a8
 ```
 
 
