@@ -121,7 +121,7 @@ Los requisitos para poder aplicar a este régimen son:
 
 El procedimiento para aplicar consiste en inscribirse en el Sistema de Inscripciones y completar el formulario que se encontrará habilitado durante el periodo estipulado en el Calendario.
 
-Una vez verificada la inscripción, se les notificará que se les reconoce el TP y figurará en el Sistema la constancia de que se les reconoce el TP del cuatrimestre anterior.
+Una vez verificada la inscripción, se les notificará por mail y figurará la constancia de que se les reconoce el TP del cuatrimestre anterior en el Sistema.
 
 ### Reglas de reconocimiento del TP
 
