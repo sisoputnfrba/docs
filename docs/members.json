@@ -1,21 +1,5 @@
 [
   {
-    "name": "Federico Cardoso",
-    "github": "F-Cardoso"
-  },
-  {
-    "name": "Luis Cannavó",
-    "github": "luchotc"
-  },
-  {
-    "name": "Federico Pablos",
-    "github": "fpablos"
-  },
-  {
-    "name": "Leandro Carbajales",
-    "github": "LeandroCarbajales"
-  },
-  {
     "name": "Nicolas Coen",
     "github": "ncoen97"
   },
@@ -24,12 +8,28 @@
     "github": "iago64"
   },
   {
+    "name": "Federico Cardoso",
+    "github": "F-Cardoso"
+  },
+  {
+    "name": "Leandro Carbajales",
+    "github": "LeandroCarbajales"
+  },
+  {
     "name": "Juan Mesaglio",
     "github": "mesaglio"
   },
   {
+    "name": "Federico Pablos",
+    "github": "fpablos"
+  },
+  {
     "name": "Esteban Masoero",
     "github": "esigma5"
+  },
+  {
+    "name": "Luis Cannavó",
+    "github": "luchotc"
   },
   {
     "name": "Federico Medina",
@@ -40,14 +40,6 @@
     "github": "CMauro96"
   },
   {
-    "name": "Valentina Andrada Perino",
-    "github": "valenap-utn"
-  },
-  {
-    "name": "Marcos Infantino",
-    "github": "MarcosInfantino"
-  },
-  {
     "name": "Agustin Ranieri",
     "github": "RaniAgus"
   },
@@ -56,63 +48,75 @@
     "github": "MGAzario"
   },
   {
-    "name": "Alexis Brian Mango",
-    "github": "abmango"
+    "name": "Tomas Agustin Peña",
+    "github": "tomasp0603"
   },
   {
     "name": "Irina Pérez Gribnicow",
     "github": "irinaperezg"
   },
   {
-    "name": "Federico Andrade",
-    "github": "f-and"
+    "name": "Valentina Andrada Perino",
+    "github": "valenap-utn"
+  },
+  {
+    "name": "Marcos Infantino",
+    "github": "MarcosInfantino"
+  },
+  {
+    "name": "Tomas Martinez",
+    "github": "tomasmartinez02"
   },
   {
     "name": "Valentín Rodrigo Osa Pochelú",
     "github": "valenosa"
   },
   {
-    "name": "Tomas Agustin Peña",
-    "github": "tomasp0603"
+    "name": "Federico Andrade",
+    "github": "f-and"
   },
   {
-    "name": "Laura Honczaryk",
-    "github": "lauhonczaryk"
+    "name": "Federico Medina",
+    "github": "mefederico"
   },
   {
-    "name": "Santiago Agustin Dopazo",
-    "github": "SantiagoDopazo"
+    "name": "Alexis Brian Mango",
+    "github": "abmango"
   },
   {
     "name": "Martin Morrison",
     "github": "martomorri"
   },
   {
-    "name": "Tomás Martínez",
-    "github": "tomasmartinez02"
+    "name": "Santiago Agustin Dopazo",
+    "github": "SantiagoDopazo"
+  },
+  {
+    "name": "Santiago San Martín",
+    "github": "santysisi"
   },
   {
     "name": "Elias Mouesca",
     "github": "EliasMartinMouescaUTN"
   },
   {
-    "name": "Ignacio Joaquin Riolffi",
-    "github": "ignariolffi"
+    "name": "Ayelen Samarra",
+    "github": "AyelenSamarra"
   },
   {
-    "name": "Mercedes De La Torre",
-    "github": "MercedesdelaTorre"
-  },
-  {
-    "name": "Joaquin Borquez Belli",
-    "github": "BorquezBelli"
+    "name": "Laura Honczaryk",
+    "github": "lauhonczaryk"
   },
   {
     "name": "Brisa Calzado",
     "github": "BrisaCalzado"
   },
   {
-    "name": "Ayelen Samarra",
-    "github": "AyelenSamarra"
+    "name": "Ignacio Joaquin Riolffi",
+    "github": "ignariolffi"
+  },
+  {
+    "name": "Joaquin Borquez Belli",
+    "github": "BorquezBelli"
   }
 ]
