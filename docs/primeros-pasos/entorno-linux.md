@@ -66,7 +66,8 @@ las pruebas.
 
 ::: tip
 
-El archivo descargado tiene extensión **.ova** (Open Virtual Appliance), el cual ya incluye el disco y toda la configuración necesaria para la máquina virtual.
+El archivo descargado tiene extensión **.ova** (Open Virtual Appliance), el cual
+ya incluye el disco y toda la configuración necesaria para la máquina virtual.
 
 :::
 
@@ -98,12 +99,14 @@ md5 [archivo]
 
 ## Importar la máquina virtual
 
-Teniendo VirtualBox instalado y la imagen **.ova** descargada, el proceso es mucho más simple ya que no necesitamos crear la VM desde cero, sino importarla:
+Teniendo VirtualBox instalado y la imagen **.ova** descargada, el proceso es
+mucho más simple ya que no necesitamos crear la VM desde cero, sino importarla:
 
 1. Abrir VirtualBox.
 2. Ir a `Archivo > Importar servicio virtualizado...` (o `Ctrl` + `I`).
 3. Seleccionar el archivo `.ova` que descargamos.
-4. Seguir los pasos del asistente dejando las opciones por defecto y hacer clic en **Terminar** (o **Importar**).
+4. Seguir los pasos del asistente dejando las opciones por defecto y hacer clic
+   en **Terminar** (o **Importar**).
 
 ::: warning ADVERTENCIA
 
@@ -117,7 +120,10 @@ De ser así, les recomendamos primero leer
 
 ## Habilitar las Guest Additions
 
-Las Guest Additions (que permiten **pantalla completa** o **compartir el portapapeles**) ya se encuentran instaladas en las nuevas máquinas virtuales. Sin embargo, para poder utilizarlas, debemos asegurarnos de que estén habilitadas en la configuración de VirtualBox.
+Las Guest Additions (que permiten **pantalla completa** o **compartir el
+portapapeles**) ya se encuentran instaladas en las nuevas máquinas virtuales.
+Sin embargo, para poder utilizarlas, debemos asegurarnos de que estén
+habilitadas en la configuración de VirtualBox.
 
 ### Habilitar el portapapeles compartido
 
@@ -159,4 +165,3 @@ permitir trabajar en equipo de forma más eficiente.
 Pero primero, veremos una
 [introducción minimalista al lenguaje C](/primeros-pasos/lenguaje-c) en la
 siguiente guía.
-

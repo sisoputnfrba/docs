@@ -19,20 +19,19 @@ virtuales para desarrollar el trabajo práctico, antes leé la
 
 :::
 
-
 ## Xubuntu 26.04 (64-bit)
 
 Versión para desarrollo con entorno gráfico liviano (XFCE). **Entorno recomendado para
 desarrollo.**
 
-**Links hosteados en Google Drive**
+**Links**
 
-- [Carpeta Google Drive](https://faq.utnso.com.ar/vm-gui)
+- [Google Drive](https://faq.utnso.com.ar/vm-gui)
 
 **Hashes MD5**
 
-```
-UTN_SO_26.04.ova - ddad1c3e202620fdf18f2374b2920bb7
+```txt
+UTN_SO_26.04.1.ova - 11738aba0a39e984e9053a4a7b97e6cb
 ```
 
 ::: tip
@@ -46,16 +45,15 @@ Con esto ya tenemos todo lo necesario para continuar con la
 
 Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 
-**Links hosteados en Google Drive**
+**Links**
 
-- [Carpeta Google Drive](https://faq.utnso.com.ar/vm-server)
+- [Google Drive](https://faq.utnso.com.ar/vm-server)
 
 **Hashes MD5**
 
+```txt
+UTN_SO_Server_26.04.1.ova - 863cebd964cc42c23450ab24034c0835
 ```
-UTN_SO_Server_26.04.ova - 8fc5d8e685b304503ceca2e3e43d76a8
-```
-
 
 ::: tip TIP 1
 
@@ -71,11 +69,12 @@ Con esto ya tenemos todo lo necesario para continuar con la
 
 :::
 
-
 ## Tutoriales
 
 ### Crear Snapshots
+
 <YouTube v="u1L23ziKgz4"/>
 
 ### Guardar el estado de una VM
+
 <YouTube v="YqFybzQmqOc"/>
