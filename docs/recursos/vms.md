@@ -31,7 +31,7 @@ desarrollo.**
 **Hashes MD5**
 
 ```txt
-UTN_SO_26.04.1.ova - 11738aba0a39e984e9053a4a7b97e6cb
+UTN_SO_26.04.1.ova - 28fec50de984bed7021ff7031bbcf8d0
 ```
 
 ::: tip

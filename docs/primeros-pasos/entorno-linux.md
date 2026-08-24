@@ -105,8 +105,11 @@ mucho más simple ya que no necesitamos crear la VM desde cero, sino importarla:
 1. Abrir VirtualBox.
 2. Ir a `Archivo > Importar servicio virtualizado...` (o `Ctrl` + `I`).
 3. Seleccionar el archivo `.ova` que descargamos.
-4. Seguir los pasos del asistente dejando las opciones por defecto y hacer clic
-   en **Terminar** (o **Importar**).
+4. Seguir los pasos del asistente dejando las opciones por defecto excepto el
+   adaptador de Red
+5. Hacer clic en **Terminar** (o **Importar**).
+6. Ir a **Configuración** y desde la sección de **Red** y tildar la opción
+   **Habilitar adaptador de red**.
 
 ::: warning ADVERTENCIA
 
