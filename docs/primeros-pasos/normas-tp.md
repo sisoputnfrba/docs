@@ -146,15 +146,15 @@ dispuestos los sábados.
 
 ### Checkpoint de Control Obligatorio
 
-El trabajo práctico contará con un mínimo de 3 **Checkpoints
-de Control Obligatorio**. Completado el último, la cátedra verificará el avance de los 
+El trabajo práctico contará con una serie de **Checkpoints de Control Obligatorio**. Completado el último, la cátedra verificará el avance de los 
 grupos y, en caso de no cumplir con un avance mínimo requerido en dos de ellos **en tiempo y forma**, se les informará que
-**no podrán continuar con la materia**. Todos los grupos deberán informar los avances requeridos de los 3 Checkpoints por medio de la 
-creación de Tags en el repositorio provisto por la cátedra.
+**no podrán continuar con la materia**. Todos los grupos deberán informar los avances requeridos de los Checkpoints por medio de la 
+creación de Tags en el repositorio provisto por la cátedra siguiendo el formato `checkpoint-N`, siendo N el número de checkpoint, 
+por ejemplo `checkpoint-1`, `checkpoint-2`, etc. En caso de que los checkpoints no respeten este formato no se considerarán como válidos.
 
 Esto implica que, al llegar a la fecha de cada uno de los primeros tres Checkpoints, un integrante 
 del grupo deberá crear un Tag en el repositorio indicando que ese Checkpoint fue cumplido. Al llegar 
-a la fecha del tercer Checkpoint, la cátedra verificará en el repositorio tanto la existencia de los 
+a la fecha del último Checkpoint, la cátedra verificará en el repositorio tanto la existencia de los 
 Tags como el código que fue incluído en él. **No cumplir con los requisitos de por lo menos
 dos de los tres checkpoints será motivo de desaprobación del Trabajo Práctico**.
 
