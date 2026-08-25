@@ -52,7 +52,7 @@ Versión de pruebas, sin entorno gráfico. **En esta VM será evaluado el TP.**
 **Hashes MD5**
 
 ```txt
-UTN_SO_Server_26.04.1.ova - 863cebd964cc42c23450ab24034c0835
+UTN_SO_Server_26.04.1.ova - 4c6b9ef3b56ae76bc63239c3bd9e0aba
 ```
 
 ::: tip TIP 1
