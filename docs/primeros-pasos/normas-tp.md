@@ -155,8 +155,8 @@ por ejemplo `checkpoint-1`, `checkpoint-2`, etc. En caso de que los checkpoints 
 Esto implica que, al llegar a la fecha de cada uno de los primeros tres Checkpoints, un integrante 
 del grupo deberá crear un Tag en el repositorio indicando que ese Checkpoint fue cumplido. Al llegar 
 a la fecha del último Checkpoint, la cátedra verificará en el repositorio tanto la existencia de los 
-Tags como el código que fue incluído en él. **No cumplir con los requisitos de por lo menos
-dos de los tres checkpoints será motivo de desaprobación del Trabajo Práctico**.
+Tags como el código que fue incluído en él. **No cumplir con los requisitos de
+dos checkpoints será motivo de desaprobación del Trabajo Práctico**.
 
 ## Entrega final
 
