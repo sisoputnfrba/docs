@@ -146,7 +146,7 @@ dispuestos los sábados.
 
 ### Checkpoint de Control Obligatorio
 
-El trabajo práctico contará con una serie de **Checkpoints de Control Obligatorio**. Completado el último, la cátedra verificará el avance de los 
+El trabajo práctico contará con una serie de **Checkpoints de Control Obligatorio**. Una vez completado, la cátedra verificará el avance de los 
 grupos y, en caso de no cumplir con un avance mínimo requerido en dos de ellos **en tiempo y forma**, se les informará que
 **no podrán continuar con la materia**. Todos los grupos deberán informar los avances requeridos de los Checkpoints por medio de la 
 creación de Tags en el repositorio provisto por la cátedra siguiendo el formato `checkpoint-N`, siendo N el número de checkpoint, 
