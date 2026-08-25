@@ -153,7 +153,7 @@ El Tag deberá seguir estrictamente el formato `checkpoint-N` (por ejemplo: `che
 Una vez transcurrida la fecha límite de cada Checkpoint, 
 la cátedra verificará en el repositorio la existencia del Tag y revisará el código entregado a esa fecha. 
 **El número máximo de checkpoints que se pueden incumplir es uno (1); 
-acumular dos (2) Checkpoints no cumplidos en tiempo y forma será motivo de desaprobación del Trabajo Práctico y de la materia.**.
+acumular dos (2) Checkpoints no cumplidos en tiempo y forma será motivo de desaprobación del Trabajo Práctico y de la materia.**
 
 ## Entrega final
 
